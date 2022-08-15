@@ -1420,48 +1420,6 @@
 
         })
 
-
-        document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
-
-          let editPersonalDetailsForm = new FormData()
-
-          editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
-            .innerText)
-          editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
-            .innerText)
-          editPersonalDetailsForm.append('editAadharCardNumber', document.getElementById('aadhar-card-value')
-            .innerText)
-          editPersonalDetailsForm.append('editContactNumber', document.getElementById('contact-number-value')
-            .innerText)
-          editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
-          editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
-          editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
-            'temporary-address-value').innerText)
-          editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
-          editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
-
-          document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
-          document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
-          document.getElementById('aadhar-number').value = editPersonalDetailsForm.get('editAadharCardNumber')
-          document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
-          document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
-          document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
-          document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
-            'editTemporaryAddress')
-          document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
-
-
-          document.getElementById('body').classList.add('d-none');
-          document.querySelector('.personal-details-modal').classList.remove('d-none');
-        });
-
-        document.querySelector('#personal-details-cancel-button').addEventListener('click', function () {
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.personal-details-modal').classList.add('d-none')
-        });
-
-
-
         document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
 
           e.preventDefault()
@@ -1519,14 +1477,70 @@
           personalDetailsData.facultyInfo.date_of_birth = result.date_of_birth
           personalDetailsData.facultyInfo.nationality = result.nationality
 
-          console.log(personalDetailsData.facultyAddress.temporary_address)
-          console.log(personalDetailsData.facultyAddress.permanent_address)
           console.log(JSON.stringify(personalDetailsData))
 
+          $.ajax({
+            url: '/insert',
+            type: 'post',
+            dataType: 'text',
+            contentType: "application/json; charset=utf-8",
+            processData: false,
+            data: JSON.stringify(personalDetailsData),
+            success: function (response) {
+
+              console.log(response)
+
+              document.getElementById('body').classList.remove('d-none');
+              document.querySelector('.personal-details-modal').classList.add('d-none')
+            },
+            error: function (error) {
+              console.log("ERROR:::::", error);
+            }
+
+          })
+        });
+
+
+        document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
+
+          let editPersonalDetailsForm = new FormData()
+
+          editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
+            .innerText)
+          editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
+            .innerText)
+          editPersonalDetailsForm.append('editAadharCardNumber', document.getElementById('aadhar-card-value')
+            .innerText)
+          editPersonalDetailsForm.append('editContactNumber', document.getElementById('contact-number-value')
+            .innerText)
+          editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
+          editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
+          editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
+            'temporary-address-value').innerText)
+          editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
+          editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
+
+          document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
+          document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
+          document.getElementById('aadhar-number').value = editPersonalDetailsForm.get('editAadharCardNumber')
+          document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
+          document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
+          document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
+          document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
+            'editTemporaryAddress')
+          document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
+
+
+          document.getElementById('body').classList.add('d-none');
+          document.querySelector('.personal-details-modal').classList.remove('d-none');
+        });
+
+        document.querySelector('#personal-details-cancel-button').addEventListener('click', function () {
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.personal-details-modal').classList.add('d-none')
-
         });
+
+
 
         //*************************************teaching-experience-modal JS****************************************
 

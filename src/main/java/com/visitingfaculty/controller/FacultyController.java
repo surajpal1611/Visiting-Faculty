@@ -1,5 +1,6 @@
 package com.visitingfaculty.controller;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,15 +13,18 @@ import com.visitingfaculty.dto.FacultyPersonalDetailsDTO;
 public class FacultyController {
 
     @GetMapping("/resume")
-    public String getindex(){
+    public String getindex() {
         return "index";
     }
 
-    @PostMapping("/insert")
-    @ResponseBody
-    public String insert(@RequestBody FacultyPersonalDetailsDTO detailsDTO){
+    @PostMapping(value="/insert",
+                 produces = MediaType.APPLICATION_JSON_VALUE,
+                 consumes = MediaType.APPLICATION_JSON_VALUE)
 
-        System.out.println(detailsDTO);
+    @ResponseBody
+    public String insert(@RequestBody FacultyPersonalDetailsDTO personalDetailsData) {
+
+        System.out.println(personalDetailsData);
         return "hello";
     }
-}  
+}

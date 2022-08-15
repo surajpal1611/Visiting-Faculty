@@ -1,14 +1,14 @@
 package com.visitingfaculty.model.faculty_personal_details;
 
 public class FacultyInfo {
-    
+
     private String f_name;
     private String l_name;
     private String email;
     private String date_of_birth;
     private int gender_lid;
     private String nationality;
-    
+
     public FacultyInfo() {
     }
 
@@ -76,5 +76,4 @@ public class FacultyInfo {
                 + ", gender_lid=" + gender_lid + ", l_name=" + l_name + ", nationality=" + nationality + "]";
     }
 
-    
 }
