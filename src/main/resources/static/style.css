@@ -380,6 +380,19 @@ label {
   font-size: 16px;
 }
 
+.temporary-address{
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 1030px) {
+
+  .temporary-address{
+    padding-top: 40px;
+  }
+  .country-heading{
+    padding-top: 0!important;
+  }
+}
 /* ********************************Styling for Work Experience Modal***************************************/
 
 .full-screen {
@@ -465,30 +478,30 @@ button {
 
 }
 
-#right-skill-box {
+#soft-skill-review-box {
   min-width: 50%;
-  height: 30vh;
+  height: 25vh;
   overflow: auto;
   scroll-behavior: smooth;
 }
 
-#right-skill-box ul {
+#soft-skill-review-box ul {
   padding:10px 0 0 0 !important;
 }
 
-#right-skill-box li {
+#soft-skill-review-box li {
   border: 1px solid #ddd;
   margin: 20px 20px 20px 0;
   height: 45px;
   width: 90%;
 }
 
-#right-skill-box li i {
+#soft-skill-review-box li i {
   padding: 6px 15px 6px;
   border-right: 1px solid black;
 }
 
-#right-skill-box li a {
+#soft-skill-review-box li a {
   padding-top: 10px;
   margin-top: -1px;
   /* Prevent double borders */
@@ -498,53 +511,132 @@ button {
   display: block
 }
 
-#left-skill-box {
-  min-width: 50%;
-  height: 65vh;
+#soft-skill-box {
+  width: 100%;
+  height: 50vh;
   overflow: auto;
   scroll-behavior: smooth;
 }
 
+#hard-skill-box {
+  width: 100%;
+  height: 50vh;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
 
-#skill-search {
-  margin: 20px 20px 20px 0 !important;
-  background-position: 10px 12px;
-  width: 43% !important;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
+#review-box {
+  width: 100%;
+}
+
+#hard-skill-review-box {
+  min-width: 50%;
+  height: 25vh;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+#hard-skill-review-box ul {
+  padding:10px 0 0 0 !important;
+}
+
+#hard-skill-review-box li {
   border: 1px solid #ddd;
+  margin: 20px 20px 20px 0;
+  height: 45px;
+  width: 90%;
 }
 
-#skill-search:focus {
-  border: 2px solid #3983fa !important;
+#hard-skill-review-box li i {
+  padding: 6px 15px 6px;
+  border-right: 1px solid black;
 }
 
-#myUL {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-
-#myUL li {
-  border: 1px solid #ddd;
-}
-
-#myUL li a {
+#hard-skill-review-box li a {
+  padding-top: 10px;
   margin-top: -1px;
   /* Prevent double borders */
-  padding: 12px;
   text-decoration: none;
   font-size: 18px;
   color: black;
   display: block
 }
 
-#myUL li {
+#soft-skill-search {
+  width: 90% !important;
+  margin: 5%;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+}
+
+#soft-skill-search:focus {
+  border: 2px solid #3983fa !important;
+}
+
+#hard-skill-search {
+  width: 90% !important;
+  margin: 5%;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+}
+
+#hard-skill-search:focus {
+  border: 2px solid #3983fa !important;
+}
+
+#soft-skill-UL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+#soft-skill-UL li {
+  border: 1px solid #ddd;
+}
+
+#soft-skill-UL li a {
+  /* margin-top: -1px; */
+  /* Prevent double borders */
+  padding-left:15%;
+  padding-top:5%;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#soft-skill-UL li {
   margin: 20px;
 }
 
-.skill-display-row {
+#hard-skill-UL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+#hard-skill-UL li {
+  border: 1px solid #ddd;
+}
+
+#hard-skill-UL li a {
+  /* margin-top: -1px; */
+  /* Prevent double borders */
+  padding-left:15%;
+  padding-top:5%;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#hard-skill-UL li {
+  margin: 20px;
+}
+
+.soft-skill-display-row {
 
   height: 50px;
   border: 1px solid #ddd;
@@ -552,11 +644,20 @@ button {
 
 }
 
-.skill-add-button i {
+.soft-skill-add-button i {
 
   cursor: pointer;
   color: #3983fa;
-  padding: 10px 20px 0 15px;
+  padding: 8px 20px 8px 15px;
+  border-right: 1px solid black;
+  height: 100%;
+}
+
+.hard-skill-add-button i {
+
+  cursor: pointer;
+  color: #3983fa;
+  padding: 8px 20px 8px 15px;
   border-right: 1px solid black;
   height: 100%;
 }
@@ -572,6 +673,12 @@ button {
   border-radius: 10px;
 }
 
+.Flipped{
+  direction: rtl;
+}
+.flipping {
+  direction: ltr;
+}
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #3983fa;
@@ -583,18 +690,18 @@ button {
   background: linear-gradient(to right, #3983fa);
 }
 
-#buttons-row {
+/* #buttons-row {
   margin-top: 30%;
   bottom: 0;
-}
+} */
 
 @media screen and (max-width: 1000px) {
 
-  .skill-add-button i {
+  .soft-skill-add-button i {
       padding: 7px 5px 0 4px ;
   }
 
-  #right-skill-box li a {
+  #hard-skill-box li a {
       padding-left: 20px;
   }
   

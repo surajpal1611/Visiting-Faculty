@@ -1,4 +1,4 @@
-package com.visitingfaculty.model.faculty_personal_details;
+package com.visitingfaculty.model;
 
 public class Faculty {
     

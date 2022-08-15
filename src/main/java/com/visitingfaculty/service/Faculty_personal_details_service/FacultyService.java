@@ -1,6 +1,6 @@
 package com.visitingfaculty.service.Faculty_personal_details_service;
 
-import com.visitingfaculty.model.faculty_personal_details.Faculty;
+import com.visitingfaculty.model.Faculty;
 
 public interface FacultyService {
     
