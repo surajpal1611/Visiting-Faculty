@@ -1427,7 +1427,6 @@
           let myForm = document.getElementById('myForm')
           let formData = new FormData(myForm)
 
-
           let result = {};
           for (let entry of formData.entries()) {
             result[entry[0]] = entry[1];
@@ -1460,7 +1459,6 @@
           let personalDetailsData = {
             "facultyAddress": {},
             "facultyContact": {},
-            "facultyGender": {},
             "facultyInfo": {}
           }
 
@@ -1469,7 +1467,6 @@
 
           personalDetailsData.facultyContact.contact_number = result.contact_number
 
-          personalDetailsData.facultyGender.name = result.gender
 
           personalDetailsData.facultyInfo.f_name = result.f_name
           personalDetailsData.facultyInfo.l_name = result.l_name
@@ -1480,7 +1477,7 @@
           console.log(JSON.stringify(personalDetailsData))
 
           $.ajax({
-            url: '/insert',
+            url: '/insert-personal-details',
             type: 'post',
             dataType: 'text',
             contentType: "application/json; charset=utf-8",
@@ -1488,13 +1485,14 @@
             data: JSON.stringify(personalDetailsData),
             success: function (response) {
 
-              console.log(response)
-
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.personal-details-modal').classList.add('d-none')
+
             },
             error: function (error) {
+              
               console.log("ERROR:::::", error);
+
             }
 
           })

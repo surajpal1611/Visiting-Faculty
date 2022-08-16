@@ -2,6 +2,7 @@ package com.visitingfaculty.model.faculty_personal_details;
 
 public class FacultyInfo {
 
+    private int id;
     private String f_name;
     private String l_name;
     private String email;
@@ -70,10 +71,18 @@ public class FacultyInfo {
         this.nationality = nationality;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "FacultyInfo [date_of_birth=" + date_of_birth + ", email=" + email + ", f_name=" + f_name
-                + ", gender_lid=" + gender_lid + ", l_name=" + l_name + ", nationality=" + nationality + "]";
+                + ", gender_lid=" + gender_lid + ", id=" + id + ", l_name=" + l_name + ", nationality=" + nationality
+                + "]";
     }
-
 }
