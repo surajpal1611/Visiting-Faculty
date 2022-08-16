@@ -37,9 +37,7 @@
           <!--------------------------------------Personal Details Section ---------------------------------------->
           <div class="edit-personal-details">
             <div class="position-relative personal-information-div-wrapper d-flex" style="cursor: pointer;">
-
               <div class="personal-information-div">
-
                 <div class="cover-div p-3 px-sm-4 p-lg-4">
                   <div class="row">
                     <div class="col-md-4 col-sm-12 col-lg-3">
@@ -941,7 +939,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-md-6 col-sm-12">
           <div id="review-box">
             <div>
@@ -968,81 +965,6 @@
             </div>
           </div>
         </div>
-        <!-- <div id="hard-skill-box" class="col-4">
-
-        <div class="col-12">
-          <input type="text" id="hard-skill-search" placeholder="Search for hard skills.." class="form-control"
-            title="Type in a name">
-        </div>
-
-        <ul id="hard-skill-UL">
-          <li class="skill-list">
-            <div class="row">
-              <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i class="fa-solid fa-circle-plus fa-2x"></i>
-              </div>
-              <div class="col-md-10 col-sm-10 col-12"><a href="#">Presentation</a></div>
-            </div>
-          </li>
-          <li class="skill-list">
-            <div class="row">
-              <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i class="fa-solid fa-circle-plus fa-2x"></i>
-              </div>
-              <div class="col-md-10 col-sm-10 col-12"><a href="#">Boxing</a></div>
-            </div>
-          </li>
-          <li class="skill-list">
-            <div class="row">
-              <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i class="fa-solid fa-circle-plus fa-2x"></i>
-              </div>
-              <div class="col-md-10 col-sm-10 col-12"><a href="#">Management</a></div>
-            </div>
-          </li>
-          <li class="skill-list">
-            <div class="row">
-              <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i class="fa-solid fa-circle-plus fa-2x"></i>
-              </div>
-              <div class="col-md-10 col-sm-10 col-12"><a href="#">Analytical</a></div>
-            </div>
-          </li>
-          <li class="skill-list">
-            <div class="row">
-              <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i class="fa-solid fa-circle-plus fa-2x"></i>
-              </div>
-              <div class="col-md-10 col-sm-10 col-12"><a href="#">Marketing</a></div>
-            </div>
-          </li>
-          <li class="skill-list">
-            <div class="row">
-              <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i class="fa-solid fa-circle-plus fa-2x"></i>
-              </div>
-              <div class="col-md-10 col-sm-10 col-12"><a href="#">Financial Planning</a></div>
-            </div>
-          </li>
-          <li class="skill-list">
-            <div class="row">
-              <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i class="fa-solid fa-circle-plus fa-2x"></i>
-              </div>
-              <div class="col-md-10 col-sm-10 col-12"><a href="#">hard skill1</a></div>
-            </div>
-          </li>
-          <li class="skill-list">
-            <div class="row">
-              <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i class="fa-solid fa-circle-plus fa-2x"></i>
-              </div>
-              <div class="col-md-10 col-sm-10 col-12"><a href="#">hard skill2</a></div>
-            </div>
-          </li>
-          <li class="skill-list">
-            <div class="row">
-              <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i class="fa-solid fa-circle-plus fa-2x"></i>
-              </div>
-              <div class="col-md-10 col-sm-10 col-12"><a href="#">hard skill3</a></div>
-            </div>
-          </li>
-         
-        </ul>
-      </div> -->
-
       </div>
       <div id="save-submit-div">
         <div id="buttons-row" class="d-flex justify-content-center">
