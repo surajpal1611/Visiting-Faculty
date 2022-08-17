@@ -772,8 +772,8 @@
                     <div class="flipping">
                       <div class="col-12">
                         <input type="text" id="soft-skill-search" placeholder="Search for soft skills.."
-                          class="form-control" title="Type in a name"><span><button
-                            class="btn btn-primary d-none"></button></span>
+                          class="form-control" title="Type in a name">
+                        <span><button class="btn btn-primary "></button></span>
                       </div>
                       <ul id="soft-skill-UL">
                         <li class="skill-list">
@@ -1839,21 +1839,28 @@
           }
 
         }
+        
 
 
-        const functionforSkill = function() {for (let i = 0; i < ul.children.length; i++) {
+          function f() {
+            let allElementsDisplay = true;
 
-          let allElementsDisplay = true
-          if (ul.children[i].style.display == "none") {
-            allElementsDisplay = false;
-            break;
+          for (let i = 0; i < ul.children.length; i++) {
+            if (ul.children[i].style.display != "none") {
+ 
+              allElementsDisplay = false;
+              break;
+              
+            }else {
+              allElementsDisplay = true;
+            
+            }
+           
           }
           return allElementsDisplay;
-
         }
-        console.log(functionforSkill)
-
-    }})
+        console.log(f())
+      })
 
 
       let addAvailableSoftSkill = document.getElementById('soft-skill-box')
@@ -1891,7 +1898,7 @@
                      <li class="list-group">
                          <div class="row">
                              <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x hard-skill-delete-button" style="color:red;"></i></div>
-                             <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${text}\</a></div>
+                             <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${text}\ </a></div>
                          </div>
                      </li> `
 
@@ -1903,10 +1910,10 @@
       let addCustomSoftSkill = document.getElementById('add-custom-soft-skill')
       addCustomSoftSkill.addEventListener('click', function () {
         let customSkillValue = document.getElementById('custom-skill-input').value
-        let div = `<li class="list-group">
+        let div = ` <li class="list-group">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
-                                 <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customSkillValue}\</a></div>
+                                 <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customSkillValue}\ </a></div>
                              </div>
                        </li> `
         softSkillDisplay.insertAdjacentHTML('afterend', div)
@@ -1919,7 +1926,7 @@
         let div = `<li class="list-group">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
-                                 <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customSkillValue}\</a></div>
+                                 <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customSkillValue}\ </a></div>
                              </div>
                        </li> `
         hardSkillDisplay.insertAdjacentHTML('afterend', div)
@@ -1939,7 +1946,7 @@
                               <div class="row">
                                   <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button"><i
                                         class="fa-solid fa-circle-plus fa-2x"></i></div>
-                                 <div class="col-md-10 col-sm-10 col-10"><a href="#">\${text}\</a></div>
+                                 <div class="col-md-10 col-sm-10 col-10"><a href="#">\${text}\ </a></div>
                               </div>
                             </li>
                             `
