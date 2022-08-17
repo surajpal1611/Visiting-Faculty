@@ -187,7 +187,7 @@ hr {
   left: 100%;
 }
 
-.achievement-edit-box {
+.award-edit-box {
   width: 100px;
   height: 100%;
   background-color:rgb(121, 130, 138);
@@ -598,8 +598,8 @@ button {
 #soft-skill-UL li a {
   /* margin-top: -1px; */
   /* Prevent double borders */
-  padding-left:15%;
-  padding-top:5%;
+  /* padding-left:15%; */
+  padding-top: 10px;
   text-decoration: none;
   font-size: 18px;
   color: black;
@@ -624,8 +624,8 @@ button {
 #hard-skill-UL li a {
   /* margin-top: -1px; */
   /* Prevent double borders */
-  padding-left:15%;
-  padding-top:5%;
+  /* padding-left:15%; */
+  padding-top:10px;
   text-decoration: none;
   font-size: 18px;
   color: black;
