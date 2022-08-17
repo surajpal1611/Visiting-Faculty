@@ -29,4 +29,10 @@ public class UserAddress {
         this.address = address;
     }
 
+    @Override
+    public String toString() {
+        return "UserAddress [address=" + address + ", user_lid=" + user_lid + "]";
+    }
+
+    
 }

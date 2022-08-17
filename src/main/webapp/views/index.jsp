@@ -27,6 +27,8 @@
 
 <body>
 
+    
+
   <!-- id(body) of this div is used to hide as well as unhide the resume -->
   <div id="body">
 
@@ -65,8 +67,8 @@
                       </div>
                     </div>
 
-                    <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 text-white">
-                      <h3 p-3 id="full-name-value">Full Name</h3>
+                    <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9">
+                      <h3 p-3 id="full-name-value" style="color: #740E00;"><b>Full Name</b></h3>
                       <h5 class="ms-3">Role</h5>
                       <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -142,8 +144,8 @@
 
           <div class="position-relative qualification-div-wrapper d-flex" style="cursor: pointer;">
             <div id="qualification-div">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3>Qualification</h3>
+              <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
+                <h3><b> Qualification</b></h3>
               </div>
               <div class="text-block right">
                 <div class="card-body">
@@ -180,7 +182,7 @@
           <div class="work-experience-div-wrapper position-relative d-flex" style="cursor: pointer;">
             <div id="work-experience-div">
               <div class="d-flex justify-content-center align-items-center">
-                <h3>Work Experience</h3>
+                <h3 style="color: #740E00;"><b> Work Experience </b></h3>
               </div>
               <div class="text-block right">
                 <div class="card-body">
@@ -216,7 +218,8 @@
           <div class="skills-div-wrapper position-relative d-flex" style="cursor: pointer;">
             <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
               <div class="d-flex justify-content-center align-items-center">
-                <h3 class="mb-4 h3">Skills</h3>
+                <h3 class="mb-4 h3" style="color: #740E00;">
+                 <b> Skills</b></h3>
               </div>
               <div class="container bootstrap snippets bootdeys">
                 <div class="row">
@@ -273,7 +276,7 @@
           <div class="achievement-div-wrapper d-flex position-relative" style="cursor: pointer;">
             <div id="achievement-div">
               <div class="d-flex justify-content-center align-items-center">
-                <h3>Achievement</h3>
+                <h3  style="color: #740E00;"><b> Achievement</b></h3>
               </div>
               <div class="text-block right">
                 <div class="card-body">
@@ -309,7 +312,7 @@
           <div class="publication-div-wrapper d-flex position-relative" style="cursor: pointer;">
             <div id="publication-div" class="px-3 px-sm-4 px-lg-4">
               <div class="d-flex justify-content-center align-items-center">
-                <h3 class="mb-4 h3">Publications</h3>
+                <h3 class="mb-4 h3" style="color: #740E00;"><b> Publications </b></h3>
               </div>
               <div class="row">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -341,7 +344,7 @@
           <div class="research-div-wrapper d-flex position-relative" style="cursor: pointer;">
             <div id="research-div" class="px-3 px-sm-4 px-lg-4">
               <div class="d-flex justify-content-center align-items-center">
-                <h3 class="mb-4 pt-2 h3">Research</h3>
+                <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><b> Research </b></h3>
               </div>
               <div class="row">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -374,7 +377,7 @@
             <div id="bank-details-div">
               <div class="px-3 px-sm-4 px-lg-4">
                 <div class="d-flex justify-content-center align-items-center">
-                  <h3 class="p-md-3 pb-sm-3">Bank Details</h3>
+                  <h3 class="p-md-3 pb-sm-3" style="color: #740E00;"><b> Bank Details </b></h3>
                 </div>
                 <div class="row">
                   <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -1238,7 +1241,6 @@
       </div>
     </div>
   </div>
-
   <!-- INCLUDE JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"
     integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw=="
@@ -1411,7 +1413,6 @@
         personalDetailsData.user_address.permanent_address = result.permanent_address
 
         personalDetailsData.user_contact.contact_number = result.contact_number
-
 
         personalDetailsData.user_info.f_name = result.f_name
         personalDetailsData.user_info.l_name = result.l_name

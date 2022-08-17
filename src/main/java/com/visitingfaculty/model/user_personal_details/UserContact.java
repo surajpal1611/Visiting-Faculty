@@ -30,5 +30,10 @@ public class UserContact {
         this.contact_number = contact_number;
     }
 
-   
+    @Override
+    public String toString() {
+        return "UserContact [contact_number=" + contact_number + ", user_Lid=" + user_Lid + "]";
+    }
+
+    
 }
