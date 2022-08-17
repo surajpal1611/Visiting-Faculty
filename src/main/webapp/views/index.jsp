@@ -773,7 +773,8 @@
                       <div class="col-12">
                         <input type="text" id="soft-skill-search" placeholder="Search for soft skills.."
                           class="form-control" title="Type in a name">
-                        <span><button class="btn btn-primary "></button></span>
+                          <button type="submit" class="btn btn-primary col-4" id="add-custom-soft-skill">Add to Soft
+                            skill</button>
                       </div>
                       <ul id="soft-skill-UL">
                         <li class="skill-list">
@@ -867,6 +868,8 @@
                 <h2 class="mb-0">
                   <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
                     aria-expanded="false" aria-controls="collapseThree">
+                     <button type="submit" class="btn btn-primary col-4" id="add-custom-hard-skill">Add to Hard
+                  skill</button>
                     Hard Skill
                   </button>
                 </h2>
