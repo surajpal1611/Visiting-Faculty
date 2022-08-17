@@ -1,8 +1,7 @@
-package com.visitingfaculty.model.faculty_personal_details;
+package com.visitingfaculty.model.user_personal_details;
 
-public class FacultyInfo {
+public class UserInfo {
 
-    private int id;
     private String f_name;
     private String l_name;
     private String email;
@@ -10,10 +9,10 @@ public class FacultyInfo {
     private int gender_lid;
     private String nationality;
 
-    public FacultyInfo() {
+    public UserInfo() {
     }
 
-    public FacultyInfo(String f_name, String l_name, String email, String date_of_birth, int gender_lid,
+    public UserInfo(String f_name, String l_name, String email, String date_of_birth, int gender_lid,
             String nationality) {
         this.f_name = f_name;
         this.l_name = l_name;
@@ -71,18 +70,11 @@ public class FacultyInfo {
         this.nationality = nationality;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     @Override
     public String toString() {
-        return "FacultyInfo [date_of_birth=" + date_of_birth + ", email=" + email + ", f_name=" + f_name
-                + ", gender_lid=" + gender_lid + ", id=" + id + ", l_name=" + l_name + ", nationality=" + nationality
-                + "]";
+        return "UserInfo [date_of_birth=" + date_of_birth + ", email=" + email + ", f_name=" + f_name + ", gender_lid="
+                + gender_lid + ", l_name=" + l_name + ", nationality=" + nationality + "]";
     }
+
+    
 }

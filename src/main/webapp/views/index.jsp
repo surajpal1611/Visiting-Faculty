@@ -556,16 +556,16 @@
                 </div>
               </div>
             </div>
-
+            <div class="d-flex justify-content-center">
+              <button id="personal-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
+              <button id="personal-details-submit-button" class="btn btn-success m-4">Submit</button>
+            </div>
 
           </div>
           <div id="right-form-area" class="col-md-4 col-sm-12 col-12">
           </div>
         </form>
-        <div class="d-flex justify-content-center">
-          <button id="personal-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          <button id="personal-details-submit-button" class="btn btn-success m-4">Submit</button>
-        </div>
+    
       </div>
     </div>
   </div>
@@ -1405,23 +1405,23 @@
 
 
         let personalDetailsData = {
-          "facultyAddress": {},
-          "facultyContact": {},
-          "facultyInfo": {}
+          "user_address": {},
+          "user_contact": {},
+          "user_info": {}
         }
 
-        personalDetailsData.facultyAddress.temporary_address = result.temporary_address
-        personalDetailsData.facultyAddress.permanent_address = result.permanent_address
+        personalDetailsData.user_address.temporary_address = result.temporary_address
+        personalDetailsData.user_address.permanent_address = result.permanent_address
 
-        personalDetailsData.facultyContact.contact_number = result.contact_number
+        personalDetailsData.user_contact.contact_number = result.contact_number
 
 
-        personalDetailsData.facultyInfo.f_name = result.f_name
-        personalDetailsData.facultyInfo.l_name = result.l_name
-        personalDetailsData.facultyInfo.email = result.email
-        personalDetailsData.facultyInfo.gender_lid = Number.parseInt(result.gender)
-        personalDetailsData.facultyInfo.date_of_birth = result.date_of_birth
-        personalDetailsData.facultyInfo.nationality = result.nationality
+        personalDetailsData.user_info.f_name = result.f_name
+        personalDetailsData.user_info.l_name = result.l_name
+        personalDetailsData.user_info.email = result.email
+        personalDetailsData.user_info.gender_lid = Number.parseInt(result.gender)
+        personalDetailsData.user_info.date_of_birth = result.date_of_birth
+        personalDetailsData.user_info.nationality = result.nationality
 
         console.log(JSON.stringify(personalDetailsData))
 
@@ -1482,7 +1482,8 @@
         document.querySelector('.personal-details-modal').classList.remove('d-none');
       });
 
-      document.querySelector('#personal-details-cancel-button').addEventListener('click', function () {
+      document.querySelector('#personal-details-cancel-button').addEventListener('click', function (e) {
+        e.preventDefault()
         document.getElementById('body').classList.remove('d-none');
         document.querySelector('.personal-details-modal').classList.add('d-none')
       });

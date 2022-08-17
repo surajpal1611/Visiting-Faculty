@@ -1,14 +1,14 @@
 package com.visitingfaculty.model;
 
-public class Faculty {
+public class User {
 
     private String user_id;
     private String password_hash;
 
-    public Faculty() {
+    public User() {
     }
 
-    public Faculty(String user_id, String password_hash) {
+    public User(String user_id, String password_hash) {
         this.user_id = user_id;
         this.password_hash = password_hash;
     }
@@ -31,7 +31,8 @@ public class Faculty {
 
     @Override
     public String toString() {
-        return "Faculty [password_hash=" + password_hash + ", user_id=" + user_id + "]";
+        return "User [password_hash=" + password_hash + ", user_id=" + user_id + "]";
     }
 
+   
 }
