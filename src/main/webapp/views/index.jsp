@@ -556,16 +556,16 @@
                 </div>
               </div>
             </div>
-
+            <div class="d-flex justify-content-center">
+              <button id="personal-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
+              <button id="personal-details-submit-button" class="btn btn-success m-4">Submit</button>
+            </div>
 
           </div>
           <div id="right-form-area" class="col-md-4 col-sm-12 col-12">
           </div>
         </form>
-        <div class="d-flex justify-content-center">
-          <button id="personal-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          <button id="personal-details-submit-button" class="btn btn-success m-4">Submit</button>
-        </div>
+    
       </div>
     </div>
   </div>
@@ -1479,7 +1479,8 @@
         document.querySelector('.personal-details-modal').classList.remove('d-none');
       });
 
-      document.querySelector('#personal-details-cancel-button').addEventListener('click', function () {
+      document.querySelector('#personal-details-cancel-button').addEventListener('click', function (e) {
+        e.preventDefault()
         document.getElementById('body').classList.remove('d-none');
         document.querySelector('.personal-details-modal').classList.add('d-none')
       });
