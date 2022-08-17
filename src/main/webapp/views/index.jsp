@@ -273,10 +273,10 @@
 
           <!-------------------------------------------------- Achievement Section----------------------------------------------->
 
-          <div class="achievement-div-wrapper d-flex position-relative" style="cursor: pointer;">
+          <div class="award-div-wrapper d-flex position-relative" style="cursor: pointer;">
             <div id="achievement-div">
               <div class="d-flex justify-content-center align-items-center">
-                <h3  style="color: #740E00;"><b> Achievement</b></h3>
+                <h3>Award</h3>
               </div>
               <div class="text-block right">
                 <div class="card-body">
@@ -301,7 +301,7 @@
                 </div>
               </div>
             </div>
-            <div class="d-none achievement-edit-box d-flex justify-content-center align-items-center">
+            <div class="d-none award-edit-box d-flex justify-content-center align-items-center">
               <i class="fa-solid fa-pen fa-2x text-white "></i>
             </div>
           </div>
@@ -764,24 +764,25 @@
       <div class="row ">
 
         <div class="col-md-6 col-sm-12">
-          <div class="accordion" id="accordionExample">
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                  <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="false" aria-controls="collapseTwo">
-                    Soft Skill
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div>
+            
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Soft Skill</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Hard Skill</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div>
-                  <div id="soft-skill-box" class="col-12 Flipped">
-                    <div class="flipping">
+                  <div id="soft-skill-box" class="col-12">
+                    <div>
                       <div class="col-12">
                         <input type="text" id="soft-skill-search" placeholder="Search for soft skills.."
                           class="form-control" title="Type in a name">
-                        <span><button class="btn btn-primary "></button></span>
+                          <button type="submit" class="btn btn-primary col-4 d-none" id="add-custom-soft-skill">Add</button>
                       </div>
                       <ul id="soft-skill-UL">
                         <li class="skill-list">
@@ -869,23 +870,14 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                  <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
-                    aria-expanded="false" aria-controls="collapseThree">
-                    Hard Skill
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <div>
                   <div id="hard-skill-box" class="col-12">
 
                     <div class="col-12">
                       <input type="text" id="hard-skill-search" placeholder="Search for hard skills.."
                         class="form-control" title="Type in a name">
+                        <button type="submit" class="btn btn-primary col-4 d-none" id="add-custom-hard-skill">Add</button>
                     </div>
 
                     <ul id="hard-skill-UL">
@@ -965,21 +957,14 @@
                     </ul>
                   </div>
                 </div>
+
               </div>
             </div>
+
           </div>
         </div>
         <div class="col-md-6 col-sm-12">
           <div id="review-box">
-            <div>
-              <div class="d-flex justify-content-between mt-1">
-                <button type="submit" class="btn btn-primary col-4" id="add-custom-soft-skill">Add to Soft
-                  skill</button>
-                <button type="submit" class="btn btn-primary col-4" id="add-custom-hard-skill">Add to Hard
-                  skill</button>
-              </div>
-              <input type="text" class="form-control mb-3 mt-3" id="custom-skill-input" placeholder="Enter your skill">
-            </div>
             <h4 class="ms-2 text-primary text-center">Review Your Soft Skills</h4>
             <div id="soft-skill-review-box">
               <ul id="soft-skill-display">
@@ -1007,12 +992,12 @@
 
   <!-- ************************************************************************Achievement Modal Div******************************************************************************************** -->
 
-  <div class="achievement-modal d-none">
+  <div class="award-modal d-none">
     <div class="full-screen container">
       <div class="main-content">
         <div class="container d-flex justify-content-between">
-          <h3 class="text-white h3 py-4"> Achievement</h3>
-          <i id="achievement-add-button" class="fa-solid text-white fa-circle-plus fa-2x px-4 py-4"></i>
+          <h3 class="text-white h3 py-4"> Award </h3>
+          <i id="award-add-button" class="fa-solid text-white fa-circle-plus fa-2x px-4 py-4"></i>
         </div>
         <hr>
         <div class="d-flex align-items-centre justify-content-centre">
@@ -1023,25 +1008,25 @@
                   <thead class="text-white">
                     <tr class="table-head">
                       <th>Type</th>
-                      <th>Achievement name</th>
+                      <th>Award name</th>
                       <th>Organisation</th>
                       <th>Organisation type</th>
                       <th>Place</th>
-                      <th>Achievement date</th>
+                      <th>Received date</th>
                       <th>Certificate</th>
                       <th>Action</th>
                     </tr>
                   </thead>
-                  <tbody id="achievement-data">
+                  <tbody id="award-data">
                     <tr data-toggle="collapse" class="collapsed">
-                      <td><select class="form-control">
-                          <option>Select</option>
-                          <option>Award</option>
-                          <option>Publication</option>
-                        </select></td>
+                      <td class="text-white pb-3" >Award</td>
                       <td><input class="form-control" type="text"></td>
                       <td><input class="form-control" type="text"></td>
-                      <td><input class="form-control" type="text"></td>
+                      <td><select class="form-control" >
+                        <option value="0">-select-</option>
+                        <option value="1">School</option>
+                        <option value="2">University</option>
+                      </select></td>
                       <td><input class="form-control" type="text"></td>
                       <td><input class="form-control" type="date"></td>
                       <td><input class="form-control" type="file"></td>
@@ -1055,8 +1040,8 @@
         </div>
       </div>
       <div class="d-flex justify-content-center">
-        <button id="achievement-cancel-button" class="btn btn-danger m-4">Cancel</button>
-        <button id="achievement-submit-button" class="btn btn-success m-4">Submit</button>
+        <button id="award-cancel-button" class="btn btn-danger m-4">Cancel</button>
+        <button id="award-submit-button" class="btn btn-success m-4">Submit</button>
       </div>
     </div>
   </div>
@@ -1068,7 +1053,7 @@
     <div class="full-screen container ">
       <div class="main-content">
         <div class="container d-flex justify-content-between">
-          <h3 class="text-white h3 py-4">Books published</h3>
+          <h3 class="text-white h3 ps-1 py-4">Publication</h3>
           <i id="publication-add-button" class="fa-solid text-white fa-circle-plus fa-2x"></i>
 
         </div>
@@ -1088,12 +1073,13 @@
                         <th>Book-Title</th>
                         <th>Publisher</th>
                         <th>Year-of-publication</th>
+                        <th>Certificate</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody id="publication-data">
                       <tr data-toggle="collapse" class="collapsed">
-                        <td><input data-title="Title" class="form-control" type="text"></td>
+                        <td class="text-white pb-3">Publication</td>
                         <td><select data-title="Role ?" class="form-control" id="role">
                             <option>-Select-</option>
                             <option value="Edited">Edited</option>
@@ -1104,8 +1090,8 @@
                         </td>
                         <td><input data-title="Book-Title" class="form-control" type="text"></td>
                         <td><input data-title="Publisher" class="form-control" type="text"></td>
-                        <td><input data-title="Year-of-publication" class="form-control" type="text">
-                        </td>
+                        <td><input data-title="Year-of-publication" class="form-control" type="text"></td>
+                        <td><input data-title="Certificate" class="form-control" type="file"></td>
                         <td></td>
                       </tr>
                     </tbody>
@@ -1131,7 +1117,7 @@
     <div class="full-screen container ">
       <div class="main-content">
         <div class="container d-flex justify-content-between">
-          <h3 class="text-white h3 py-4">Research papers published</h3>
+          <h3 class="text-white h3 py-4">Research</h3>
           <i id="research-add-button" class="fa-solid text-white fa-circle-plus fa-2x"></i>
         </div>
         <hr>
@@ -1149,12 +1135,13 @@
                         <th>Volume-year</th>
                         <th>Number</th>
                         <th>Category</th>
+                        <th>Certificate</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody id="research-data">
                       <tr data-toggle="collapse" class="collapsed">
-                        <td><input data-title="Title" class="form-control" type="text"></td>
+                        <td class="text-white pb-3">Research</td>
                         <td><select data-title="Role-?" class="form-control" id="role">
                             <option>-Select-</option>
                             <option value="Sole">Sole</option>
@@ -1163,8 +1150,8 @@
                         <td><input data-title="Journal-name" class="form-control" type="text"></td>
                         <td><input data-title="Volume-year" class="form-control" type="text"></td>
                         <td><input data-title="Number" class="form-control" type="text"></td>
-                        <td><input data-title="Category" class="form-control" type="text">
-                        </td>
+                        <td><input data-title="Category" class="form-control" type="text"></td>
+                        <td><input data-title="Certificate" class="form-control" type="file"></td>
                         <td></td>
                       </tr>
                     </tbody>
@@ -1329,13 +1316,13 @@
       })
 
 
-      $('.achievement-div-wrapper').on('mouseover', function () {
-        $('.achievement-edit-box').removeClass('d-none')
+      $('.award-div-wrapper').on('mouseover', function () {
+        $('.award-edit-box').removeClass('d-none')
 
       })
 
-      $('.achievement-div-wrapper').on('mouseleave', function () {
-        $('.achievement-edit-box').addClass('d-none')
+      $('.award-div-wrapper').on('mouseleave', function () {
+        $('.award-edit-box').addClass('d-none')
 
       })
 
@@ -1719,38 +1706,38 @@
         $(this).closest('tr').remove()
       })
 
-      //*************************************Achievement-modal JS****************************************
+      //*************************************Award-modal JS****************************************
 
 
-      document.querySelector(".achievement-edit-box").addEventListener('click', function () {
+      document.querySelector(".award-edit-box").addEventListener('click', function () {
         document.getElementById('body').classList.add('d-none');
-        document.querySelector('.achievement-modal').classList.remove('d-none');
+        document.querySelector('.award-modal').classList.remove('d-none');
       });
 
-      document.querySelector("#achievement-cancel-button").addEventListener('click', function () {
+      document.querySelector("#award-cancel-button").addEventListener('click', function () {
         document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.achievement-modal').classList.add('d-none');
+        document.querySelector('.award-modal').classList.add('d-none');
       });
 
-      document.getElementById('achievement-add-button').addEventListener('click', function () {
+      document.getElementById('award-add-button').addEventListener('click', function () {
         let table = `   <tr data-toggle="collapse" class="collapsed">
-                        <td><select class="form-control">
-                          <option>Select</option>
-                          <option>Award</option>
-                          <option>Publication</option>
-                        </select></td>
+                        <td class="text-white pb-3">Award</td>
                         <td><input class="form-control" type="text"></td>
                         <td><input class="form-control" type="text"></td>
-                        <td><input class="form-control" type="text"></td>
+                        <td><select class="form-control" >
+                        <option value="0">-select-</option>
+                        <option value="1">School</option>
+                        <option value="2">University</option>
+                      </select></td>
                         <td><input class="form-control" type="text"></td>
                         <td><input class="form-control" type="date"></td>
                         <td><input class="form-control" type="file"></td>
-                        <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 achievement-delete-button"></i></td>
+                        <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 award-delete-button"></i></td>
                       </tr>
        `
-        document.getElementById('achievement-data').insertAdjacentHTML("beforeend", table);
+        document.getElementById('award-data').insertAdjacentHTML("beforeend", table);
       })
-      $(document).on('click', '.achievement-delete-button', function () {
+      $(document).on('click', '.award-delete-button', function () {
         $(this).closest('tr').remove()
       })
 
@@ -1769,7 +1756,7 @@
 
       document.getElementById('publication-add-button').addEventListener('click', function () {
         let table = ` <tr data-toggle="collapse" class="collapsed">
-            <td><input data-title="Title" class="form-control" type="text"></td>
+            <td class="text-white pb-3" >Publication</td>
             <td><select data-title="Role ?" class="form-control" id="role">
                     <option>-Select-</option>
                     <option value="Edited">Edited</option>
@@ -1783,6 +1770,7 @@
             <td><input data-title="Year-of-publication" class="form-control"
                     type="text">
             </td>
+            <td><input data-title="Certificate" class="form-control" type="file"></td>
             <td> <i class="fa-solid fa-trash-can text-white h4 publication-delete-button" data-title="Action"></i></td>
                        </tr>`
         document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
@@ -1807,7 +1795,7 @@
 
       document.getElementById('research-add-button').addEventListener('click', function () {
         let table = ` <tr data-toggle="collapse" class="collapsed">
-            <td><input data-title="Title" class="form-control" type="text"></td>
+            <td class="text-white pb-3">Research</td>
             <td><select data-title="Role-?" class="form-control" id="role">
                     <option>-Select-</option>
                     <option value="Sole">Sole</option>
@@ -1817,6 +1805,7 @@
             <td><input data-title="Volume-year" class="form-control" type="text"></td>
             <td><input data-title="Number" class="form-control" type="text"></td>
             <td><input data-title="Category" class="form-control" type="text"></td>
+            <td><input data-title="Certificate" class="form-control" type="file"></td>
             <td class="p-2 !important"> <i class="fa-solid fa-trash-can text-white h4 research-delete-button" data-title=" Action"></i> </td>
                   </tr>`
 
@@ -1902,11 +1891,12 @@
 
       })
 
-      let skillSearchButton = document.getElementById('soft-skill-search')
-      skillSearchButton.addEventListener('keyup', function myFunction() {
+      let softSkillSearchButton = document.getElementById('soft-skill-search')
+      softSkillSearchButton.addEventListener('keyup', function myFunction() {
         // Declare variables
         var input, filter, ul, li, a, i, txtValue;
 
+        // Input for the variables declared
         input = document.getElementById('soft-skill-search');
         filter = input.value.toUpperCase();
         ul = document.getElementById("soft-skill-UL");
@@ -1917,8 +1907,6 @@
 
           a = li[i].getElementsByTagName("a")[0];
           txtValue = a.textContent || a.innerText;
-
-
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
           } else {
@@ -1927,26 +1915,18 @@
 
         }
         
-
-
-          function f() {
-            let allElementsDisplay = true;
-
-          for (let i = 0; i < ul.children.length; i++) {
-            if (ul.children[i].style.display != "none") {
- 
-              allElementsDisplay = false;
-              break;
-              
-            }else {
-              allElementsDisplay = true;
-            
-            }
-           
+        // Loop for adding custom soft-skill if no options are present
+        for (let i = 0; i < ul.children.length; i++) {
+          if (ul.children[i].style.display != "none") {
+            document.getElementById('add-custom-soft-skill').classList.add('d-none');
+            break;
           }
-          return allElementsDisplay;
+          else {
+            document.getElementById('add-custom-soft-skill').classList.remove('d-none');
+          
+          }
         }
-        console.log(f())
+        
       })
 
 
@@ -1975,6 +1955,43 @@
         }
       })
 
+      let hardSkillSearchButton = document.getElementById('hard-skill-search')
+      hardSkillSearchButton.addEventListener('keyup', function myFunction() {
+        // Declare variables
+        var input, filter, ul, li, a, i, txtValue;
+
+        // Input for the variables declared
+        input = document.getElementById('hard-skill-search');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("hard-skill-UL");
+        li = ul.getElementsByTagName('li');
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+        
+        // Loop for adding custom hard-skill if no options are present
+        for (let i = 0; i < ul.children.length; i++) {
+          if (ul.children[i].style.display != "none") {
+            document.getElementById('add-custom-hard-skill').classList.add('d-none');
+            break;
+          } else {
+            document.getElementById('add-custom-hard-skill').classList.remove('d-none');
+          
+          }
+        }
+        
+      })
+
+
       addAvailableHardSkill.addEventListener('click', function (event) {
         let element = event.target
         if (element.matches('i')) {
@@ -1996,28 +2013,32 @@
 
       let addCustomSoftSkill = document.getElementById('add-custom-soft-skill')
       addCustomSoftSkill.addEventListener('click', function () {
-        let customSkillValue = document.getElementById('custom-skill-input').value
+        let customSoftSkillValue = document.getElementById('soft-skill-search').value
         let div = ` <li class="list-group">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
-                                 <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customSkillValue}\ </a></div>
+                                 <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customSoftSkillValue}\ </a></div>
                              </div>
                        </li> `
         softSkillDisplay.insertAdjacentHTML('afterend', div)
-        document.getElementById('custom-skill-input').value = ''
+        document.getElementById('soft-skill-search').value = ''
+        document.getElementById('add-custom-soft-skill').classList.add('d-none');
+
       })
 
       let addCustomHardSkill = document.getElementById('add-custom-hard-skill')
       addCustomHardSkill.addEventListener('click', function () {
-        let customSkillValue = document.getElementById('custom-skill-input').value
+        let customHardSkillValue = document.getElementById('hard-skill-search').value
         let div = `<li class="list-group">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
-                                 <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customSkillValue}\ </a></div>
+                                 <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customHardSkillValue}\ </a></div>
                              </div>
                        </li> `
         hardSkillDisplay.insertAdjacentHTML('afterend', div)
-        document.getElementById('custom-skill-input').value = ''
+        document.getElementById('hard-skill-search').value = ''
+        document.getElementById('add-custom-hard-skill').classList.add('d-none');
+
       })
 
       document.getElementById('soft-skill-review-box').addEventListener('click', function (event) {
