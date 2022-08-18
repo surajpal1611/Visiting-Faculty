@@ -7,16 +7,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.visitingfaculty.dto.UserDto;
 import com.visitingfaculty.dto.UserPersonalDetailsDTO;
 
 @RestController
 public class UserRestController {
-    
 
     @PostMapping(value="/insert-personal-details", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> insert(@RequestBody UserPersonalDetailsDTO personalDetailsData) {
 
         System.out.println(personalDetailsData);
         return new ResponseEntity<String>("Inserted Successfully", HttpStatus.OK);
+    }
+
+    @PostMapping("/verify-login")
+    public String verifyUserLogin(UserDto dto) {
+        return null;
     }
 }

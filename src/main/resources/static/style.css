@@ -262,19 +262,12 @@ body {
   right: 0;
   left: 100%;
 }
-
+ 
 .bank-details-edit-box i {
   color: #b12828 !important;
 
 }
 /*************************************************************** Skills **************************************************/
-
-
-.card-big-shadow {
-  max-width: 80%;
-  margin: auto;
-  position: relative;
-}
 
 .coloured-cards .card {
   margin-top: 30px;
