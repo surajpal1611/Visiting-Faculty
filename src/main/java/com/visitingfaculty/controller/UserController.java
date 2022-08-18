@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class UserController {
     
 
+    @GetMapping("/login")
+    public String getLoginPage() {
+        return "login";
+    }
+
     @GetMapping("/dashboard")
     public String getDashBoard() {
         return "index";

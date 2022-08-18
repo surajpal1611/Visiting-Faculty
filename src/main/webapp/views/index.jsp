@@ -12,22 +12,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
   <link rel="stylesheet" href="./style.css" />
 
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
   <title>Resume</title>
 </head>
 
 <body>
 
-    
+
 
   <!-- id(body) of this div is used to hide as well as unhide the resume -->
   <div id="body">
@@ -219,48 +209,45 @@
             <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
               <div class="d-flex justify-content-center align-items-center">
                 <h3 class="mb-4 h3" style="color: #740E00;">
-                 <b> Skills</b></h3>
+                  <b> Skills</b></h3>
               </div>
               <div class="container bootstrap snippets bootdeys">
                 <div class="row">
                   <div class="col-md-6 col-sm-12 content-card">
-                    <div class="card-big-shadow">
-                      <div class="card card-just-text" data-background="color" data-color="grey" data-radius="none">
-                        <div class="content">
-                          <h4 class="title">Hard Skills</h4>
-                          <p class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto eius optio
-                            voluptatum
-                            illum quidem deserunt reiciendis facilis nostrum temporibus. Repellat provident saepe rem
-                            impedit distinctio voluptatem non magnam numquam?
-                            Deserunt quam dignissimos delectus magni voluptatum a sequi corporis molestias nulla,
-                            ratione
-                            libero! Qui dolor ad sed adipisci iure possimus blanditiis, molestiae magnam inventore
-                            cupiditate, dolore enim autem, obcaecati assumenda!
-                          </p>
-                        </div>
-                      </div> <!-- end card -->
-                    </div>
+                    <div class="card card-just-text" data-background="color" data-color="grey" data-radius="none">
+                      <div class="content">
+                        <h4 class="title">Hard Skills</h4>
+                        <p class="description">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto eius optio
+                          voluptatum
+                          illum quidem deserunt reiciendis facilis nostrum temporibus. Repellat provident saepe rem
+                          impedit distinctio voluptatem non magnam numquam?
+                          Deserunt quam dignissimos delectus magni voluptatum a sequi corporis molestias nulla,
+                          ratione
+                          libero! Qui dolor ad sed adipisci iure possimus blanditiis, molestiae magnam inventore
+                          cupiditate, dolore enim autem, obcaecati assumenda!
+                        </p>
+                      </div>
+                    </div> <!-- end card -->
                   </div>
 
                   <div class="col-md-6 col-sm-12 content-card">
-                    <div class="card-big-shadow">
-                      <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
-                        <div class="content">
-                          <h4 class="title">Soft Skills</h4>
-                          <p class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto eius optio
-                            voluptatum
-                            illum quidem deserunt reiciendis facilis nostrum temporibus. Repellat provident saepe rem
-                            impedit distinctio voluptatem non magnam numquam?
-                            Deserunt quam dignissimos delectus magni voluptatum a sequi corporis molestias nulla,
-                            ratione
-                            libero! Qui dolor ad sed adipisci iure possimus blanditiis, molestiae magnam inventore
-                            cupiditate, dolore enim autem, obcaecati assumenda!
-                          </p>
-                        </div>
-                      </div> <!-- end card -->
-                    </div>
+
+                    <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
+                      <div class="content">
+                        <h4 class="title">Soft Skills</h4>
+                        <p class="description">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto eius optio
+                          voluptatum
+                          illum quidem deserunt reiciendis facilis nostrum temporibus. Repellat provident saepe rem
+                          impedit distinctio voluptatem non magnam numquam?
+                          Deserunt quam dignissimos delectus magni voluptatum a sequi corporis molestias nulla,
+                          ratione
+                          libero! Qui dolor ad sed adipisci iure possimus blanditiis, molestiae magnam inventore
+                          cupiditate, dolore enim autem, obcaecati assumenda!
+                        </p>
+                      </div>
+                    </div> <!-- end card -->
                   </div>
                 </div>
               </div>
@@ -276,7 +263,7 @@
           <div class="award-div-wrapper d-flex position-relative" style="cursor: pointer;">
             <div id="achievement-div">
               <div class="d-flex justify-content-center align-items-center">
-                <h3>Award</h3>
+                <h3 style="color: #740E00;"><b> Awards </b></h3>
               </div>
               <div class="text-block right">
                 <div class="card-body">
@@ -568,7 +555,7 @@
           <div id="right-form-area" class="col-md-4 col-sm-12 col-12">
           </div>
         </form>
-    
+
       </div>
     </div>
   </div>
@@ -733,13 +720,15 @@
 
         <div class="col-md-6 col-sm-12">
           <div>
-            
+
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
               <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Soft Skill</button>
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                  type="button" role="tab" aria-controls="pills-home" aria-selected="true">Soft Skill</button>
               </li>
               <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Hard Skill</button>
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                  type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Hard Skill</button>
               </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
@@ -750,13 +739,14 @@
                       <div class="col-12">
                         <input type="text" id="soft-skill-search" placeholder="Search for soft skills.."
                           class="form-control" title="Type in a name">
-                          <button type="submit" class="btn btn-primary col-4 d-none" id="add-custom-soft-skill">Add</button>
+                        <button type="submit" class="btn btn-primary col-4 d-none"
+                          id="add-custom-soft-skill">Add</button>
                       </div>
                       <ul id="soft-skill-UL">
                         <li class="skill-list">
                           <div class="row">
-                            <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button"><i
-                                class="fa-solid fa-circle-plus fa-2x"></i>
+                            <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button">
+                              <i class="fa-solid fa-circle-plus fa-2x"></i>
                             </div>
                             <div class="col-md-10 col-sm-10 col-12"><a href="#">Java</a></div>
                           </div>
@@ -845,7 +835,7 @@
                     <div class="col-12">
                       <input type="text" id="hard-skill-search" placeholder="Search for hard skills.."
                         class="form-control" title="Type in a name">
-                        <button type="submit" class="btn btn-primary col-4 d-none" id="add-custom-hard-skill">Add</button>
+                      <button type="submit" class="btn btn-primary col-4 d-none" id="add-custom-hard-skill">Add</button>
                     </div>
 
                     <ul id="hard-skill-UL">
@@ -987,14 +977,14 @@
                   </thead>
                   <tbody id="award-data">
                     <tr data-toggle="collapse" class="collapsed">
-                      <td class="text-white pb-3" >Award</td>
+                      <td class="text-white pb-3">Award</td>
                       <td><input class="form-control" type="text"></td>
                       <td><input class="form-control" type="text"></td>
-                      <td><select class="form-control" >
-                        <option value="0">-select-</option>
-                        <option value="1">School</option>
-                        <option value="2">University</option>
-                      </select></td>
+                      <td><select class="form-control">
+                          <option value="0">-select-</option>
+                          <option value="1">School</option>
+                          <option value="2">University</option>
+                        </select></td>
                       <td><input class="form-control" type="text"></td>
                       <td><input class="form-control" type="date"></td>
                       <td><input class="form-control" type="file"></td>
@@ -1206,12 +1196,9 @@
     integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
   <script>
     let downloadButton = document.getElementById("download-btn");
     downloadButton.addEventListener("click", function () {
@@ -1350,7 +1337,7 @@
         document.getElementById('gender-value').innerText = result.gender
         document.getElementById('full-name-value').innerText = result.f_name + " " + result.l_name
 
-//loop and names has been changed therfore this image parameters cannot be added
+        //loop and names has been changed therfore this image parameters cannot be added
 
         // if (submitPersonalDetailsForm.get('pancardPhoto').length != 0) {
         //   document.getElementById('pancard-photo').firstElementChild.classList.remove('fa-ban')
@@ -1573,9 +1560,7 @@
 
         fetchRes.then(success => {
 
-          console.log(success)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.qualification-modal').classList.add('d-none');
+          })
 
         })
                          
@@ -1819,19 +1804,18 @@
           }
 
         }
-        
+
         // Loop for adding custom soft-skill if no options are present
         for (let i = 0; i < ul.children.length; i++) {
           if (ul.children[i].style.display != "none") {
             document.getElementById('add-custom-soft-skill').classList.add('d-none');
             break;
-          }
-          else {
+          } else {
             document.getElementById('add-custom-soft-skill').classList.remove('d-none');
-          
+
           }
         }
-        
+
       })
 
 
@@ -1882,7 +1866,7 @@
             li[i].style.display = "none";
           }
         }
-        
+
         // Loop for adding custom hard-skill if no options are present
         for (let i = 0; i < ul.children.length; i++) {
           if (ul.children[i].style.display != "none") {
@@ -1890,10 +1874,10 @@
             break;
           } else {
             document.getElementById('add-custom-hard-skill').classList.remove('d-none');
-          
+
           }
         }
-        
+
       })
 
 
