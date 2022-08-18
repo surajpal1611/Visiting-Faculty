@@ -35,7 +35,7 @@ body {
   padding-bottom: 50px;
 }
 
-hr {
+#body hr {
   margin: 25px 0;
   height: 2px !important;
   color: #740E00;
@@ -200,6 +200,10 @@ hr {
   left: 100%;
 }
 
+.skills-edit-box i {
+  color: #b12828 !important;
+}
+
 .award-edit-box {
   width: 100px;
   height: 100%;
@@ -208,6 +212,12 @@ hr {
   position: absolute;
   right: 0;
   left: 100%;
+  
+}
+
+.award-edit-box i {
+  color: #b12828 !important;
+
 }
 
 .achievement-edit-box i {
@@ -329,15 +339,15 @@ hr {
 }
 
 /*======== COLORS ===========*/
-.card[data-color="grey"] {
-}
+/* .card[data-color="grey"] {
+} */
 
 .card[data-color="grey"] .description {
   color: white;
 }
-
+/* 
 .card[data-color="green"] {
-}
+} */
 
 /* ********************************Personal Details Div Styling***************************************/
 
