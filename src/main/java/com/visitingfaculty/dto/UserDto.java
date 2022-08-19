@@ -3,15 +3,15 @@ package com.visitingfaculty.dto;
 public class UserDto {
 
     private String user_id;
-    private String password_hash;
+    private String password;
     private String email;
 
     public UserDto() {
     }
 
-    public UserDto(String user_id, String password_hash, String email) {
+    public UserDto(String user_id, String password, String email) {
         this.user_id = user_id;
-        this.password_hash = password_hash;
+        this.password = password;
         this.email = email;
     }
 
@@ -24,11 +24,11 @@ public class UserDto {
     }
 
     public String getPassword_hash() {
-        return password_hash;
+        return password;
     }
 
-    public void setPassword_hash(String password_hash) {
-        this.password_hash = password_hash;
+    public void setPassword_hash(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -41,7 +41,7 @@ public class UserDto {
 
     @Override
     public String toString() {
-        return "UserDto [email=" + email + ", password_hash=" + password_hash + ", user_id=" + user_id + "]";
+        return "UserDto [email=" + email + ", password=" + password + ", user_id=" + user_id + "]";
     }
 
 }
