@@ -426,19 +426,14 @@
             </div>
             <div class="container">
               <div id="name-row" class="row mb-3">
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                   <label for="first-name" cl>First Name</label>
-                  <span id="first-name-message" class="error"></span>
+                  <span id="first-name-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
                 </div>
-                <div class="col-md-4 col-sm-12">
-                  <label for="middle-name">Middle Name</label>
-                  <span id="middle-name-message" class="error"></span>
-                  <input type="text" class="form-control" id="middle-name" placeholder="Middle Name">
-                </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                   <label for="last-name">last Name</label>
-                  <span id="last-name-message" class="error"></span>
+                  <span id="last-name-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
                 </div>
               </div>
@@ -471,12 +466,12 @@
               <div id="left-third-row" class="row">
                 <div class="col-md-6">
                   <label for="contact-number">Contact No.</label>
-                  <span id="contact-number-message" class="error"></span>
+                  <span id="contact-number-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="contact_number" id="contact-number" />
                 </div>
                 <div class="col-md-6">
                   <label for="email">Email Id</label>
-                  <span id="email-message" class="error"></span>
+                  <span id="email-message" style="color: red;" class="error"></span>
                   <input type="text" name="email" class="form-control" id="email">
                 </div>
               </div>
@@ -486,7 +481,7 @@
               <div id="left-fourth-row" class="row">
                 <div class="col-md-6">
                   <label for="pan-number">Pan Card Number</label>
-                  <span id="pan-number-message" class="error"></span>
+                  <span id="pan-number-message"  style="color: red;" class="error"></span>
                   <input type="text" name="pan_number" class="form-control" id="pan-number" />
                 </div>
                 <div class="col-md-6">
@@ -501,7 +496,7 @@
               <div id="left-fourth-row" class="row">
                 <div class="col-md-6">
                   <label for="aadhar-number">Aadhar Card Number</label>
-                  <span id="name-message" class="error"></span>
+                  <span id="aadhar-number-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
                 </div>
                 <div class="col-md-6">
@@ -539,7 +534,7 @@
                 <span id="state-message" class="error"></span>
                 <input type="text" class="form-control" id="state">
               </div> -->
-                <div class="col-md-4">
+                <div class="col-md-12">
                   <label for="country">Country</label>
                   <span id="country-message" class="error"></span>
                   <input type="text" name="nationality" class="form-control" id="country">
@@ -1200,6 +1195,210 @@
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
   <script>
+
+// --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
+
+          function isCharNumber(res) {
+            for (let i = 0; i < checkLength(res); i++) {
+              var c = res.charCodeAt(i);
+          
+              if (!(c > 47 && c < 58)) {
+                return false;
+              }
+            }
+            return true;
+          }
+          
+          function isCharAlphabet(res) {
+            for (let i = 0; i < checkLength(res); i++) {
+              var c = res.charCodeAt(i);
+          
+              if (
+                !(c > 47 && c < 58) &&
+                !(c > 64 && c < 91) &&
+                !(c > 96 && c < 123) &&
+                c != 32
+              ) {
+                return false;
+              }
+            }
+            return true;
+          }
+          
+          function isSpecialChar(char) {
+            return (
+              (char >= 65 && char < 91) ||
+              (char >= 97 && char < 123) ||
+              (char >= "0" && char <= "9")
+            );
+          }
+          
+          function checkLength(value) {
+            return value.length;
+          }
+          
+          function clearError() {
+            errors = document.getElementsByClassName("error");
+            for (const item of errors) {
+              item.innerHTML = "";
+            }
+          } 
+
+          const firstName = document.getElementById("first-name");
+          const lastName = document.getElementById("last-name");
+          const contactNumber = document.getElementById("contact-number");
+          const email = document.getElementById("email");
+          const pancard = document.getElementById("pan-number");
+          const aadhar = document.getElementById("aadhar-number");
+          let condition;
+
+          function personalDetailFirstNameValidation() {
+            let res = firstName.value;
+          
+            if (checkLength(res) > 2) {
+              if (!isCharNumber(res)) {
+                condition = true;
+              } else {
+                document.getElementById("first-name-message").innerHTML = "*Numbers are not allowed";
+                condition = false;
+              }
+            } else {
+              document.getElementById("first-name-message").innerHTML = "*Invalid length";
+              condition = false;
+            }
+            return condition;
+          }
+
+          function personalDetailLastNameValidation() {
+            let res = lastName.value;
+          
+            if (checkLength(res) > 2) {
+              if (!isCharNumber(res)) {
+                condition = true;
+              } else {
+                document.getElementById("last-name-message").innerHTML = "*Numbers are not allowed";
+                condition = false;
+              }
+            } else {
+              document.getElementById("last-name-message").innerHTML = "*Invalid length";
+              condition = false;
+            }
+            return condition;
+          }
+          
+         function personalDetailContactNumberValidation() {
+          let res = contactNumber.value
+          if (res.length != 10) {
+               document.getElementById('contact-number-message').innerHTML = "*Invalid length";
+               condition = false;
+              }
+            else {
+               if (isNaN(res)) {
+                   document.getElementById('contact-number-message').innerHTML = "*Characters Not Allowed";
+                   condition = false;
+               } 
+               else {
+                   if ((res.charAt(0) != 9) && (res.charAt(0) != 8) && (res.charAt(0) != 7) && (res.charAt(0) != 6)) {
+                       document.getElementById('contact-number-message').innerHTML = "*Invalid phone number";
+                       condition = false;
+                      }
+                    else {
+                      condition = true;
+                    }
+                }
+            }
+            return condition;
+          }
+
+          function personalDetailEmailValidation() {
+             let res = email.value;
+             var atposition = res.indexOf('@');
+             var dotposition = res.lastIndexOf('.');
+             if (atposition < 1 || (res.length - 2) == dotposition) {
+               (document).getElementById('email-message').innerHTML = "*Invalid email address";
+                condition = false;             
+             } else if (atposition < dotposition) {
+               condition = true;             
+            } else {
+              (document).getElementById('email-message').innerHTML = "*Invalid email address";
+              condition = false;             
+             }
+             return condition;
+          }
+
+          function personalDetailPancardValidation() {
+              let pan = pancard.value;
+              if (pan.length != 10) {
+                document.getElementById('pan-number-message').innerHTML = "*Invalid length of Pancard Number";
+                condition = false;
+              } 
+              else {
+                  let firstfive = pan.substring(0, 5);
+                  let nextfour = pan.substring(5, 9);
+                  for (let i = 0; i < firstfive.length; i++) {
+                      if (firstfive[i] >= 'A' && firstfive[i] <= 'Z') {
+                          for (let k = 0; k < nextfour.length; k++) {
+                              if (nextfour[k] >= '0' && nextfour[k] <= '9') {
+                                  if (pan[9] >= 'A' && pan[9] <= 'Z') {
+                                    condition = true;
+                                   }    
+                                  else {
+                                    document.getElementById('pan-number-message').innerHTML = "*Invalid Last Digit";
+                                    condition = false;
+                                    }
+                                 } 
+                              else {
+                                document.getElementById('pan-number-message').innerHTML = "*Error Inbetween Numbers";
+                                condition = false;
+                                break;
+                                 }
+                              }
+                          }
+                         else {
+                           document.getElementById('pan-number-message').innerHTML = "Error Inbetween First Five Characters";
+                           condition = false;
+                           break;
+                         }
+                      }
+                 }
+                 return condition;
+           }
+
+           function personalDetailAadharValidation() {
+            
+            let res = aadhar.value;
+            
+            if (res.length == 12) {
+            
+                document.getElementById('aadhar-number-message').innerHTML = "Invalid Adhar Number";
+                condition = false;
+            
+            } 
+            else {
+            
+                for (let i = 0; i < res.length; i++) {
+            
+            console.log("entered inside for loop")
+                    if (res[i] < '0' || res[i] > '9') {
+            
+                      condition = false;
+                        document.getElementById('aadhar-number-message').innerHTML = "Special Character not allowed";
+                        break;
+            
+                    } 
+
+                    else {
+            
+                        condition = true;
+            
+                       }
+               
+                 }
+               
+               }
+               return condition;
+          }
+          
     let downloadButton = document.getElementById("download-btn");
     downloadButton.addEventListener("click", function () {
       let elementHTML = document.getElementById("body");
@@ -1317,6 +1516,20 @@
       document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
 
         e.preventDefault()
+
+        clearError();
+
+        var firstName1 = personalDetailFirstNameValidation();
+        var lastName1 = personalDetailLastNameValidation();
+        var contactNumber1 = personalDetailContactNumberValidation();
+        var pancard1 = personalDetailPancardValidation();
+        var email1 = personalDetailEmailValidation();
+        var aadhar1 = personalDetailAadharValidation();
+
+        if (!firstName1 || !lastName1 || !contactNumber1 || !pancard1 || !email1 || !aadhar1) {
+
+              return;
+      }
 
         let myForm = document.getElementById('myForm')
         let formData = new FormData(myForm)
@@ -1561,10 +1774,10 @@
         fetchRes.then(success => {
 
           })
+          console.log( JSON.stringify(qualificationTableData));
 
         })
                          
-            console.log( JSON.stringify(qualificationTableData));
        
       });
 
