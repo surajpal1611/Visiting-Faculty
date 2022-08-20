@@ -586,75 +586,21 @@
                       <th>Action</th>
                     </tr>
                   </thead>
-                  <tbody id="bachelors-degree-data">
-                    <tr data-toggle="collapse" class="collapsed">
-                      <td class="text-white " id="bachelors-degree-title"><input type="hidden"
-                          class="qualification-title" value="1">Bachelor's Degree</td>
-                      <td><input class="form-control qualification-subject" id="bachelors-degree-major-subject"
-                          type="text"></td>
-                      <td><input class="form-control qualification-university" id="bachelors-degree-university"
-                          type="text"></td>
-                      <td><input class="form-control qualification-college" id="bachelors-degree-college" type="text">
-                      </td>
-                      <td><input class="form-control qualification-percentile" id="bachelors-degree-percentile"
-                          type="text"></td>
-                      <td><input class="form-control qualification-year" id="bachelors-degree-year-of-passing"
-                          type="text"></td>
-                      <td><input class="form-control qualification-certificate" id="bachelors-degree-certificate"
-                          type="file"></td>
-                      <td><i id="bachelors-degree-add-button" class="fa-solid text-white fa-circle-plus "></i></td>
-                    </tr>
-                  </tbody>
-                  <tbody id="masters-degree-data">
-                    <tr data-toggle="collapse" class="collapsed">
-                      <td class="text-white" id="masters-degree-title"><input type="hidden" class="qualification-title"
-                          value="2">Master's Degree</td>
-                      <td><input class="form-control qualification-subject" id="masters-degree-major-subject"
-                          type="text"></td>
-                      <td><input class="form-control qualification-university" id="masters-degree-university"
-                          type="text"></td>
-                      <td><input class="form-control qualification-college" id="masters-degree-college" type="text">
-                      </td>
-                      <td><input class="form-control qualification-percentile" id="masters-degree-percentile"
-                          type="text"></td>
-                      <td><input class="form-control qualification-year" id="masters-degree-year-of-passing"
-                          type="text"></td>
-                      <td><input class="form-control qualification-certificate" id="masters-degree-certificate"
-                          type="file"></td>
-                      <td><i id="masters-degree-add-button" class="fa-solid text-white fa-circle-plus "></i></td>
-                    </tr>
-                  </tbody>
-                  <tbody id="phd-data">
-                    <tr data-toggle="collapse" class="collapsed">
-                      <td class="text-white" id="phd-title"><input type="hidden" class="qualification-title"
-                          value="3">PHD</td>
-                      <td><input class="form-control qualification-subject" id="phd-major-subject" type="text"></td>
-                      <td><input class="form-control qualification-university" id="phd-university" type="text"></td>
-                      <td><input class="form-control qualification-college" id="phd-college" type="text"></td>
-                      <td><input class="form-control qualification-percentile" id="phd-percentile" type="text"></td>
-                      <td><input class="form-control qualification-year" id="phd-year-of-passing" type="text"></td>
-                      <td><input class="form-control qualification-certificate" id="phd-certificate" type="file"></td>
-                      <td><i id="phd-add-button" class="fa-solid text-white fa-circle-plus"></i></td>
-                    </tr>
-                  </tbody>
-                  <tbody id="professionaL-certification-data">
-                    <tr data-toggle="collapse" class="collapsed">
-                      <td class="text-white " id="professionaL-certification-title"><input type="hidden"
-                          class="qualification-title" value="4">Professional Certification</td>
-                      <td><input class="form-control qualification-subject" id="professionaL-certification-subject"
-                          type="text"></td>
-                      <td><input class="form-control qualification-university"
-                          id="professionaL-certification-university" type="text"></td>
-                      <td><input class="form-control qualification-college" id="professionaL-certification-college"
-                          type="text"></td>
-                      <td><input class="form-control qualification-percentile"
-                          id="professionaL-certification-percentile" type="text"></td>
-                      <td><input class="form-control qualification-year" id="professionaL-certification-year-of-passing"
-                          type="text"></td>
-                      <td><input class="form-control qualification-certificate"
-                          id="professionaL-certification-certificate" type="file"></td>
-                      <td><i id="professionaL-certification-add-button" class="fa-solid text-white fa-circle-plus"></i>
-                      </td>
+                  <tbody id="qualification-data">
+                    <tr data-toggle="collapse" class="collapsed qualification-row">
+                      <td class="text-white " id="bachelors-degree-title"><select class="form-control qualification-title">
+                        <option value="1">Bachelor's Degree</option>
+                        <option value="2">Master's Degree</option>
+                        <option value="3">PHD</option>
+                        <option value="4">Professional Certification</option>
+                      </select></td>
+                      <td><input class="form-control qualification-subject" id="bachelors-degree-major-subject"  type="text"></td>
+                      <td><input class="form-control qualification-university" id="bachelors-degree-university"  type="text"></td>
+                      <td><input class="form-control qualification-college" id="bachelors-degree-college"  type="text"></td>
+                      <td><input class="form-control qualification-percentile" id="bachelors-degree-percentile" type="text"></td>
+                      <td><input class="form-control qualification-year" id="bachelors-degree-year-of-passing"  type="text"></td>
+                      <td><input class="form-control qualification-certificate" id="bachelors-degree-certificate"  type="file"></td>
+                      <td><i id="qualification-add-button" class="fa-solid text-white fa-circle-plus "></i></td>
                     </tr>
                   </tbody>
                 </table>
@@ -1256,7 +1202,7 @@
   <script>
     let downloadButton = document.getElementById("download-btn");
     downloadButton.addEventListener("click", function () {
-      let elementHTML = document.getElementById("download-page");
+      let elementHTML = document.getElementById("body");
       let confirmDownload = confirm("Do you want to download this Resume??");
 
       if (confirmDownload) {
@@ -1374,7 +1320,7 @@
 
         let myForm = document.getElementById('myForm')
         let formData = new FormData(myForm)
-
+        let arrayresult = [];
         let result = {};
         for (let entry of formData.entries()) {
           result[entry[0]] = entry[1];
@@ -1405,18 +1351,24 @@
         //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('text-success')
         // }
 
+       let userTempAddress = {
+       
+       }
+
+       let userPermanentAddress = {
+       
+       }
+        
 
         let personalDetailsData = {
-          "user_address": {},
+          "user_address": arrayresult,
           "user_contact": {},
           "user_info": {}
         }
-
-        personalDetailsData.user_address.temporary_address = result.temporary_address
-        personalDetailsData.user_address.permanent_address = result.permanent_address
-
+        
+        userTempAddress.temporary_address = result.temporary_address
+        userPermanentAddress.permanent_address = result.permanent_address
         personalDetailsData.user_contact.contact_number = result.contact_number
-
         personalDetailsData.user_info.f_name = result.f_name
         personalDetailsData.user_info.l_name = result.l_name
         personalDetailsData.user_info.email = result.email
@@ -1424,28 +1376,31 @@
         personalDetailsData.user_info.date_of_birth = result.date_of_birth
         personalDetailsData.user_info.nationality = result.nationality
 
+        arrayresult[0] = userTempAddress
+        arrayresult[1] = userPermanentAddress
+ 
         console.log(JSON.stringify(personalDetailsData))
 
-        $.ajax({
-          url: '/insert-personal-details',
-          type: 'post',
-          dataType: 'text',
-          contentType: "application/json; charset=utf-8",
-          processData: false,
-          data: JSON.stringify(personalDetailsData),
-          success: function (response) {
-
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.personal-details-modal').classList.add('d-none')
-
+        let options = { 
+          
+          method: 'POST',
+          headers: {
+          
+              'Content-Type':'application/json;charset=utf-8'
+          
           },
-          error: function (error) {
-
-            console.log("ERROR:::::", error);
-
+          body: JSON.stringify(personalDetailsData)
+          
           }
-
-        })
+          let fetchRes = fetch('/insert-personal-details',options);
+          
+          fetchRes.then(success => {
+          
+          console.log(success)
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.personal-details-modal').classList.add('d-none')
+          
+          })
       });
 
 
@@ -1559,83 +1514,69 @@
       document.querySelector("#qualification-submit-button").addEventListener('click', function () {
 
         let qualificationTableArray = []
+        let qualificationRow = document.querySelectorAll('.qualification-row')
+        for(i = 0; i < qualificationRow.length; i++){
 
-        $('#qualification-table tbody tr').each((idx, elem) => {
+          let qualificationTitle = qualificationRow[i].querySelector('.qualification-title').value;
+          let qualificationSubject = qualificationRow[i].querySelector('.qualification-subject').value;
+          let qualificationUniversity = qualificationRow[i].querySelector('.qualification-university').value;
+          let qualificationCollege = qualificationRow[i].querySelector('.qualification-college').value;
+          let qualificationPercentile = qualificationRow[i].querySelector('.qualification-percentile').value;
+          let qualificationYear = qualificationRow[i].querySelector('.qualification-year').value;
+          let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
+            
+          object ={
 
-          let qualificationTableObject = {}
-          qualificationTableObject.qualificationTitle = $(elem).find('.qualification-title').val()
-          qualificationTableObject.qualificationSubject = $(elem).find('.qualification-subject').val()
-          qualificationTableObject.qualificationUniversity = $(elem).find('.qualification-university').val()
-          qualificationTableObject.qualificationCollege = $(elem).find('.qualification-college').val()
-          qualificationTableObject.qualificationPercentile = $(elem).find('.qualification-percentile').val()
-          qualificationTableObject.qualificationYear = $(elem).find('.qualification-year').val()
-          qualificationTableObject.qualificationCertificate = $(elem).find('.qualification-certificate')
-            .val()
-
-          let qualificationTableData = {
-
-            qualification_type_lid: qualificationTableObject.qualificationTitle,
-            topic_of_study: qualificationTableObject.qualificationSubject,
-            university: qualificationTableObject.qualificationUniversity,
-            institute: qualificationTableObject.qualificationCollege,
-            percentile: qualificationTableObject.qualificationPercentile,
-            year_of_passing: qualificationTableObject.qualificationYear,
-            url_path: qualificationTableObject.qualificationCertificate
+            qualification_type_lid : qualificationTitle,
+            topic_of_study : qualificationSubject,
+            university : qualificationUniversity,
+            institute : qualificationCollege,
+            percentile : qualificationPercentile,
+            year_of_passing : qualificationYear,
+            url_path : qualificationCertificate
 
           }
-          qualificationTableArray.push(qualificationTableObject)
-          console.log(JSON.stringify(qualificationTableData))
+               qualificationTableArray.push(object)
 
-          $.ajax({
+        }
+        let qualificationTableData = {
 
-            url: '/insert-qualification-details',
-            type: 'post',
-            dataType: 'text',
-            contentType: "application/json; charset=utf-8",
-            processData: false,
-            data: JSON.stringify(qualificationTableData),
+       "qualificationDetails": qualificationTableArray 
+          
+                }
+  
+        let options = { 
 
-            success: function (response) {
+            method: 'POST',
+            headers: {
 
-              document.getElementById('body').classList.remove('d-none');
-              document.querySelector('.qualification-modal').classList.add('d-none');
+                'Content-Type':'application/json;charset=utf-8'
 
             },
-            error: function (error) {
+            body: JSON.stringify(qualificationTableData)
 
-              console.log("ERROR:::::", error);
+        }
+        let fetchRes = fetch("/insert-qualification-details",options);
 
-            }
+        fetchRes.then(success => {
 
           })
 
         })
-        console.log(qualificationTableArray);
-
-
-        // document.getElementById('body').classList.remove('d-none');
-        // document.querySelector('.qualification-modal').classList.add('d-none');
+                         
+            console.log( JSON.stringify(qualificationTableData));
+       
       });
 
-      // document.querySelector(".qualification-submit-button").addEventListener('click', function () {
-
-
-      //   let nsmr = document.getElementById.value
-      //   let obj = {
-      //     name: name,
-
-      //   }
-
-
-      //   document.getElementById('body').classList.add('d-none');
-      //   document.querySelector('.qualification-modal').classList.remove('d-none');
-      // });
-
-
-
-      document.getElementById('bachelors-degree-add-button').addEventListener('click', function () {
-        let table = ` <tr data-toggle="collapse" class="collapsed">
-          <td class="text-white" id="bachelors-degree-title"><input type="hidden" class="qualification-title" value="1">Bachelor's Degree</td>
+      
+      document.getElementById('qualification-add-button').addEventListener('click', function () {
+        let table = ` <tr data-toggle="collapse" class="collapsed qualification-row">
+          <td class="text-white " id="bachelors-degree-title"><select class="form-control qualification-title">
+                        <option value="1">Bachelor's Degree</option>
+                        <option value="2">Master's Degree</option>
+                        <option value="3">PHD</option>
+                        <option value="4">Professional Certification</option>
+                      </select></td>
           <td><input class="form-control qualification-subject" id="bachelors-degree-major-subject"  type="text"></td>
           <td><input class="form-control qualification-university" id="bachelors-degree-university"  type="text"></td>
           <td><input class="form-control qualification-college" id="bachelors-degree-college"  type="text"></td>
@@ -1643,79 +1584,18 @@
           <td><input class="form-control qualification-year" id="bachelors-degree-year-of-passing"  type="text"></td>
           <td><input class="form-control qualification-certificate" id="bachelors-degree-certificate"  type="file"></td>
           <td>
-              <i class="fa-solid fa-trash-can text-white bachelors-degree-delete-button"></i>
+              <i class="fa-solid fa-trash-can text-white qualification-delete-button"></i>
           </td>
           </tr>`
 
-        document.getElementById('bachelors-degree-data').insertAdjacentHTML("beforeend", table);
+        document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
       })
 
-      $(document).on('click', '.bachelors-degree-delete-button', function () {
+      $(document).on('click', '.qualification-delete-button', function () {
         $(this).closest('tr').remove()
       })
 
-      document.getElementById('masters-degree-add-button').addEventListener('click', function () {
-        let table = ` <tr data-toggle="collapse" class="collapsed">
-          <td class="text-white" id="masters-degree-title"><input type="hidden" class="qualification-title" value="2">Master's Degree</td>
-          <td><input class="form-control qualification-subject" id="masters-degree-major-subject"  type="text"></td>
-          <td><input class="form-control qualification-university" id="masters-degree-university"  type="text"></td>
-          <td><input class="form-control qualification-college" id="masters-degree-college"  type="text"></td>
-          <td><input class="form-control qualification-percentile" id="masters-degree-percentile"  type="text"></td>
-          <td><input class="form-control qualification-year" id="masters-degree-year-of-passing"  type="text"></td>
-          <td><input class="form-control qualification-certificate" id="masters-degree-certificate"  type="file"></td>
-          <td>
-             <i class="fa-solid fa-trash-can text-white masters-degree-delete-button"></i>
-          </td>
-          </tr>`
-
-        document.getElementById('masters-degree-data').insertAdjacentHTML("beforeend", table);
-      })
-
-      $(document).on('click', '.masters-degree-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
-
-      document.getElementById('phd-add-button').addEventListener('click', function () {
-        let table = ` <tr data-toggle="collapse" class="collapsed">
-          <td class="text-white"  id="phd-title"><input type="hidden" class="qualification-title" value="3">PHD</td>
-          <td><input class="form-control qualification-subject" id="phd-major-subject"  type="text"></td>
-          <td><input class="form-control qualification-university" id="phd-university"  type="text"></td>
-          <td><input class="form-control qualification-college" id="phd-college"  type="text"></td>
-          <td><input class="form-control qualification-percentile" id="phd-percentile"  type="text"></td>
-          <td><input class="form-control qualification-year" id="phd-year-of-passing"  type="text"></td>
-          <td><input class="form-control qualification-certificate" id="phd-certificate"  type="file"></td>
-          <td>
-             <i class="fa-solid fa-trash-can text-white phd-delete-button"></i>
-          </td>
-          </tr>`
-
-        document.getElementById('phd-data').insertAdjacentHTML("beforeend", table);
-      })
-
-      $(document).on('click', '.phd-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
-
-      document.getElementById('professionaL-certification-add-button').addEventListener('click', function () {
-        let table = ` <tr data-toggle="collapse" class="collapsed">
-          <td class="text-white" id="professionaL-certification-title"><input type="hidden" class="qualification-title" value="4">Professional Certification</td>
-          <td><input class="form-control qualification-subject" id="professionaL-certification-subject"  type="text"></td>
-          <td><input class="form-control qualification-university" id="professionaL-certification-university"  type="text"></td>
-          <td><input class="form-control qualification-college" id="professionaL-certification-college"  type="text"></td>
-          <td><input class="form-control qualification-percentile" id="professionaL-certification-percentile"  type="text"></td>
-          <td><input class="form-control qualification-year" id="professionaL-certification-year-of-passing"  type="text"></td>
-          <td><input class="form-control qualification-certificate" id="professionaL-certification-certificate" type="file"></td>
-          <td>
-              <i class="fa-solid fa-trash-can text-white professionaL-certification-delete-button"></i>
-          </td>
-          </tr>`
-
-        document.getElementById('professionaL-certification-data').insertAdjacentHTML("beforeend", table);
-      })
-      $(document).on('click', '.professionaL-certification-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
-
+      
       //*************************************Award-modal JS****************************************
 
 
