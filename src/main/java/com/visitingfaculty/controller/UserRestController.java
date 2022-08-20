@@ -37,9 +37,15 @@ public class UserRestController {
 
         String message = "Please Enter this code to verify your email: " + tokenGenerated;
 
-        userService.sendEmail(message, userDto.getEmail());
+        if(userService.sendEmail(message, userDto.getEmail())) {
+            
+            return ResponseEntity.ok("otp send successfully");
 
-        return ResponseEntity.ok("otp send successfully");
+        } else {
+
+            return null;
+        }
+
     }
 
     @PostMapping("/verify-token")
@@ -48,12 +54,14 @@ public class UserRestController {
         System.out.println(token);
         int tokenToVerify = Integer.parseInt(token);
         int tokenGenerated = (int) httpSession.getAttribute("tokenGenerated");
+        String tokenValidation = (String) httpSession.getAttribute("tokenGenerated");
 
+        if (tokenValidation == null) {
+            return null;
+        }
         if (tokenGenerated != tokenToVerify) {
             return null;
         }
         return ResponseEntity.ok("verification success");
-
     }
-
 }

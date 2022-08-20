@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-
     @Autowired
     private JavaMailSender javaMailSender;
 
@@ -20,16 +19,22 @@ public class UserService {
 
         String subject = "Verify Your Email Adddress";
 
-        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+        try {
 
-        simpleMailMessage.setTo(toEmail);
-        simpleMailMessage.setFrom(fromEmail);
-        simpleMailMessage.setSubject(subject);
-        simpleMailMessage.setText(message);
+            SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
 
-        javaMailSender.send(simpleMailMessage);
+            simpleMailMessage.setTo(toEmail);
+            simpleMailMessage.setFrom(fromEmail);
+            simpleMailMessage.setSubject(subject);
+            simpleMailMessage.setText(message);
 
-        return true;
+            javaMailSender.send(simpleMailMessage);
+            return true;
+
+        } catch (Exception e) {
+            return false;
+        }
+
     }
 
 }
