@@ -1,5 +1,7 @@
 package com.visitingfaculty.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.visitingfaculty.dao.UserDaoInterface;
 import com.visitingfaculty.dto.UserDto;
 import com.visitingfaculty.dto.UserPersonalDetailsDTO;
+import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
 import com.visitingfaculty.service.faculty_service.UserService;
 
 @RestController
@@ -18,6 +22,9 @@ public class UserRestController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    UserDaoInterface userDaoInterface;
 
     @PostMapping(value="/insert-personal-details", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> insert(@RequestBody UserPersonalDetailsDTO personalDetailsData) {
@@ -63,5 +70,29 @@ public class UserRestController {
             return null;
         }
         return ResponseEntity.ok("verification success");
+    }
+
+    @PostMapping("/get-all-skill")
+    public List<UserSkillsFromDB> getAllSkills() {
+
+        List<UserSkillsFromDB> list = userDaoInterface.getAllSkills();
+        return list;
+    }
+
+    @PostMapping("/insert-custom-skill")
+    public UserSkillsFromDB insertCustomSkill(UserSkillsFromDB userSkillsFromDB) {
+
+        int insertSkill = userDaoInterface.insertCustomSkill(userSkillsFromDB);
+        if (insertSkill == 1) {
+
+            UserSkillsFromDB userSkill = userDaoInterface.getUserSkill(userSkillsFromDB.getSkill_name());
+            
+            return userSkill;
+
+        } else {
+
+            return null;
+        }
+       
     }
 }
