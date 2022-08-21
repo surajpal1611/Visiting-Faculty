@@ -521,7 +521,7 @@
                         <p id="account-number-value" class="pt-2">778866445523</p>
                         <p id="account-type-value" class="pt-2">Current Account</p>
                         <p id="cancelled-check-photo" class="pt-3 h5">
-                          <i class="fa-solid fa-ban"></i>
+                          <i class="fa-solid fa-ban text-danger"></i>
                         </p>
                       </div>
                     </div>
@@ -2070,6 +2070,7 @@
 
       if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
         document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('text-danger')
         document.getElementById('cancelled-check-photo').firstElementChild.classList.add('fa-circle-check')
         document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
       }
