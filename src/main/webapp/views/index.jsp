@@ -133,30 +133,55 @@
           <!------------------------------------------------ Qualification Section ------------------------------------------------>
 
           <div class="position-relative qualification-div-wrapper d-flex" style="cursor: pointer;">
-            <div id="qualification-div">
-              <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
-                <h3><b> Qualification</b></h3>
-              </div>
-              <div class="text-block right">
-                <div class="card-body">
-                  <h2>2015</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-                    admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea
-                    quis iuvaret expetendis his, te elit voluptua dignissim per,
-                    habeo iusto primis ea eam.
-                  </p>
+            <div class="container">
+              <div id="qualification-div">
+                <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
+                  <h3><b> Qualification</b></h3>
                 </div>
-              </div>
-              <div class="text-block right">
-                <div class="card-body">
-                  <h2>2012</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-                    admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea
-                    quis iuvaret expetendis his, te elit voluptua dignissim per,
-                    habeo iusto primis ea eam.
-                  </p>
+                <div class="text-block right">
+                  <div class="card-body preview-qualification-div">
+                    <h2 id="year-of-passing">2015</h2>
+
+                    <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Title :</p>
+                              <p class="h5 py-1">Major Subject :</p>
+                              <p class="h5 py-1">University :</p>
+
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">Bachelors Degree</p>
+                              <p id="">Discrete Maths</p>
+                              <p id="">Mumbai</p>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">College :</p>
+                              <p class="h5 py-1">percentage :</p>
+                              <p class="h5 py-1">Certificate :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">St. Wilfred's College</p>
+                              <p id="" class="">82.61%</p>
+                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
               </div>
             </div>
@@ -170,31 +195,60 @@
           <!------------------------------------------------ Work Experience Section ------------------------------------------------>
 
           <div class="work-experience-div-wrapper position-relative d-flex" style="cursor: pointer;">
-            <div id="work-experience-div">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 style="color: #740E00;"><b> Work Experience </b></h3>
-              </div>
-              <div class="text-block right">
-                <div class="card-body">
-                  <h2>2017</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-                    admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea
-                    quis iuvaret expetendis his, te elit voluptua dignissim per,
-                    habeo iusto primis ea eam.
-                  </p>
+            <div class="container">
+              <div id="work-experience-div">
+                <div class="d-flex justify-content-center align-items-center">
+                  <h3 style="color: #740E00;"><b> Work Experience </b></h3>
                 </div>
-              </div>
-              <div class="text-block right">
-                <div class="card-body">
-                  <h2>2016</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                    aliquam nisi blanditiis possimus, minima commodi vitae qui,
-                    dolore perferendis id corporis voluptatum. Id cumque odit
-                    quasi perspiciatis hic cum harum.
-                  </p>
+
+                <div class="text-block right">
+                  <div class="card-body">
+                    <h2>2017</h2>
+
+                    <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Title :</p>
+                              <p class="h5 py-1">Major Subject :</p>
+                              <p class="h5 py-1">University :</p>
+                              <p class="h5 py-1">University :</p>
+
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">Bachelors Degree</p>
+                              <p id="">Discrete Maths</p>
+                              <p id="">Mumbai</p>
+                              <p id="">Mumbai</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">College :</p>
+                              <p class="h5 py-1">percentage :</p>
+                              <p class="h5 py-1">Certificate :</p>
+                              <p class="h5 py-1">Certificate :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">St. Wilfred's College</p>
+                              <p id="" class="">82.61%</p>
+                              <p id="" class="">82.61%</p>
+                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
                 </div>
+
               </div>
             </div>
             <div class="d-none work-experience-edit-box d-flex justify-content-center align-items-center">
@@ -209,7 +263,8 @@
             <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
               <div class="d-flex justify-content-center align-items-center">
                 <h3 class="mb-4 h3" style="color: #740E00;">
-                  <b> Skills</b></h3>
+                  <b> Skills</b>
+                </h3>
               </div>
               <div class="container bootstrap snippets bootdeys">
                 <div class="row">
@@ -258,34 +313,58 @@
           </div>
           <hr>
 
-          <!-------------------------------------------------- Achievement Section----------------------------------------------->
+          <!-------------------------------------------------- Award Section----------------------------------------------->
 
           <div class="award-div-wrapper d-flex position-relative" style="cursor: pointer;">
-            <div id="achievement-div">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 style="color: #740E00;"><b> Awards </b></h3>
-              </div>
-              <div class="text-block right">
-                <div class="card-body">
-                  <h2>2000</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-                    admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea
-                    quis iuvaret expetendis his, te elit voluptua dignissim per,
-                    habeo iusto primis ea eam.
-                  </p>
+            <div class="container">
+              <div id="achievement-div">
+                <div class="d-flex justify-content-center align-items-center">
+                  <h3 style="color: #740E00;"><b> Awards </b></h3>
                 </div>
-              </div>
-              <div class="text-block right">
-                <div class="card-body">
-                  <h2>2004</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                    aliquam nisi blanditiis possimus, minima commodi vitae qui,
-                    dolore perferendis id corporis voluptatum. Id cumque odit
-                    quasi perspiciatis hic cum harum.
-                  </p>
+                <div class="text-block right">
+                  <div class="card-body">
+                    <h2>2000</h2>
+
+                    <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Award Name :</p>
+                              <p class="h5 py-1">organization :</p>
+                              <p class="h5 py-1">Organization Type :</p>
+
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">Engagement Award</p>
+                              <p id="">Campus Compact </p>
+                              <p id="">University</p>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Place :</p>
+                              <p class="h5 py-1">Certificate :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">Mumbai</p>
+                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
+
               </div>
             </div>
             <div class="d-none award-edit-box d-flex justify-content-center align-items-center">
@@ -297,26 +376,49 @@
           <!------------------------------------------- Publication Section  ----------------------------------------->
 
           <div class="publication-div-wrapper d-flex position-relative" style="cursor: pointer;">
-            <div id="publication-div" class="px-3 px-sm-4 px-lg-4">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 class="mb-4 h3" style="color: #740E00;"><b> Publications </b></h3>
-              </div>
-              <div class="row">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptates doloribus, quia non id, nam est voluptate dolorem
-                dolore fugit enim voluptas numquam iure officiis excepturi, neque
-                earum? Fugit, earum tempore? Et, nihil odio incidunt dicta
-                possimus beatae in dolorem sunt alias animi dolor fugit eius, esse
-                veritatis iure vitae iste rem consequuntur magni praesentium
-                suscipit neque quae aliquid totam? Nobis? Molestias illum, aperiam
-                quas magnam adipisci aspernatur veritatis ex perferendis
-                repudiandae quos dicta beatae recusandae aliquam quam voluptas
-                hic, quod nihil. Laudantium eveniet ullam minima optio porro!
-                Dolorum, nisi quas? Ipsa maiores doloremque nisi numquam
-                necessitatibus ducimus exercitationem id fuga facere? Vel quos
-                perspiciatis deleniti eos nulla et, deserunt est, maiores
-                molestias fuga praesentium, ab vero eaque quam architecto
-                explicabo!
+            <div class="container">
+              <div id="publication-div" class="px-3 px-sm-4 px-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                  <h3 class="mb-4 h3" style="color: #740E00;"><b> Publications </b></h3>
+                </div>
+
+                <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Role :</p>
+                          <p class="h5 py-1">No. of Authors :</p>
+                          <p class="h5 py-1">Book Title :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">Editor</p>
+                          <p id="">10 </p>
+                          <p id="">A Million Thoughts</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Publisher :</p>
+                          <p class="h5 pb-1">year of Publication :</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">Nationpress</p>
+                          <p class="" id="">2016</p>
+                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
             </div>
             <div class="d-none publication-edit-box d-flex justify-content-center align-items-center">
@@ -329,26 +431,50 @@
           <!------------------------------------------- Research Section  ----------------------------------------->
 
           <div class="research-div-wrapper d-flex position-relative" style="cursor: pointer;">
-            <div id="research-div" class="px-3 px-sm-4 px-lg-4">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><b> Research </b></h3>
-              </div>
-              <div class="row">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptates doloribus, quia non id, nam est voluptate dolorem
-                dolore fugit enim voluptas numquam iure officiis excepturi, neque
-                earum? Fugit, earum tempore? Et, nihil odio incidunt dicta
-                possimus beatae in dolorem sunt alias animi dolor fugit eius, esse
-                veritatis iure vitae iste rem consequuntur magni praesentium
-                suscipit neque quae aliquid totam? Nobis? Molestias illum, aperiam
-                quas magnam adipisci aspernatur veritatis ex perferendis
-                repudiandae quos dicta beatae recusandae aliquam quam voluptas
-                hic, quod nihil. Laudantium eveniet ullam minima optio porro!
-                Dolorum, nisi quas? Ipsa maiores doloremque nisi numquam
-                necessitatibus ducimus exercitationem id fuga facere? Vel quos
-                perspiciatis deleniti eos nulla et, deserunt est, maiores
-                molestias fuga praesentium, ab vero eaque quam architecto
-                explicabo!
+            <div class="container">
+              <div id="research-div" class="px-3 px-sm-4 px-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                  <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><b> Research </b></h3>
+                </div>
+
+                <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Role :</p>
+                          <p class="h5 py-1">Journal Name :</p>
+                          <p class="h5 py-1">Volume year :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id=""></p>
+                          <p id=""></p>
+                          <p id=""></p>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Description :</p>
+                          <p class="h5 pb-1">Category :</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">example</p>
+                          <p class="" id="">example</p>
+                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
             </div>
             <div class="d-none research-edit-box d-flex justify-content-center align-items-center">
@@ -395,7 +521,7 @@
                         <p id="account-number-value" class="pt-2">778866445523</p>
                         <p id="account-type-value" class="pt-2">Current Account</p>
                         <p id="cancelled-check-photo" class="pt-3 h5">
-                          <i class="fa-solid fa-ban"></i>
+                          <i class="fa-solid fa-ban text-danger"></i>
                         </p>
                       </div>
                     </div>
@@ -482,7 +608,7 @@
               <div id="left-fourth-row" class="row">
                 <div class="col-md-6">
                   <label for="pan-number">Pan Card Number</label>
-                  <span id="pan-number-message"  style="color: red;" class="error"></span>
+                  <span id="pan-number-message" style="color: red;" class="error"></span>
                   <input type="text" name="pan_number" class="form-control" id="pan-number" />
                 </div>
                 <div class="col-md-6">
@@ -739,8 +865,10 @@
                         <button type="submit" class="btn btn-primary col-4 d-none"
                           id="add-custom-soft-skill">Add</button>
                       </div>
+
                       <ul id="soft-skill-UL">
                       </ul>
+
                     </div>
                   </div>
                 </div>
@@ -758,7 +886,6 @@
                     <ul id="hard-skill-UL">
                     </ul>
 
-                    </ul>
                   </div>
                 </div>
 
@@ -937,24 +1064,24 @@
                         <th>Role-?</th>
                         <th>Journal-name</th>
                         <th>Volume-year</th>
-                        <th>Number</th>
+                        <th>Description</th>
                         <th>Category</th>
                         <th>Certificate</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody id="research-data">
-                      <tr data-toggle="collapse" class="collapsed">
+                      <tr data-toggle="collapse" class="collapsed research-data-tr">
                         <td class="text-white pb-3">Research</td>
-                        <td><select data-title="Role-?" class="form-control" id="role">
+                        <td><select name="role" class="form-control research_role">
                             <option>-Select-</option>
                             <option value="Sole">Sole</option>
                             <option value="Author">Author</option>
                           </select></td>
-                        <td><input data-title="Journal-name" class="form-control" type="text"></td>
-                        <td><input data-title="Volume-year" class="form-control" type="text"></td>
-                        <td><input data-title="Number" class="form-control" type="text"></td>
-                        <td><input data-title="Category" class="form-control" type="text"></td>
+                        <td><input name="journal_name" class="form-control research_Journal_name" type="text"></td>
+                        <td><input name="volume_year" class="form-control research_Volume_year" type="text"></td>
+                        <td><input name="number" class="form-control research_Number" type="text"></td>
+                        <td><input name="category" class="form-control research_Category" type="text">
                         <td><input data-title="Certificate" class="form-control" type="file"></td>
                         <td></td>
                       </tr>
@@ -972,6 +1099,68 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.querySelector('#research-submit-button').addEventListener('click', function () {
+      console.log("research button clicked");
+      let researchTableElem = document.querySelectorAll('.research-data-tr');
+      let noofrows = researchTableElem.length;
+      console.log("no of rows", noofrows);
+      let resumeResearchTable = [];
+      for (let j = 0; j < noofrows; j++) {
+
+        let Role = researchTableElem[j].querySelector('.research_role').value;
+        let Journal_name = researchTableElem[j].querySelector('.research_Journal_name').value;
+        let Volume_year = researchTableElem[j].querySelector('.research_Volume_year').value;
+        let Number = researchTableElem[j].querySelector('.research_Number').value;
+        let Category = researchTableElem[j].querySelector('.research_Category').value;
+
+        obj = {
+
+          role: Role,
+          journal_name: Journal_name,
+          volume_year: Volume_year,
+          number: Number,
+          category: Category
+        }
+        resumeResearchTable.push(obj);
+      }
+      object = {
+        "inser_research": resumeResearchTable
+      }
+      console.log('object VJS>>>', JSON.stringify(object));
+
+      function postdata() {
+        url = "/research_Table_Data";
+        params = {
+          method: "post",
+          headers: {
+            contentType: 'application/json'
+          },
+          body: JSON.stringify(object),
+        }
+        fetch(url, params).then((data) => {
+          console.log(data);
+        })
+      }
+      postdata()
+
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.research-modal').classList.add('d-none');
+
+
+    });
+
+
+  </script>
+
+  <!-- <script>
+      document.querySelector(".research-edit-box").addEventListener('click',function(){
+
+      })
+    </script> -->
+
+
 
   <!-- ************************************************************************Bank Details Modal Div******************************************************************************************** -->
   <div class="bank-details-modal d-none">
@@ -1050,6 +1239,71 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.querySelector('#bank-details-submit-button').addEventListener('click', function () {
+      console.log('bank details Btn click');
+      let bank_detail = {};
+      let bankname = document.querySelector('#bank-name').value;
+      let branchname = document.querySelector('#bank-branch').value;
+      let bankifsc = document.querySelector('#bank-ifsc-code').value;
+      let bankmicr = document.querySelector('#bank-micr-code').value;
+      let bankaccountnumber = document.querySelector('#bank-account-number').value;
+      let bankaccounttype = document.querySelector('#bank-account-type').value;
+      bank_detail = {
+        name: bankname,
+        branch: branchname,
+        ifsc_code: bankifsc,
+        micr_code: bankmicr,
+        account_number: bankaccountnumber,
+        account_type: bankaccounttype
+
+      }
+      console.log('obj>>', JSON.stringify(bank_detail));
+
+      // $.ajax({
+      //   url: '/insert-bank-details',
+      //   type: 'post',
+      //   dataType: 'text',
+      //   contentType: "application/json; charset=utf-8",
+      //   processData: false,
+      //   data: JSON.stringify(bank_detail),
+      //   success: function (response) {
+
+      //     document.getElementById('body').classList.remove('d-none');
+      //     document.querySelector('.bank-details-modal').classList.add('d-none')
+
+      //   },
+      //   error: function (error) {
+
+      //     console.log("ERROR:::::", error);
+
+      //   }
+
+      // })
+
+
+
+
+      function postdata() {
+        url = "/insert-bank-details";
+        params = {
+          method: 'post',
+          headers: {
+            'content-Type': 'application/json'
+          },
+          body: JSON.stringify(bank_detail),
+        }
+        fetch(url, params).then((data) => {
+          console.log(data);
+        })
+      }
+      postdata()
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.bank-details-modal').classList.add('d-none');
+    });
+  </script>
+
   <!-- INCLUDE JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"
     integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw=="
@@ -1059,8 +1313,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
   <script>
-
-// --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
+    // --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
 
           function isCharNumber(res) {
             for (let i = 0; i < checkLength(res); i++) {
@@ -1545,6 +1798,23 @@
               return;
       }
 
+        clearError();
+
+        let firstName1 = personalDetailFirstNameValidation(result.f_name);
+        let lastName1 = personalDetailLastNameValidation(result.l_name);
+        let gender1 = personalDetailGenderValidation(result.gender);
+        let contactNumber1 = personalDetailContactNumberValidation(result.contact_number);
+        let pancard1 = personalDetailPancardValidation(result.pan_number);
+        let email1 = personalDetailEmailValidation(result.email);
+        let aadhar1 = personalDetailAadharValidation(result.aadhar_number);
+        let address1 = personalDetailAddressValidation(result.permanent_address);
+        let temporaryAddress1 = personalDetailTemporaryAddressValidation(result.temporary_address);
+        let country1 = personalDetailCountryValidation(result.nationality);
+
+        if (!firstName1 || !lastName1  || !gender1 || !contactNumber1 || !pancard1 || !email1 || !aadhar1 || !address1 || !temporaryAddress1 || !country1) {
+              return;
+      }
+
         document.getElementById('date-of-birth-value').innerText = result.date_of_birth
         document.getElementById('pancard-value').innerText = result.pan_number
         document.getElementById('aadhar-card-value').innerText = result.aadhar_number
@@ -1814,29 +2084,29 @@
           </td>
           </tr>`
 
-        document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
-      })
+      document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
+    })
 
-      $(document).on('click', '.qualification-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
-
-      
-      //*************************************Award-modal JS****************************************
+    $(document).on('click', '.qualification-delete-button', function () {
+      $(this).closest('tr').remove()
+    })
 
 
-      document.querySelector(".award-edit-box").addEventListener('click', function () {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.award-modal').classList.remove('d-none');
-      });
+    //*************************************Award-modal JS****************************************
 
-      document.querySelector("#award-cancel-button").addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.award-modal').classList.add('d-none');
-      });
 
-      document.getElementById('award-add-button').addEventListener('click', function () {
-        let table = `   <tr data-toggle="collapse" class="collapsed">
+    document.querySelector(".award-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.award-modal').classList.remove('d-none');
+    });
+
+    document.querySelector("#award-cancel-button").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.award-modal').classList.add('d-none');
+    });
+
+    document.getElementById('award-add-button').addEventListener('click', function () {
+      let table = `   <tr data-toggle="collapse" class="collapsed">
                         <td class="text-white pb-3">Award</td>
                         <td><input class="form-control" type="text"></td>
                         <td><input class="form-control" type="text"></td>
@@ -1851,27 +2121,27 @@
                         <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 award-delete-button"></i></td>
                       </tr>
        `
-        document.getElementById('award-data').insertAdjacentHTML("beforeend", table);
-      })
-      $(document).on('click', '.award-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
+      document.getElementById('award-data').insertAdjacentHTML("beforeend", table);
+    })
+    $(document).on('click', '.award-delete-button', function () {
+      $(this).closest('tr').remove()
+    })
 
 
-      //*************************************Publications-modal JS****************************************
+    //*************************************Publications-modal JS****************************************
 
-      document.querySelector(".publication-edit-box").addEventListener('click', function () {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.publication-modal').classList.remove('d-none');
-      });
+    document.querySelector(".publication-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.publication-modal').classList.remove('d-none');
+    });
 
-      document.querySelector("#publication-cancel-button").addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.publication-modal').classList.add('d-none');
-      });
+    document.querySelector("#publication-cancel-button").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.publication-modal').classList.add('d-none');
+    });
 
-      document.getElementById('publication-add-button').addEventListener('click', function () {
-        let table = ` <tr data-toggle="collapse" class="collapsed">
+    document.getElementById('publication-add-button').addEventListener('click', function () {
+      let table = ` <tr data-toggle="collapse" class="collapsed">
             <td class="text-white pb-3" >Publication</td>
             <td><select data-title="Role ?" class="form-control" id="role">
                     <option>-Select-</option>
@@ -1889,55 +2159,53 @@
             <td><input data-title="Certificate" class="form-control" type="file"></td>
             <td> <i class="fa-solid fa-trash-can text-white h4 publication-delete-button" data-title="Action"></i></td>
                        </tr>`
-        document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
-      })
+      document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
+    })
 
-      $(document).on('click', '.publication-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
+    $(document).on('click', '.publication-delete-button', function () {
+      $(this).closest('tr').remove()
+    })
 
 
-      //*************************************Research-modal JS****************************************
+    //*************************************Research-modal JS****************************************
 
-      document.querySelector(".research-edit-box").addEventListener('click', function () {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.research-modal').classList.remove('d-none');
-      });
+    document.querySelector(".research-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.research-modal').classList.remove('d-none');
+    });
 
-      document.querySelector("#research-cancel-button").addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.research-modal').classList.add('d-none');
-      });
+    document.querySelector("#research-cancel-button").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.research-modal').classList.add('d-none');
+    });
 
-      document.getElementById('research-add-button').addEventListener('click', function () {
-        let table = ` <tr data-toggle="collapse" class="collapsed">
-            <td class="text-white pb-3">Research</td>
-            <td><select data-title="Role-?" class="form-control" id="role">
+    document.getElementById('research-add-button').addEventListener('click', function () {
+      let table = ` <tr data-toggle="collapse" class="collapsed research-data-tr">            
+            <td><select data-title="Role-?" class="form-control research_role" id="role">
                     <option>-Select-</option>
                     <option value="Sole">Sole</option>
                     <option value="Author">Author</option>
                 </select></td>
-            <td><input data-title="Journal-name" class="form-control" type="text"></td>
-            <td><input data-title="Volume-year" class="form-control" type="text"></td>
-            <td><input data-title="Number" class="form-control" type="text"></td>
-            <td><input data-title="Category" class="form-control" type="text"></td>
-            <td><input data-title="Certificate" class="form-control" type="file"></td>
+            <td><input data-title="Journal-name" class="form-control research_Journal_name" type="text"></td>
+            <td><input data-title="Volume-year" class="form-control research_Volume_year" type="text"></td>
+            <td><input data-title="Number" class="form-control research_Number" type="text"></td>
+            <td><input data-title="Category" class="form-control research_Category" type="text"></td>
             <td class="p-2 !important"> <i class="fa-solid fa-trash-can text-white h4 research-delete-button" data-title=" Action"></i> </td>
                   </tr>`
 
-        document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
-      })
+      document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
+    })
 
-      $(document).on('click', '.research-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
+    $(document).on('click', '.research-delete-button', function () {
+      $(this).closest('tr').remove()
+    })
 
 
-      //*************************************Bank-details-modal JS****************************************
+    //*************************************Bank-details-modal JS****************************************
 
-      document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
+    document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
 
-        let editBankDetailsForm = new FormData()
+      let editBankDetailsForm = new FormData()
 
         editBankDetailsForm.append('editBankName', document.getElementById('bank-name-value').innerText)
         editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
@@ -1955,14 +2223,14 @@
         document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
 
 
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.bank-details-modal').classList.remove('d-none');
-      });
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.bank-details-modal').classList.remove('d-none');
+    });
 
-      document.querySelector('#bank-details-cancel-button').addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.bank-details-modal').classList.add('d-none');
-      });
+    document.querySelector('#bank-details-cancel-button').addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.bank-details-modal').classList.add('d-none');
+    });
 
       document.querySelector('#bank-details-submit-button').addEventListener('click', function (e) {
 
@@ -1999,15 +2267,16 @@
         document.getElementById('account-number-value').innerText = submitBankDetailsForm.get('accountNumber')
         document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
 
-        if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
-          document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
-          document.getElementById('cancelled-check-photo').firstElementChild.classList.add('fa-circle-check')
-          document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
-        }
+      if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('text-danger')
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('fa-circle-check')
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
+      }
 
-      });
+    });
 
-      // ****************************************************JS for skills Modal****************************************************************
+    // ****************************************************JS for skills Modal****************************************************************
 
 
     document.querySelector('.skills-edit-box').addEventListener('click', function () {
@@ -2025,8 +2294,6 @@
         url: '/get-all-skill',
         type: 'POST',
         success: function (response) {
-          console.log(JSON.stringify(response))
-          console.log(response.length)
 
           for (let i = 0; i < response.length; i++) {
 
@@ -2034,12 +2301,12 @@
 
               softSkillUl.insertAdjacentHTML('beforeend',
                 `
-                       <li class="skill-list">
+                       <li class="soft-skill-list">
                           <div class="row">
                             <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button">
                               <i class="fa-solid fa-circle-plus fa-2x"></i>
                             </div>
-                            <div class="col-md-10 col-sm-10 col-12"><a href="#">\${response[i].skill_name}\</a></div>
+                            <div class="col-md-10 col-sm-10 col-12"><input type="hidden" value=\${response[i].id}\ ><a href="#">\${response[i].skill_name}\</a></div>
                           </div>
                         </li>
                       `
@@ -2049,16 +2316,15 @@
 
               hardSkillUl.insertAdjacentHTML('beforeend',
 
-                `<li class="skill-list">
+                `<li class="hard-skill-list">
                         <div class="row">
                           <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
                               class="fa-solid fa-circle-plus fa-2x"></i>
                           </div>
-                          <div class="col-md-10 col-sm-10 col-12"><a id=\${response[i].id}\ href="#">\${response[i].skill_name}\</a></div>
+                          <div class="col-md-10 col-sm-10 col-12"> <input type="hidden" value=\${response[i].id}\ ><a href="#">\${response[i].skill_name}\</a></div>
                         </div>
                       </li>`
               )
-              console.log("hard Skills")
             } else {
               console.log("Error")
             }
@@ -2073,15 +2339,42 @@
       document.getElementById('body').classList.add('d-none');
       document.querySelector('.skills-modal').classList.remove('d-none');
 
-      })
+    })
 
-      document.querySelector('#skills-modal-cancel-button').addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.skills-modal').classList.add('d-none');
+    document.querySelector('#skills-modal-cancel-button').addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.skills-modal').classList.add('d-none');
 
-      })
+    })
 
     document.querySelector('#skills-modal-submit-button').addEventListener('click', function () {
+
+
+      // let value =  element.parentElement.parentElement.lastElementChild.lastElementChild.innerText
+
+      let skillJson = {
+        skill_lid: []
+      }
+
+      let softSkillDisplay = document.getElementById('soft-skill-display')
+      let hardSkillDisplay = document.getElementById('hard-skill-display')
+
+      let softSkillListGroup = document.querySelectorAll('.soft-skill-list-group')
+      let hardSkillListGroup = document.querySelectorAll('.hard-skill-list-group')
+
+      for (let i = 0; i < softSkillListGroup.length; i++) {
+
+        let value = softSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
+        skillJson.skill_lid.push(value)
+      }
+
+      for (let i = 0; i < hardSkillListGroup.length; i++) {
+
+        let value = hardSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
+        skillJson.skill_lid.push(value)
+      }
+
+      console.log(JSON.stringify(skillJson))
 
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.skills-modal').classList.add('d-none');
@@ -2136,13 +2429,13 @@
       let element = event.target
       if (element.matches('i')) {
         let text = element.parentElement.parentElement.lastElementChild.lastElementChild.innerText;
+        let id = element.parentElement.parentElement.lastElementChild.firstElementChild.value
 
-        console.log(text, ":::::text1")
         let div = ` 
-                    <li class="list-group">
+                    <li class="soft-skill-list-group">
                         <div class="row">
                             <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
-                            <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${text}\</a></div>
+                            <div class="col-md-10 col-sm-10 col-10"><input type="hidden" value=\${id}\ ><a class="ms-3" href="#">\${text}\</a></div>
                         </div>
                     </li> `
 
@@ -2190,13 +2483,13 @@
       let element = event.target
       if (element.matches('i')) {
         let text = element.parentElement.parentElement.lastElementChild.lastElementChild.innerText;
+        let id = element.parentElement.parentElement.lastElementChild.firstElementChild.value
 
-        console.log(text)
         let div = ` 
-                     <li class="list-group">
+                     <li class="hard-skill-list-group">
                          <div class="row">
                              <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x hard-skill-delete-button" style="color:red;"></i></div>
-                             <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${text}\ </a></div>
+                             <div class="col-md-10 col-sm-10 col-10"> <input type="hidden" value=\${id}\ ><a class="ms-3" href="#">\${text}\ </a></div>
                          </div>
                      </li> `
 
@@ -2210,7 +2503,6 @@
 
       let customSoftSkillValue = document.getElementById('soft-skill-search').value
 
-
       $.ajax({
         url: '/insert-custom-skill',
         type: 'POST',
@@ -2219,18 +2511,19 @@
           skill_name: customSoftSkillValue
         },
         success: function (response) {
-          console.log(response)
+
+          let id = element.parentElement.parentElement.lastElementChild.firstElementChild.value
 
           softSkillDisplay.insertAdjacentHTML('afterend',
-            ` <li class="list-group">
+            ` <li class="soft-skill-list-group">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
-                                 <div class="col-md-10 col-sm-10 col-10"><a id=\${response.id}\ class="ms-3"  href="#">\${response.skill_name}\ </a></div>
+                                 <div class="col-md-10 col-sm-10 col-10"> <input type="hidden" value=\${id}\ ><a class="ms-3"  href="#">\${response.skill_name}\ </a></div>
                              </div>
                        </li> `
-          )
-          document.getElementById('soft-skill-search').value = ''
-          document.getElementById('add-custom-soft-skill').classList.add('d-none');
+        )
+        document.getElementById('soft-skill-search').value = ''
+        document.getElementById('add-custom-soft-skill').classList.add('d-none');
         },
         error: function (error) {
           console.log("Error:::", error)
@@ -2253,18 +2546,17 @@
             skill_name: customHardSkillValue
           },
           success: function (response) {
-            console.log(response)
 
             hardSkillDisplay.insertAdjacentHTML('afterend',
-              `<li class="list-group">
+              `<li class="hard-skill-list-group">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
                                  <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customHardSkillValue}\ </a></div>
                              </div>
                        </li> `
-            )
-            document.getElementById('hard-skill-search').value = ''
-            document.getElementById('add-custom-hard-skill').classList.add('d-none');
+          )
+          document.getElementById('hard-skill-search').value = ''
+          document.getElementById('add-custom-hard-skill').classList.add('d-none');
           },
           error: function (error) {
             console.log("Error:::", error)
@@ -2282,7 +2574,7 @@
       if (element.matches('i')) {
         let text = element.parentElement.parentElement.lastElementChild.lastElementChild.innerText
         let div = `
-                            <li class="skill-list">
+                            <li class="soft-skill-list">
                               <div class="row">
                                   <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button"><i
                                         class="fa-solid fa-circle-plus fa-2x"></i></div>
@@ -2306,7 +2598,7 @@
       if (element.matches('i')) {
         let text = element.parentElement.parentElement.lastElementChild.lastElementChild.innerText
         let div = `
-                            <li class="skill-list">
+                            <li class="hard-skill-list">
                               <div class="row">
                                   <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
                                         class="fa-solid fa-circle-plus fa-2x"></i></div>
