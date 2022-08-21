@@ -87,9 +87,9 @@
                           <p id="gender-value">Male</p>
                           <p class="pt-2" id="date-of-birth-value">2000-07-06</p>
                           <p class="pt-3" id="pancard-value">AAAAA1111A</p>
-                          <p class="pt-3" id="pancard-photo"><i class="fa-solid fa-ban"></i></p>
+                          <p class="pt-3" id="pancard-photo"><i class="fa-solid fa-ban text-danger"></i></p>
                           <p class="pt-2" id="aadhar-card-value">1111 2222 3333 4444</p>
-                          <p class="pt-2" id="aadhar-card-photo"><i class="fa-solid fa-ban"></i></p>
+                          <p class="pt-2" id="aadhar-card-photo"><i class="fa-solid fa-ban text-danger"></i></p>
                         </div>
                       </div>
                     </div>
@@ -133,30 +133,55 @@
           <!------------------------------------------------ Qualification Section ------------------------------------------------>
 
           <div class="position-relative qualification-div-wrapper d-flex" style="cursor: pointer;">
-            <div id="qualification-div">
-              <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
-                <h3><b> Qualification</b></h3>
-              </div>
-              <div class="text-block right">
-                <div class="card-body">
-                  <h2>2015</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-                    admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea
-                    quis iuvaret expetendis his, te elit voluptua dignissim per,
-                    habeo iusto primis ea eam.
-                  </p>
+            <div class="container">
+              <div id="qualification-div">
+                <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
+                  <h3><b> Qualification</b></h3>
                 </div>
-              </div>
-              <div class="text-block right">
-                <div class="card-body">
-                  <h2>2012</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-                    admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea
-                    quis iuvaret expetendis his, te elit voluptua dignissim per,
-                    habeo iusto primis ea eam.
-                  </p>
+                <div class="text-block right">
+                  <div class="card-body preview-qualification-div">
+                    <h2 id="year-of-passing">2015</h2>
+
+                    <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Title :</p>
+                              <p class="h5 py-1">Major Subject :</p>
+                              <p class="h5 py-1">University :</p>
+
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">Bachelors Degree</p>
+                              <p id="">Discrete Maths</p>
+                              <p id="">Mumbai</p>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">College :</p>
+                              <p class="h5 py-1">percentage :</p>
+                              <p class="h5 py-1">Certificate :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">St. Wilfred's College</p>
+                              <p id="" class="">82.61%</p>
+                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
               </div>
             </div>
@@ -170,31 +195,60 @@
           <!------------------------------------------------ Work Experience Section ------------------------------------------------>
 
           <div class="work-experience-div-wrapper position-relative d-flex" style="cursor: pointer;">
-            <div id="work-experience-div">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 style="color: #740E00;"><b> Work Experience </b></h3>
-              </div>
-              <div class="text-block right">
-                <div class="card-body">
-                  <h2>2017</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-                    admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea
-                    quis iuvaret expetendis his, te elit voluptua dignissim per,
-                    habeo iusto primis ea eam.
-                  </p>
+            <div class="container">
+              <div id="work-experience-div">
+                <div class="d-flex justify-content-center align-items-center">
+                  <h3 style="color: #740E00;"><b> Work Experience </b></h3>
                 </div>
-              </div>
-              <div class="text-block right">
-                <div class="card-body">
-                  <h2>2016</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                    aliquam nisi blanditiis possimus, minima commodi vitae qui,
-                    dolore perferendis id corporis voluptatum. Id cumque odit
-                    quasi perspiciatis hic cum harum.
-                  </p>
+
+                <div class="text-block right">
+                  <div class="card-body">
+                    <h2>2017</h2>
+
+                    <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Title :</p>
+                              <p class="h5 py-1">Major Subject :</p>
+                              <p class="h5 py-1">University :</p>
+                              <p class="h5 py-1">University :</p>
+
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">Bachelors Degree</p>
+                              <p id="">Discrete Maths</p>
+                              <p id="">Mumbai</p>
+                              <p id="">Mumbai</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">College :</p>
+                              <p class="h5 py-1">percentage :</p>
+                              <p class="h5 py-1">Certificate :</p>
+                              <p class="h5 py-1">Certificate :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">St. Wilfred's College</p>
+                              <p id="" class="">82.61%</p>
+                              <p id="" class="">82.61%</p>
+                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
                 </div>
+
               </div>
             </div>
             <div class="d-none work-experience-edit-box d-flex justify-content-center align-items-center">
@@ -258,34 +312,58 @@
           </div>
           <hr>
 
-          <!-------------------------------------------------- Achievement Section----------------------------------------------->
+          <!-------------------------------------------------- Award Section----------------------------------------------->
 
           <div class="award-div-wrapper d-flex position-relative" style="cursor: pointer;">
-            <div id="achievement-div">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 style="color: #740E00;"><b> Awards </b></h3>
-              </div>
-              <div class="text-block right">
-                <div class="card-body">
-                  <h2>2000</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-                    admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea
-                    quis iuvaret expetendis his, te elit voluptua dignissim per,
-                    habeo iusto primis ea eam.
-                  </p>
+            <div class="container">
+              <div id="achievement-div">
+                <div class="d-flex justify-content-center align-items-center">
+                  <h3 style="color: #740E00;"><b> Awards </b></h3>
                 </div>
-              </div>
-              <div class="text-block right">
-                <div class="card-body">
-                  <h2>2004</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                    aliquam nisi blanditiis possimus, minima commodi vitae qui,
-                    dolore perferendis id corporis voluptatum. Id cumque odit
-                    quasi perspiciatis hic cum harum.
-                  </p>
+                <div class="text-block right">
+                  <div class="card-body">
+                    <h2>2000</h2>
+
+                    <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Award Name :</p>
+                              <p class="h5 py-1">organization :</p>
+                              <p class="h5 py-1">Organization Type :</p>
+
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">Engagement Award</p>
+                              <p id="">Campus Compact </p>
+                              <p id="">University</p>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Place :</p>
+                              <p class="h5 py-1">Certificate :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">Mumbai</p>
+                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
+
               </div>
             </div>
             <div class="d-none award-edit-box d-flex justify-content-center align-items-center">
@@ -297,26 +375,49 @@
           <!------------------------------------------- Publication Section  ----------------------------------------->
 
           <div class="publication-div-wrapper d-flex position-relative" style="cursor: pointer;">
-            <div id="publication-div" class="px-3 px-sm-4 px-lg-4">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 class="mb-4 h3" style="color: #740E00;"><b> Publications </b></h3>
-              </div>
-              <div class="row">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptates doloribus, quia non id, nam est voluptate dolorem
-                dolore fugit enim voluptas numquam iure officiis excepturi, neque
-                earum? Fugit, earum tempore? Et, nihil odio incidunt dicta
-                possimus beatae in dolorem sunt alias animi dolor fugit eius, esse
-                veritatis iure vitae iste rem consequuntur magni praesentium
-                suscipit neque quae aliquid totam? Nobis? Molestias illum, aperiam
-                quas magnam adipisci aspernatur veritatis ex perferendis
-                repudiandae quos dicta beatae recusandae aliquam quam voluptas
-                hic, quod nihil. Laudantium eveniet ullam minima optio porro!
-                Dolorum, nisi quas? Ipsa maiores doloremque nisi numquam
-                necessitatibus ducimus exercitationem id fuga facere? Vel quos
-                perspiciatis deleniti eos nulla et, deserunt est, maiores
-                molestias fuga praesentium, ab vero eaque quam architecto
-                explicabo!
+            <div class="container">
+              <div id="publication-div" class="px-3 px-sm-4 px-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                  <h3 class="mb-4 h3" style="color: #740E00;"><b> Publications </b></h3>
+                </div>
+
+                <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Role :</p>
+                          <p class="h5 py-1">No. of Authors :</p>
+                          <p class="h5 py-1">Book Title :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">Editor</p>
+                          <p id="">10 </p>
+                          <p id="">A Million Thoughts</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Publisher :</p>
+                          <p class="h5 pb-1">year of Publication :</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">Nationpress</p>
+                          <p class="" id="">2016</p>
+                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
             </div>
             <div class="d-none publication-edit-box d-flex justify-content-center align-items-center">
@@ -329,26 +430,50 @@
           <!------------------------------------------- Research Section  ----------------------------------------->
 
           <div class="research-div-wrapper d-flex position-relative" style="cursor: pointer;">
-            <div id="research-div" class="px-3 px-sm-4 px-lg-4">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><b> Research </b></h3>
-              </div>
-              <div class="row">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptates doloribus, quia non id, nam est voluptate dolorem
-                dolore fugit enim voluptas numquam iure officiis excepturi, neque
-                earum? Fugit, earum tempore? Et, nihil odio incidunt dicta
-                possimus beatae in dolorem sunt alias animi dolor fugit eius, esse
-                veritatis iure vitae iste rem consequuntur magni praesentium
-                suscipit neque quae aliquid totam? Nobis? Molestias illum, aperiam
-                quas magnam adipisci aspernatur veritatis ex perferendis
-                repudiandae quos dicta beatae recusandae aliquam quam voluptas
-                hic, quod nihil. Laudantium eveniet ullam minima optio porro!
-                Dolorum, nisi quas? Ipsa maiores doloremque nisi numquam
-                necessitatibus ducimus exercitationem id fuga facere? Vel quos
-                perspiciatis deleniti eos nulla et, deserunt est, maiores
-                molestias fuga praesentium, ab vero eaque quam architecto
-                explicabo!
+            <div class="container">
+              <div id="research-div" class="px-3 px-sm-4 px-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                  <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><b> Research </b></h3>
+                </div>
+
+                <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Role :</p>
+                          <p class="h5 py-1">Journal Name :</p>
+                          <p class="h5 py-1">Volume year :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id=""></p>
+                          <p id=""></p>
+                          <p id=""></p>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Description :</p>
+                          <p class="h5 pb-1">Category :</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">example</p>
+                          <p class="" id="">example</p>
+                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
             </div>
             <div class="d-none research-edit-box d-flex justify-content-center align-items-center">
@@ -481,7 +606,7 @@
               <div id="left-fourth-row" class="row">
                 <div class="col-md-6">
                   <label for="pan-number">Pan Card Number</label>
-                  <span id="pan-number-message"  style="color: red;" class="error"></span>
+                  <span id="pan-number-message" style="color: red;" class="error"></span>
                   <input type="text" name="pan_number" class="form-control" id="pan-number" />
                 </div>
                 <div class="col-md-6">
@@ -583,18 +708,25 @@
                   </thead>
                   <tbody id="qualification-data">
                     <tr data-toggle="collapse" class="collapsed qualification-row">
-                      <td class="text-white " id="bachelors-degree-title"><select class="form-control qualification-title">
-                        <option value="1">Bachelor's Degree</option>
-                        <option value="2">Master's Degree</option>
-                        <option value="3">PHD</option>
-                        <option value="4">Professional Certification</option>
-                      </select></td>
-                      <td><input class="form-control qualification-subject" id="bachelors-degree-major-subject"  type="text"></td>
-                      <td><input class="form-control qualification-university" id="bachelors-degree-university"  type="text"></td>
-                      <td><input class="form-control qualification-college" id="bachelors-degree-college"  type="text"></td>
-                      <td><input class="form-control qualification-percentile" id="bachelors-degree-percentile" type="text"></td>
-                      <td><input class="form-control qualification-year" id="bachelors-degree-year-of-passing"  type="text"></td>
-                      <td><input class="form-control qualification-certificate" id="bachelors-degree-certificate"  type="file"></td>
+                      <td class="text-white " id="bachelors-degree-title"><select
+                          class="form-control qualification-title">
+                          <option value="1">Bachelor's Degree</option>
+                          <option value="2">Master's Degree</option>
+                          <option value="3">PHD</option>
+                          <option value="4">Professional Certification</option>
+                        </select></td>
+                      <td><input class="form-control qualification-subject" id="bachelors-degree-major-subject"
+                          type="text"></td>
+                      <td><input class="form-control qualification-university" id="bachelors-degree-university"
+                          type="text"></td>
+                      <td><input class="form-control qualification-college" id="bachelors-degree-college" type="text">
+                      </td>
+                      <td><input class="form-control qualification-percentile" id="bachelors-degree-percentile"
+                          type="text"></td>
+                      <td><input class="form-control qualification-year" id="bachelors-degree-year-of-passing"
+                          type="text"></td>
+                      <td><input class="form-control qualification-certificate" id="bachelors-degree-certificate"
+                          type="file"></td>
                       <td><i id="qualification-add-button" class="fa-solid text-white fa-circle-plus "></i></td>
                     </tr>
                   </tbody>
@@ -737,8 +869,10 @@
                         <button type="submit" class="btn btn-primary col-4 d-none"
                           id="add-custom-soft-skill">Add</button>
                       </div>
+
                       <ul id="soft-skill-UL">
                       </ul>
+
                     </div>
                   </div>
                 </div>
@@ -756,7 +890,6 @@
                     <ul id="hard-skill-UL">
                     </ul>
 
-                    </ul>
                   </div>
                 </div>
 
@@ -935,7 +1068,7 @@
                         <th>Role-?</th>
                         <th>Journal-name</th>
                         <th>Volume-year</th>
-                        <th>Number</th>
+                        <th>Description</th>
                         <th>Category</th>
                         <th>Certificate</th>
                         <th>Action</th>
@@ -949,11 +1082,11 @@
                             <option value="Sole">Sole</option>
                             <option value="Author">Author</option>
                           </select></td>
-                        <td><input data-title="Journal-name" class="form-control" type="text"></td>
-                        <td><input data-title="Volume-year" class="form-control" type="text"></td>
-                        <td><input data-title="Number" class="form-control" type="text"></td>
-                        <td><input data-title="Category" class="form-control" type="text"></td>
-                        <td><input data-title="Certificate" class="form-control" type="file"></td>
+                        <td><input  class="form-control" type="text"></td>
+                        <td><input  class="form-control" type="text"></td>
+                        <td><input  class="form-control" type="text"></td>
+                        <td><input  class="form-control" type="text"></td>
+                        <td><input  class="form-control" type="file"></td>
                         <td></td>
                       </tr>
                     </tbody>
@@ -1044,210 +1177,199 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
   <script>
+    // --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
 
-// --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
+    function isCharNumber(res) {
+      for (let i = 0; i < checkLength(res); i++) {
+        var c = res.charCodeAt(i);
 
-          function isCharNumber(res) {
-            for (let i = 0; i < checkLength(res); i++) {
-              var c = res.charCodeAt(i);
-          
-              if (!(c > 47 && c < 58)) {
-                return false;
-              }
-            }
-            return true;
-          }
-          
-          function isCharAlphabet(res) {
-            for (let i = 0; i < checkLength(res); i++) {
-              var c = res.charCodeAt(i);
-          
-              if (
-                !(c > 47 && c < 58) &&
-                !(c > 64 && c < 91) &&
-                !(c > 96 && c < 123) &&
-                c != 32
-              ) {
-                return false;
-              }
-            }
-            return true;
-          }
-          
-          function isSpecialChar(char) {
-            return (
-              (char >= 65 && char < 91) ||
-              (char >= 97 && char < 123) ||
-              (char >= "0" && char <= "9")
-            );
-          }
-          
-          function checkLength(value) {
-            return value.length;
-          }
-          
-          function clearError() {
-            errors = document.getElementsByClassName("error");
-            for (const item of errors) {
-              item.innerHTML = "";
-            }
-          } 
+        if (!(c > 47 && c < 58)) {
+          return false;
+        }
+      }
+      return true;
+    }
 
-          const firstName = document.getElementById("first-name");
-          const lastName = document.getElementById("last-name");
-          const contactNumber = document.getElementById("contact-number");
-          const email = document.getElementById("email");
-          const pancard = document.getElementById("pan-number");
-          const aadhar = document.getElementById("aadhar-number");
-          let condition;
+    function isCharAlphabet(res) {
+      for (let i = 0; i < checkLength(res); i++) {
+        var c = res.charCodeAt(i);
 
-          function personalDetailFirstNameValidation() {
-            let res = firstName.value;
-          
-            if (checkLength(res) > 2) {
-              if (!isCharNumber(res)) {
-                condition = true;
-              } else {
-                document.getElementById("first-name-message").innerHTML = "*Numbers are not allowed";
-                condition = false;
-              }
-            } else {
-              document.getElementById("first-name-message").innerHTML = "*Invalid length";
-              condition = false;
-            }
-            return condition;
-          }
+        if (
+          !(c > 47 && c < 58) &&
+          !(c > 64 && c < 91) &&
+          !(c > 96 && c < 123) &&
+          c != 32
+        ) {
+          return false;
+        }
+      }
+      return true;
+    }
 
-          function personalDetailLastNameValidation() {
-            let res = lastName.value;
-          
-            if (checkLength(res) > 2) {
-              if (!isCharNumber(res)) {
-                condition = true;
-              } else {
-                document.getElementById("last-name-message").innerHTML = "*Numbers are not allowed";
-                condition = false;
-              }
-            } else {
-              document.getElementById("last-name-message").innerHTML = "*Invalid length";
-              condition = false;
-            }
-            return condition;
+    function isSpecialChar(char) {
+      return (
+        (char >= 65 && char < 91) ||
+        (char >= 97 && char < 123) ||
+        (char >= "0" && char <= "9")
+      );
+    }
+
+    function checkLength(value) {
+      return value.length;
+    }
+
+    function clearError() {
+      errors = document.getElementsByClassName("error");
+      for (const item of errors) {
+        item.innerHTML = "";
+      }
+    }
+
+    const firstName = document.getElementById("first-name");
+    const lastName = document.getElementById("last-name");
+    const contactNumber = document.getElementById("contact-number");
+    const email = document.getElementById("email");
+    const pancard = document.getElementById("pan-number");
+    const aadhar = document.getElementById("aadhar-number");
+    let condition;
+
+    function personalDetailFirstNameValidation() {
+      let res = firstName.value;
+
+      if (checkLength(res) > 2) {
+        if (!isCharNumber(res)) {
+          condition = true;
+        } else {
+          document.getElementById("first-name-message").innerHTML = "*Numbers are not allowed";
+          condition = false;
+        }
+      } else {
+        document.getElementById("first-name-message").innerHTML = "*Invalid length";
+        condition = false;
+      }
+      return condition;
+    }
+
+    function personalDetailLastNameValidation() {
+      let res = lastName.value;
+
+      if (checkLength(res) > 2) {
+        if (!isCharNumber(res)) {
+          condition = true;
+        } else {
+          document.getElementById("last-name-message").innerHTML = "*Numbers are not allowed";
+          condition = false;
+        }
+      } else {
+        document.getElementById("last-name-message").innerHTML = "*Invalid length";
+        condition = false;
+      }
+      return condition;
+    }
+
+    function personalDetailContactNumberValidation() {
+      let res = contactNumber.value
+      if (res.length != 10) {
+        document.getElementById('contact-number-message').innerHTML = "*Invalid length";
+        condition = false;
+      } else {
+        if (isNaN(res)) {
+          document.getElementById('contact-number-message').innerHTML = "*Characters Not Allowed";
+          condition = false;
+        } else {
+          if ((res.charAt(0) != 9) && (res.charAt(0) != 8) && (res.charAt(0) != 7) && (res.charAt(0) != 6)) {
+            document.getElementById('contact-number-message').innerHTML = "*Invalid phone number";
+            condition = false;
+          } else {
+            condition = true;
           }
-          
-         function personalDetailContactNumberValidation() {
-          let res = contactNumber.value
-          if (res.length != 10) {
-               document.getElementById('contact-number-message').innerHTML = "*Invalid length";
-               condition = false;
-              }
-            else {
-               if (isNaN(res)) {
-                   document.getElementById('contact-number-message').innerHTML = "*Characters Not Allowed";
-                   condition = false;
-               } 
-               else {
-                   if ((res.charAt(0) != 9) && (res.charAt(0) != 8) && (res.charAt(0) != 7) && (res.charAt(0) != 6)) {
-                       document.getElementById('contact-number-message').innerHTML = "*Invalid phone number";
-                       condition = false;
-                      }
-                    else {
-                      condition = true;
-                    }
+        }
+      }
+      return condition;
+    }
+
+    function personalDetailEmailValidation() {
+      let res = email.value;
+      var atposition = res.indexOf('@');
+      var dotposition = res.lastIndexOf('.');
+      if (atposition < 1 || (res.length - 2) == dotposition) {
+        (document).getElementById('email-message').innerHTML = "*Invalid email address";
+        condition = false;
+      } else if (atposition < dotposition) {
+        condition = true;
+      } else {
+        (document).getElementById('email-message').innerHTML = "*Invalid email address";
+        condition = false;
+      }
+      return condition;
+    }
+
+    function personalDetailPancardValidation() {
+      let pan = pancard.value;
+      if (pan.length != 10) {
+        document.getElementById('pan-number-message').innerHTML = "*Invalid length of Pancard Number";
+        condition = false;
+      } else {
+        let firstfive = pan.substring(0, 5);
+        let nextfour = pan.substring(5, 9);
+        for (let i = 0; i < firstfive.length; i++) {
+          if (firstfive[i] >= 'A' && firstfive[i] <= 'Z') {
+            for (let k = 0; k < nextfour.length; k++) {
+              if (nextfour[k] >= '0' && nextfour[k] <= '9') {
+                if (pan[9] >= 'A' && pan[9] <= 'Z') {
+                  condition = true;
+                } else {
+                  document.getElementById('pan-number-message').innerHTML = "*Invalid Last Digit";
+                  condition = false;
                 }
+              } else {
+                document.getElementById('pan-number-message').innerHTML = "*Error Inbetween Numbers";
+                condition = false;
+                break;
+              }
             }
-            return condition;
+          } else {
+            document.getElementById('pan-number-message').innerHTML = "Error Inbetween First Five Characters";
+            condition = false;
+            break;
+          }
+        }
+      }
+      return condition;
+    }
+
+    function personalDetailAadharValidation() {
+
+      let res = aadhar.value;
+
+      if (res.length == 12) {
+
+        document.getElementById('aadhar-number-message').innerHTML = "Invalid Adhar Number";
+        condition = false;
+
+      } else {
+
+        for (let i = 0; i < res.length; i++) {
+
+          console.log("entered inside for loop")
+          if (res[i] < '0' || res[i] > '9') {
+
+            condition = false;
+            document.getElementById('aadhar-number-message').innerHTML = "Special Character not allowed";
+            break;
+
+          } else {
+
+            condition = true;
+
           }
 
-          function personalDetailEmailValidation() {
-             let res = email.value;
-             var atposition = res.indexOf('@');
-             var dotposition = res.lastIndexOf('.');
-             if (atposition < 1 || (res.length - 2) == dotposition) {
-               (document).getElementById('email-message').innerHTML = "*Invalid email address";
-                condition = false;             
-             } else if (atposition < dotposition) {
-               condition = true;             
-            } else {
-              (document).getElementById('email-message').innerHTML = "*Invalid email address";
-              condition = false;             
-             }
-             return condition;
-          }
+        }
 
-          function personalDetailPancardValidation() {
-              let pan = pancard.value;
-              if (pan.length != 10) {
-                document.getElementById('pan-number-message').innerHTML = "*Invalid length of Pancard Number";
-                condition = false;
-              } 
-              else {
-                  let firstfive = pan.substring(0, 5);
-                  let nextfour = pan.substring(5, 9);
-                  for (let i = 0; i < firstfive.length; i++) {
-                      if (firstfive[i] >= 'A' && firstfive[i] <= 'Z') {
-                          for (let k = 0; k < nextfour.length; k++) {
-                              if (nextfour[k] >= '0' && nextfour[k] <= '9') {
-                                  if (pan[9] >= 'A' && pan[9] <= 'Z') {
-                                    condition = true;
-                                   }    
-                                  else {
-                                    document.getElementById('pan-number-message').innerHTML = "*Invalid Last Digit";
-                                    condition = false;
-                                    }
-                                 } 
-                              else {
-                                document.getElementById('pan-number-message').innerHTML = "*Error Inbetween Numbers";
-                                condition = false;
-                                break;
-                                 }
-                              }
-                          }
-                         else {
-                           document.getElementById('pan-number-message').innerHTML = "Error Inbetween First Five Characters";
-                           condition = false;
-                           break;
-                         }
-                      }
-                 }
-                 return condition;
-           }
+      }
+      return condition;
+    }
 
-           function personalDetailAadharValidation() {
-            
-            let res = aadhar.value;
-            
-            if (res.length == 12) {
-            
-                document.getElementById('aadhar-number-message').innerHTML = "Invalid Adhar Number";
-                condition = false;
-            
-            } 
-            else {
-            
-                for (let i = 0; i < res.length; i++) {
-            
-            console.log("entered inside for loop")
-                    if (res[i] < '0' || res[i] > '9') {
-            
-                      condition = false;
-                        document.getElementById('aadhar-number-message').innerHTML = "Special Character not allowed";
-                        break;
-            
-                    } 
-
-                    else {
-            
-                        condition = true;
-            
-                       }
-               
-                 }
-               
-               }
-               return condition;
-          }
-          
     let downloadButton = document.getElementById("download-btn");
     downloadButton.addEventListener("click", function () {
       let elementHTML = document.getElementById("body");
@@ -1377,8 +1499,8 @@
 
         if (!firstName1 || !lastName1 || !contactNumber1 || !pancard1 || !email1 || !aadhar1) {
 
-              return;
-      }
+          return;
+        }
 
         let myForm = document.getElementById('myForm')
         let formData = new FormData(myForm)
@@ -1623,7 +1745,7 @@
         fetchRes.then(success => {
 
         })
-          console.log( JSON.stringify(qualificationTableData));
+        console.log(JSON.stringify(qualificationTableData));
         console.log(JSON.stringify(qualificationTableData));
 
       })
@@ -1650,29 +1772,29 @@
           </td>
           </tr>`
 
-        document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
-      })
+      document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
+    })
 
-      $(document).on('click', '.qualification-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
-
-      
-      //*************************************Award-modal JS****************************************
+    $(document).on('click', '.qualification-delete-button', function () {
+      $(this).closest('tr').remove()
+    })
 
 
-      document.querySelector(".award-edit-box").addEventListener('click', function () {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.award-modal').classList.remove('d-none');
-      });
+    //*************************************Award-modal JS****************************************
 
-      document.querySelector("#award-cancel-button").addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.award-modal').classList.add('d-none');
-      });
 
-      document.getElementById('award-add-button').addEventListener('click', function () {
-        let table = `   <tr data-toggle="collapse" class="collapsed">
+    document.querySelector(".award-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.award-modal').classList.remove('d-none');
+    });
+
+    document.querySelector("#award-cancel-button").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.award-modal').classList.add('d-none');
+    });
+
+    document.getElementById('award-add-button').addEventListener('click', function () {
+      let table = `   <tr data-toggle="collapse" class="collapsed">
                         <td class="text-white pb-3">Award</td>
                         <td><input class="form-control" type="text"></td>
                         <td><input class="form-control" type="text"></td>
@@ -1687,27 +1809,27 @@
                         <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 award-delete-button"></i></td>
                       </tr>
        `
-        document.getElementById('award-data').insertAdjacentHTML("beforeend", table);
-      })
-      $(document).on('click', '.award-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
+      document.getElementById('award-data').insertAdjacentHTML("beforeend", table);
+    })
+    $(document).on('click', '.award-delete-button', function () {
+      $(this).closest('tr').remove()
+    })
 
 
-      //*************************************Publications-modal JS****************************************
+    //*************************************Publications-modal JS****************************************
 
-      document.querySelector(".publication-edit-box").addEventListener('click', function () {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.publication-modal').classList.remove('d-none');
-      });
+    document.querySelector(".publication-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.publication-modal').classList.remove('d-none');
+    });
 
-      document.querySelector("#publication-cancel-button").addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.publication-modal').classList.add('d-none');
-      });
+    document.querySelector("#publication-cancel-button").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.publication-modal').classList.add('d-none');
+    });
 
-      document.getElementById('publication-add-button').addEventListener('click', function () {
-        let table = ` <tr data-toggle="collapse" class="collapsed">
+    document.getElementById('publication-add-button').addEventListener('click', function () {
+      let table = ` <tr data-toggle="collapse" class="collapsed">
             <td class="text-white pb-3" >Publication</td>
             <td><select data-title="Role ?" class="form-control" id="role">
                     <option>-Select-</option>
@@ -1725,28 +1847,28 @@
             <td><input data-title="Certificate" class="form-control" type="file"></td>
             <td> <i class="fa-solid fa-trash-can text-white h4 publication-delete-button" data-title="Action"></i></td>
                        </tr>`
-        document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
-      })
+      document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
+    })
 
-      $(document).on('click', '.publication-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
+    $(document).on('click', '.publication-delete-button', function () {
+      $(this).closest('tr').remove()
+    })
 
 
-      //*************************************Research-modal JS****************************************
+    //*************************************Research-modal JS****************************************
 
-      document.querySelector(".research-edit-box").addEventListener('click', function () {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.research-modal').classList.remove('d-none');
-      });
+    document.querySelector(".research-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.research-modal').classList.remove('d-none');
+    });
 
-      document.querySelector("#research-cancel-button").addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.research-modal').classList.add('d-none');
-      });
+    document.querySelector("#research-cancel-button").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.research-modal').classList.add('d-none');
+    });
 
-      document.getElementById('research-add-button').addEventListener('click', function () {
-        let table = ` <tr data-toggle="collapse" class="collapsed">
+    document.getElementById('research-add-button').addEventListener('click', function () {
+      let table = ` <tr data-toggle="collapse" class="collapsed">
             <td class="text-white pb-3">Research</td>
             <td><select data-title="Role-?" class="form-control" id="role">
                     <option>-Select-</option>
@@ -1761,74 +1883,74 @@
             <td class="p-2 !important"> <i class="fa-solid fa-trash-can text-white h4 research-delete-button" data-title=" Action"></i> </td>
                   </tr>`
 
-        document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
-      })
+      document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
+    })
 
-      $(document).on('click', '.research-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
-
-
-      //*************************************Bank-details-modal JS****************************************
-
-      document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
-
-        let editBankDetailsForm = new FormData()
-
-        editBankDetailsForm.append('editBankName', document.getElementById('bank-name-value').innerText)
-        editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
-        editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
-        editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
-        editBankDetailsForm.append('editAccoutNumber', document.getElementById('account-number-value')
-          .innerText)
-        editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value').innerText)
-
-        document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
-        document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
-        document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
-        document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
-        document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccoutNumber')
-        document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
+    $(document).on('click', '.research-delete-button', function () {
+      $(this).closest('tr').remove()
+    })
 
 
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.bank-details-modal').classList.remove('d-none');
-      });
+    //*************************************Bank-details-modal JS****************************************
 
-      document.querySelector('#bank-details-cancel-button').addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.bank-details-modal').classList.add('d-none');
-      });
+    document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
 
-      document.querySelector('#bank-details-submit-button').addEventListener('click', function () {
+      let editBankDetailsForm = new FormData()
 
-        let submitBankDetailsForm = new FormData()
+      editBankDetailsForm.append('editBankName', document.getElementById('bank-name-value').innerText)
+      editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
+      editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
+      editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
+      editBankDetailsForm.append('editAccoutNumber', document.getElementById('account-number-value')
+        .innerText)
+      editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value').innerText)
 
-        submitBankDetailsForm.append('bankName', document.getElementById('bank-name').value)
-        submitBankDetailsForm.append('branchName', document.getElementById('bank-branch').value)
-        submitBankDetailsForm.append('ifscCode', document.getElementById('bank-ifsc-code').value)
-        submitBankDetailsForm.append('micrCode', document.getElementById('bank-micr-code').value)
-        submitBankDetailsForm.append('accoutNumber', document.getElementById('bank-account-number').value)
-        submitBankDetailsForm.append('accountType', document.getElementById('bank-account-type').value)
-        submitBankDetailsForm.append('cancelledCheckPhoto', document.getElementById('cancelled_cheque_Photo')
-          .value)
+      document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
+      document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
+      document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
+      document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
+      document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccoutNumber')
+      document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
 
-        document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
-        document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
-        document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
-        document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-        document.getElementById('account-number-value').innerText = submitBankDetailsForm.get('accoutNumber')
-        document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
 
-        if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
-          document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
-          document.getElementById('cancelled-check-photo').firstElementChild.classList.add('fa-circle-check')
-          document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
-        }
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.bank-details-modal').classList.remove('d-none');
+    });
 
-      });
+    document.querySelector('#bank-details-cancel-button').addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.bank-details-modal').classList.add('d-none');
+    });
 
-      // ****************************************************JS for skills Modal****************************************************************
+    document.querySelector('#bank-details-submit-button').addEventListener('click', function () {
+
+      let submitBankDetailsForm = new FormData()
+
+      submitBankDetailsForm.append('bankName', document.getElementById('bank-name').value)
+      submitBankDetailsForm.append('branchName', document.getElementById('bank-branch').value)
+      submitBankDetailsForm.append('ifscCode', document.getElementById('bank-ifsc-code').value)
+      submitBankDetailsForm.append('micrCode', document.getElementById('bank-micr-code').value)
+      submitBankDetailsForm.append('accoutNumber', document.getElementById('bank-account-number').value)
+      submitBankDetailsForm.append('accountType', document.getElementById('bank-account-type').value)
+      submitBankDetailsForm.append('cancelledCheckPhoto', document.getElementById('cancelled_cheque_Photo')
+        .value)
+
+      document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
+      document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
+      document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
+      document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
+      document.getElementById('account-number-value').innerText = submitBankDetailsForm.get('accoutNumber')
+      document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
+
+      if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('fa-circle-check')
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
+      }
+
+    });
+
+    // ****************************************************JS for skills Modal****************************************************************
 
 
     document.querySelector('.skills-edit-box').addEventListener('click', function () {
@@ -1846,8 +1968,6 @@
         url: '/get-all-skill',
         type: 'POST',
         success: function (response) {
-          console.log(JSON.stringify(response))
-          console.log(response.length)
 
           for (let i = 0; i < response.length; i++) {
 
@@ -1855,12 +1975,12 @@
 
               softSkillUl.insertAdjacentHTML('beforeend',
                 `
-                       <li class="skill-list">
+                       <li class="soft-skill-list">
                           <div class="row">
                             <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button">
                               <i class="fa-solid fa-circle-plus fa-2x"></i>
                             </div>
-                            <div class="col-md-10 col-sm-10 col-12"><a href="#">\${response[i].skill_name}\</a></div>
+                            <div class="col-md-10 col-sm-10 col-12"><input type="hidden" value=\${response[i].id}\ ><a href="#">\${response[i].skill_name}\</a></div>
                           </div>
                         </li>
                       `
@@ -1870,16 +1990,15 @@
 
               hardSkillUl.insertAdjacentHTML('beforeend',
 
-                `<li class="skill-list">
+                `<li class="hard-skill-list">
                         <div class="row">
                           <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
                               class="fa-solid fa-circle-plus fa-2x"></i>
                           </div>
-                          <div class="col-md-10 col-sm-10 col-12"><a id=\${response[i].id}\ href="#">\${response[i].skill_name}\</a></div>
+                          <div class="col-md-10 col-sm-10 col-12"> <input type="hidden" value=\${response[i].id}\ ><a href="#">\${response[i].skill_name}\</a></div>
                         </div>
                       </li>`
               )
-              console.log("hard Skills")
             } else {
               console.log("Error")
             }
@@ -1894,15 +2013,42 @@
       document.getElementById('body').classList.add('d-none');
       document.querySelector('.skills-modal').classList.remove('d-none');
 
-      })
+    })
 
-      document.querySelector('#skills-modal-cancel-button').addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.skills-modal').classList.add('d-none');
+    document.querySelector('#skills-modal-cancel-button').addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.skills-modal').classList.add('d-none');
 
-      })
+    })
 
     document.querySelector('#skills-modal-submit-button').addEventListener('click', function () {
+
+
+      // let value =  element.parentElement.parentElement.lastElementChild.lastElementChild.innerText
+
+      let skillJson = {
+        skill_lid: []
+      }
+
+      let softSkillDisplay = document.getElementById('soft-skill-display')
+      let hardSkillDisplay = document.getElementById('hard-skill-display')
+
+      let softSkillListGroup = document.querySelectorAll('.soft-skill-list-group')
+      let hardSkillListGroup = document.querySelectorAll('.hard-skill-list-group')
+
+      for (let i = 0; i < softSkillListGroup.length; i++) {
+
+        let value = softSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
+        skillJson.skill_lid.push(value)
+      }
+
+      for (let i = 0; i < hardSkillListGroup.length; i++) {
+
+        let value = hardSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
+        skillJson.skill_lid.push(value)
+      }
+
+      console.log(JSON.stringify(skillJson))
 
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.skills-modal').classList.add('d-none');
@@ -1957,13 +2103,13 @@
       let element = event.target
       if (element.matches('i')) {
         let text = element.parentElement.parentElement.lastElementChild.lastElementChild.innerText;
+        let id = element.parentElement.parentElement.lastElementChild.firstElementChild.value
 
-        console.log(text, ":::::text1")
         let div = ` 
-                    <li class="list-group">
+                    <li class="soft-skill-list-group">
                         <div class="row">
                             <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
-                            <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${text}\</a></div>
+                            <div class="col-md-10 col-sm-10 col-10"><input type="hidden" value=\${id}\ ><a class="ms-3" href="#">\${text}\</a></div>
                         </div>
                     </li> `
 
@@ -2011,13 +2157,13 @@
       let element = event.target
       if (element.matches('i')) {
         let text = element.parentElement.parentElement.lastElementChild.lastElementChild.innerText;
+        let id = element.parentElement.parentElement.lastElementChild.firstElementChild.value
 
-        console.log(text)
         let div = ` 
-                     <li class="list-group">
+                     <li class="hard-skill-list-group">
                          <div class="row">
                              <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x hard-skill-delete-button" style="color:red;"></i></div>
-                             <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${text}\ </a></div>
+                             <div class="col-md-10 col-sm-10 col-10"> <input type="hidden" value=\${id}\ ><a class="ms-3" href="#">\${text}\ </a></div>
                          </div>
                      </li> `
 
@@ -2031,7 +2177,6 @@
 
       let customSoftSkillValue = document.getElementById('soft-skill-search').value
 
-
       $.ajax({
         url: '/insert-custom-skill',
         type: 'POST',
@@ -2040,13 +2185,14 @@
           skill_name: customSoftSkillValue
         },
         success: function (response) {
-          console.log(response)
+
+          let id = element.parentElement.parentElement.lastElementChild.firstElementChild.value
 
           softSkillDisplay.insertAdjacentHTML('afterend',
-            ` <li class="list-group">
+            ` <li class="soft-skill-list-group">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
-                                 <div class="col-md-10 col-sm-10 col-10"><a id=\${response.id}\ class="ms-3"  href="#">\${response.skill_name}\ </a></div>
+                                 <div class="col-md-10 col-sm-10 col-10"> <input type="hidden" value=\${id}\ ><a class="ms-3"  href="#">\${response.skill_name}\ </a></div>
                              </div>
                        </li> `
           )
@@ -2074,10 +2220,9 @@
             skill_name: customHardSkillValue
           },
           success: function (response) {
-            console.log(response)
 
             hardSkillDisplay.insertAdjacentHTML('afterend',
-              `<li class="list-group">
+              `<li class="hard-skill-list-group">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
                                  <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customHardSkillValue}\ </a></div>
@@ -2103,7 +2248,7 @@
       if (element.matches('i')) {
         let text = element.parentElement.parentElement.lastElementChild.lastElementChild.innerText
         let div = `
-                            <li class="skill-list">
+                            <li class="soft-skill-list">
                               <div class="row">
                                   <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button"><i
                                         class="fa-solid fa-circle-plus fa-2x"></i></div>
@@ -2127,7 +2272,7 @@
       if (element.matches('i')) {
         let text = element.parentElement.parentElement.lastElementChild.lastElementChild.innerText
         let div = `
-                            <li class="skill-list">
+                            <li class="hard-skill-list">
                               <div class="row">
                                   <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
                                         class="fa-solid fa-circle-plus fa-2x"></i></div>
