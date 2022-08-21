@@ -88,7 +88,7 @@
                           <p class="pt-2" id="date-of-birth-value">2000-07-06</p>
                           <p class="pt-3" id="pancard-value">AAAAA1111A</p>
                           <p class="pt-3" id="pancard-photo"><i class="fa-solid fa-ban"></i></p>
-                          <p class="pt-2" id="aadhar-card-value">1111 2222 3333 4444</p>
+                          <p class="pt-2" id="aadhar-card-value">111122223333</p>
                           <p class="pt-2" id="aadhar-card-photo"><i class="fa-solid fa-ban"></i></p>
                         </div>
                       </div>
@@ -448,6 +448,7 @@
                   <input style="height: auto ;" type="radio" name="gender" class="gender" id="female" value="2" />
                   <label for="other">other</label>
                   <input style="height: auto ;" type="radio" name="gender" class="gender" id="other" value="3" />
+                  <span id="gender-message" style="color: red;" class="error"></span>
                 </div>
                 <div class="col-md-4">
                   <label for="date-of-birth">date of birth</label>
@@ -511,12 +512,12 @@
               <div id="left-fourth-row" class="row">
                 <div class="col-md-6">
                   <label for="address">Address</label>
-                  <span id="address-message" class="error"></span>
+                  <span id="address-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="permanent_address" id="address" />
                 </div>
                 <div class="col-md-6">
                   <label for="temporary-address">Temporary Address</label>
-                  <span id="temporary-address-message" class="error"></span>
+                  <span id="temporary-address-message" style="color: red;" class="error"></span>
                   <input type="text" name="temporary_address" class="form-control" id="temporary-address">
                 </div>
               </div>
@@ -536,7 +537,7 @@
               </div> -->
                 <div class="col-md-12">
                   <label for="country">Country</label>
-                  <span id="country-message" class="error"></span>
+                  <span id="country-message" style="color: red;" class="error"></span>
                   <input type="text" name="nationality" class="form-control" id="country">
                 </div>
               </div>
@@ -562,6 +563,7 @@
       <div class="main-content">
         <div class="container d-flex justify-content-center align-items-center text-white pt-md-5">
           <h3>Qualification</h3>
+          <span id="qualification-message" style="color: red;" class="error"></span>
         </div>
         <hr>
         <div class="d-flex align-items-centre justify-content-centre">
@@ -583,7 +585,7 @@
                   </thead>
                   <tbody id="qualification-data">
                     <tr data-toggle="collapse" class="collapsed qualification-row">
-                      <td class="text-white " id="bachelors-degree-title"><select class="form-control qualification-title">
+                      <td class="text-white " id="bachelors-degree-title"><select class="form-control qualification-title" id="bachelors-degree-title-data">
                         <option value="1">Bachelor's Degree</option>
                         <option value="2">Master's Degree</option>
                         <option value="3">PHD</option>
@@ -983,40 +985,53 @@
         <div class="row">
           <div class="col-md-6 col-sm-12">
             <label for="bank-name" class="py-md-2">Name of the Bank</label>
+            <span id="bank-name-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-name">
+
           </div>
           <div class="col-md-6 col-sm-12">
             <label for="bank-branch" class="py-md-2">Branch</label>
+            <span id="bank-branch-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-branch">
+
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-6 col-sm-12">
             <label for="bank-ifsc-code" class="py-md-2">IFSC Code</label>
+            <span id="bank-ifsc-code-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-ifsc-code">
+
           </div>
           <div class="col-md-6 col-sm-12">
             <label for="bank-micr-code" class="py-md-2">MICR code</label>
+            <span id="bank-micr-code-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-micr-code">
+
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-6 col-sm-12">
             <label for="bank-account-number" class="py-md-2">Account Number</label>
+            <span id="bank-account-number-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-account-number">
+
           </div>
           <div class="col-md-6 col-sm-12">
             <label for="bank-account-type" class="py-md-2">Account Type</label>
+            <span id="bank-account-type-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-account-type">
+
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-6 col-sm-12">
             <div>
-              <label for="cancelled_cheque_Photo" class="py-md-2">Cancalled Cheque Photo</label>
+              <label for="cancelled_cheque_Photo" class="py-md-2">Cancelled Cheque Photo</label>
+              <span id="cancelled_cheque_Photo-message" style="color: red;" class="error"></span>
               <input type="file" name="cancelled_cheque_Photo" id="cancelled_cheque_Photo" class="form-control"
                 onchange="document.getElementById('check-preview').src = window.URL.createObjectURL(this.files[0])">
             </div>
@@ -1093,17 +1108,25 @@
             }
           } 
 
-          const firstName = document.getElementById("first-name");
-          const lastName = document.getElementById("last-name");
-          const contactNumber = document.getElementById("contact-number");
-          const email = document.getElementById("email");
-          const pancard = document.getElementById("pan-number");
-          const aadhar = document.getElementById("aadhar-number");
+          // const firstName = document.getElementById("first-name");
+          // const lastName = document.getElementById("last-name");
+          // const contactNumber = document.getElementById("contact-number");
+          // const email = document.getElementById("email");
+          // const pancard = document.getElementById("pan-number");
+          // const aadhar = document.getElementById("aadhar-number");
+          // const address = document.getElementById("address");
+          // const temporaryAddress = document.getElementById("temporary-address");
+          // const country = document.getElementById("country");
+          // const facultyBankName = document.getElementById("bank-name");
+          // const facultyBankBranch = document.getElementById("bank-branch");
+          // const facultyIfscCode = document.getElementById("bank-ifsc-code");
+          // const facultyMicrCode = document.getElementById("bank-micr-code");
+          // const facultyAccountNumber = document.getElementById("bank-account-number");
+          // const facultyAccountType = document.getElementById("bank-account-type");
+          // const facultyCancelledChecque = document.getElementById("cancelled_cheque_Photo");
           let condition;
 
-          function personalDetailFirstNameValidation() {
-            let res = firstName.value;
-          
+          function personalDetailFirstNameValidation(res) {
             if (checkLength(res) > 2) {
               if (!isCharNumber(res)) {
                 condition = true;
@@ -1118,9 +1141,7 @@
             return condition;
           }
 
-          function personalDetailLastNameValidation() {
-            let res = lastName.value;
-          
+          function personalDetailLastNameValidation(res) {
             if (checkLength(res) > 2) {
               if (!isCharNumber(res)) {
                 condition = true;
@@ -1134,9 +1155,19 @@
             }
             return condition;
           }
+
+          function personalDetailGenderValidation(gender) {
+          if (gender == 1 || gender == 2 || gender == 3) {
+            condition = true;
+          } 
+          else {
+            document.getElementById("gender-message").innerHTML = "*select Your gender";
+            condition = false;
+          }
+          return condition;
+          }
           
-         function personalDetailContactNumberValidation() {
-          let res = contactNumber.value
+         function personalDetailContactNumberValidation(res) {
           if (res.length != 10) {
                document.getElementById('contact-number-message').innerHTML = "*Invalid length";
                condition = false;
@@ -1159,8 +1190,7 @@
             return condition;
           }
 
-          function personalDetailEmailValidation() {
-             let res = email.value;
+          function personalDetailEmailValidation(res) {
              var atposition = res.indexOf('@');
              var dotposition = res.lastIndexOf('.');
              if (atposition < 1 || (res.length - 2) == dotposition) {
@@ -1175,20 +1205,19 @@
              return condition;
           }
 
-          function personalDetailPancardValidation() {
-              let pan = pancard.value;
-              if (pan.length != 10) {
+          function personalDetailPancardValidation(res) {
+              if (res.length != 10) {
                 document.getElementById('pan-number-message').innerHTML = "*Invalid length of Pancard Number";
                 condition = false;
               } 
               else {
-                  let firstfive = pan.substring(0, 5);
-                  let nextfour = pan.substring(5, 9);
+                  let firstfive = res.substring(0, 5);
+                  let nextfour = res.substring(5, 9);
                   for (let i = 0; i < firstfive.length; i++) {
                       if (firstfive[i] >= 'A' && firstfive[i] <= 'Z') {
                           for (let k = 0; k < nextfour.length; k++) {
                               if (nextfour[k] >= '0' && nextfour[k] <= '9') {
-                                  if (pan[9] >= 'A' && pan[9] <= 'Z') {
+                                  if (res[9] >= 'A' && res[9] <= 'Z') {
                                     condition = true;
                                    }    
                                   else {
@@ -1213,40 +1242,165 @@
                  return condition;
            }
 
-           function personalDetailAadharValidation() {
-            
-            let res = aadhar.value;
-            
-            if (res.length == 12) {
-            
-                document.getElementById('aadhar-number-message').innerHTML = "Invalid Adhar Number";
+           function personalDetailAadharValidation(res) {
+            console.log(res)
+            if (res.length != 12) {
+                document.getElementById('aadhar-number-message').innerHTML = "*Invalid Adhar Number";
                 condition = false;
-            
             } 
             else {
-            
                 for (let i = 0; i < res.length; i++) {
-            
             console.log("entered inside for loop")
                     if (res[i] < '0' || res[i] > '9') {
-            
                       condition = false;
                         document.getElementById('aadhar-number-message').innerHTML = "Special Character not allowed";
                         break;
-            
                     } 
-
                     else {
-            
                         condition = true;
-            
                        }
-               
                  }
-               
                }
                return condition;
           }
+
+          function personalDetailAddressValidation(res) {
+            if (checkLength(res) > 5) {
+              condition = true;
+            } 
+            else {
+              document.getElementById("address-message").innerHTML = "*Invalid length";
+              condition = false;
+            }
+            return condition;
+          }
+           
+          function personalDetailTemporaryAddressValidation(res) {
+            if (checkLength(res) > 5) {
+              condition = true;
+            }  
+            else {
+              document.getElementById("temporary-address-message").innerHTML = "*Invalid length";
+              condition = false;
+            }
+            return condition;
+          }
+
+          function personalDetailCountryValidation(res) {
+            if (checkLength(res) > 2) {
+              condition = true;
+            }
+            else {
+              document.getElementById("country-message").innerHTML = "*Invalid length";
+              condition = false;
+            }
+            return condition;
+          }
+           
+          function bankDetailBankNameValidation(res) {
+            if (checkLength(res) > 3) {
+              condition = true;
+            }
+            else {
+              document.getElementById("bank-name-message").innerHTML = "*Invalid length";
+              condition = false;
+            }
+            return condition;
+          }
+          
+          function bankDetailBankBranchValidation(res) {
+            if (checkLength(res) > 3) {
+              condition = true;
+            }
+            else {
+              document.getElementById("bank-branch-message").innerHTML = "*Invalid length";
+              condition = false;
+            }
+            return condition;
+          }
+
+                                                   
+          function  bankDetailIfscCodeValidation(res){
+            if(res.length != 11 ) {
+                 condition = false;
+                document.getElementById('bank-ifsc-code-message').innerHTML ="*Invalid length";
+            } else {
+                let firstfour = res.substring(0,4);
+                let lastseven = res.substring(4,11);
+                for(let i=0; i<firstfour.length; i++) {
+                    if(firstfour[i] <'A' || firstfour[i] >'Z') {
+                      condition = false;
+                        document.getElementById('bank-ifsc-code-message').innerHTML ="*Invalid ifsc character";
+                        break;
+                    } else{
+                        for(let j=0; j<lastseven.length;j++) {
+                            if(lastseven[j] >='0' && lastseven[j] <='9') {
+                                condition = true;
+                            } else {
+                                console.log('in loop'+lastseven[j]);
+                                condition = false;
+                                document.getElementById('bank-ifsc-code-message').innerHTML ="*Invalid last seven number";
+                                break;
+                            }
+                        }
+  
+                    }
+                }
+            }
+            return condition;
+          }
+
+           function bankDetailMicrCodeValidation(res){
+             if(res.length < 3) {
+                 document.getElementById('bank-micr-code-message').innerHTML="*Invalid length";
+                 condition = false;
+             } else{
+                 if(isNaN(res)) {
+                     document.getElementById('bank-micr-code-message').innerHTML="*Character not allowed";
+                     condition = false;
+                 } else{ 
+                        condition = true;
+                }
+             }
+            return condition;
+          }           
+          
+          function bankDetailAccountNumberValidation(res){
+        if((checkLength(res) <=10) || (checkLength(res) >16)){
+            document.getElementById('bank-account-number-message').innerHTML = "*Invalid length"
+            condition = false;
+        }
+        else{
+            if(isNaN(res))
+            {
+                document.getElementById('bank-account-number-message').innerHTML = "*Charaters not allowed";
+                condition = false;
+            }
+            else{
+              condition = true;
+            }
+        }
+        return condition;
+    }                                            
+                                        
+                                        
+             function bankDetailAccountTypeValidation(res) {
+                 if (res.length > 4) {
+                     for (let j = 0; j < res.length; j++) {
+                         if (res[j] >= '!' && res[j] <= '@') {
+                             document.getElementById('bank-account-type-message').innerHTML = "*Special charater is allowed";
+                             condition = false;
+                             break;
+                         } else {
+                             condition = true;
+                         }
+                     }
+                 } else {
+                     document.getElementById('bank-account-type-message').innerHTML = "*Invalid length";
+                              condition = false;              
+                 }
+               return condition
+              }
           
     let downloadButton = document.getElementById("download-btn");
     downloadButton.addEventListener("click", function () {
@@ -1366,20 +1520,6 @@
 
         e.preventDefault()
 
-        clearError();
-
-        var firstName1 = personalDetailFirstNameValidation();
-        var lastName1 = personalDetailLastNameValidation();
-        var contactNumber1 = personalDetailContactNumberValidation();
-        var pancard1 = personalDetailPancardValidation();
-        var email1 = personalDetailEmailValidation();
-        var aadhar1 = personalDetailAadharValidation();
-
-        if (!firstName1 || !lastName1 || !contactNumber1 || !pancard1 || !email1 || !aadhar1) {
-
-              return;
-      }
-
         let myForm = document.getElementById('myForm')
         let formData = new FormData(myForm)
         let arrayresult = [];
@@ -1387,6 +1527,23 @@
         for (let entry of formData.entries()) {
           result[entry[0]] = entry[1];
         }
+        
+        clearError();
+
+        let firstName1 = personalDetailFirstNameValidation(result.f_name);
+        let lastName1 = personalDetailLastNameValidation(result.l_name);
+        let gender1 = personalDetailGenderValidation(result.gender);
+        let contactNumber1 = personalDetailContactNumberValidation(result.contact_number);
+        let pancard1 = personalDetailPancardValidation(result.pan_number);
+        let email1 = personalDetailEmailValidation(result.email);
+        let aadhar1 = personalDetailAadharValidation(result.aadhar_number);
+        let address1 = personalDetailAddressValidation(result.permanent_address);
+        let temporaryAddress1 = personalDetailTemporaryAddressValidation(result.temporary_address);
+        let country1 = personalDetailCountryValidation(result.nationality);
+
+        if (!firstName1 || !lastName1  || !gender1 || !contactNumber1 || !pancard1 || !email1 || !aadhar1 || !address1 || !temporaryAddress1 || !country1) {
+              return;
+      }
 
         document.getElementById('date-of-birth-value').innerText = result.date_of_birth
         document.getElementById('pancard-value').innerText = result.pan_number
@@ -1413,14 +1570,6 @@
         //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('text-success')
         // }
 
-        let userTempAddress = {
-
-        }
-
-        let userPermanentAddress = {
-
-        }
-
 
         let personalDetailsData = {
           "user_address": arrayresult,
@@ -1428,8 +1577,6 @@
           "user_info": {}
         }
 
-        userTempAddress.temporary_address = result.temporary_address
-        userPermanentAddress.permanent_address = result.permanent_address
         personalDetailsData.user_contact.contact_number = result.contact_number
         personalDetailsData.user_info.f_name = result.f_name
         personalDetailsData.user_info.l_name = result.l_name
@@ -1438,8 +1585,8 @@
         personalDetailsData.user_info.date_of_birth = result.date_of_birth
         personalDetailsData.user_info.nationality = result.nationality
 
-        arrayresult[0] = userTempAddress
-        arrayresult[1] = userPermanentAddress
+        arrayresult[0] = result.temporary_address
+        arrayresult[1] =  result.permanent_address
 
         console.log(JSON.stringify(personalDetailsData))
 
@@ -1621,30 +1768,47 @@
         let fetchRes = fetch("/insert-qualification-details", options);
 
         fetchRes.then(success => {
-
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.qualification-modal').classList.add('d-none');
         })
-          console.log( JSON.stringify(qualificationTableData));
-        console.log(JSON.stringify(qualificationTableData));
+        
 
       })
 
     });
 
 
-    document.getElementById('qualification-add-button').addEventListener('click', function () {
+    document.getElementById('qualification-add-button').addEventListener('click', function (e) {
+      e.preventDefault();
+      clearError();
+      let bachelorsTitle =  document.getElementById('bachelors-degree-title-data').value;
+      let bachelorsSubject = document.getElementById('bachelors-degree-major-subject').value;
+      let bachelorsUniversity = document.getElementById('bachelors-degree-university').value;
+      let bachelorsCollege = document.getElementById('bachelors-degree-college').value;
+      let bachelorsPercentile = document.getElementById('bachelors-degree-percentile').value;
+      let bachelorsYOP = document.getElementById('bachelors-degree-year-of-passing').value;
+      let bachelorsCertificate = document.getElementById('bachelors-degree-certificate').value;
+  
+      if( bachelorsTitle !=1 || bachelorsSubject.length < 3 || bachelorsUniversity.length < 3 || bachelorsCollege.length < 3 || bachelorsPercentile.length < 3 || bachelorsYOP.length < 3 || bachelorsCertificate.length < 4)
+      {
+        document.getElementById('qualification-message').innerHTML = "*Complition of bachelors degree is required";
+        return;
+      }
+
+
       let table = ` <tr data-toggle="collapse" class="collapsed qualification-row">
-          <td class="text-white " id="bachelors-degree-title"><select class="form-control qualification-title">
+          <td class="text-white " id="qualification-title"><select class="form-control qualification-title">
                         <option value="1">Bachelor's Degree</option>
                         <option value="2">Master's Degree</option>
                         <option value="3">PHD</option>
                         <option value="4">Professional Certification</option>
                       </select></td>
-          <td><input class="form-control qualification-subject" id="bachelors-degree-major-subject"  type="text"></td>
-          <td><input class="form-control qualification-university" id="bachelors-degree-university"  type="text"></td>
-          <td><input class="form-control qualification-college" id="bachelors-degree-college"  type="text"></td>
-          <td><input class="form-control qualification-percentile" id="bachelors-degree-percentile" type="text"></td>
-          <td><input class="form-control qualification-year" id="bachelors-degree-year-of-passing"  type="text"></td>
-          <td><input class="form-control qualification-certificate" id="bachelors-degree-certificate"  type="file"></td>
+          <td><input class="form-control qualification-subject" id="qualification-major-subject"  type="text"></td>
+          <td><input class="form-control qualification-university" id="qualification-university"  type="text"></td>
+          <td><input class="form-control qualification-college" id="qualification-college"  type="text"></td>
+          <td><input class="form-control qualification-percentile" id="qualification-percentile" type="text"></td>
+          <td><input class="form-control qualification-year" id="qualification-year-of-passing"  type="text"></td>
+          <td><input class="form-control qualification-certificate" id="qualification-certificate"  type="file"></td>
           <td>
               <i class="fa-solid fa-trash-can text-white qualification-delete-button"></i>
           </td>
@@ -1779,7 +1943,7 @@
         editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
         editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
         editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
-        editBankDetailsForm.append('editAccoutNumber', document.getElementById('account-number-value')
+        editBankDetailsForm.append('editAccountNumber', document.getElementById('account-number-value')
           .innerText)
         editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value').innerText)
 
@@ -1787,7 +1951,7 @@
         document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
         document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
         document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
-        document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccoutNumber')
+        document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccountNumber')
         document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
 
 
@@ -1800,24 +1964,39 @@
         document.querySelector('.bank-details-modal').classList.add('d-none');
       });
 
-      document.querySelector('#bank-details-submit-button').addEventListener('click', function () {
+      document.querySelector('#bank-details-submit-button').addEventListener('click', function (e) {
 
-        let submitBankDetailsForm = new FormData()
+        e.preventDefault()
+        
+       let submitBankDetailsForm = new FormData()
+       submitBankDetailsForm.append('bankName', document.getElementById('bank-name').value)
+       submitBankDetailsForm.append('branchName', document.getElementById('bank-branch').value)
+       submitBankDetailsForm.append('ifscCode', document.getElementById('bank-ifsc-code').value)
+       submitBankDetailsForm.append('micrCode', document.getElementById('bank-micr-code').value)
+       submitBankDetailsForm.append('accountNumber', document.getElementById('bank-account-number').value)
+       submitBankDetailsForm.append('accountType', document.getElementById('bank-account-type').value)
+       submitBankDetailsForm.append('cancelledCheckPhoto', document.getElementById('cancelled_cheque_Photo')
+         .value)
+        clearError();
 
-        submitBankDetailsForm.append('bankName', document.getElementById('bank-name').value)
-        submitBankDetailsForm.append('branchName', document.getElementById('bank-branch').value)
-        submitBankDetailsForm.append('ifscCode', document.getElementById('bank-ifsc-code').value)
-        submitBankDetailsForm.append('micrCode', document.getElementById('bank-micr-code').value)
-        submitBankDetailsForm.append('accoutNumber', document.getElementById('bank-account-number').value)
-        submitBankDetailsForm.append('accountType', document.getElementById('bank-account-type').value)
-        submitBankDetailsForm.append('cancelledCheckPhoto', document.getElementById('cancelled_cheque_Photo')
-          .value)
+        let facultyBankName1 = bankDetailBankNameValidation(submitBankDetailsForm.get('bankName'))
+        let facultyBankBranch1 = bankDetailBankBranchValidation(submitBankDetailsForm.get('branchName'))
+        let facultyIfscCode1 = bankDetailIfscCodeValidation(submitBankDetailsForm.get('ifscCode'))
+        let facultyMicrCode1 = bankDetailMicrCodeValidation(submitBankDetailsForm.get('micrCode'))
+        let facultyAccountNumber1 = bankDetailAccountNumberValidation(submitBankDetailsForm.get('accountNumber'))
+        let facultyAccountType1 = bankDetailAccountTypeValidation(submitBankDetailsForm.get('accountType'))
+
+        if(!facultyBankName1 || !facultyBankBranch1 || !facultyIfscCode1 || !facultyMicrCode1 || !facultyAccountNumber1 || !facultyAccountType1){
+          return;
+        }
+
+
 
         document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
         document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
         document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
         document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-        document.getElementById('account-number-value').innerText = submitBankDetailsForm.get('accoutNumber')
+        document.getElementById('account-number-value').innerText = submitBankDetailsForm.get('accountNumber')
         document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
 
         if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
