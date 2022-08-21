@@ -1955,7 +1955,7 @@
 
       if (bachelorsTitle != 1 || bachelorsSubject.length < 3 || bachelorsUniversity.length < 3 || bachelorsCollege
         .length < 3 || bachelorsPercentile.length < 3 || bachelorsYOP.length < 3 || bachelorsCertificate.length < 4
-        ) {
+      ) {
         document.getElementById('qualification-message').innerHTML = "*Complition of bachelors degree is required";
         return;
       }
