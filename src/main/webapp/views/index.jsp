@@ -423,19 +423,14 @@
             </div>
             <div class="container">
               <div id="name-row" class="row mb-3">
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                   <label for="first-name" cl>First Name</label>
-                  <span id="first-name-message" class="error"></span>
+                  <span id="first-name-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
                 </div>
-                <div class="col-md-4 col-sm-12">
-                  <label for="middle-name">Middle Name</label>
-                  <span id="middle-name-message" class="error"></span>
-                  <input type="text" class="form-control" id="middle-name" placeholder="Middle Name">
-                </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                   <label for="last-name">last Name</label>
-                  <span id="last-name-message" class="error"></span>
+                  <span id="last-name-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
                 </div>
               </div>
@@ -468,12 +463,12 @@
               <div id="left-third-row" class="row">
                 <div class="col-md-6">
                   <label for="contact-number">Contact No.</label>
-                  <span id="contact-number-message" class="error"></span>
+                  <span id="contact-number-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="contact_number" id="contact-number" />
                 </div>
                 <div class="col-md-6">
                   <label for="email">Email Id</label>
-                  <span id="email-message" class="error"></span>
+                  <span id="email-message" style="color: red;" class="error"></span>
                   <input type="text" name="email" class="form-control" id="email">
                 </div>
               </div>
@@ -483,7 +478,7 @@
               <div id="left-fourth-row" class="row">
                 <div class="col-md-6">
                   <label for="pan-number">Pan Card Number</label>
-                  <span id="pan-number-message" class="error"></span>
+                  <span id="pan-number-message"  style="color: red;" class="error"></span>
                   <input type="text" name="pan_number" class="form-control" id="pan-number" />
                 </div>
                 <div class="col-md-6">
@@ -498,7 +493,7 @@
               <div id="left-fourth-row" class="row">
                 <div class="col-md-6">
                   <label for="aadhar-number">Aadhar Card Number</label>
-                  <span id="name-message" class="error"></span>
+                  <span id="aadhar-number-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
                 </div>
                 <div class="col-md-6">
@@ -536,7 +531,7 @@
                 <span id="state-message" class="error"></span>
                 <input type="text" class="form-control" id="state">
               </div> -->
-                <div class="col-md-4">
+                <div class="col-md-12">
                   <label for="country">Country</label>
                   <span id="country-message" class="error"></span>
                   <input type="text" name="nationality" class="form-control" id="country">
@@ -747,86 +742,6 @@
                           id="add-custom-soft-skill">Add</button>
                       </div>
                       <ul id="soft-skill-UL">
-                        <li class="skill-list">
-                          <div class="row">
-                            <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button">
-                              <i class="fa-solid fa-circle-plus fa-2x"></i>
-                            </div>
-                            <div class="col-md-10 col-sm-10 col-12"><a href="#">Java</a></div>
-                          </div>
-                        </li>
-                        <li class="skill-list">
-                          <div class="row">
-                            <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button"><i
-                                class="fa-solid fa-circle-plus fa-2x"></i>
-                            </div>
-                            <div class="col-md-10 col-sm-10 col-12"><a href="#">CSS</a></div>
-                          </div>
-                        </li>
-                        <li class="skill-list">
-                          <div class="row">
-                            <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button"><i
-                                class="fa-solid fa-circle-plus fa-2x"></i>
-                            </div>
-                            <div class="col-md-10 col-sm-10 col-12"><a href="#">JavaScript</a></div>
-                          </div>
-                        </li>
-                        <li class="skill-list">
-                          <div class="row">
-                            <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button"><i
-                                class="fa-solid fa-circle-plus fa-2x"></i>
-                            </div>
-                            <div class="col-md-10 col-sm-10 col-12"><a href="#">Soft Skill1</a></div>
-                          </div>
-                        </li>
-                        <li class="skill-list">
-                          <div class="row">
-                            <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button"><i
-                                class="fa-solid fa-circle-plus fa-2x"></i>
-                            </div>
-                            <div class="col-md-10 col-sm-10 col-12"><a href="#">Soft Skill2</a></div>
-                          </div>
-                        </li>
-                        <li class="skill-list">
-                          <div class="row">
-                            <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button"><i
-                                class="fa-solid fa-circle-plus fa-2x"></i>
-                            </div>
-                            <div class="col-md-10 col-sm-10 col-12"><a href="#">Soft Skill3</a></div>
-                          </div>
-                        </li>
-                        <li class="skill-list">
-                          <div class="row">
-                            <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button"><i
-                                class="fa-solid fa-circle-plus fa-2x"></i>
-                            </div>
-                            <div class="col-md-10 col-sm-10 col-12"><a href="#">Soft Skill4</a></div>
-                          </div>
-                        </li>
-                        <li class="skill-list">
-                          <div class="row">
-                            <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button"><i
-                                class="fa-solid fa-circle-plus fa-2x"></i>
-                            </div>
-                            <div class="col-md-10 col-sm-10 col-12"><a href="#">Soft Skill5</a></div>
-                          </div>
-                        </li>
-                        <li class="skill-list">
-                          <div class="row">
-                            <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button"><i
-                                class="fa-solid fa-circle-plus fa-2x"></i>
-                            </div>
-                            <div class="col-md-10 col-sm-10 col-12"><a href="#">Soft Skill6</a></div>
-                          </div>
-                        </li>
-                        <li class="skill-list">
-                          <div class="row">
-                            <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button"><i
-                                class="fa-solid fa-circle-plus fa-2x"></i>
-                            </div>
-                            <div class="col-md-10 col-sm-10 col-12"><a href="#">Soft Skill7</a></div>
-                          </div>
-                        </li>
                       </ul>
                     </div>
                   </div>
@@ -843,78 +758,7 @@
                     </div>
 
                     <ul id="hard-skill-UL">
-                      <li class="skill-list">
-                        <div class="row">
-                          <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
-                              class="fa-solid fa-circle-plus fa-2x"></i>
-                          </div>
-                          <div class="col-md-10 col-sm-10 col-12"><a href="#">Presentation</a></div>
-                        </div>
-                      </li>
-                      <li class="skill-list">
-                        <div class="row">
-                          <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
-                              class="fa-solid fa-circle-plus fa-2x"></i>
-                          </div>
-                          <div class="col-md-10 col-sm-10 col-12"><a href="#">Boxing</a></div>
-                        </div>
-                      </li>
-                      <li class="skill-list">
-                        <div class="row">
-                          <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
-                              class="fa-solid fa-circle-plus fa-2x"></i>
-                          </div>
-                          <div class="col-md-10 col-sm-10 col-12"><a href="#">Management</a></div>
-                        </div>
-                      </li>
-                      <li class="skill-list">
-                        <div class="row">
-                          <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
-                              class="fa-solid fa-circle-plus fa-2x"></i>
-                          </div>
-                          <div class="col-md-10 col-sm-10 col-12"><a href="#">Analytical</a></div>
-                        </div>
-                      </li>
-                      <li class="skill-list">
-                        <div class="row">
-                          <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
-                              class="fa-solid fa-circle-plus fa-2x"></i>
-                          </div>
-                          <div class="col-md-10 col-sm-10 col-12"><a href="#">Marketing</a></div>
-                        </div>
-                      </li>
-                      <li class="skill-list">
-                        <div class="row">
-                          <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
-                              class="fa-solid fa-circle-plus fa-2x"></i>
-                          </div>
-                          <div class="col-md-10 col-sm-10 col-12"><a href="#">Financial Planning</a></div>
-                        </div>
-                      </li>
-                      <li class="skill-list">
-                        <div class="row">
-                          <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
-                              class="fa-solid fa-circle-plus fa-2x"></i>
-                          </div>
-                          <div class="col-md-10 col-sm-10 col-12"><a href="#">hard skill1</a></div>
-                        </div>
-                      </li>
-                      <li class="skill-list">
-                        <div class="row">
-                          <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
-                              class="fa-solid fa-circle-plus fa-2x"></i>
-                          </div>
-                          <div class="col-md-10 col-sm-10 col-12"><a href="#">hard skill2</a></div>
-                        </div>
-                      </li>
-                      <li class="skill-list">
-                        <div class="row">
-                          <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
-                              class="fa-solid fa-circle-plus fa-2x"></i>
-                          </div>
-                          <div class="col-md-10 col-sm-10 col-12"><a href="#">hard skill3</a></div>
-                        </div>
-                      </li>
+                    </ul>
 
                     </ul>
                   </div>
@@ -1329,8 +1173,212 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+  </script>
   <script>
+
+// --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
+
+          function isCharNumber(res) {
+            for (let i = 0; i < checkLength(res); i++) {
+              var c = res.charCodeAt(i);
+          
+              if (!(c > 47 && c < 58)) {
+                return false;
+              }
+            }
+            return true;
+          }
+          
+          function isCharAlphabet(res) {
+            for (let i = 0; i < checkLength(res); i++) {
+              var c = res.charCodeAt(i);
+          
+              if (
+                !(c > 47 && c < 58) &&
+                !(c > 64 && c < 91) &&
+                !(c > 96 && c < 123) &&
+                c != 32
+              ) {
+                return false;
+              }
+            }
+            return true;
+          }
+          
+          function isSpecialChar(char) {
+            return (
+              (char >= 65 && char < 91) ||
+              (char >= 97 && char < 123) ||
+              (char >= "0" && char <= "9")
+            );
+          }
+          
+          function checkLength(value) {
+            return value.length;
+          }
+          
+          function clearError() {
+            errors = document.getElementsByClassName("error");
+            for (const item of errors) {
+              item.innerHTML = "";
+            }
+          } 
+
+          const firstName = document.getElementById("first-name");
+          const lastName = document.getElementById("last-name");
+          const contactNumber = document.getElementById("contact-number");
+          const email = document.getElementById("email");
+          const pancard = document.getElementById("pan-number");
+          const aadhar = document.getElementById("aadhar-number");
+          let condition;
+
+          function personalDetailFirstNameValidation() {
+            let res = firstName.value;
+          
+            if (checkLength(res) > 2) {
+              if (!isCharNumber(res)) {
+                condition = true;
+              } else {
+                document.getElementById("first-name-message").innerHTML = "*Numbers are not allowed";
+                condition = false;
+              }
+            } else {
+              document.getElementById("first-name-message").innerHTML = "*Invalid length";
+              condition = false;
+            }
+            return condition;
+          }
+
+          function personalDetailLastNameValidation() {
+            let res = lastName.value;
+          
+            if (checkLength(res) > 2) {
+              if (!isCharNumber(res)) {
+                condition = true;
+              } else {
+                document.getElementById("last-name-message").innerHTML = "*Numbers are not allowed";
+                condition = false;
+              }
+            } else {
+              document.getElementById("last-name-message").innerHTML = "*Invalid length";
+              condition = false;
+            }
+            return condition;
+          }
+          
+         function personalDetailContactNumberValidation() {
+          let res = contactNumber.value
+          if (res.length != 10) {
+               document.getElementById('contact-number-message').innerHTML = "*Invalid length";
+               condition = false;
+              }
+            else {
+               if (isNaN(res)) {
+                   document.getElementById('contact-number-message').innerHTML = "*Characters Not Allowed";
+                   condition = false;
+               } 
+               else {
+                   if ((res.charAt(0) != 9) && (res.charAt(0) != 8) && (res.charAt(0) != 7) && (res.charAt(0) != 6)) {
+                       document.getElementById('contact-number-message').innerHTML = "*Invalid phone number";
+                       condition = false;
+                      }
+                    else {
+                      condition = true;
+                    }
+                }
+            }
+            return condition;
+          }
+
+          function personalDetailEmailValidation() {
+             let res = email.value;
+             var atposition = res.indexOf('@');
+             var dotposition = res.lastIndexOf('.');
+             if (atposition < 1 || (res.length - 2) == dotposition) {
+               (document).getElementById('email-message').innerHTML = "*Invalid email address";
+                condition = false;             
+             } else if (atposition < dotposition) {
+               condition = true;             
+            } else {
+              (document).getElementById('email-message').innerHTML = "*Invalid email address";
+              condition = false;             
+             }
+             return condition;
+          }
+
+          function personalDetailPancardValidation() {
+              let pan = pancard.value;
+              if (pan.length != 10) {
+                document.getElementById('pan-number-message').innerHTML = "*Invalid length of Pancard Number";
+                condition = false;
+              } 
+              else {
+                  let firstfive = pan.substring(0, 5);
+                  let nextfour = pan.substring(5, 9);
+                  for (let i = 0; i < firstfive.length; i++) {
+                      if (firstfive[i] >= 'A' && firstfive[i] <= 'Z') {
+                          for (let k = 0; k < nextfour.length; k++) {
+                              if (nextfour[k] >= '0' && nextfour[k] <= '9') {
+                                  if (pan[9] >= 'A' && pan[9] <= 'Z') {
+                                    condition = true;
+                                   }    
+                                  else {
+                                    document.getElementById('pan-number-message').innerHTML = "*Invalid Last Digit";
+                                    condition = false;
+                                    }
+                                 } 
+                              else {
+                                document.getElementById('pan-number-message').innerHTML = "*Error Inbetween Numbers";
+                                condition = false;
+                                break;
+                                 }
+                              }
+                          }
+                         else {
+                           document.getElementById('pan-number-message').innerHTML = "Error Inbetween First Five Characters";
+                           condition = false;
+                           break;
+                         }
+                      }
+                 }
+                 return condition;
+           }
+
+           function personalDetailAadharValidation() {
+            
+            let res = aadhar.value;
+            
+            if (res.length == 12) {
+            
+                document.getElementById('aadhar-number-message').innerHTML = "Invalid Adhar Number";
+                condition = false;
+            
+            } 
+            else {
+            
+                for (let i = 0; i < res.length; i++) {
+            
+            console.log("entered inside for loop")
+                    if (res[i] < '0' || res[i] > '9') {
+            
+                      condition = false;
+                        document.getElementById('aadhar-number-message').innerHTML = "Special Character not allowed";
+                        break;
+            
+                    } 
+
+                    else {
+            
+                        condition = true;
+            
+                       }
+               
+                 }
+               
+               }
+               return condition;
+          }
+          
     let downloadButton = document.getElementById("download-btn");
     downloadButton.addEventListener("click", function () {
       let elementHTML = document.getElementById("body");
@@ -1448,6 +1496,20 @@
       document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
 
         e.preventDefault()
+
+        clearError();
+
+        var firstName1 = personalDetailFirstNameValidation();
+        var lastName1 = personalDetailLastNameValidation();
+        var contactNumber1 = personalDetailContactNumberValidation();
+        var pancard1 = personalDetailPancardValidation();
+        var email1 = personalDetailEmailValidation();
+        var aadhar1 = personalDetailAadharValidation();
+
+        if (!firstName1 || !lastName1 || !contactNumber1 || !pancard1 || !email1 || !aadhar1) {
+
+              return;
+      }
 
         let myForm = document.getElementById('myForm')
         let formData = new FormData(myForm)
@@ -1692,10 +1754,10 @@
         fetchRes.then(success => {
 
         })
+          console.log( JSON.stringify(qualificationTableData));
+        console.log(JSON.stringify(qualificationTableData));
 
       })
-
-      console.log(JSON.stringify(qualificationTableData));
 
     });
 
@@ -1899,12 +1961,78 @@
 
 
     document.querySelector('.skills-edit-box').addEventListener('click', function () {
+
+      let softSkillUl = document.getElementById('soft-skill-UL')
+      let hardSkillUl = document.getElementById('hard-skill-UL')
+      let softSkillDisplay = document.getElementById('soft-skill-display')
+      let hardSkillDisplay = document.getElementById('hard-skill-display')
+
+      softSkillDisplay.innerHTML = ''
+      hardSkillDisplay.innerHTML = ''
+      softSkillUl.innerHTML = ''
+      hardSkillUl.innerHTML = ''
+      $.ajax({
+        url: '/get-all-skill',
+        type: 'POST',
+        success: function (response) {
+          console.log(JSON.stringify(response))
+          console.log(response.length)
+
+          for (let i = 0; i < response.length; i++) {
+
+            if (response[i].skill_type_lid === 1) {
+
+              softSkillUl.insertAdjacentHTML('beforeend',
+                `
+                       <li class="skill-list">
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button">
+                              <i class="fa-solid fa-circle-plus fa-2x"></i>
+                            </div>
+                            <div class="col-md-10 col-sm-10 col-12"><a href="#">\${response[i].skill_name}\</a></div>
+                          </div>
+                        </li>
+                      `
+              )
+
+            } else if (response[i].skill_type_lid === 2) {
+
+              hardSkillUl.insertAdjacentHTML('beforeend',
+
+                `<li class="skill-list">
+                        <div class="row">
+                          <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
+                              class="fa-solid fa-circle-plus fa-2x"></i>
+                          </div>
+                          <div class="col-md-10 col-sm-10 col-12"><a id=\${response[i].id}\ href="#">\${response[i].skill_name}\</a></div>
+                        </div>
+                      </li>`
+              )
+              console.log("hard Skills")
+            } else {
+              console.log("Error")
+            }
+          }
+
+        },
+        error: function (error) {
+          console.log("Error::::::::::::", error);
+        }
+      })
+
       document.getElementById('body').classList.add('d-none');
       document.querySelector('.skills-modal').classList.remove('d-none');
 
     })
 
     document.querySelector('#skills-modal-cancel-button').addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.skills-modal').classList.add('d-none');
+
+    })
+
+    document.querySelector('#skills-modal-submit-button').addEventListener('click', function () {
+
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.skills-modal').classList.add('d-none');
 
@@ -2006,9 +2134,7 @@
 
         }
       }
-
     })
-
 
     addAvailableHardSkill.addEventListener('click', function (event) {
       let element = event.target
@@ -2031,31 +2157,69 @@
 
     let addCustomSoftSkill = document.getElementById('add-custom-soft-skill')
     addCustomSoftSkill.addEventListener('click', function () {
+
       let customSoftSkillValue = document.getElementById('soft-skill-search').value
-      let div = ` <li class="list-group">
+
+
+      $.ajax({
+        url: '/insert-custom-skill',
+        type: 'POST',
+        data: {
+          skill_type_lid: 1,
+          skill_name: customSoftSkillValue
+        },
+        success: function (response) {
+          console.log(response)
+
+          softSkillDisplay.insertAdjacentHTML('afterend',
+            ` <li class="list-group">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
-                                 <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customSoftSkillValue}\ </a></div>
+                                 <div class="col-md-10 col-sm-10 col-10"><a id=\${response.id}\ class="ms-3"  href="#">\${response.skill_name}\ </a></div>
                              </div>
                        </li> `
-      softSkillDisplay.insertAdjacentHTML('afterend', div)
-      document.getElementById('soft-skill-search').value = ''
-      document.getElementById('add-custom-soft-skill').classList.add('d-none');
+        )
+        document.getElementById('soft-skill-search').value = ''
+        document.getElementById('add-custom-soft-skill').classList.add('d-none');
+        },
+        error: function (error) {
+          console.log("Error:::", error)
+        }
+      })
 
     })
 
     let addCustomHardSkill = document.getElementById('add-custom-hard-skill')
     addCustomHardSkill.addEventListener('click', function () {
+
       let customHardSkillValue = document.getElementById('hard-skill-search').value
-      let div = `<li class="list-group">
+      let div =
+
+        $.ajax({
+          url: '/insert-custom-skill',
+          type: 'POST',
+          data: {
+            skill_type_lid: 2,
+            skill_name: customHardSkillValue
+          },
+          success: function (response) {
+            console.log(response)
+
+            hardSkillDisplay.insertAdjacentHTML('afterend',
+              `<li class="list-group">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
                                  <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customHardSkillValue}\ </a></div>
                              </div>
                        </li> `
-      hardSkillDisplay.insertAdjacentHTML('afterend', div)
-      document.getElementById('hard-skill-search').value = ''
-      document.getElementById('add-custom-hard-skill').classList.add('d-none');
+          )
+          document.getElementById('hard-skill-search').value = ''
+          document.getElementById('add-custom-hard-skill').classList.add('d-none');
+          },
+          error: function (error) {
+            console.log("Error:::", error)
+          }
+        })
 
     })
 
@@ -2106,8 +2270,6 @@
       }
 
     })
-
-
   </script>
 </body>
 
