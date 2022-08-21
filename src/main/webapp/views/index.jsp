@@ -426,19 +426,14 @@
             </div>
             <div class="container">
               <div id="name-row" class="row mb-3">
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                   <label for="first-name" cl>First Name</label>
-                  <span id="first-name-message" class="error"></span>
+                  <span id="first-name-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
                 </div>
-                <div class="col-md-4 col-sm-12">
-                  <label for="middle-name">Middle Name</label>
-                  <span id="middle-name-message" class="error"></span>
-                  <input type="text" class="form-control" id="middle-name" placeholder="Middle Name">
-                </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                   <label for="last-name">last Name</label>
-                  <span id="last-name-message" class="error"></span>
+                  <span id="last-name-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
                 </div>
               </div>
@@ -471,12 +466,12 @@
               <div id="left-third-row" class="row">
                 <div class="col-md-6">
                   <label for="contact-number">Contact No.</label>
-                  <span id="contact-number-message" class="error"></span>
+                  <span id="contact-number-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="contact_number" id="contact-number" />
                 </div>
                 <div class="col-md-6">
                   <label for="email">Email Id</label>
-                  <span id="email-message" class="error"></span>
+                  <span id="email-message" style="color: red;" class="error"></span>
                   <input type="text" name="email" class="form-control" id="email">
                 </div>
               </div>
@@ -486,7 +481,7 @@
               <div id="left-fourth-row" class="row">
                 <div class="col-md-6">
                   <label for="pan-number">Pan Card Number</label>
-                  <span id="pan-number-message" class="error"></span>
+                  <span id="pan-number-message"  style="color: red;" class="error"></span>
                   <input type="text" name="pan_number" class="form-control" id="pan-number" />
                 </div>
                 <div class="col-md-6">
@@ -501,7 +496,7 @@
               <div id="left-fourth-row" class="row">
                 <div class="col-md-6">
                   <label for="aadhar-number">Aadhar Card Number</label>
-                  <span id="name-message" class="error"></span>
+                  <span id="aadhar-number-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
                 </div>
                 <div class="col-md-6">
@@ -539,7 +534,7 @@
                 <span id="state-message" class="error"></span>
                 <input type="text" class="form-control" id="state">
               </div> -->
-                <div class="col-md-4">
+                <div class="col-md-12">
                   <label for="country">Country</label>
                   <span id="country-message" class="error"></span>
                   <input type="text" name="nationality" class="form-control" id="country">
@@ -588,25 +583,18 @@
                   </thead>
                   <tbody id="qualification-data">
                     <tr data-toggle="collapse" class="collapsed qualification-row">
-                      <td class="text-white " id="bachelors-degree-title"><select
-                          class="form-control qualification-title">
-                          <option value="1">Bachelor's Degree</option>
-                          <option value="2">Master's Degree</option>
-                          <option value="3">PHD</option>
-                          <option value="4">Professional Certification</option>
-                        </select></td>
-                      <td><input class="form-control qualification-subject" id="bachelors-degree-major-subject"
-                          type="text"></td>
-                      <td><input class="form-control qualification-university" id="bachelors-degree-university"
-                          type="text"></td>
-                      <td><input class="form-control qualification-college" id="bachelors-degree-college" type="text">
-                      </td>
-                      <td><input class="form-control qualification-percentile" id="bachelors-degree-percentile"
-                          type="text"></td>
-                      <td><input class="form-control qualification-year" id="bachelors-degree-year-of-passing"
-                          type="text"></td>
-                      <td><input class="form-control qualification-certificate" id="bachelors-degree-certificate"
-                          type="file"></td>
+                      <td class="text-white " id="bachelors-degree-title"><select class="form-control qualification-title">
+                        <option value="1">Bachelor's Degree</option>
+                        <option value="2">Master's Degree</option>
+                        <option value="3">PHD</option>
+                        <option value="4">Professional Certification</option>
+                      </select></td>
+                      <td><input class="form-control qualification-subject" id="bachelors-degree-major-subject"  type="text"></td>
+                      <td><input class="form-control qualification-university" id="bachelors-degree-university"  type="text"></td>
+                      <td><input class="form-control qualification-college" id="bachelors-degree-college"  type="text"></td>
+                      <td><input class="form-control qualification-percentile" id="bachelors-degree-percentile" type="text"></td>
+                      <td><input class="form-control qualification-year" id="bachelors-degree-year-of-passing"  type="text"></td>
+                      <td><input class="form-control qualification-certificate" id="bachelors-degree-certificate"  type="file"></td>
                       <td><i id="qualification-add-button" class="fa-solid text-white fa-circle-plus "></i></td>
                     </tr>
                   </tbody>
@@ -749,10 +737,8 @@
                         <button type="submit" class="btn btn-primary col-4 d-none"
                           id="add-custom-soft-skill">Add</button>
                       </div>
-
                       <ul id="soft-skill-UL">
                       </ul>
-
                     </div>
                   </div>
                 </div>
@@ -770,6 +756,7 @@
                     <ul id="hard-skill-UL">
                     </ul>
 
+                    </ul>
                   </div>
                 </div>
 
@@ -1057,6 +1044,210 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
   <script>
+
+// --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
+
+          function isCharNumber(res) {
+            for (let i = 0; i < checkLength(res); i++) {
+              var c = res.charCodeAt(i);
+          
+              if (!(c > 47 && c < 58)) {
+                return false;
+              }
+            }
+            return true;
+          }
+          
+          function isCharAlphabet(res) {
+            for (let i = 0; i < checkLength(res); i++) {
+              var c = res.charCodeAt(i);
+          
+              if (
+                !(c > 47 && c < 58) &&
+                !(c > 64 && c < 91) &&
+                !(c > 96 && c < 123) &&
+                c != 32
+              ) {
+                return false;
+              }
+            }
+            return true;
+          }
+          
+          function isSpecialChar(char) {
+            return (
+              (char >= 65 && char < 91) ||
+              (char >= 97 && char < 123) ||
+              (char >= "0" && char <= "9")
+            );
+          }
+          
+          function checkLength(value) {
+            return value.length;
+          }
+          
+          function clearError() {
+            errors = document.getElementsByClassName("error");
+            for (const item of errors) {
+              item.innerHTML = "";
+            }
+          } 
+
+          const firstName = document.getElementById("first-name");
+          const lastName = document.getElementById("last-name");
+          const contactNumber = document.getElementById("contact-number");
+          const email = document.getElementById("email");
+          const pancard = document.getElementById("pan-number");
+          const aadhar = document.getElementById("aadhar-number");
+          let condition;
+
+          function personalDetailFirstNameValidation() {
+            let res = firstName.value;
+          
+            if (checkLength(res) > 2) {
+              if (!isCharNumber(res)) {
+                condition = true;
+              } else {
+                document.getElementById("first-name-message").innerHTML = "*Numbers are not allowed";
+                condition = false;
+              }
+            } else {
+              document.getElementById("first-name-message").innerHTML = "*Invalid length";
+              condition = false;
+            }
+            return condition;
+          }
+
+          function personalDetailLastNameValidation() {
+            let res = lastName.value;
+          
+            if (checkLength(res) > 2) {
+              if (!isCharNumber(res)) {
+                condition = true;
+              } else {
+                document.getElementById("last-name-message").innerHTML = "*Numbers are not allowed";
+                condition = false;
+              }
+            } else {
+              document.getElementById("last-name-message").innerHTML = "*Invalid length";
+              condition = false;
+            }
+            return condition;
+          }
+          
+         function personalDetailContactNumberValidation() {
+          let res = contactNumber.value
+          if (res.length != 10) {
+               document.getElementById('contact-number-message').innerHTML = "*Invalid length";
+               condition = false;
+              }
+            else {
+               if (isNaN(res)) {
+                   document.getElementById('contact-number-message').innerHTML = "*Characters Not Allowed";
+                   condition = false;
+               } 
+               else {
+                   if ((res.charAt(0) != 9) && (res.charAt(0) != 8) && (res.charAt(0) != 7) && (res.charAt(0) != 6)) {
+                       document.getElementById('contact-number-message').innerHTML = "*Invalid phone number";
+                       condition = false;
+                      }
+                    else {
+                      condition = true;
+                    }
+                }
+            }
+            return condition;
+          }
+
+          function personalDetailEmailValidation() {
+             let res = email.value;
+             var atposition = res.indexOf('@');
+             var dotposition = res.lastIndexOf('.');
+             if (atposition < 1 || (res.length - 2) == dotposition) {
+               (document).getElementById('email-message').innerHTML = "*Invalid email address";
+                condition = false;             
+             } else if (atposition < dotposition) {
+               condition = true;             
+            } else {
+              (document).getElementById('email-message').innerHTML = "*Invalid email address";
+              condition = false;             
+             }
+             return condition;
+          }
+
+          function personalDetailPancardValidation() {
+              let pan = pancard.value;
+              if (pan.length != 10) {
+                document.getElementById('pan-number-message').innerHTML = "*Invalid length of Pancard Number";
+                condition = false;
+              } 
+              else {
+                  let firstfive = pan.substring(0, 5);
+                  let nextfour = pan.substring(5, 9);
+                  for (let i = 0; i < firstfive.length; i++) {
+                      if (firstfive[i] >= 'A' && firstfive[i] <= 'Z') {
+                          for (let k = 0; k < nextfour.length; k++) {
+                              if (nextfour[k] >= '0' && nextfour[k] <= '9') {
+                                  if (pan[9] >= 'A' && pan[9] <= 'Z') {
+                                    condition = true;
+                                   }    
+                                  else {
+                                    document.getElementById('pan-number-message').innerHTML = "*Invalid Last Digit";
+                                    condition = false;
+                                    }
+                                 } 
+                              else {
+                                document.getElementById('pan-number-message').innerHTML = "*Error Inbetween Numbers";
+                                condition = false;
+                                break;
+                                 }
+                              }
+                          }
+                         else {
+                           document.getElementById('pan-number-message').innerHTML = "Error Inbetween First Five Characters";
+                           condition = false;
+                           break;
+                         }
+                      }
+                 }
+                 return condition;
+           }
+
+           function personalDetailAadharValidation() {
+            
+            let res = aadhar.value;
+            
+            if (res.length == 12) {
+            
+                document.getElementById('aadhar-number-message').innerHTML = "Invalid Adhar Number";
+                condition = false;
+            
+            } 
+            else {
+            
+                for (let i = 0; i < res.length; i++) {
+            
+            console.log("entered inside for loop")
+                    if (res[i] < '0' || res[i] > '9') {
+            
+                      condition = false;
+                        document.getElementById('aadhar-number-message').innerHTML = "Special Character not allowed";
+                        break;
+            
+                    } 
+
+                    else {
+            
+                        condition = true;
+            
+                       }
+               
+                 }
+               
+               }
+               return condition;
+          }
+          
     let downloadButton = document.getElementById("download-btn");
     downloadButton.addEventListener("click", function () {
       let elementHTML = document.getElementById("body");
@@ -1174,6 +1365,20 @@
       document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
 
         e.preventDefault()
+
+        clearError();
+
+        var firstName1 = personalDetailFirstNameValidation();
+        var lastName1 = personalDetailLastNameValidation();
+        var contactNumber1 = personalDetailContactNumberValidation();
+        var pancard1 = personalDetailPancardValidation();
+        var email1 = personalDetailEmailValidation();
+        var aadhar1 = personalDetailAadharValidation();
+
+        if (!firstName1 || !lastName1 || !contactNumber1 || !pancard1 || !email1 || !aadhar1) {
+
+              return;
+      }
 
         let myForm = document.getElementById('myForm')
         let formData = new FormData(myForm)
@@ -1418,6 +1623,7 @@
         fetchRes.then(success => {
 
         })
+          console.log( JSON.stringify(qualificationTableData));
         console.log(JSON.stringify(qualificationTableData));
 
       })
@@ -1444,29 +1650,29 @@
           </td>
           </tr>`
 
-      document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
-    })
+        document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
+      })
 
-    $(document).on('click', '.qualification-delete-button', function () {
-      $(this).closest('tr').remove()
-    })
+      $(document).on('click', '.qualification-delete-button', function () {
+        $(this).closest('tr').remove()
+      })
+
+      
+      //*************************************Award-modal JS****************************************
 
 
-    //*************************************Award-modal JS****************************************
+      document.querySelector(".award-edit-box").addEventListener('click', function () {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.award-modal').classList.remove('d-none');
+      });
 
+      document.querySelector("#award-cancel-button").addEventListener('click', function () {
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.award-modal').classList.add('d-none');
+      });
 
-    document.querySelector(".award-edit-box").addEventListener('click', function () {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.award-modal').classList.remove('d-none');
-    });
-
-    document.querySelector("#award-cancel-button").addEventListener('click', function () {
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.award-modal').classList.add('d-none');
-    });
-
-    document.getElementById('award-add-button').addEventListener('click', function () {
-      let table = `   <tr data-toggle="collapse" class="collapsed">
+      document.getElementById('award-add-button').addEventListener('click', function () {
+        let table = `   <tr data-toggle="collapse" class="collapsed">
                         <td class="text-white pb-3">Award</td>
                         <td><input class="form-control" type="text"></td>
                         <td><input class="form-control" type="text"></td>
@@ -1481,27 +1687,27 @@
                         <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 award-delete-button"></i></td>
                       </tr>
        `
-      document.getElementById('award-data').insertAdjacentHTML("beforeend", table);
-    })
-    $(document).on('click', '.award-delete-button', function () {
-      $(this).closest('tr').remove()
-    })
+        document.getElementById('award-data').insertAdjacentHTML("beforeend", table);
+      })
+      $(document).on('click', '.award-delete-button', function () {
+        $(this).closest('tr').remove()
+      })
 
 
-    //*************************************Publications-modal JS****************************************
+      //*************************************Publications-modal JS****************************************
 
-    document.querySelector(".publication-edit-box").addEventListener('click', function () {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.publication-modal').classList.remove('d-none');
-    });
+      document.querySelector(".publication-edit-box").addEventListener('click', function () {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.publication-modal').classList.remove('d-none');
+      });
 
-    document.querySelector("#publication-cancel-button").addEventListener('click', function () {
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.publication-modal').classList.add('d-none');
-    });
+      document.querySelector("#publication-cancel-button").addEventListener('click', function () {
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.publication-modal').classList.add('d-none');
+      });
 
-    document.getElementById('publication-add-button').addEventListener('click', function () {
-      let table = ` <tr data-toggle="collapse" class="collapsed">
+      document.getElementById('publication-add-button').addEventListener('click', function () {
+        let table = ` <tr data-toggle="collapse" class="collapsed">
             <td class="text-white pb-3" >Publication</td>
             <td><select data-title="Role ?" class="form-control" id="role">
                     <option>-Select-</option>
@@ -1519,28 +1725,28 @@
             <td><input data-title="Certificate" class="form-control" type="file"></td>
             <td> <i class="fa-solid fa-trash-can text-white h4 publication-delete-button" data-title="Action"></i></td>
                        </tr>`
-      document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
-    })
+        document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
+      })
 
-    $(document).on('click', '.publication-delete-button', function () {
-      $(this).closest('tr').remove()
-    })
+      $(document).on('click', '.publication-delete-button', function () {
+        $(this).closest('tr').remove()
+      })
 
 
-    //*************************************Research-modal JS****************************************
+      //*************************************Research-modal JS****************************************
 
-    document.querySelector(".research-edit-box").addEventListener('click', function () {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.research-modal').classList.remove('d-none');
-    });
+      document.querySelector(".research-edit-box").addEventListener('click', function () {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.research-modal').classList.remove('d-none');
+      });
 
-    document.querySelector("#research-cancel-button").addEventListener('click', function () {
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.research-modal').classList.add('d-none');
-    });
+      document.querySelector("#research-cancel-button").addEventListener('click', function () {
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.research-modal').classList.add('d-none');
+      });
 
-    document.getElementById('research-add-button').addEventListener('click', function () {
-      let table = ` <tr data-toggle="collapse" class="collapsed">
+      document.getElementById('research-add-button').addEventListener('click', function () {
+        let table = ` <tr data-toggle="collapse" class="collapsed">
             <td class="text-white pb-3">Research</td>
             <td><select data-title="Role-?" class="form-control" id="role">
                     <option>-Select-</option>
@@ -1555,74 +1761,74 @@
             <td class="p-2 !important"> <i class="fa-solid fa-trash-can text-white h4 research-delete-button" data-title=" Action"></i> </td>
                   </tr>`
 
-      document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
-    })
+        document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
+      })
 
-    $(document).on('click', '.research-delete-button', function () {
-      $(this).closest('tr').remove()
-    })
-
-
-    //*************************************Bank-details-modal JS****************************************
-
-    document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
-
-      let editBankDetailsForm = new FormData()
-
-      editBankDetailsForm.append('editBankName', document.getElementById('bank-name-value').innerText)
-      editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
-      editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
-      editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
-      editBankDetailsForm.append('editAccoutNumber', document.getElementById('account-number-value')
-        .innerText)
-      editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value').innerText)
-
-      document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
-      document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
-      document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
-      document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
-      document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccoutNumber')
-      document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
+      $(document).on('click', '.research-delete-button', function () {
+        $(this).closest('tr').remove()
+      })
 
 
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.bank-details-modal').classList.remove('d-none');
-    });
+      //*************************************Bank-details-modal JS****************************************
 
-    document.querySelector('#bank-details-cancel-button').addEventListener('click', function () {
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.bank-details-modal').classList.add('d-none');
-    });
+      document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
 
-    document.querySelector('#bank-details-submit-button').addEventListener('click', function () {
+        let editBankDetailsForm = new FormData()
 
-      let submitBankDetailsForm = new FormData()
+        editBankDetailsForm.append('editBankName', document.getElementById('bank-name-value').innerText)
+        editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
+        editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
+        editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
+        editBankDetailsForm.append('editAccoutNumber', document.getElementById('account-number-value')
+          .innerText)
+        editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value').innerText)
 
-      submitBankDetailsForm.append('bankName', document.getElementById('bank-name').value)
-      submitBankDetailsForm.append('branchName', document.getElementById('bank-branch').value)
-      submitBankDetailsForm.append('ifscCode', document.getElementById('bank-ifsc-code').value)
-      submitBankDetailsForm.append('micrCode', document.getElementById('bank-micr-code').value)
-      submitBankDetailsForm.append('accoutNumber', document.getElementById('bank-account-number').value)
-      submitBankDetailsForm.append('accountType', document.getElementById('bank-account-type').value)
-      submitBankDetailsForm.append('cancelledCheckPhoto', document.getElementById('cancelled_cheque_Photo')
-        .value)
+        document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
+        document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
+        document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
+        document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
+        document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccoutNumber')
+        document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
 
-      document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
-      document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
-      document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
-      document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-      document.getElementById('account-number-value').innerText = submitBankDetailsForm.get('accoutNumber')
-      document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
 
-      if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('fa-circle-check')
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
-      }
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.bank-details-modal').classList.remove('d-none');
+      });
 
-    });
+      document.querySelector('#bank-details-cancel-button').addEventListener('click', function () {
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.bank-details-modal').classList.add('d-none');
+      });
 
-    // ****************************************************JS for skills Modal****************************************************************
+      document.querySelector('#bank-details-submit-button').addEventListener('click', function () {
+
+        let submitBankDetailsForm = new FormData()
+
+        submitBankDetailsForm.append('bankName', document.getElementById('bank-name').value)
+        submitBankDetailsForm.append('branchName', document.getElementById('bank-branch').value)
+        submitBankDetailsForm.append('ifscCode', document.getElementById('bank-ifsc-code').value)
+        submitBankDetailsForm.append('micrCode', document.getElementById('bank-micr-code').value)
+        submitBankDetailsForm.append('accoutNumber', document.getElementById('bank-account-number').value)
+        submitBankDetailsForm.append('accountType', document.getElementById('bank-account-type').value)
+        submitBankDetailsForm.append('cancelledCheckPhoto', document.getElementById('cancelled_cheque_Photo')
+          .value)
+
+        document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
+        document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
+        document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
+        document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
+        document.getElementById('account-number-value').innerText = submitBankDetailsForm.get('accoutNumber')
+        document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
+
+        if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
+          document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
+          document.getElementById('cancelled-check-photo').firstElementChild.classList.add('fa-circle-check')
+          document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
+        }
+
+      });
+
+      // ****************************************************JS for skills Modal****************************************************************
 
 
     document.querySelector('.skills-edit-box').addEventListener('click', function () {
@@ -1688,13 +1894,13 @@
       document.getElementById('body').classList.add('d-none');
       document.querySelector('.skills-modal').classList.remove('d-none');
 
-    })
+      })
 
-    document.querySelector('#skills-modal-cancel-button').addEventListener('click', function () {
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.skills-modal').classList.add('d-none');
+      document.querySelector('#skills-modal-cancel-button').addEventListener('click', function () {
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.skills-modal').classList.add('d-none');
 
-    })
+      })
 
     document.querySelector('#skills-modal-submit-button').addEventListener('click', function () {
 
