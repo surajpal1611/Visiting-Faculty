@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./style.css" />
 
   <title>Resume</title>
+  <link rel="icon" type="image/x-icon" href="/images.jpg">
 </head>
 
 <body>
