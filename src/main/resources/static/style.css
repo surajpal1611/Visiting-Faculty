@@ -379,7 +379,7 @@ input {
 
 input:focus {
   outline: none;
-  border: 3px solid red !important;
+  /* border: 3px solid red !important; */
 }
 
 label {

@@ -263,7 +263,8 @@
             <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
               <div class="d-flex justify-content-center align-items-center">
                 <h3 class="mb-4 h3" style="color: #740E00;">
-                  <b> Skills</b></h3>
+                  <b> Skills</b>
+                </h3>
               </div>
               <div class="container bootstrap snippets bootdeys">
                 <div class="row">
@@ -1075,18 +1076,18 @@
                       </tr>
                     </thead>
                     <tbody id="research-data">
-                      <tr data-toggle="collapse" class="collapsed">
+                      <tr data-toggle="collapse" class="collapsed research-data-tr">
                         <td class="text-white pb-3">Research</td>
-                        <td><select data-title="Role-?" class="form-control" id="role">
+                        <td><select name="role" class="form-control research_role">
                             <option>-Select-</option>
                             <option value="Sole">Sole</option>
                             <option value="Author">Author</option>
                           </select></td>
-                        <td><input  class="form-control" type="text"></td>
-                        <td><input  class="form-control" type="text"></td>
-                        <td><input  class="form-control" type="text"></td>
-                        <td><input  class="form-control" type="text"></td>
-                        <td><input  class="form-control" type="file"></td>
+                        <td><input name="journal_name" class="form-control research_Journal_name" type="text"></td>
+                        <td><input name="volume_year" class="form-control research_Volume_year" type="text"></td>
+                        <td><input name="number" class="form-control research_Number" type="text"></td>
+                        <td><input name="category" class="form-control research_Category" type="text">
+                        <td><input data-title="Certificate" class="form-control" type="file"></td>
                         <td></td>
                       </tr>
                     </tbody>
@@ -1103,6 +1104,68 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.querySelector('#research-submit-button').addEventListener('click', function () {
+      console.log("research button clicked");
+      let researchTableElem = document.querySelectorAll('.research-data-tr');
+      let noofrows = researchTableElem.length;
+      console.log("no of rows", noofrows);
+      let resumeResearchTable = [];
+      for (let j = 0; j < noofrows; j++) {
+
+        let Role = researchTableElem[j].querySelector('.research_role').value;
+        let Journal_name = researchTableElem[j].querySelector('.research_Journal_name').value;
+        let Volume_year = researchTableElem[j].querySelector('.research_Volume_year').value;
+        let Number = researchTableElem[j].querySelector('.research_Number').value;
+        let Category = researchTableElem[j].querySelector('.research_Category').value;
+
+        obj = {
+
+          role: Role,
+          journal_name: Journal_name,
+          volume_year: Volume_year,
+          number: Number,
+          category: Category
+        }
+        resumeResearchTable.push(obj);
+      }
+      object = {
+        "inser_research": resumeResearchTable
+      }
+      console.log('object VJS>>>', JSON.stringify(object));
+
+      function postdata() {
+        url = "/research_Table_Data";
+        params = {
+          method: "post",
+          headers: {
+            contentType: 'application/json'
+          },
+          body: JSON.stringify(object),
+        }
+        fetch(url, params).then((data) => {
+          console.log(data);
+        })
+      }
+      postdata()
+
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.research-modal').classList.add('d-none');
+
+
+    });
+
+
+  </script>
+
+  <!-- <script>
+      document.querySelector(".research-edit-box").addEventListener('click',function(){
+
+      })
+    </script> -->
+
+
 
   <!-- ************************************************************************Bank Details Modal Div******************************************************************************************** -->
   <div class="bank-details-modal d-none">
@@ -1168,6 +1231,71 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.querySelector('#bank-details-submit-button').addEventListener('click', function () {
+      console.log('bank details Btn click');
+      let bank_detail = {};
+      let bankname = document.querySelector('#bank-name').value;
+      let branchname = document.querySelector('#bank-branch').value;
+      let bankifsc = document.querySelector('#bank-ifsc-code').value;
+      let bankmicr = document.querySelector('#bank-micr-code').value;
+      let bankaccountnumber = document.querySelector('#bank-account-number').value;
+      let bankaccounttype = document.querySelector('#bank-account-type').value;
+      bank_detail = {
+        name: bankname,
+        branch: branchname,
+        ifsc_code: bankifsc,
+        micr_code: bankmicr,
+        account_number: bankaccountnumber,
+        account_type: bankaccounttype
+
+      }
+      console.log('obj>>', JSON.stringify(bank_detail));
+
+      // $.ajax({
+      //   url: '/insert-bank-details',
+      //   type: 'post',
+      //   dataType: 'text',
+      //   contentType: "application/json; charset=utf-8",
+      //   processData: false,
+      //   data: JSON.stringify(bank_detail),
+      //   success: function (response) {
+
+      //     document.getElementById('body').classList.remove('d-none');
+      //     document.querySelector('.bank-details-modal').classList.add('d-none')
+
+      //   },
+      //   error: function (error) {
+
+      //     console.log("ERROR:::::", error);
+
+      //   }
+
+      // })
+
+
+
+
+      function postdata() {
+        url = "/insert-bank-details";
+        params = {
+          method: 'post',
+          headers: {
+            'content-Type': 'application/json'
+          },
+          body: JSON.stringify(bank_detail),
+        }
+        fetch(url, params).then((data) => {
+          console.log(data);
+        })
+      }
+      postdata()
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.bank-details-modal').classList.add('d-none');
+    });
+  </script>
+
   <!-- INCLUDE JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"
     integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw=="
@@ -1868,18 +1996,16 @@
     });
 
     document.getElementById('research-add-button').addEventListener('click', function () {
-      let table = ` <tr data-toggle="collapse" class="collapsed">
-            <td class="text-white pb-3">Research</td>
-            <td><select data-title="Role-?" class="form-control" id="role">
+      let table = ` <tr data-toggle="collapse" class="collapsed research-data-tr">            
+            <td><select data-title="Role-?" class="form-control research_role" id="role">
                     <option>-Select-</option>
                     <option value="Sole">Sole</option>
                     <option value="Author">Author</option>
                 </select></td>
-            <td><input data-title="Journal-name" class="form-control" type="text"></td>
-            <td><input data-title="Volume-year" class="form-control" type="text"></td>
-            <td><input data-title="Number" class="form-control" type="text"></td>
-            <td><input data-title="Category" class="form-control" type="text"></td>
-            <td><input data-title="Certificate" class="form-control" type="file"></td>
+            <td><input data-title="Journal-name" class="form-control research_Journal_name" type="text"></td>
+            <td><input data-title="Volume-year" class="form-control research_Volume_year" type="text"></td>
+            <td><input data-title="Number" class="form-control research_Number" type="text"></td>
+            <td><input data-title="Category" class="form-control research_Category" type="text"></td>
             <td class="p-2 !important"> <i class="fa-solid fa-trash-can text-white h4 research-delete-button" data-title=" Action"></i> </td>
                   </tr>`
 
@@ -2195,9 +2321,9 @@
                                  <div class="col-md-10 col-sm-10 col-10"> <input type="hidden" value=\${id}\ ><a class="ms-3"  href="#">\${response.skill_name}\ </a></div>
                              </div>
                        </li> `
-          )
-          document.getElementById('soft-skill-search').value = ''
-          document.getElementById('add-custom-soft-skill').classList.add('d-none');
+        )
+        document.getElementById('soft-skill-search').value = ''
+        document.getElementById('add-custom-soft-skill').classList.add('d-none');
         },
         error: function (error) {
           console.log("Error:::", error)
@@ -2228,9 +2354,9 @@
                                  <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customHardSkillValue}\ </a></div>
                              </div>
                        </li> `
-            )
-            document.getElementById('hard-skill-search').value = ''
-            document.getElementById('add-custom-hard-skill').classList.add('d-none');
+          )
+          document.getElementById('hard-skill-search').value = ''
+          document.getElementById('add-custom-hard-skill').classList.add('d-none');
           },
           error: function (error) {
             console.log("Error:::", error)
