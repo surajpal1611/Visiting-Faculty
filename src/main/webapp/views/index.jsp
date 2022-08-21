@@ -209,7 +209,8 @@
             <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
               <div class="d-flex justify-content-center align-items-center">
                 <h3 class="mb-4 h3" style="color: #740E00;">
-                  <b> Skills</b></h3>
+                  <b> Skills</b>
+                </h3>
               </div>
               <div class="container bootstrap snippets bootdeys">
                 <div class="row">
@@ -334,21 +335,17 @@
                 <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><b> Research </b></h3>
               </div>
               <div class="row">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptates doloribus, quia non id, nam est voluptate dolorem
-                dolore fugit enim voluptas numquam iure officiis excepturi, neque
-                earum? Fugit, earum tempore? Et, nihil odio incidunt dicta
-                possimus beatae in dolorem sunt alias animi dolor fugit eius, esse
-                veritatis iure vitae iste rem consequuntur magni praesentium
-                suscipit neque quae aliquid totam? Nobis? Molestias illum, aperiam
-                quas magnam adipisci aspernatur veritatis ex perferendis
-                repudiandae quos dicta beatae recusandae aliquam quam voluptas
-                hic, quod nihil. Laudantium eveniet ullam minima optio porro!
-                Dolorum, nisi quas? Ipsa maiores doloremque nisi numquam
-                necessitatibus ducimus exercitationem id fuga facere? Vel quos
-                perspiciatis deleniti eos nulla et, deserunt est, maiores
-                molestias fuga praesentium, ab vero eaque quam architecto
-                explicabo!
+
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam natus recusandae, eos, harum excepturi,
+                dolorum aut suscipit modi consequatur quas aspernatur voluptate. Sunt vel nam, non saepe quod rerum
+                repellat?
+                Esse quisquam architecto temporibus quibusdam tempore, ratione eius necessitatibus sunt explicabo
+                mollitia rem sit cumque voluptatum? Error pariatur quas veritatis laboriosam repudiandae magni eaque
+                fugit at voluptate commodi. Delectus, id.
+
+
+
               </div>
             </div>
             <div class="d-none research-edit-box d-flex justify-content-center align-items-center">
@@ -583,18 +580,25 @@
                   </thead>
                   <tbody id="qualification-data">
                     <tr data-toggle="collapse" class="collapsed qualification-row">
-                      <td class="text-white " id="bachelors-degree-title"><select class="form-control qualification-title">
-                        <option value="1">Bachelor's Degree</option>
-                        <option value="2">Master's Degree</option>
-                        <option value="3">PHD</option>
-                        <option value="4">Professional Certification</option>
-                      </select></td>
-                      <td><input class="form-control qualification-subject" id="bachelors-degree-major-subject"  type="text"></td>
-                      <td><input class="form-control qualification-university" id="bachelors-degree-university"  type="text"></td>
-                      <td><input class="form-control qualification-college" id="bachelors-degree-college"  type="text"></td>
-                      <td><input class="form-control qualification-percentile" id="bachelors-degree-percentile" type="text"></td>
-                      <td><input class="form-control qualification-year" id="bachelors-degree-year-of-passing"  type="text"></td>
-                      <td><input class="form-control qualification-certificate" id="bachelors-degree-certificate"  type="file"></td>
+                      <td class="text-white " id="bachelors-degree-title"><select
+                          class="form-control qualification-title">
+                          <option value="1">Bachelor's Degree</option>
+                          <option value="2">Master's Degree</option>
+                          <option value="3">PHD</option>
+                          <option value="4">Professional Certification</option>
+                        </select></td>
+                      <td><input class="form-control qualification-subject" id="bachelors-degree-major-subject"
+                          type="text"></td>
+                      <td><input class="form-control qualification-university" id="bachelors-degree-university"
+                          type="text"></td>
+                      <td><input class="form-control qualification-college" id="bachelors-degree-college" type="text">
+                      </td>
+                      <td><input class="form-control qualification-percentile" id="bachelors-degree-percentile"
+                          type="text"></td>
+                      <td><input class="form-control qualification-year" id="bachelors-degree-year-of-passing"
+                          type="text"></td>
+                      <td><input class="form-control qualification-certificate" id="bachelors-degree-certificate"
+                          type="file"></td>
                       <td><i id="qualification-add-button" class="fa-solid text-white fa-circle-plus "></i></td>
                     </tr>
                   </tbody>
@@ -942,17 +946,17 @@
                       </tr>
                     </thead>
                     <tbody id="research-data">
-                      <tr data-toggle="collapse" class="collapsed">
+                      <tr data-toggle="collapse" class="collapsed research-data-tr">
                         <td class="text-white pb-3">Research</td>
-                        <td><select data-title="Role-?" class="form-control" id="role">
+                        <td><select name="role" class="form-control research_role">
                             <option>-Select-</option>
                             <option value="Sole">Sole</option>
                             <option value="Author">Author</option>
                           </select></td>
-                        <td><input data-title="Journal-name" class="form-control" type="text"></td>
-                        <td><input data-title="Volume-year" class="form-control" type="text"></td>
-                        <td><input data-title="Number" class="form-control" type="text"></td>
-                        <td><input data-title="Category" class="form-control" type="text"></td>
+                        <td><input name="journal_name" class="form-control research_Journal_name" type="text"></td>
+                        <td><input name="volume_year" class="form-control research_Volume_year" type="text"></td>
+                        <td><input name="number" class="form-control research_Number" type="text"></td>
+                        <td><input name="category" class="form-control research_Category" type="text">
                         <td><input data-title="Certificate" class="form-control" type="file"></td>
                         <td></td>
                       </tr>
@@ -970,6 +974,68 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.querySelector('#research-submit-button').addEventListener('click', function () {
+      console.log("research button clicked");
+      let researchTableElem = document.querySelectorAll('.research-data-tr');
+      let noofrows = researchTableElem.length;
+      console.log("no of rows", noofrows);
+      let resumeResearchTable = [];
+      for (let j = 0; j < noofrows; j++) {
+
+        let Role = researchTableElem[j].querySelector('.research_role').value;
+        let Journal_name = researchTableElem[j].querySelector('.research_Journal_name').value;
+        let Volume_year = researchTableElem[j].querySelector('.research_Volume_year').value;
+        let Number = researchTableElem[j].querySelector('.research_Number').value;
+        let Category = researchTableElem[j].querySelector('.research_Category').value;
+
+        obj = {
+
+          role: Role,
+          journal_name: Journal_name,
+          volume_year: Volume_year,
+          number: Number,
+          category: Category
+        }
+        resumeResearchTable.push(obj);
+      }
+      object = {
+        "inser_research": resumeResearchTable
+      }
+      console.log('object VJS>>>', JSON.stringify(object));
+
+      function postdata() {
+        url = "/research_Table_Data";
+        params = {
+          method: "post",
+          headers: {
+            contentType: 'application/json'
+          },
+          body: JSON.stringify(object),
+        }
+        fetch(url, params).then((data) => {
+          console.log(data);
+        })
+      }
+      postdata()
+
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.research-modal').classList.add('d-none');
+
+
+    });
+
+
+  </script>
+
+  <!-- <script>
+      document.querySelector(".research-edit-box").addEventListener('click',function(){
+
+      })
+    </script> -->
+
+
 
   <!-- ************************************************************************Bank Details Modal Div******************************************************************************************** -->
   <div class="bank-details-modal d-none">
@@ -1035,6 +1101,71 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.querySelector('#bank-details-submit-button').addEventListener('click', function () {
+      console.log('bank details Btn click');
+      let bank_detail = {};
+      let bankname = document.querySelector('#bank-name').value;
+      let branchname = document.querySelector('#bank-branch').value;
+      let bankifsc = document.querySelector('#bank-ifsc-code').value;
+      let bankmicr = document.querySelector('#bank-micr-code').value;
+      let bankaccountnumber = document.querySelector('#bank-account-number').value;
+      let bankaccounttype = document.querySelector('#bank-account-type').value;
+      bank_detail = {
+        name: bankname,
+        branch: branchname,
+        ifsc_code: bankifsc,
+        micr_code: bankmicr,
+        account_number: bankaccountnumber,
+        account_type: bankaccounttype
+
+      }
+      console.log('obj>>', JSON.stringify(bank_detail));
+
+      // $.ajax({
+      //   url: '/insert-bank-details',
+      //   type: 'post',
+      //   dataType: 'text',
+      //   contentType: "application/json; charset=utf-8",
+      //   processData: false,
+      //   data: JSON.stringify(bank_detail),
+      //   success: function (response) {
+
+      //     document.getElementById('body').classList.remove('d-none');
+      //     document.querySelector('.bank-details-modal').classList.add('d-none')
+
+      //   },
+      //   error: function (error) {
+
+      //     console.log("ERROR:::::", error);
+
+      //   }
+
+      // })
+
+
+
+
+      function postdata() {
+        url = "/insert-bank-details";
+        params = {
+          method: 'post',
+          headers: {
+            'content-Type': 'application/json'
+          },
+          body: JSON.stringify(bank_detail),
+        }
+        fetch(url, params).then((data) => {
+          console.log(data);
+        })
+      }
+      postdata()
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.bank-details-modal').classList.add('d-none');
+    });
+  </script>
+
   <!-- INCLUDE JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"
     integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw=="
@@ -1650,29 +1781,29 @@
           </td>
           </tr>`
 
-        document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
-      })
+      document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
+    })
 
-      $(document).on('click', '.qualification-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
-
-      
-      //*************************************Award-modal JS****************************************
+    $(document).on('click', '.qualification-delete-button', function () {
+      $(this).closest('tr').remove()
+    })
 
 
-      document.querySelector(".award-edit-box").addEventListener('click', function () {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.award-modal').classList.remove('d-none');
-      });
+    //*************************************Award-modal JS****************************************
 
-      document.querySelector("#award-cancel-button").addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.award-modal').classList.add('d-none');
-      });
 
-      document.getElementById('award-add-button').addEventListener('click', function () {
-        let table = `   <tr data-toggle="collapse" class="collapsed">
+    document.querySelector(".award-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.award-modal').classList.remove('d-none');
+    });
+
+    document.querySelector("#award-cancel-button").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.award-modal').classList.add('d-none');
+    });
+
+    document.getElementById('award-add-button').addEventListener('click', function () {
+      let table = `   <tr data-toggle="collapse" class="collapsed">
                         <td class="text-white pb-3">Award</td>
                         <td><input class="form-control" type="text"></td>
                         <td><input class="form-control" type="text"></td>
@@ -1687,27 +1818,27 @@
                         <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 award-delete-button"></i></td>
                       </tr>
        `
-        document.getElementById('award-data').insertAdjacentHTML("beforeend", table);
-      })
-      $(document).on('click', '.award-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
+      document.getElementById('award-data').insertAdjacentHTML("beforeend", table);
+    })
+    $(document).on('click', '.award-delete-button', function () {
+      $(this).closest('tr').remove()
+    })
 
 
-      //*************************************Publications-modal JS****************************************
+    //*************************************Publications-modal JS****************************************
 
-      document.querySelector(".publication-edit-box").addEventListener('click', function () {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.publication-modal').classList.remove('d-none');
-      });
+    document.querySelector(".publication-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.publication-modal').classList.remove('d-none');
+    });
 
-      document.querySelector("#publication-cancel-button").addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.publication-modal').classList.add('d-none');
-      });
+    document.querySelector("#publication-cancel-button").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.publication-modal').classList.add('d-none');
+    });
 
-      document.getElementById('publication-add-button').addEventListener('click', function () {
-        let table = ` <tr data-toggle="collapse" class="collapsed">
+    document.getElementById('publication-add-button').addEventListener('click', function () {
+      let table = ` <tr data-toggle="collapse" class="collapsed">
             <td class="text-white pb-3" >Publication</td>
             <td><select data-title="Role ?" class="form-control" id="role">
                     <option>-Select-</option>
@@ -1725,110 +1856,108 @@
             <td><input data-title="Certificate" class="form-control" type="file"></td>
             <td> <i class="fa-solid fa-trash-can text-white h4 publication-delete-button" data-title="Action"></i></td>
                        </tr>`
-        document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
-      })
+      document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
+    })
 
-      $(document).on('click', '.publication-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
+    $(document).on('click', '.publication-delete-button', function () {
+      $(this).closest('tr').remove()
+    })
 
 
-      //*************************************Research-modal JS****************************************
+    //*************************************Research-modal JS****************************************
 
-      document.querySelector(".research-edit-box").addEventListener('click', function () {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.research-modal').classList.remove('d-none');
-      });
+    document.querySelector(".research-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.research-modal').classList.remove('d-none');
+    });
 
-      document.querySelector("#research-cancel-button").addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.research-modal').classList.add('d-none');
-      });
+    document.querySelector("#research-cancel-button").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.research-modal').classList.add('d-none');
+    });
 
-      document.getElementById('research-add-button').addEventListener('click', function () {
-        let table = ` <tr data-toggle="collapse" class="collapsed">
-            <td class="text-white pb-3">Research</td>
-            <td><select data-title="Role-?" class="form-control" id="role">
+    document.getElementById('research-add-button').addEventListener('click', function () {
+      let table = ` <tr data-toggle="collapse" class="collapsed research-data-tr">            
+            <td><select data-title="Role-?" class="form-control research_role" id="role">
                     <option>-Select-</option>
                     <option value="Sole">Sole</option>
                     <option value="Author">Author</option>
                 </select></td>
-            <td><input data-title="Journal-name" class="form-control" type="text"></td>
-            <td><input data-title="Volume-year" class="form-control" type="text"></td>
-            <td><input data-title="Number" class="form-control" type="text"></td>
-            <td><input data-title="Category" class="form-control" type="text"></td>
-            <td><input data-title="Certificate" class="form-control" type="file"></td>
+            <td><input data-title="Journal-name" class="form-control research_Journal_name" type="text"></td>
+            <td><input data-title="Volume-year" class="form-control research_Volume_year" type="text"></td>
+            <td><input data-title="Number" class="form-control research_Number" type="text"></td>
+            <td><input data-title="Category" class="form-control research_Category" type="text"></td>
             <td class="p-2 !important"> <i class="fa-solid fa-trash-can text-white h4 research-delete-button" data-title=" Action"></i> </td>
                   </tr>`
 
-        document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
-      })
+      document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
+    })
 
-      $(document).on('click', '.research-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
-
-
-      //*************************************Bank-details-modal JS****************************************
-
-      document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
-
-        let editBankDetailsForm = new FormData()
-
-        editBankDetailsForm.append('editBankName', document.getElementById('bank-name-value').innerText)
-        editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
-        editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
-        editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
-        editBankDetailsForm.append('editAccoutNumber', document.getElementById('account-number-value')
-          .innerText)
-        editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value').innerText)
-
-        document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
-        document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
-        document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
-        document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
-        document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccoutNumber')
-        document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
+    $(document).on('click', '.research-delete-button', function () {
+      $(this).closest('tr').remove()
+    })
 
 
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.bank-details-modal').classList.remove('d-none');
-      });
+    //*************************************Bank-details-modal JS****************************************
 
-      document.querySelector('#bank-details-cancel-button').addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.bank-details-modal').classList.add('d-none');
-      });
+    document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
 
-      document.querySelector('#bank-details-submit-button').addEventListener('click', function () {
+      let editBankDetailsForm = new FormData()
 
-        let submitBankDetailsForm = new FormData()
+      editBankDetailsForm.append('editBankName', document.getElementById('bank-name-value').innerText)
+      editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
+      editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
+      editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
+      editBankDetailsForm.append('editAccoutNumber', document.getElementById('account-number-value')
+        .innerText)
+      editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value').innerText)
 
-        submitBankDetailsForm.append('bankName', document.getElementById('bank-name').value)
-        submitBankDetailsForm.append('branchName', document.getElementById('bank-branch').value)
-        submitBankDetailsForm.append('ifscCode', document.getElementById('bank-ifsc-code').value)
-        submitBankDetailsForm.append('micrCode', document.getElementById('bank-micr-code').value)
-        submitBankDetailsForm.append('accoutNumber', document.getElementById('bank-account-number').value)
-        submitBankDetailsForm.append('accountType', document.getElementById('bank-account-type').value)
-        submitBankDetailsForm.append('cancelledCheckPhoto', document.getElementById('cancelled_cheque_Photo')
-          .value)
+      document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
+      document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
+      document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
+      document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
+      document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccoutNumber')
+      document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
 
-        document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
-        document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
-        document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
-        document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-        document.getElementById('account-number-value').innerText = submitBankDetailsForm.get('accoutNumber')
-        document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
 
-        if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
-          document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
-          document.getElementById('cancelled-check-photo').firstElementChild.classList.add('fa-circle-check')
-          document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
-        }
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.bank-details-modal').classList.remove('d-none');
+    });
 
-      });
+    document.querySelector('#bank-details-cancel-button').addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.bank-details-modal').classList.add('d-none');
+    });
 
-      // ****************************************************JS for skills Modal****************************************************************
+    document.querySelector('#bank-details-submit-button').addEventListener('click', function () {
+
+      let submitBankDetailsForm = new FormData()
+
+      submitBankDetailsForm.append('bankName', document.getElementById('bank-name').value)
+      submitBankDetailsForm.append('branchName', document.getElementById('bank-branch').value)
+      submitBankDetailsForm.append('ifscCode', document.getElementById('bank-ifsc-code').value)
+      submitBankDetailsForm.append('micrCode', document.getElementById('bank-micr-code').value)
+      submitBankDetailsForm.append('accoutNumber', document.getElementById('bank-account-number').value)
+      submitBankDetailsForm.append('accountType', document.getElementById('bank-account-type').value)
+      submitBankDetailsForm.append('cancelledCheckPhoto', document.getElementById('cancelled_cheque_Photo')
+        .value)
+
+      document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
+      document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
+      document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
+      document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
+      document.getElementById('account-number-value').innerText = submitBankDetailsForm.get('accoutNumber')
+      document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
+
+      if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('fa-circle-check')
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
+      }
+
+    });
+
+    // ****************************************************JS for skills Modal****************************************************************
 
 
     document.querySelector('.skills-edit-box').addEventListener('click', function () {
@@ -1894,13 +2023,13 @@
       document.getElementById('body').classList.add('d-none');
       document.querySelector('.skills-modal').classList.remove('d-none');
 
-      })
+    })
 
-      document.querySelector('#skills-modal-cancel-button').addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.skills-modal').classList.add('d-none');
+    document.querySelector('#skills-modal-cancel-button').addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.skills-modal').classList.add('d-none');
 
-      })
+    })
 
     document.querySelector('#skills-modal-submit-button').addEventListener('click', function () {
 
@@ -2049,9 +2178,9 @@
                                  <div class="col-md-10 col-sm-10 col-10"><a id=\${response.id}\ class="ms-3"  href="#">\${response.skill_name}\ </a></div>
                              </div>
                        </li> `
-          )
-          document.getElementById('soft-skill-search').value = ''
-          document.getElementById('add-custom-soft-skill').classList.add('d-none');
+        )
+        document.getElementById('soft-skill-search').value = ''
+        document.getElementById('add-custom-soft-skill').classList.add('d-none');
         },
         error: function (error) {
           console.log("Error:::", error)
@@ -2083,9 +2212,9 @@
                                  <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customHardSkillValue}\ </a></div>
                              </div>
                        </li> `
-            )
-            document.getElementById('hard-skill-search').value = ''
-            document.getElementById('add-custom-hard-skill').classList.add('d-none');
+          )
+          document.getElementById('hard-skill-search').value = ''
+          document.getElementById('add-custom-hard-skill').classList.add('d-none');
           },
           error: function (error) {
             console.log("Error:::", error)
