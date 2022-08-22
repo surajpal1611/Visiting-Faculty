@@ -315,50 +315,47 @@
                   <h3 style="color: #740E00;"><b> Awards </b></h3>
                 </div>
                 <div id="award-preview-div">
-                  <div class="text-block right">
-                    <div class="card-body">
 
-                      <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                        <div class="row">
 
-                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                            <div class="row pt-lg-3">
-                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                                <p class="h5 pb-1">Award Name :</p>
-                                <p class="h5 py-1">organization :</p>
-                                <p class="h5 py-1">Organization Type :</p>
+                  <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                    <div class="row">
 
-                              </div>
-                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                                <p id="">Engagement Award</p>
-                                <p id="">Campus Compact </p>
-                                <p id="">University</p>
-                              </div>
-                            </div>
+                      <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                        <div class="row pt-lg-3">
+                          <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                            <p class="h5 pb-1">Award Name :</p>
+                            <p class="h5 py-1">organization :</p>
+                            <p class="h5 py-1">Organization Type :</p>
+
                           </div>
-
-
-                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                            <div class="row pt-lg-3">
-                              <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                                <p class="h5 pb-1">Place :</p>
-                                <p class="h5 pb-1">Recieved date :</p>
-                                <p class="h5 py-1">Certificate :</p>
-                              </div>
-                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                                <p class="" id="">Mumbai</p>
-                                <p class="" id="">2018-07-07</p>
-                                <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
-                              </div>
-                            </div>
+                          <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                            <p id="">Engagement Award</p>
+                            <p id="">Campus Compact </p>
+                            <p id="">University</p>
                           </div>
+                        </div>
+                      </div>
 
+
+                      <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                        <div class="row pt-lg-3">
+                          <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                            <p class="h5 pb-1">Place :</p>
+                            <p class="h5 pb-1">Recieved date :</p>
+                            <p class="h5 py-1">Certificate :</p>
+                          </div>
+                          <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                            <p class="" id="">Mumbai</p>
+                            <p class="" id="">2018-07-07</p>
+                            <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                          </div>
                         </div>
                       </div>
 
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
@@ -684,6 +681,33 @@
           <span id="qualification-message" style="color: red;" class="error"></span>
         </div>
         <hr>
+
+        <!-- <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="h5">Title</p>
+                </div>
+                <div><select class="form-control qualification-title" id="bachelors-degree-title-data">
+                    <option value="1">Bachelor's Degree</option>
+                    <option value="2">Master's Degree</option>
+                    <option value="3">PHD</option>
+                    <option value="4">Professional Certification</option>
+                  </select></div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="h5">Subject</p>
+                </div>
+                <div><input class="form-control qualification-subject" style="width: 100%;" id="bachelors-degree-major-subject"
+                  type="text"></div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">div-2</div>
+          </div>
+        </div> -->
+
         <div class="d-flex align-items-centre justify-content-centre">
           <div class="container resume-box">
             <div class="row table">
@@ -702,8 +726,8 @@
                     </tr>
                   </thead>
                   <tbody id="qualification-data">
-                    <tr data-toggle="collapse" class="collapsed qualification-row">
-                      <td class="text-white " id="bachelors-degree-title"><select
+                    <tr class="qualification-row">
+                      <td class="text-white" id="bachelors-degree-title"><select
                           class="form-control qualification-title" id="bachelors-degree-title-data">
                           <option value="1">Bachelor's Degree</option>
                           <option value="2">Master's Degree</option>
@@ -1928,12 +1952,12 @@
       let bachelorsYOP = document.getElementById('bachelors-degree-year-of-passing').value;
       let bachelorsCertificate = document.getElementById('bachelors-degree-certificate').value;
 
-      if (bachelorsTitle != 1 || bachelorsSubject.length < 3 || bachelorsUniversity.length < 3 || bachelorsCollege
-        .length < 3 || bachelorsPercentile.length < 3 || bachelorsYOP.length < 3 || bachelorsCertificate.length < 4
-      ) {
-        document.getElementById('qualification-message').innerHTML = "*Complition of bachelors degree is required";
-        return;
-      }
+      // if (bachelorsTitle != 1 || bachelorsSubject.length < 3 || bachelorsUniversity.length < 3 || bachelorsCollege
+      //   .length < 3 || bachelorsPercentile.length < 3 || bachelorsYOP.length < 3 || bachelorsCertificate.length < 4
+      // ) {
+      //   document.getElementById('qualification-message').innerHTML = "*Complition of bachelors degree is required";
+      //   return;
+      // }
 
 
       let table = ` <tr data-toggle="collapse" class="collapsed qualification-row">
@@ -2016,6 +2040,47 @@
           achivement_date: achivement_date,
           url_path: url_path
         }
+
+        div += `
+        <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                    <div class="row">
+
+                      <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                        <div class="row pt-lg-3">
+                          <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                            <p class="h5 pb-1">Award Name :</p>
+                            <p class="h5 py-1">organization :</p>
+                            <p class="h5 py-1">Organization Type :</p>
+
+                          </div>
+                          <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                            <p id="">\${title}\</p>
+                            <p id="">\${organization_name}</p>
+                            <p id="">\${organization_type_lid}\</p>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                        <div class="row pt-lg-3">
+                          <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                            <p class="h5 pb-1">Description :</p>
+                            <p class="h5 pb-1">Recieved date :</p>
+                            <p class="h5 py-1">Certificate :</p>
+                          </div>
+                          <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                            <p class="" id="">\${discription}\</p>
+                            <p class="" id="">\${achivement_date}\</p>
+                            <p id=""><i class="fa-solid fa-ban text-success"></i></p>
+
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                    `
 
         resume_achievement.push(obj);
       }
