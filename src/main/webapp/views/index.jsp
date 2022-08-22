@@ -676,39 +676,83 @@
   <div class="qualification-modal d-none">
     <div class="full-screen container ">
       <div class="main-content">
-        <div class="container d-flex justify-content-center align-items-center text-white pt-md-5">
-          <h3>Qualification</h3>
-          <span id="qualification-message" style="color: red;" class="error"></span>
+        <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
+          <h3><b> Qualification</b></h3>
+          <i id="qualification-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
         </div>
         <hr>
 
-        <!-- <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="h5">Title</p>
+        <div id="qualification-appending-div" class="bg-white">
+          <!-- <div class="text-block right" id="preview-qualification-div">
+            <div class="card-body preview-qualification-div"> -->
+
+          <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Title</p>
+                  </div>
+                  <div class="col-md-10"><select class="form-control qualification-title"
+                      id="bachelors-degree-title-data">
+                      <option value="1">Bachelor's Degree</option>
+                      <option value="2">Master's Degree</option>
+                      <option value="3">PHD</option>
+                      <option value="4">Professional Certification</option>
+                    </select></div>
                 </div>
-                <div><select class="form-control qualification-title" id="bachelors-degree-title-data">
-                    <option value="1">Bachelor's Degree</option>
-                    <option value="2">Master's Degree</option>
-                    <option value="3">PHD</option>
-                    <option value="4">Professional Certification</option>
-                  </select></div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Subject</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control qualification-subject"
+                      id="bachelors-degree-major-subject" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">University</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control qualification-university"
+                      id="bachelors-degree-university" type="text"></div>
+                </div>
+
               </div>
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="h5">Subject</p>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">College</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control qualification-college"
+                      id="bachelors-degree-college" type="text"></div>
                 </div>
-                <div><input class="form-control qualification-subject" style="width: 100%;" id="bachelors-degree-major-subject"
-                  type="text"></div>
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Percentage</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control qualification-subject"
+                      id="bachelors-degree-major-subject" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control qualification-certificate"
+                      id="bachelors-degree-certificate" type="file"></div>
+                </div>
               </div>
             </div>
-            <div class="col-md-6 col-sm-12">div-2</div>
           </div>
-        </div> -->
+          <hr style="height: 5px;">
+         
+          <div id="qualification-data" class="mt-4">
 
-        <div class="d-flex align-items-centre justify-content-centre">
+          </div>
+        </div>
+        
+
+        <!-- <div class="d-flex align-items-centre justify-content-centre">
           <div class="container resume-box">
             <div class="row table">
               <div class="table-responsive">
@@ -753,7 +797,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="d-flex justify-content-center">
         <button id="qualification-cancel-button" class="btn btn-danger m-4">Cancel</button>
@@ -1903,7 +1947,7 @@
                     </div>
                   </div>
                 </div>
-
+                
                         `
 
           qualificationTableArray.push(object)
@@ -1942,15 +1986,15 @@
 
 
     document.getElementById('qualification-add-button').addEventListener('click', function (e) {
-      e.preventDefault();
-      clearError();
-      let bachelorsTitle = document.getElementById('bachelors-degree-title-data').value;
-      let bachelorsSubject = document.getElementById('bachelors-degree-major-subject').value;
-      let bachelorsUniversity = document.getElementById('bachelors-degree-university').value;
-      let bachelorsCollege = document.getElementById('bachelors-degree-college').value;
-      let bachelorsPercentile = document.getElementById('bachelors-degree-percentile').value;
-      let bachelorsYOP = document.getElementById('bachelors-degree-year-of-passing').value;
-      let bachelorsCertificate = document.getElementById('bachelors-degree-certificate').value;
+      // e.preventDefault();
+      // clearError();
+      // let bachelorsTitle = document.getElementById('bachelors-degree-title-data').value;
+      // let bachelorsSubject = document.getElementById('bachelors-degree-major-subject').value;
+      // let bachelorsUniversity = document.getElementById('bachelors-degree-university').value;
+      // let bachelorsCollege = document.getElementById('bachelors-degree-college').value;
+      // let bachelorsPercentile = document.getElementById('bachelors-degree-percentile').value;
+      // let bachelorsYOP = document.getElementById('bachelors-degree-year-of-passing').value;
+      // let bachelorsCertificate = document.getElementById('bachelors-degree-certificate').value;
 
       // if (bachelorsTitle != 1 || bachelorsSubject.length < 3 || bachelorsUniversity.length < 3 || bachelorsCollege
       //   .length < 3 || bachelorsPercentile.length < 3 || bachelorsYOP.length < 3 || bachelorsCertificate.length < 4
@@ -1960,23 +2004,66 @@
       // }
 
 
-      let table = ` <tr data-toggle="collapse" class="collapsed qualification-row">
-          <td class="text-white " id="qualification-title"><select class="form-control qualification-title">
-                        <option value="1">Bachelor's Degree</option>
-                        <option value="2">Master's Degree</option>
-                        <option value="3">PHD</option>
-                        <option value="4">Professional Certification</option>
-                      </select></td>
-          <td><input class="form-control qualification-subject" id="qualification-major-subject"  type="text"></td>
-          <td><input class="form-control qualification-university" id="qualification-university"  type="text"></td>
-          <td><input class="form-control qualification-college" id="qualification-college"  type="text"></td>
-          <td><input class="form-control qualification-percentile" id="qualification-percentile" type="text"></td>
-          <td><input class="form-control qualification-year" id="qualification-year-of-passing"  type="text"></td>
-          <td><input class="form-control qualification-certificate" id="qualification-certificate"  type="file"></td>
-          <td>
-              <i class="fa-solid fa-trash-can text-white qualification-delete-button"></i>
-          </td>
-          </tr>`
+      let table = `
+      <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Title</p>
+                  </div>
+                  <div class="col-md-10"><select class="form-control qualification-title"
+                      id="bachelors-degree-title-data">
+                      <option value="1">Bachelor's Degree</option>
+                      <option value="2">Master's Degree</option>
+                      <option value="3">PHD</option>
+                      <option value="4">Professional Certification</option>
+                    </select></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Subject</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control qualification-subject"
+                      id="bachelors-degree-major-subject" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">University</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control qualification-university"
+                      id="bachelors-degree-university" type="text"></div>
+                </div>
+
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">College</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control qualification-college"
+                      id="bachelors-degree-college" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Percentage</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control qualification-subject"
+                      id="bachelors-degree-major-subject" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control qualification-certificate" id="bachelors-degree-certificate"
+                    type="file"></div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <hr style="height: 5px; margin: 30px 0">
+`
 
       document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
     })

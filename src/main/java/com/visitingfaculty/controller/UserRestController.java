@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.visitingfaculty.dao.UserDaoInterface;
 import com.visitingfaculty.dto.UserDto;
-import com.visitingfaculty.dto.UserPersonalDetailsDTO;
 import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
 import com.visitingfaculty.service.faculty_service.UserService;
 import com.visitingfaculty.validations.jsoncheck;
@@ -61,14 +60,10 @@ public class UserRestController {
     @PostMapping("/verify-token")
     public ResponseEntity<?> verifyToken(@RequestBody String token, HttpSession httpSession) {
 
-        System.out.println(token);
-        int tokenToVerify = Integer.parseInt(token);
-        int tokenGenerated = (int) httpSession.getAttribute("tokenGenerated");
-        String tokenValidation = (String) httpSession.getAttribute("tokenGenerated");
+        int tokenToVerify =  Integer.parseInt(token);
+        int tokenGenerated =  (int) httpSession.getAttribute("tokenGenerated");
+        // String tokenValidation = (String) httpSession.getAttribute("tokenGenerated");
 
-        if (tokenValidation == null) {
-            return null;
-        }
         if (tokenGenerated != tokenToVerify) {
             return null;
         }

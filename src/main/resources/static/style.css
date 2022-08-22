@@ -421,7 +421,6 @@ label {
 
 .full-screen {
   margin: auto;
-  margin-top: 100px;
 }
 
 .middle-screen {
@@ -432,7 +431,7 @@ table thead tr {
   height: 60px;
   background: #36304a;
 }
-
+/* 
 .main-content {
   width: 100%;
   background: linear-gradient(to left, #34373a, #5a626d);
@@ -440,7 +439,7 @@ table thead tr {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.22);
 
-}
+} */
 
 table,
 th,
