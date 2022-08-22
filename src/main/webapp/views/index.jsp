@@ -49,80 +49,74 @@
 
           <div class="edit-personal-details">
             <div class="position-relative personal-information-div-wrapper d-flex" style="cursor: pointer;">
-              <div class="personal-information-div">
-                <div class="cover-div p-3 px-sm-4 p-lg-4">
-                  <div class="row">
-                    <div class="col-md-4 col-sm-12 col-lg-3">
-                      <div class="avatar bg-white shadow-sm p-1">
-                        <img src="/download (3).jpg" alt="Passport Size photo" width="200" height="200" />
+              <div class="container p-0">
+                <div class="personal-information-div">
+                  <div class="cover-div p-3 px-sm-4 p-lg-4">
+                    <div class="row">
+                      <div class="col-md-4 col-sm-12 col-lg-3">
+                        <div class="avatar bg-white shadow-sm p-1">
+                          <img src="/download (3).jpg" alt="Passport Size photo" width="200" height="200" />
+                        </div>
                       </div>
-                    </div>
 
-                    <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9">
-                      <h3 p-3 id="full-name-value" style="color: #740E00;"><b>Full Name</b></h3>
-                      <h5 class="ms-3">Role</h5>
-                      <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        Laudantium commodi, ut animi temporibus quam fugit
-                        praesentium molestias esse incidunt veniam repellendus?
-                        Repellendus maiores ad, eos quod modi dolore laboriosam
-                        sequi.
-                      </p>
+                      <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
+                        <h3 p-3 id="full-name-value" style="color: #740E00;"><b>Full Name</b></h3>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div id="personal-details-div" class="pt-4 px-3 px-sm-4 px-lg-4 mt-1">
-                  <div class="row">
-                    <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-5">
-                        <div class="col-6 left-personal-div ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <h6 class="pb-4">Gender :</h6>
-                          <h6 class="pb-4">Date of birth :</h6>
-                          <h6 class="pb-4">Pancard :</h6>
-                          <h6 class="pb-4">Pancard Photo</h6>
-                          <h6 class="pb-4">Aadhar card :</h6>
-                          <h6 class="pb-4">Aadhar card Photo</h6>
-                        </div>
-                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                          <p id="gender-value">Male</p>
-                          <p class="pt-2" id="date-of-birth-value">2000-07-06</p>
-                          <p class="pt-3" id="pancard-value">AAAAA1111A</p>
-                          <p class="pt-3" id="pancard-photo"><i class="fa-solid fa-ban"></i></p>
-                          <p class="pt-2" id="aadhar-card-value">111122223333</p>
-                          <p class="pt-2" id="aadhar-card-photo"><i class="fa-solid fa-ban"></i></p>
+                  <div id="personal-details-div" class="pt-4 px-3 px-sm-4 px-lg-4 mt-1">
+                    <div class="row">
+                      <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
+                        <div class="row pt-lg-5">
+                          <div class="col-6 left-personal-div ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                            <h6 class="pb-4">Gender :</h6>
+                            <h6 class="pb-4">Date of birth :</h6>
+                            <h6 class="pb-4">Pancard :</h6>
+                            <h6 class="pb-4">Pancard Photo</h6>
+                            <h6 class="pb-4">Aadhar card :</h6>
+                            <h6 class="pb-4">Aadhar card Photo</h6>
+                          </div>
+                          <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                            <p id="gender-value">Male</p>
+                            <p class="pt-2" id="date-of-birth-value">2000-07-06</p>
+                            <p class="pt-3" id="pancard-value">AAAAA1111A</p>
+                            <p class="pt-3" id="pancard-photo"><i class="fa-solid fa-ban text-danger"></i></p>
+                            <p class="pt-2" id="aadhar-card-value">111122223333</p>
+                            <p class="pt-2" id="aadhar-card-photo"><i class="fa-solid fa-ban text-danger"></i></p>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div id="right-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-5">
-                        <div class="col-6 ps-lg-3 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <h6 class="pb-4">Contact No.</h6>
-                          <h6 class="pb-3">Email :</h6>
-                          <h6 class="pb-4">Address :</h6>
-                          <h6 class="pb-md-4 pt-md-3 mt-md-3 temporary-address-heading">Temporary Address :</h6>
-                          <!-- <h6 class="pb-3 city-line">City</h6> -->
-                          <!-- <h6 class="pb-3">State</h6> -->
-                          <!-- <h6 class="pb-3">Pincode</h6> -->
-                          <h6 class=" pt-3 country-heading">Country :</h6>
-                        </div>
-                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                          <p id="contact-number-value">9876543210</p>
-                          <p id="email-value" class="pt-2">example@gmail.com</p>
-                          <p id="address-value" class="pt-1">101-Ashok kamothe, Navi Mumbai-410209, India</p>
-                          <p id="temporary-address-value" class="pt-1">703-Satyam panvel, Navi Mumbai-410206, India
-                          </p>
-                          <!-- <p id="city-value" class="pt-1">Mumbai</p> -->
-                          <!-- <p id="state-value" class="pt-1">Maharashtra</p> -->
-                          <!-- <p id="pincode-value" class="pt-1">400001</p> -->
-                          <p id="country-value" class="pt-1">India</p>
+                      <div id="right-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
+                        <div class="row pt-lg-5">
+                          <div class="col-6 ps-lg-3 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                            <h6 class="pb-4">Contact No.</h6>
+                            <h6 class="pb-3">Email :</h6>
+                            <h6 class="pb-4">Address :</h6>
+                            <h6 class="pb-md-4 pt-md-3 mt-md-3 temporary-address-heading">Temporary Address :</h6>
+                            <!-- <h6 class="pb-3 city-line">City</h6> -->
+                            <!-- <h6 class="pb-3">State</h6> -->
+                            <!-- <h6 class="pb-3">Pincode</h6> -->
+                            <h6 class=" pt-2 country-heading">Country :</h6>
+                          </div>
+                          <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                            <p id="contact-number-value">9876543210</p>
+                            <p id="email-value" class="pt-2">example@gmail.com</p>
+                            <p id="address-value" class="pt-1">101-Ashok kamothe, Navi Mumbai-410209, India</p>
+                            <p id="temporary-address-value" class="pt-1">703-Satyam panvel, Navi Mumbai-410206, India
+                            </p>
+                            <!-- <p id="city-value" class="pt-1">Mumbai</p> -->
+                            <!-- <p id="state-value" class="pt-1">Maharashtra</p> -->
+                            <!-- <p id="pincode-value" class="pt-1">400001</p> -->
+                            <p id="country-value" class="pt-1">India</p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
+                </div>
               </div>
               <div class="d-none personal-details-edit-box d-flex justify-content-center align-items-center">
                 <i class="fa-solid fa-pen fa-2x text-white "></i>
@@ -139,51 +133,54 @@
                 <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
                   <h3><b> Qualification</b></h3>
                 </div>
-                <div class="text-block right">
-                  <div class="card-body preview-qualification-div">
-                    <h2 id="year-of-passing">2015</h2>
 
-                    <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                      <div class="row">
+                <div id="qualification-appending-div">
+                  <div class="text-block right" id="preview-qualification-div">
+                    <div class="card-body preview-qualification-div">
+                      <h2 id="year-of-passing">2015</h2>
 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Title :</p>
-                              <p class="h5 py-1">Major Subject :</p>
-                              <p class="h5 py-1">University :</p>
+                      <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                        <div class="row">
 
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">Bachelors Degree</p>
-                              <p id="">Discrete Maths</p>
-                              <p id="">Mumbai</p>
-                            </div>
-                          </div>
-                        </div>
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Title :</p>
+                                <p class="h5 py-1">Major Subject :</p>
+                                <p class="h5 py-1">University :</p>
 
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">College :</p>
-                              <p class="h5 py-1">percentage :</p>
-                              <p class="h5 py-1">Certificate :</p>
-                            </div>
-                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                              <p class="" id="">St. Wilfred's College</p>
-                              <p id="" class="">82.61%</p>
-                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                                <p id="">Bachelors Degree</p>
+                                <p id="">Discrete Maths</p>
+                                <p id="">Mumbai</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
 
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">College :</p>
+                                <p class="h5 py-1">percentage :</p>
+                                <p class="h5 py-1">Certificate :</p>
+                              </div>
+                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                                <p class="" id="">St. Wilfred's College</p>
+                                <p id="" class="">82.61%</p>
+                                <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
                       </div>
-                    </div>
 
+                    </div>
                   </div>
                 </div>
+
               </div>
             </div>
             <div class="d-none qualification-edit-box d-flex justify-content-center align-items-center">
@@ -215,7 +212,6 @@
                               <p class="h5 pb-1">University :</p>
                               <p class="h5 py-1">Subject Taught :</p>
                               <p class="h5 py-1">Program :</p>
-
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id="">Mumbai University</p>
@@ -446,9 +442,9 @@
 
                         </div>
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p id=""></p>
-                          <p id=""></p>
-                          <p id=""></p>
+                          <p id="">Reviewier</p>
+                          <p id="">Algebra and logic</p>
+                          <p id="">2017</p>
                         </div>
                       </div>
                     </div>
@@ -541,143 +537,139 @@
   <div class="personal-details-modal d-none">
     <div id="main-form-area">
 
-        <form id="myForm">
-            <div class="d-flex justify-content-center align-items-center">
-              <h1 class="p-5" style="color: #740E00;"><b> Personal Details</b></h1>
+      <form id="myForm">
+        <div class="d-flex justify-content-center align-items-center">
+          <h1 class="p-5" style="color: #740E00;"><b> Personal Details</b></h1>
+        </div>
+        <div class="container">
+          <div id="name-row" class="row mb-3">
+            <div class="col-md-4 col-sm-12">
+              <label for="first-name" cl>First Name</label>
+              <span id="first-name-message" style="color: red;" class="error"></span>
+              <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
             </div>
-            <div class="container">
-              <div id="name-row" class="row mb-3">
-                <div class="col-md-6 col-sm-12">
-                  <label for="first-name" cl>First Name</label>
-                  <span id="first-name-message" style="color: red;" class="error"></span>
-                  <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <label for="last-name">last Name</label>
-                  <span id="last-name-message" style="color: red;" class="error"></span>
-                  <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
-                </div>
-              </div>
+            <div class="col-md-4 col-sm-12">
+              <label for="last-name">last Name</label>
+              <span id="last-name-message" style="color: red;" class="error"></span>
+              <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
             </div>
-
-            <div class="container">
-              <div id="left-second-row" class="row">
-                <div id="gender-row" class="col-md-4 pt-md-4">
-                  <label for="male">Male</label>
-                  <input style="height: auto ;" type="radio" name="gender" class="gender" id="male" value="1" />
-                  <label for="female">Female</label>
-                  <input style="height: auto ;" type="radio" name="gender" class="gender" id="female" value="2" />
-                  <label for="other">other</label>
-                  <input style="height: auto ;" type="radio" name="gender" class="gender" id="other" value="3" />
-                  <span id="gender-message" style="color: red;" class="error"></span>
-                </div>
-                <div class="col-md-4">
-                  <label for="date-of-birth">date of birth</label>
-                  <span id="date-of-birth-message" class="error"></span>
-                  <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
-                </div>
-                <div class="col-md-4">
-                  <label for="photo">passport Size Photo</label>
-                  <span id="photo-message" class="error"></span>
-                  <input type="file" class="form-control" id="photo">
-                </div>
-              </div>
+            <div id="gender-row" class="col-md-4 pt-md-4">
+              <label for="male">Male</label>
+              <input style="height: auto ;" type="radio" name="gender" class="gender" id="male" value="1" />
+              <label for="female">Female</label>
+              <input style="height: auto ;" type="radio" name="gender" class="gender" id="female" value="2" />
+              <label for="other">other</label>
+              <input style="height: auto ;" type="radio" name="gender" class="gender" id="other" value="3" />
+              <span id="gender-message" style="color: red;" class="error"></span>
             </div>
+          </div>
+        </div>
 
-            <div class="container">
-              <div id="left-third-row" class="row">
-                <div class="col-md-6">
-                  <label for="contact-number">Contact No.</label>
-                  <span id="contact-number-message" style="color: red;" class="error"></span>
-                  <input type="text" class="form-control" name="contact_number" id="contact-number" />
-                </div>
-                <div class="col-md-6">
-                  <label for="email">Email Id</label>
-                  <span id="email-message" style="color: red;" class="error"></span>
-                  <input type="text" name="email" class="form-control" id="email">
-                </div>
-              </div>
+        <div class="container">
+          <div id="left-second-row" class="row">
+
+            <div class="col-md-4">
+              <label for="date-of-birth">date of birth</label>
+              <span id="date-of-birth-message" class="error"></span>
+              <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
             </div>
-
-            <div class="container">
-              <div id="left-fourth-row" class="row">
-                <div class="col-md-6">
-                  <label for="address">Address</label>
-                  <span id="address-message" style="color: red;" class="error"></span>
-                  <input type="text" class="form-control" name="permanent_address" id="address" />
-                </div>
-                <div class="col-md-6">
-                  <label for="temporary-address">Temporary Address</label>
-                  <span id="temporary-address-message" style="color: red;" class="error"></span>
-                  <input type="text" name="temporary_address" class="form-control" id="temporary-address">
-                </div>
-              </div>
+            <div class="col-md-4">
+              <label for="photo">passport Size Photo</label>
+              <span id="photo-message" class="error"></span>
+              <input type="file" class="form-control" id="photo"
+                onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
             </div>
-
-            <div class="container">
-              <div id="left-fourth-row" class="row">
-                <!-- <div class="col-md-4">
-                <label for="city">City</label>
-                <span id="city-message" class="error"></span>
-                <input type="text" class="form-control" name="city" id="city" />
-              </div> -->
-                <!-- <div class="col-md-4">
-                <label for="state">State</label>
-                <span id="state-message" class="error"></span>
-                <input type="text" class="form-control" id="state">
-              </div> -->
-                <div class="col-md-12">
-                  <label for="country">Country</label>
-                  <span id="country-message" style="color: red;" class="error"></span>
-                  <input type="text" name="nationality" class="form-control" id="country">
-                </div>
-              </div>
+            <div class="col-md-4">
+              <img id="photo-preview" alt="your image" width="100" height="100"
+                style="border: 1px solid #ced4da; margin-left:100px;" />
             </div>
+          </div>
+        </div>
 
-            <div class="container">
-              <div id="left-fourth-row" class="row">
-                <div class="col-md-6">
-                  <label for="pan-number">Pan Card Number</label>
-                  <span id="pan-number-message" style="color: red;" class="error"></span>
-                  <input type="text" name="pan_number" class="form-control" id="pan-number" />
-                </div>
-                <div class="col-md-6">
-                  <label for="pan-photo">Pan Card Photo</label>
-                  <span id="pan-photo-message" class="error"></span>
-                  <input type="file" class="form-control" id="pan-photo">
-                </div>
-              </div>
+        <div class="container">
+          <div id="left-third-row" class="row">
+            <div class="col-md-4 col-sm-12">
+              <label for="contact-number">Contact No.</label>
+              <span id="contact-number-message" style="color: red;" class="error"></span>
+              <input type="text" class="form-control" name="contact_number" id="contact-number" />
             </div>
-
-            <div class="container">
-              <div id="left-fourth-row" class="row">
-                <div class="col-md-6">
-                  <label for="aadhar-number">Aadhar Card Number</label>
-                  <span id="aadhar-number-message" style="color: red;" class="error"></span>
-                  <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
-                </div>
-                <div class="col-md-6">
-                  <label for="aadhar-photo">Aadhar Card Photo</label>
-                  <span id="aadhar-photo-message" class="error"></span>
-                  <input type="file" class="form-control" id="aadhar-photo">
-                </div>
-              </div>
+            <div class="col-md-4 col-sm-12">
+              <label for="email">Email Id</label>
+              <span id="email-message" style="color: red;" class="error"></span>
+              <input type="text" name="email" class="form-control" id="email">
             </div>
-
-           
-
-           
-          
-            <div class="d-flex justify-content-center">
-              <button id="personal-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
-              <button id="personal-details-submit-button" class="btn btn-success m-4">Submit</button>
+            <div class="col-md-4 col-sm-12">
+              <label for="country">Country</label>
+              <span id="country-message" style="color: red;" class="error"></span>
+              <input type="text" name="nationality" class="form-control" id="country">
             </div>
+          </div>
+        </div>
 
-         
-        </form>
+        <div class="container">
+          <div id="left-fourth-row" class="row">
+            <div class="col-md-6">
+              <label for="address">Address</label>
+              <span id="address-message" style="color: red;" class="error"></span>
+              <input type="text" class="form-control" name="permanent_address" id="address" />
+            </div>
+            <div class="col-md-6">
+              <label for="temporary-address">Temporary Address</label>
+              <span id="temporary-address-message" style="color: red;" class="error"></span>
+              <input type="text" name="temporary_address" class="form-control" id="temporary-address">
+            </div>
+          </div>
+        </div>
 
-      </div>
+        <div class="container">
+          <div id="left-fourth-row" class="row">
+            <div class="col-md-4 col-sm-12">
+              <label for="pan-number">Pan Card Number</label>
+              <span id="pan-number-message" style="color: red;" class="error"></span>
+              <input type="text" name="pan_number" class="form-control" id="pan-number" />
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <label for="pan-photo">Pan Card Photo</label>
+              <span id="pan-photo-message" class="error"></span>
+              <input type="file" class="form-control" id="pan-photo"
+                onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <img id="pan-photo-preview" alt="your image" width="100" height="100"
+                style="border: 1px solid #ced4da; margin-left:100px;" />
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div id="left-fourth-row" class="row">
+            <div class="col-md-4 col-sm-12">
+              <label for="aadhar-number">Aadhar Card Number</label>
+              <span id="aadhar-number-message" style="color: red;" class="error"></span>
+              <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <label for="aadhar-photo">Aadhar Card Photo</label>
+              <span id="aadhar-photo-message" class="error"></span>
+              <input type="file" class="form-control" id="aadhar-photo"
+                onchange="document.getElementById('aadhar-photo-preview').src = window.URL.createObjectURL(this.files[0])">
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <img id="aadhar-photo-preview" alt="your image" width="100" height="100"
+                style="border: 1px solid #ced4da; margin-left:100px;" />
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center py-3">
+          <button id="personal-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
+          <button id="personal-details-submit-button" class="btn btn-success m-4">Submit</button>
+        </div>
+
+      </form>
+
     </div>
+  </div>
   </div>
 
   <!-- ************************************************************************Qualification Modal Div******************************************************************************************** -->
@@ -1824,6 +1816,7 @@
 
       document.querySelector("#qualification-submit-button").addEventListener('click', function () {
 
+        let div = ''
         let qualificationTableArray = []
         let qualificationRow = document.querySelectorAll('.qualification-row')
         for (i = 0; i < qualificationRow.length; i++) {
@@ -1847,6 +1840,54 @@
             url_path: qualificationCertificate
 
           }
+
+          div += ` 
+
+          <div class="text-block right" id="preview-qualification-div">
+                  <div class="card-body preview-qualification-div">
+                    <h2 id="year-of-passing">\${qualificationYear}\</h2>
+
+                    <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Title :</p>
+                              <p class="h5 py-1">Major Subject :</p>
+                              <p class="h5 py-1">University :</p>
+
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">\${qualificationTitle}\</p>
+                              <p id="">\${qualificationSubject}\</p>
+                              <p id="">\${qualificationUniversity}\</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">College :</p>
+                              <p class="h5 py-1">percentage :</p>
+                              <p class="h5 py-1">Certificate :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">\${qualificationCollege}\</p>
+                              <p id="" class="">\${qualificationPercentile}\</p>
+                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                        `
+
+
           qualificationTableArray.push(object)
 
         }
@@ -1855,6 +1896,7 @@
           "qualificationDetails": qualificationTableArray
 
         }
+        console.log(JSON.stringify(qualificationTableData))
 
         let options = {
 
@@ -1870,10 +1912,11 @@
         let fetchRes = fetch("/insert-qualification-details", options);
 
         fetchRes.then(success => {
+          document.getElementById('qualification-appending-div').firstElementChild.remove()
+          document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.qualification-modal').classList.add('d-none');
         })
-
 
       })
 
@@ -2270,9 +2313,9 @@
 
 
       // let value =  element.parentElement.parentElement.lastElementChild.lastElementChild.innerText
-      
+
       let skillJson = {
-          "resume_skill_selected" : []
+        "resume_skill_selected": []
       }
 
 
