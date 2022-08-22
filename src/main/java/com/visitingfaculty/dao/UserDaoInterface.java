@@ -1,17 +1,17 @@
-// package com.visitingfaculty.dao;
+package com.visitingfaculty.dao;
 
-// import java.util.List;
+import java.util.List;
 
-// import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Service;
 
-// import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
+import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
 
-// @Service
-// public interface UserDaoInterface {
+@Service
+public interface UserDaoInterface {
     
-//     List<UserSkillsFromDB> getAllSkills();
+    List<UserSkillsFromDB> getAllSkills();
     
-//     int insertCustomSkill(UserSkillsFromDB userSkillsFromDB);
+    int insertCustomSkill(UserSkillsFromDB userSkillsFromDB);
 
-//     UserSkillsFromDB getUserSkill(String skill_name);
-// }
+    UserSkillsFromDB getUserSkill(String skill_name);
+}

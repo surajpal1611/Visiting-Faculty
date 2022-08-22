@@ -30,7 +30,7 @@ public class validationsMethod
             {
                 if(value[i] >= '!' && value[i] <= '@')
                 {
-                     check =false;
+                    check =false;
                     break;
                 }
                 else
@@ -44,5 +44,27 @@ public class validationsMethod
              check=false;
         }
         return check;
+    }
+
+    //Method to validate Email 
+    public Boolean emailCheck(String value)
+    {
+        Boolean check = false;
+        int atposition = value.indexOf('@');
+        int dotposition = value.lastIndexOf('.');
+        
+        if (atposition < 1 || (value.length() - 2) == dotposition) 
+        {
+            check = false;
+        }
+        else if (atposition < dotposition) 
+        {
+            check = true;
+        }
+        else 
+        {
+            check = false;
+        }
+    return check;
     }
 }

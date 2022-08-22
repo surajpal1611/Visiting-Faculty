@@ -70,27 +70,27 @@ public class UserRestController {
         return ResponseEntity.ok("verification success");
     }
 
-    // @PostMapping("/get-all-skill")
-    // public List<UserSkillsFromDB> getAllSkills() {
+    @PostMapping("/get-all-skill")
+    public List<UserSkillsFromDB> getAllSkills() {
 
-    //     List<UserSkillsFromDB> list = userDaoInterface.getAllSkills();
-    //     return list;
-    // }
+        List<UserSkillsFromDB> list = userDaoInterface.getAllSkills();
+        return list;
+    }
 
-    // @PostMapping("/insert-custom-skill")
-    // public UserSkillsFromDB insertCustomSkill(UserSkillsFromDB userSkillsFromDB) {
+    @PostMapping("/insert-custom-skill")
+    public UserSkillsFromDB insertCustomSkill(UserSkillsFromDB userSkillsFromDB) {
 
-    //     int insertSkill = userDaoInterface.insertCustomSkill(userSkillsFromDB);
-    //     if (insertSkill == 1) {
+        int insertSkill = userDaoInterface.insertCustomSkill(userSkillsFromDB);
+        if (insertSkill == 1) {
 
-    //         UserSkillsFromDB userSkill = userDaoInterface.getUserSkill(userSkillsFromDB.getSkill_name());
+            UserSkillsFromDB userSkill = userDaoInterface.getUserSkill(userSkillsFromDB.getSkill_name());
             
-    //         return userSkill;
+            return userSkill;
 
-    //     } else {
+        } else {
 
-    //         return null;
-    //     }
+            return null;
+        }
        
-    // }
+    }
 }

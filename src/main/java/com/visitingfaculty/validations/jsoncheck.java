@@ -49,5 +49,7 @@ public class jsoncheck
         String f_name = obj.getString("f_name");
         String l_name = obj.getString("l_name");
         String email = obj.getString("email");
+        Boolean emailcheckvalue = checkVal.emailCheck(email);
+        System.out.println("Email boolian : "+emailcheckvalue);
     }
 }
