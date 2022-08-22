@@ -45,10 +45,10 @@ public class jsoncheck
     public void UserJsonCheck(String JsonString)
     {
         JSONObject jsonString = new JSONObject(JsonString);
-        JSONObject obj = jsonString.getJSONObject("user_info");
-        String f_name = obj.getString("f_name");
-        String l_name = obj.getString("l_name");
-        String email = obj.getString("email");
+        JSONObject user_info = jsonString.getJSONObject("user_info");
+        String f_name = user_info.getString("f_name");
+        String l_name = user_info.getString("l_name");
+        String email = user_info.getString("email");
         Boolean emailcheckvalue = checkVal.emailCheck(email);
         System.out.println("Email boolian : "+emailcheckvalue);
     }
