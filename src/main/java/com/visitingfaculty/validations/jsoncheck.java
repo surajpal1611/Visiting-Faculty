@@ -45,11 +45,17 @@ public class jsoncheck
     public void UserJsonCheck(String JsonString)
     {
         JSONObject jsonString = new JSONObject(JsonString);
+        //for userinfo
         JSONObject user_info = jsonString.getJSONObject("user_info");
         String f_name = user_info.getString("f_name");
         String l_name = user_info.getString("l_name");
         String email = user_info.getString("email");
+
+        Boolean l_namecheck = checkVal.CheckWithNoSpectailChar("l_name");
+        Boolean f_namecheck = checkVal.CheckWithNoSpectailChar("f_name");
         Boolean emailcheckvalue = checkVal.emailCheck(email);
-        System.out.println("Email boolian : "+emailcheckvalue);
+
+        //for contact numbver
+        
     }
 }
