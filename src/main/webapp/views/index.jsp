@@ -1387,28 +1387,6 @@
       return condition;
     }
 
-             function ValidateFileUpload() {
-             var FileUploadPath = fuData.value;
-             if (FileUploadPath == '') {
-                 alert("Please upload an image");
-             } else {
-                 var Extension = FileUploadPath.substring(
-                         FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
-          if (Extension == "gif" || Extension == "png" || Extension == "bmp"
-                         || Extension == "jpeg" || Extension == "jpg") {
-                     if (fuData.files && fuData.files[0]) {
-                         var reader = new FileReader();
-                         reader.onload = function(e) {
-                             $('#blah').attr('src', e.target.result);
-                         }
-                         reader.readAsDataURL(fuData.files[0]);
-                     }
-                 } 
-           else {
-                     alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
-                 }
-             }
-         }
 
     function personalDetailGenderValidation(gender) {
       if (gender == 1 || gender == 2 || gender == 3) {
@@ -2108,11 +2086,11 @@
       // let bachelorsYOP = document.getElementById('bachelors-degree-year-of-passing').value;
       // let bachelorsCertificate = document.getElementById('bachelors-degree-certificate').value;
 
-      if ( bachelorsSubject.length < 3 || bachelorsUniversity.length < 3 || bachelorsCollege.length < 3 || bachelorsPercentile.length < 3 || bachelorsYOP.length < 3 || bachelorsCertificate.length < 4)
-       {
-        document.getElementById('qualification-message').innerHTML = "*Complition of bachelors degree is required";
-        return;
-      }
+      // if ( bachelorsSubject.length < 3 || bachelorsUniversity.length < 3 || bachelorsCollege.length < 3 || bachelorsPercentile.length < 3 || bachelorsYOP.length < 3 || bachelorsCertificate.length < 4)
+      //  {
+      //   document.getElementById('qualification-message').innerHTML = "*Complition of bachelors degree is required";
+      //   return;
+      // }
 
 
       let table = `
