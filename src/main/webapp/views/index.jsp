@@ -318,10 +318,8 @@
                 <div class="d-flex justify-content-center align-items-center">
                   <h3 style="color: #740E00;"><b> Awards </b></h3>
                 </div>
-                <div class="text-block right">
-                  <div class="card-body">
-                    <h2>2000</h2>
-
+                <!-- <div class="text-block right"> -->
+                  <!-- <div class="card-body"> -->
                     <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                       <div class="row">
 
@@ -346,18 +344,20 @@
                           <div class="row pt-lg-3">
                             <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                               <p class="h5 pb-1">Place :</p>
+                              <p class="h5 pb-1">Date :</p>
                               <p class="h5 py-1">Certificate :</p>
                             </div>
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">Mumbai</p>
+                              <p class="" id="">2012-07-06</p>
                               <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
 
                             </div>
                           </div>
                         </div>
 
-                      </div>
-                    </div>
+                      <!-- </div> -->
+                    <!-- </div> -->
 
                   </div>
                 </div>
@@ -578,8 +578,8 @@
                 </div>
                 <div class="col-md-4">
                   <label for="photo">passport Size Photo</label>
-                  <span id="photo-message" class="error"></span>
-                  <input type="file" class="form-control" id="photo">
+                  <span id="photo-message" style="color: red;" class="error"></span>
+                  <input type="file" class="form-control" name="profile_photo" id="photo">
                 </div>
               </div>
             </div>
@@ -643,8 +643,8 @@
                 </div>
                 <div class="col-md-6">
                   <label for="pan-photo">Pan Card Photo</label>
-                  <span id="pan-photo-message" class="error"></span>
-                  <input type="file" class="form-control" id="pan-photo">
+                  <span id="pan-photo-message" style="color: red;" class="error"></span>
+                  <input type="file" class="form-control" name="pancard_photo" id="pan-photo">
                 </div>
               </div>
             </div>
@@ -658,15 +658,12 @@
                 </div>
                 <div class="col-md-6">
                   <label for="aadhar-photo">Aadhar Card Photo</label>
-                  <span id="aadhar-photo-message" class="error"></span>
-                  <input type="file" class="form-control" id="aadhar-photo">
+                  <span id="aadhar-photo-message" style="color: red;" class="error"></span>
+                  <input type="file" class="form-control" name="aadhar_photo" id="aadhar-photo">
                 </div>
               </div>
             </div>
 
-           
-
-           
           
             <div class="d-flex justify-content-center">
               <button id="personal-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
@@ -1274,6 +1271,41 @@
       return condition;
     }
 
+    function personalDetailProfilePhotoValidation(res){
+      console.log(res)
+      if (res.length > 0) {
+        condition = true;
+      } else {
+        document.getElementById("photo-message").innerHTML = "*Passport size photo is Mandatory";
+        condition = false;
+      }
+      return condition;
+    }
+
+        //      function ValidateFileUpload() {
+        //      var fuData = document.getElementById('fileChooser');
+        //      var FileUploadPath = fuData.value;
+        //      if (FileUploadPath == '') {
+        //          alert("Please upload an image");
+        //      } else {
+        //          var Extension = FileUploadPath.substring(
+        //                  FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+        //   if (Extension == "gif" || Extension == "png" || Extension == "bmp"
+        //                  || Extension == "jpeg" || Extension == "jpg") {
+        //              if (fuData.files && fuData.files[0]) {
+        //                  var reader = new FileReader();
+        //                  reader.onload = function(e) {
+        //                      $('#blah').attr('src', e.target.result);
+        //                  }
+        //                  reader.readAsDataURL(fuData.files[0]);
+        //              }
+        //          } 
+        //    else {
+        //              alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+        //          }
+        //      }
+        //  }
+
     function personalDetailGenderValidation(gender) {
       if (gender == 1 || gender == 2 || gender == 3) {
         condition = true;
@@ -1352,8 +1384,18 @@
       return condition;
     }
 
+    function personalDetailPancardPhotoValidation(res) {
+      if (res.length > 0) {
+        condition = true;
+      } else {
+        document.getElementById("pan-photo-message").innerHTML = "*Pancard photo is Mandatory";
+        condition = false;
+      }
+      return condition;
+
+    }
+
     function personalDetailAadharValidation(res) {
-      console.log(res)
       if (res.length != 12) {
         document.getElementById('aadhar-number-message').innerHTML = "*Invalid Adhar Number";
         condition = false;
@@ -1368,6 +1410,16 @@
             condition = true;
           }
         }
+      }
+      return condition;
+    }
+
+    function personalDetailAadharPhotoValidation(res) {
+      if (res.length > 0) {
+        condition = true;
+      } else {
+        document.getElementById("aadhar-photo-message").innerHTML = "*Aadhar-card photo is Mandatory";
+        condition = false;
       }
       return condition;
     }
@@ -1631,19 +1683,23 @@
 
         clearError();
 
-        let firstName1 = personalDetailFirstNameValidation(result.f_name);
-        let lastName1 = personalDetailLastNameValidation(result.l_name);
-        let gender1 = personalDetailGenderValidation(result.gender);
-        let contactNumber1 = personalDetailContactNumberValidation(result.contact_number);
-        let pancard1 = personalDetailPancardValidation(result.pan_number);
-        let email1 = personalDetailEmailValidation(result.email);
-        let aadhar1 = personalDetailAadharValidation(result.aadhar_number);
-        let address1 = personalDetailAddressValidation(result.permanent_address);
-        let temporaryAddress1 = personalDetailTemporaryAddressValidation(result.temporary_address);
-        let country1 = personalDetailCountryValidation(result.nationality);
+        let firstName = personalDetailFirstNameValidation(result.f_name);
+        let lastName = personalDetailLastNameValidation(result.l_name);
+        let profilePhoto = personalDetailProfilePhotoValidation(document.getElementById("photo").value);
+        let gender = personalDetailGenderValidation(result.gender);
+        let contactNumber = personalDetailContactNumberValidation(result.contact_number);
+        let email = personalDetailEmailValidation(result.email);
+        let pancard = personalDetailPancardValidation(result.pan_number);
+        let pancardphoto = personalDetailPancardPhotoValidation(document.getElementById("pan-photo").value);
+        let aadhar = personalDetailAadharValidation(result.aadhar_number);
+        let aadharphoto = personalDetailAadharPhotoValidation(document.getElementById("aadhar-photo").value);
+        let address = personalDetailAddressValidation(result.permanent_address);
+        let temporaryAddress = personalDetailTemporaryAddressValidation(result.temporary_address);
+        let country = personalDetailCountryValidation(result.nationality);
 
-        if (!firstName1 || !lastName1 || !gender1 || !contactNumber1 || !pancard1 || !email1 || !aadhar1 || !
-          address1 || !temporaryAddress1 || !country1) {
+ 
+
+        if (!firstName || !lastName || !profilePhoto || !gender || !contactNumber || !email || !pancard || !pancardphoto || !aadhar || !aadharphoto || !address || !temporaryAddress || !country ) {
           return;
         }
 
@@ -1837,7 +1893,6 @@
           let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
 
           object = {
-
             qualification_type_lid: qualificationTitle,
             topic_of_study: qualificationSubject,
             university: qualificationUniversity,
@@ -1845,45 +1900,33 @@
             percentile: qualificationPercentile,
             year_of_passing: qualificationYear,
             url_path: qualificationCertificate
-
           }
           qualificationTableArray.push(object)
-
         }
         let qualificationTableData = {
-
           "qualificationDetails": qualificationTableArray
-
         }
 
         let options = {
-
           method: 'POST',
           headers: {
-
             'Content-Type': 'application/json;charset=utf-8'
-
           },
           body: JSON.stringify(qualificationTableData)
-
         }
         let fetchRes = fetch("/insert-qualification-details", options);
-
         fetchRes.then(success => {
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.qualification-modal').classList.add('d-none');
         })
-
-
       })
-
     });
 
 
     document.getElementById('qualification-add-button').addEventListener('click', function (e) {
       e.preventDefault();
       clearError();
-      let bachelorsTitle = document.getElementById('bachelors-degree-title-data').value;
+      // let bachelorsTitle = document.getElementById('bachelors-degree-title-data').value;
       let bachelorsSubject = document.getElementById('bachelors-degree-major-subject').value;
       let bachelorsUniversity = document.getElementById('bachelors-degree-university').value;
       let bachelorsCollege = document.getElementById('bachelors-degree-college').value;
@@ -1891,9 +1934,8 @@
       let bachelorsYOP = document.getElementById('bachelors-degree-year-of-passing').value;
       let bachelorsCertificate = document.getElementById('bachelors-degree-certificate').value;
 
-      if (bachelorsTitle != 1 || bachelorsSubject.length < 3 || bachelorsUniversity.length < 3 || bachelorsCollege
-        .length < 3 || bachelorsPercentile.length < 3 || bachelorsYOP.length < 3 || bachelorsCertificate.length < 4
-      ) {
+      if ( bachelorsSubject.length < 3 || bachelorsUniversity.length < 3 || bachelorsCollege.length < 3 || bachelorsPercentile.length < 3 || bachelorsYOP.length < 3 || bachelorsCertificate.length < 4)
+       {
         document.getElementById('qualification-message').innerHTML = "*Complition of bachelors degree is required";
         return;
       }
