@@ -1,6 +1,8 @@
 package com.visitingfaculty.controller;
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -8,8 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.visitingfaculty.dao.UserDaoInterface;
 import com.visitingfaculty.dto.UserDto;
 import com.visitingfaculty.dto.UserPersonalDetailsDTO;
+import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
 import com.visitingfaculty.service.faculty_service.UserService;
 import com.visitingfaculty.validations.jsoncheck;
 
@@ -20,8 +25,8 @@ public class UserRestController {
     UserService userService;
     @Autowired jsoncheck jsonchk;
 
-    // @Autowired
-    // UserDaoInterface userDaoInterface;
+    @Autowired
+    UserDaoInterface userDaoInterface;
 
     @PostMapping(value="/insert-personal-details", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> insert(@RequestBody String personalDetailsData) 
