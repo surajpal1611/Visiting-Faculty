@@ -544,17 +544,37 @@
         </div>
         <div class="container">
           <div id="name-row" class="row mb-3">
+
             <div class="col-md-4 col-sm-12">
               <label for="first-name" cl>First Name</label>
               <span id="first-name-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
             </div>
+
             <div class="col-md-4 col-sm-12">
               <label for="last-name">last Name</label>
               <span id="last-name-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
             </div>
-            <div id="gender-row" class="col-md-4 pt-md-4">
+
+            <div class="col-md-4 col-sm-12">
+              <img id="photo-preview" alt="your image" width="100" height="100"
+                style="border: 1px solid #ced4da; margin-left:100px;" />
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="container">
+          <div id="left-second-row" class="row">
+
+            <div class="col-md-4 col-sm-12">
+              <label for="date-of-birth">date of birth</label>
+              <span id="date-of-birth-message" class="error"></span>
+              <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
+            </div>
+
+            <div id="gender-row" class="col-sm-12 col-md-4 pt-md-4">
               <label for="male">Male</label>
               <input style="height: auto ;" type="radio" name="gender" class="gender" id="male" value="1" />
               <label for="female">Female</label>
@@ -563,27 +583,14 @@
               <input style="height: auto ;" type="radio" name="gender" class="gender" id="other" value="3" />
               <span id="gender-message" style="color: red;" class="error"></span>
             </div>
-          </div>
-        </div>
 
-        <div class="container">
-          <div id="left-second-row" class="row">
-
-            <div class="col-md-4">
-              <label for="date-of-birth">date of birth</label>
-              <span id="date-of-birth-message" class="error"></span>
-              <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
-            </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-12">
               <label for="photo">passport Size Photo</label>
-              <span id="photo-message" class="error"></span>
+              <span id="photo-message" style="color: red;" class="error"></span>
               <input type="file" class="form-control" id="photo"
                 onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
             </div>
-            <div class="col-md-4">
-              <img id="photo-preview" alt="your image" width="100" height="100"
-                style="border: 1px solid #ced4da; margin-left:100px;" />
-            </div>
+            
           </div>
         </div>
 
@@ -609,12 +616,27 @@
 
         <div class="container">
           <div id="left-fourth-row" class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-12">
               <label for="address">Address</label>
               <span id="address-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="permanent_address" id="address" />
             </div>
-            <div class="col-md-6">
+            <div class="col-md-3 col-sm-12">
+              <label for="city">City</label>
+              <span id="city-message" style="color: red;" class="error"></span>
+              <input type="text" class="form-control" name="permanent_address_city" id="city" />
+            </div>
+            <div class="col-md-3 col-sm-12">
+              <label for="pincode">Pincode</label>
+              <span id="pincode-message" style="color: red;" class="error"></span>
+              <input type="text" class="form-control" name="permanent_address_pincode" id="pincode" />
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div id="left-fourth-row" class="row">
+            <div class="col-md-12 col-sm-12">
               <label for="temporary-address">Temporary Address</label>
               <span id="temporary-address-message" style="color: red;" class="error"></span>
               <input type="text" name="temporary_address" class="form-control" id="temporary-address">
@@ -631,7 +653,7 @@
             </div>
             <div class="col-md-4 col-sm-12">
               <label for="pan-photo">Pan Card Photo</label>
-              <span id="pan-photo-message" class="error"></span>
+              <span id="pan-photo-message" style="color: red;" class="error"></span>
               <input type="file" class="form-control" id="pan-photo"
                 onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
             </div>
@@ -651,7 +673,7 @@
             </div>
             <div class="col-md-4 col-sm-12">
               <label for="aadhar-photo">Aadhar Card Photo</label>
-              <span id="aadhar-photo-message" class="error"></span>
+              <span id="aadhar-photo-message" style="color: red;" class="error"></span>
               <input type="file" class="form-control" id="aadhar-photo"
                 onchange="document.getElementById('aadhar-photo-preview').src = window.URL.createObjectURL(this.files[0])">
             </div>
@@ -1297,39 +1319,52 @@
     }
 
     function personalDetailProfilePhotoValidation(res){
-      console.log(res)
+      var fuData = document.getElementById('photo');
       if (res.length > 0) {
-        condition = true;
+        var Extension = res.substring(res.lastIndexOf('.') + 1).toLowerCase();
+          if (Extension == "png"|| Extension == "jpeg" || Extension == "jpg") {
+            if (fuData.files && fuData.files[0]) {
+              var reader = new FileReader();
+              reader.onload = function(e) {
+                $('#blah').attr('src', e.target.result);
+                console.log(e.target.result)
+                condition = true;
+                }
+                         reader.readAsDataURL(fuData.files[0]);
+                     }
+                 } 
+           else {
+                     document.getElementById("photo-message").innerHTML = "*File type should be of PNG, JPG and JPEG";
+                 }
       } else {
-        document.getElementById("photo-message").innerHTML = "*Passport size photo is Mandatory";
+        document.getElementById("photo-message").innerHTML = "*Profile photo is Mandatory";
         condition = false;
       }
       return condition;
     }
 
-        //      function ValidateFileUpload() {
-        //      var fuData = document.getElementById('fileChooser');
-        //      var FileUploadPath = fuData.value;
-        //      if (FileUploadPath == '') {
-        //          alert("Please upload an image");
-        //      } else {
-        //          var Extension = FileUploadPath.substring(
-        //                  FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
-        //   if (Extension == "gif" || Extension == "png" || Extension == "bmp"
-        //                  || Extension == "jpeg" || Extension == "jpg") {
-        //              if (fuData.files && fuData.files[0]) {
-        //                  var reader = new FileReader();
-        //                  reader.onload = function(e) {
-        //                      $('#blah').attr('src', e.target.result);
-        //                  }
-        //                  reader.readAsDataURL(fuData.files[0]);
-        //              }
-        //          } 
-        //    else {
-        //              alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
-        //          }
-        //      }
-        //  }
+             function ValidateFileUpload() {
+             var FileUploadPath = fuData.value;
+             if (FileUploadPath == '') {
+                 alert("Please upload an image");
+             } else {
+                 var Extension = FileUploadPath.substring(
+                         FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+          if (Extension == "gif" || Extension == "png" || Extension == "bmp"
+                         || Extension == "jpeg" || Extension == "jpg") {
+                     if (fuData.files && fuData.files[0]) {
+                         var reader = new FileReader();
+                         reader.onload = function(e) {
+                             $('#blah').attr('src', e.target.result);
+                         }
+                         reader.readAsDataURL(fuData.files[0]);
+                     }
+                 } 
+           else {
+                     alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+                 }
+             }
+         }
 
     function personalDetailGenderValidation(gender) {
       if (gender == 1 || gender == 2 || gender == 3) {
@@ -1454,6 +1489,36 @@
         condition = true;
       } else {
         document.getElementById("address-message").innerHTML = "*Invalid length";
+        condition = false;
+      }
+      return condition;
+    }
+
+    function personalDetailCityValidation(res) {
+      if (checkLength(res) > 3) {
+        if (!isCharNumber(res)) {
+          condition = true;
+        } else {
+          document.getElementById("city-message").innerHTML = "*Only characters are allowed";
+          condition = false;
+        }
+      } else {
+        document.getElementById("city-message").innerHTML = "*Invalid length";
+        condition = false;
+      }
+      return condition;
+    }
+
+    function personalDetailPincodeValidation(res) {
+      if (checkLength(res) > 3) {
+        if (isCharNumber(res)) {
+          condition = true;
+        } else {
+          document.getElementById("pincode-message").innerHTML = "*Only Numbers are allowed";
+          condition = false;
+        }
+      } else {
+        document.getElementById("pincode-message").innerHTML = "*Invalid length";
         condition = false;
       }
       return condition;
@@ -1610,9 +1675,7 @@
 
     $(document).ready(function () {
 
-      $('.personal-information-div-wrapper').on('mouseover', function () {
-        $('.personal-details-edit-box').removeClass('d-none')
-
+      
       document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
         document.querySelector('.personal-details-edit-box').classList.remove('d-none');
       });
@@ -1652,8 +1715,9 @@
       });
 
 
-      $('.award-div-wrapper').on('mouseover', function () {
-        $('.award-edit-box').removeClass('d-none')
+        document.querySelector('.award-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.award-edit-box').classList.remove('d-none');
+      });
 
 
       document.querySelector('.award-div-wrapper').addEventListener('mouseleave', function () {
@@ -1686,6 +1750,8 @@
         document.querySelector('.bank-details-edit-box').classList.add('d-none');
       });
 
+    })
+
       document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
 
         e.preventDefault()
@@ -1711,9 +1777,10 @@
         let aadhar = personalDetailAadharValidation(result.aadhar_number);
         let aadharphoto = personalDetailAadharPhotoValidation(document.getElementById("aadhar-photo").value);
         let address = personalDetailAddressValidation(result.permanent_address);
+        let city = personalDetailCityValidation(result.permanent_address_city);
+        let pincode = personalDetailPincodeValidation(result.permanent_address_pincode);
         let temporaryAddress = personalDetailTemporaryAddressValidation(result.temporary_address);
         let country = personalDetailCountryValidation(result.nationality);
-
  
 
         if (!firstName || !lastName || !profilePhoto || !gender || !contactNumber || !email || !pancard || !pancardphoto || !aadhar || !aadharphoto || !address || !temporaryAddress || !country ) {
@@ -1760,8 +1827,8 @@
         personalDetailsData.user_info.date_of_birth = result.date_of_birth
         personalDetailsData.user_info.nationality = result.nationality
 
-        arrayresult[0] = result.temporary_address
-        arrayresult[1] = result.permanent_address
+        arrayresult[0] = result.permanent_address + "," + result.permanent_address_city + "," + result.permanent_address_pincode
+        arrayresult[1] = result.temporary_address
 
         console.log(JSON.stringify(personalDetailsData))
 
@@ -1989,7 +2056,7 @@
         })
 
       })
-    });
+    
 
 
     document.getElementById('qualification-add-button').addEventListener('click', function (e) {
@@ -2744,6 +2811,7 @@
       }
 
     })
+  
   </script>
 </body>
 
