@@ -97,11 +97,11 @@
 
                     <div id="right-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-5">
-                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                        <div class="col-6 ps-lg-3 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                           <h6 class="pb-4">Contact No.</h6>
                           <h6 class="pb-3">Email :</h6>
                           <h6 class="pb-4">Address :</h6>
-                          <h6 class="pb-4 temporary-address-heading">Temporary Address :</h6>
+                          <h6 class="pb-md-4 pt-md-3 mt-md-3 temporary-address-heading">Temporary Address :</h6>
                           <!-- <h6 class="pb-3 city-line">City</h6> -->
                           <!-- <h6 class="pb-3">State</h6> -->
                           <!-- <h6 class="pb-3">Pincode</h6> -->
@@ -110,8 +110,8 @@
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p id="contact-number-value">9876543210</p>
                           <p id="email-value" class="pt-2">example@gmail.com</p>
-                          <p id="address-value" class="pt-1 mb-3">101-Ashok kamothe, Navi Mumbai-410209, India</p>
-                          <p id="temporary-address-value" class="pt-1 mb-3">703-Satyam panvel, Navi Mumbai-410206, India
+                          <p id="address-value" class="pt-1">101-Ashok kamothe, Navi Mumbai-410209, India</p>
+                          <p id="temporary-address-value" class="pt-1">703-Satyam panvel, Navi Mumbai-410206, India
                           </p>
                           <!-- <p id="city-value" class="pt-1">Mumbai</p> -->
                           <!-- <p id="state-value" class="pt-1">Maharashtra</p> -->
@@ -212,17 +212,15 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Title :</p>
-                              <p class="h5 py-1">Major Subject :</p>
-                              <p class="h5 py-1">University :</p>
-                              <p class="h5 py-1">University :</p>
+                              <p class="h5 pb-1">University :</p>
+                              <p class="h5 py-1">Subject Taught :</p>
+                              <p class="h5 py-1">Program :</p>
 
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">Bachelors Degree</p>
+                              <p id="">Mumbai University</p>
                               <p id="">Discrete Maths</p>
-                              <p id="">Mumbai</p>
-                              <p id="">Mumbai</p>
+                              <p id="">BSc</p>
                             </div>
                           </div>
                         </div>
@@ -230,17 +228,15 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">College :</p>
-                              <p class="h5 py-1">percentage :</p>
-                              <p class="h5 py-1">Certificate :</p>
-                              <p class="h5 py-1">Certificate :</p>
+                              <p class="h5 py-1">Designation :</p>
+                              <p class="h5 py-1">Start Date :</p>
+                              <p class="h5 py-1">End date :</p>
                             </div>
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                              <p class="" id="">St. Wilfred's College</p>
-                              <p id="" class="">82.61%</p>
-                              <p id="" class="">82.61%</p>
-                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
+                              <p class="" id="">Senior Maths faculty</p>
+                              <p id="" class="">2000-07-06</p>
+                              <p id="" class="">2007-07-06</p>
+                              <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
                             </div>
                           </div>
                         </div>
@@ -545,11 +541,9 @@
   <div class="personal-details-modal d-none">
     <div id="main-form-area">
 
-      <div class="row">
         <form id="myForm">
-          <div id="left-form-area" class="col-md-8 col-sm-12 col-12 bg-white">
             <div class="d-flex justify-content-center align-items-center">
-              <h1 class="p-3">Personal Details</h1>
+              <h1 class="p-5" style="color: #740E00;"><b> Personal Details</b></h1>
             </div>
             <div class="container">
               <div id="name-row" class="row mb-3">
@@ -608,36 +602,6 @@
             <div class="container">
               <div id="left-fourth-row" class="row">
                 <div class="col-md-6">
-                  <label for="pan-number">Pan Card Number</label>
-                  <span id="pan-number-message" style="color: red;" class="error"></span>
-                  <input type="text" name="pan_number" class="form-control" id="pan-number" />
-                </div>
-                <div class="col-md-6">
-                  <label for="pan-photo">Pan Card Photo</label>
-                  <span id="pan-photo-message" class="error"></span>
-                  <input type="file" class="form-control" id="pan-photo">
-                </div>
-              </div>
-            </div>
-
-            <div class="container">
-              <div id="left-fourth-row" class="row">
-                <div class="col-md-6">
-                  <label for="aadhar-number">Aadhar Card Number</label>
-                  <span id="aadhar-number-message" style="color: red;" class="error"></span>
-                  <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
-                </div>
-                <div class="col-md-6">
-                  <label for="aadhar-photo">Aadhar Card Photo</label>
-                  <span id="aadhar-photo-message" class="error"></span>
-                  <input type="file" class="form-control" id="aadhar-photo">
-                </div>
-              </div>
-            </div>
-
-            <div class="container">
-              <div id="left-fourth-row" class="row">
-                <div class="col-md-6">
                   <label for="address">Address</label>
                   <span id="address-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="permanent_address" id="address" />
@@ -669,14 +633,47 @@
                 </div>
               </div>
             </div>
+
+            <div class="container">
+              <div id="left-fourth-row" class="row">
+                <div class="col-md-6">
+                  <label for="pan-number">Pan Card Number</label>
+                  <span id="pan-number-message" style="color: red;" class="error"></span>
+                  <input type="text" name="pan_number" class="form-control" id="pan-number" />
+                </div>
+                <div class="col-md-6">
+                  <label for="pan-photo">Pan Card Photo</label>
+                  <span id="pan-photo-message" class="error"></span>
+                  <input type="file" class="form-control" id="pan-photo">
+                </div>
+              </div>
+            </div>
+
+            <div class="container">
+              <div id="left-fourth-row" class="row">
+                <div class="col-md-6">
+                  <label for="aadhar-number">Aadhar Card Number</label>
+                  <span id="aadhar-number-message" style="color: red;" class="error"></span>
+                  <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
+                </div>
+                <div class="col-md-6">
+                  <label for="aadhar-photo">Aadhar Card Photo</label>
+                  <span id="aadhar-photo-message" class="error"></span>
+                  <input type="file" class="form-control" id="aadhar-photo">
+                </div>
+              </div>
+            </div>
+
+           
+
+           
+          
             <div class="d-flex justify-content-center">
               <button id="personal-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
               <button id="personal-details-submit-button" class="btn btn-success m-4">Submit</button>
             </div>
 
-          </div>
-          <div id="right-form-area" class="col-md-4 col-sm-12 col-12">
-          </div>
+         
         </form>
 
       </div>
@@ -1107,66 +1104,6 @@
       </div>
     </div>
   </div>
-
-  <script>
-    document.querySelector('#research-submit-button').addEventListener('click', function () {
-      console.log("research button clicked");
-      let researchTableElem = document.querySelectorAll('.research-data-tr');
-      let noofrows = researchTableElem.length;
-      console.log("no of rows", noofrows);
-      let resumeResearchTable = [];
-      for (let j = 0; j < noofrows; j++) {
-
-        let Role = researchTableElem[j].querySelector('.research_role').value;
-        let Journal_name = researchTableElem[j].querySelector('.research_Journal_name').value;
-        let Volume_year = researchTableElem[j].querySelector('.research_Volume_year').value;
-        let Number = researchTableElem[j].querySelector('.research_Number').value;
-        let Category = researchTableElem[j].querySelector('.research_Category').value;
-
-        obj = {
-
-          role: Role,
-          journal_name: Journal_name,
-          volume_year: Volume_year,
-          number: Number,
-          category: Category
-        }
-        resumeResearchTable.push(obj);
-      }
-      object = {
-        "inser_research": resumeResearchTable
-      }
-      console.log('object VJS>>>', JSON.stringify(object));
-
-      function postdata() {
-        url = "/research_Table_Data";
-        params = {
-          method: "post",
-          headers: {
-            contentType: 'application/json'
-          },
-          body: JSON.stringify(object),
-        }
-        fetch(url, params).then((data) => {
-          console.log(data);
-        })
-      }
-      postdata()
-
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.research-modal').classList.add('d-none');
-
-
-    });
-  </script>
-
-  <!-- <script>
-      document.querySelector(".research-edit-box").addEventListener('click',function(){
-
-      })
-    </script> -->
-
-
 
   <!-- ************************************************************************Bank Details Modal Div******************************************************************************************** -->
   <div class="bank-details-modal d-none">
@@ -2075,6 +2012,56 @@
       document.querySelector('.research-modal').classList.add('d-none');
     });
 
+    document.querySelector('#research-submit-button').addEventListener('click', function () {
+      console.log("research button clicked");
+      let researchTableElem = document.querySelectorAll('.research-data-tr');
+      let noofrows = researchTableElem.length;
+      console.log("no of rows", noofrows);
+      let resumeResearchTable = [];
+      for (let j = 0; j < noofrows; j++) {
+
+        let Role = researchTableElem[j].querySelector('.research_role').value;
+        let Journal_name = researchTableElem[j].querySelector('.research_Journal_name').value;
+        let Volume_year = researchTableElem[j].querySelector('.research_Volume_year').value;
+        let Number = researchTableElem[j].querySelector('.research_Number').value;
+        let Category = researchTableElem[j].querySelector('.research_Category').value;
+
+        obj = {
+
+          role: Role,
+          journal_name: Journal_name,
+          volume_year: Volume_year,
+          number: Number,
+          category: Category
+        }
+        resumeResearchTable.push(obj);
+      }
+      object = {
+        "inser_research": resumeResearchTable
+      }
+      console.log('object VJS>>>', JSON.stringify(object));
+
+      function postdata() {
+        url = "/research_Table_Data";
+        params = {
+          method: "post",
+          headers: {
+            contentType: 'application/json'
+          },
+          body: JSON.stringify(object),
+        }
+        fetch(url, params).then((data) => {
+          console.log(data);
+        })
+      }
+      postdata()
+
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.research-modal').classList.add('d-none');
+
+
+    });
+
     document.getElementById('research-add-button').addEventListener('click', function () {
       let table = ` <tr data-toggle="collapse" class="collapsed research-data-tr">            
             <td><select data-title="Role-?" class="form-control research_role" id="role">
@@ -2283,27 +2270,37 @@
 
 
       // let value =  element.parentElement.parentElement.lastElementChild.lastElementChild.innerText
-
+      
       let skillJson = {
-        skill_lid: []
+          "resume_skill_selected" : []
       }
+
+
 
       let softSkillDisplay = document.getElementById('soft-skill-display')
       let hardSkillDisplay = document.getElementById('hard-skill-display')
 
       let softSkillListGroup = document.querySelectorAll('.soft-skill-list-group')
       let hardSkillListGroup = document.querySelectorAll('.hard-skill-list-group')
-
+      let skillIndex = 0;
       for (let i = 0; i < softSkillListGroup.length; i++) {
 
         let value = softSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
-        skillJson.skill_lid.push(value)
+        let obj = {}
+        obj.resume_lid = 1
+        obj.skill_lid = Number.parseInt(value)
+        skillJson.resume_skill_selected[skillIndex] = obj
+        skillIndex++;
       }
 
       for (let i = 0; i < hardSkillListGroup.length; i++) {
 
         let value = hardSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
-        skillJson.skill_lid.push(value)
+        let obj = {}
+        obj.resume_lid = 1
+        obj.skill_lid = Number.parseInt(value)
+        skillJson.resume_skill_selected[skillIndex] = obj
+        skillIndex++;
       }
 
       console.log(JSON.stringify(skillJson))
@@ -2334,7 +2331,6 @@
         } else {
           li[i].style.display = "none";
         }
-
       }
 
       // Loop for adding custom soft-skill if no options are present
@@ -2349,7 +2345,6 @@
       }
 
     })
-
 
     let addAvailableSoftSkill = document.getElementById('soft-skill-box')
     let addAvailableHardSkill = document.getElementById('hard-skill-box')
