@@ -347,7 +347,6 @@
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">Mumbai</p>
                               <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
                             </div>
                           </div>
                         </div>
@@ -920,7 +919,7 @@
 
   <!-- ************************************************************************Achievement Modal Div******************************************************************************************** -->
 
-  <div class="award-modal d-none">
+  <!-- <div class="award-modal d-none">
     <div class="full-screen container">
       <div class="main-content">
         <div class="container d-flex justify-content-between">
@@ -972,6 +971,66 @@
         <button id="award-submit-button" class="btn btn-success m-4">Submit</button>
       </div>
     </div>
+  </div> -->
+
+  <div class="award-modal d-none">
+    <div class="full-screen container">
+      <div class="main-content">
+        <div class="container d-flex text-dark pt-md-5">
+          <i id="award-add-button" class="fa-solid text-white fa-circle-plus fa-2x px-4 py-4"></i>
+          <h2>Award</h2>
+        </div>
+        <hr>
+
+        <div id = "award-apending-data">
+          <div id = "award-display-div" style = "border: 1px solid black;" class = "px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                <div class="row pt-lg-3">
+                  <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                    <p class="h5 pb-1 spacein"><b>Award Name :</b></p>
+                    <p class="h5 py-1 spacein"><b>organization :</b></p>
+                    <p class="h5 py-1 spacein"><b>Organization Type :</b></p>
+
+                  </div>
+                  <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                    <p><input class="form-control awardName" type="text" id="award-name"></p>
+                    <p><input class="form-control awardOrganization" type="text" id="award-organization"></p>
+                    <p><select class="form-control awardOrganizationType" id="award-organization-type">
+                      <option value="0">-select-</option>
+                      <option value="1">School</option>
+                      <option value="2">University</option>
+                    </select></p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                <div class="row pt-lg-3">
+                  <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                    <p class="h5 pb-1 spacein"><b>Place :</b></p>
+                    <p class="h5 pb-1 spacein"><b>Date :</b></p>
+                    <p class="h5 py-1 spacein"><b>Certificate :</b></p>
+                  </div>
+                  <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                    <p><input class="form-control awardPlace" type="text" id="award-place"></p>
+                    <p><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></p>
+                    <p><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button id="award-cancel-button" class="btn btn-danger m-4">Cancel</button>
+        <button id="award-submit-button" class="btn btn-success m-4">Submit</button>
+      </div>
+    </div> 
   </div>
 
 <script>
@@ -1022,6 +1081,7 @@
         })
       }
       postdata()
+
       
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.award-modal').classList.add('d-none');
@@ -2119,22 +2179,51 @@ document.querySelector('.bank-details-div-wrapper').addEventListener('mouseleave
     });
 
     document.getElementById('award-add-button').addEventListener('click', function () {
-        let table = `   <tr data-toggle="collapse" class="collapsed award-rows">
-                        <td class="text-white pb-3">Award</td>
-                        <td><input class="form-control awardName" type="text" id="award-name"></td>
-                      <td><input class="form-control awardOrganization" type="text" id="award-organization"></td>
-                      <td><select class="form-control awardOrganizationType" id="award-organization-type">
-                        <option value="0">-select-</option>
-                        <option value="1">School</option>
-                        <option value="2">University</option>
-                      </select></td>
-                      <td><input class="form-control awardPlace" type="text" id="award-place"></td>
-                      <td><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></td>
-                      <td><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></td>
-                        <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 award-delete-button"></i></td>
-                      </tr>
+        let table = `          <div id = "award-apending-data">
+          <div id = "award-display-div" style = "border: 1px solid black;" class = "px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                <div class="row pt-lg-3">
+                  <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                    <p class="h5 pb-1 spacein"><b>Award Name :</b></p>
+                    <p class="h5 py-1 spacein"><b>organization :</b></p>
+                    <p class="h5 py-1 spacein"><b>Organization Type :</b></p>
+
+                  </div>
+                  <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                    <p><input class="form-control awardName" type="text" id="award-name"></p>
+                    <p><input class="form-control awardOrganization" type="text" id="award-organization"></p>
+                    <p><select class="form-control awardOrganizationType" id="award-organization-type">
+                      <option value="0">-select-</option>
+                      <option value="1">School</option>
+                      <option value="2">University</option>
+                    </select></p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                <div class="row pt-lg-3">
+                  <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                    <p class="h5 pb-1 spacein"><b>Place :</b></p>
+                    <p class="h5 pb-1 spacein"><b>Date :</b></p>
+                    <p class="h5 py-1 spacein"><b>Certificate :</b></p>
+                  </div>
+                  <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                    <p><input class="form-control awardPlace" type="text" id="award-place"></p>
+                    <p><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></p>
+                    <p><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
        `
-        document.getElementById('award-data').insertAdjacentHTML("beforeend", table);
+        document.getElementById('award-apending-data').insertAdjacentHTML("beforeend", table);
     });
 
     $(document).on('click', '.award-delete-button', function () {

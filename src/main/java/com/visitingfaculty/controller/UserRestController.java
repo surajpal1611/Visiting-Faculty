@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,8 +33,18 @@ public class UserRestController {
     public ResponseEntity<?> insert(@RequestBody String personalDetailsData) 
     {
         System.out.println(personalDetailsData);
-        jsonchk.UserJsonCheck(personalDetailsData);
-        return ResponseEntity.ok("Inserted Successfully");
+        Boolean check = jsonchk.UserJsonCheck(personalDetailsData);
+        if(check == true)
+        {
+            System.out.println("Success");
+            return ResponseEntity.ok("Inserted Successfully");
+        }
+        else
+        {
+            System.out.println("Error");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        
     }
 
     @PostMapping("/verify-login")

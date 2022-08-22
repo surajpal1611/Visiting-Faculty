@@ -42,8 +42,9 @@ public class jsoncheck
     }
 
     //For Personal Details
-    public void UserJsonCheck(String JsonString)
+    public Boolean UserJsonCheck(String JsonString)
     {
+        Boolean check = false;
         JSONObject jsonString = new JSONObject(JsonString);
         //for userinfo
         JSONObject user_info = jsonString.getJSONObject("user_info");
@@ -51,11 +52,23 @@ public class jsoncheck
         String l_name = user_info.getString("l_name");
         String email = user_info.getString("email");
 
-        Boolean l_namecheck = checkVal.CheckWithNoSpectailChar("l_name");
-        Boolean f_namecheck = checkVal.CheckWithNoSpectailChar("f_name");
+        Boolean l_namecheck = checkVal.CheckWithNoSpectailChar(l_name);
+        Boolean f_namecheck = checkVal.CheckWithNoSpectailChar(f_name);
         Boolean emailcheckvalue = checkVal.emailCheck(email);
 
         //for contact numbver
-        
+        JSONObject user_contact = jsonString.getJSONObject("user_contact");
+        String contact_number = user_contact.getString("contact_number");
+        Boolean contactcheck = checkVal.phoneNumberCheck(contact_number);
+
+        if(l_namecheck == true && f_namecheck == true && emailcheckvalue == true && contactcheck == true)
+        {
+            check = true;
+        }
+        else
+        {
+            check = false;
+        }
+    return check;    
     }
 }

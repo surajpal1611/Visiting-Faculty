@@ -68,5 +68,25 @@ public class validationsMethod
     return check;
     }
 
-    
+    //Phone number Validation
+    public Boolean phoneNumberCheck(String value)
+    {
+        Boolean check = false;
+        if(value.length() == 10)
+        {
+              for(int i = 0 ; i < value.length() ; i++)
+              {
+                  if(value.charAt(i) < '0' || value.charAt(i) > '9')
+                  {
+                      check = false;
+                      break;
+                  }
+                  else
+                  {
+                      check = true;
+                  }
+              }
+        }
+        return check;
+    } 
 }
