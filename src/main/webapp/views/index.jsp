@@ -314,50 +314,52 @@
                 <div class="d-flex justify-content-center align-items-center">
                   <h3 style="color: #740E00;"><b> Awards </b></h3>
                 </div>
-                <div class="text-block right">
-                  <div class="card-body">
-                    <h2>2000</h2>
+                <div id="award-preview-div">
+                  <div class="text-block right">
+                    <div class="card-body">
 
-                    <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                      <div class="row">
+                      <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                        <div class="row">
 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Award Name :</p>
-                              <p class="h5 py-1">organization :</p>
-                              <p class="h5 py-1">Organization Type :</p>
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Award Name :</p>
+                                <p class="h5 py-1">organization :</p>
+                                <p class="h5 py-1">Organization Type :</p>
 
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">Engagement Award</p>
-                              <p id="">Campus Compact </p>
-                              <p id="">University</p>
-                            </div>
-                          </div>
-                        </div>
-
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Place :</p>
-                              <p class="h5 py-1">Certificate :</p>
-                            </div>
-                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                              <p class="" id="">Mumbai</p>
-                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                                <p id="">Engagement Award</p>
+                                <p id="">Campus Compact </p>
+                                <p id="">University</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
 
+
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Place :</p>
+                                <p class="h5 pb-1">Recieved date :</p>
+                                <p class="h5 py-1">Certificate :</p>
+                              </div>
+                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                                <p class="" id="">Mumbai</p>
+                                <p class="" id="">2018-07-07</p>
+                                <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
                       </div>
-                    </div>
 
+                    </div>
                   </div>
                 </div>
-
               </div>
             </div>
             <div class="d-none award-edit-box d-flex justify-content-center align-items-center">
@@ -946,18 +948,19 @@
                     </tr>
                   </thead>
                   <tbody id="award-data">
-                    <tr  data-toggle="collapse" class="collapsed award-rows">
-                      <td class="text-white pb-3" >Award</td>
+                    <tr data-toggle="collapse" class="collapsed award-rows">
+                      <td class="text-white pb-3">Award</td>
                       <td><input class="form-control awardName" type="text" id="award-name"></td>
                       <td><input class="form-control awardOrganization" type="text" id="award-organization"></td>
                       <td><select class="form-control awardOrganizationType" id="award-organization-type">
-                        <option value="0">-select-</option>
-                        <option value="1">School</option>
-                        <option value="2">University</option>
-                      </select></td>
+                          <option value="0">-select-</option>
+                          <option value="1">School</option>
+                          <option value="2">University</option>
+                        </select></td>
                       <td><input class="form-control awardPlace" type="text" id="award-place"></td>
                       <td><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></td>
-                      <td><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></td>
+                      <td><input class="form-control awardCertificationImage" type="file"
+                          id="award-certification-image"></td>
                       <td></td>
                     </tr>
                   </tbody>
@@ -974,95 +977,6 @@
     </div>
   </div>
 
-<script>
-  document.querySelector('#award-submit-button').addEventListener('click',function(){
-    console.log('Award Subimt Button clicked');
-    let vjstableelement = document.querySelectorAll('.award-rows');
-      let noofrows = vjstableelement.length;
-      let resume_achievement = [];
-      for(let i = 0 ; i < noofrows ; i++)
-      {
-       let title = vjstableelement[i].querySelector('.awardName').value;
-       let organization_name = vjstableelement[i].querySelector('.awardOrganization').value;
-       let organization_type_lid = vjstableelement[i].querySelector('.awardOrganizationType').value;
-       let discription = vjstableelement[i].querySelector('.awardPlace').value;
-       let achivement_date = vjstableelement[i].querySelector('.awardRecieveDate').value;
-       let url_path = vjstableelement[i].querySelector('.awardCertificationImage').value;
-
-       obj = {
-          title : title,
-          organization_name : organization_name,
-          organization_type_lid : organization_type_lid,
-          discription : discription,
-          achivement_date : achivement_date, 
-          url_path : url_path
-        }
-
-     
-        resume_achievement.push(obj);
-      }
-      object = {
-        "insert_award" : resume_achievement
-      }
-      console.log('object VJS>>>',JSON.stringify(object));
-
-      //Fetch Method
-      function postdata()
-      {
-        url = "/award_Table_Data";
-        params = {
-          method : "POST",
-          headers : {
-            contentType: 'application/json'
-          },
-        body : JSON.stringify(object),
-        }
-        fetch(url,params).then((data)=>{
-          console.log('Data : ',data);
-        })
-      }
-      postdata()
-      
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.award-modal').classList.add('d-none');
-      // let achievementTableElements = $('#achievement-table tbody tr');
-      // let resume_achievement = [];
-
-      // achievementTableElements.each(function(index,elem){
-      //   let title = $(elem).find(`input[id = 'award-name']`).val();
-      //   let organization_name = $(elem).find(`input[id = 'award-organization']`).val();
-      //   let organization_type_lid = $(elem).find(`select[id = 'award-organization-type']`).val();
-      //   let discription = $(elem).find(`input[id = 'award-place']`).val();
-      //   let achivement_date = $(elem).find(`input[id = 'award-receive-date']`).val();
-      //   let url_path = $(elem).find(`input[id = 'award-certification-image']`).val();
-
-
-      //   obj = {
-      //     resume_lid : "001",
-      //     title : title,
-      //     organization_name : organization_name,
-      //     organization_type_lid : organization_type_lid,
-      //     discription : discription,
-      //     achivement_date : achivement_date, 
-      //     url_path : url_path
-      //   }
-      //   console.log('Object Table Data>>>',obj);
-      //   resume_achievement.push(obj);
-      // })
-
-      // $.ajax({
-      //   url : '/award_Table_Data',
-      //   type : 'POST',
-      //   data : JSON.stringify(resume_achievement),
-      //   contentType: 'application/json',
-      //   success: function(response) {
-      //           alert('Data has been Submitter Successfully');
-      //           console.log("Response>>> ", response);
-      //       }
-      // })
-
-    });
-</script>
 
   <!-- ************************************************************************Publication Modal Div******************************************************************************************** -->
 
@@ -1612,138 +1526,83 @@
         html2pdf().set(opt).from(elementHTML).save();
       }
     });
-    
-$(document).ready(function () {
 
-// $('.personal-information-div-wrapper').on('mouseover', function () {
-//   $('.personal-details-edit-box').removeClass('d-none')
-// })
-
-document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover',function(){
-  document.querySelector('.personal-details-edit-box').classList.remove('d-none');
-});
-
-// $('.personal-information-div-wrapper').on('mouseleave', function () {
-//   $('.personal-details-edit-box').addClass('d-none')
-// })
-
-document.querySelector('.personal-information-div-wrapper').addEventListener('mouseleave',function(){
-  document.querySelector('.personal-details-edit-box').classList.add('d-none');
-});
+    $(document).ready(function () {
 
 
-// $('.qualification-div-wrapper').on('mouseover', function () {
-//   $('.qualification-edit-box').removeClass('d-none')
-// })
-
-document.querySelector('.qualification-div-wrapper').addEventListener('mouseover',function(){
-  document.querySelector('.qualification-edit-box').classList.remove('d-none');
-});
-
-// $('.qualification-div-wrapper').on('mouseleave', function () {
-//   $('.qualification-edit-box').addClass('d-none')
-// })
-
-document.querySelector('.qualification-div-wrapper').addEventListener('mouseleave',function(){
-  document.querySelector('.qualification-edit-box').classList.add('d-none');
-});
-
-// $('.work-experience-div-wrapper').on('mouseover', function () {
-//   $('.work-experience-edit-box').removeClass('d-none')
-// })
-
-document.querySelector('.work-experience-div-wrapper').addEventListener('mouseover',function(){
-  document.querySelector('.work-experience-edit-box').classList.remove('d-none');
-});
-
-// $('.work-experience-div-wrapper').on('mouseleave', function () {
-//   $('.work-experience-edit-box').addClass('d-none')
-// })
-
-document.querySelector('.work-experience-div-wrapper').addEventListener('mouseleave',function(){
-  document.querySelector('.work-experience-edit-box').classList.add('d-none')
-})
-
-// $('.skills-div-wrapper').on('mouseover', function () {
-//   $('.skills-edit-box').removeClass('d-none')
-// })
-
-document.querySelector('.skills-div-wrapper').addEventListener('mouseover',function(){
-  document.querySelector('.skills-edit-box').classList.remove('d-none');
-});
-
-// $('.skills-div-wrapper').on('mouseleave', function () {
-//   $('.skills-edit-box').addClass('d-none')
-// })
-
-document.querySelector('.skills-div-wrapper').addEventListener('mouseleave',function(){
-  document.querySelector('.skills-edit-box').classList.add('d-none');
-});
-
-// $('.award-div-wrapper').on('mouseover', function () {
-//   $('.award-edit-box').removeClass('d-none')
-// })
-
-document.querySelector('.award-div-wrapper').addEventListener('mouseover',function(){
-  document.querySelector('.award-edit-box').classList.remove('d-none');
-});
-
-// $('.award-div-wrapper').on('mouseleave', function () {
-//   $('.award-edit-box').addClass('d-none')
-// })
-
-document.querySelector('.award-div-wrapper').addEventListener('mouseleave',function(){
-  document.querySelector('.award-edit-box').classList.add('d-none');
-});
-
-// $('.publication-div-wrapper').on('mouseover', function () {
-//   $('.publication-edit-box').removeClass('d-none')
-// })
-
-document.querySelector('.publication-div-wrapper').addEventListener('mouseover',function(){
-  document.querySelector('.publication-edit-box').classList.remove('d-none');
-});
-
-// $('.publication-div-wrapper').on('mouseleave', function () {
-//   $('.publication-edit-box').addClass('d-none')
-// })
-
-document.querySelector('.publication-div-wrapper').addEventListener('mouseleave',function(){
-  document.querySelector('.publication-edit-box').classList.add('d-none');
-});
+      document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.personal-details-edit-box').classList.remove('d-none');
+      });
 
 
-// $('.research-div-wrapper').on('mouseover', function () {
-//   $('.research-edit-box').removeClass('d-none')
-// })
+      document.querySelector('.personal-information-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.personal-details-edit-box').classList.add('d-none');
+      });
 
-document.querySelector('.research-div-wrapper').addEventListener('mouseover',function(){
-  document.querySelector('.research-edit-box').classList.remove('d-none');
-});
 
-// $('.research-div-wrapper').on('mouseleave', function () {
-//   $('.research-edit-box').addClass('d-none')
-// })
+      document.querySelector('.qualification-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.qualification-edit-box').classList.remove('d-none');
+      });
 
-document.querySelector('.research-div-wrapper').addEventListener('mouseleave',function(){
-  document.querySelector('.research-edit-box').classList.add('d-none');
-});
+      document.querySelector('.qualification-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.qualification-edit-box').classList.add('d-none');
+      });
 
-// $('.bank-details-div-wrapper').on('mouseover', function () {
-//   $('.bank-details-edit-box').removeClass('d-none')
-// })
 
-document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover',function(){
-  document.querySelector('.bank-details-edit-box').classList.remove('d-none');
-});
+      document.querySelector('.work-experience-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.work-experience-edit-box').classList.remove('d-none');
+      });
 
-// $('.bank-details-div-wrapper').on('mouseleave', function () {
-//   $('.bank-details-edit-box').addClass('d-none')
-// })
 
-document.querySelector('.bank-details-div-wrapper').addEventListener('mouseleave',function(){
-  document.querySelector('.bank-details-edit-box').classList.add('d-none');
-});
+      document.querySelector('.work-experience-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.work-experience-edit-box').classList.add('d-none')
+      })
+
+
+      document.querySelector('.skills-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.skills-edit-box').classList.remove('d-none');
+      });
+
+
+      document.querySelector('.skills-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.skills-edit-box').classList.add('d-none');
+      });
+
+
+      document.querySelector('.award-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.award-edit-box').classList.remove('d-none');
+      });
+
+
+      document.querySelector('.award-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.award-edit-box').classList.add('d-none');
+      });
+
+      document.querySelector('.publication-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.publication-edit-box').classList.remove('d-none');
+      });
+
+
+      document.querySelector('.publication-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.publication-edit-box').classList.add('d-none');
+      });
+
+      document.querySelector('.research-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.research-edit-box').classList.remove('d-none');
+      });
+
+
+      document.querySelector('.research-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.research-edit-box').classList.add('d-none');
+      });
+
+      document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.bank-details-edit-box').classList.remove('d-none');
+      });
+
+      document.querySelector('.bank-details-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.bank-details-edit-box').classList.add('d-none');
+      });
 
       document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
 
@@ -1756,7 +1615,6 @@ document.querySelector('.bank-details-div-wrapper').addEventListener('mouseleave
         for (let entry of formData.entries()) {
           result[entry[0]] = entry[1];
         }
-
 
         clearError();
 
@@ -2024,7 +1882,6 @@ document.querySelector('.bank-details-div-wrapper').addEventListener('mouseleave
 
                         `
 
-
           qualificationTableArray.push(object)
 
         }
@@ -2104,9 +1961,7 @@ document.querySelector('.bank-details-div-wrapper').addEventListener('mouseleave
       $(this).closest('tr').remove()
     })
 
-
     //*************************************Award-modal JS****************************************
-
 
     document.querySelector(".award-edit-box").addEventListener('click', function () {
       document.getElementById('body').classList.add('d-none');
@@ -2119,7 +1974,7 @@ document.querySelector('.bank-details-div-wrapper').addEventListener('mouseleave
     });
 
     document.getElementById('award-add-button').addEventListener('click', function () {
-        let table = `   <tr data-toggle="collapse" class="collapsed award-rows">
+      let table = `   <tr data-toggle="collapse" class="collapsed award-rows">
                         <td class="text-white pb-3">Award</td>
                         <td><input class="form-control awardName" type="text" id="award-name"></td>
                       <td><input class="form-control awardOrganization" type="text" id="award-organization"></td>
@@ -2134,7 +1989,61 @@ document.querySelector('.bank-details-div-wrapper').addEventListener('mouseleave
                         <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 award-delete-button"></i></td>
                       </tr>
        `
-        document.getElementById('award-data').insertAdjacentHTML("beforeend", table);
+      document.getElementById('award-data').insertAdjacentHTML("beforeend", table);
+    });
+
+
+    document.querySelector('#award-submit-button').addEventListener('click', function () {
+
+      let div = ''
+      let vjstableelement = document.querySelectorAll('.award-rows');
+      let noofrows = vjstableelement.length;
+      let resume_achievement = [];
+
+      for (let i = 0; i < noofrows; i++) {
+        let title = vjstableelement[i].querySelector('.awardName').value;
+        let organization_name = vjstableelement[i].querySelector('.awardOrganization').value;
+        let organization_type_lid = vjstableelement[i].querySelector('.awardOrganizationType').value;
+        let discription = vjstableelement[i].querySelector('.awardPlace').value;
+        let achivement_date = vjstableelement[i].querySelector('.awardRecieveDate').value;
+        let url_path = vjstableelement[i].querySelector('.awardCertificationImage').value;
+
+        obj = {
+          title: title,
+          organization_name: organization_name,
+          organization_type_lid: organization_type_lid,
+          discription: discription,
+          achivement_date: achivement_date,
+          url_path: url_path
+        }
+
+        resume_achievement.push(obj);
+      }
+      object = {
+        "insert_award": resume_achievement
+      }
+
+      //Fetch Method
+      function postdata() {
+        url = "/award_Table_Data";
+        params = {
+          method: "POST",
+          headers: {
+            contentType: 'application/json'
+          },
+          body: JSON.stringify(object),
+        }
+        fetch(url, params).then((data) => {
+          console.log('Data : ', data);
+          document.getElementById('award-preview-div').firstElementChild.remove()
+          document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.award-modal').classList.add('d-none');
+        })
+      }
+      postdata()
+
+
     });
 
     $(document).on('click', '.award-delete-button', function () {
