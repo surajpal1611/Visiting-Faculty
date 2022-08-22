@@ -1,35 +1,33 @@
 package com.visitingfaculty.controller;
 
-import java.util.List;
 
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.visitingfaculty.dao.UserDaoInterface;
 import com.visitingfaculty.dto.UserDto;
 import com.visitingfaculty.dto.UserPersonalDetailsDTO;
-import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
 import com.visitingfaculty.service.faculty_service.UserService;
+import com.visitingfaculty.validations.jsoncheck;
 
 @RestController
 public class UserRestController {
 
     @Autowired
     UserService userService;
+    @Autowired jsoncheck jsonchk;
 
-    @Autowired
-    UserDaoInterface userDaoInterface;
+    // @Autowired
+    // UserDaoInterface userDaoInterface;
 
     @PostMapping(value="/insert-personal-details", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> insert(@RequestBody UserPersonalDetailsDTO personalDetailsData) {
-
+    public ResponseEntity<?> insert(@RequestBody String personalDetailsData) 
+    {
         System.out.println(personalDetailsData);
+        jsonchk.UserJsonCheck(personalDetailsData);
         return ResponseEntity.ok("Inserted Successfully");
     }
 
@@ -72,27 +70,27 @@ public class UserRestController {
         return ResponseEntity.ok("verification success");
     }
 
-    @PostMapping("/get-all-skill")
-    public List<UserSkillsFromDB> getAllSkills() {
+    // @PostMapping("/get-all-skill")
+    // public List<UserSkillsFromDB> getAllSkills() {
 
-        List<UserSkillsFromDB> list = userDaoInterface.getAllSkills();
-        return list;
-    }
+    //     List<UserSkillsFromDB> list = userDaoInterface.getAllSkills();
+    //     return list;
+    // }
 
-    @PostMapping("/insert-custom-skill")
-    public UserSkillsFromDB insertCustomSkill(UserSkillsFromDB userSkillsFromDB) {
+    // @PostMapping("/insert-custom-skill")
+    // public UserSkillsFromDB insertCustomSkill(UserSkillsFromDB userSkillsFromDB) {
 
-        int insertSkill = userDaoInterface.insertCustomSkill(userSkillsFromDB);
-        if (insertSkill == 1) {
+    //     int insertSkill = userDaoInterface.insertCustomSkill(userSkillsFromDB);
+    //     if (insertSkill == 1) {
 
-            UserSkillsFromDB userSkill = userDaoInterface.getUserSkill(userSkillsFromDB.getSkill_name());
+    //         UserSkillsFromDB userSkill = userDaoInterface.getUserSkill(userSkillsFromDB.getSkill_name());
             
-            return userSkill;
+    //         return userSkill;
 
-        } else {
+    //     } else {
 
-            return null;
-        }
+    //         return null;
+    //     }
        
-    }
+    // }
 }
