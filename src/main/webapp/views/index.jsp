@@ -1068,7 +1068,6 @@
                   <table>
                     <thead class="text-white">
                       <tr class="table-head">
-                        <th>Title</th>
                         <th>Role-?</th>
                         <th>Journal-name</th>
                         <th>Volume-year</th>
@@ -1080,7 +1079,7 @@
                     </thead>
                     <tbody id="research-data">
                       <tr data-toggle="collapse" class="collapsed research-data-tr">
-                        <td class="text-white pb-3">Research</td>
+                        <td class="text-white pb-3 d-none">Research</td>
                         <td><select name="role" class="form-control research_role">
                             <option>-Select-</option>
                             <option value="Sole">Sole</option>
@@ -2076,7 +2075,8 @@
     });
 
     document.getElementById('research-add-button').addEventListener('click', function () {
-      let table = ` <tr data-toggle="collapse" class="collapsed research-data-tr">            
+      let table = ` <tr data-toggle="collapse" class="collapsed research-data-tr">
+            <td class="text-white pb-3 d-none">Research</td>            
             <td><select data-title="Role-?" class="form-control research_role" id="role">
                     <option>-Select-</option>
                     <option value="Sole">Sole</option>
@@ -2086,8 +2086,24 @@
             <td><input data-title="Volume-year" class="form-control research_Volume_year" type="text"></td>
             <td><input data-title="Number" class="form-control research_Number" type="text"></td>
             <td><input data-title="Category" class="form-control research_Category" type="text"></td>
+            <td><input data-title="Certificate" class="form-control" type="file"></td>
             <td class="p-2 !important"> <i class="fa-solid fa-trash-can text-white h4 research-delete-button" data-title=" Action"></i> </td>
                   </tr>`
+
+                 /* <tr data-toggle="collapse" class="collapsed research-data-tr">
+                        <td class="text-white pb-3 d-none">Research</td>
+                        <td><select name="role" class="form-control research_role">
+                            <option>-Select-</option>
+                            <option value="Sole">Sole</option>
+                            <option value="Author">Author</option>
+                          </select></td>
+                        <td><input name="journal_name" class="form-control research_Journal_name" type="text"></td>
+                        <td><input name="volume_year" class="form-control research_Volume_year" type="text"></td>
+                        <td><input name="number" class="form-control research_Number" type="text"></td>
+                        <td><input name="category" class="form-control research_Category" type="text">
+                        <td><input data-title="Certificate" class="form-control" type="file"></td>
+                        <td></td>
+                      </tr>*/
 
       document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
     })
@@ -2172,6 +2188,7 @@
           account_type: bankaccounttype
 
         }
+        console.log(JSON.stringify(bank_detail))
 
         function postdata() {
           url = "/insert-bank-details";

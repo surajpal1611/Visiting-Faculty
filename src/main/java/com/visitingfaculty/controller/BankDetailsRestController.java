@@ -15,7 +15,7 @@ public class BankDetailsRestController {
 
 
     @PostMapping(value="/insert-bank-details")
-    public ResponseEntity<String> postMethodName(@RequestBody  UserBankDetails bank_details) {
+    public ResponseEntity<String> postMethodName(@RequestBody  String bank_details) {
         
         System.out.println(bank_details);
         return new ResponseEntity<String>("Inserted Successfully", HttpStatus.OK);
