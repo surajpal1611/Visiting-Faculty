@@ -310,7 +310,7 @@
 
           <div class="award-div-wrapper d-flex position-relative" style="cursor: pointer;">
             <div class="container">
-              <div id="achievement-div">
+              <div id="award-div">
                 <div class="d-flex justify-content-center align-items-center">
                   <h3 style="color: #740E00;"><b> Awards </b></h3>
                 </div>
@@ -336,19 +336,19 @@
                         </div>
                       </div>
 
-
                       <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                         <div class="row pt-lg-3">
                           <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                             <p class="h5 pb-1">Place :</p>
+                            <p class="h5 pb-1">Date :</p>
                             <p class="h5 pb-1">Recieved date :</p>
                             <p class="h5 py-1">Certificate :</p>
                           </div>
                           <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                             <p class="" id="">Mumbai</p>
+                            <p class="" id="">2012-07-06</p>
                             <p class="" id="">2018-07-07</p>
                             <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
                           </div>
                         </div>
                       </div>
@@ -422,6 +422,11 @@
 
           <!------------------------------------------- Research Section  ----------------------------------------->
 
+          <!--                 
+          <div id="qualification-appending-div">
+            <div class="text-block right" id="preview-qualification-div">
+              <div class="card-body preview-qualification-div"> -->
+
           <div class="research-div-wrapper d-flex position-relative" style="cursor: pointer;">
             <div class="container">
               <div id="research-div" class="px-3 px-sm-4 px-lg-4">
@@ -429,43 +434,47 @@
                   <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><b> Research </b></h3>
                 </div>
 
-                <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                  <div class="row">
+                <div id="research-appending-div">
+                 
+                      <div id="research-display-div" class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
+                        <div class="row">
 
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Role :</p>
-                          <p class="h5 py-1">Journal Name :</p>
-                          <p class="h5 py-1">Volume year :</p>
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Role :</p>
+                                <p class="h5 py-1">Journal Name :</p>
+                                <p class="h5 py-1">Volume year :</p>
 
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p id="">Reviewier</p>
-                          <p id="">Algebra and logic</p>
-                          <p id="">2017</p>
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                                <p id="">Reviewier</p>
+                                <p id="">Algebra and logic</p>
+                                <p id="">2017</p>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Description :</p>
+                                <p class="h5 pb-1">Category :</p>
+                                <p class="h5 py-1">Certificate :</p>
+                              </div>
+                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                                <p class="" id="">example</p>
+                                <p class="" id="">example</p>
+                                <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                              </div>
+                            </div>
+                          </div>
+
                         </div>
                       </div>
-                    </div>
-
-
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Description :</p>
-                          <p class="h5 pb-1">Category :</p>
-                          <p class="h5 py-1">Certificate :</p>
-                        </div>
-                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                          <p class="" id="">example</p>
-                          <p class="" id="">example</p>
-                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
+                   
                 </div>
               </div>
             </div>
@@ -542,17 +551,37 @@
         </div>
         <div class="container">
           <div id="name-row" class="row mb-3">
+
             <div class="col-md-4 col-sm-12">
               <label for="first-name" cl>First Name</label>
               <span id="first-name-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
             </div>
+
             <div class="col-md-4 col-sm-12">
               <label for="last-name">last Name</label>
               <span id="last-name-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
             </div>
-            <div id="gender-row" class="col-md-4 pt-md-4">
+
+            <div class="col-md-4 col-sm-12">
+              <img id="photo-preview" alt="your image" width="100" height="100"
+                style="border: 1px solid #ced4da; margin-left:100px;" />
+            </div>
+
+          </div>
+        </div>
+
+        <div class="container">
+          <div id="left-second-row" class="row">
+
+            <div class="col-md-4 col-sm-12">
+              <label for="date-of-birth">date of birth</label>
+              <span id="date-of-birth-message" class="error"></span>
+              <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
+            </div>
+
+            <div id="gender-row" class="col-sm-12 col-md-4 pt-md-4">
               <label for="male">Male</label>
               <input style="height: auto ;" type="radio" name="gender" class="gender" id="male" value="1" />
               <label for="female">Female</label>
@@ -561,27 +590,14 @@
               <input style="height: auto ;" type="radio" name="gender" class="gender" id="other" value="3" />
               <span id="gender-message" style="color: red;" class="error"></span>
             </div>
-          </div>
-        </div>
 
-        <div class="container">
-          <div id="left-second-row" class="row">
-
-            <div class="col-md-4">
-              <label for="date-of-birth">date of birth</label>
-              <span id="date-of-birth-message" class="error"></span>
-              <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
-            </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-12">
               <label for="photo">passport Size Photo</label>
-              <span id="photo-message" class="error"></span>
+              <span id="photo-message" style="color: red;" class="error"></span>
               <input type="file" class="form-control" id="photo"
                 onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
             </div>
-            <div class="col-md-4">
-              <img id="photo-preview" alt="your image" width="100" height="100"
-                style="border: 1px solid #ced4da; margin-left:100px;" />
-            </div>
+
           </div>
         </div>
 
@@ -607,12 +623,27 @@
 
         <div class="container">
           <div id="left-fourth-row" class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-12">
               <label for="address">Address</label>
               <span id="address-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="permanent_address" id="address" />
             </div>
-            <div class="col-md-6">
+            <div class="col-md-3 col-sm-12">
+              <label for="city">City</label>
+              <span id="city-message" style="color: red;" class="error"></span>
+              <input type="text" class="form-control" name="permanent_address_city" id="city" />
+            </div>
+            <div class="col-md-3 col-sm-12">
+              <label for="pincode">Pincode</label>
+              <span id="pincode-message" style="color: red;" class="error"></span>
+              <input type="text" class="form-control" name="permanent_address_pincode" id="pincode" />
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div id="left-fourth-row" class="row">
+            <div class="col-md-12 col-sm-12">
               <label for="temporary-address">Temporary Address</label>
               <span id="temporary-address-message" style="color: red;" class="error"></span>
               <input type="text" name="temporary_address" class="form-control" id="temporary-address">
@@ -629,7 +660,7 @@
             </div>
             <div class="col-md-4 col-sm-12">
               <label for="pan-photo">Pan Card Photo</label>
-              <span id="pan-photo-message" class="error"></span>
+              <span id="pan-photo-message" style="color: red;" class="error"></span>
               <input type="file" class="form-control" id="pan-photo"
                 onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
             </div>
@@ -649,7 +680,7 @@
             </div>
             <div class="col-md-4 col-sm-12">
               <label for="aadhar-photo">Aadhar Card Photo</label>
-              <span id="aadhar-photo-message" class="error"></span>
+              <span id="aadhar-photo-message" style="color: red;" class="error"></span>
               <input type="file" class="form-control" id="aadhar-photo"
                 onchange="document.getElementById('aadhar-photo-preview').src = window.URL.createObjectURL(this.files[0])">
             </div>
@@ -673,6 +704,7 @@
 
   <!-- ************************************************************************Qualification Modal Div******************************************************************************************** -->
 
+
   <div class="qualification-modal d-none">
     <div class="full-screen container ">
       <div class="main-content">
@@ -683,10 +715,7 @@
         <hr>
 
         <div id="qualification-appending-div" class="bg-white">
-          <!-- <div class="text-block right" id="preview-qualification-div">
-            <div class="card-body preview-qualification-div"> -->
-
-          <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+          <div id="qualification-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -716,6 +745,13 @@
                   <div class="col-md-10 "><input class="form-control qualification-university"
                       id="bachelors-degree-university" type="text"></div>
                 </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Year of Passing</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control qualification-year"
+                      id="bachelors-degree-year-of-passing" type="text"></div>
+                </div>
 
               </div>
 
@@ -731,8 +767,8 @@
                   <div class="col-md-2">
                     <p class="h6">Percentage</p>
                   </div>
-                  <div class="col-md-10"><input class="form-control qualification-subject"
-                      id="bachelors-degree-major-subject" type="text"></div>
+                  <div class="col-md-10"><input class="form-control qualification-percentile"
+                      id="bachelors-degree-percentile" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
@@ -743,61 +779,15 @@
                 </div>
               </div>
             </div>
+            <div class="d-none qualification-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x text-white "></i>
+            </div>
           </div>
           <hr style="height: 5px;">
-         
           <div id="qualification-data" class="mt-4">
 
           </div>
         </div>
-        
-
-        <!-- <div class="d-flex align-items-centre justify-content-centre">
-          <div class="container resume-box">
-            <div class="row table">
-              <div class="table-responsive">
-                <table id="qualification-table">
-                  <thead class="text-white">
-                    <tr class="table-head">
-                      <th>Title</th>
-                      <th>Major-subject</th>
-                      <th>University</th>
-                      <th>College</th>
-                      <th>Percentile/CGPA</th>
-                      <th>Year-of-passing</th>
-                      <th>Certificate</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody id="qualification-data">
-                    <tr class="qualification-row">
-                      <td class="text-white" id="bachelors-degree-title"><select
-                          class="form-control qualification-title" id="bachelors-degree-title-data">
-                          <option value="1">Bachelor's Degree</option>
-                          <option value="2">Master's Degree</option>
-                          <option value="3">PHD</option>
-                          <option value="4">Professional Certification</option>
-                        </select></td>
-                      <td><input class="form-control qualification-subject" id="bachelors-degree-major-subject"
-                          type="text"></td>
-                      <td><input class="form-control qualification-university" id="bachelors-degree-university"
-                          type="text"></td>
-                      <td><input class="form-control qualification-college" id="bachelors-degree-college" type="text">
-                      </td>
-                      <td><input class="form-control qualification-percentile" id="bachelors-degree-percentile"
-                          type="text"></td>
-                      <td><input class="form-control qualification-year" id="bachelors-degree-year-of-passing"
-                          type="text"></td>
-                      <td><input class="form-control qualification-certificate" id="bachelors-degree-certificate"
-                          type="file"></td>
-                      <td><i id="qualification-add-button" class="fa-solid text-white fa-circle-plus "></i></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
       <div class="d-flex justify-content-center">
         <button id="qualification-cancel-button" class="btn btn-danger m-4">Cancel</button>
@@ -1052,55 +1042,73 @@
 
     <div class="full-screen container ">
       <div class="main-content">
-        <div class="container d-flex justify-content-between">
-          <h3 class="text-white h3 ps-1 py-4">Publication</h3>
-          <i id="publication-add-button" class="fa-solid text-white fa-circle-plus fa-2x"></i>
-
+        <div class="container d-flex justify-content-between mt-4">
+          <h3 class="h3 ps-1 py-4">Publication</h3>
+          <i id="publication-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
         </div>
         <hr>
-        <div class="d-flex align-items-centre justify-content-centre">
-          <div class="container resume-box">
-            <div class="row table">
-              <div id="no-more-tables">
-                <div class="table-responsive">
 
-                  <table>
-                    <thead class="text-white">
-                      <tr class="table-head">
-                        <th>Title</th>
-                        <th>Role ?</th>
-                        <th>No.-of-Authors</th>
-                        <th>Book-Title</th>
-                        <th>Publisher</th>
-                        <th>Year-of-publication</th>
-                        <th>Certificate</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody id="publication-data">
-                      <tr data-toggle="collapse" class="collapsed">
-                        <td class="text-white pb-3">Publication</td>
-                        <td><select data-title="Role ?" class="form-control" id="role">
-                            <option>-Select-</option>
-                            <option value="Edited">Edited</option>
-                            <option value="Authored">Authored</option>
-                          </select>
-                        </td>
-                        <td><input data-title="No.-of-Authors" class="form-control" type="text">
-                        </td>
-                        <td><input data-title="Book-Title" class="form-control" type="text"></td>
-                        <td><input data-title="Publisher" class="form-control" type="text"></td>
-                        <td><input data-title="Year-of-publication" class="form-control" type="text"></td>
-                        <td><input data-title="Certificate" class="form-control" type="file"></td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
+
+        <div id="publication-appending-div" class="bg-white">
+          <div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Role</p>
+                  </div>
+                  <div class="col-md-10"><select data-title="Role ?" class="form-control" id="role">
+                      <option>-Select-</option>
+                      <option value="Edited">Edited</option>
+                      <option value="Authored">Authored</option>
+                    </select></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Number of Authors</p>
+                  </div>
+                  <div class="col-md-10 "><input data-title="No.-of-Authors" class="form-control" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Book Title</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control" type="text"></div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Publisher</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Year of Publication</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control" type="file"></div>
                 </div>
               </div>
             </div>
+            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x"></i>
+            </div>
+          </div>
+          <hr style="height: 5px;">
+          <div id="publication-data" class="mt-4">
+
           </div>
         </div>
+
       </div>
       <div class="d-flex justify-content-center">
         <button id="publication-cancel-button" class="btn btn-danger m-4">Cancel</button>
@@ -1112,16 +1120,79 @@
   <!-- ************************************************************************Research Modal Div******************************************************************************************** -->
 
   <div class="research-modal d-none">
-
-
     <div class="full-screen container ">
       <div class="main-content">
-        <div class="container d-flex justify-content-between">
-          <h3 class="text-white h3 py-4">Research</h3>
-          <i id="research-add-button" class="fa-solid text-white fa-circle-plus fa-2x"></i>
+        <div class="container d-flex justify-content-between mt-4">
+          <h3 class="h3 py-4">Research</h3>
+          <i id="research-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
         </div>
         <hr>
-        <div class="d-flex align-items-centre justify-content-centre">
+
+
+        <div id="research-appending-div" class="bg-white">
+          <div id="research-display-div" class="research-row px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Role</p>
+                  </div>
+                  <div class="col-md-10"><select name="role" class="form-control research_role">
+                      <option>-Select-</option>
+                      <option value="Sole">Sole</option>
+                      <option value="Author">Author</option>
+                    </select></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Journal Name</p>
+                  </div>
+                  <div class="col-md-10 "><input name="journal_name" class="form-control research_Journal_name"
+                      type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Volume Year</p>
+                  </div>
+                  <div class="col-md-10 "><input name="volume_year" class="form-control research_volume_year"
+                      type="text"></div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Description</p>
+                  </div>
+                  <div class="col-md-10 "><input name="number" class="form-control research_description" type="text">
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Categoty</p>
+                  </div>
+                  <div class="col-md-10"><input name="category" class="form-control research_category" type="text">
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control" type="file"></div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none research-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x"></i>
+            </div>
+          </div>
+          <hr style="height: 5px;">
+          <div id="research-data" class="mt-4">
+
+          </div>
+        </div>
+        <!-- <div class="d-flex align-items-centre justify-content-centre">
           <div class="container resume-box">
             <div class="row table">
               <div class="table-responsive">
@@ -1147,9 +1218,9 @@
                             <option value="Author">Author</option>
                           </select></td>
                         <td><input name="journal_name" class="form-control research_Journal_name" type="text"></td>
-                        <td><input name="volume_year" class="form-control research_Volume_year" type="text"></td>
-                        <td><input name="number" class="form-control research_Number" type="text"></td>
-                        <td><input name="category" class="form-control research_Category" type="text">
+                        <td><input name="volume_year" class="form-control research-volume-year" type="text"></td>
+                        <td><input name="number" class="form-control research_description" type="text"></td>
+                        <td><input name="category" class="form-control research_category" type="text">
                         <td><input data-title="Certificate" class="form-control" type="file"></td>
                         <td></td>
                       </tr>
@@ -1159,7 +1230,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
+
+
       </div>
       <div class="d-flex justify-content-center ">
         <button id="research-cancel-button" class="btn btn-danger m-4">Cancel</button>
@@ -1255,7 +1328,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-  </script>
+    </script>
   <script>
     // --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
 
@@ -1337,6 +1410,31 @@
       return condition;
     }
 
+    function personalDetailProfilePhotoValidation(res) {
+      var fuData = document.getElementById('photo');
+      if (res.length > 0) {
+        var Extension = res.substring(res.lastIndexOf('.') + 1).toLowerCase();
+        if (Extension == "png" || Extension == "jpeg" || Extension == "jpg") {
+          if (fuData.files && fuData.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $('#blah').attr('src', e.target.result);
+              console.log(e.target.result)
+              condition = true;
+            }
+            reader.readAsDataURL(fuData.files[0]);
+          }
+        } else {
+          document.getElementById("photo-message").innerHTML = "*File type should be of PNG, JPG and JPEG";
+        }
+      } else {
+        document.getElementById("photo-message").innerHTML = "*Profile photo is Mandatory";
+        condition = false;
+      }
+      return condition;
+    }
+
+
     function personalDetailGenderValidation(gender) {
       if (gender == 1 || gender == 2 || gender == 3) {
         condition = true;
@@ -1415,8 +1513,18 @@
       return condition;
     }
 
+    function personalDetailPancardPhotoValidation(res) {
+      if (res.length > 0) {
+        condition = true;
+      } else {
+        document.getElementById("pan-photo-message").innerHTML = "*Pancard photo is Mandatory";
+        condition = false;
+      }
+      return condition;
+
+    }
+
     function personalDetailAadharValidation(res) {
-      console.log(res)
       if (res.length != 12) {
         document.getElementById('aadhar-number-message').innerHTML = "*Invalid Adhar Number";
         condition = false;
@@ -1435,11 +1543,51 @@
       return condition;
     }
 
+    function personalDetailAadharPhotoValidation(res) {
+      if (res.length > 0) {
+        condition = true;
+      } else {
+        document.getElementById("aadhar-photo-message").innerHTML = "*Aadhar-card photo is Mandatory";
+        condition = false;
+      }
+      return condition;
+    }
+
     function personalDetailAddressValidation(res) {
       if (checkLength(res) > 5) {
         condition = true;
       } else {
         document.getElementById("address-message").innerHTML = "*Invalid length";
+        condition = false;
+      }
+      return condition;
+    }
+
+    function personalDetailCityValidation(res) {
+      if (checkLength(res) > 3) {
+        if (!isCharNumber(res)) {
+          condition = true;
+        } else {
+          document.getElementById("city-message").innerHTML = "*Only characters are allowed";
+          condition = false;
+        }
+      } else {
+        document.getElementById("city-message").innerHTML = "*Invalid length";
+        condition = false;
+      }
+      return condition;
+    }
+
+    function personalDetailPincodeValidation(res) {
+      if (checkLength(res) > 3) {
+        if (isCharNumber(res)) {
+          condition = true;
+        } else {
+          document.getElementById("pincode-message").innerHTML = "*Only Numbers are allowed";
+          condition = false;
+        }
+      } else {
+        document.getElementById("pincode-message").innerHTML = "*Invalid length";
         condition = false;
       }
       return condition;
@@ -1594,227 +1742,228 @@
       }
     });
 
-    $(document).ready(function () {
 
 
-      document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
-        document.querySelector('.personal-details-edit-box').classList.remove('d-none');
-      });
+
+    document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
+      document.querySelector('.personal-details-edit-box').classList.remove('d-none');
+    });
 
 
-      document.querySelector('.personal-information-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.personal-details-edit-box').classList.add('d-none');
-      });
+    document.querySelector('.personal-information-div-wrapper').addEventListener('mouseleave', function () {
+      document.querySelector('.personal-details-edit-box').classList.add('d-none');
+    });
 
 
-      document.querySelector('.qualification-div-wrapper').addEventListener('mouseover', function () {
-        document.querySelector('.qualification-edit-box').classList.remove('d-none');
-      });
+    document.querySelector('.qualification-div-wrapper').addEventListener('mouseover', function () {
+      document.querySelector('.qualification-edit-box').classList.remove('d-none');
+    });
 
-      document.querySelector('.qualification-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.qualification-edit-box').classList.add('d-none');
-      });
-
-
-      document.querySelector('.work-experience-div-wrapper').addEventListener('mouseover', function () {
-        document.querySelector('.work-experience-edit-box').classList.remove('d-none');
-      });
+    document.querySelector('.qualification-div-wrapper').addEventListener('mouseleave', function () {
+      document.querySelector('.qualification-edit-box').classList.add('d-none');
+    });
 
 
-      document.querySelector('.work-experience-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.work-experience-edit-box').classList.add('d-none')
-      })
+    document.querySelector('.work-experience-div-wrapper').addEventListener('mouseover', function () {
+      document.querySelector('.work-experience-edit-box').classList.remove('d-none');
+    });
 
 
-      document.querySelector('.skills-div-wrapper').addEventListener('mouseover', function () {
-        document.querySelector('.skills-edit-box').classList.remove('d-none');
-      });
+    document.querySelector('.work-experience-div-wrapper').addEventListener('mouseleave', function () {
+      document.querySelector('.work-experience-edit-box').classList.add('d-none')
+    })
 
 
-      document.querySelector('.skills-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.skills-edit-box').classList.add('d-none');
-      });
+    document.querySelector('.skills-div-wrapper').addEventListener('mouseover', function () {
+      document.querySelector('.skills-edit-box').classList.remove('d-none');
+    });
 
 
-      document.querySelector('.award-div-wrapper').addEventListener('mouseover', function () {
-        document.querySelector('.award-edit-box').classList.remove('d-none');
-      });
+    document.querySelector('.skills-div-wrapper').addEventListener('mouseleave', function () {
+      document.querySelector('.skills-edit-box').classList.add('d-none');
+    });
 
 
-      document.querySelector('.award-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.award-edit-box').classList.add('d-none');
-      });
-
-      document.querySelector('.publication-div-wrapper').addEventListener('mouseover', function () {
-        document.querySelector('.publication-edit-box').classList.remove('d-none');
-      });
+    document.querySelector('.award-div-wrapper').addEventListener('mouseover', function () {
+      document.querySelector('.award-edit-box').classList.remove('d-none');
+    });
 
 
-      document.querySelector('.publication-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.publication-edit-box').classList.add('d-none');
-      });
+    document.querySelector('.award-div-wrapper').addEventListener('mouseleave', function () {
+      document.querySelector('.award-edit-box').classList.add('d-none');
+    });
 
-      document.querySelector('.research-div-wrapper').addEventListener('mouseover', function () {
-        document.querySelector('.research-edit-box').classList.remove('d-none');
-      });
-
-
-      document.querySelector('.research-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.research-edit-box').classList.add('d-none');
-      });
-
-      document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
-        document.querySelector('.bank-details-edit-box').classList.remove('d-none');
-      });
-
-      document.querySelector('.bank-details-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.bank-details-edit-box').classList.add('d-none');
-      });
-
-      document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
-
-        e.preventDefault()
-
-        let myForm = document.getElementById('myForm')
-        let formData = new FormData(myForm)
-        let arrayresult = [];
-        let result = {};
-        for (let entry of formData.entries()) {
-          result[entry[0]] = entry[1];
-        }
-
-        clearError();
-
-        let firstName1 = personalDetailFirstNameValidation(result.f_name);
-        let lastName1 = personalDetailLastNameValidation(result.l_name);
-        let gender1 = personalDetailGenderValidation(result.gender);
-        let contactNumber1 = personalDetailContactNumberValidation(result.contact_number);
-        let pancard1 = personalDetailPancardValidation(result.pan_number);
-        let email1 = personalDetailEmailValidation(result.email);
-        let aadhar1 = personalDetailAadharValidation(result.aadhar_number);
-        let address1 = personalDetailAddressValidation(result.permanent_address);
-        let temporaryAddress1 = personalDetailTemporaryAddressValidation(result.temporary_address);
-        let country1 = personalDetailCountryValidation(result.nationality);
-
-        if (!firstName1 || !lastName1 || !gender1 || !contactNumber1 || !pancard1 || !email1 || !aadhar1 || !
-          address1 || !temporaryAddress1 || !country1) {
-          return;
-        }
-
-        document.getElementById('date-of-birth-value').innerText = result.date_of_birth
-        document.getElementById('pancard-value').innerText = result.pan_number
-        document.getElementById('aadhar-card-value').innerText = result.aadhar_number
-        document.getElementById('contact-number-value').innerText = result.contact_number
-        document.getElementById('email-value').innerText = result.email
-        document.getElementById('address-value').innerText = result.permanent_address
-        document.getElementById('temporary-address').innerText = result.temporary_address
-        document.getElementById('country-value').innerText = result.nationality
-        document.getElementById('gender-value').innerText = result.gender
-        document.getElementById('full-name-value').innerText = result.f_name + " " + result.l_name
-
-        //loop and names has been changed therfore this image parameters cannot be added
-
-        // if (submitPersonalDetailsForm.get('pancardPhoto').length != 0) {
-        //   document.getElementById('pancard-photo').firstElementChild.classList.remove('fa-ban')
-        //   document.getElementById('pancard-photo').firstElementChild.classList.add('fa-circle-check')
-        //   document.getElementById('pancard-photo').firstElementChild.classList.add('text-success')
-        // }
-
-        // if (submitPersonalDetailsForm.get('aadharCardPhoto').length != 0) {
-        //   document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('fa-ban')
-        //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('fa-circle-check')
-        //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('text-success')
-        // }
+    document.querySelector('.publication-div-wrapper').addEventListener('mouseover', function () {
+      document.querySelector('.publication-edit-box').classList.remove('d-none');
+    });
 
 
-        let personalDetailsData = {
-          "user_address": arrayresult,
-          "user_contact": {},
-          "user_info": {}
-        }
+    document.querySelector('.publication-div-wrapper').addEventListener('mouseleave', function () {
+      document.querySelector('.publication-edit-box').classList.add('d-none');
+    });
 
-        personalDetailsData.user_contact.contact_number = result.contact_number
-        personalDetailsData.user_info.f_name = result.f_name
-        personalDetailsData.user_info.l_name = result.l_name
-        personalDetailsData.user_info.email = result.email
-        personalDetailsData.user_info.gender_lid = Number.parseInt(result.gender)
-        personalDetailsData.user_info.date_of_birth = result.date_of_birth
-        personalDetailsData.user_info.nationality = result.nationality
-
-        arrayresult[0] = result.temporary_address
-        arrayresult[1] = result.permanent_address
-
-        console.log(JSON.stringify(personalDetailsData))
-
-        let options = {
-
-          method: 'POST',
-          headers: {
-
-            'Content-Type': 'application/json;charset=utf-8'
-
-          },
-          body: JSON.stringify(personalDetailsData)
-
-        }
-        let fetchRes = fetch('/insert-personal-details', options);
-
-        fetchRes.then(success => {
-
-          console.log(success)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.personal-details-modal').classList.add('d-none')
-
-        })
-      });
+    document.querySelector('.research-div-wrapper').addEventListener('mouseover', function () {
+      document.querySelector('.research-edit-box').classList.remove('d-none');
+    });
 
 
-      document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
+    document.querySelector('.research-div-wrapper').addEventListener('mouseleave', function () {
+      document.querySelector('.research-edit-box').classList.add('d-none');
+    });
 
-        let editPersonalDetailsForm = new FormData()
+    document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
+      document.querySelector('.bank-details-edit-box').classList.remove('d-none');
+    });
 
-        editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
-          .innerText)
-        editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
-          .innerText)
-        editPersonalDetailsForm.append('editAadharCardNumber', document.getElementById('aadhar-card-value')
-          .innerText)
-        editPersonalDetailsForm.append('editContactNumber', document.getElementById('contact-number-value')
-          .innerText)
-        editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
-        editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
-        editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
-          'temporary-address-value').innerText)
-        editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
-        editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
+    document.querySelector('.bank-details-div-wrapper').addEventListener('mouseleave', function () {
+      document.querySelector('.bank-details-edit-box').classList.add('d-none');
+    });
 
-        document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
-        document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
-        document.getElementById('aadhar-number').value = editPersonalDetailsForm.get('editAadharCardNumber')
-        document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
-        document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
-        document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
-        document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
-          'editTemporaryAddress')
-        document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
+    document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
+
+      e.preventDefault()
+
+      let myForm = document.getElementById('myForm')
+      let formData = new FormData(myForm)
+      let arrayresult = [];
+      let result = {};
+      for (let entry of formData.entries()) {
+        result[entry[0]] = entry[1];
+      }
+
+      clearError();
+
+      let firstName1 = personalDetailFirstNameValidation(result.f_name);
+      let lastName1 = personalDetailLastNameValidation(result.l_name);
+      let gender1 = personalDetailGenderValidation(result.gender);
+      let contactNumber1 = personalDetailContactNumberValidation(result.contact_number);
+      let pancard1 = personalDetailPancardValidation(result.pan_number);
+      let email1 = personalDetailEmailValidation(result.email);
+      let aadhar1 = personalDetailAadharValidation(result.aadhar_number);
+      let address1 = personalDetailAddressValidation(result.permanent_address);
+      let temporaryAddress1 = personalDetailTemporaryAddressValidation(result.temporary_address);
+      let country1 = personalDetailCountryValidation(result.nationality);
+
+      if (!firstName || !lastName || !profilePhoto || !gender || !contactNumber || !email || !pancard || !
+        pancardphoto || !aadhar || !aadharphoto || !address || !temporaryAddress || !country) {
+        return;
+      }
+
+      document.getElementById('date-of-birth-value').innerText = result.date_of_birth
+      document.getElementById('pancard-value').innerText = result.pan_number
+      document.getElementById('aadhar-card-value').innerText = result.aadhar_number
+      document.getElementById('contact-number-value').innerText = result.contact_number
+      document.getElementById('email-value').innerText = result.email
+      document.getElementById('address-value').innerText = result.permanent_address
+      document.getElementById('temporary-address').innerText = result.temporary_address
+      document.getElementById('country-value').innerText = result.nationality
+      document.getElementById('gender-value').innerText = result.gender
+      document.getElementById('full-name-value').innerText = result.f_name + " " + result.l_name
+
+      //loop and names has been changed therfore this image parameters cannot be added
+
+      // if (submitPersonalDetailsForm.get('pancardPhoto').length != 0) {
+      //   document.getElementById('pancard-photo').firstElementChild.classList.remove('fa-ban')
+      //   document.getElementById('pancard-photo').firstElementChild.classList.add('fa-circle-check')
+      //   document.getElementById('pancard-photo').firstElementChild.classList.add('text-success')
+      // }
+
+      // if (submitPersonalDetailsForm.get('aadharCardPhoto').length != 0) {
+      //   document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('fa-ban')
+      //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('fa-circle-check')
+      //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('text-success')
+      // }
 
 
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.personal-details-modal').classList.remove('d-none');
-      });
+      let personalDetailsData = {
+        "user_address": arrayresult,
+        "user_contact": {},
+        "user_info": {}
+      }
 
-      document.querySelector('#personal-details-cancel-button').addEventListener('click', function (e) {
-        e.preventDefault()
+      personalDetailsData.user_contact.contact_number = result.contact_number
+      personalDetailsData.user_info.f_name = result.f_name
+      personalDetailsData.user_info.l_name = result.l_name
+      personalDetailsData.user_info.email = result.email
+      personalDetailsData.user_info.gender_lid = Number.parseInt(result.gender)
+      personalDetailsData.user_info.date_of_birth = result.date_of_birth
+      personalDetailsData.user_info.nationality = result.nationality
+
+      arrayresult[0] = result.permanent_address + "," + result.permanent_address_city + "," + result
+        .permanent_address_pincode
+      arrayresult[1] = result.temporary_address
+
+      console.log(JSON.stringify(personalDetailsData))
+
+      let options = {
+
+        method: 'POST',
+        headers: {
+
+          'Content-Type': 'application/json;charset=utf-8'
+
+        },
+        body: JSON.stringify(personalDetailsData)
+
+      }
+      let fetchRes = fetch('/insert-personal-details', options);
+
+      fetchRes.then(success => {
+
+        console.log(success)
         document.getElementById('body').classList.remove('d-none');
         document.querySelector('.personal-details-modal').classList.add('d-none')
-      });
+
+      })
+    });
+
+
+    document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
+
+      let editPersonalDetailsForm = new FormData()
+
+      editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
+        .innerText)
+      editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
+        .innerText)
+      editPersonalDetailsForm.append('editAadharCardNumber', document.getElementById('aadhar-card-value')
+        .innerText)
+      editPersonalDetailsForm.append('editContactNumber', document.getElementById('contact-number-value')
+        .innerText)
+      editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
+      editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
+      editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
+        'temporary-address-value').innerText)
+      editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
+      editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
+
+      document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
+      document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
+      document.getElementById('aadhar-number').value = editPersonalDetailsForm.get('editAadharCardNumber')
+      document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
+      document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
+      document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
+      document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
+        'editTemporaryAddress')
+      document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
+
+
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.personal-details-modal').classList.remove('d-none');
+    });
+
+    document.querySelector('#personal-details-cancel-button').addEventListener('click', function (e) {
+      e.preventDefault()
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.personal-details-modal').classList.add('d-none')
+    });
 
 
 
-      //*************************************teaching-experience-modal JS****************************************
+    //*************************************teaching-experience-modal JS****************************************
 
-      document.getElementById('teaching-experience-add-button').addEventListener('click', function () {
-        let table = ` <tr data-toggle="collapse" class="collapsed">
+    document.getElementById('teaching-experience-add-button').addEventListener('click', function () {
+      let table = ` <tr data-toggle="collapse" class="collapsed">
         <td><input class="form-control" type="text"></td>
         <td><input class="form-control" type="text"></td>
         <td><input class="form-control" type="text"></td>
@@ -1826,14 +1975,14 @@
         </tr>
        `
 
-        document.getElementById('teaching-experience-data').insertAdjacentHTML("beforeend", table);
-      })
-      $(document).on('click', '.teaching-experience-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
+      document.getElementById('teaching-experience-data').insertAdjacentHTML("beforeend", table);
+    })
+    $(document).on('click', '.teaching-experience-delete-button', function () {
+      $(this).closest('tr').remove()
+    })
 
-      document.getElementById('industrial-experience-add-button').addEventListener('click', function () {
-        let table = ` <tr data-toggle="collapse" class="collapsed">
+    document.getElementById('industrial-experience-add-button').addEventListener('click', function () {
+      let table = ` <tr data-toggle="collapse" class="collapsed">
         <td><input class="form-control" type="text"></td>
         <td><input class="form-control" type="text"></td>
         <td><input class="form-control" type="text"></td>
@@ -1845,68 +1994,67 @@
         </tr>
        `
 
-        document.getElementById('industrial-experience-data').insertAdjacentHTML("beforeend", table);
-      })
-      $(document).on('click', '.industrial-experience-delete-button', function () {
-        $(this).closest('tr').remove()
-      })
+      document.getElementById('industrial-experience-data').insertAdjacentHTML("beforeend", table);
+    })
+    $(document).on('click', '.industrial-experience-delete-button', function () {
+      $(this).closest('tr').remove()
+    })
 
-      document.querySelector(".work-experience-edit-box").addEventListener('click', function () {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.work-experience-modal').classList.remove('d-none');
-      });
+    document.querySelector(".work-experience-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.work-experience-modal').classList.remove('d-none');
+    });
 
-      document.querySelector("#work-experience-cancel-button").addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.work-experience-modal').classList.add('d-none')
+    document.querySelector("#work-experience-cancel-button").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.work-experience-modal').classList.add('d-none')
 
-      });
-
-
-      //*************************************Qualification-modal JS****************************************
+    });
 
 
-      document.querySelector(".qualification-edit-box").addEventListener('click', function () {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.qualification-modal').classList.remove('d-none');
-      });
+    //*************************************Qualification-modal JS****************************************
 
-      document.querySelector("#qualification-cancel-button").addEventListener('click', function () {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.qualification-modal').classList.add('d-none');
-      });
 
-      document.querySelector("#qualification-submit-button").addEventListener('click', function () {
+    document.querySelector(".qualification-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.qualification-modal').classList.remove('d-none');
+    });
 
-        let div = ''
-        let qualificationTableArray = []
-        let qualificationRow = document.querySelectorAll('.qualification-row')
-        for (i = 0; i < qualificationRow.length; i++) {
+    document.querySelector("#qualification-cancel-button").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.qualification-modal').classList.add('d-none');
+    });
 
-          let qualificationTitle = qualificationRow[i].querySelector('.qualification-title').value;
-          let qualificationSubject = qualificationRow[i].querySelector('.qualification-subject').value;
-          let qualificationUniversity = qualificationRow[i].querySelector('.qualification-university').value;
-          let qualificationCollege = qualificationRow[i].querySelector('.qualification-college').value;
-          let qualificationPercentile = qualificationRow[i].querySelector('.qualification-percentile').value;
-          let qualificationYear = qualificationRow[i].querySelector('.qualification-year').value;
-          let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
+    document.querySelector("#qualification-submit-button").addEventListener('click', function (e) {
+      e.preventDefault()
 
-          object = {
+      let div = ''
+      let qualificationTableArray = []
+      let qualificationRow = document.querySelectorAll('.qualification-row')
+      for (i = 0; i < qualificationRow.length; i++) {
 
-            qualification_type_lid: qualificationTitle,
-            topic_of_study: qualificationSubject,
-            university: qualificationUniversity,
-            institute: qualificationCollege,
-            percentile: qualificationPercentile,
-            year_of_passing: qualificationYear,
-            url_path: qualificationCertificate
+        let qualificationTitle = qualificationRow[i].querySelector('.qualification-title').value;
+        let qualificationSubject = qualificationRow[i].querySelector('.qualification-subject').value;
+        let qualificationUniversity = qualificationRow[i].querySelector('.qualification-university').value;
+        let qualificationCollege = qualificationRow[i].querySelector('.qualification-college').value;
+        let qualificationPercentile = qualificationRow[i].querySelector('.qualification-percentile').value;
+        let qualificationYear = qualificationRow[i].querySelector('.qualification-year').value;
+        let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
 
-          }
+        object = {
+          qualification_type_lid: qualificationTitle,
+          topic_of_study: qualificationSubject,
+          university: qualificationUniversity,
+          institute: qualificationCollege,
+          percentile: qualificationPercentile,
+          year_of_passing: qualificationYear,
+          url_path: qualificationCertificate
+        }
 
-          div += ` 
+        div += ` 
 
-          <div class="text-block right" id="preview-qualification-div">
-                  <div class="card-body preview-qualification-div">
+          <div class="text-block right" >
+                  <div class="card-body">
                     <h2 id="year-of-passing">\${qualificationYear}\</h2>
 
                     <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
@@ -1949,39 +2097,30 @@
                 
                         `
 
-          qualificationTableArray.push(object)
+        qualificationTableArray.push(object)
+      }
+      let qualificationTableData = {
+        "qualificationDetails": qualificationTableArray
+      }
+      console.log(JSON.stringify(qualificationTableData))
 
-        }
-        let qualificationTableData = {
-
-          "qualificationDetails": qualificationTableArray
-
-        }
-        console.log(JSON.stringify(qualificationTableData))
-
-        let options = {
-
-          method: 'POST',
-          headers: {
-
-            'Content-Type': 'application/json;charset=utf-8'
-
-          },
-          body: JSON.stringify(qualificationTableData)
-
-        }
-        let fetchRes = fetch("/insert-qualification-details", options);
-
-        fetchRes.then(success => {
-          document.getElementById('qualification-appending-div').firstElementChild.remove()
-          document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.qualification-modal').classList.add('d-none');
-        })
-
+      let options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(qualificationTableData)
+      }
+      let fetchRes = fetch("/insert-qualification-details", options);
+      fetchRes.then(success => {
+        document.getElementById('qualification-appending-div').firstElementChild.remove()
+        document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.qualification-modal').classList.add('d-none');
       })
 
-    });
+    })
+
 
 
     document.getElementById('qualification-add-button').addEventListener('click', function (e) {
@@ -1995,16 +2134,15 @@
       // let bachelorsYOP = document.getElementById('bachelors-degree-year-of-passing').value;
       // let bachelorsCertificate = document.getElementById('bachelors-degree-certificate').value;
 
-      // if (bachelorsTitle != 1 || bachelorsSubject.length < 3 || bachelorsUniversity.length < 3 || bachelorsCollege
-      //   .length < 3 || bachelorsPercentile.length < 3 || bachelorsYOP.length < 3 || bachelorsCertificate.length < 4
-      // ) {
+      // if ( bachelorsSubject.length < 3 || bachelorsUniversity.length < 3 || bachelorsCollege.length < 3 || bachelorsPercentile.length < 3 || bachelorsYOP.length < 3 || bachelorsCertificate.length < 4)
+      //  {
       //   document.getElementById('qualification-message').innerHTML = "*Complition of bachelors degree is required";
       //   return;
       // }
 
 
       let table = `
-      <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+      <div id="qualification-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
@@ -2033,6 +2171,13 @@
                   <div class="col-md-10 "><input class="form-control qualification-university"
                       id="bachelors-degree-university" type="text"></div>
                 </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Year of Passing</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control qualification-year" id="bachelors-degree-year-of-passing"
+                    type="text"></div>
+                </div>
 
               </div>
 
@@ -2048,8 +2193,8 @@
                   <div class="col-md-2">
                     <p class="h6">Percentage</p>
                   </div>
-                  <div class="col-md-10"><input class="form-control qualification-subject"
-                      id="bachelors-degree-major-subject" type="text"></div>
+                  <div class="col-md-10"><input class="form-control qualification-percentile"
+                      id="bachelors-degree-percentile" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
@@ -2215,30 +2360,68 @@
     });
 
     document.getElementById('publication-add-button').addEventListener('click', function () {
-      let table = ` <tr data-toggle="collapse" class="collapsed">
-            <td class="text-white pb-3" >Publication</td>
-            <td><select data-title="Role ?" class="form-control" id="role">
+      let table = `  <div id="award-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Role</p>
+                  </div>
+                  <div class="col-md-10"><select data-title="Role ?" class="form-control" id="role">
                     <option>-Select-</option>
                     <option value="Edited">Edited</option>
                     <option value="Authored">Authored</option>
-                </select>
-            </td>
-            <td><input data-title="No.-of-Authors" class="form-control" type="text">
-            </td>
-            <td><input data-title="Book-Title" class="form-control" type="text"></td>
-            <td><input data-title="Publisher" class="form-control" type="text"></td>
-            <td><input data-title="Year-of-publication" class="form-control"
-                    type="text">
-            </td>
-            <td><input data-title="Certificate" class="form-control" type="file"></td>
-            <td> <i class="fa-solid fa-trash-can text-white h4 publication-delete-button" data-title="Action"></i></td>
-                       </tr>`
+                  </select></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Number of Authors</p>
+                  </div>
+                  <div class="col-md-10 "><input data-title="No.-of-Authors" class="form-control" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Book Title</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control" type="text"></div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Publisher</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Year of Publication</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control" type="file"></div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none qualification-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x text-white "></i>
+            </div>
+          </div>
+          <hr style="height: 5px;">`
       document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
     })
 
     $(document).on('click', '.publication-delete-button', function () {
       $(this).closest('tr').remove()
     })
+
+
 
 
     //*************************************Research-modal JS****************************************
@@ -2253,28 +2436,171 @@
       document.querySelector('.research-modal').classList.add('d-none');
     });
 
+        // ******************************************Validation Functions Start****************************************************
+function tabledatacheck(value)
+    {
+      let checkit = false;
+      if(value.length > 3)
+      {
+        checkit = true;
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    function namecheck(value)
+    {
+      let check = false;
+        if(value.length > 1)
+        {
+            for(let i = 0 ; i < value.length ;i++)
+            {
+                if(value[i] >= '!' && value[i] <= '@')
+                {
+                    check =false;
+                    break;
+                }
+                else
+                {
+                    check = true;    
+                }
+            }
+        }
+        else
+        {
+             check=false;
+        }
+        return check;
+    }
+
+    function yearcheck(value)
+    {
+      let checkit = false;
+      if(value.length == 4)
+      {
+        if(!isNaN(value))
+        {
+        checkit = true;
+        }
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    // ******************************************Validation Functions End***************************************************
+
     document.querySelector('#research-submit-button').addEventListener('click', function () {
       console.log("research button clicked");
-      let researchTableElem = document.querySelectorAll('.research-data-tr');
+      let researchTableElem = document.querySelectorAll('.research-row');
       let noofrows = researchTableElem.length;
       console.log("no of rows", noofrows);
       let resumeResearchTable = [];
+      let div = ''
       for (let j = 0; j < noofrows; j++) {
+        researchTableElem[j].querySelector('.research_role').classList.remove('input-border');
+        researchTableElem[j].querySelector('.research_Journal_name').classList.remove('input-border');
+        researchTableElem[j].querySelector('.research_volume_year').classList.remove('input-border');
+        researchTableElem[j].querySelector('.research_description').classList.remove('input-border');
+        researchTableElem[j].querySelector('.research_category').classList.remove('input-border');
 
         let Role = researchTableElem[j].querySelector('.research_role').value;
         let Journal_name = researchTableElem[j].querySelector('.research_Journal_name').value;
-        let Volume_year = researchTableElem[j].querySelector('.research_Volume_year').value;
-        let Number = researchTableElem[j].querySelector('.research_Number').value;
-        let Category = researchTableElem[j].querySelector('.research_Category').value;
+        let volume_year = researchTableElem[j].querySelector('.research_volume_year').value;
+        let description = researchTableElem[j].querySelector('.research_description').value;
+        let category = researchTableElem[j].querySelector('.research_category').value;
 
+        let check_research_role = namecheck(Role);
+        let check_journal_name = tabledatacheck(Journal_name);
+        let check_volume_year = yearcheck(volume_year);
+        let check_description = namecheck(description);
+        let check_category = namecheck(category);
+
+        if(check_research_role==false)
+        {
+          researchTableElem[j].querySelector('.research_role').classList.add('input-border');
+          return;
+        }
+
+       if(check_journal_name==false)
+        {
+          researchTableElem[j].querySelector('.research_Journal_name').classList.add('input-border');
+          return;
+        }
+
+       if(check_volume_year==false)
+        {
+          researchTableElem[j].querySelector('.research_volume_year').classList.add('input-border');
+          return;
+        }
+
+       if(check_description==false)
+        {
+          researchTableElem[j].querySelector('.research_description').classList.add('input-border');
+          return;
+        }
+
+       if(check_category==false)
+        {
+          researchTableElem[j].querySelector('.research_category').classList.add('input-border');
+          return;
+        }
+
+   
         obj = {
 
           role: Role,
           journal_name: Journal_name,
-          volume_year: Volume_year,
-          number: Number,
-          category: Category
+          volume_year: volume_year,
+          description: description,
+          category: category
         }
+
+        div += ` 
+
+                <div id="research-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Role :</p>
+                          <p class="h5 py-1">Journal Name :</p>
+                          <p class="h5 py-1">Volume year :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">\${Role}\</p>
+                          <p id="">\${Journal_name}\</p>
+                          <p id="">\${volume_year}\</p>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Description :</p>
+                          <p class="h5 pb-1">Category :</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">\${description}\</p>
+                          <p class="" id="">\${category}\</p>
+                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>    
+        `
         resumeResearchTable.push(obj);
       }
       object = {
@@ -2296,43 +2622,74 @@
         })
       }
       postdata()
-
+      document.getElementById('research-appending-div').firstElementChild.remove()
+      document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.research-modal').classList.add('d-none');
 
 
     });
 
-    document.getElementById('research-add-button').addEventListener('click', function () {
-      let table = ` <tr data-toggle="collapse" class="collapsed research-data-tr">
-            <td class="text-white pb-3 d-none">Research</td>            
-            <td><select data-title="Role-?" class="form-control research_role" id="role">
-                    <option>-Select-</option>
-                    <option value="Sole">Sole</option>
-                    <option value="Author">Author</option>
-                </select></td>
-            <td><input data-title="Journal-name" class="form-control research_Journal_name" type="text"></td>
-            <td><input data-title="Volume-year" class="form-control research_Volume_year" type="text"></td>
-            <td><input data-title="Number" class="form-control research_Number" type="text"></td>
-            <td><input data-title="Category" class="form-control research_Category" type="text"></td>
-            <td><input data-title="Certificate" class="form-control" type="file"></td>
-            <td class="p-2 !important"> <i class="fa-solid fa-trash-can text-white h4 research-delete-button" data-title=" Action"></i> </td>
-                  </tr>`
 
-                 /* <tr data-toggle="collapse" class="collapsed research-data-tr">
-                        <td class="text-white pb-3 d-none">Research</td>
-                        <td><select name="role" class="form-control research_role">
-                            <option>-Select-</option>
-                            <option value="Sole">Sole</option>
-                            <option value="Author">Author</option>
-                          </select></td>
-                        <td><input name="journal_name" class="form-control research_Journal_name" type="text"></td>
-                        <td><input name="volume_year" class="form-control research_Volume_year" type="text"></td>
-                        <td><input name="number" class="form-control research_Number" type="text"></td>
-                        <td><input name="category" class="form-control research_Category" type="text">
-                        <td><input data-title="Certificate" class="form-control" type="file"></td>
-                        <td></td>
-                      </tr>*/
+    document.getElementById('research-add-button').addEventListener('click', function () {
+
+      let table = ` 
+      <div id="research-display-div" class="research-row px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Role</p>
+                  </div>
+                  <div class="col-md-10"><select name="role" class="form-control research_role">
+                      <option>-Select-</option>
+                      <option value="Sole">Sole</option>
+                      <option value="Author">Author</option>
+                    </select></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Journal Name</p>
+                  </div>
+                  <div class="col-md-10 "><input name="journal_name" class="form-control research_Journal_name"
+                      type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Volume Year</p>
+                  </div>
+                  <div class="col-md-10 "><input name="volume_year" class="form-control research_volume_year" type="text"></div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Description</p>
+                  </div>
+                  <div class="col-md-10 "><input name="number" class="form-control research_description" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Categoty</p>
+                  </div>
+                  <div class="col-md-10"><input name="category" class="form-control research_category" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control" type="file"></div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none research-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x"></i>
+            </div>
+          </div>
+          <hr style="height: 5px;"> `
+
+
 
       document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
     })
@@ -2399,8 +2756,7 @@
         facultyAccountNumber1 || !facultyAccountType1) {
         return;
       }
-      document.querySelector('#bank-details-submit-button').addEventListener('click', function () {
-        console.log('bank details Btn click');
+   
         let bank_detail = {};
         let bankname = document.querySelector('#bank-name').value;
         let branchname = document.querySelector('#bank-branch').value;
@@ -2408,7 +2764,8 @@
         let bankmicr = document.querySelector('#bank-micr-code').value;
         let bankaccountnumber = document.querySelector('#bank-account-number').value;
         let bankaccounttype = document.querySelector('#bank-account-type').value;
-        bank_detail = {
+
+        bank_detail = [{
           name: bankname,
           branch: branchname,
           ifsc_code: bankifsc,
@@ -2416,7 +2773,7 @@
           account_number: bankaccountnumber,
           account_type: bankaccounttype
 
-        }
+        }]
         console.log(JSON.stringify(bank_detail))
 
         function postdata() {
@@ -2435,7 +2792,7 @@
         postdata()
         document.getElementById('body').classList.remove('d-none');
         document.querySelector('.bank-details-modal').classList.add('d-none');
-      });
+      
 
 
       document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')

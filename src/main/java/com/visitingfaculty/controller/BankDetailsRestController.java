@@ -19,6 +19,5 @@ public class BankDetailsRestController {
         
         System.out.println(bank_details);
         return new ResponseEntity<String>("Inserted Successfully", HttpStatus.OK);
-    }
-    
+    }   
 }

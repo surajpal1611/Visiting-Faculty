@@ -815,3 +815,10 @@ button {
     padding-top: 20px;
   }
 }
+
+
+
+/* **********************************border color************************************/
+.input-border{
+  border: 2px solid red;
+}
