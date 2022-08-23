@@ -288,7 +288,8 @@ body {
 }
 
 .title {
-  color: #740E00 !important;
+  margin-bottom: 30px;
+  color: #740E00 ;
 }
 
 .card .content {
@@ -341,6 +342,14 @@ body {
 /* 
 .card[data-color="green"] {
 } */
+
+.skill-pill-div {
+  width: auto;
+  margin :20px 0;
+  border-radius: 50px;
+  padding: 10px;
+  border: 1px solid #b12828;
+}
 
 /* ********************************Personal Details Div Styling***************************************/
 
@@ -736,14 +745,14 @@ button {
 #bank-form-area {
   margin-top: 50px !important;
   margin: auto;
-  background: linear-gradient(to top, #34373a, #5a626d);
+  background: #FFFFFF;
   border-radius: 20px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.22);
   overflow: hidden;
   width: 60%;
   max-width: 100%;
-  color: white;
+  color: black;
   padding-bottom: 30px;
 }
 

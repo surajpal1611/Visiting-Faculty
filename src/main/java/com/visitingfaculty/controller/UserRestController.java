@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,9 +29,17 @@ public class UserRestController {
     UserDaoInterface userDaoInterface;
 
     @PostMapping(value="/insert-personal-details", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> insert(@RequestBody String personalDetailsData) 
+    public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) 
     {
         System.out.println(personalDetailsData);
+
+        String insertPersonalDetails = userDaoInterface.insertPersonalDetails(personalDetailsData);
+
+        System.out.println(insertPersonalDetails);
+        
+        if (insertPersonalDetails.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+        }
         jsonchk.UserJsonCheck(personalDetailsData);
         return ResponseEntity.ok("Inserted Successfully");
     }
