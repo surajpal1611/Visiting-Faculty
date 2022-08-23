@@ -253,49 +253,49 @@
           <!-------------------------------------------------- Skills Section----------------------------------------------->
 
           <div class="skills-div-wrapper position-relative d-flex" style="cursor: pointer;">
-            <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 class="mb-4 h3" style="color: #740E00;">
-                  <b> Skills</b>
-                </h3>
-              </div>
-              <div class="container bootstrap snippets bootdeys">
-                <div class="row">
-                  <div class="col-md-6 col-sm-12 content-card">
-                    <div class="card card-just-text" data-background="color" data-color="grey" data-radius="none">
-                      <div class="content">
-                        <h4 class="title">Hard Skills</h4>
-                        <p class="description">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto eius optio
-                          voluptatum
-                          illum quidem deserunt reiciendis facilis nostrum temporibus. Repellat provident saepe rem
-                          impedit distinctio voluptatem non magnam numquam?
-                          Deserunt quam dignissimos delectus magni voluptatum a sequi corporis molestias nulla,
-                          ratione
-                          libero! Qui dolor ad sed adipisci iure possimus blanditiis, molestiae magnam inventore
-                          cupiditate, dolore enim autem, obcaecati assumenda!
-                        </p>
-                      </div>
-                    </div> <!-- end card -->
-                  </div>
+            <div class="container">
+              <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                  <h3 class="mb-4 h3" style="color: #740E00;">
+                    <b> Skills</b>
+                  </h3>
+                </div>
+                <div class="container bootstrap snippets bootdeys">
+                  <div class="row">
 
-                  <div class="col-md-6 col-sm-12 content-card">
+                    <div class="col-md-6 col-sm-12 content-card">
+                      <div class="card card-just-text" data-background="color" data-color="grey" data-radius="none">
+                        <div class="content" id="hard-skill-content">
+                          <h4 class="title">Hard Skills</h4>
+                          <div class="row">
+                            <div class="col-md-6" id="hard-skill-appending-div1">
+                             
+                            </div>
+                            <div class="col-md-6"  id="hard-skill-appending-div2">
+                            
+                            </div>
 
-                    <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
-                      <div class="content">
-                        <h4 class="title">Soft Skills</h4>
-                        <p class="description">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto eius optio
-                          voluptatum
-                          illum quidem deserunt reiciendis facilis nostrum temporibus. Repellat provident saepe rem
-                          impedit distinctio voluptatem non magnam numquam?
-                          Deserunt quam dignissimos delectus magni voluptatum a sequi corporis molestias nulla,
-                          ratione
-                          libero! Qui dolor ad sed adipisci iure possimus blanditiis, molestiae magnam inventore
-                          cupiditate, dolore enim autem, obcaecati assumenda!
-                        </p>
-                      </div>
-                    </div> <!-- end card -->
+                          </div>
+                        </div>
+                      </div> <!-- end card -->
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 content-card">
+                      <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
+                        <div class="content" id="soft-skill-content">
+                          <h4 class="title">Soft Skills</h4>
+                          <div class="row">
+                            <div class="col-md-6" id="soft-skill-appending-div1">
+                            
+                            </div>
+                            <div class="col-md-6" id="soft-skill-appending-div2">
+                             
+                            </div>
+
+                          </div>
+                        </div>
+                      </div> <!-- end card -->
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1212,7 +1212,8 @@
                   <div class="col-md-2 ">
                     <p class="h6">Volume Year</p>
                   </div>
-                  <div class="col-md-10 "><input name="volume_year" class="form-control research-volume-year" type="text"></div>
+                  <div class="col-md-10 "><input name="volume_year" class="form-control research-volume-year"
+                      type="text"></div>
                 </div>
               </div>
 
@@ -1221,13 +1222,15 @@
                   <div class="col-md-2">
                     <p class="h6">Description</p>
                   </div>
-                  <div class="col-md-10 "><input name="number" class="form-control research_description" type="text"></div>
+                  <div class="col-md-10 "><input name="number" class="form-control research_description" type="text">
+                  </div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2">
                     <p class="h6">Categoty</p>
                   </div>
-                  <div class="col-md-10"><input name="category" class="form-control research_category" type="text"></div>
+                  <div class="col-md-10"><input name="category" class="form-control research_category" type="text">
+                  </div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
@@ -1888,19 +1891,19 @@
 
       clearError();
 
-      let firstName1 = personalDetailFirstNameValidation(result.f_name);
-      let lastName1 = personalDetailLastNameValidation(result.l_name);
-      let gender1 = personalDetailGenderValidation(result.gender);
-      let contactNumber1 = personalDetailContactNumberValidation(result.contact_number);
-      let pancard1 = personalDetailPancardValidation(result.pan_number);
-      let email1 = personalDetailEmailValidation(result.email);
-      let aadhar1 = personalDetailAadharValidation(result.aadhar_number);
-      let address1 = personalDetailAddressValidation(result.permanent_address);
-      let temporaryAddress1 = personalDetailTemporaryAddressValidation(result.temporary_address);
-      let country1 = personalDetailCountryValidation(result.nationality);
+      let firstName = personalDetailFirstNameValidation(result.f_name);
+      let lastName = personalDetailLastNameValidation(result.l_name);
+      let gender = personalDetailGenderValidation(result.gender);
+      let contactNumber = personalDetailContactNumberValidation(result.contact_number);
+      let pancard = personalDetailPancardValidation(result.pan_number);
+      let email = personalDetailEmailValidation(result.email);
+      let aadhar = personalDetailAadharValidation(result.aadhar_number);
+      let address = personalDetailAddressValidation(result.permanent_address);
+      let temporaryAddress = personalDetailTemporaryAddressValidation(result.temporary_address);
+      let country = personalDetailCountryValidation(result.nationality);
 
-      if (!firstName || !lastName || !profilePhoto || !gender || !contactNumber || !email || !pancard || !
-        pancardphoto || !aadhar || !aadharphoto || !address || !temporaryAddress || !country) {
+      if (!firstName || !lastName || !gender || !contactNumber || !email || !pancard || !aadhar || !address || !
+        temporaryAddress || !country) {
         return;
       }
 
@@ -1931,22 +1934,39 @@
 
 
       let personalDetailsData = {
-        "user_address": arrayresult,
-        "user_contact": {},
-        "user_info": {}
+        "insert_user_personal_details": {
+          "user_address": arrayresult,
+          "user_contact": [],
+          "user_info": []
+        }
       }
+      
+      let user_contact = {}
+      user_contact.user_lid = 1
+      user_contact.contact_number = result.contact_number
+      personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
+      let user_info = {}
+      user_info.user_lid = 1
+      user_info.f_name = result.f_name
+      user_info.l_name = result.l_name
+      user_info.email = result.email
+      user_info.gender_lid = Number.parseInt(result.gender)
+      user_info.date_of_birth = result.date_of_birth
+      user_info.nationality = result.nationality
+      personalDetailsData.insert_user_personal_details.user_info[0] = user_info
 
-      personalDetailsData.user_contact.contact_number = result.contact_number
-      personalDetailsData.user_info.f_name = result.f_name
-      personalDetailsData.user_info.l_name = result.l_name
-      personalDetailsData.user_info.email = result.email
-      personalDetailsData.user_info.gender_lid = Number.parseInt(result.gender)
-      personalDetailsData.user_info.date_of_birth = result.date_of_birth
-      personalDetailsData.user_info.nationality = result.nationality
-
-      arrayresult[0] = result.permanent_address + "," + result.permanent_address_city + "," + result
+      let addressObject = {}
+      addressObject.user_lid = 1
+      addressObject.address = result.permanent_address + "," + result.permanent_address_city + "," + result
         .permanent_address_pincode
-      arrayresult[1] = result.temporary_address
+      addressObject.address_type_lid = 1
+      let addressObject2 = {}
+      addressObject2.user_lid = 1
+      addressObject2.address = result.temporary_address
+      addressObject2.address_type_lid = 2
+
+      arrayresult[0] = addressObject
+      arrayresult[1] = addressObject2
 
       console.log(JSON.stringify(personalDetailsData))
 
@@ -1965,13 +1985,15 @@
 
       fetchRes.then(success => {
 
-        console.log(success)
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.personal-details-modal').classList.add('d-none')
-
+        if (success.status == 200) {
+          console.log(success)
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.personal-details-modal').classList.add('d-none')
+        } else {
+          console.log("Error in personal Details")
+        }
       })
     });
-
 
     document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
 
@@ -2048,7 +2070,6 @@
         <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 industrial-experience-delete-button"></i></td>
         </tr>
        `
-
       document.getElementById('industrial-experience-data').insertAdjacentHTML("beforeend", table);
     })
     $(document).on('click', '.industrial-experience-delete-button', function () {
@@ -2121,7 +2142,6 @@
                               <p class="h5 pb-1">Title :</p>
                               <p class="h5 py-1">Major Subject :</p>
                               <p class="h5 py-1">University :</p>
-
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id="">\${qualificationTitle}\</p>
@@ -2194,7 +2214,6 @@
       //   document.getElementById('qualification-message').innerHTML = "*Complition of bachelors degree is required";
       //   return;
       // }
-
 
       let table = `
       <div id="qualification-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1">
@@ -2656,9 +2675,6 @@
                 </div>
               </div>
             </div>
-            <div class="d-none qualification-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
-            </div>
           </div>
           <hr style="height: 5px;">`
       document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
@@ -2853,6 +2869,8 @@
         facultyAccountNumber1 || !facultyAccountType1) {
         return;
       }
+
+        console.log('bank details Btn click');
         let bank_detail = {};
         let bankname = document.querySelector('#bank-name').value;
         let branchname = document.querySelector('#bank-branch').value;
@@ -2886,6 +2904,7 @@
         postdata()
         document.getElementById('body').classList.remove('d-none');
         document.querySelector('.bank-details-modal').classList.add('d-none');
+  
 
 
       document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
@@ -2985,16 +3004,33 @@
       }
 
 
-
       let softSkillDisplay = document.getElementById('soft-skill-display')
       let hardSkillDisplay = document.getElementById('hard-skill-display')
-
+      let softSkillAppendingDiv1 = document.getElementById('soft-skill-appending-div1')
+      let softSkillAppendingDiv2 = document.getElementById('soft-skill-appending-div2')
+      let hardSkillAppendingDiv1 = document.getElementById('hard-skill-appending-div1')
+      let hardSkillAppendingDiv2 = document.getElementById('hard-skill-appending-div2')
       let softSkillListGroup = document.querySelectorAll('.soft-skill-list-group')
       let hardSkillListGroup = document.querySelectorAll('.hard-skill-list-group')
       let skillIndex = 0;
+      let softSkillIndex = 1
+      let hardSkillIndex = 1
       for (let i = 0; i < softSkillListGroup.length; i++) {
 
         let value = softSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
+        let value2 = softSkillListGroup[i].firstElementChild.lastElementChild.lastElementChild.innerText
+
+        if (softSkillIndex == 1) {
+          softSkillAppendingDiv1.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
+                                \${value2}\
+                              </div>`)
+          softSkillIndex = 2
+        } else if(softSkillIndex == 2){
+          softSkillAppendingDiv2.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
+                                \${value2}\
+                              </div>`)
+          softSkillIndex = 1
+        }
         let obj = {}
         obj.resume_lid = 1
         obj.skill_lid = Number.parseInt(value)
@@ -3005,6 +3041,21 @@
       for (let i = 0; i < hardSkillListGroup.length; i++) {
 
         let value = hardSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
+        let value2 = hardSkillListGroup[i].firstElementChild.lastElementChild.lastElementChild.innerText
+
+        if (hardSkillIndex == 1) {
+          hardSkillAppendingDiv1.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
+                                \${value2}\
+                              </div>`)
+          hardSkillIndex = 2
+        } else if(softSkillIndex == 2){
+          hardSkillAppendingDiv2.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
+                                \${value2}\
+                              </div>`)
+         hardSkillIndex = 1
+        }
+
+
         let obj = {}
         obj.resume_lid = 1
         obj.skill_lid = Number.parseInt(value)
