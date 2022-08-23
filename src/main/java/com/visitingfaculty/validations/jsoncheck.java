@@ -71,4 +71,26 @@ public class jsoncheck
         }
     return check;    
     }
+
+    //For Bank Details
+    public void bankJsonCheck(String JsonString)
+    {
+        Boolean check = false;
+        JSONObject jsonString = new JSONObject(JsonString);
+        //Value Fron Key
+        String account_number = jsonString.getString("account_number");
+        String name = jsonString.getString("name");
+        String branch = jsonString.getString("branch");
+        String ifsc_code = jsonString.getString("ifsc_code");
+        String micr_code = jsonString.getString("micr_code");
+        String account_type = jsonString.getString("account_type");
+
+        Boolean namecheck = checkVal.CheckWithNoSpectailChar(name);
+        Boolean branchcheck = checkVal.CheckWithNoSpectailChar(branch);
+        Boolean account_typecheck = checkVal.CheckWithNoSpectailChar(account_type);
+        Boolean account_numbercheck = checkVal.accountNumberCheck(account_number);
+        System.out.println("Account number boolean : "+account_numbercheck);
+
+
+    }
 }

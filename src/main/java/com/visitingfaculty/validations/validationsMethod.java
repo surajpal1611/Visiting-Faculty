@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class validationsMethod 
 {
+    //Method to check length is three
     public Boolean checkLengthThree(String value)
     {
         Boolean check = false;
@@ -88,5 +89,31 @@ public class validationsMethod
               }
         }
         return check;
-    } 
+    }
+    
+    //method to check Bank Account Number
+    public Boolean accountNumberCheck(String value)
+    {
+        Boolean check = false;
+        char acountnumber[] = value.toCharArray();
+        if(acountnumber.length >= 10 && acountnumber.length <=16)
+        {
+            for(int i = 0 ; i < acountnumber.length ; i++)
+            {
+                if(acountnumber[i] < '0' || acountnumber[i] > '9')
+                {
+                    check = false;
+                }
+                else
+                {
+                    check = true;
+                }
+            }
+        }
+        else
+        {
+            check = false;
+        }
+    return check; 
+    }
 }

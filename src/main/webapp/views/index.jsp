@@ -982,7 +982,7 @@
 
 
         <div id="publication-award-div" class="bg-white">
-          <div id="publication-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
+          <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -1013,7 +1013,7 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Place</p>
+                    <p class="h6">Description</p>
                   </div>
                   <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
                 </div>
@@ -2283,10 +2283,30 @@
       document.querySelector('.award-modal').classList.add('d-none');
     });
 
+
+// ***************************************************Award Section Script*************************************************************************
+
+
+
+
     document.getElementById('award-add-button').addEventListener('click', function () {
       console.log("Award Add Button clicked");
-      let table = `          <div id="publication-award-div" class="bg-white">
-          <div id="publication-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
+      let awardnameaddbtn = document.querySelector('.awardName').value.length;
+      let awardOrganizationaddbtn = document.querySelector('.awardOrganization').value.length;
+      let awardOrganizationTypeaddbtn = document.querySelector('.awardOrganizationType').value.length;
+      let awardPlaceaddbtn = document.querySelector('.awardPlace').value.length;
+      let awardRecieveDateaddbtn = document.querySelector('.awardRecieveDate').value.length;
+      let awardCertificationImageaddbtn = document.querySelector('.awardCertificationImage').value.length;
+
+      if(awardnameaddbtn == 0 || awardOrganizationaddbtn == 0 || awardOrganizationTypeaddbtn == 0 || awardPlaceaddbtn == 0 || awardRecieveDateaddbtn == 0 || awardCertificationImageaddbtn == 0)
+      {
+        alert('Fill the data before');
+        return;
+      }
+
+
+        let table = `          <div id="publication-award-div" class="bg-white">
+          <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -2317,7 +2337,7 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Place</p>
+                    <p class="h6">Description</p>
                   </div>
                   <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
                 </div>
@@ -2346,17 +2366,97 @@
         </div> 
        `
       document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
-    });
+      
+     
+      });
 
+// ******************************************Validation Functions Start****************************************************
+    function tabledatacheck(value)
+    {
+      let checkit = false;
+      if(value.length > 3)
+      {
+        checkit = true;
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
 
-    document.querySelector('#award-submit-button').addEventListener('click', function () {
+    function checknotnull(value)
+    {
+      let checkit = false;
+      if(value > 0)
+      {
+        checkit = true;
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    function namecheck(value)
+    {
+      let check = false;
+        if(value.length > 1)
+        {
+            for(let i = 0 ; i < value.length ;i++)
+            {
+                if(value[i] >= '!' && value[i] <= '@')
+                {
+                    check =false;
+                    break;
+                }
+                else
+                {
+                    check = true;    
+                }
+            }
+        }
+        else
+        {
+             check=false;
+        }
+        return check;
+    }
+
+    function checkdate(value)
+    {
+      let checkit = false;
+      if(value.length == 10)
+      {
+        checkit = true;
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    // ******************************************Validation Functions End***************************************************
+
+    document.querySelector('#award-submit-button').addEventListener('click', function() {
 
       let div = '';
       let vjstableelement = document.querySelectorAll('.award-rows');
       let noofrows = vjstableelement.length;
       let resume_achievement = [];
+      let outerloopcheck = true;
 
       for (let i = 0; i < noofrows; i++) {
+          //to remove the red border
+          vjstableelement[i].querySelector('.awardName').classList.remove('input-border');
+          vjstableelement[i].querySelector('.awardOrganization').classList.remove('input-border');
+          vjstableelement[i].querySelector('.awardPlace').classList.remove('input-border');
+          vjstableelement[i].querySelector('.awardRecieveDate').classList.remove('input-border');
+          vjstableelement[i].querySelector('.awardCertificationImage').classList.remove('input-border');
+          vjstableelement[i].querySelector('.awardOrganizationType').classList.remove('input-border');
+        
         let title = vjstableelement[i].querySelector('.awardName').value;
         let organization_name = vjstableelement[i].querySelector('.awardOrganization').value;
         let organization_type_lid = vjstableelement[i].querySelector('.awardOrganizationType').value;
@@ -2364,6 +2464,50 @@
         let achivement_date = vjstableelement[i].querySelector('.awardRecieveDate').value;
         let url_path = vjstableelement[i].querySelector('.awardCertificationImage').value;
 
+        let checktitle = tabledatacheck(title);
+        let checkorganization_name = namecheck(organization_name);
+        let checkdiscription = tabledatacheck(discription);
+        let checkachivement_date = checkdate(achivement_date);
+        let checkurl_path = tabledatacheck(url_path);
+        let checkorganization_type_lid = checknotnull(organization_type_lid)
+
+        //to add the red border according to validations
+        if(checktitle == false)
+        {
+          vjstableelement[i].querySelector('.awardName').classList.add('input-border');
+          return;
+        }
+        else if(checkorganization_name == false)
+        {
+          vjstableelement[i].querySelector('.awardOrganization').classList.add('input-border');
+          return;
+        }
+        else if(checkdiscription == false)
+        {
+          vjstableelement[i].querySelector('.awardPlace').classList.add('input-border');
+          return;
+        }
+        else if(checkachivement_date == false)
+        {
+          vjstableelement[i].querySelector('.awardRecieveDate').classList.add('input-border');
+          return;
+        }
+        else if(checkorganization_type_lid == false)
+        {
+          vjstableelement[i].querySelector('.awardOrganizationType').classList.add('input-border');
+          return;
+        }
+        else if(checkurl_path == false)
+        {
+          vjstableelement[i].querySelector('.awardCertificationImage').classList.add('input-border');
+          return;
+        }
+        
+         
+        
+
+
+        
         obj = {
           title: title,
           organization_name: organization_name,
@@ -2414,12 +2558,14 @@
                     </div>
                   </div>
                     `
-
-        resume_achievement.push(obj);
+      resume_achievement.push(obj);
       }
+
+
       object = {
         "insert_award": resume_achievement
       }
+
 
       //Fetch Method
       function postdata() {
@@ -2440,9 +2586,8 @@
         })
       }
       postdata()
-
-
     });
+
 
     $(document).on('click', '.award-delete-button', function () {
       $(this).closest('tr').remove()
@@ -2708,8 +2853,6 @@
         facultyAccountNumber1 || !facultyAccountType1) {
         return;
       }
-      document.querySelector('#bank-details-submit-button').addEventListener('click', function () {
-        console.log('bank details Btn click');
         let bank_detail = {};
         let bankname = document.querySelector('#bank-name').value;
         let branchname = document.querySelector('#bank-branch').value;
@@ -2743,7 +2886,6 @@
         postdata()
         document.getElementById('body').classList.remove('d-none');
         document.querySelector('.bank-details-modal').classList.add('d-none');
-      });
 
 
       document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
