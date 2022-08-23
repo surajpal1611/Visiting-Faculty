@@ -1,11 +1,8 @@
 package com.visitingfaculty.dao;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
 import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
@@ -17,14 +14,12 @@ public class userDao implements UserDaoInterface {
     JdbcTemplate jdbcTemplate;
 
     @Override
-    public String insertPersonalDetails(String personalDetailsData) {
+    public Object insertPersonalDetails(String personalDetailsData) {
        
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
                         .withFunctionName("insert_user_details");
-        SqlParameterSource parameterSource = new MapSqlParameterSource()
-                            .addValue("input_json", personalDetailsData);
-
-        return jdbcCall.executeFunction(String.class,parameterSource);
+                        
+        return jdbcCall.executeFunction( Object.class,personalDetailsData);
     }
 
     @Override

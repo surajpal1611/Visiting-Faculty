@@ -33,11 +33,11 @@ public class UserRestController {
     {
         System.out.println(personalDetailsData);
 
-        String insertPersonalDetails = userDaoInterface.insertPersonalDetails(personalDetailsData);
+        Object insertPersonalDetails = userDaoInterface.insertPersonalDetails(personalDetailsData);
 
         System.out.println(insertPersonalDetails);
         
-        if (insertPersonalDetails.isEmpty()) {
+        if (insertPersonalDetails == null) {
             return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
         }
         jsonchk.UserJsonCheck(personalDetailsData);

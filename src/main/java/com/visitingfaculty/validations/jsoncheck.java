@@ -44,10 +44,10 @@ public class jsoncheck
     //For Personal Details
     public void UserJsonCheck(String JsonString)
     {
-        JSONObject jsonString = new JSONObject(JsonString);
-        JSONObject obj = jsonString.getJSONObject("user_info");
-        String f_name = obj.getString("f_name");
-        String l_name = obj.getString("l_name");
-        String email = obj.getString("email");
+        // JSONObject jsonString = new JSONObject(JsonString);
+        // JSONObject obj = jsonString.getJSONObject("user_info");
+        // String f_name = obj.getString("f_name");
+        // String l_name = obj.getString("l_name");
+        // String email = obj.getString("email");
     }
 }
