@@ -32,16 +32,18 @@ public class UserRestController {
     public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) 
     {
         System.out.println(personalDetailsData);
-
-        String insertPersonalDetails = userDaoInterface.insertPersonalDetails(personalDetailsData);
-
-        System.out.println(insertPersonalDetails);
-        
-        if (insertPersonalDetails.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+        Boolean check = jsonchk.UserJsonCheck(personalDetailsData);
+        if(check == true)
+        {
+            System.out.println("Success");
+            return ResponseEntity.ok("Inserted Successfully");
         }
-        jsonchk.UserJsonCheck(personalDetailsData);
-        return ResponseEntity.ok("Inserted Successfully");
+        else
+        {
+            System.out.println("Error");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        
     }
 
     @PostMapping("/verify-login")
