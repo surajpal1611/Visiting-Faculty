@@ -971,14 +971,87 @@
 
   <!-- ************************************************************************Achievement Modal Div******************************************************************************************** -->
 
-  <!-- <div class="award-modal d-none">
+  <div class="award-modal d-none">
     <div class="full-screen container">
       <div class="main-content">
-        <div class="container d-flex justify-content-between">
-          <h3 class="text-white h3 py-4"> Award </h3>
-          <i id="award-add-button" class="fa-solid text-white fa-circle-plus fa-2x px-4 py-4"></i>
+        <div class="container d-flex justify-content-between mt-4">
+          <h3 class="h3 ps-1 py-4">Award</h3>
+          <i id="award-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
         </div>
         <hr>
+
+
+        <div id="publication-award-div" class="bg-white">
+          <div id="publication-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Award name</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardName" type="text" id="award-name"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Organisation</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control awardOrganization" type="text" id="award-organization"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Organisation type</p>
+                  </div>
+                  <div class="col-md-10 "><select class="form-control awardOrganizationType" id="award-organization-type">
+                    <option value="0">-select-</option>
+                    <option value="1">School</option>
+                    <option value="2">University</option>
+                  </select></div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Place</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Received date</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x"></i>
+            </div>
+          </div>
+          <hr style="height: 5px;">
+          <div id="publication-data" class="mt-4">
+
+          </div>
+        </div> 
+ 
+       <div class="d-flex justify-content-center">
+         <button id="award-cancel-button" class="btn btn-danger m-4">Cancel</button>
+         <button id="award-submit-button" class="btn btn-success m-4">Submit</button>
+       </div>
+    </div>
+  </div>
+  </div>
+
+
+
+         <!-- <hr>
         <div class="d-flex align-items-centre justify-content-centre">
           <div class="container">
             <div class="row table">
@@ -1018,76 +1091,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="d-flex justify-content-center">
-        <button id="award-cancel-button" class="btn btn-danger m-4">Cancel</button>
-        <button id="award-submit-button" class="btn btn-success m-4">Submit</button>
-      </div>
-    </div>
-  </div> -->
-
-  <div class="award-modal d-none">
-    <div class="full-screen container">
-      <div class="main-content">
-        <div class="container d-flex text-dark pt-md-5">
-          <i id="award-add-button" class="fa-solid text-white fa-circle-plus fa-2x px-4 py-4"></i>
-          <h2>Award</h2>
-        </div>
-        <hr>
-
-        <div id = "award-apending-data">
-          <div id = "award-display-div" style = "border: 1px solid black;" class = "px-3 px-sm-4 px-lg-4 mt-1">
-            <div class="row">
-
-              <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                <div class="row pt-lg-3">
-                  <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                    <p class="h5 pb-1 spacein"><b>Award Name :</b></p>
-                    <p class="h5 py-1 spacein"><b>organization :</b></p>
-                    <p class="h5 py-1 spacein"><b>Organization Type :</b></p>
-
-                  </div>
-                  <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                    <p><input class="form-control awardName" type="text" id="award-name"></p>
-                    <p><input class="form-control awardOrganization" type="text" id="award-organization"></p>
-                    <p><select class="form-control awardOrganizationType" id="award-organization-type">
-                      <option value="0">-select-</option>
-                      <option value="1">School</option>
-                      <option value="2">University</option>
-                    </select></p>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                <div class="row pt-lg-3">
-                  <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                    <p class="h5 pb-1 spacein"><b>Place :</b></p>
-                    <p class="h5 pb-1 spacein"><b>Date :</b></p>
-                    <p class="h5 py-1 spacein"><b>Certificate :</b></p>
-                  </div>
-                  <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                    <p><input class="form-control awardPlace" type="text" id="award-place"></p>
-                    <p><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></p>
-                    <p><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="d-flex justify-content-center">
-        <button id="award-cancel-button" class="btn btn-danger m-4">Cancel</button>
-        <button id="award-submit-button" class="btn btn-success m-4">Submit</button>
-      </div>
-    </div> 
-  </div>
-        <hr>
-
-
+      </div> -->
+ 
   <!-- ************************************************************************Publication Modal Div******************************************************************************************** -->
 
   <div class="publication-modal d-none">
@@ -1834,7 +1839,7 @@
     });
 
 
-    document.querySelector('.award-div-wrapper').addEventListener('mouseleave', function () {
+    document.querySelector('.award-div-wrapper').addEventListener('mouseover', function () {
       document.querySelector('.award-edit-box').classList.remove('d-none');
     });
 
@@ -2279,57 +2284,74 @@
     });
 
     document.getElementById('award-add-button').addEventListener('click', function () {
-      let table = `          <div id = "award-apending-data">
-          <div id = "award-display-div" style = "border: 1px solid black;" class = "px-3 px-sm-4 px-lg-4 mt-1">
+      console.log("Award Add Button clicked");
+      let table = `          <div id="publication-award-div" class="bg-white">
+          <div id="publication-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
 
-              <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                <div class="row pt-lg-3">
-                  <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                    <p class="h5 pb-1 spacein"><b>Award Name :</b></p>
-                    <p class="h5 py-1 spacein"><b>organization :</b></p>
-                    <p class="h5 py-1 spacein"><b>Organization Type :</b></p>
-
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Award name</p>
                   </div>
-                  <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                    <p><input class="form-control awardName" type="text" id="award-name"></p>
-                    <p><input class="form-control awardOrganization" type="text" id="award-organization"></p>
-                    <p><select class="form-control awardOrganizationType" id="award-organization-type">
-                      <option value="0">-select-</option>
-                      <option value="1">School</option>
-                      <option value="2">University</option>
-                    </select></p>
+                  <div class="col-md-10"><input class="form-control awardName" type="text" id="award-name"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Organisation</p>
                   </div>
+                  <div class="col-md-10 "><input class="form-control awardOrganization" type="text" id="award-organization"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Organisation type</p>
+                  </div>
+                  <div class="col-md-10 "><select class="form-control awardOrganizationType" id="award-organization-type">
+                    <option value="0">-select-</option>
+                    <option value="1">School</option>
+                    <option value="2">University</option>
+                  </select></div>
                 </div>
               </div>
 
-
-              <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                <div class="row pt-lg-3">
-                  <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                    <p class="h5 pb-1 spacein"><b>Place :</b></p>
-                    <p class="h5 pb-1 spacein"><b>Date :</b></p>
-                    <p class="h5 py-1 spacein"><b>Certificate :</b></p>
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Place</p>
                   </div>
-                  <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                    <p><input class="form-control awardPlace" type="text" id="award-place"></p>
-                    <p><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></p>
-                    <p><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></p>
+                  <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Received date</p>
                   </div>
+                  <div class="col-md-10"><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></div>
                 </div>
               </div>
-
+            </div>
+            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x"></i>
             </div>
           </div>
-        </div>
+          <hr style="height: 5px;">
+          <div id="publication-data" class="mt-4">
+
+          </div>
+        </div> 
        `
-      document.getElementById('award-apending-data').insertAdjacentHTML("beforeend", table);
+      document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
     });
 
 
     document.querySelector('#award-submit-button').addEventListener('click', function () {
 
-      let div = ''
+      let div = '';
       let vjstableelement = document.querySelectorAll('.award-rows');
       let noofrows = vjstableelement.length;
       let resume_achievement = [];
@@ -2351,6 +2373,7 @@
           url_path: url_path
         }
 
+        console.log(obj)
         div += `
         <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                     <div class="row">
