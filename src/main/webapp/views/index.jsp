@@ -422,6 +422,11 @@
 
           <!------------------------------------------- Research Section  ----------------------------------------->
 
+          <!--                 
+          <div id="qualification-appending-div">
+            <div class="text-block right" id="preview-qualification-div">
+              <div class="card-body preview-qualification-div"> -->
+
           <div class="research-div-wrapper d-flex position-relative" style="cursor: pointer;">
             <div class="container">
               <div id="research-div" class="px-3 px-sm-4 px-lg-4">
@@ -429,43 +434,47 @@
                   <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><b> Research </b></h3>
                 </div>
 
-                <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                  <div class="row">
+                <div id="research-appending-div">
+                 
+                      <div id="research-display-div" class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
+                        <div class="row">
 
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Role :</p>
-                          <p class="h5 py-1">Journal Name :</p>
-                          <p class="h5 py-1">Volume year :</p>
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Role :</p>
+                                <p class="h5 py-1">Journal Name :</p>
+                                <p class="h5 py-1">Volume year :</p>
 
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p id="">Reviewier</p>
-                          <p id="">Algebra and logic</p>
-                          <p id="">2017</p>
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                                <p id="">Reviewier</p>
+                                <p id="">Algebra and logic</p>
+                                <p id="">2017</p>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Description :</p>
+                                <p class="h5 pb-1">Category :</p>
+                                <p class="h5 py-1">Certificate :</p>
+                              </div>
+                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                                <p class="" id="">example</p>
+                                <p class="" id="">example</p>
+                                <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                              </div>
+                            </div>
+                          </div>
+
                         </div>
                       </div>
-                    </div>
-
-
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Description :</p>
-                          <p class="h5 pb-1">Category :</p>
-                          <p class="h5 py-1">Certificate :</p>
-                        </div>
-                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                          <p class="" id="">example</p>
-                          <p class="" id="">example</p>
-                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
+                   
                 </div>
               </div>
             </div>
@@ -1216,7 +1225,7 @@
                   <div class="col-md-2 ">
                     <p class="h6">Volume Year</p>
                   </div>
-                  <div class="col-md-10 "><input name="volume_year" class="form-control research-volume-year"
+                  <div class="col-md-10 "><input name="volume_year" class="form-control research_volume_year"
                       type="text"></div>
                 </div>
               </div>
@@ -1261,7 +1270,6 @@
                   <table>
                     <thead class="text-white">
                       <tr class="table-head">
-                        <th>Title</th>
                         <th>Role-?</th>
                         <th>Journal-name</th>
                         <th>Volume-year</th>
@@ -1273,7 +1281,7 @@
                     </thead>
                     <tbody id="research-data">
                       <tr data-toggle="collapse" class="collapsed research-data-tr">
-                        <td class="text-white pb-3">Research</td>
+                        <td class="text-white pb-3 d-none">Research</td>
                         <td><select name="role" class="form-control research_role">
                             <option>-Select-</option>
                             <option value="Sole">Sole</option>
@@ -1390,7 +1398,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-  </script>
+    </script>
   <script>
     // --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
 
@@ -2585,6 +2593,7 @@
     });
 
 
+
     $(document).on('click', '.award-delete-button', function () {
       $(this).closest('tr').remove()
     })
@@ -2662,6 +2671,8 @@
     })
 
 
+
+
     //*************************************Research-modal JS****************************************
 
     document.querySelector(".research-edit-box").addEventListener('click', function () {
@@ -2674,28 +2685,171 @@
       document.querySelector('.research-modal').classList.add('d-none');
     });
 
+        // ******************************************Validation Functions Start****************************************************
+function tabledatacheck(value)
+    {
+      let checkit = false;
+      if(value.length > 3)
+      {
+        checkit = true;
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    function namecheck(value)
+    {
+      let check = false;
+        if(value.length > 1)
+        {
+            for(let i = 0 ; i < value.length ;i++)
+            {
+                if(value[i] >= '!' && value[i] <= '@')
+                {
+                    check =false;
+                    break;
+                }
+                else
+                {
+                    check = true;    
+                }
+            }
+        }
+        else
+        {
+             check=false;
+        }
+        return check;
+    }
+
+    function yearcheck(value)
+    {
+      let checkit = false;
+      if(value.length == 4)
+      {
+        if(!isNaN(value))
+        {
+        checkit = true;
+        }
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    // ******************************************Validation Functions End***************************************************
+
     document.querySelector('#research-submit-button').addEventListener('click', function () {
       console.log("research button clicked");
       let researchTableElem = document.querySelectorAll('.research-row');
       let noofrows = researchTableElem.length;
       console.log("no of rows", noofrows);
       let resumeResearchTable = [];
+      let div = ''
       for (let j = 0; j < noofrows; j++) {
+        researchTableElem[j].querySelector('.research_role').classList.remove('input-border');
+        researchTableElem[j].querySelector('.research_Journal_name').classList.remove('input-border');
+        researchTableElem[j].querySelector('.research_volume_year').classList.remove('input-border');
+        researchTableElem[j].querySelector('.research_description').classList.remove('input-border');
+        researchTableElem[j].querySelector('.research_category').classList.remove('input-border');
 
         let Role = researchTableElem[j].querySelector('.research_role').value;
         let Journal_name = researchTableElem[j].querySelector('.research_Journal_name').value;
-        let Volume_year = researchTableElem[j].querySelector('.research-volume-year').value;
-        let Number = researchTableElem[j].querySelector('.research_description').value;
-        let Category = researchTableElem[j].querySelector('.research_category').value;
+        let volume_year = researchTableElem[j].querySelector('.research_volume_year').value;
+        let description = researchTableElem[j].querySelector('.research_description').value;
+        let category = researchTableElem[j].querySelector('.research_category').value;
 
+        let check_research_role = namecheck(Role);
+        let check_journal_name = tabledatacheck(Journal_name);
+        let check_volume_year = yearcheck(volume_year);
+        let check_description = namecheck(description);
+        let check_category = namecheck(category);
+
+        if(check_research_role==false)
+        {
+          researchTableElem[j].querySelector('.research_role').classList.add('input-border');
+          return;
+        }
+
+       if(check_journal_name==false)
+        {
+          researchTableElem[j].querySelector('.research_Journal_name').classList.add('input-border');
+          return;
+        }
+
+       if(check_volume_year==false)
+        {
+          researchTableElem[j].querySelector('.research_volume_year').classList.add('input-border');
+          return;
+        }
+
+       if(check_description==false)
+        {
+          researchTableElem[j].querySelector('.research_description').classList.add('input-border');
+          return;
+        }
+
+       if(check_category==false)
+        {
+          researchTableElem[j].querySelector('.research_category').classList.add('input-border');
+          return;
+        }
+
+   
         obj = {
 
           role: Role,
           journal_name: Journal_name,
-          volume_year: Volume_year,
-          number: Number,
-          category: Category
+          volume_year: volume_year,
+          description: description,
+          category: category
         }
+
+        div += ` 
+
+                <div id="research-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Role :</p>
+                          <p class="h5 py-1">Journal Name :</p>
+                          <p class="h5 py-1">Volume year :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">\${Role}\</p>
+                          <p id="">\${Journal_name}\</p>
+                          <p id="">\${volume_year}\</p>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Description :</p>
+                          <p class="h5 pb-1">Category :</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">\${description}\</p>
+                          <p class="" id="">\${category}\</p>
+                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>    
+        `
         resumeResearchTable.push(obj);
       }
       object = {
@@ -2717,14 +2871,17 @@
         })
       }
       postdata()
-
+      document.getElementById('research-appending-div').firstElementChild.remove()
+      document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.research-modal').classList.add('d-none');
 
 
     });
 
+
     document.getElementById('research-add-button').addEventListener('click', function () {
+
       let table = ` 
       <div id="research-display-div" class="research-row px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
@@ -2751,7 +2908,7 @@
                   <div class="col-md-2 ">
                     <p class="h6">Volume Year</p>
                   </div>
-                  <div class="col-md-10 "><input name="volume_year" class="form-control research-volume-year" type="text"></div>
+                  <div class="col-md-10 "><input name="volume_year" class="form-control research_volume_year" type="text"></div>
                 </div>
               </div>
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -2780,6 +2937,8 @@
             </div>
           </div>
           <hr style="height: 5px;"> `
+
+
 
       document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
     })
@@ -2846,24 +3005,25 @@
         facultyAccountNumber1 || !facultyAccountType1) {
         return;
       }
+   
+        let bank_detail = {};
+        let bankname = document.querySelector('#bank-name').value;
+        let branchname = document.querySelector('#bank-branch').value;
+        let bankifsc = document.querySelector('#bank-ifsc-code').value;
+        let bankmicr = document.querySelector('#bank-micr-code').value;
+        let bankaccountnumber = document.querySelector('#bank-account-number').value;
+        let bankaccounttype = document.querySelector('#bank-account-type').value;
 
-      console.log('bank details Btn click');
-      let bank_detail = {};
-      let bankname = document.querySelector('#bank-name').value;
-      let branchname = document.querySelector('#bank-branch').value;
-      let bankifsc = document.querySelector('#bank-ifsc-code').value;
-      let bankmicr = document.querySelector('#bank-micr-code').value;
-      let bankaccountnumber = document.querySelector('#bank-account-number').value;
-      let bankaccounttype = document.querySelector('#bank-account-type').value;
-      bank_detail = {
-        name: bankname,
-        branch: branchname,
-        ifsc_code: bankifsc,
-        micr_code: bankmicr,
-        account_number: bankaccountnumber,
-        account_type: bankaccounttype
+        bank_detail = [{
+          name: bankname,
+          branch: branchname,
+          ifsc_code: bankifsc,
+          micr_code: bankmicr,
+          account_number: bankaccountnumber,
+          account_type: bankaccounttype
 
-      }
+      }]
+        console.log(JSON.stringify(bank_detail))
 
       function postdata() {
         url = "/insert-bank-details";

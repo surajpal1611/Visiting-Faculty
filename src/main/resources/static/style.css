@@ -833,3 +833,10 @@ button {
   padding: 9px;
   margin-top: 11px;
 }
+
+
+
+/* **********************************border color************************************/
+.input-border{
+  border: 2px solid red;
+}
