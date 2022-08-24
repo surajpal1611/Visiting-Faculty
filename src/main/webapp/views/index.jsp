@@ -2924,16 +2924,16 @@
         let category = researchTableElem[j].querySelector('.research_category').value;
         let research_photo = researchTableElem[j].querySelector('.research_photo').value;
 
-        let check_research_role = namecheck(Role);
+        // let check_research_role = namecheck(Role);
         let check_journal_name = tabledatacheck(Journal_name);
         let check_volume_year = yearcheck(volume_year);
         let check_description = namecheck(description);
         let check_category = namecheck(category);
 
-        if (check_research_role == false) {
-          researchTableElem[j].querySelector('.research_role').classList.add('input-border');
-          return;
-        }
+        // if (check_research_role == false) {
+        //   researchTableElem[j].querySelector('.research_role').classList.add('input-border');
+        //   return;
+        // }
 
         if (check_journal_name == false) {
           researchTableElem[j].querySelector('.research_Journal_name').classList.add('input-border');
