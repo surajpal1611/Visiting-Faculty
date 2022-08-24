@@ -2266,15 +2266,12 @@
       }
       let fetchRes = fetch("/insert-qualification-details", options);
       fetchRes.then(success => {
-        if(success.status == 200)
-        {
-        document.getElementById('qualification-appending-div').firstElementChild.remove()
-        document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.qualification-modal').classList.add('d-none');
-        }
-        else
-        {
+        if (success.status == 200) {
+          document.getElementById('qualification-appending-div').firstElementChild.remove()
+          document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.qualification-modal').classList.add('d-none');
+        } else {
           alert('Check Qualification details');
         }
       })
@@ -2580,8 +2577,8 @@
 
 
         obj = {
-          resume_lid:"1",
-          achievement_type_lid:"2", 
+          resume_lid: "1",
+          achievement_type_lid: "2",
           title: title,
           organization_name: organization_name,
           organization_type_lid: organization_type_lid,
@@ -2969,8 +2966,8 @@
 
 
         obj = {
-          id : "1",
-          resume_achievement_lid:"3",
+          id: "1",
+          resume_achievement_lid: "3",
           role: Role,
           journal_name: Journal_name,
           volume_year: volume_year,
@@ -3036,15 +3033,12 @@
           body: JSON.stringify(object),
         }
         fetch(url, params).then((data) => {
-          console.log("This is the responce : ",data);
-          if(data.status == 200)
-          {
+          console.log("This is the responce : ", data);
+          if (data.status == 200) {
             console.log("OK")
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.research-modal').classList.add('d-none');
-          }
-          else
-          {
+          } else {
             console.log("Error");
             alert('Check Research Details');
           }
@@ -3062,8 +3056,7 @@
       console.log("Research add button clicked");
       let Journal_name_btn = document.querySelector('.research_Journal_name').value.length;
 
-      if(Journal_name_btn==0)
-      {
+      if (Journal_name_btn == 0) {
         alert('Plz Fill The Below Data');
         return;
       }
