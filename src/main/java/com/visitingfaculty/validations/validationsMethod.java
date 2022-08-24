@@ -116,4 +116,49 @@ public class validationsMethod
         }
     return check; 
     }
+
+    //Year Validation 
+    public Boolean yearCheck(String value)
+    {
+        Boolean check = false;
+        char year[] = value.toCharArray();
+        if(year.length == 4)
+        {
+            for(int i = 0 ; i < year.length ; i++)
+            {
+                if(year[i] < '0' || year[i] > '9')
+                {
+                    check = false;
+                    break;
+                }
+                else
+                {
+                    check = true;
+                }
+            }
+        }
+        return check;
+    }
+
+    //Valiidation for Percentage/CGPA
+    public Boolean percentageCheck(String value)
+    {
+        String values = value.replace('.','0');
+        System.out.println("replace : "+values);
+        char pergentage[] = values.toCharArray();
+        Boolean check = false;
+        for(int i = 0 ; i < pergentage.length ; i++)
+        {
+            if(pergentage[i] < '0' || pergentage[i] > '9')
+            {
+                check = false;
+                break;
+            }
+            else
+            {
+                check = true;
+            }
+        }
+    return check;
+    }
 }

@@ -2189,10 +2189,17 @@
       }
       let fetchRes = fetch("/insert-qualification-details", options);
       fetchRes.then(success => {
+        if(success.status == 200)
+        {
         document.getElementById('qualification-appending-div').firstElementChild.remove()
         document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
         document.getElementById('body').classList.remove('d-none');
         document.querySelector('.qualification-modal').classList.add('d-none');
+        }
+        else
+        {
+          alert('Check Qualification details');
+        }
       })
 
     })
@@ -2573,7 +2580,8 @@
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.award-modal').classList.add('d-none');
           } else {
-            console.log("Error")
+            console.log("Error");
+            alert('Check Award Entries');
           }
         })
       }
