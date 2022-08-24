@@ -49,4 +49,13 @@ public class userDao implements UserDaoInterface {
        },skill_name);
     }
 
+    @Override
+    public Object insertAwardData(String data) {
+       
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                        .withFunctionName("insert_achievement_details");
+                        
+        return jdbcCall.executeFunction( Object.class,data);
+    }
+
 }

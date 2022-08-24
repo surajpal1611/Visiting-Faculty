@@ -20,13 +20,13 @@ public class jsoncheck
               String title = award.getJSONObject(i).getString("title");
               String organization_name = award.getJSONObject(i).getString("organization_name");
               String organization_type_lid = award.getJSONObject(i).getString("organization_type_lid");
-              String discription = award.getJSONObject(i).getString("discription");
-              String achivement_date = award.getJSONObject(i).getString("achivement_date"); 
+              String discription = award.getJSONObject(i).getString("description");
+              String achivement_date = award.getJSONObject(i).getString("achievement_date"); 
               String url_path = award.getJSONObject(i).getString("url_path");
   
               Boolean titlecheck = checkVal.CheckWithNoSpectailChar(title);
               Boolean organizationcheck = checkVal.CheckWithNoSpectailChar(organization_name);
-              Boolean discriptioncheck = checkVal.CheckWithNoSpectailChar(discription);
+              Boolean discriptioncheck = checkVal.checkLengthThree(discription);
               
               if(titlecheck == false || organizationcheck == false || discriptioncheck == false)
               {

@@ -1040,9 +1040,6 @@
             </div>
           </div>
           <hr style="height: 5px;">
-          <div id="publication-data" class="mt-4">
-
-          </div>
         </div>
 
         <div class="d-flex justify-content-center">
@@ -2383,9 +2380,6 @@
             </div>
           </div>
           <hr style="height: 5px;">
-          <div id="publication-data" class="mt-4">
-
-          </div>
         </div> 
        `
       document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
@@ -2463,14 +2457,14 @@
         let title = vjstableelement[i].querySelector('.awardName').value;
         let organization_name = vjstableelement[i].querySelector('.awardOrganization').value;
         let organization_type_lid = vjstableelement[i].querySelector('.awardOrganizationType').value;
-        let discription = vjstableelement[i].querySelector('.awardPlace').value;
-        let achivement_date = vjstableelement[i].querySelector('.awardRecieveDate').value;
+        let description = vjstableelement[i].querySelector('.awardPlace').value;
+        let achievement_date = vjstableelement[i].querySelector('.awardRecieveDate').value;
         let url_path = vjstableelement[i].querySelector('.awardCertificationImage').value;
 
         let checktitle = tabledatacheck(title);
         let checkorganization_name = namecheck(organization_name);
-        let checkdiscription = tabledatacheck(discription);
-        let checkachivement_date = checkdate(achivement_date);
+        let checkdescription = tabledatacheck(description);
+        let checkachievement_date = checkdate(achievement_date);
         let checkurl_path = tabledatacheck(url_path);
         let checkorganization_type_lid = checknotnull(organization_type_lid)
 
@@ -2481,10 +2475,10 @@
         } else if (checkorganization_name == false) {
           vjstableelement[i].querySelector('.awardOrganization').classList.add('input-border');
           return;
-        } else if (checkdiscription == false) {
+        } else if (checkdescription == false) {
           vjstableelement[i].querySelector('.awardPlace').classList.add('input-border');
           return;
-        } else if (checkachivement_date == false) {
+        } else if (checkachievement_date == false) {
           vjstableelement[i].querySelector('.awardRecieveDate').classList.add('input-border');
           return;
         } else if (checkorganization_type_lid == false) {
@@ -2501,11 +2495,13 @@
 
 
         obj = {
+          resume_lid:"1",
+          achievement_type_lid:"2", 
           title: title,
           organization_name: organization_name,
           organization_type_lid: organization_type_lid,
-          discription: discription,
-          achivement_date: achivement_date,
+          achievement_date: achievement_date,
+          description: description,
           url_path: url_path
         }
 
@@ -2539,8 +2535,8 @@
                             <p class="h5 py-1">Certificate :</p>
                           </div>
                           <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                            <p class="" id="">\${discription}\</p>
-                            <p class="" id="">\${achivement_date}\</p>
+                            <p class="" id="">\${description}\</p>
+                            <p class="" id="">\${achievement_date}\</p>
                             <p id=""><i class="fa-solid fa-ban text-success"></i></p>
 
                           </div>
