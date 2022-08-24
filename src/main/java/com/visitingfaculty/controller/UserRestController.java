@@ -29,7 +29,7 @@ public class UserRestController {
     UserDaoInterface userDaoInterface;
 
     @PostMapping(value="/insert-personal-details", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) 
+    public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData)
     {
         System.out.println(personalDetailsData);
         Boolean check = jsonchk.UserJsonCheck(personalDetailsData);

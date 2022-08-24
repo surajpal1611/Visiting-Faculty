@@ -269,10 +269,10 @@
                           <h4 class="title">Hard Skills</h4>
                           <div class="row">
                             <div class="col-md-6" id="hard-skill-appending-div1">
-                             
+
                             </div>
-                            <div class="col-md-6"  id="hard-skill-appending-div2">
-                            
+                            <div class="col-md-6" id="hard-skill-appending-div2">
+
                             </div>
 
                           </div>
@@ -286,10 +286,10 @@
                           <h4 class="title">Soft Skills</h4>
                           <div class="row">
                             <div class="col-md-6" id="soft-skill-appending-div1">
-                            
+
                             </div>
                             <div class="col-md-6" id="soft-skill-appending-div2">
-                             
+
                             </div>
 
                           </div>
@@ -996,17 +996,19 @@
                   <div class="col-md-2 ">
                     <p class="h6">Organisation</p>
                   </div>
-                  <div class="col-md-10 "><input class="form-control awardOrganization" type="text" id="award-organization"></div>
+                  <div class="col-md-10 "><input class="form-control awardOrganization" type="text"
+                      id="award-organization"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
                     <p class="h6">Organisation type</p>
                   </div>
-                  <div class="col-md-10 "><select class="form-control awardOrganizationType" id="award-organization-type">
-                    <option value="0">-select-</option>
-                    <option value="1">School</option>
-                    <option value="2">University</option>
-                  </select></div>
+                  <div class="col-md-10 "><select class="form-control awardOrganizationType"
+                      id="award-organization-type">
+                      <option value="0">-select-</option>
+                      <option value="1">School</option>
+                      <option value="2">University</option>
+                    </select></div>
                 </div>
               </div>
 
@@ -1021,13 +1023,15 @@
                   <div class="col-md-2">
                     <p class="h6">Received date</p>
                   </div>
-                  <div class="col-md-10"><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></div>
+                  <div class="col-md-10"><input class="form-control awardRecieveDate" type="date"
+                      id="award-receive-date"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
                     <p class="h6">Certificate</p>
                   </div>
-                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></div>
+                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file"
+                      id="award-certification-image"></div>
                 </div>
               </div>
             </div>
@@ -1039,19 +1043,19 @@
           <div id="publication-data" class="mt-4">
 
           </div>
-        </div> 
- 
-       <div class="d-flex justify-content-center">
-         <button id="award-cancel-button" class="btn btn-danger m-4">Cancel</button>
-         <button id="award-submit-button" class="btn btn-success m-4">Submit</button>
-       </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button id="award-cancel-button" class="btn btn-danger m-4">Cancel</button>
+          <button id="award-submit-button" class="btn btn-success m-4">Submit</button>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
 
 
 
-         <!-- <hr>
+  <!-- <hr>
         <div class="d-flex align-items-centre justify-content-centre">
           <div class="container">
             <div class="row table">
@@ -1092,7 +1096,7 @@
           </div>
         </div>
       </div> -->
- 
+
   <!-- ************************************************************************Publication Modal Div******************************************************************************************** -->
 
   <div class="publication-modal d-none">
@@ -1940,7 +1944,7 @@
           "user_info": []
         }
       }
-      
+
       let user_contact = {}
       user_contact.user_lid = 1
       user_contact.contact_number = result.contact_number
@@ -2303,7 +2307,7 @@
     });
 
 
-// ***************************************************Award Section Script*************************************************************************
+    // ***************************************************Award Section Script*************************************************************************
 
 
 
@@ -2317,14 +2321,14 @@
       let awardRecieveDateaddbtn = document.querySelector('.awardRecieveDate').value.length;
       let awardCertificationImageaddbtn = document.querySelector('.awardCertificationImage').value.length;
 
-      if(awardnameaddbtn == 0 || awardOrganizationaddbtn == 0 || awardOrganizationTypeaddbtn == 0 || awardPlaceaddbtn == 0 || awardRecieveDateaddbtn == 0 || awardCertificationImageaddbtn == 0)
-      {
+      if (awardnameaddbtn == 0 || awardOrganizationaddbtn == 0 || awardOrganizationTypeaddbtn == 0 ||
+        awardPlaceaddbtn == 0 || awardRecieveDateaddbtn == 0 || awardCertificationImageaddbtn == 0) {
         alert('Fill the data before');
         return;
       }
 
 
-        let table = `          <div id="publication-award-div" class="bg-white">
+      let table = `          <div id="publication-award-div" class="bg-white">
           <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
 
@@ -2385,73 +2389,53 @@
         </div> 
        `
       document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
-      
-     
-      });
 
-// ******************************************Validation Functions Start****************************************************
-    function tabledatacheck(value)
-    {
+
+    });
+
+    // ******************************************Validation Functions Start****************************************************
+    function tabledatacheck(value) {
       let checkit = false;
-      if(value.length > 3)
-      {
+      if (value.length > 3) {
         checkit = true;
-      }
-      else
-      {
+      } else {
         checkit = false;
       }
       return checkit;
     }
 
-    function checknotnull(value)
-    {
+    function checknotnull(value) {
       let checkit = false;
-      if(value > 0)
-      {
+      if (value > 0) {
         checkit = true;
-      }
-      else
-      {
+      } else {
         checkit = false;
       }
       return checkit;
     }
 
-    function namecheck(value)
-    {
+    function namecheck(value) {
       let check = false;
-        if(value.length > 1)
-        {
-            for(let i = 0 ; i < value.length ;i++)
-            {
-                if(value[i] >= '!' && value[i] <= '@')
-                {
-                    check =false;
-                    break;
-                }
-                else
-                {
-                    check = true;    
-                }
-            }
+      if (value.length > 1) {
+        for (let i = 0; i < value.length; i++) {
+          if (value[i] >= '!' && value[i] <= '@') {
+            check = false;
+            break;
+          } else {
+            check = true;
+          }
         }
-        else
-        {
-             check=false;
-        }
-        return check;
+      } else {
+        check = false;
+      }
+      return check;
     }
 
-    function checkdate(value)
-    {
+    function checkdate(value) {
       let checkit = false;
-      if(value.length == 10)
-      {
+      if (value.length == 10) {
         checkit = true;
-      }
-      else
-      {
+      } else {
         checkit = false;
       }
       return checkit;
@@ -2459,7 +2443,7 @@
 
     // ******************************************Validation Functions End***************************************************
 
-    document.querySelector('#award-submit-button').addEventListener('click', function() {
+    document.querySelector('#award-submit-button').addEventListener('click', function () {
 
       let div = '';
       let vjstableelement = document.querySelectorAll('.award-rows');
@@ -2468,14 +2452,14 @@
       let outerloopcheck = true;
 
       for (let i = 0; i < noofrows; i++) {
-          //to remove the red border
-          vjstableelement[i].querySelector('.awardName').classList.remove('input-border');
-          vjstableelement[i].querySelector('.awardOrganization').classList.remove('input-border');
-          vjstableelement[i].querySelector('.awardPlace').classList.remove('input-border');
-          vjstableelement[i].querySelector('.awardRecieveDate').classList.remove('input-border');
-          vjstableelement[i].querySelector('.awardCertificationImage').classList.remove('input-border');
-          vjstableelement[i].querySelector('.awardOrganizationType').classList.remove('input-border');
-        
+        //to remove the red border
+        vjstableelement[i].querySelector('.awardName').classList.remove('input-border');
+        vjstableelement[i].querySelector('.awardOrganization').classList.remove('input-border');
+        vjstableelement[i].querySelector('.awardPlace').classList.remove('input-border');
+        vjstableelement[i].querySelector('.awardRecieveDate').classList.remove('input-border');
+        vjstableelement[i].querySelector('.awardCertificationImage').classList.remove('input-border');
+        vjstableelement[i].querySelector('.awardOrganizationType').classList.remove('input-border');
+
         let title = vjstableelement[i].querySelector('.awardName').value;
         let organization_name = vjstableelement[i].querySelector('.awardOrganization').value;
         let organization_type_lid = vjstableelement[i].querySelector('.awardOrganizationType').value;
@@ -2491,42 +2475,31 @@
         let checkorganization_type_lid = checknotnull(organization_type_lid)
 
         //to add the red border according to validations
-        if(checktitle == false)
-        {
+        if (checktitle == false) {
           vjstableelement[i].querySelector('.awardName').classList.add('input-border');
           return;
-        }
-        else if(checkorganization_name == false)
-        {
+        } else if (checkorganization_name == false) {
           vjstableelement[i].querySelector('.awardOrganization').classList.add('input-border');
           return;
-        }
-        else if(checkdiscription == false)
-        {
+        } else if (checkdiscription == false) {
           vjstableelement[i].querySelector('.awardPlace').classList.add('input-border');
           return;
-        }
-        else if(checkachivement_date == false)
-        {
+        } else if (checkachivement_date == false) {
           vjstableelement[i].querySelector('.awardRecieveDate').classList.add('input-border');
           return;
-        }
-        else if(checkorganization_type_lid == false)
-        {
+        } else if (checkorganization_type_lid == false) {
           vjstableelement[i].querySelector('.awardOrganizationType').classList.add('input-border');
           return;
-        }
-        else if(checkurl_path == false)
-        {
+        } else if (checkurl_path == false) {
           vjstableelement[i].querySelector('.awardCertificationImage').classList.add('input-border');
           return;
         }
-        
-         
-        
 
 
-        
+
+
+
+
         obj = {
           title: title,
           organization_name: organization_name,
@@ -2577,7 +2550,7 @@
                     </div>
                   </div>
                     `
-      resume_achievement.push(obj);
+        resume_achievement.push(obj);
       }
 
 
@@ -2597,11 +2570,15 @@
           body: JSON.stringify(object),
         }
         fetch(url, params).then((data) => {
-          console.log('Data : ', data);
-          document.getElementById('award-preview-div').firstElementChild.remove()
-          document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.award-modal').classList.add('d-none');
+
+          if (data.status == 200) {
+            document.getElementById('award-preview-div').firstElementChild.remove()
+            document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.award-modal').classList.add('d-none');
+          } else {
+            console.log("Error")
+          }
         })
       }
       postdata()
@@ -2870,41 +2847,41 @@
         return;
       }
 
-        console.log('bank details Btn click');
-        let bank_detail = {};
-        let bankname = document.querySelector('#bank-name').value;
-        let branchname = document.querySelector('#bank-branch').value;
-        let bankifsc = document.querySelector('#bank-ifsc-code').value;
-        let bankmicr = document.querySelector('#bank-micr-code').value;
-        let bankaccountnumber = document.querySelector('#bank-account-number').value;
-        let bankaccounttype = document.querySelector('#bank-account-type').value;
-        bank_detail = {
-          name: bankname,
-          branch: branchname,
-          ifsc_code: bankifsc,
-          micr_code: bankmicr,
-          account_number: bankaccountnumber,
-          account_type: bankaccounttype
+      console.log('bank details Btn click');
+      let bank_detail = {};
+      let bankname = document.querySelector('#bank-name').value;
+      let branchname = document.querySelector('#bank-branch').value;
+      let bankifsc = document.querySelector('#bank-ifsc-code').value;
+      let bankmicr = document.querySelector('#bank-micr-code').value;
+      let bankaccountnumber = document.querySelector('#bank-account-number').value;
+      let bankaccounttype = document.querySelector('#bank-account-type').value;
+      bank_detail = {
+        name: bankname,
+        branch: branchname,
+        ifsc_code: bankifsc,
+        micr_code: bankmicr,
+        account_number: bankaccountnumber,
+        account_type: bankaccounttype
 
-        }
+      }
 
-        function postdata() {
-          url = "/insert-bank-details";
-          params = {
-            method: 'post',
-            headers: {
-              'content-Type': 'application/json'
-            },
-            body: JSON.stringify(bank_detail),
-          }
-          fetch(url, params).then((data) => {
-            console.log(data);
-          })
+      function postdata() {
+        url = "/insert-bank-details";
+        params = {
+          method: 'post',
+          headers: {
+            'content-Type': 'application/json'
+          },
+          body: JSON.stringify(bank_detail),
         }
-        postdata()
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.bank-details-modal').classList.add('d-none');
-  
+        fetch(url, params).then((data) => {
+          console.log(data);
+        })
+      }
+      postdata()
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.bank-details-modal').classList.add('d-none');
+
 
 
       document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
@@ -3025,7 +3002,7 @@
                                 \${value2}\
                               </div>`)
           softSkillIndex = 2
-        } else if(softSkillIndex == 2){
+        } else if (softSkillIndex == 2) {
           softSkillAppendingDiv2.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
                                 \${value2}\
                               </div>`)
@@ -3048,11 +3025,11 @@
                                 \${value2}\
                               </div>`)
           hardSkillIndex = 2
-        } else if(softSkillIndex == 2){
+        } else if (softSkillIndex == 2) {
           hardSkillAppendingDiv2.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
                                 \${value2}\
                               </div>`)
-         hardSkillIndex = 1
+          hardSkillIndex = 1
         }
 
         let obj = {}
