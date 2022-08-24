@@ -253,49 +253,49 @@
           <!-------------------------------------------------- Skills Section----------------------------------------------->
 
           <div class="skills-div-wrapper position-relative d-flex" style="cursor: pointer;">
-            <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 class="mb-4 h3" style="color: #740E00;">
-                  <b> Skills</b>
-                </h3>
-              </div>
-              <div class="container bootstrap snippets bootdeys">
-                <div class="row">
-                  <div class="col-md-6 col-sm-12 content-card">
-                    <div class="card card-just-text" data-background="color" data-color="grey" data-radius="none">
-                      <div class="content">
-                        <h4 class="title">Hard Skills</h4>
-                        <p class="description">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto eius optio
-                          voluptatum
-                          illum quidem deserunt reiciendis facilis nostrum temporibus. Repellat provident saepe rem
-                          impedit distinctio voluptatem non magnam numquam?
-                          Deserunt quam dignissimos delectus magni voluptatum a sequi corporis molestias nulla,
-                          ratione
-                          libero! Qui dolor ad sed adipisci iure possimus blanditiis, molestiae magnam inventore
-                          cupiditate, dolore enim autem, obcaecati assumenda!
-                        </p>
-                      </div>
-                    </div> <!-- end card -->
-                  </div>
+            <div class="container">
+              <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
+                <div class="d-flex justify-content-center align-items-center">
+                  <h3 class="mb-4 h3" style="color: #740E00;">
+                    <b> Skills</b>
+                  </h3>
+                </div>
+                <div class="container bootstrap snippets bootdeys">
+                  <div class="row">
 
-                  <div class="col-md-6 col-sm-12 content-card">
+                    <div class="col-md-6 col-sm-12 content-card">
+                      <div class="card card-just-text" data-background="color" data-color="grey" data-radius="none">
+                        <div class="content" id="hard-skill-content">
+                          <h4 class="title">Hard Skills</h4>
+                          <div class="row">
+                            <div class="col-md-6" id="hard-skill-appending-div1">
 
-                    <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
-                      <div class="content">
-                        <h4 class="title">Soft Skills</h4>
-                        <p class="description">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto eius optio
-                          voluptatum
-                          illum quidem deserunt reiciendis facilis nostrum temporibus. Repellat provident saepe rem
-                          impedit distinctio voluptatem non magnam numquam?
-                          Deserunt quam dignissimos delectus magni voluptatum a sequi corporis molestias nulla,
-                          ratione
-                          libero! Qui dolor ad sed adipisci iure possimus blanditiis, molestiae magnam inventore
-                          cupiditate, dolore enim autem, obcaecati assumenda!
-                        </p>
-                      </div>
-                    </div> <!-- end card -->
+                            </div>
+                            <div class="col-md-6" id="hard-skill-appending-div2">
+
+                            </div>
+
+                          </div>
+                        </div>
+                      </div> <!-- end card -->
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 content-card">
+                      <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
+                        <div class="content" id="soft-skill-content">
+                          <h4 class="title">Soft Skills</h4>
+                          <div class="row">
+                            <div class="col-md-6" id="soft-skill-appending-div1">
+
+                            </div>
+                            <div class="col-md-6" id="soft-skill-appending-div2">
+
+                            </div>
+
+                          </div>
+                        </div>
+                      </div> <!-- end card -->
+                    </div>
                   </div>
                 </div>
               </div>
@@ -983,11 +983,88 @@
   <div class="award-modal d-none">
     <div class="full-screen container">
       <div class="main-content">
-        <div class="container d-flex justify-content-between">
-          <h3 class="text-white h3 py-4"> Award </h3>
-          <i id="award-add-button" class="fa-solid text-white fa-circle-plus fa-2x px-4 py-4"></i>
+        <div class="container d-flex justify-content-between mt-4">
+          <h3 class="h3 ps-1 py-4">Award</h3>
+          <i id="award-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
         </div>
         <hr>
+
+
+        <div id="publication-award-div" class="bg-white">
+          <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Award name</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardName" type="text" id="award-name"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Organisation</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control awardOrganization" type="text"
+                      id="award-organization"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Organisation type</p>
+                  </div>
+                  <div class="col-md-10 "><select class="form-control awardOrganizationType"
+                      id="award-organization-type">
+                      <option value="0">-select-</option>
+                      <option value="1">School</option>
+                      <option value="2">University</option>
+                    </select></div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Description</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Received date</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardRecieveDate" type="date"
+                      id="award-receive-date"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file"
+                      id="award-certification-image"></div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x"></i>
+            </div>
+          </div>
+          <hr style="height: 5px;">
+          <div id="publication-data" class="mt-4">
+
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button id="award-cancel-button" class="btn btn-danger m-4">Cancel</button>
+          <button id="award-submit-button" class="btn btn-success m-4">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <hr>
         <div class="d-flex align-items-centre justify-content-centre">
           <div class="container">
             <div class="row table">
@@ -1027,14 +1104,7 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="d-flex justify-content-center">
-        <button id="award-cancel-button" class="btn btn-danger m-4">Cancel</button>
-        <button id="award-submit-button" class="btn btn-success m-4">Submit</button>
-      </div>
-    </div>
-  </div>
-
+      </div> -->
 
   <!-- ************************************************************************Publication Modal Div******************************************************************************************** -->
 
@@ -1833,19 +1903,19 @@
 
       clearError();
 
-      let firstName1 = personalDetailFirstNameValidation(result.f_name);
-      let lastName1 = personalDetailLastNameValidation(result.l_name);
-      let gender1 = personalDetailGenderValidation(result.gender);
-      let contactNumber1 = personalDetailContactNumberValidation(result.contact_number);
-      let pancard1 = personalDetailPancardValidation(result.pan_number);
-      let email1 = personalDetailEmailValidation(result.email);
-      let aadhar1 = personalDetailAadharValidation(result.aadhar_number);
-      let address1 = personalDetailAddressValidation(result.permanent_address);
-      let temporaryAddress1 = personalDetailTemporaryAddressValidation(result.temporary_address);
-      let country1 = personalDetailCountryValidation(result.nationality);
+      let firstName = personalDetailFirstNameValidation(result.f_name);
+      let lastName = personalDetailLastNameValidation(result.l_name);
+      let gender = personalDetailGenderValidation(result.gender);
+      let contactNumber = personalDetailContactNumberValidation(result.contact_number);
+      let pancard = personalDetailPancardValidation(result.pan_number);
+      let email = personalDetailEmailValidation(result.email);
+      let aadhar = personalDetailAadharValidation(result.aadhar_number);
+      let address = personalDetailAddressValidation(result.permanent_address);
+      let temporaryAddress = personalDetailTemporaryAddressValidation(result.temporary_address);
+      let country = personalDetailCountryValidation(result.nationality);
 
-      if (!firstName || !lastName || !profilePhoto || !gender || !contactNumber || !email || !pancard || !
-        pancardphoto || !aadhar || !aadharphoto || !address || !temporaryAddress || !country) {
+      if (!firstName || !lastName || !gender || !contactNumber || !email || !pancard || !aadhar || !address || !
+        temporaryAddress || !country) {
         return;
       }
 
@@ -1876,22 +1946,39 @@
 
 
       let personalDetailsData = {
-        "user_address": arrayresult,
-        "user_contact": {},
-        "user_info": {}
+        "insert_user_personal_details": {
+          "user_address": arrayresult,
+          "user_contact": [],
+          "user_info": []
+        }
       }
 
-      personalDetailsData.user_contact.contact_number = result.contact_number
-      personalDetailsData.user_info.f_name = result.f_name
-      personalDetailsData.user_info.l_name = result.l_name
-      personalDetailsData.user_info.email = result.email
-      personalDetailsData.user_info.gender_lid = Number.parseInt(result.gender)
-      personalDetailsData.user_info.date_of_birth = result.date_of_birth
-      personalDetailsData.user_info.nationality = result.nationality
+      let user_contact = {}
+      user_contact.user_lid = 1
+      user_contact.contact_number = result.contact_number
+      personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
+      let user_info = {}
+      user_info.user_lid = 1
+      user_info.f_name = result.f_name
+      user_info.l_name = result.l_name
+      user_info.email = result.email
+      user_info.gender_lid = Number.parseInt(result.gender)
+      user_info.date_of_birth = result.date_of_birth
+      user_info.nationality = result.nationality
+      personalDetailsData.insert_user_personal_details.user_info[0] = user_info
 
-      arrayresult[0] = result.permanent_address + "," + result.permanent_address_city + "," + result
+      let addressObject = {}
+      addressObject.user_lid = 1
+      addressObject.address = result.permanent_address + "," + result.permanent_address_city + "," + result
         .permanent_address_pincode
-      arrayresult[1] = result.temporary_address
+      addressObject.address_type_lid = 1
+      let addressObject2 = {}
+      addressObject2.user_lid = 1
+      addressObject2.address = result.temporary_address
+      addressObject2.address_type_lid = 2
+
+      arrayresult[0] = addressObject
+      arrayresult[1] = addressObject2
 
       console.log(JSON.stringify(personalDetailsData))
 
@@ -1910,13 +1997,15 @@
 
       fetchRes.then(success => {
 
-        console.log(success)
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.personal-details-modal').classList.add('d-none')
-
+        if (success.status == 200) {
+          console.log(success)
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.personal-details-modal').classList.add('d-none')
+        } else {
+          console.log("Error in personal Details")
+        }
       })
     });
-
 
     document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
 
@@ -1993,7 +2082,6 @@
         <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 industrial-experience-delete-button"></i></td>
         </tr>
        `
-
       document.getElementById('industrial-experience-data').insertAdjacentHTML("beforeend", table);
     })
     $(document).on('click', '.industrial-experience-delete-button', function () {
@@ -2066,7 +2154,6 @@
                               <p class="h5 pb-1">Title :</p>
                               <p class="h5 py-1">Major Subject :</p>
                               <p class="h5 py-1">University :</p>
-
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id="">\${qualificationTitle}\</p>
@@ -2139,7 +2226,6 @@
       //   document.getElementById('qualification-message').innerHTML = "*Complition of bachelors degree is required";
       //   return;
       // }
-
 
       let table = `
       <div id="qualification-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1">
@@ -2228,40 +2314,199 @@
       document.querySelector('.award-modal').classList.add('d-none');
     });
 
+
+    // ***************************************************Award Section Script*************************************************************************
+
+
+
+
     document.getElementById('award-add-button').addEventListener('click', function () {
-      let table = `   <tr data-toggle="collapse" class="collapsed award-rows">
-                        <td class="text-white pb-3">Award</td>
-                        <td><input class="form-control awardName" type="text" id="award-name"></td>
-                      <td><input class="form-control awardOrganization" type="text" id="award-organization"></td>
-                      <td><select class="form-control awardOrganizationType" id="award-organization-type">
-                        <option value="0">-select-</option>
-                        <option value="1">School</option>
-                        <option value="2">University</option>
-                      </select></td>
-                      <td><input class="form-control awardPlace" type="text" id="award-place"></td>
-                      <td><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></td>
-                      <td><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></td>
-                        <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 award-delete-button"></i></td>
-                      </tr>
+      console.log("Award Add Button clicked");
+      let awardnameaddbtn = document.querySelector('.awardName').value.length;
+      let awardOrganizationaddbtn = document.querySelector('.awardOrganization').value.length;
+      let awardOrganizationTypeaddbtn = document.querySelector('.awardOrganizationType').value.length;
+      let awardPlaceaddbtn = document.querySelector('.awardPlace').value.length;
+      let awardRecieveDateaddbtn = document.querySelector('.awardRecieveDate').value.length;
+      let awardCertificationImageaddbtn = document.querySelector('.awardCertificationImage').value.length;
+
+      if (awardnameaddbtn == 0 || awardOrganizationaddbtn == 0 || awardOrganizationTypeaddbtn == 0 ||
+        awardPlaceaddbtn == 0 || awardRecieveDateaddbtn == 0 || awardCertificationImageaddbtn == 0) {
+        alert('Fill the data before');
+        return;
+      }
+
+
+      let table = `          <div id="publication-award-div" class="bg-white">
+          <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Award name</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardName" type="text" id="award-name"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Organisation</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control awardOrganization" type="text" id="award-organization"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Organisation type</p>
+                  </div>
+                  <div class="col-md-10 "><select class="form-control awardOrganizationType" id="award-organization-type">
+                    <option value="0">-select-</option>
+                    <option value="1">School</option>
+                    <option value="2">University</option>
+                  </select></div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Description</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Received date</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x"></i>
+            </div>
+          </div>
+          <hr style="height: 5px;">
+          <div id="publication-data" class="mt-4">
+
+          </div>
+        </div> 
        `
-      document.getElementById('award-data').insertAdjacentHTML("beforeend", table);
+      document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
+
+
     });
 
+    // ******************************************Validation Functions Start****************************************************
+    function tabledatacheck(value) {
+      let checkit = false;
+      if (value.length > 3) {
+        checkit = true;
+      } else {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    function checknotnull(value) {
+      let checkit = false;
+      if (value > 0) {
+        checkit = true;
+      } else {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    function namecheck(value) {
+      let check = false;
+      if (value.length > 1) {
+        for (let i = 0; i < value.length; i++) {
+          if (value[i] >= '!' && value[i] <= '@') {
+            check = false;
+            break;
+          } else {
+            check = true;
+          }
+        }
+      } else {
+        check = false;
+      }
+      return check;
+    }
+
+    function checkdate(value) {
+      let checkit = false;
+      if (value.length == 10) {
+        checkit = true;
+      } else {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    // ******************************************Validation Functions End***************************************************
 
     document.querySelector('#award-submit-button').addEventListener('click', function () {
 
-      let div = ''
+      let div = '';
       let vjstableelement = document.querySelectorAll('.award-rows');
       let noofrows = vjstableelement.length;
       let resume_achievement = [];
+      let outerloopcheck = true;
 
       for (let i = 0; i < noofrows; i++) {
+        //to remove the red border
+        vjstableelement[i].querySelector('.awardName').classList.remove('input-border');
+        vjstableelement[i].querySelector('.awardOrganization').classList.remove('input-border');
+        vjstableelement[i].querySelector('.awardPlace').classList.remove('input-border');
+        vjstableelement[i].querySelector('.awardRecieveDate').classList.remove('input-border');
+        vjstableelement[i].querySelector('.awardCertificationImage').classList.remove('input-border');
+        vjstableelement[i].querySelector('.awardOrganizationType').classList.remove('input-border');
+
         let title = vjstableelement[i].querySelector('.awardName').value;
         let organization_name = vjstableelement[i].querySelector('.awardOrganization').value;
         let organization_type_lid = vjstableelement[i].querySelector('.awardOrganizationType').value;
         let discription = vjstableelement[i].querySelector('.awardPlace').value;
         let achivement_date = vjstableelement[i].querySelector('.awardRecieveDate').value;
         let url_path = vjstableelement[i].querySelector('.awardCertificationImage').value;
+
+        let checktitle = tabledatacheck(title);
+        let checkorganization_name = namecheck(organization_name);
+        let checkdiscription = tabledatacheck(discription);
+        let checkachivement_date = checkdate(achivement_date);
+        let checkurl_path = tabledatacheck(url_path);
+        let checkorganization_type_lid = checknotnull(organization_type_lid)
+
+        //to add the red border according to validations
+        if (checktitle == false) {
+          vjstableelement[i].querySelector('.awardName').classList.add('input-border');
+          return;
+        } else if (checkorganization_name == false) {
+          vjstableelement[i].querySelector('.awardOrganization').classList.add('input-border');
+          return;
+        } else if (checkdiscription == false) {
+          vjstableelement[i].querySelector('.awardPlace').classList.add('input-border');
+          return;
+        } else if (checkachivement_date == false) {
+          vjstableelement[i].querySelector('.awardRecieveDate').classList.add('input-border');
+          return;
+        } else if (checkorganization_type_lid == false) {
+          vjstableelement[i].querySelector('.awardOrganizationType').classList.add('input-border');
+          return;
+        } else if (checkurl_path == false) {
+          vjstableelement[i].querySelector('.awardCertificationImage').classList.add('input-border');
+          return;
+        }
+
+
+
+
+
 
         obj = {
           title: title,
@@ -2272,6 +2517,7 @@
           url_path: url_path
         }
 
+        console.log(obj)
         div += `
         <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                     <div class="row">
@@ -2312,12 +2558,14 @@
                     </div>
                   </div>
                     `
-
         resume_achievement.push(obj);
       }
+
+
       object = {
         "insert_award": resume_achievement
       }
+
 
       //Fetch Method
       function postdata() {
@@ -2330,17 +2578,21 @@
           body: JSON.stringify(object),
         }
         fetch(url, params).then((data) => {
-          console.log('Data : ', data);
-          document.getElementById('award-preview-div').firstElementChild.remove()
-          document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.award-modal').classList.add('d-none');
+
+          if (data.status == 200) {
+            document.getElementById('award-preview-div').firstElementChild.remove()
+            document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.award-modal').classList.add('d-none');
+          } else {
+            console.log("Error")
+          }
         })
       }
       postdata()
-
-
     });
+
+
 
     $(document).on('click', '.award-delete-button', function () {
       $(this).closest('tr').remove()
@@ -2408,9 +2660,6 @@
                   <div class="col-md-10"><input class="form-control" type="file"></div>
                 </div>
               </div>
-            </div>
-            <div class="d-none qualification-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
             </div>
           </div>
           <hr style="height: 5px;">`
@@ -2773,26 +3022,26 @@ function tabledatacheck(value)
           account_number: bankaccountnumber,
           account_type: bankaccounttype
 
-        }]
+      }]
         console.log(JSON.stringify(bank_detail))
 
-        function postdata() {
-          url = "/insert-bank-details";
-          params = {
-            method: 'post',
-            headers: {
-              'content-Type': 'application/json'
-            },
-            body: JSON.stringify(bank_detail),
-          }
-          fetch(url, params).then((data) => {
-            console.log(data);
-          })
+      function postdata() {
+        url = "/insert-bank-details";
+        params = {
+          method: 'post',
+          headers: {
+            'content-Type': 'application/json'
+          },
+          body: JSON.stringify(bank_detail),
         }
-        postdata()
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.bank-details-modal').classList.add('d-none');
-      
+        fetch(url, params).then((data) => {
+          console.log(data);
+        })
+      }
+      postdata()
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.bank-details-modal').classList.add('d-none');
+
 
 
       document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
@@ -2892,16 +3141,33 @@ function tabledatacheck(value)
       }
 
 
-
       let softSkillDisplay = document.getElementById('soft-skill-display')
       let hardSkillDisplay = document.getElementById('hard-skill-display')
-
+      let softSkillAppendingDiv1 = document.getElementById('soft-skill-appending-div1')
+      let softSkillAppendingDiv2 = document.getElementById('soft-skill-appending-div2')
+      let hardSkillAppendingDiv1 = document.getElementById('hard-skill-appending-div1')
+      let hardSkillAppendingDiv2 = document.getElementById('hard-skill-appending-div2')
       let softSkillListGroup = document.querySelectorAll('.soft-skill-list-group')
       let hardSkillListGroup = document.querySelectorAll('.hard-skill-list-group')
       let skillIndex = 0;
+      let softSkillIndex = 1
+      let hardSkillIndex = 1
       for (let i = 0; i < softSkillListGroup.length; i++) {
 
         let value = softSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
+        let value2 = softSkillListGroup[i].firstElementChild.lastElementChild.lastElementChild.innerText
+
+        if (softSkillIndex == 1) {
+          softSkillAppendingDiv1.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
+                                \${value2}\
+                              </div>`)
+          softSkillIndex = 2
+        } else if (softSkillIndex == 2) {
+          softSkillAppendingDiv2.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
+                                \${value2}\
+                              </div>`)
+          softSkillIndex = 1
+        }
         let obj = {}
         obj.resume_lid = 1
         obj.skill_lid = Number.parseInt(value)
@@ -2912,6 +3178,20 @@ function tabledatacheck(value)
       for (let i = 0; i < hardSkillListGroup.length; i++) {
 
         let value = hardSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
+        let value2 = hardSkillListGroup[i].firstElementChild.lastElementChild.lastElementChild.innerText
+
+        if (hardSkillIndex == 1) {
+          hardSkillAppendingDiv1.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
+                                \${value2}\
+                              </div>`)
+          hardSkillIndex = 2
+        } else if (softSkillIndex == 2) {
+          hardSkillAppendingDiv2.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
+                                \${value2}\
+                              </div>`)
+          hardSkillIndex = 1
+        }
+
         let obj = {}
         obj.resume_lid = 1
         obj.skill_lid = Number.parseInt(value)
