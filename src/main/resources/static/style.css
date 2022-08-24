@@ -76,6 +76,9 @@ body {
   transform: translateY(-0.25em);
 }
 
+.input-border {
+  border: 1px solid red;
+}
 /* **********************************************TimeLine******************************************************** */
 
 /* The actual timeline (the vertical ruler) */
@@ -443,7 +446,7 @@ table thead tr {
 /* 
 .main-content {
   width: 100%;
-  background: linear-gradient(to left, #34373a, #5a626d);
+ background: linear-gradient(to left, #34373a, #5a626d); 
   border-radius: 5px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.22);
@@ -823,4 +826,10 @@ button {
   .city-line {
     padding-top: 20px;
   }
+}
+
+/*============================================================================================================*/
+.spacein{
+  padding: 9px;
+  margin-top: 11px;
 }

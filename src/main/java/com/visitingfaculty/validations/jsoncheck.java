@@ -42,12 +42,55 @@ public class jsoncheck
     }
 
     //For Personal Details
-    public void UserJsonCheck(String JsonString)
+    public Boolean UserJsonCheck(String JsonString)
     {
-        // JSONObject jsonString = new JSONObject(JsonString);
-        // JSONObject obj = jsonString.getJSONObject("user_info");
-        // String f_name = obj.getString("f_name");
-        // String l_name = obj.getString("l_name");
-        // String email = obj.getString("email");
+        Boolean check = false;
+        JSONObject jsonString = new JSONObject(JsonString);
+        //for userinfo
+        JSONObject user_info = jsonString.getJSONObject("user_info");
+        String f_name = user_info.getString("f_name");
+        String l_name = user_info.getString("l_name");
+        String email = user_info.getString("email");
+
+        Boolean l_namecheck = checkVal.CheckWithNoSpectailChar(l_name);
+        Boolean f_namecheck = checkVal.CheckWithNoSpectailChar(f_name);
+        Boolean emailcheckvalue = checkVal.emailCheck(email);
+
+        //for contact numbver
+        JSONObject user_contact = jsonString.getJSONObject("user_contact");
+        String contact_number = user_contact.getString("contact_number");
+        Boolean contactcheck = checkVal.phoneNumberCheck(contact_number);
+
+        if(l_namecheck == true && f_namecheck == true && emailcheckvalue == true && contactcheck == true)
+        {
+            check = true;
+        }
+        else
+        {
+            check = false;
+        }
+    return check;    
+    }
+
+    //For Bank Details
+    public void bankJsonCheck(String JsonString)
+    {
+        Boolean check = false;
+        JSONObject jsonString = new JSONObject(JsonString);
+        //Value Fron Key
+        String account_number = jsonString.getString("account_number");
+        String name = jsonString.getString("name");
+        String branch = jsonString.getString("branch");
+        String ifsc_code = jsonString.getString("ifsc_code");
+        String micr_code = jsonString.getString("micr_code");
+        String account_type = jsonString.getString("account_type");
+
+        Boolean namecheck = checkVal.CheckWithNoSpectailChar(name);
+        Boolean branchcheck = checkVal.CheckWithNoSpectailChar(branch);
+        Boolean account_typecheck = checkVal.CheckWithNoSpectailChar(account_type);
+        Boolean account_numbercheck = checkVal.accountNumberCheck(account_number);
+        System.out.println("Account number boolean : "+account_numbercheck);
+
+
     }
 }

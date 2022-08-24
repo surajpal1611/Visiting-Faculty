@@ -974,11 +974,84 @@
   <div class="award-modal d-none">
     <div class="full-screen container">
       <div class="main-content">
-        <div class="container d-flex justify-content-between">
-          <h3 class="text-white h3 py-4"> Award </h3>
-          <i id="award-add-button" class="fa-solid text-white fa-circle-plus fa-2x px-4 py-4"></i>
+        <div class="container d-flex justify-content-between mt-4">
+          <h3 class="h3 ps-1 py-4">Award</h3>
+          <i id="award-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
         </div>
         <hr>
+
+
+        <div id="publication-award-div" class="bg-white">
+          <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Award name</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardName" type="text" id="award-name"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Organisation</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control awardOrganization" type="text" id="award-organization"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Organisation type</p>
+                  </div>
+                  <div class="col-md-10 "><select class="form-control awardOrganizationType" id="award-organization-type">
+                    <option value="0">-select-</option>
+                    <option value="1">School</option>
+                    <option value="2">University</option>
+                  </select></div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Description</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Received date</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x"></i>
+            </div>
+          </div>
+          <hr style="height: 5px;">
+          <div id="publication-data" class="mt-4">
+
+          </div>
+        </div> 
+ 
+       <div class="d-flex justify-content-center">
+         <button id="award-cancel-button" class="btn btn-danger m-4">Cancel</button>
+         <button id="award-submit-button" class="btn btn-success m-4">Submit</button>
+       </div>
+    </div>
+  </div>
+  </div>
+
+
+
+         <!-- <hr>
         <div class="d-flex align-items-centre justify-content-centre">
           <div class="container">
             <div class="row table">
@@ -1018,15 +1091,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="d-flex justify-content-center">
-        <button id="award-cancel-button" class="btn btn-danger m-4">Cancel</button>
-        <button id="award-submit-button" class="btn btn-success m-4">Submit</button>
-      </div>
-    </div>
-  </div>
-
-
+      </div> -->
+ 
   <!-- ************************************************************************Publication Modal Div******************************************************************************************** -->
 
   <div class="publication-modal d-none">
@@ -1776,7 +1842,7 @@
     });
 
 
-    document.querySelector('.award-div-wrapper').addEventListener('mouseleave', function () {
+    document.querySelector('.award-div-wrapper').addEventListener('mouseover', function () {
       document.querySelector('.award-edit-box').classList.remove('d-none');
     });
 
@@ -2236,34 +2302,180 @@
       document.querySelector('.award-modal').classList.add('d-none');
     });
 
+
+// ***************************************************Award Section Script*************************************************************************
+
+
+
+
     document.getElementById('award-add-button').addEventListener('click', function () {
-      let table = `   <tr data-toggle="collapse" class="collapsed award-rows">
-                        <td class="text-white pb-3">Award</td>
-                        <td><input class="form-control awardName" type="text" id="award-name"></td>
-                      <td><input class="form-control awardOrganization" type="text" id="award-organization"></td>
-                      <td><select class="form-control awardOrganizationType" id="award-organization-type">
-                        <option value="0">-select-</option>
-                        <option value="1">School</option>
-                        <option value="2">University</option>
-                      </select></td>
-                      <td><input class="form-control awardPlace" type="text" id="award-place"></td>
-                      <td><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></td>
-                      <td><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></td>
-                        <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 award-delete-button"></i></td>
-                      </tr>
+      console.log("Award Add Button clicked");
+      let awardnameaddbtn = document.querySelector('.awardName').value.length;
+      let awardOrganizationaddbtn = document.querySelector('.awardOrganization').value.length;
+      let awardOrganizationTypeaddbtn = document.querySelector('.awardOrganizationType').value.length;
+      let awardPlaceaddbtn = document.querySelector('.awardPlace').value.length;
+      let awardRecieveDateaddbtn = document.querySelector('.awardRecieveDate').value.length;
+      let awardCertificationImageaddbtn = document.querySelector('.awardCertificationImage').value.length;
+
+      if(awardnameaddbtn == 0 || awardOrganizationaddbtn == 0 || awardOrganizationTypeaddbtn == 0 || awardPlaceaddbtn == 0 || awardRecieveDateaddbtn == 0 || awardCertificationImageaddbtn == 0)
+      {
+        alert('Fill the data before');
+        return;
+      }
+
+
+        let table = `          <div id="publication-award-div" class="bg-white">
+          <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Award name</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardName" type="text" id="award-name"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Organisation</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control awardOrganization" type="text" id="award-organization"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Organisation type</p>
+                  </div>
+                  <div class="col-md-10 "><select class="form-control awardOrganizationType" id="award-organization-type">
+                    <option value="0">-select-</option>
+                    <option value="1">School</option>
+                    <option value="2">University</option>
+                  </select></div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Description</p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Received date</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate</p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x"></i>
+            </div>
+          </div>
+          <hr style="height: 5px;">
+          <div id="publication-data" class="mt-4">
+
+          </div>
+        </div> 
        `
-      document.getElementById('award-data').insertAdjacentHTML("beforeend", table);
-    });
+      document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
+      
+     
+      });
 
+// ******************************************Validation Functions Start****************************************************
+    function tabledatacheck(value)
+    {
+      let checkit = false;
+      if(value.length > 3)
+      {
+        checkit = true;
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
 
-    document.querySelector('#award-submit-button').addEventListener('click', function () {
+    function checknotnull(value)
+    {
+      let checkit = false;
+      if(value > 0)
+      {
+        checkit = true;
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
 
-      let div = ''
+    function namecheck(value)
+    {
+      let check = false;
+        if(value.length > 1)
+        {
+            for(let i = 0 ; i < value.length ;i++)
+            {
+                if(value[i] >= '!' && value[i] <= '@')
+                {
+                    check =false;
+                    break;
+                }
+                else
+                {
+                    check = true;    
+                }
+            }
+        }
+        else
+        {
+             check=false;
+        }
+        return check;
+    }
+
+    function checkdate(value)
+    {
+      let checkit = false;
+      if(value.length == 10)
+      {
+        checkit = true;
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    // ******************************************Validation Functions End***************************************************
+
+    document.querySelector('#award-submit-button').addEventListener('click', function() {
+
+      let div = '';
       let vjstableelement = document.querySelectorAll('.award-rows');
       let noofrows = vjstableelement.length;
       let resume_achievement = [];
+      let outerloopcheck = true;
 
       for (let i = 0; i < noofrows; i++) {
+          //to remove the red border
+          vjstableelement[i].querySelector('.awardName').classList.remove('input-border');
+          vjstableelement[i].querySelector('.awardOrganization').classList.remove('input-border');
+          vjstableelement[i].querySelector('.awardPlace').classList.remove('input-border');
+          vjstableelement[i].querySelector('.awardRecieveDate').classList.remove('input-border');
+          vjstableelement[i].querySelector('.awardCertificationImage').classList.remove('input-border');
+          vjstableelement[i].querySelector('.awardOrganizationType').classList.remove('input-border');
+        
         let title = vjstableelement[i].querySelector('.awardName').value;
         let organization_name = vjstableelement[i].querySelector('.awardOrganization').value;
         let organization_type_lid = vjstableelement[i].querySelector('.awardOrganizationType').value;
@@ -2271,6 +2483,50 @@
         let achivement_date = vjstableelement[i].querySelector('.awardRecieveDate').value;
         let url_path = vjstableelement[i].querySelector('.awardCertificationImage').value;
 
+        let checktitle = tabledatacheck(title);
+        let checkorganization_name = namecheck(organization_name);
+        let checkdiscription = tabledatacheck(discription);
+        let checkachivement_date = checkdate(achivement_date);
+        let checkurl_path = tabledatacheck(url_path);
+        let checkorganization_type_lid = checknotnull(organization_type_lid)
+
+        //to add the red border according to validations
+        if(checktitle == false)
+        {
+          vjstableelement[i].querySelector('.awardName').classList.add('input-border');
+          return;
+        }
+        else if(checkorganization_name == false)
+        {
+          vjstableelement[i].querySelector('.awardOrganization').classList.add('input-border');
+          return;
+        }
+        else if(checkdiscription == false)
+        {
+          vjstableelement[i].querySelector('.awardPlace').classList.add('input-border');
+          return;
+        }
+        else if(checkachivement_date == false)
+        {
+          vjstableelement[i].querySelector('.awardRecieveDate').classList.add('input-border');
+          return;
+        }
+        else if(checkorganization_type_lid == false)
+        {
+          vjstableelement[i].querySelector('.awardOrganizationType').classList.add('input-border');
+          return;
+        }
+        else if(checkurl_path == false)
+        {
+          vjstableelement[i].querySelector('.awardCertificationImage').classList.add('input-border');
+          return;
+        }
+        
+         
+        
+
+
+        
         obj = {
           title: title,
           organization_name: organization_name,
@@ -2280,6 +2536,7 @@
           url_path: url_path
         }
 
+        console.log(obj)
         div += `
         <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                     <div class="row">
@@ -2320,12 +2577,14 @@
                     </div>
                   </div>
                     `
-
-        resume_achievement.push(obj);
+      resume_achievement.push(obj);
       }
+
+
       object = {
         "insert_award": resume_achievement
       }
+
 
       //Fetch Method
       function postdata() {
@@ -2346,9 +2605,8 @@
         })
       }
       postdata()
-
-
     });
+
 
     $(document).on('click', '.award-delete-button', function () {
       $(this).closest('tr').remove()
