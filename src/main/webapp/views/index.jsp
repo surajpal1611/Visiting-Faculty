@@ -189,7 +189,6 @@
           </div>
           <hr />
 
-
           <!------------------------------------------------ Work Experience Section ------------------------------------------------>
 
           <div class="work-experience-div-wrapper position-relative d-flex" style="cursor: pointer;">
@@ -265,34 +264,22 @@
 
                     <div class="col-md-6 col-sm-12 content-card">
                       <div class="card card-just-text" data-background="color" data-color="grey" data-radius="none">
-                        <div class="content" id="hard-skill-content">
-                          <h4 class="title">Hard Skills</h4>
-                          <div class="row">
-                            <div class="col-md-6" id="hard-skill-appending-div1">
+                        <h4 class="title">Hard Skills</h4>
 
-                            </div>
-                            <div class="col-md-6" id="hard-skill-appending-div2">
+                        <div id="hard-skill-appending-div1" class="d-flex w-100 flex-wrap">
 
-                            </div>
 
-                          </div>
+
                         </div>
                       </div> <!-- end card -->
                     </div>
 
                     <div class="col-md-6 col-sm-12 content-card">
                       <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
-                        <div class="content" id="soft-skill-content">
-                          <h4 class="title">Soft Skills</h4>
-                          <div class="row">
-                            <div class="col-md-6" id="soft-skill-appending-div1">
+                        <h4 class="title">Soft Skills</h4>
 
-                            </div>
-                            <div class="col-md-6" id="soft-skill-appending-div2">
+                        <div id="soft-skill-appending-div1" class="d-flex w-100 flex-wrap">
 
-                            </div>
-
-                          </div>
                         </div>
                       </div> <!-- end card -->
                     </div>
@@ -310,7 +297,7 @@
 
           <div class="award-div-wrapper d-flex position-relative" style="cursor: pointer;">
             <div class="container">
-              <div id="award-div">
+              <div id="award-div" class="px-3 px-sm-4 px-lg-4">
                 <div class="d-flex justify-content-center align-items-center">
                   <h3 style="color: #740E00;"><b> Awards </b></h3>
                 </div>
@@ -374,44 +361,44 @@
                   <h3 class="mb-4 h3" style="color: #740E00;"><b> Publications </b></h3>
                 </div>
                 <div id="publication-appending-div" class="bg-white">
-                <div id="publication-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                  <div class="row">
+                  <div id="publication-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                    <div class="row">
 
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Role :</p>
-                          <p class="h5 py-1">No. of Authors :</p>
-                          <p class="h5 py-1">Book Title :</p>
+                      <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                        <div class="row pt-lg-3">
+                          <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                            <p class="h5 pb-1">Role :</p>
+                            <p class="h5 py-1">No. of Authors :</p>
+                            <p class="h5 py-1">Book Title :</p>
 
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p id="">Editor</p>
-                          <p id="">10 </p>
-                          <p id="">A Million Thoughts</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Publisher :</p>
-                          <p class="h5 pb-1">year of Publication :</p>
-                          <p class="h5 py-1">Certificate :</p>
-                        </div>
-                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                          <p class="" id="">Nationpress</p>
-                          <p class="" id="">2016</p>
-                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
+                          </div>
+                          <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                            <p id="">Editor</p>
+                            <p id="">10 </p>
+                            <p id="">A Million Thoughts</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
+                      <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                        <div class="row pt-lg-3">
+                          <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                            <p class="h5 pb-1">Publisher :</p>
+                            <p class="h5 pb-1">year of Publication :</p>
+                            <p class="h5 py-1">Certificate :</p>
+                          </div>
+                          <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                            <p class="" id="">Nationpress</p>
+                            <p class="" id="">2016</p>
+                            <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
                   </div>
                 </div>
-               </div>
               </div>
             </div>
             <div class="d-none publication-edit-box d-flex justify-content-center align-items-center">
@@ -423,10 +410,6 @@
 
           <!------------------------------------------- Research Section  ----------------------------------------->
 
-          <!--                 
-          <div id="qualification-appending-div">
-            <div class="text-block right" id="preview-qualification-div">
-              <div class="card-body preview-qualification-div"> -->
 
           <div class="research-div-wrapper d-flex position-relative" style="cursor: pointer;">
             <div class="container">
@@ -436,46 +419,46 @@
                 </div>
 
                 <div id="research-appending-div">
-                 
-                      <div id="research-display-div" class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
-                        <div class="row">
 
-                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                            <div class="row pt-lg-3">
-                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                                <p class="h5 pb-1">Role :</p>
-                                <p class="h5 py-1">Journal Name :</p>
-                                <p class="h5 py-1">Volume year :</p>
+                  <div id="research-display-div" class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
+                    <div class="row">
 
-                              </div>
-                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                                <p id="">Reviewier</p>
-                                <p id="">Algebra and logic</p>
-                                <p id="">2017</p>
-                              </div>
-                            </div>
+                      <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                        <div class="row pt-lg-3">
+                          <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                            <p class="h5 pb-1">Role :</p>
+                            <p class="h5 py-1">Journal Name :</p>
+                            <p class="h5 py-1">Volume year :</p>
+
                           </div>
-
-
-                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                            <div class="row pt-lg-3">
-                              <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                                <p class="h5 pb-1">Description :</p>
-                                <p class="h5 pb-1">Category :</p>
-                                <p class="h5 py-1">Certificate :</p>
-                              </div>
-                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                                <p class="" id="">example</p>
-                                <p class="" id="">example</p>
-                                <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
-                              </div>
-                            </div>
+                          <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                            <p id="">Reviewier</p>
+                            <p id="">Algebra and logic</p>
+                            <p id="">2017</p>
                           </div>
-
                         </div>
                       </div>
-                   
+
+
+                      <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                        <div class="row pt-lg-3">
+                          <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                            <p class="h5 pb-1">Description :</p>
+                            <p class="h5 pb-1">Category :</p>
+                            <p class="h5 py-1">Certificate :</p>
+                          </div>
+                          <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                            <p class="" id="">example</p>
+                            <p class="" id="">example</p>
+                            <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -490,7 +473,7 @@
 
           <div class="bank-details-div-wrapper d-flex position-relative" style="cursor: pointer;">
             <div id="bank-details-div">
-              <div class="px-3 px-sm-4 px-lg-4">
+              <div class="px-3 px-sm-4 ps-lg-5">
                 <div class="d-flex justify-content-center align-items-center">
                   <h3 class="p-md-3 pb-sm-3" style="color: #740E00;"><b> Bank Details </b></h3>
                 </div>
@@ -917,14 +900,21 @@
                 <div>
                   <div id="soft-skill-box" class="col-12">
                     <div>
-                      <div class="col-12">
+                      <div class="col-12" style="list-style-type: none;">
                         <input type="text" id="soft-skill-search" placeholder="Search for soft skills.."
                           class="form-control" title="Type in a name">
-                        <button type="submit" class="btn btn-primary col-4 d-none"
-                          id="add-custom-soft-skill">Add</button>
+                        <li class="mx-5 d-none" id="add-custom-soft-skill" style="cursor: pointer;">
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2 col-2 "><i
+                                class="fa-solid text-primary fa-circle-plus fa-2x"></i></div>
+                            <div class="col-md-10 col-sm-10 col-10 "><a class="ms-3 text-dark"
+                                id="custom-soft-skill-value" href="#"></a></div>
+                          </div>
+                        </li>
                       </div>
 
                       <ul id="soft-skill-UL">
+
                       </ul>
 
                     </div>
@@ -935,10 +925,17 @@
                 <div>
                   <div id="hard-skill-box" class="col-12">
 
-                    <div class="col-12">
+                    <div class="col-12" style="list-style-type: none;">
                       <input type="text" id="hard-skill-search" placeholder="Search for hard skills.."
                         class="form-control" title="Type in a name">
-                      <button type="submit" class="btn btn-primary col-4 d-none" id="add-custom-hard-skill">Add</button>
+                      <li class="mx-5 d-none" id="add-custom-hard-skill" style="cursor: pointer;">
+                        <div class="row">
+                          <div class="col-md-2 col-sm-2 col-2 "><i
+                              class="fa-solid text-primary fa-circle-plus fa-2x"></i></div>
+                          <div class="col-md-10 col-sm-10 col-10 "><a class="ms-3 text-dark"
+                              id="custom-hard-skill-value" href="#"></a></div>
+                        </div>
+                      </li>
                     </div>
 
                     <ul id="hard-skill-UL">
@@ -1050,7 +1047,7 @@
             </div>
           </div>
           <hr style="height: 5px;">
-       
+
         </div>
 
         <div class="d-flex justify-content-center">
@@ -1128,16 +1125,16 @@
                     <p class="h6">Role</p>
                   </div>
                   <div class="col-md-10"><select class="form-control role" id="role">
-                      <option >-Select-</option>
-                      <option >Edited</option>
-                      <option >Authored</option>
+                      <option>-Select-</option>
+                      <option>Edited</option>
+                      <option>Authored</option>
                     </select></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
                     <p class="h6">Number of Authors</p>
                   </div>
-                  <div class="col-md-10 "><input  class="form-control number-of-authors" type="text"></div>
+                  <div class="col-md-10 "><input class="form-control number-of-authors" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
@@ -1207,7 +1204,7 @@
                   <div class="col-md-2 ">
                     <p class="h6">Role</p>
                   </div>
-                  <div class="col-md-10" ><select name="role" class="form-control research_role">
+                  <div class="col-md-10"><select name="role" class="form-control research_role">
                       <option value="0">-Select-</option>
                       <option value="1">Sole</option>
                       <option value="2">Author</option>
@@ -1397,7 +1394,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+  </script>
   <script>
     // --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
 
@@ -1685,14 +1682,14 @@
     function publicationDetailRoleValidation(res) {
       console.log(res)
       if (res == "Edited" || res == "Authored") {
-        document.querySelector('.role').style="border:1px solid green"
+        document.querySelector('.role').style = "border:1px solid green"
         condition = true;
       } else {
-        document.querySelector('.role').style="border:1px solid red"
+        document.querySelector('.role').style = "border:1px solid red"
         condition = false;
       }
       return condition;
-    } 
+    }
 
     function publicationDetailPublisherValidation(res) {
       if (res.length != 0) {
@@ -2014,7 +2011,6 @@
       //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('fa-circle-check')
       //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('text-success')
       // }
-
 
       let personalDetailsData = {
         "insert_user_personal_details": {
@@ -2679,72 +2675,35 @@
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.publication-modal').classList.add('d-none');
     });
-    
+
     document.querySelector("#publication-submit-button").addEventListener('click', function (e) {
 
       e.preventDefault()
- 
-
-let div = ''
-let publicationTableArray = []
-let publicationRow = document.querySelectorAll('.publication-row')
-for (i = 0; i < publicationRow.length; i++) {
-
- //to remove the red border
- publicationRow[i].querySelector('.role').classList.remove('input-border');
- publicationRow[i].querySelector('.publisher').classList.remove('input-border');
- publicationRow[i].querySelector('.number-of-authors').classList.remove('input-border');
- publicationRow[i].querySelector('.year-of-publication').classList.remove('input-border');
- publicationRow[i].querySelector('.book-title').classList.remove('input-border');
- publicationRow[i].querySelector('.certification').classList.remove('input-border');
 
 
-  let publicationRole  = publicationRow[i].querySelector('.role').value;
-  let publicationPublisher = publicationRow[i].querySelector('.publisher').value;
-  let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
-  let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
-  let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
-  let publicationCertificate = publicationRow[i].querySelector('.certification').value;
+      let div = ''
+      let publicationTableArray = []
+      let publicationRow = document.querySelectorAll('.publication-row')
+      for (i = 0; i < publicationRow.length; i++) {
 
-  let checktitle = publicationDetailRoleValidation(publicationRole);
-  let checkorganization_name = publicationDetailPublisherValidation(organization_name);
-  let checkdiscription = publicationDetailNumberOfAuthorValidation(discription);
-  let checkachivement_date = publicationDetailYearOfPublicationValidation(achivement_date);
-  let checkurl_path = publicationDetailBookTitleValidation(url_path);
-  let checkorganization_type_lid = publicationDetailCertificateValidation(organization_type_lid)
+        let publicationRole = publicationRow[i].querySelector('.role').value;
+        let publicationPublisher = publicationRow[i].querySelector('.publisher').value;
+        let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
+        let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
+        let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
+        let publicationCertificate = publicationRow[i].querySelector('.certification').value;
 
-  //to add the red border according to validations
-  if (checktitle == false) {
-    publicationRow[i].querySelector('.role').classList.add('input-border');
-    return;
-  } else if (checkorganization_name == false) {
-    publicationRow[i].querySelector('.publisher').classList.add('input-border');
-    return;
-  } else if (checkdiscription == false) {
-    publicationRow[i].querySelector('.number-of-authors').classList.add('input-border');
-    return;
-  } else if (checkachivement_date == false) {
-    publicationRow[i].querySelector('.year-of-publication').classList.add('input-border');
-    return;
-  } else if (checkurl_path == false) {
-    publicationRow[i].querySelector('.book-title').classList.add('input-border');
-    return;
-  } else if (checkorganization_type_lid  == false) {
-    publicationRow[i].querySelector('.certification').classList.add('input-border');
-    return;
-  }
+        object = {
+          resume_achievement_lid: 1,
+          role: publicationRole,
+          no_of_authors: publicationNumberOfAuthors,
+          book_title: publicationBookTitle,
+          publisher: publicationPublisher,
+          year_of_publication: publicationYearOfPublication,
+          url_path: publicationCertificate
+        }
 
-  object = {
-    resume_achievement_lid: 1,
-    role: publicationRole,
-    no_of_authors: publicationNumberOfAuthors,
-    book_title: publicationBookTitle,
-    publisher: publicationPublisher,
-    year_of_publication: publicationYearOfPublication,
-    url_path: publicationCertificate
-  }
-
-  div += `   
+        div += `   
   <div id="publication-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
                  <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -2783,28 +2742,28 @@ for (i = 0; i < publicationRow.length; i++) {
 
                   `
 
-  publicationTableArray.push(object)
-}
+        publicationTableArray.push(object)
+      }
 
-let publicationTableData = {
-  "PublicationDetails": publicationTableArray
-}
-console.log(JSON.stringify(publicationTableData))
+      let publicationTableData = {
+        "PublicationDetails": publicationTableArray
+      }
+      console.log(JSON.stringify(publicationTableData))
 
-let options = {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json;charset=utf-8'
-  },
-  body: JSON.stringify(publicationTableData)
-}
-let fetchRes = fetch("/insert-publication-details", options);
-fetchRes.then(success => {
- document.getElementById('publication-appending-div').firstElementChild.remove()
- document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
-  document.getElementById('body').classList.remove('d-none');
-  document.querySelector('.publication-modal').classList.add('d-none');
-})
+      let options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(publicationTableData)
+      }
+      let fetchRes = fetch("/insert-publication-details", options);
+      fetchRes.then(success => {
+        document.getElementById('publication-appending-div').firstElementChild.remove()
+        document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.publication-modal').classList.add('d-none');
+      })
     });
 
     document.getElementById('publication-add-button').addEventListener('click', function () {
@@ -2812,16 +2771,18 @@ fetchRes.then(success => {
 
       const role = publicationDetailRoleValidation(document.querySelector('.role').value)
       const publisher = publicationDetailPublisherValidation(document.querySelector('.publisher').value)
-      const numberOfAuthor = publicationDetailNumberOfAuthorValidation(document.querySelector('.number-of-authors').value)
-      const yearOfPublication = publicationDetailYearOfPublicationValidation(document.querySelector('.year-of-publication').value)
+      const numberOfAuthor = publicationDetailNumberOfAuthorValidation(document.querySelector('.number-of-authors')
+        .value)
+      const yearOfPublication = publicationDetailYearOfPublicationValidation(document.querySelector(
+        '.year-of-publication').value)
       const bookTitle = publicationDetailBookTitleValidation(document.querySelector('.book-title').value)
       const certificate = publicationDetailCertificateValidation(document.querySelector('.certification').value)
       console.log(role)
 
-      if(!role || !publisher || !numberOfAuthor || !yearOfPublication || !bookTitle || !certificate){
-               return;
+      if (!role || !publisher || !numberOfAuthor || !yearOfPublication || !bookTitle || !certificate) {
+        return;
       }
-    
+
       let table = `<div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
 
@@ -2899,58 +2860,41 @@ fetchRes.then(success => {
       document.querySelector('.research-modal').classList.add('d-none');
     });
 
-        // ******************************************Validation Functions Start****************************************************
-function tabledatacheck(value)
-    {
+    // ******************************************Validation Functions Start****************************************************
+    function tabledatacheck(value) {
       let checkit = false;
-      if(value.length > 3)
-      {
+      if (value.length > 3) {
         checkit = true;
-      }
-      else
-      {
+      } else {
         checkit = false;
       }
       return checkit;
     }
 
-    function namecheck(value)
-    {
+    function namecheck(value) {
       let check = false;
-        if(value.length > 1)
-        {
-            for(let i = 0 ; i < value.length ;i++)
-            {
-                if(value[i] >= '!' && value[i] <= '@')
-                {
-                    check =false;
-                    break;
-                }
-                else
-                {
-                    check = true;    
-                }
-            }
+      if (value.length > 1) {
+        for (let i = 0; i < value.length; i++) {
+          if (value[i] >= '!' && value[i] <= '@') {
+            check = false;
+            break;
+          } else {
+            check = true;
+          }
         }
-        else
-        {
-             check=false;
-        }
-        return check;
+      } else {
+        check = false;
+      }
+      return check;
     }
 
-    function yearcheck(value)
-    {
+    function yearcheck(value) {
       let checkit = false;
-      if(value.length == 4)
-      {
-        if(!isNaN(value))
-        {
-        checkit = true;
+      if (value.length == 4) {
+        if (!isNaN(value)) {
+          checkit = true;
         }
-      }
-      else
-      {
+      } else {
         checkit = false;
       }
       return checkit;
@@ -2984,37 +2928,32 @@ function tabledatacheck(value)
         let check_description = namecheck(description);
         let check_category = namecheck(category);
 
-        if(check_research_role==false)
-        {
+        if (check_research_role == false) {
           researchTableElem[j].querySelector('.research_role').classList.add('input-border');
           return;
         }
 
-       if(check_journal_name==false)
-        {
+        if (check_journal_name == false) {
           researchTableElem[j].querySelector('.research_Journal_name').classList.add('input-border');
           return;
         }
 
-       if(check_volume_year==false)
-        {
+        if (check_volume_year == false) {
           researchTableElem[j].querySelector('.research_volume_year').classList.add('input-border');
           return;
         }
 
-       if(check_description==false)
-        {
+        if (check_description == false) {
           researchTableElem[j].querySelector('.research_description').classList.add('input-border');
           return;
         }
 
-       if(check_category==false)
-        {
+        if (check_category == false) {
           researchTableElem[j].querySelector('.research_category').classList.add('input-border');
           return;
         }
 
-   
+
         obj = {
 
           role: Role,
@@ -3219,25 +3158,25 @@ function tabledatacheck(value)
         facultyAccountNumber1 || !facultyAccountType1) {
         return;
       }
-   
-        let bank_detail = {};
-        let bankname = document.querySelector('#bank-name').value;
-        let branchname = document.querySelector('#bank-branch').value;
-        let bankifsc = document.querySelector('#bank-ifsc-code').value;
-        let bankmicr = document.querySelector('#bank-micr-code').value;
-        let bankaccountnumber = document.querySelector('#bank-account-number').value;
-        let bankaccounttype = document.querySelector('#bank-account-type').value;
 
-        bank_detail = [{
-          name: bankname,
-          branch: branchname,
-          ifsc_code: bankifsc,
-          micr_code: bankmicr,
-          account_number: bankaccountnumber,
-          account_type: bankaccounttype
+      let bank_detail = {};
+      let bankname = document.querySelector('#bank-name').value;
+      let branchname = document.querySelector('#bank-branch').value;
+      let bankifsc = document.querySelector('#bank-ifsc-code').value;
+      let bankmicr = document.querySelector('#bank-micr-code').value;
+      let bankaccountnumber = document.querySelector('#bank-account-number').value;
+      let bankaccounttype = document.querySelector('#bank-account-type').value;
+
+      bank_detail = [{
+        name: bankname,
+        branch: branchname,
+        ifsc_code: bankifsc,
+        micr_code: bankmicr,
+        account_number: bankaccountnumber,
+        account_type: bankaccounttype
 
       }]
-        console.log(JSON.stringify(bank_detail))
+      console.log(JSON.stringify(bank_detail))
 
       function postdata() {
         url = "/insert-bank-details";
@@ -3276,7 +3215,6 @@ function tabledatacheck(value)
 
     // ****************************************************JS for skills Modal****************************************************************
 
-
     document.querySelector('.skills-edit-box').addEventListener('click', function () {
 
       let softSkillUl = document.getElementById('soft-skill-UL')
@@ -3284,10 +3222,13 @@ function tabledatacheck(value)
       let softSkillDisplay = document.getElementById('soft-skill-display')
       let hardSkillDisplay = document.getElementById('hard-skill-display')
 
-      softSkillDisplay.innerHTML = ''
-      hardSkillDisplay.innerHTML = ''
-      softSkillUl.innerHTML = ''
-      hardSkillUl.innerHTML = ''
+      let softSkills = document.getElementById('soft-skill-appending-div1')
+      let hardSkills = document.getElementById('hard-skill-appending-div1')
+
+      // softSkillDisplay.innerHTML = ''
+      // hardSkillDisplay.innerHTML = ''
+      // softSkillUl.innerHTML = ''
+      // hardSkillUl.innerHTML = ''
       $.ajax({
         url: '/get-all-skill',
         type: 'POST',
@@ -3297,6 +3238,11 @@ function tabledatacheck(value)
 
             if (response[i].skill_type_lid === 1) {
 
+              // for (let j = 0; j < softSkills.children.length; j++) {
+              //   if (softSkills[j].firstElementChild.firstElementChild.value == response[i].id) {
+              //     console.log("Matched")
+              //   }
+              // }
               softSkillUl.insertAdjacentHTML('beforeend',
                 `
                        <li class="soft-skill-list">
@@ -3344,6 +3290,7 @@ function tabledatacheck(value)
       document.querySelector('.skills-modal').classList.add('d-none');
 
     })
+
     let hardSkillIndex = 1
     let softSkillIndex = 1
     document.querySelector('#skills-modal-submit-button').addEventListener('click', function () {
@@ -3355,34 +3302,23 @@ function tabledatacheck(value)
         "resume_skill_selected": []
       }
 
-
-      let softSkillDisplay = document.getElementById('soft-skill-display')
-      let hardSkillDisplay = document.getElementById('hard-skill-display')
       let softSkillAppendingDiv1 = document.getElementById('soft-skill-appending-div1')
-      let softSkillAppendingDiv2 = document.getElementById('soft-skill-appending-div2')
+      let softSkillAppendingDiv2 = document.getElementById('soft-skill-appending-div1')
       let hardSkillAppendingDiv1 = document.getElementById('hard-skill-appending-div1')
-      let hardSkillAppendingDiv2 = document.getElementById('hard-skill-appending-div2')
+      let hardSkillAppendingDiv2 = document.getElementById('hard-skill-appending-div1')
       let softSkillListGroup = document.querySelectorAll('.soft-skill-list-group')
       let hardSkillListGroup = document.querySelectorAll('.hard-skill-list-group')
       let skillIndex = 0;
-
 
       for (let i = 0; i < softSkillListGroup.length; i++) {
 
         let value = softSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
         let value2 = softSkillListGroup[i].firstElementChild.lastElementChild.lastElementChild.innerText
 
-        if (softSkillIndex == 1) {
-          softSkillAppendingDiv1.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
+        softSkillAppendingDiv1.innerHTML += `<div class="skill-pill-div text-center"> <input type="hidden" value=\${value}\ >
                                 \${value2}\
-                              </div>`)
-          softSkillIndex = 2
-        } else if (softSkillIndex == 2) {
-          softSkillAppendingDiv2.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
-                                \${value2}\
-                              </div>`)
-          softSkillIndex = 1
-        }
+                              </div>`
+
         let obj = {}
         obj.resume_lid = 1
         obj.skill_lid = Number.parseInt(value)
@@ -3395,17 +3331,10 @@ function tabledatacheck(value)
         let value2 = hardSkillListGroup[i].firstElementChild.lastElementChild.lastElementChild.innerText
         console.log(value2)
 
-        if (hardSkillIndex == 1) {
-          hardSkillAppendingDiv1.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
+
+        hardSkillAppendingDiv1.innerHTML += `<div class="skill-pill-div text-center"><input type="hidden" value=\${value}\ >
                                 \${value2}\
-                              </div>`)
-          hardSkillIndex = 2
-        } else if (softSkillIndex == 2) {
-          hardSkillAppendingDiv2.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
-                                \${value2}\
-                              </div>`)
-          hardSkillIndex = 1
-        }
+                              </div>`
 
         let obj = {}
         obj.resume_lid = 1
@@ -3441,6 +3370,8 @@ function tabledatacheck(value)
           li[i].style.display = "";
         } else {
           li[i].style.display = "none";
+          document.getElementById('add-custom-soft-skill').firstElementChild.lastElementChild.lastElementChild
+            .innerText = input.value;
         }
       }
 
@@ -3451,14 +3382,13 @@ function tabledatacheck(value)
           break;
         } else {
           document.getElementById('add-custom-soft-skill').classList.remove('d-none');
-          
+
         }
       }
-
     })
 
-    let addAvailableSoftSkill = document.getElementById('soft-skill-box')
-    let addAvailableHardSkill = document.getElementById('hard-skill-box')
+    let addAvailableSoftSkill = document.getElementById('soft-skill-UL')
+    let addAvailableHardSkill = document.getElementById('hard-skill-UL')
     let softSkillDisplay = document.getElementById('soft-skill-display')
     let hardSkillDisplay = document.getElementById('hard-skill-display')
 
@@ -3478,7 +3408,7 @@ function tabledatacheck(value)
                     </li> `
 
         softSkillDisplay.insertAdjacentHTML('beforeend', div)
-        element.closest('li').remove()
+        element.closest('li').classList.add('d-none')
       }
     })
 
@@ -3502,6 +3432,8 @@ function tabledatacheck(value)
           li[i].style.display = "";
         } else {
           li[i].style.display = "none";
+          document.getElementById('add-custom-hard-skill').firstElementChild.lastElementChild.lastElementChild
+            .innerText = input.value;
         }
       }
 
@@ -3532,14 +3464,14 @@ function tabledatacheck(value)
                      </li> `
 
         hardSkillDisplay.insertAdjacentHTML('beforeend', div)
-        element.closest('li').remove()
+        element.closest('li').classList.add('d-none')
       }
     })
 
     let addCustomSoftSkill = document.getElementById('add-custom-soft-skill')
     addCustomSoftSkill.addEventListener('click', function () {
 
-      let customSoftSkillValue = document.getElementById('soft-skill-search').value
+      let customSoftSkillValue = document.getElementById('custom-soft-skill-value').innerText
 
       $.ajax({
         url: '/insert-custom-skill',
@@ -3550,57 +3482,55 @@ function tabledatacheck(value)
         },
         success: function (response) {
 
-          let id = element.parentElement.parentElement.lastElementChild.firstElementChild.value
+          // let id = element.parentElement.parentElement.lastElementChild.firstElementChild.value
+          console.log(response)
 
-          softSkillDisplay.insertAdjacentHTML('afterend',
+          softSkillDisplay.insertAdjacentHTML('beforeend',
             ` <li class="soft-skill-list-group">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
-                                 <div class="col-md-10 col-sm-10 col-10"> <input type="hidden" value=\${id}\ ><a class="ms-3"  href="#">\${response.skill_name}\ </a></div>
+                                 <div class="col-md-10 col-sm-10 col-10"><input type="hidden" value=\${response.id}\ ><a class="ms-3"  href="#">\${response.skill_name}\ </a></div>
                              </div>
                        </li> `
           )
           document.getElementById('soft-skill-search').value = ''
-          document.getElementById('add-custom-soft-skill').classList.add('d-none');
+          document.getElementById('add-custom-soft-skill').classList.add('d-none')
         },
         error: function (error) {
           console.log("Error:::", error)
         }
       })
-
     })
 
     let addCustomHardSkill = document.getElementById('add-custom-hard-skill')
     addCustomHardSkill.addEventListener('click', function () {
 
-      let customHardSkillValue = document.getElementById('hard-skill-search').value
-      let div =
+      let customHardSkillValue = document.getElementById('custom-hard-skill-value').innerText
 
-        $.ajax({
-          url: '/insert-custom-skill',
-          type: 'POST',
-          data: {
-            skill_type_lid: 2,
-            skill_name: customHardSkillValue
-          },
-          success: function (response) {
+      $.ajax({
+        url: '/insert-custom-skill',
+        type: 'POST',
+        data: {
+          skill_type_lid: 2,
+          skill_name: customHardSkillValue
+        },
+        success: function (response) {
 
-            hardSkillDisplay.insertAdjacentHTML('afterend',
-              `<li class="hard-skill-list-group">
+          hardSkillDisplay.insertAdjacentHTML('beforeend',
+            `<li class="hard-skill-list-group">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
-                                 <div class="col-md-10 col-sm-10 col-10"><a class="ms-3"  href="#">\${customHardSkillValue}\ </a></div>
+                                 <div class="col-md-10 col-sm-10 col-10"><input type="hidden" value=\${response.id}\ ><a class="ms-3" href="#">\${customHardSkillValue}\ </a></div>
                              </div>
                        </li> `
-            )
-            document.getElementById('hard-skill-search').value = ''
-            document.getElementById('add-custom-hard-skill').classList.add('d-none');
-          },
-          error: function (error) {
-            console.log("Error:::", error)
-          }
-        })
-
+          )
+          document.getElementById('hard-skill-search').value = ''
+          document.getElementById('add-custom-hard-skill').classList.add('d-none')
+        },
+        error: function (error) {
+          console.log("Error:::", error)
+        }
+      })
     })
 
     document.getElementById('soft-skill-review-box').addEventListener('click', function (event) {

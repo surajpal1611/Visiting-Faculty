@@ -2,7 +2,6 @@ package com.visitingfaculty.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.visitingfaculty.model.user_bank_details.UserBankDetails;
 import com.visitingfaculty.validations.jsoncheck;
 
 import org.springframework.beans.factory.annotation.Autowired;
