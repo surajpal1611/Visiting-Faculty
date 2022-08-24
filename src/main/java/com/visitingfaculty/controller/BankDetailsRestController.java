@@ -2,7 +2,6 @@ package com.visitingfaculty.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.visitingfaculty.model.user_bank_details.UserBankDetails;
 import com.visitingfaculty.validations.jsoncheck;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +22,5 @@ public class BankDetailsRestController {
         System.out.println("Json Bank From Front End :"+bank_details);
         jsoncheck.bankJsonCheck(bank_details);
         return new ResponseEntity<String>("Inserted Successfully", HttpStatus.OK);
-    }
-    
+    }   
 }

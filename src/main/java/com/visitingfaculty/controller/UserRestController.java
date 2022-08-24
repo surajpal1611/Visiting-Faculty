@@ -1,6 +1,5 @@
 package com.visitingfaculty.controller;
 
-
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -23,14 +22,15 @@ public class UserRestController {
 
     @Autowired
     UserService userService;
-    @Autowired jsoncheck jsonchk;
+
+    @Autowired
+    jsoncheck jsonchk;
 
     @Autowired
     UserDaoInterface userDaoInterface;
 
-    @PostMapping(value="/insert-personal-details", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData)
-    {
+    @PostMapping(value = "/insert-personal-details", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) {
         System.out.println(personalDetailsData);
         Boolean check =  jsonchk.UserJsonCheck(personalDetailsData);
         System.out.println("Check User Personal : "+check);
@@ -51,9 +51,10 @@ public class UserRestController {
     }
 
     @PostMapping("/verify-login")
-    public ResponseEntity<?> verifyUserLogin(@RequestBody UserDto userDto,HttpSession httpSession) {
+    public ResponseEntity<?> verifyUserLogin(@RequestBody UserDto userDto, HttpSession httpSession) {
 
-        // if user not exist then we will generatae a random 6 digit token for verification
+        // if user not exist then we will generatae a random 6 digit token for
+        // verification
         System.out.println(userDto);
 
         int tokenGenerated = (int) Math.floor(100000 + Math.random() * 900000);
@@ -61,8 +62,8 @@ public class UserRestController {
 
         String message = "Please Enter this code to verify your email: " + tokenGenerated;
 
-        if(userService.sendEmail(message, userDto.getEmail())) {
-            
+        if (userService.sendEmail(message, userDto.getEmail())) {
+
             return ResponseEntity.ok("otp send successfully");
 
         } else {
@@ -75,8 +76,8 @@ public class UserRestController {
     @PostMapping("/verify-token")
     public ResponseEntity<?> verifyToken(@RequestBody String token, HttpSession httpSession) {
 
-        int tokenToVerify =  Integer.parseInt(token);
-        int tokenGenerated =  (int) httpSession.getAttribute("tokenGenerated");
+        int tokenToVerify = Integer.parseInt(token);
+        int tokenGenerated = (int) httpSession.getAttribute("tokenGenerated");
         // String tokenValidation = (String) httpSession.getAttribute("tokenGenerated");
 
         if (tokenGenerated != tokenToVerify) {
@@ -99,13 +100,13 @@ public class UserRestController {
         if (insertSkill == 1) {
 
             UserSkillsFromDB userSkill = userDaoInterface.getUserSkill(userSkillsFromDB.getSkill_name());
-            
+
             return userSkill;
 
         } else {
 
             return null;
         }
-       
+
     }
 }
