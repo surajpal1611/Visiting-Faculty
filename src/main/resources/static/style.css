@@ -9,6 +9,7 @@ body {
   font-family: var(--bs-body-font-family)
 }
 
+
 #resume-box {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -295,7 +296,7 @@ body {
   color: #740E00 ;
 }
 
-.card .content {
+.card  {
   padding: 25px 40px;
 }
 
@@ -347,11 +348,13 @@ body {
 } */
 
 .skill-pill-div {
-  width: auto;
-  margin :20px 0;
+  width: max-content;
+  margin :20px 0 0 0;
   border-radius: 50px;
   padding: 10px;
   border: 1px solid #b12828;
+  margin-right: 10px;
+  white-space: nowrap;
 }
 
 /* ********************************Personal Details Div Styling***************************************/
@@ -531,6 +534,13 @@ button {
   width: 90%;
 }
 
+#add-custom-soft-skill, #add-custom-hard-skill {
+  border: 1px solid #ddd;
+  margin: 20px 20px 20px 0;
+  padding: 8px 5px 0 15px ;
+  height: 55px;
+}
+
 #soft-skill-review-box li i {
   padding: 6px 15px 6px;
   border-right: 1px solid black;
@@ -625,6 +635,15 @@ button {
   margin: 0;
 }
 
+#soft-skill-box {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+#hard-skill-box {
+  text-decoration: none;
+  font-size: 18px;
+}
 
 #soft-skill-UL li {
   border: 1px solid #ddd;
