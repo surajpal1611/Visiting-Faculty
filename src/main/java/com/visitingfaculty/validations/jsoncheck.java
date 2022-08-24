@@ -93,4 +93,38 @@ public class jsoncheck
 
 
     }
+
+    //For Research Details
+    public Boolean researchJsonCheck(String JsonString)
+    {
+        Boolean check = false;
+        JSONObject jsonString = new JSONObject(JsonString);
+        JSONArray research = jsonString.getJSONArray("inser_research");
+        for( int i = 0 ; i < research.length() ; i++ )
+        {
+            String journal_name = research.getJSONObject(i).getString("journal_name");
+            String role = research.getJSONObject(i).getString("role");
+            String volume_year = research.getJSONObject(i).getString("volume_year");
+            String number = research.getJSONObject(i).getString("number");
+            String category = research.getJSONObject(i).getString("category");
+            String url_path = research.getJSONObject(i).getString("url_path");
+
+            Boolean journal_nameCheck = checkVal.checkLengthThree(journal_name);
+            Boolean volume_yearCheck = checkVal.yearCheck(volume_year);
+            Boolean numberCheck = checkVal.checkLengthThree(number);
+            Boolean categoryCheck = checkVal.checkLengthThree(category);
+            Boolean url_pathCheck = checkVal.checkLengthThree(url_path);
+
+            if(journal_nameCheck == true && volume_yearCheck == true && numberCheck == true && categoryCheck == true && url_pathCheck == true)
+            {
+                check = true;
+            } 
+            else
+            {
+                check = false;
+                break;
+            }           
+        }
+    return check;    
+    }
 }

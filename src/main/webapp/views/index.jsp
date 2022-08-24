@@ -1249,7 +1249,7 @@
                   <div class="col-md-2 ">
                     <p class="h6">Certificate</p>
                   </div>
-                  <div class="col-md-10"><input class="form-control" type="file"></div>
+                  <div class="col-md-10"><input class="form-control research_photo" type="file"></div>
                 </div>
               </div>
             </div>
@@ -2673,7 +2673,7 @@
 
 
 
-    //*************************************Research-modal JS****************************************
+    //*************************************Research-modal JS*******************************************************
 
     document.querySelector(".research-edit-box").addEventListener('click', function () {
       document.getElementById('body').classList.add('d-none');
@@ -2685,7 +2685,10 @@
       document.querySelector('.research-modal').classList.add('d-none');
     });
 
-        // ******************************************Validation Functions Start****************************************************
+
+
+
+        //***********Validation Functions Start*********
 function tabledatacheck(value)
     {
       let checkit = false;
@@ -2757,12 +2760,14 @@ function tabledatacheck(value)
         researchTableElem[j].querySelector('.research_volume_year').classList.remove('input-border');
         researchTableElem[j].querySelector('.research_description').classList.remove('input-border');
         researchTableElem[j].querySelector('.research_category').classList.remove('input-border');
+        researchTableElem[j].querySelector('.research_photo').classList.remove('input-border');
 
         let Role = researchTableElem[j].querySelector('.research_role').value;
         let Journal_name = researchTableElem[j].querySelector('.research_Journal_name').value;
         let volume_year = researchTableElem[j].querySelector('.research_volume_year').value;
         let description = researchTableElem[j].querySelector('.research_description').value;
         let category = researchTableElem[j].querySelector('.research_category').value;
+        let research_photo = researchTableElem[j].querySelector('.research_photo').value;
 
         let check_research_role = namecheck(Role);
         let check_journal_name = tabledatacheck(Journal_name);
@@ -2802,12 +2807,14 @@ function tabledatacheck(value)
 
    
         obj = {
-
+          id : "1",
+          resume_achievement_lid:"3",
           role: Role,
           journal_name: Journal_name,
           volume_year: volume_year,
-          description: description,
-          category: category
+          number: description,
+          category: category,
+          url_path: research_photo
         }
 
         div += ` 
@@ -2867,20 +2874,37 @@ function tabledatacheck(value)
           body: JSON.stringify(object),
         }
         fetch(url, params).then((data) => {
-          console.log(data);
+          console.log("This is the responce : ",data);
+          if(data.status == 200)
+          {
+            console.log("OK")
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.research-modal').classList.add('d-none');
+          }
+          else
+          {
+            console.log("Error");
+            alert('Check Research Details');
+          }
         })
       }
       postdata()
       document.getElementById('research-appending-div').firstElementChild.remove()
       document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.research-modal').classList.add('d-none');
-
 
     });
 
 
     document.getElementById('research-add-button').addEventListener('click', function () {
+
+      console.log("Research add button clicked");
+      let Journal_name_btn = document.querySelector('.research_Journal_name').value.length;
+
+      if(Journal_name_btn==0)
+      {
+        alert('Plz Fill The Below Data');
+        return;
+      }
 
       let table = ` 
       <div id="research-display-div" class="research-row px-3 px-sm-4 px-lg-4 mt-1">
@@ -2928,7 +2952,7 @@ function tabledatacheck(value)
                   <div class="col-md-2 ">
                     <p class="h6">Certificate</p>
                   </div>
-                  <div class="col-md-10"><input class="form-control" type="file"></div>
+                  <div class="col-md-10"><input class="form-control research_photo" type="file"></div>
                 </div>
               </div>
             </div>
