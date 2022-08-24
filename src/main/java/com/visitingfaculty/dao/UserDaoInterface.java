@@ -8,6 +8,8 @@ import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
 
 @Service
 public interface UserDaoInterface {
+
+    Object insertPersonalDetails(String personalDetailsData);
     
     List<UserSkillsFromDB> getAllSkills();
     

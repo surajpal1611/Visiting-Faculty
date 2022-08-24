@@ -1,11 +1,10 @@
 package com.visitingfaculty.dao;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
-
 import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
 
 @Repository
@@ -13,6 +12,15 @@ public class userDao implements UserDaoInterface {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
+
+    @Override
+    public Object insertPersonalDetails(String personalDetailsData) {
+       
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                        .withFunctionName("insert_user_details");
+                        
+        return jdbcCall.executeFunction( Object.class,personalDetailsData);
+    }
 
     @Override
     public List<UserSkillsFromDB> getAllSkills() {
