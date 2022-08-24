@@ -49,4 +49,12 @@ public class userDao implements UserDaoInterface {
        },skill_name);
     }
 
+    @Override
+    public Object insertQualificationDetails(String qualificationTableData) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+        .withFunctionName("insert_qualification_details");
+        
+        return jdbcCall.executeFunction( Object.class,qualificationTableData);
+    }
+
 }

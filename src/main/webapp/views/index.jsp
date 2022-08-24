@@ -522,7 +522,7 @@
                         <p id="micr-code-value">600002025</p>
                         <p id="account-number-value" class="pt-2">778866445523</p>
                         <p id="account-type-value" class="pt-2">Current Account</p>
-                        <p id="cancelled-check-photo" class="pt-3 h5">
+                        <p id="cancelled-check-photo" class="pt-3">
                           <i class="fa-solid fa-ban text-danger"></i>
                         </p>
                       </div>
@@ -578,7 +578,7 @@
 
             <div class="col-md-4 col-sm-12">
               <label for="date-of-birth">date of birth</label>
-              <span id="date-of-birth-message" class="error"></span>
+              <span id="date-of-birth-message" style="color: red;" class="error"></span>
               <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
             </div>
 
@@ -728,7 +728,7 @@
                       id="bachelors-degree-title-data">
                       <option value="1">Bachelor's Degree</option>
                       <option value="2">Master's Degree</option>
-                      <option value="3">PHD</option>
+                      <option class="phd-option" value="3">PHD</option>
                       <option value="4">Professional Certification</option>
                     </select></div>
                 </div>
@@ -757,6 +757,17 @@
               </div>
 
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+
+                <div class="row p-3 qualification-status-wrapper d-none">
+                  <div class="col-md-2 ">
+                    <p class="h6">Status</p>
+                  </div>
+                  <div class="col-md-10"><select class="form-control qualification-status"
+                    id="qualification-status-data">
+                    <option value="Awarded">Awarded</option>
+                    <option value="Persuing">Persuing</option>
+                  </select></div>
+                </div>
                 <div class="row p-3">
                   <div class="col-md-2">
                     <p class="h6">College</p>
@@ -776,8 +787,9 @@
                     <p class="h6">Certificate</p>
                   </div>
                   <div class="col-md-10"><input class="form-control qualification-certificate"
-                      id="bachelors-degree-certificate" type="file"></div>
+                    id="bachelors-degree-certificate" type="file"></div>
                 </div>
+               
               </div>
             </div>
             <div class="d-none qualification-delete-button d-flex justify-content-center align-items-center">
@@ -1061,49 +1073,6 @@
     </div>
   </div>
 
-
-
-  <!-- <hr>
-        <div class="d-flex align-items-centre justify-content-centre">
-          <div class="container">
-            <div class="row table">
-              <div class="table-responsive">
-                <table id="achievement-table">
-                  <thead class="text-white">
-                    <tr class="table-head">
-                      <th>Type</th>
-                      <th>Award name</th>
-                      <th>Organisation</th>
-                      <th>Organisation type</th>
-                      <th>Place</th>
-                      <th>Received date</th>
-                      <th>Certificate</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody id="award-data">
-                    <tr data-toggle="collapse" class="collapsed award-rows">
-                      <td class="text-white pb-3">Award</td>
-                      <td><input class="form-control awardName" type="text" id="award-name"></td>
-                      <td><input class="form-control awardOrganization" type="text" id="award-organization"></td>
-                      <td><select class="form-control awardOrganizationType" id="award-organization-type">
-                          <option value="0">-select-</option>
-                          <option value="1">School</option>
-                          <option value="2">University</option>
-                        </select></td>
-                      <td><input class="form-control awardPlace" type="text" id="award-place"></td>
-                      <td><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></td>
-                      <td><input class="form-control awardCertificationImage" type="file"
-                          id="award-certification-image"></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
 
   <!-- ************************************************************************Publication Modal Div******************************************************************************************** -->
 
@@ -1479,6 +1448,26 @@
       return condition;
     }
 
+    function personalDetailDateOfBirthValidation(res) {
+      var dob = res;
+      var year = Number(dob.substr(0, 4));
+      var today = new Date();
+      var age = today.getFullYear() - year;
+      if (res.length > 2) {
+        if (age>18) {
+            condition = true;
+          } else {
+        document.getElementById("date-of-birth-message").innerHTML = "*Your age should be above 18 years";
+        condition = false;
+      }
+                
+      } else {
+        document.getElementById("date-of-birth-message").innerHTML = "*Invalid length";
+        condition = false;
+      }
+      return condition;
+    }
+
     function personalDetailProfilePhotoValidation(res) {
       var fuData = document.getElementById('photo');
       if (res.length > 0) {
@@ -1508,7 +1497,7 @@
       if (gender == 1 || gender == 2 || gender == 3) {
         condition = true;
       } else {
-        document.getElementById("gender-message").innerHTML = "*select Your gender";
+        document.getElementById("gender-message").innerHTML = "*Mandatory";
         condition = false;
       }
       return condition;
@@ -1677,6 +1666,33 @@
         condition = true;
       } else {
         document.getElementById("country-message").innerHTML = "*Invalid length";
+        condition = false;
+      }
+      return condition;
+    }
+
+    function qualificationDetailYearOfPassingValidation(res) {
+      if (checkLength(res) == 4) {
+        if (isCharNumber(res)) {
+          condition = true;
+        } else {
+          condition = false;
+        }
+      } else {
+        condition = false;
+      }
+      return condition;
+    }
+
+    function qualificationDetailPercentageValidation(res)
+    {
+      if (checkLength(res) < 6) {
+        if (isCharNumber(res)) {
+          condition = true;
+        } else {
+          condition = false;
+        }
+      } else {
         condition = false;
       }
       return condition;
@@ -1854,6 +1870,65 @@
       return condition
     }
 
+     // ******************************************Validation Functions Start****************************************************
+function tabledatacheck(value)
+    {
+      let checkit = false;
+      if(value.length > 3)
+      {
+        checkit = true;
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    function namecheck(value)
+    {
+      let check = false;
+        if(value.length > 1)
+        {
+            for(let i = 0 ; i < value.length ;i++)
+            {
+                if(value[i] >= '!' && value[i] <= '@')
+                {
+                    check =false;
+                    break;
+                }
+                else
+                {
+                    check = true;    
+                }
+            }
+        }
+        else
+        {
+             check=false;
+        }
+        return check;
+    }
+
+    function yearcheck(value)
+    {
+      let checkit = false;
+      if(value.length == 4)
+      {
+        if(!isNaN(value))
+        {
+        checkit = true;
+        }
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    // ******************************************Validation Functions End***************************************************
+
     let downloadButton = document.getElementById("download-btn");
     downloadButton.addEventListener("click", function () {
       let elementHTML = document.getElementById("body");
@@ -1902,6 +1977,15 @@
 
     document.querySelector('.qualification-div-wrapper').addEventListener('mouseleave', function () {
       document.querySelector('.qualification-edit-box').classList.add('d-none');
+    });
+
+    document.querySelector('.qualification-title').addEventListener('change', function () {
+      let qualificationTitle = document.querySelector('.qualification-title')
+      if(qualificationTitle.value == 3){
+        document.querySelector('.qualification-status-wrapper').classList.remove('d-none');
+      }else{
+        document.querySelector('.qualification-status-wrapper').classList.add('d-none');
+      }
     });
 
 
@@ -1976,6 +2060,7 @@
 
       let firstName = personalDetailFirstNameValidation(result.f_name);
       let lastName = personalDetailLastNameValidation(result.l_name);
+      let DOB = personalDetailDateOfBirthValidation(result.date_of_birth);
       let gender = personalDetailGenderValidation(result.gender);
       let contactNumber = personalDetailContactNumberValidation(result.contact_number);
       let pancard = personalDetailPancardValidation(result.pan_number);
@@ -2192,20 +2277,65 @@
       let qualificationRow = document.querySelectorAll('.qualification-row')
       for (i = 0; i < qualificationRow.length; i++) {
 
+        //to remove the red border
+        qualificationRow[i].querySelector('.qualification-subject').classList.remove('input-border');
+        qualificationRow[i].querySelector('.qualification-university').classList.remove('input-border');
+        qualificationRow[i].querySelector('.qualification-college').classList.remove('input-border');
+        qualificationRow[i].querySelector('.qualification-percentile').classList.remove('input-border');
+        qualificationRow[i].querySelector('.qualification-year').classList.remove('input-border');
+        qualificationRow[i].querySelector('.qualification-certificate').classList.remove('input-border');
+
         let qualificationTitle = qualificationRow[i].querySelector('.qualification-title').value;
         let qualificationSubject = qualificationRow[i].querySelector('.qualification-subject').value;
         let qualificationUniversity = qualificationRow[i].querySelector('.qualification-university').value;
         let qualificationCollege = qualificationRow[i].querySelector('.qualification-college').value;
+        // let qualificationStatus = qualificationRow[i].querySelector('.qualification-status').value;
         let qualificationPercentile = qualificationRow[i].querySelector('.qualification-percentile').value;
         let qualificationYear = qualificationRow[i].querySelector('.qualification-year').value;
         let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
 
+        let checkSubject = namecheck(qualificationSubject);
+        let checkUniversity = namecheck(qualificationUniversity);
+        let checkCollege = namecheck(qualificationCollege);
+        let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
+        let checkCertificate = tabledatacheck(qualificationCertificate);
+        let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
+        
+
+        // console.log(checkSubject)
+        
+
+        //  to add the red border according to validations
+        if (checkSubject == false) {
+          qualificationRow[i].querySelector('.qualification-subject').classList.add('input-border');
+          return;
+        } else if (checkUniversity == false) {
+          qualificationRow[i].querySelector('.qualification-university').classList.add('input-border');
+          return;
+        } else if (checkCollege == false) {
+          qualificationRow[i].querySelector('.qualification-college').classList.add('input-border');
+          return;
+        } else if (checkYearOfPassing == false) {
+          qualificationRow[i].querySelector('.qualification-year').classList.add('input-border');
+          return;
+        } else if (checkCertificate == false) {
+          qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
+          return;
+        } else if (checkPercentile == false) {
+          qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
+          return;
+        }
+       
+
+
         object = {
+          resume_lid: 1,
           qualification_type_lid: qualificationTitle,
           topic_of_study: qualificationSubject,
           university: qualificationUniversity,
           institute: qualificationCollege,
-          percentile: qualificationPercentile,
+          // status: qualificationStatus,
+          percentile: Number.parseFloat(qualificationPercentile),
           year_of_passing: qualificationYear,
           url_path: qualificationCertificate
         }
@@ -2269,12 +2399,17 @@
         },
         body: JSON.stringify(qualificationTableData)
       }
-      let fetchRes = fetch("/insert-qualification-details", options);
+      let fetchRes = fetch('/insert-qualification-details', options);
       fetchRes.then(success => {
+        if(success.status == 200){
         document.getElementById('qualification-appending-div').firstElementChild.remove()
         document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
         document.getElementById('body').classList.remove('d-none');
         document.querySelector('.qualification-modal').classList.add('d-none');
+      }
+      else {
+        console.log("Error in qualification Details")
+      }
       })
 
     })
@@ -2690,50 +2825,13 @@ let publicationTableArray = []
 let publicationRow = document.querySelectorAll('.publication-row')
 for (i = 0; i < publicationRow.length; i++) {
 
- //to remove the red border
- publicationRow[i].querySelector('.role').classList.remove('input-border');
- publicationRow[i].querySelector('.publisher').classList.remove('input-border');
- publicationRow[i].querySelector('.number-of-authors').classList.remove('input-border');
- publicationRow[i].querySelector('.year-of-publication').classList.remove('input-border');
- publicationRow[i].querySelector('.book-title').classList.remove('input-border');
- publicationRow[i].querySelector('.certification').classList.remove('input-border');
-
-
   let publicationRole  = publicationRow[i].querySelector('.role').value;
   let publicationPublisher = publicationRow[i].querySelector('.publisher').value;
   let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
   let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
   let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
   let publicationCertificate = publicationRow[i].querySelector('.certification').value;
-
-  let checktitle = publicationDetailRoleValidation(publicationRole);
-  let checkorganization_name = publicationDetailPublisherValidation(organization_name);
-  let checkdiscription = publicationDetailNumberOfAuthorValidation(discription);
-  let checkachivement_date = publicationDetailYearOfPublicationValidation(achivement_date);
-  let checkurl_path = publicationDetailBookTitleValidation(url_path);
-  let checkorganization_type_lid = publicationDetailCertificateValidation(organization_type_lid)
-
-  //to add the red border according to validations
-  if (checktitle == false) {
-    publicationRow[i].querySelector('.role').classList.add('input-border');
-    return;
-  } else if (checkorganization_name == false) {
-    publicationRow[i].querySelector('.publisher').classList.add('input-border');
-    return;
-  } else if (checkdiscription == false) {
-    publicationRow[i].querySelector('.number-of-authors').classList.add('input-border');
-    return;
-  } else if (checkachivement_date == false) {
-    publicationRow[i].querySelector('.year-of-publication').classList.add('input-border');
-    return;
-  } else if (checkurl_path == false) {
-    publicationRow[i].querySelector('.book-title').classList.add('input-border');
-    return;
-  } else if (checkorganization_type_lid  == false) {
-    publicationRow[i].querySelector('.certification').classList.add('input-border');
-    return;
-  }
-
+ 
   object = {
     resume_achievement_lid: 1,
     role: publicationRole,
@@ -2899,64 +2997,7 @@ fetchRes.then(success => {
       document.querySelector('.research-modal').classList.add('d-none');
     });
 
-        // ******************************************Validation Functions Start****************************************************
-function tabledatacheck(value)
-    {
-      let checkit = false;
-      if(value.length > 3)
-      {
-        checkit = true;
-      }
-      else
-      {
-        checkit = false;
-      }
-      return checkit;
-    }
-
-    function namecheck(value)
-    {
-      let check = false;
-        if(value.length > 1)
-        {
-            for(let i = 0 ; i < value.length ;i++)
-            {
-                if(value[i] >= '!' && value[i] <= '@')
-                {
-                    check =false;
-                    break;
-                }
-                else
-                {
-                    check = true;    
-                }
-            }
-        }
-        else
-        {
-             check=false;
-        }
-        return check;
-    }
-
-    function yearcheck(value)
-    {
-      let checkit = false;
-      if(value.length == 4)
-      {
-        if(!isNaN(value))
-        {
-        checkit = true;
-        }
-      }
-      else
-      {
-        checkit = false;
-      }
-      return checkit;
-    }
-
-    // ******************************************Validation Functions End***************************************************
+       
 
     document.querySelector('#research-submit-button').addEventListener('click', function () {
       console.log("research button clicked");
