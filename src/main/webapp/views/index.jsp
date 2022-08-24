@@ -2970,7 +2970,8 @@
       document.querySelector('.skills-modal').classList.add('d-none');
 
     })
-
+    let hardSkillIndex = 1
+    let softSkillIndex = 1
     document.querySelector('#skills-modal-submit-button').addEventListener('click', function () {
 
 
@@ -2990,8 +2991,8 @@
       let softSkillListGroup = document.querySelectorAll('.soft-skill-list-group')
       let hardSkillListGroup = document.querySelectorAll('.hard-skill-list-group')
       let skillIndex = 0;
-      let softSkillIndex = 1
-      let hardSkillIndex = 1
+
+
       for (let i = 0; i < softSkillListGroup.length; i++) {
 
         let value = softSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
@@ -3016,9 +3017,9 @@
       }
 
       for (let i = 0; i < hardSkillListGroup.length; i++) {
-
         let value = hardSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
         let value2 = hardSkillListGroup[i].firstElementChild.lastElementChild.lastElementChild.innerText
+        console.log(value2)
 
         if (hardSkillIndex == 1) {
           hardSkillAppendingDiv1.insertAdjacentHTML('beforeend', `<div class="skill-pill-div text-center">
@@ -3076,7 +3077,7 @@
           break;
         } else {
           document.getElementById('add-custom-soft-skill').classList.remove('d-none');
-
+          
         }
       }
 
