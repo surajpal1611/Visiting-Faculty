@@ -23,6 +23,5 @@ public class BankDetailsRestController {
         System.out.println("Json Bank From Front End :"+bank_details);
         jsoncheck.bankJsonCheck(bank_details);
         return new ResponseEntity<String>("Inserted Successfully", HttpStatus.OK);
-    }
-    
+    }   
 }
