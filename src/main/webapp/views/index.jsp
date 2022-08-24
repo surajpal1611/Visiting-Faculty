@@ -1041,9 +1041,7 @@
             </div>
           </div>
           <hr style="height: 5px;">
-          <div id="publication-data" class="mt-4">
-
-          </div>
+       
         </div>
 
         <div class="d-flex justify-content-center">
@@ -2456,9 +2454,7 @@
             </div>
           </div>
           <hr style="height: 5px;">
-          <div id="publication-data" class="mt-4">
-
-          </div>
+        
         </div> 
        `
       document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
@@ -2674,80 +2670,6 @@
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.publication-modal').classList.add('d-none');
     });
-// ******************************************Validation Functions Start****************************************************
-
-//Length Check less then three
-function tabledatacheck(value)
-    {
-      let checkit = false;
-      if(value.length > 3)
-      {
-        checkit = true;
-      }
-      else
-      {
-        checkit = false;
-      }
-      return checkit;
-    }
-
-//select value should not be zero
-function checknotnull(value)
-    {
-      let checkit = false;
-      if(value > 0)
-      {
-        checkit = true;
-      }
-      else
-      {
-        checkit = false;
-      }
-      return checkit;
-    }
-
-//no spectail characters
-function namecheck(value)
-    {
-      let check = false;
-        if(value.length > 1)
-        {
-            for(let i = 0 ; i < value.length ;i++)
-            {
-                if(value[i] >= '!' && value[i] <= '@')
-                {
-                    check =false;
-                    break;
-                }
-                else
-                {
-                    check = true;    
-                }
-            }
-        }
-        else
-        {
-             check=false;
-        }
-        return check;
-    }
-
-//date check length
-function checkdate(value)
-    {
-      let checkit = false;
-      if(value.length == 10)
-      {
-        checkit = true;
-      }
-      else
-      {
-        checkit = false;
-      }
-      return checkit;
-    }
-
-// ******************************************Validation Functions End****************************************************
     
     document.querySelector("#publication-submit-button").addEventListener('click', function (e) {
 
@@ -2759,12 +2681,49 @@ let publicationTableArray = []
 let publicationRow = document.querySelectorAll('.publication-row')
 for (i = 0; i < publicationRow.length; i++) {
 
+ //to remove the red border
+ publicationRow[i].querySelector('.role').classList.remove('input-border');
+ publicationRow[i].querySelector('.publisher').classList.remove('input-border');
+ publicationRow[i].querySelector('.number-of-authors').classList.remove('input-border');
+ publicationRow[i].querySelector('.year-of-publication').classList.remove('input-border');
+ publicationRow[i].querySelector('.book-title').classList.remove('input-border');
+ publicationRow[i].querySelector('.certification').classList.remove('input-border');
+
+
   let publicationRole  = publicationRow[i].querySelector('.role').value;
   let publicationPublisher = publicationRow[i].querySelector('.publisher').value;
   let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
   let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
   let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
   let publicationCertificate = publicationRow[i].querySelector('.certification').value;
+
+  let checktitle = publicationDetailRoleValidation(publicationRole);
+  let checkorganization_name = publicationDetailPublisherValidation(organization_name);
+  let checkdiscription = publicationDetailNumberOfAuthorValidation(discription);
+  let checkachivement_date = publicationDetailYearOfPublicationValidation(achivement_date);
+  let checkurl_path = publicationDetailBookTitleValidation(url_path);
+  let checkorganization_type_lid = publicationDetailCertificateValidation(organization_type_lid)
+
+  //to add the red border according to validations
+  if (checktitle == false) {
+    publicationRow[i].querySelector('.role').classList.add('input-border');
+    return;
+  } else if (checkorganization_name == false) {
+    publicationRow[i].querySelector('.publisher').classList.add('input-border');
+    return;
+  } else if (checkdiscription == false) {
+    publicationRow[i].querySelector('.number-of-authors').classList.add('input-border');
+    return;
+  } else if (checkachivement_date == false) {
+    publicationRow[i].querySelector('.year-of-publication').classList.add('input-border');
+    return;
+  } else if (checkurl_path == false) {
+    publicationRow[i].querySelector('.book-title').classList.add('input-border');
+    return;
+  } else if (checkorganization_type_lid  == false) {
+    publicationRow[i].querySelector('.certification').classList.add('input-border');
+    return;
+  }
 
   object = {
     resume_achievement_lid: 1,
@@ -2902,6 +2861,9 @@ fetchRes.then(success => {
                   <div class="col-md-10"><input class="form-control certification" type="file"></div>
                 </div>
               </div>
+            </div>
+            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x"></i>
             </div>
           </div>
           <hr style="height: 5px;">`
