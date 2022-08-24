@@ -373,8 +373,8 @@
                 <div class="d-flex justify-content-center align-items-center">
                   <h3 class="mb-4 h3" style="color: #740E00;"><b> Publications </b></h3>
                 </div>
-
-                <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                <div id="publication-appending-div" class="bg-white">
+                <div id="publication-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
 
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -411,6 +411,7 @@
 
                   </div>
                 </div>
+               </div>
               </div>
             </div>
             <div class="d-none publication-edit-box d-flex justify-content-center align-items-center">
@@ -1049,23 +1050,23 @@
                   <div class="col-md-2 ">
                     <p class="h6">Role</p>
                   </div>
-                  <div class="col-md-10"><select data-title="Role ?" class="form-control" id="role">
-                      <option>-Select-</option>
-                      <option value="Edited">Edited</option>
-                      <option value="Authored">Authored</option>
+                  <div class="col-md-10"><select class="form-control role" id="role">
+                      <option >-Select-</option>
+                      <option >Edited</option>
+                      <option >Authored</option>
                     </select></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
                     <p class="h6">Number of Authors</p>
                   </div>
-                  <div class="col-md-10 "><input data-title="No.-of-Authors" class="form-control" type="text"></div>
+                  <div class="col-md-10 "><input  class="form-control number-of-authors" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
                     <p class="h6">Book Title</p>
                   </div>
-                  <div class="col-md-10 "><input class="form-control" type="text"></div>
+                  <div class="col-md-10 "><input class="form-control book-title" type="text"></div>
                 </div>
               </div>
 
@@ -1074,19 +1075,19 @@
                   <div class="col-md-2">
                     <p class="h6">Publisher</p>
                   </div>
-                  <div class="col-md-10 "><input class="form-control" type="text"></div>
+                  <div class="col-md-10 "><input class="form-control publisher" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2">
                     <p class="h6">Year of Publication</p>
                   </div>
-                  <div class="col-md-10"><input class="form-control" type="text"></div>
+                  <div class="col-md-10"><input class="form-control year-of-publication" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
                     <p class="h6">Certificate</p>
                   </div>
-                  <div class="col-md-10"><input class="form-control" type="file"></div>
+                  <div class="col-md-10"><input class="form-control certification" type="file"></div>
                 </div>
               </div>
             </div>
@@ -1129,10 +1130,10 @@
                   <div class="col-md-2 ">
                     <p class="h6">Role</p>
                   </div>
-                  <div class="col-md-10"><select name="role" class="form-control research_role">
-                      <option>-Select-</option>
-                      <option value="Sole">Sole</option>
-                      <option value="Author">Author</option>
+                  <div class="col-md-10" ><select name="role" class="form-control research_role">
+                      <option value="0">-Select-</option>
+                      <option value="1">Sole</option>
+                      <option value="2">Author</option>
                     </select></div>
                 </div>
                 <div class="row p-3">
@@ -1597,6 +1598,78 @@
         condition = true;
       } else {
         document.getElementById("country-message").innerHTML = "*Invalid length";
+        condition = false;
+      }
+      return condition;
+    }
+
+    function publicationDetailRoleValidation(res) {
+      console.log(res)
+      if (res == "Edited" || res == "Authored") {
+        document.querySelector('.role').style="border:1px solid green"
+        condition = true;
+      } else {
+        document.querySelector('.role').style="border:1px solid red"
+        condition = false;
+      }
+      return condition;
+    } 
+
+    function publicationDetailPublisherValidation(res) {
+      if (res.length != 0) {
+        condition = true;
+        document.querySelector('.publisher').style.borderColor = "green";
+      } else {
+        // document.getElementById("country-message").innerHTML = "*Invalid length";
+        document.querySelector('.publisher').style.borderColor = "red";
+        condition = false;
+      }
+      return condition;
+    }
+
+    function publicationDetailNumberOfAuthorValidation(res) {
+      if (res.length != 0) {
+        document.querySelector('.number-of-authors').style.borderColor = "green";
+        condition = true;
+      } else {
+        // document.getElementById("country-message").innerHTML = "*Invalid length";
+        document.querySelector('.number-of-authors').style.borderColor = "red";
+        condition = false;
+      }
+      return condition;
+    }
+
+    function publicationDetailYearOfPublicationValidation(res) {
+      if (res.length != 0) {
+        document.querySelector('.year-of-publication').style.borderColor = "green";
+        condition = true;
+      } else {
+        // document.getElementById("country-message").innerHTML = "*Invalid length";
+        document.querySelector('.year-of-publication').style.borderColor = "red";
+        condition = false;
+      }
+      return condition;
+    }
+
+    function publicationDetailBookTitleValidation(res) {
+      if (res.length != 0) {
+        document.querySelector('.book-title').style.borderColor = "green";
+        condition = true;
+      } else {
+        // document.getElementById("country-message").innerHTML = "*Invalid length";
+        document.querySelector('.book-title').style.borderColor = "red";
+        condition = false;
+      }
+      return condition;
+    }
+
+    function publicationDetailCertificateValidation(res) {
+      if (res.length != 0) {
+        document.querySelector('.certification').style.borderColor = "green";
+        condition = true;
+      } else {
+        // document.getElementById("country-message").innerHTML = "*Invalid length";
+        document.querySelector('.certification').style.borderColor = "red";
         condition = false;
       }
       return condition;
@@ -2347,9 +2420,187 @@
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.publication-modal').classList.add('d-none');
     });
+// ******************************************Validation Functions Start****************************************************
+
+//Length Check less then three
+function tabledatacheck(value)
+    {
+      let checkit = false;
+      if(value.length > 3)
+      {
+        checkit = true;
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+//select value should not be zero
+function checknotnull(value)
+    {
+      let checkit = false;
+      if(value > 0)
+      {
+        checkit = true;
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+//no spectail characters
+function namecheck(value)
+    {
+      let check = false;
+        if(value.length > 1)
+        {
+            for(let i = 0 ; i < value.length ;i++)
+            {
+                if(value[i] >= '!' && value[i] <= '@')
+                {
+                    check =false;
+                    break;
+                }
+                else
+                {
+                    check = true;    
+                }
+            }
+        }
+        else
+        {
+             check=false;
+        }
+        return check;
+    }
+
+//date check length
+function checkdate(value)
+    {
+      let checkit = false;
+      if(value.length == 10)
+      {
+        checkit = true;
+      }
+      else
+      {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+// ******************************************Validation Functions End****************************************************
+    
+    document.querySelector("#publication-submit-button").addEventListener('click', function (e) {
+
+      e.preventDefault()
+ 
+
+let div = ''
+let publicationTableArray = []
+let publicationRow = document.querySelectorAll('.publication-row')
+for (i = 0; i < publicationRow.length; i++) {
+
+  let publicationRole  = publicationRow[i].querySelector('.role').value;
+  let publicationPublisher = publicationRow[i].querySelector('.publisher').value;
+  let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
+  let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
+  let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
+  let publicationCertificate = publicationRow[i].querySelector('.certification').value;
+
+  object = {
+    resume_achievement_lid: 1,
+    role: publicationRole,
+    no_of_authors: publicationNumberOfAuthors,
+    book_title: publicationBookTitle,
+    publisher: publicationPublisher,
+    year_of_publication: publicationYearOfPublication,
+    url_path: publicationCertificate
+  }
+
+  div += `   
+  <div id="publication-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+                 <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Role :</p>
+                          <p class="h5 py-1">No. of Authors :</p>
+                          <p class="h5 py-1">Book Title :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">\${publicationRole}\</p>
+                          <p id="">\${publicationNumberOfAuthors}\ </p>
+                          <p id="">\${publicationBookTitle}\</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Publisher :</p>
+                          <p class="h5 pb-1">year of Publication :</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">\${publicationPublisher}\</p>
+                          <p class="" id="">\${publicationYearOfPublication}\</p>
+                          <p id="">\${publicationCertificate}\</p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                  `
+
+  publicationTableArray.push(object)
+}
+
+let publicationTableData = {
+  "PublicationDetails": publicationTableArray
+}
+console.log(JSON.stringify(publicationTableData))
+
+let options = {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json;charset=utf-8'
+  },
+  body: JSON.stringify(publicationTableData)
+}
+let fetchRes = fetch("/insert-publication-details", options);
+fetchRes.then(success => {
+ document.getElementById('publication-appending-div').firstElementChild.remove()
+ document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
+  document.getElementById('body').classList.remove('d-none');
+  document.querySelector('.publication-modal').classList.add('d-none');
+})
+    });
 
     document.getElementById('publication-add-button').addEventListener('click', function () {
-      let table = `  <div id="award-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1">
+
+
+      const role = publicationDetailRoleValidation(document.querySelector('.role').value)
+      const publisher = publicationDetailPublisherValidation(document.querySelector('.publisher').value)
+      const numberOfAuthor = publicationDetailNumberOfAuthorValidation(document.querySelector('.number-of-authors').value)
+      const yearOfPublication = publicationDetailYearOfPublicationValidation(document.querySelector('.year-of-publication').value)
+      const bookTitle = publicationDetailBookTitleValidation(document.querySelector('.book-title').value)
+      const certificate = publicationDetailCertificateValidation(document.querySelector('.certification').value)
+      console.log(role)
+
+      if(!role || !publisher || !numberOfAuthor || !yearOfPublication || !bookTitle || !certificate){
+               return;
+      }
+    
+      let table = `<div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -2357,23 +2608,23 @@
                   <div class="col-md-2 ">
                     <p class="h6">Role</p>
                   </div>
-                  <div class="col-md-10"><select data-title="Role ?" class="form-control" id="role">
-                    <option>-Select-</option>
-                    <option value="Edited">Edited</option>
-                    <option value="Authored">Authored</option>
-                  </select></div>
+                  <div class="col-md-10"><select class="form-control role" id="role">
+                      <option >-Select-</option>
+                      <option >Edited</option>
+                      <option >Authored</option>
+                    </select></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
                     <p class="h6">Number of Authors</p>
                   </div>
-                  <div class="col-md-10 "><input data-title="No.-of-Authors" class="form-control" type="text"></div>
+                  <div class="col-md-10 "><input  class="form-control number-of-authors" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
                     <p class="h6">Book Title</p>
                   </div>
-                  <div class="col-md-10 "><input class="form-control" type="text"></div>
+                  <div class="col-md-10 "><input class="form-control book-title" type="text"></div>
                 </div>
               </div>
 
@@ -2382,29 +2633,30 @@
                   <div class="col-md-2">
                     <p class="h6">Publisher</p>
                   </div>
-                  <div class="col-md-10 "><input class="form-control" type="text"></div>
+                  <div class="col-md-10 "><input class="form-control publisher" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2">
                     <p class="h6">Year of Publication</p>
                   </div>
-                  <div class="col-md-10"><input class="form-control" type="text"></div>
+                  <div class="col-md-10"><input class="form-control year-of-publication" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
                     <p class="h6">Certificate</p>
                   </div>
-                  <div class="col-md-10"><input class="form-control" type="file"></div>
+                  <div class="col-md-10"><input class="form-control certification" type="file"></div>
                 </div>
               </div>
             </div>
-            <div class="d-none qualification-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
+            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x"></i>
             </div>
           </div>
           <hr style="height: 5px;">`
       document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
     })
+
 
     $(document).on('click', '.publication-delete-button', function () {
       $(this).closest('tr').remove()

@@ -9,6 +9,7 @@ body {
   font-family: var(--bs-body-font-family)
 }
 
+
 #resume-box {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -814,4 +815,12 @@ button {
   .city-line {
     padding-top: 20px;
   }
+}
+
+
+.input-border{
+  border: 2px solid red;
+}
+.input-border-green {
+  border: 1px solid green !important;
 }
