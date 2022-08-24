@@ -18,4 +18,6 @@ public interface UserDaoInterface {
     int insertCustomSkill(UserSkillsFromDB userSkillsFromDB);
 
     UserSkillsFromDB getUserSkill(String skill_name);
+
+    Object insertAwardData(String data);
 }
