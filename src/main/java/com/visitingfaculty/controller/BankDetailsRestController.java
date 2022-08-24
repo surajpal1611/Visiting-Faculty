@@ -17,10 +17,11 @@ public class BankDetailsRestController {
     @Autowired jsoncheck jsoncheck;
 
     @PostMapping(value="/insert-bank-details")
-    public ResponseEntity<String> postMethodName(@RequestBody  String bank_details) {
+    public ResponseEntity<?> postMethodName(@RequestBody  String bank_details) {
         
         System.out.println("Json Bank From Front End :"+bank_details);
         jsoncheck.bankJsonCheck(bank_details);
-        return new ResponseEntity<String>("Inserted Successfully", HttpStatus.OK);
+
+        return ResponseEntity.status(HttpStatus.OK).build();
     }   
 }
