@@ -116,4 +116,28 @@ public class validationsMethod
         }
     return check; 
     }
+
+    //Year Validation 
+    public Boolean yearCheck(String value)
+    {
+        Boolean check = false;
+        char year[] = value.toCharArray();
+        if(year.length == 4)
+        {
+            for(int i = 0 ; i < year.length ; i++)
+            {
+                if(year[i] < '0' || year[i] > '9')
+                {
+                    check = false;
+                    break;
+                }
+                else
+                {
+                    check = true;
+                }
+            }
+        }
+        return check;
+
+    }
 }
