@@ -35,7 +35,10 @@ public class UserRestController {
         Boolean check = jsonchk.UserJsonCheck(personalDetailsData);
         if(check == true)
         {
-            System.out.println("Success");
+            Object insertPersonalDetails = userDaoInterface.insertPersonalDetails(personalDetailsData);
+            if (insertPersonalDetails == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            }
             return ResponseEntity.ok("Inserted Successfully");
         }
         else

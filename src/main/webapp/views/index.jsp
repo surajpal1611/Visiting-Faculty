@@ -3055,7 +3055,6 @@
          hardSkillIndex = 1
         }
 
-
         let obj = {}
         obj.resume_lid = 1
         obj.skill_lid = Number.parseInt(value)
