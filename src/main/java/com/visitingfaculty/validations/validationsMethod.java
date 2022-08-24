@@ -138,6 +138,27 @@ public class validationsMethod
             }
         }
         return check;
+    }
 
+    //Valiidation for Percentage/CGPA
+    public Boolean percentageCheck(String value)
+    {
+        String values = value.replace('.','0');
+        System.out.println("replace : "+values);
+        char pergentage[] = values.toCharArray();
+        Boolean check = false;
+        for(int i = 0 ; i < pergentage.length ; i++)
+        {
+            if(pergentage[i] < '0' || pergentage[i] > '9')
+            {
+                check = false;
+                break;
+            }
+            else
+            {
+                check = true;
+            }
+        }
+    return check;
     }
 }

@@ -32,18 +32,22 @@ public class UserRestController {
     @PostMapping(value = "/insert-personal-details", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) {
         System.out.println(personalDetailsData);
-        // Boolean check = jsonchk.UserJsonCheck(personalDetailsData);
-        // if (check == true) {
-            Object insertPersonalDetails = userDaoInterface.insertPersonalDetails(personalDetailsData);
-            if (insertPersonalDetails == null) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        Boolean check =  jsonchk.UserJsonCheck(personalDetailsData);
+        System.out.println("Check User Personal : "+check);
+        if(check == true)
+           {
+             Object insertPersonalDetails = userDaoInterface.insertPersonalDetails(personalDetailsData);
+             if (insertPersonalDetails == null) 
+                {
+                    return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+                }
+              return ResponseEntity.ok("Inserted Successfully");
             }
-            return ResponseEntity.ok("Inserted Successfully");
-        // } else {
-        //     System.out.println("Error");
-        //     return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        // }
-
+        else
+        {
+            System.out.println("Error");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }       
     }
 
     @PostMapping("/verify-login")

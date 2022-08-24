@@ -20,13 +20,13 @@ public class jsoncheck
               String title = award.getJSONObject(i).getString("title");
               String organization_name = award.getJSONObject(i).getString("organization_name");
               String organization_type_lid = award.getJSONObject(i).getString("organization_type_lid");
-              String discription = award.getJSONObject(i).getString("discription");
-              String achivement_date = award.getJSONObject(i).getString("achivement_date"); 
+              String discription = award.getJSONObject(i).getString("description");
+              String achivement_date = award.getJSONObject(i).getString("achievement_date"); 
               String url_path = award.getJSONObject(i).getString("url_path");
   
               Boolean titlecheck = checkVal.CheckWithNoSpectailChar(title);
               Boolean organizationcheck = checkVal.CheckWithNoSpectailChar(organization_name);
-              Boolean discriptioncheck = checkVal.CheckWithNoSpectailChar(discription);
+              Boolean discriptioncheck = checkVal.checkLengthThree(discription);
               
               if(titlecheck == false || organizationcheck == false || discriptioncheck == false)
               {
@@ -47,29 +47,34 @@ public class jsoncheck
         Boolean check = false;
         JSONObject jsonString = new JSONObject(JsonString);
         //for userinfo
-        JSONObject user_info = jsonString.getJSONObject("user_info");
-        String f_name = user_info.getString("f_name");
-        String l_name = user_info.getString("l_name");
-        String email = user_info.getString("email");
-
-        Boolean l_namecheck = checkVal.CheckWithNoSpectailChar(l_name);
-        Boolean f_namecheck = checkVal.CheckWithNoSpectailChar(f_name);
-        Boolean emailcheckvalue = checkVal.emailCheck(email);
-
-        //for contact numbver
-        JSONObject user_contact = jsonString.getJSONObject("user_contact");
-        String contact_number = user_contact.getString("contact_number");
-        Boolean contactcheck = checkVal.phoneNumberCheck(contact_number);
-
-        if(l_namecheck == true && f_namecheck == true && emailcheckvalue == true && contactcheck == true)
+        JSONObject insert_user_personal_details = jsonString.getJSONObject("insert_user_personal_details");
+        JSONArray user_info = insert_user_personal_details.getJSONArray("user_info");
+        JSONArray user_contact = insert_user_personal_details.getJSONArray("user_contact");
+        for(int i = 0 ; i < user_info.length() ; i++ )
         {
-            check = true;
+             String f_name = user_info.getJSONObject(i).getString("f_name");
+             String l_name = user_info.getJSONObject(i).getString("l_name");
+             String email = user_info.getJSONObject(i).getString("email");
+     
+             Boolean l_namecheck = checkVal.CheckWithNoSpectailChar(l_name);
+             Boolean f_namecheck = checkVal.CheckWithNoSpectailChar(f_name);
+             Boolean emailcheckvalue = checkVal.emailCheck(email);
+     
+             //for contact numbver
+             String contact_number = user_contact.getJSONObject(i).getString("contact_number");
+             Boolean contactcheck = checkVal.phoneNumberCheck(contact_number);
+     
+             if(l_namecheck == false || f_namecheck == false || emailcheckvalue == false || contactcheck == false)
+             {
+                 check = false;
+                 break;
+             }
+             else
+             {
+                 check = true;
+             }
         }
-        else
-        {
-            check = false;
-        }
-    return check;    
+        return check;
     }
 
     //For Bank Details
@@ -90,8 +95,36 @@ public class jsoncheck
         Boolean account_typecheck = checkVal.CheckWithNoSpectailChar(account_type);
         Boolean account_numbercheck = checkVal.accountNumberCheck(account_number);
         System.out.println("Account number boolean : "+account_numbercheck);
+    }
 
+    //For Qualification Details
+    public Boolean qualificationCheck(String JsonString)
+    {
+        Boolean check = false;
+        JSONObject jsonString = new JSONObject(JsonString);
+        JSONArray qualification = jsonString.getJSONArray("qualificationDetails");
+        for( int i = 0 ; i < qualification.length() ; i++ )
+        {
+            String topic_of_study = qualification.getJSONObject(i).getString("topic_of_study");
+            String university = qualification.getJSONObject(i).getString("university");
+            String institute = qualification.getJSONObject(i).getString("institute");
+            String url_path = qualification.getJSONObject(i).getString("url_path");
+            String year_of_passing = qualification.getJSONObject(i).getString("year_of_passing");
+            String percentile = qualification.getJSONObject(i).getString("percentile");
 
+            Boolean topic_of_studyCheck = checkVal.checkLengthThree(topic_of_study);
+            Boolean universityCheck = checkVal.CheckWithNoSpectailChar(university);
+            Boolean instituteCheck = checkVal.CheckWithNoSpectailChar(institute);
+            Boolean url_pathCheck = checkVal.checkLengthThree(url_path);
+            Boolean year_of_passingCheck = checkVal.yearCheck(year_of_passing);
+            Boolean percentileCheck = checkVal.percentageCheck(percentile);
+
+            if(topic_of_studyCheck == true && universityCheck == true && instituteCheck == true && url_pathCheck == true && year_of_passingCheck == true && percentileCheck == true)
+            {
+                check = true;
+            }
+        }
+    return check;
     }
 
     //For Research Details

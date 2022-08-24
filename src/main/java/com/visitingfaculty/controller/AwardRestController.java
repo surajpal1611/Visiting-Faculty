@@ -2,11 +2,14 @@ package com.visitingfaculty.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.visitingfaculty.service.UserInsertionService;
 import com.visitingfaculty.validations.jsoncheck;
 
 @RestController
@@ -14,9 +17,12 @@ public class AwardRestController
 {
     @Autowired jsoncheck jsoncheck;
 
+    @Autowired
+    UserInsertionService service;
+
     @PostMapping(value="/award_Table_Data")
     @ResponseBody
-    public String awardTableData(@RequestBody String resume_achievement)
+    public ResponseEntity<?> awardTableData(@RequestBody String resume_achievement)
     {
         System.out.println("JSON String from FrontEnd : "+resume_achievement);
         boolean lastcheck = jsoncheck.JsonStringValues(resume_achievement);
@@ -24,13 +30,10 @@ public class AwardRestController
         if(lastcheck == false)
         {
             System.out.println("Error");
-            return "Error";
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-        else
-        {
+            service.insertAwardData(resume_achievement);
             System.out.println("Success");
-            return "Data Entered Successfully";
-        }
-
+            return ResponseEntity.status(HttpStatus.OK).build();
     }
 }
