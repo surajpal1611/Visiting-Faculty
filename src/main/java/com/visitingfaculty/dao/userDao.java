@@ -57,4 +57,13 @@ public class userDao implements UserDaoInterface {
         return jdbcCall.executeFunction( Object.class,qualificationTableData);
     }
 
+    @Override
+    public Object insertAwardData(String data) {
+       
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                        .withFunctionName("insert_achievement_details");
+                        
+        return jdbcCall.executeFunction( Object.class,data);
+    }
+
 }
