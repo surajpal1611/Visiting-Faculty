@@ -11,6 +11,8 @@ public interface UserDaoInterface {
 
     Object insertPersonalDetails(String personalDetailsData);
     
+    Object insertQualificationDetails(String qualificationTableData);
+    
     List<UserSkillsFromDB> getAllSkills();
     
     int insertCustomSkill(UserSkillsFromDB userSkillsFromDB);
