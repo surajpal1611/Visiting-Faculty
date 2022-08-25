@@ -747,8 +747,8 @@
                   </div>
                   <div class="col-md-10"><select class="form-control qualification-status"
                     id="qualification-status-data">
-                    <option value="Awarded">Awarded</option>
-                    <option value="Persuing">Persuing</option>
+                    <option value="true">Awarded</option>
+                    <option value="false">Persuing</option>
                   </select></div>
                 </div>
                 <div class="row p-3">
@@ -1682,7 +1682,7 @@
 
     function qualificationDetailPercentageValidation(res)
     {
-      if (checkLength(res) < 6) {
+      if (checkLength(res) < 6 && checkLength(res) > 0) {
         if (isCharNumber(res)) {
           condition = true;
         } else {
@@ -2284,7 +2284,7 @@ function tabledatacheck(value)
         let qualificationSubject = qualificationRow[i].querySelector('.qualification-subject').value;
         let qualificationUniversity = qualificationRow[i].querySelector('.qualification-university').value;
         let qualificationCollege = qualificationRow[i].querySelector('.qualification-college').value;
-        // let qualificationStatus = qualificationRow[i].querySelector('.qualification-status').value;
+        let qualificationStatus = qualificationRow[i].querySelector('.qualification-status').value;
         let qualificationPercentile = qualificationRow[i].querySelector('.qualification-percentile').value;
         let qualificationYear = qualificationRow[i].querySelector('.qualification-year').value;
         let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
@@ -2296,7 +2296,8 @@ function tabledatacheck(value)
         let checkCertificate = tabledatacheck(qualificationCertificate);
         let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
         
-
+        console.log(qualificationPercentile)
+        console.log(checkPercentile)
         // console.log(checkSubject)
         
 
@@ -2313,15 +2314,18 @@ function tabledatacheck(value)
         } else if (checkYearOfPassing == false) {
           qualificationRow[i].querySelector('.qualification-year').classList.add('input-border');
           return;
-        } else if (checkCertificate == false) {
-          qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
-          return;
         } else if (checkPercentile == false) {
           qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
           return;
-        }
+        }else if (checkCertificate == false) {
+          qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
+          return;
+        } 
        
-
+        let qualificationvalue = false;
+        if(qualificationStatus == 'true') {
+          qualificationvalue = true
+        } 
 
         object = {
           resume_lid: 1,
@@ -2329,7 +2333,7 @@ function tabledatacheck(value)
           topic_of_study: qualificationSubject,
           university: qualificationUniversity,
           institute: qualificationCollege,
-          // status: qualificationStatus,
+          status:  qualificationvalue,
           percentile: Number.parseFloat(qualificationPercentile),
           year_of_passing: qualificationYear,
           url_path: qualificationCertificate
