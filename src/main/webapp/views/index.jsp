@@ -468,6 +468,71 @@
           </div>
           <hr />
 
+          <!------------------------------------------------ Qualification Section ------------------------------------------------>
+
+          <div class="position-relative certification-div-wrapper d-flex" style="cursor: pointer;">
+            <div class="container">
+              <div id="certification-div">
+                <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
+                  <h3><b>Professional Membership Certificate</b></h3>
+                </div>
+
+                <div id="certification-appending-div">
+                  <div class="text-block right" id="preview-qualification-div">
+                    <div class="card-body preview-certification-div">
+
+                      <div id="certification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                        <div class="row">
+
+                          <div class="col-12 col-md-4 col-lg-4 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Certification:</p>
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                                <p id="">Teaching</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-4 col-lg-4 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-5 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Institution :</p>
+                             </div>
+                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                                <p class="" id="">St. Wilfred's College</p>
+                             </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-3 col-lg-3 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-9  col-md-9 ps-md-0 ps-0 ps-sm-0 col-lg-9 col-sm-9">
+                                <p class="h5 pb-1">Year of passing:</p>
+                              </div>
+                              <div class="col-3 col-md-3 col-lg-3 col-sm-3">
+                                <p id="">2015</p>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="d-none certification-edit-box d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x text-white "></i>
+            </div>
+          </div>
+          <hr />
+
+
 
           <!------------------------------------------- Bank Details Section  ----------------------------------------->
 
@@ -537,13 +602,13 @@
           <div id="name-row" class="row mb-3">
 
             <div class="col-md-4 col-sm-12">
-              <label for="first-name" cl>First Name</label>
+              <label for="first-name" cl>First Name <span class="required">*</span></label>
               <span id="first-name-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
             </div>
 
             <div class="col-md-4 col-sm-12">
-              <label for="last-name">last Name</label>
+              <label for="last-name">last Name <span class="required">*</span></label>
               <span id="last-name-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
             </div>
@@ -560,12 +625,13 @@
           <div id="left-second-row" class="row">
 
             <div class="col-md-4 col-sm-12">
-              <label for="date-of-birth">date of birth</label>
+              <label for="date-of-birth">date of birth <span class="required">*</span></label>
               <span id="date-of-birth-message" style="color: red;" class="error"></span>
               <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
             </div>
 
-            <div id="gender-row" class="col-sm-12 col-md-4 pt-md-4">
+            <div id="gender-row" class="col-sm-12 col-md-4">
+              <label for="">Gender <span class="required">*</span></label><br>
               <label for="male">Male</label>
               <input style="height: auto ;" type="radio" name="gender" class="gender" id="male" value="1" />
               <label for="female">Female</label>
@@ -576,7 +642,7 @@
             </div>
 
             <div class="col-md-4 col-sm-12">
-              <label for="photo">passport Size Photo</label>
+              <label for="photo">passport Size Photo <span class="required">*</span></label>
               <span id="photo-message" style="color: red;" class="error"></span>
               <input type="file" class="form-control" id="photo"
                 onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
@@ -588,17 +654,17 @@
         <div class="container">
           <div id="left-third-row" class="row">
             <div class="col-md-4 col-sm-12">
-              <label for="contact-number">Contact No.</label>
+              <label for="contact-number">Contact No. <span class="required">*</span></label>
               <span id="contact-number-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="contact_number" id="contact-number" />
             </div>
             <div class="col-md-4 col-sm-12">
-              <label for="email">Email Id</label>
+              <label for="email">Email Id <span class="required">*</span></label>
               <span id="email-message" style="color: red;" class="error"></span>
               <input type="text" name="email" class="form-control" id="email">
             </div>
             <div class="col-md-4 col-sm-12">
-              <label for="country">Country</label>
+              <label for="country">Country <span class="required">*</span></label>
               <span id="country-message" style="color: red;" class="error"></span>
               <input type="text" name="nationality" class="form-control" id="country">
             </div>
@@ -608,17 +674,17 @@
         <div class="container">
           <div id="left-fourth-row" class="row">
             <div class="col-md-6 col-sm-12">
-              <label for="address">Address</label>
+              <label for="address">Address <span class="required">*</span></label>
               <span id="address-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="permanent_address" id="address" />
             </div>
             <div class="col-md-3 col-sm-12">
-              <label for="city">City</label>
+              <label for="city">City <span class="required">*</span></label>
               <span id="city-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="permanent_address_city" id="city" />
             </div>
             <div class="col-md-3 col-sm-12">
-              <label for="pincode">Pincode</label>
+              <label for="pincode">Pincode <span class="required">*</span></label>
               <span id="pincode-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="permanent_address_pincode" id="pincode" />
             </div>
@@ -638,12 +704,12 @@
         <div class="container">
           <div id="left-fourth-row" class="row">
             <div class="col-md-4 col-sm-12">
-              <label for="pan-number">Pan Card Number</label>
+              <label for="pan-number">Pan Card Number <span class="required">*</span></label>
               <span id="pan-number-message" style="color: red;" class="error"></span>
               <input type="text" name="pan_number" class="form-control" id="pan-number" />
             </div>
             <div class="col-md-4 col-sm-12">
-              <label for="pan-photo">Pan Card Photo</label>
+              <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
               <span id="pan-photo-message" style="color: red;" class="error"></span>
               <input type="file" class="form-control" id="pan-photo"
                 onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
@@ -658,12 +724,12 @@
         <div class="container">
           <div id="left-fourth-row" class="row">
             <div class="col-md-4 col-sm-12">
-              <label for="aadhar-number">Aadhar Card Number</label>
+              <label for="aadhar-number">Aadhar Card Number <span class="required">*</span></label>
               <span id="aadhar-number-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
             </div>
             <div class="col-md-4 col-sm-12">
-              <label for="aadhar-photo">Aadhar Card Photo</label>
+              <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
               <span id="aadhar-photo-message" style="color: red;" class="error"></span>
               <input type="file" class="form-control" id="aadhar-photo"
                 onchange="document.getElementById('aadhar-photo-preview').src = window.URL.createObjectURL(this.files[0])">
@@ -705,33 +771,32 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Title</p>
+                    <p class="h6">Title <span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><select class="form-control qualification-title"
                       id="bachelors-degree-title-data">
                       <option value="1">Bachelor's Degree</option>
                       <option value="2">Master's Degree</option>
                       <option class="phd-option" value="3">PHD</option>
-                      <option value="4">Professional Certification</option>
                     </select></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Subject</p>
+                    <p class="h6">Subject <span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control qualification-subject"
                       id="bachelors-degree-major-subject" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">University</p>
+                    <p class="h6">University<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control qualification-university"
                       id="bachelors-degree-university" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Year of Passing</p>
+                    <p class="h6">Year of Passing <span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control qualification-year"
                       id="bachelors-degree-year-of-passing" type="text"></div>
@@ -743,36 +808,36 @@
 
                 <div class="row p-3 qualification-status-wrapper d-none">
                   <div class="col-md-2 ">
-                    <p class="h6">Status</p>
+                    <p class="h6">Status<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><select class="form-control qualification-status"
-                    id="qualification-status-data">
-                    <option value="true">Awarded</option>
-                    <option value="false">Persuing</option>
-                  </select></div>
+                      id="qualification-status-data">
+                      <option value="true">Awarded</option>
+                      <option value="false">Persuing</option>
+                    </select></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">College</p>
+                    <p class="h6">College <span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control qualification-college"
                       id="bachelors-degree-college" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Percentage</p>
+                    <p class="h6">Percentage<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control qualification-percentile"
                       id="bachelors-degree-percentile" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Certificate</p>
+                    <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control qualification-certificate"
-                    id="bachelors-degree-certificate" type="file"></div>
+                      id="bachelors-degree-certificate" type="file"></div>
                 </div>
-               
+
               </div>
             </div>
             <div class="d-none qualification-delete-button d-flex justify-content-center align-items-center">
@@ -1007,20 +1072,20 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Award name</p>
+                    <p class="h6">Award name<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control awardName" type="text" id="award-name"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Organisation</p>
+                    <p class="h6">Organisation<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control awardOrganization" type="text"
                       id="award-organization"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Organisation type</p>
+                    <p class="h6">Organisation type<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><select class="form-control awardOrganizationType"
                       id="award-organization-type">
@@ -1034,20 +1099,20 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Description</p>
+                    <p class="h6">Description<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Received date</p>
+                    <p class="h6">Received date<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control awardRecieveDate" type="date"
                       id="award-receive-date"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Certificate</p>
+                    <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control awardCertificationImage" type="file"
                       id="award-certification-image"></div>
@@ -1090,7 +1155,7 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Role</p>
+                    <p class="h6">Role <span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><select class="form-control role" id="role">
                       <option>-Select-</option>
@@ -1100,13 +1165,13 @@
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Number of Authors</p>
+                    <p class="h6">Number of Authors<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control number-of-authors" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Book Title</p>
+                    <p class="h6">Book Title<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control book-title" type="text"></div>
                 </div>
@@ -1115,19 +1180,19 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Publisher</p>
+                    <p class="h6">Publisher<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control publisher" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Year of Publication</p>
+                    <p class="h6">Year of Publication<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control year-of-publication" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Certificate</p>
+                    <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control certification" type="file"></div>
                 </div>
@@ -1170,7 +1235,7 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Role</p>
+                    <p class="h6">Role<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><select name="role" class="form-control research_role">
                       <option value="0">-Select-</option>
@@ -1180,14 +1245,14 @@
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Journal Name</p>
+                    <p class="h6">Journal Name<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input name="journal_name" class="form-control research_Journal_name"
                       type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Volume Year</p>
+                    <p class="h6">Volume Year<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input name="volume_year" class="form-control research_volume_year"
                       type="text"></div>
@@ -1204,14 +1269,14 @@
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Categoty</p>
+                    <p class="h6">Category<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input name="category" class="form-control research_category" type="text">
                   </div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Certificate</p>
+                    <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control research_photo" type="file"></div>
                 </div>
@@ -1275,6 +1340,66 @@
     </div>
   </div>
 
+
+  <!-- ************************************************************************Certification Modal Div******************************************************************************************** -->
+
+
+  <div class="certification-modal d-none">
+    <div class="full-screen container ">
+      <div class="main-content">
+        <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
+          <h3><b> Certification</b></h3>
+          <i id="certification-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+        </div>
+        <hr>
+
+        <div id="certification-appending-div" class="bg-white">
+          <div id="certification-display-div" class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-12 col-sm-12">
+             
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate: <span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control certification-certificate"
+                       type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Institution: <span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control certification-institution"
+                      type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Year of Passing: <span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control certification-YOP"
+                       type="text"></div>
+                </div>
+              </div>
+
+            </div>
+            <div class="d-none certification-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x text-white "></i>
+            </div>
+          </div>
+          <hr style="height: 5px;">
+          <div id="certification-data" class="mt-4">
+
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button id="certification-cancel-button" class="btn btn-danger m-4">Cancel</button>
+        <button id="certification-submit-button" class="btn btn-success m-4">Submit</button>
+      </div>
+    </div>
+  </div>
+  
   <!-- ************************************************************************Bank Details Modal Div******************************************************************************************** -->
   <div class="bank-details-modal d-none">
 
@@ -1286,13 +1411,13 @@
 
         <div class="row">
           <div class="col-md-6 col-sm-12">
-            <label for="bank-name" class="py-md-2">Name of the Bank</label>
+            <label for="bank-name" class="py-md-2">Name of the Bank<span class="required">*</span></label>
             <span id="bank-name-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-name">
 
           </div>
           <div class="col-md-6 col-sm-12">
-            <label for="bank-branch" class="py-md-2">Branch</label>
+            <label for="bank-branch" class="py-md-2">Branch<span class="required">*</span></label>
             <span id="bank-branch-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-branch">
 
@@ -1301,13 +1426,13 @@
 
         <div class="row">
           <div class="col-md-6 col-sm-12">
-            <label for="bank-ifsc-code" class="py-md-2">IFSC Code</label>
+            <label for="bank-ifsc-code" class="py-md-2">IFSC Code<span class="required">*</span></label>
             <span id="bank-ifsc-code-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-ifsc-code">
 
           </div>
           <div class="col-md-6 col-sm-12">
-            <label for="bank-micr-code" class="py-md-2">MICR code</label>
+            <label for="bank-micr-code" class="py-md-2">MICR code<span class="required">*</span></label>
             <span id="bank-micr-code-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-micr-code">
 
@@ -1316,13 +1441,13 @@
 
         <div class="row">
           <div class="col-md-6 col-sm-12">
-            <label for="bank-account-number" class="py-md-2">Account Number</label>
+            <label for="bank-account-number" class="py-md-2">Account Number<span class="required">*</span></label>
             <span id="bank-account-number-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-account-number">
 
           </div>
           <div class="col-md-6 col-sm-12">
-            <label for="bank-account-type" class="py-md-2">Account Type</label>
+            <label for="bank-account-type" class="py-md-2">Account Type<span class="required">*</span></label>
             <span id="bank-account-type-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-account-type">
 
@@ -1332,7 +1457,7 @@
         <div class="row">
           <div class="col-md-6 col-sm-12">
             <div>
-              <label for="cancelled_cheque_Photo" class="py-md-2">Cancelled Cheque Photo</label>
+              <label for="cancelled_cheque_Photo" class="py-md-2">Cancelled Cheque Photo<span class="required">*</span></label>
               <span id="cancelled_cheque_Photo-message" style="color: red;" class="error"></span>
               <input type="file" name="cancelled_cheque_Photo" id="cancelled_cheque_Photo" class="form-control"
                 onchange="document.getElementById('check-preview').src = window.URL.createObjectURL(this.files[0])">
@@ -1416,10 +1541,10 @@
 
     function personalDetailFirstNameValidation(res) {
       if (checkLength(res) > 2) {
-        if (!isCharNumber(res)) {
+        if (isCharAlphabet(res)) {
           condition = true;
         } else {
-          document.getElementById("first-name-message").innerHTML = "*Numbers are not allowed";
+          document.getElementById("first-name-message").innerHTML = "*Only Alphabets are allowed";
           condition = false;
         }
       } else {
@@ -1431,10 +1556,10 @@
 
     function personalDetailLastNameValidation(res) {
       if (checkLength(res) > 2) {
-        if (!isCharNumber(res)) {
+        if (!isCharAlphabet(res)) {
           condition = true;
         } else {
-          document.getElementById("last-name-message").innerHTML = "*Numbers are not allowed";
+          document.getElementById("last-name-message").innerHTML = "*Only Alphabets are allowed";
           condition = false;
         }
       } else {
@@ -1450,13 +1575,13 @@
       var today = new Date();
       var age = today.getFullYear() - year;
       if (res.length > 2) {
-        if (age>18) {
-            condition = true;
-          } else {
-        document.getElementById("date-of-birth-message").innerHTML = "*Your age should be above 18 years";
-        condition = false;
-      }
-                
+        if (age > 18) {
+          condition = true;
+        } else {
+          document.getElementById("date-of-birth-message").innerHTML = "*Your age should be above 18 years";
+          condition = false;
+        }
+
       } else {
         document.getElementById("date-of-birth-message").innerHTML = "*Invalid length";
         condition = false;
@@ -1472,7 +1597,8 @@
           if (fuData.files && fuData.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
-              $('#blah').attr('src', e.target.result);
+            
+              $('#photo').attr('src', e.target.result);
               console.log(e.target.result)
               condition = true;
             }
@@ -1680,8 +1806,7 @@
       return condition;
     }
 
-    function qualificationDetailPercentageValidation(res)
-    {
+    function qualificationDetailPercentageValidation(res) {
       if (checkLength(res) < 6 && checkLength(res) > 0) {
         if (isCharNumber(res)) {
           condition = true;
@@ -1866,58 +1991,41 @@
       return condition
     }
 
-     // ******************************************Validation Functions Start****************************************************
-function tabledatacheck(value)
-    {
+    // ******************************************Validation Functions Start****************************************************
+    function tabledatacheck(value) {
       let checkit = false;
-      if(value.length > 3)
-      {
+      if (value.length > 3) {
         checkit = true;
-      }
-      else
-      {
+      } else {
         checkit = false;
       }
       return checkit;
     }
 
-    function namecheck(value)
-    {
+    function namecheck(value) {
       let check = false;
-        if(value.length > 1)
-        {
-            for(let i = 0 ; i < value.length ;i++)
-            {
-                if(value[i] >= '!' && value[i] <= '@')
-                {
-                    check =false;
-                    break;
-                }
-                else
-                {
-                    check = true;    
-                }
-            }
+      if (value.length > 1) {
+        for (let i = 0; i < value.length; i++) {
+          if (value[i] >= '!' && value[i] <= '@') {
+            check = false;
+            break;
+          } else {
+            check = true;
+          }
         }
-        else
-        {
-             check=false;
-        }
-        return check;
+      } else {
+        check = false;
+      }
+      return check;
     }
 
-    function yearcheck(value)
-    {
+    function yearcheck(value) {
       let checkit = false;
-      if(value.length == 4)
-      {
-        if(!isNaN(value))
-        {
-        checkit = true;
+      if (value.length == 4) {
+        if (!isNaN(value)) {
+          checkit = true;
         }
-      }
-      else
-      {
+      } else {
         checkit = false;
       }
       return checkit;
@@ -1977,9 +2085,9 @@ function tabledatacheck(value)
 
     document.querySelector('.qualification-title').addEventListener('change', function () {
       let qualificationTitle = document.querySelector('.qualification-title')
-      if(qualificationTitle.value == 3){
+      if (qualificationTitle.value == 3) {
         document.querySelector('.qualification-status-wrapper').classList.remove('d-none');
-      }else{
+      } else {
         document.querySelector('.qualification-status-wrapper').classList.add('d-none');
       }
     });
@@ -2063,11 +2171,10 @@ function tabledatacheck(value)
       let email = personalDetailEmailValidation(result.email);
       let aadhar = personalDetailAadharValidation(result.aadhar_number);
       let address = personalDetailAddressValidation(result.permanent_address);
-      let temporaryAddress = personalDetailTemporaryAddressValidation(result.temporary_address);
+      // let temporaryAddress = personalDetailTemporaryAddressValidation(result.temporary_address);
       let country = personalDetailCountryValidation(result.nationality);
 
-      if (!firstName || !lastName || !gender || !contactNumber || !email || !pancard || !aadhar || !address || !
-        temporaryAddress || !country) {
+      if (!firstName || !lastName || !gender || !contactNumber || !email || !pancard || !aadhar || !address || !country) {
         return;
       }
 
@@ -2295,11 +2402,11 @@ function tabledatacheck(value)
         let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
         let checkCertificate = tabledatacheck(qualificationCertificate);
         let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
-        
+
         console.log(qualificationPercentile)
         console.log(checkPercentile)
         // console.log(checkSubject)
-        
+
 
         //  to add the red border according to validations
         if (checkSubject == false) {
@@ -2317,15 +2424,15 @@ function tabledatacheck(value)
         } else if (checkPercentile == false) {
           qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
           return;
-        }else if (checkCertificate == false) {
+        } else if (checkCertificate == false) {
           qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
           return;
-        } 
-       
+        }
+
         let qualificationvalue = false;
-        if(qualificationStatus == 'true') {
+        if (qualificationStatus == 'true') {
           qualificationvalue = true
-        } 
+        }
 
         object = {
           resume_lid: 1,
@@ -2333,14 +2440,13 @@ function tabledatacheck(value)
           topic_of_study: qualificationSubject,
           university: qualificationUniversity,
           institute: qualificationCollege,
-          status:  qualificationvalue,
+          status: qualificationvalue,
           percentile: Number.parseFloat(qualificationPercentile),
           year_of_passing: qualificationYear,
           url_path: qualificationCertificate
         }
 
         div += ` 
-
           <div class="text-block right" >
                   <div class="card-body">
                     <h2 id="year-of-passing">\${qualificationYear}\</h2>
@@ -2711,8 +2817,6 @@ function tabledatacheck(value)
 
 
         obj = {
-          resume_lid: "1",
-          achievement_type_lid: "2",
           title: title,
           organization_name: organization_name,
           organization_type_lid: organization_type_lid,
@@ -2769,8 +2873,9 @@ function tabledatacheck(value)
       object = {
         "insert_award": resume_achievement
       }
+      // awardData.push(resume_achievement)
 
-
+console.log(JSON.stringify(object))
       //Fetch Method
       function postdata() {
         url = "/award_Table_Data";
@@ -2826,22 +2931,21 @@ function tabledatacheck(value)
       let publicationRow = document.querySelectorAll('.publication-row')
       for (i = 0; i < publicationRow.length; i++) {
 
-  let publicationRole  = publicationRow[i].querySelector('.role').value;
-  let publicationPublisher = publicationRow[i].querySelector('.publisher').value;
-  let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
-  let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
-  let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
-  let publicationCertificate = publicationRow[i].querySelector('.certification').value;
- 
-  object = {
-    resume_achievement_lid: 1,
-    role: publicationRole,
-    no_of_authors: publicationNumberOfAuthors,
-    book_title: publicationBookTitle,
-    publisher: publicationPublisher,
-    year_of_publication: publicationYearOfPublication,
-    url_path: publicationCertificate
-  }
+        let publicationRole = publicationRow[i].querySelector('.role').value;
+        let publicationPublisher = publicationRow[i].querySelector('.publisher').value;
+        let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
+        let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
+        let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
+        let publicationCertificate = publicationRow[i].querySelector('.certification').value;
+
+        object = {
+          role: publicationRole,
+          no_of_authors: publicationNumberOfAuthors,
+          book_title: publicationBookTitle,
+          publisher: publicationPublisher,
+          year_of_publication: publicationYearOfPublication,
+          url_path: publicationCertificate
+        }
 
         div += `   
 >>>>>>> ff6bf98a527317c82ddd06fb1a424d32019ebe3f
@@ -2889,6 +2993,7 @@ function tabledatacheck(value)
       let publicationTableData = {
         "PublicationDetails": publicationTableArray
       }
+     // publicationData.push(publicationTableData)
       console.log(JSON.stringify(publicationTableData))
 
       let options = {
@@ -3004,7 +3109,7 @@ function tabledatacheck(value)
       document.querySelector('.research-modal').classList.add('d-none');
     });
 
-       
+
 
     document.querySelector('#research-submit-button').addEventListener('click', function () {
       console.log("research button clicked");
@@ -3061,8 +3166,6 @@ function tabledatacheck(value)
 
 
         obj = {
-          id: "1",
-          resume_achievement_lid: "3",
           role: Role,
           journal_name: Journal_name,
           volume_year: volume_year,
@@ -3114,9 +3217,10 @@ function tabledatacheck(value)
         resumeResearchTable.push(obj);
       }
       object = {
-        "inser_research": resumeResearchTable
+        "insert_research": resumeResearchTable
       }
-      console.log('object VJS>>>', JSON.stringify(object));
+     // researchData.push(object)
+      console.log(JSON.stringify(object));
 
       function postdata() {
         url = "/research_Table_Data";
@@ -3144,7 +3248,17 @@ function tabledatacheck(value)
       document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
 
     });
+    let awardData = {}
+    let publicationData = {}
+    let researchData = {}
+    
+    achievement = {
+  "insert_Award": awardData,
+  "insert_publication": publicationData,
+  "insert_research": researchData
+}
 
+console.log(JSON.stringify(achievement))
 
     document.getElementById('research-add-button').addEventListener('click', function () {
 
