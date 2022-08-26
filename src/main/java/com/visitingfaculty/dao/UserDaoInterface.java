@@ -20,4 +20,7 @@ public interface UserDaoInterface {
     UserSkillsFromDB getUserSkill(String skill_name);
 
     Object insertAwardData(String data);
+
+    Object insertBankDetails(String bankDetailsData);
+
 }

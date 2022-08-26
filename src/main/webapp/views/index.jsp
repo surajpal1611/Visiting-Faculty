@@ -1407,8 +1407,8 @@
         <div id="certification-appending-div" class="bg-white">
           <div id="certification-display-div" class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
-
-              <div class="col-12 col-md-12 col-lg-12 col-sm-12">
+              <!-- px-lg-5 -->
+              <div class="col-12 col-md-12 col-lg-12 col-sm-12 ">
 
                 <div class="row p-3">
                   <div class="col-md-2 ">
@@ -1497,8 +1497,11 @@
           <div class="col-md-6 col-sm-12">
             <label for="bank-account-type" class="py-md-2">Account Type<span class="required">*</span></label>
             <span id="bank-account-type-message" style="color: red;" class="error"></span>
-            <input type="text" class="form-control" id="bank-account-type">
-
+            <select class="form-control" id="bank-account-type"><option value="1">Current Account</option>
+              <option value="2">Saving Account</option>
+              <option value="3">Salary Account</option>
+              <option value="4">Non-Residential Ordinary Account</option>
+              <option value="5">Recurring Deposit Account</option></select>
           </div>
         </div>
 
@@ -3018,7 +3021,7 @@
           book_title: publicationBookTitle,
           publisher: publicationPublisher,
           year_of_publication: publicationYearOfPublication,
-          url_path: publicationCertificate
+          publication_url_path: publicationCertificate
         }
 
         div += `   
@@ -3245,11 +3248,10 @@
           volume_year: volume_year,
           number: description,
           category: category,
-          url_path: research_photo
+          research_url_path: research_photo
         }
 
         div += ` 
-
                 <div id="research-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
 
@@ -3268,7 +3270,6 @@
                         </div>
                       </div>
                     </div>
-
 
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
@@ -3410,6 +3411,179 @@
 
 
     //*************************************Bank-details-modal JS****************************************
+    document.querySelector('.certification-edit-box').addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.certification-modal').classList.remove('d-none');
+    })
+
+    
+    document.querySelector('#certification-cancel-button').addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.certification-modal').classList.add('d-none');
+    });
+
+    document.querySelector('#certification-submit-button').addEventListener('click', function (e) {
+
+       e.preventDefault()
+       let div = ''
+       let certificationTableArray = []
+       let certificationRow = document.querySelectorAll('.certification-row')
+       for (i = 0; i < certificationRow.length; i++) {
+       
+         //to remove the red border
+         certificationRow[i].querySelector('.certification-certificate').classList.remove('input-border');
+         certificationRow[i].querySelector('.certification-institution').classList.remove('input-border');
+         certificationRow[i].querySelector('.certification-YOP').classList.remove('input-border');
+         
+       
+         let professionalCertificate = certificationRow[i].querySelector('.certification-certificate').value;
+         let professionalInstitution = certificationRow[i].querySelector('.certification-institution').value;
+         let professionalYOP = certificationRow[i].querySelector('.certification-YOP').value;
+        
+         let checkCertification = namecheck(professionalCertificate);
+         let checkInstitution = namecheck(professionalInstitution);
+         let checkYOP = yearcheck(professionalYOP);
+        
+       
+         console.log(checkCertification)
+         console.log(checkInstitution)
+         console.log(checkYOP)
+         // console.log(checkSubject)
+       
+       
+         //  to add the red border according to validations
+         if (checkCertification == false) {
+          certificationRow[i].querySelector('.certification-certificate').classList.add('input-border');
+           return;
+         } else if (checkInstitution == false) {
+          certificationRow[i].querySelector('.certification-institution').classList.add('input-border');
+           return;
+         } else if (checkYOP == false) {
+          certificationRow[i].querySelector('.certification-YOP').classList.add('input-border');
+           return;
+         } 
+       
+       
+         object = {
+           resume_lid: 1,
+           qualification_type_lid: 4,
+           topic_of_study: professionalCertificate,
+           institute: professionalInstitution,
+           year_of_passing: professionalYOP,
+         }
+       
+         div += ` 
+                  <div class="text-block right" id="preview-qualification-div">
+                    <div class="card-body preview-certification-div">
+
+                      <div id="certification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                        <div class="row">
+
+                          <div class="col-12 col-md-4 col-lg-4 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Certification:</p>
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                                <p id="">\${professionalCertificate}\</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-4 col-lg-4 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-5 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Institution :</p>
+                              </div>
+                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                                <p class="" id="">\${professionalInstitution}\</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-3 col-lg-3 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-9  col-md-9 ps-md-0 ps-0 ps-sm-0 col-lg-9 col-sm-9">
+                                <p class="h5 pb-1">Year of passing:</p>
+                              </div>
+                              <div class="col-3 col-md-3 col-lg-3 col-sm-3">
+                                <p id="">\${professionalYOP}\</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 `
+       
+         certificationTableArray.push(object)
+       }
+       let certificationTableData = {
+         "qualificationDetails": certificationTableArray
+       }
+       console.log(JSON.stringify(certificationTableData))
+       
+       let options = {
+         method: 'POST',
+         headers: {
+           'Content-Type': 'application/json;charset=utf-8'
+         },
+         body:JSON.stringify(certificationTableData)
+       }
+       let fetchRes = fetch('/insert-qualification-details', options);
+       fetchRes.then(success => {
+         if (success.status == 200) {
+          document.getElementById('certification-appending-div').firstElementChild.remove()
+          document.getElementById('certification-appending-div').insertAdjacentHTML('beforeend', div)
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.certification-modal').classList.add('d-none');
+         } else {
+           alert('Check Professional certificate details');
+         }
+       })
+    
+  
+    });
+
+    document.querySelector('#certification-add-button').addEventListener('click', function () {
+
+      let table = `      <div id="certification-display-div" class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-12 col-sm-12">
+
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate: <span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control certification-certificate" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Institution: <span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control certification-institution" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Year of Passing: <span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control certification-YOP" type="text"></div>
+                </div>
+              </div>
+
+            </div>
+            <div class="d-none certification-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x text-white "></i>
+            </div>
+          </div>
+          <hr style="height: 5px;">`
+
+          document.getElementById('certification-data').insertAdjacentHTML("beforeend", table);
+    });
+
+    //*************************************Bank-details-modal JS****************************************
 
     document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
 
@@ -3421,14 +3595,14 @@
       editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
       editBankDetailsForm.append('editAccountNumber', document.getElementById('account-number-value')
         .innerText)
-      editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value').innerText)
+    //  editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value').innerText)
 
       document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
       document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
       document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
       document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
       document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccountNumber')
-      document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
+      //document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
 
 
       document.getElementById('body').classList.add('d-none');
@@ -3463,28 +3637,24 @@
       let facultyAccountType1 = bankDetailAccountTypeValidation(submitBankDetailsForm.get('accountType'))
 
       if (!facultyBankName1 || !facultyBankBranch1 || !facultyIfscCode1 || !facultyMicrCode1 || !
-        facultyAccountNumber1 || !facultyAccountType1) {
+        facultyAccountNumber1 ) {
         return;
       }
 
+     let bankDetailsJson = {
+        "insert_bank_data" : []
+      }
       let bank_detail = {};
-      let bankname = document.querySelector('#bank-name').value;
-      let branchname = document.querySelector('#bank-branch').value;
-      let bankifsc = document.querySelector('#bank-ifsc-code').value;
-      let bankmicr = document.querySelector('#bank-micr-code').value;
-      let bankaccountnumber = document.querySelector('#bank-account-number').value;
-      let bankaccounttype = document.querySelector('#bank-account-type').value;
-
-      bank_detail = [{
-        name: bankname,
-        branch: branchname,
-        ifsc_code: bankifsc,
-        micr_code: bankmicr,
-        account_number: bankaccountnumber,
-        account_type: bankaccounttype
-
-      }]
-      console.log(JSON.stringify(bank_detail))
+      bank_detail.user_lid = 1,
+      bank_detail.bank_name = document.querySelector('#bank-name').value;
+     bank_detail.branch_name = document.querySelector('#bank-branch').value;
+     bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code').value;
+     bank_detail.micr_code = document.querySelector('#bank-micr-code').value;
+     bank_detail.account_number = document.querySelector('#bank-account-number').value;
+     bank_detail.bank_account_type_lid = document.querySelector('#bank-account-type').value;
+     bank_detail.url_path = document.querySelector('#cancelled_cheque_Photo').value;
+      bankDetailsJson.insert_bank_data[0] = bank_detail
+      console.log(JSON.stringify(bankDetailsJson))
 
       function postdata() {
         url = "/insert-bank-details";
@@ -3493,7 +3663,7 @@
           headers: {
             'content-Type': 'application/json'
           },
-          body: JSON.stringify(bank_detail),
+          body: JSON.stringify(bankDetailsJson),
         }
         fetch(url, params).then((data) => {
           if (data.status == 200) {
@@ -3502,23 +3672,21 @@
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.bank-details-modal').classList.add('d-none');
 
+            // document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
+            // document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
+            // document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
+            // document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
+            // document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
+            //   'accountNumber')
+            // document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
 
-
-            document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
-            document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
-            document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
-            document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-            document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
-              'accountNumber')
-            document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
-
-            if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
-              document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
-              document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('text-danger')
-              document.getElementById('cancelled-check-photo').firstElementChild.classList.add(
-                'fa-circle-check')
-              document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
-            }
+            // if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
+            //   document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
+            //   document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('text-danger')
+            //   document.getElementById('cancelled-check-photo').firstElementChild.classList.add(
+            //     'fa-circle-check')
+            //   document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
+            // }
           }
         })
       }
