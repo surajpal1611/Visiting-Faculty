@@ -2978,6 +2978,11 @@ document.addEventListener('mouseover',function(){
       return checkit;
     }
 
+    let achievementInsertData = {
+      "insert_achievement_details" : []
+    }
+
+    let insertAchievementObject = {}
     // ******************************************Validation Functions End***************************************************
 
     document.querySelector('#award-submit-button').addEventListener('click', function () {
@@ -3032,21 +3037,22 @@ document.addEventListener('mouseover',function(){
           return;
         }
 
+        insertAchievementObject.title = title
+        insertAchievementObject.organization_name = organization_name
+        insertAchievementObject.organization_type_lid = organization_type_lid
+        insertAchievementObject.achievement_date = achievement_date
+        insertAchievementObject.description = description
+        insertAchievementObject.award_url_path = url_path
 
+        // obj = {
+        //   title: title,
+        //   organization_name: organization_name,
+        //   organization_type_lid: organization_type_lid,
+        //   achievement_date: achievement_date,
+        //   description: description,
+        //   url_path: url_path
+        // }
 
-
-
-
-        obj = {
-          title: title,
-          organization_name: organization_name,
-          organization_type_lid: organization_type_lid,
-          achievement_date: achievement_date,
-          description: description,
-          url_path: url_path
-        }
-
-        console.log(obj)
         div += `
         <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                     <div class="row">
@@ -3087,47 +3093,40 @@ document.addEventListener('mouseover',function(){
                     </div>
                   </div>
                     `
-        resume_achievement.push(obj);
       }
 
-
-      object = {
-        "insert_award": resume_achievement
-      }
       // awardData.push(resume_achievement)
 
-      console.log(JSON.stringify(object))
       //Fetch Method
-      function postdata() {
-        url = "/award_Table_Data";
-        params = {
-          method: "POST",
-          headers: {
-            contentType: 'application/json'
-          },
-          body: JSON.stringify(object),
-        }
-        fetch(url, params).then((data) => {
+      // function postdata() {
+      //   url = "/award_Table_Data";
+      //   params = {
+      //     method: "POST",
+      //     headers: {
+      //       contentType: 'application/json'
+      //     },
+      //     body: JSON.stringify(object),
+      //   }
+      //   fetch(url, params).then((data) => {
 
-          if (data.status == 200) {
+      //     if (data.status == 200) {
+      //       document.getElementById('award-preview-div').firstElementChild.remove()
+      //       document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
+      //       document.getElementById('body').classList.remove('d-none');
+      //       document.querySelector('.award-modal').classList.add('d-none');
+      //     } else {
+      //       console.log("Error");
+      //       alert('Check Award Entries');
+      //     }
+      //   })
+      // }
+      // postdata()
+
             document.getElementById('award-preview-div').firstElementChild.remove()
             document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.award-modal').classList.add('d-none');
-          } else {
-            console.log("Error");
-            alert('Check Award Entries');
-          }
-        })
-      }
-      postdata()
     });
-
-
-
-    $(document).on('click', '.award-delete-button', function () {
-      $(this).closest('tr').remove()
-    })
 
 
     //*************************************Publications-modal JS****************************************
@@ -3159,14 +3158,21 @@ document.addEventListener('mouseover',function(){
         let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
         let publicationCertificate = publicationRow[i].querySelector('.certification').value;
 
-        object = {
-          role: publicationRole,
-          no_of_authors: publicationNumberOfAuthors,
-          book_title: publicationBookTitle,
-          publisher: publicationPublisher,
-          year_of_publication: publicationYearOfPublication,
-          publication_url_path: publicationCertificate
-        }
+
+        insertAchievementObject.role = publicationRole
+        insertAchievementObject.no_of_authors = publicationNumberOfAuthors
+        insertAchievementObject.book_title = publicationBookTitle
+        insertAchievementObject.publisher = publicationPublisher
+        insertAchievementObject.year_of_publication = publicationYearOfPublication
+        insertAchievementObject.publication_url_path = publicationCertificate
+        // object = {
+        //   role: publicationRole,
+        //   no_of_authors: publicationNumberOfAuthors,
+        //   book_title: publicationBookTitle,
+        //   publisher: publicationPublisher,
+        //   year_of_publication: publicationYearOfPublication,
+        //   publication_url_path: publicationCertificate
+        // }
 
         div += `   
   <div id="publication-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
@@ -3207,30 +3213,34 @@ document.addEventListener('mouseover',function(){
 
                   `
 
-        publicationTableArray.push(object)
       }
 
-      let publicationTableData = {
-        "PublicationDetails": publicationTableArray
-      }
+      // let publicationTableData = {
+      //   "PublicationDetails": publicationTableArray
+      // }
       // publicationData.push(publicationTableData)
-      console.log(JSON.stringify(publicationTableData))
+      // console.log(JSON.stringify(publicationTableData))
 
-      let options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(publicationTableData)
-      }
-      let fetchRes = fetch("/insert-publication-details", options);
-      fetchRes.then(success => {
-        document.getElementById('publication-appending-div').firstElementChild.remove()
-        document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.publication-modal').classList.add('d-none');
-      })
+    //   let options = {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json;charset=utf-8'
+    //     },
+    //     body: JSON.stringify(publicationTableData)
+    //   }
+    //   let fetchRes = fetch("/insert-publication-details", options);
+    //   fetchRes.then(success => {
+    //     document.getElementById('publication-appending-div').firstElementChild.remove()
+    //     document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
+    //     document.getElementById('body').classList.remove('d-none');
+    //     document.querySelector('.publication-modal').classList.add('d-none');
+    //   })
+          document.getElementById('publication-appending-div').firstElementChild.remove()
+          document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.publication-modal').classList.add('d-none');
     });
+          
 
     document.getElementById('publication-add-button').addEventListener('click', function () {
 
@@ -3402,14 +3412,20 @@ document.addEventListener('mouseover',function(){
         }
 
 
-        obj = {
-          role: Role,
-          journal_name: Journal_name,
-          volume_year: volume_year,
-          number: description,
-          category: category,
-          research_url_path: research_photo
-        }
+        insertAchievementObject.research_role = Role
+        insertAchievementObject.Journal_name = Journal_name
+        insertAchievementObject.volume_year = volume_year
+        insertAchievementObject.number = description
+        insertAchievementObject.category = category
+        insertAchievementObject.research_url_path = research_photo
+        // obj = {
+        //   role: Role,
+        //   journal_name: Journal_name,
+        //   volume_year: volume_year,
+        //   number: description,
+        //   category: category,
+        //   research_url_path: research_photo
+        // }
 
         div += ` 
         
@@ -3450,51 +3466,42 @@ document.addEventListener('mouseover',function(){
                   </div>
                 </div>                  
         `
-        resumeResearchTable.push(obj);
       }
-      object = {
-        "insert_research": resumeResearchTable
-      }
+      // object = {
+      //   "insert_research": resumeResearchTable
+      // }
       // researchData.push(object)
-      console.log(JSON.stringify(object));
+      // console.log(JSON.stringify(object));
 
-      function postdata() {
-        url = "/research_Table_Data";
-        params = {
-          method: "post",
-          headers: {
-            contentType: 'application/json'
-          },
-          body: JSON.stringify(object),
-        }
-        fetch(url, params).then((data) => {
-          console.log("This is the responce : ", data);
-          if (data.status == 200) {
-            console.log("OK")
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.research-modal').classList.add('d-none');
-          } else {
-            console.log("Error");
-            alert('Check Research Details');
-          }
-        })
-      }
-      postdata()
+      // function postdata() {
+      //   url = "/research_Table_Data";
+      //   params = {
+      //     method: "post",
+      //     headers: {
+      //       contentType: 'application/json'
+      //     },
+      //     body: JSON.stringify(object),
+      //   }
+      //   fetch(url, params).then((data) => {
+      //     console.log("This is the responce : ", data);
+      //     if (data.status == 200) {
+      //       console.log("OK")
+      //       document.getElementById('body').classList.remove('d-none');
+      //       document.querySelector('.research-modal').classList.add('d-none');
+      //     } else {
+      //       console.log("Error");
+      //       alert('Check Research Details');
+      //     }
+      //   })
+      // }
+      // postdata()
       document.getElementById('research-appending-div').firstElementChild.remove()
       document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
 
+      achievementInsertData.insert_achievement_details[0] = insertAchievementObject
+      console.log(JSON.stringify(achievementInsertData))
+
     });
-    let awardData = {}
-    let publicationData = {}
-    let researchData = {}
-
-    achievement = {
-      "insert_Award": awardData,
-      "insert_publication": publicationData,
-      "insert_research": researchData
-    }
-
-    console.log(JSON.stringify(achievement))
 
     document.getElementById('research-add-button').addEventListener('click', function () {
 
@@ -3574,7 +3581,6 @@ document.addEventListener('mouseover',function(){
     document.addEventListener('mouseover',function(){
         let deleteButtonClick = document.querySelectorAll('.delete_btn_research_symbol')
         let deleteresearch = document.querySelectorAll('.research_delete_btn');
-        console.log("clicked buddy")
         for(let i = 0 ; i<deleteresearch.length;i++)
         {
             deleteresearch[i].addEventListener('mouseover',function(){
@@ -3771,7 +3777,6 @@ document.addEventListener('mouseover',function(){
     document.addEventListener('mouseover',function(){
         let deleteButtonClick = document.querySelectorAll('.delete_btn_certification_symbol')
         let deleteCertification = document.querySelectorAll('.certification_delete_btn');
-        console.log("clicked buddy")
         for(let i = 0 ; i<deleteCertification.length;i++)
         {
             deleteCertification[i].addEventListener('mouseover',function(){
@@ -4677,48 +4682,6 @@ document.addEventListener('mouseover',function(){
       endDateElement.setAttribute('max', endMaxDate);
       //fetchDesignationValue();
     });
-    $.ajax({
-      url: '/fetchDesignationValue',
-      type: 'POST',
-
-      success: function (response) {
-        let select = document.getElementById('designation');
-        console.log("select " + select);
-        for (let i = 0; i < response.length; i++) {
-          let option = `<option value="\${response[i].id}">\${response[i].name}</option>`
-          select.insertAdjacentHTML('afterbegin', option)
-
-        }
-
-      },
-
-      error: function (error) {
-        console.log("Error:::", error)
-      }
-    })
-    $.ajax({
-      url: '/fetchWorkExperienceValue',
-      type: 'POST',
-
-      success: function (response) {
-        let select = document.getElementById('experienceType');
-        console.log("select " + select);
-        for (let i = 0; i < response.length; i++) {
-          console.log("response id" + response[i].id);
-          console.log("response name" + response[i].name);
-          let option = `<option value="\${response[i].id}">\${response[i].name}</option>`
-
-          console.log("select " + select);
-          select.insertAdjacentHTML('afterbegin', option)
-          console.log("select " + select);
-        }
-
-      },
-
-      error: function (error) {
-        console.log("Error:::", error)
-      }
-    })
     /*function fetchDesignationValue() {
       url = "/fetchDesignationValue";
       params = {
