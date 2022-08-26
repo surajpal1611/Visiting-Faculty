@@ -3252,7 +3252,8 @@
         }
 
         div += ` 
-                <div id="research-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+        
+                <div id="research-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1 ">
                   <div class="row">
 
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -3287,7 +3288,7 @@
                       </div>
                     </div>
                   </div>
-                </div>    
+                </div>                  
         `
         resumeResearchTable.push(obj);
       }
@@ -3345,7 +3346,8 @@
       }
 
       let table = ` 
-      <div id="research-display-div" class="research-row px-3 px-sm-4 px-lg-4 mt-1">
+      <div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
+      <div id="research-display-div" class="research-row px-3 px-sm-4 px-lg-4 mt-1 bg-white container">
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -3394,23 +3396,44 @@
                 </div>
               </div>
             </div>
-            <div class="d-none research-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x"></i>
-            </div>
+            <div id="delete_btn_research_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_research_symbol">
+   <i class="fa-solid fa-trash text-danger fa-2x"></i>
+</div>
           </div>
-          <hr style="height: 5px;"> `
+          <hr style="height: 5px;"> 
+        </div>`
+         
 
 
 
       document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
-    })
-
-    $(document).on('click', '.research-delete-button', function () {
-      $(this).closest('tr').remove()
-    })
 
 
-    //*************************************Bank-details-modal JS****************************************
+    });
+    document.addEventListener('mouseover',function(){
+        let deleteButtonClick = document.querySelectorAll('.delete_btn_research_symbol')
+        let deleteresearch = document.querySelectorAll('.research_delete_btn');
+        console.log("clicked buddy")
+        for(let i = 0 ; i<deleteresearch.length;i++)
+        {
+            deleteresearch[i].addEventListener('mouseover',function(){
+            deleteresearch[i].querySelector('.delete_btn_research_symbol').classList.remove('d-none');
+          });
+
+            deleteresearch[i].addEventListener('mouseleave',function(){
+            deleteresearch[i].querySelector('.delete_btn_research_symbol').classList.add('d-none');
+          });
+
+          deleteButtonClick[i].addEventListener('click',function(){
+            this.parentElement.parentElement.remove()
+          });
+        }
+        
+      })
+
+
+
+    //*************************************Certification-modal JS****************************************
     document.querySelector('.certification-edit-box').addEventListener('click', function () {
       document.getElementById('body').classList.add('d-none');
       document.querySelector('.certification-modal').classList.remove('d-none');
@@ -3472,7 +3495,7 @@
            year_of_passing: professionalYOP,
          }
        
-         div += ` 
+         div += `
                   <div class="text-block right" id="preview-qualification-div">
                     <div class="card-body preview-certification-div">
 
@@ -3542,13 +3565,13 @@
            alert('Check Professional certificate details');
          }
        })
-    
-  
     });
 
     document.querySelector('#certification-add-button').addEventListener('click', function () {
 
-      let table = `      <div id="certification-display-div" class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
+      let table = `  
+      <div class="position-relative certification_delete_btn d-flex" style="cursor: pointer;"> 
+      <div id="certification-display-div" class="certification-row px-3 px-sm-4 px-lg-4 mt-1 container">
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-12 col-sm-12">
@@ -3574,14 +3597,35 @@
               </div>
 
             </div>
-            <div class="d-none certification-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
-            </div>
-          </div>
-          <hr style="height: 5px;">`
+            <div id="delete_btn_certification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_certification_symbol">
+            <i class="fa-solid fa-trash text-danger fa-2x"></i>
+           </div>
+           <hr style="height: 5px;">
+           </div>
+           </div>`
 
           document.getElementById('certification-data').insertAdjacentHTML("beforeend", table);
     });
+
+    document.addEventListener('mouseover',function(){
+        let deleteButtonClick = document.querySelectorAll('.delete_btn_certification_symbol')
+        let deleteCertification = document.querySelectorAll('.certification_delete_btn');
+        console.log("clicked buddy")
+        for(let i = 0 ; i<deleteCertification.length;i++)
+        {
+            deleteCertification[i].addEventListener('mouseover',function(){
+            deleteCertification[i].querySelector('.delete_btn_certification_symbol').classList.remove('d-none');
+          });
+
+            deleteCertification[i].addEventListener('mouseleave',function(){
+            deleteCertification[i].querySelector('.delete_btn_certification_symbol').classList.add('d-none');
+          });
+
+          deleteButtonClick[i].addEventListener('click',function(){
+            this.parentElement.parentElement.remove()
+          });
+        }
+      })
 
     //*************************************Bank-details-modal JS****************************************
 
