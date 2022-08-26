@@ -20,8 +20,13 @@ public class BankDetailsRestController {
     public ResponseEntity<?> postMethodName(@RequestBody  String bank_details) {
         
         System.out.println("Json Bank From Front End :"+bank_details);
-        jsoncheck.bankJsonCheck(bank_details);
-
-        return ResponseEntity.status(HttpStatus.OK).build();
+        Boolean check = jsoncheck.bankJsonCheck(bank_details);
+        if(check == true)
+        {
+            System.out.println("Success");
+            return ResponseEntity.status(HttpStatus.OK).build();
+        }
+        System.out.println("Error");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }   
 }

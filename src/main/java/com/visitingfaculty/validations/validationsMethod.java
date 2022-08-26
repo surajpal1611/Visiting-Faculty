@@ -161,4 +161,16 @@ public class validationsMethod
         }
     return check;
     }
+
+    //Validation for Select Option
+    public Boolean selectCheck(String value)
+    {
+        Boolean check = false;
+        char select[] = value.toCharArray();
+        if(select.length > 0)
+        {
+            check = true;
+        }
+    return check;    
+    }
 }

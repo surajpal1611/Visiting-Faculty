@@ -12,9 +12,9 @@ import com.visitingfaculty.model.user_publication.UserPublication;
 public class UserPublicationController {
 
     @PostMapping(value="/insert-publication-details")
-    public ResponseEntity<String> insert(@RequestBody UserPublication publicationTableData) {
-        
-
+    public ResponseEntity<String> insert(@RequestBody String publicationTableData) 
+    {
+        System.out.println("Publication Json : "+publicationTableData);
         return new ResponseEntity<String>("Inserted publication Successfully", HttpStatus.OK);
     }
     
