@@ -1241,12 +1241,11 @@
           <i id="award-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
         </div>
         <hr>
-
-
-        <div id="publication-award-div" class="bg-white">
+     
+        
+        <div id="publication-award-div" class="bg-white container">
           <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
-
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2 ">
@@ -1270,6 +1269,7 @@
                       <option value="0">-select-</option>
                       <option value="1">School</option>
                       <option value="2">University</option>
+                      <option value="3">Other</option>
                     </select></div>
                 </div>
               </div>
@@ -1297,12 +1297,11 @@
                 </div>
               </div>
             </div>
-            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x"></i>
-            </div>
           </div>
           <hr style="height: 5px;">
+        </div>          
         </div>
+
 
         <div class="d-flex justify-content-center">
           <button id="award-cancel-button" class="btn btn-danger m-4">Cancel</button>
@@ -1311,6 +1310,7 @@
       </div>
     </div>
   </div>
+
 
 
   <!-- ************************************************************************Publication Modal Div******************************************************************************************** -->
@@ -2702,14 +2702,14 @@
       // let bachelorsYOP = document.getElementById('bachelors-degree-year-of-passing').value;
       // let bachelorsCertificate = document.getElementById('bachelors-degree-certificate').value;
 
-      // if ( bachelorsSubject.length < 3 || bachelorsUniversity.length < 3 || bachelorsCollege.length < 3 || bachelorsPercentile.length < 3 || bachelorsYOP.length < 3 || bachelorsCertificate.length < 4)
+      // if ( bachelorsSubject.length < 3 || bachelorsUniversity.length < 3 || bachelorsCollege.length < 3 || bachelorsPercentile.length < 3 || bachelorsYOP.length < 3 || bachelorsCertificate.length <div 4)
       //  {
       //   document.getElementById('qualification-message').innerHTML = "*Complition of bachelors degree is required";
       //   return;
       // }
 
-      let table = `
-      <div id="qualification-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1">
+      let table = `<div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
+      <div id="qualification-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1 container">
             <div class="row">
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
@@ -2771,17 +2771,39 @@
                     type="file"></div>
                 </div>
               </div>
+              <div id="delete_btn_qualification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_qualification_symbol">
+                <i class="fa-solid fa-trash text-danger fa-2x"></i>
+              </div>
             </div>
           </div> 
           <hr style="height: 5px; margin: 30px 0">
+          </div>
+          </div>
 `
 
       document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
     })
 
-    $(document).on('click', '.qualification-delete-button', function () {
-      $(this).closest('tr').remove()
+    //************************************************On hover delete Function for qualification Section Start******************************** 
+document.addEventListener('mouseover',function(){
+  let deletebox = document.querySelectorAll('.qualification_delete_btn');
+  let deleteButtonClick = document.querySelectorAll('.delete_btn_qualification_symbol')
+  for(let i = 0 ; i<deletebox.length ; i++)
+  {
+    deletebox[i].addEventListener('mouseover',function(){
+    deletebox[i].querySelector('.delete_btn_qualification_symbol').classList.remove('d-none');
+    });
+    deletebox[i].addEventListener('mouseleave',function(){
+    deletebox[i].querySelector('.delete_btn_qualification_symbol').classList.add('d-none');
+    });
+    deleteButtonClick[i].addEventListener('click', function() {
+    this.parentElement.parentElement.parentElement.remove()
     })
+  }
+});
+
+//********************************************On hover delete Icon for qualificationSection END**************************************** 
+
 
     //*************************************Award-modal JS****************************************
 
@@ -2810,14 +2832,16 @@
       let awardRecieveDateaddbtn = document.querySelector('.awardRecieveDate').value.length;
       let awardCertificationImageaddbtn = document.querySelector('.awardCertificationImage').value.length;
 
-      if (awardnameaddbtn == 0 || awardOrganizationaddbtn == 0 || awardOrganizationTypeaddbtn == 0 ||
-        awardPlaceaddbtn == 0 || awardRecieveDateaddbtn == 0 || awardCertificationImageaddbtn == 0) {
-        alert('Fill the data before');
-        return;
-      }
+      // if (awardnameaddbtn == 0 || awardOrganizationaddbtn == 0 || awardOrganizationTypeaddbtn == 0 ||
+      //   awardPlaceaddbtn == 0 || awardRecieveDateaddbtn == 0 || awardCertificationImageaddbtn == 0) {
+      //   alert('Fill the data before');
+      //   return;
+    // }
+ 
 
 
-      let table = `          <div id="publication-award-div" class="bg-white">
+      let table = `<div class="position-relative award_delete_btn d-flex" style="cursor: pointer;"> 
+               <div id="publication-award-div" class="bg-white container">
           <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
 
@@ -2842,6 +2866,7 @@
                     <option value="0">-select-</option>
                     <option value="1">School</option>
                     <option value="2">University</option>
+                    <option value="3">Other</option>
                   </select></div>
                 </div>
               </div>
@@ -2866,21 +2891,46 @@
                   <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></div>
                 </div>
               </div>
+              <div id="delete_btn_award_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_award_symbol">
+              <i class="fa-solid fa-trash text-danger fa-2x"></i>
             </div>
-            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x"></i>
             </div>
           </div>
           <hr style="height: 5px;">
         
         </div> 
+        </div>
+        
        `
+       
       document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
 
 
     });
 
-    // ******************************************Validation Functions Start****************************************************
+//************************************************On hover delete Function for Award Section Start******************************** 
+document.addEventListener('mouseover',function(){
+  let deletebox = document.querySelectorAll('.award_delete_btn');
+  let deleteButtonClick = document.querySelectorAll('.delete_btn_award_symbol')
+  for(let i = 0 ; i<deletebox.length ; i++)
+  {
+    deletebox[i].addEventListener('mouseover',function(){
+    deletebox[i].querySelector('.delete_btn_award_symbol').classList.remove('d-none');
+    });
+    deletebox[i].addEventListener('mouseleave',function(){
+    deletebox[i].querySelector('.delete_btn_award_symbol').classList.add('d-none');
+    });
+    deleteButtonClick[i].addEventListener('click', function() {
+    this.parentElement.parentElement.parentElement.remove()
+    })
+  }
+
+});
+
+
+//********************************************On hover delete Icon for Award Section END******************************** 
+
+// ******************************************Validation Functions Start****************************************************
     function tabledatacheck(value) {
       let checkit = false;
       if (value.length > 3) {
@@ -2961,7 +3011,7 @@
         let checkurl_path = tabledatacheck(url_path);
         let checkorganization_type_lid = checknotnull(organization_type_lid)
 
-        //to add the red border according to validations
+        // to add the red border according to validations
         if (checktitle == false) {
           vjstableelement[i].querySelector('.awardName').classList.add('input-border');
           return;
@@ -3119,7 +3169,6 @@
         }
 
         div += `   
->>>>>>> ff6bf98a527317c82ddd06fb1a424d32019ebe3f
   <div id="publication-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
                  <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -3196,11 +3245,12 @@
       const certificate = publicationDetailCertificateValidation(document.querySelector('.certification').value)
       console.log(role)
 
-      if (!role || !publisher || !numberOfAuthor || !yearOfPublication || !bookTitle || !certificate) {
-        return;
-      }
+      // if (!role || !publisher || !numberOfAuthor || !yearOfPublication || !bookTitle || !certificate) {
+      //   return;
+      // }
 
-      let table = `<div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1">
+      let table = `<div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;"> 
+      <div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1 container">
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -3252,18 +3302,34 @@
             <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
               <i class="fa-solid fa-pen fa-2x"></i>
             </div>
-            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x"></i>
+            <div id="delete_btn_publication_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_publication_symbol">
+              <i class="fa-solid fa-trash text-danger fa-2x"></i>
             </div>
           </div>
-          <hr style="height: 5px;">`
+          <hr style="height: 5px;">
+        </div>`
+          
       document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
     })
 
-
-    $(document).on('click', '.publication-delete-button', function () {
-      $(this).closest('tr').remove()
+//************************************************On hover delete Function for Award Section Start******************************** 
+document.addEventListener('mouseover',function(){
+  let deletebox = document.querySelectorAll('.publication_delete_btn');
+  let deleteButtonClick = document.querySelectorAll('.delete_btn_publication_symbol')
+  for(let i = 0 ; i<deletebox.length ; i++)
+  {
+    deletebox[i].addEventListener('mouseover',function(){
+    deletebox[i].querySelector('.delete_btn_publication_symbol').classList.remove('d-none');
+    });
+    deletebox[i].addEventListener('mouseleave',function(){
+    deletebox[i].querySelector('.delete_btn_publication_symbol').classList.add('d-none');
+    });
+    deleteButtonClick[i].addEventListener('click', function() {
+    this.parentElement.parentElement.remove()
     })
+  }
+});
+//********************************************On hover delete Icon for Award Section END******************************** 
 
 
 

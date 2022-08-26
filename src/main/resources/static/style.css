@@ -252,6 +252,39 @@ body {
   left: 100%;
 }
 
+
+#delete_btn_award_symbol {
+  width: 100px;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 100%;
+}
+
+#delete_btn_qualification_symbol{
+  width: 100px;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 100%;
+}
+
+#delete_btn_publication_symbol{
+  width: 100px;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 100%;
+}
 .publication-edit-box i {
   color: #b12828 !important;
 }

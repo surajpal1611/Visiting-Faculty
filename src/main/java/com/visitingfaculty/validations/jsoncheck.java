@@ -9,7 +9,7 @@ public class jsoncheck
 {
     @Autowired validationsMethod checkVal;
 
-    //For Award Section
+    //**************************************************************************************************---->For Award Section
     public Boolean JsonStringValues(String JsonString)
     {
         Boolean check = false;
@@ -41,7 +41,7 @@ public class jsoncheck
         return check;
     }
 
-    //For Personal Details
+    //**************************************************************************************************---->For Personal Details
     public Boolean UserJsonCheck(String JsonString)
     {
         Boolean check = false;
@@ -77,27 +77,34 @@ public class jsoncheck
         return check;
     }
 
-    //For Bank Details
-    public void bankJsonCheck(String JsonString)
+    //**************************************************************************************************---->For Bank Details
+    public Boolean bankJsonCheck(String JsonString)
     {
         Boolean check = false;
-        JSONObject jsonString = new JSONObject(JsonString);
+        JSONArray jsonStringArray = new JSONArray(JsonString);
+        System.out.println("JSON String Array for Bank : "+jsonStringArray);
+        
         //Value Fron Key
-        String account_number = jsonString.getString("account_number");
-        String name = jsonString.getString("name");
-        String branch = jsonString.getString("branch");
-        String ifsc_code = jsonString.getString("ifsc_code");
-        String micr_code = jsonString.getString("micr_code");
-        String account_type = jsonString.getString("account_type");
+        String account_number = jsonStringArray.getJSONObject(0).getString("account_number");
+        String name = jsonStringArray.getJSONObject(0).getString("name");
+        String branch = jsonStringArray.getJSONObject(0).getString("branch");
+        String ifsc_code = jsonStringArray.getJSONObject(0).getString("ifsc_code");
+        String account_type = jsonStringArray.getJSONObject(0).getString("account_type");
 
-        Boolean namecheck = checkVal.CheckWithNoSpectailChar(name);
-        Boolean branchcheck = checkVal.CheckWithNoSpectailChar(branch);
-        Boolean account_typecheck = checkVal.CheckWithNoSpectailChar(account_type);
-        Boolean account_numbercheck = checkVal.accountNumberCheck(account_number);
-        System.out.println("Account number boolean : "+account_numbercheck);
+        Boolean account_numberCheck = checkVal.accountNumberCheck(account_number);
+        Boolean nameCheck = checkVal.checkLengthThree(name);
+        Boolean branchCheck = checkVal.CheckWithNoSpectailChar(branch);
+        Boolean ifsc_codeCheck = checkVal.checkLengthThree(ifsc_code);
+        Boolean account_typeCheck = checkVal.CheckWithNoSpectailChar(account_type);
+
+        if(account_numberCheck == true && nameCheck == true && branchCheck == true && ifsc_codeCheck == true && account_typeCheck == true)
+        {
+            check = true;
+        }
+        return check;
     }
 
-    //For Qualification Details
+    //**************************************************************************************************---->For Qualification Details
     public Boolean qualificationCheck(String JsonString)
     {
         Boolean check = false;
@@ -127,7 +134,7 @@ public class jsoncheck
     return check;
     }
 
-    //For Research Details
+    //**************************************************************************************************---->For Research Details
     public Boolean researchJsonCheck(String JsonString)
     {
         Boolean check = false;
