@@ -197,50 +197,50 @@
                 <div class="d-flex justify-content-center align-items-center">
                   <h3 style="color: #740E00;"><b> Work Experience </b></h3>
                 </div>
+                <div id="workExperience-appending-div">
+                  <div class="text-block right">
+                    <div class="card-body">
+                      <h2>2017</h2>
 
-                <div class="text-block right">
-                  <div class="card-body">
-                    <h2>2017</h2>
+                      <div id="work-experience-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                        <div class="row">
 
-                    <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                      <div class="row">
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">University :</p>
-                              <p class="h5 py-1">Subject Taught :</p>
-                              <p class="h5 py-1">Program :</p>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">Mumbai University</p>
-                              <p id="">Discrete Maths</p>
-                              <p id="">BSc</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 py-1">Designation :</p>
-                              <p class="h5 py-1">Start Date :</p>
-                              <p class="h5 py-1">End date :</p>
-                            </div>
-                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                              <p class="" id="">Senior Maths faculty</p>
-                              <p id="" class="">2000-07-06</p>
-                              <p id="" class="">2007-07-06</p>
-                              <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">University :</p>
+                                <p class="h5 py-1">Subject Taught :</p>
+                                <p class="h5 py-1">Program :</p>
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                                <p id="">Mumbai University</p>
+                                <p id="">Discrete Maths</p>
+                                <p id="">BSc</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
 
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 py-1">Designation :</p>
+                                <p class="h5 py-1">Start Date :</p>
+                                <p class="h5 py-1">End date :</p>
+                              </div>
+                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                                <p class="" id="">Senior Maths faculty</p>
+                                <p id="" class="">2000-07-06</p>
+                                <p id="" class="">2007-07-06</p>
+                                <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
             <div class="d-none work-experience-edit-box d-flex justify-content-center align-items-center">
@@ -499,10 +499,10 @@
                             <div class="row pt-lg-3">
                               <div class="col-5 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                                 <p class="h5 pb-1">Institution :</p>
-                             </div>
-                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              </div>
+                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                                 <p class="" id="">St. Wilfred's College</p>
-                             </div>
+                              </div>
                             </div>
                           </div>
 
@@ -860,8 +860,135 @@
   <!-- ************************************************************************Work Experience Modal Div******************************************************************************************** -->
 
   <div class="work-experience-modal d-none">
+    <div class="full-screen container ">
+      <div class="main-content">
+        <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
+          <h3>
+            <b>Work Experience</b>
+          </h3>
+          <i id="work-experience-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+        </div>
+        <hr>
 
-    <div class="full-screen container">
+        <div class="bg-white">
+          <div id="workExperience-display-div" class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-2">
+                  <div class="col-md-3 ">
+                    <p class="h6">Experience Type</p>
+                  </div>
+                  <div class="col-md-9">
+                    <select class="experienceType form-control" id="experienceType">
+                      <option value="">Select Type</option>
+
+                    </select>
+                  </div>
+                </div>
+                `
+                <div class="row p-2">
+                  <div class="col-md-3 ">
+                    <p class="h6">University</p>
+                  </div>
+                  <div class="col-md-9 ">
+                    <input class="form-control employeeName" id="employeeName" type="text">
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">Subject Taught</p>
+                  </div>
+                  <div class="col-md-9 ">
+                    <input class="form-control responsibility" id="responsibility" type="text">
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">Program</p>
+                  </div>
+                  <div class="col-md-9 ">
+                    <input class="form-control description" id="description" type="text">
+
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-3">
+                    <p class="h6">Designation</p>
+                  </div>
+                  <div class="col-md-9 ">
+                    <select class="form-control designation" id="designation">
+                      <option value="0">Select Designation</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3">
+                    <p class="h6">Start Date</p>
+                  </div>
+                  <div class="col-md-9">
+                    <input class="form-control start_Date" id="startMaxDate" type="date">
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">End Date</p>
+                  </div>
+                  <div class="col-md-9">
+                    <input class="form-control end_Date" id="endMaxDate" type="date">
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">Teaching Duration</p>
+                  </div>
+                  <div class="col-md-9">
+                    <input class="form-control durationOfTeaching" id="durationOfTeaching" type="text">
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-6 ">
+                    <div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="experienceTimespan1" id="experienceTimespan">
+                        <label class="form-check-label" for="experienceTimespan">
+                          Past </label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="experienceTimespan1"
+                          id="experienceTimespanCurrent">
+                        <label class="form-check-label" for="experienceTimespanCurrent"> Current </label>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none workExperience-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x text-white "></i>
+            </div>
+          </div>
+          <hr style="height: 5px;">
+          <div id="workExperience-data" class="mt-4"></div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button id="work-experience-cancel-button" class="btn btn-danger m-4">Cancel</button>
+        <button id="work-experience-submit-button" class="btn btn-success m-4">Submit</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <div class="work-experience-modal d-none">
+
+     <div class="full-screen container">
       <div class="main-content">
         <div class="container d-flex justify-content-between">
           <h3 class="text-white h3 py-4">Teaching Experience</h3>
@@ -872,7 +999,7 @@
           <div class="container">
             <div class="row table">
               <div class="table-responsive">
-                <table>
+                 <table>
                   <thead class="text-white">
                     <tr class="table-head">
                       <th>University</th>
@@ -897,7 +1024,7 @@
                       <td></td>
                     </tr>
                   </tbody>
-                </table>
+                </table> 
               </div>
             </div>
           </div>
@@ -949,7 +1076,7 @@
         <button id="work-experience-submit-button" class="btn btn-success m-4">Submit</button>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
   <!-- ************************************************************************Skills Modal Div******************************************************************************************** -->
@@ -1358,27 +1485,24 @@
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-12 col-sm-12">
-             
+
                 <div class="row p-3">
                   <div class="col-md-2 ">
                     <p class="h6">Certificate: <span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10 "><input class="form-control certification-certificate"
-                       type="text"></div>
+                  <div class="col-md-10 "><input class="form-control certification-certificate" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
                     <p class="h6">Institution: <span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10 "><input class="form-control certification-institution"
-                      type="text"></div>
+                  <div class="col-md-10 "><input class="form-control certification-institution" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
                     <p class="h6">Year of Passing: <span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10 "><input class="form-control certification-YOP"
-                       type="text"></div>
+                  <div class="col-md-10 "><input class="form-control certification-YOP" type="text"></div>
                 </div>
               </div>
 
@@ -1399,7 +1523,7 @@
       </div>
     </div>
   </div>
-  
+
   <!-- ************************************************************************Bank Details Modal Div******************************************************************************************** -->
   <div class="bank-details-modal d-none">
 
@@ -1457,7 +1581,8 @@
         <div class="row">
           <div class="col-md-6 col-sm-12">
             <div>
-              <label for="cancelled_cheque_Photo" class="py-md-2">Cancelled Cheque Photo<span class="required">*</span></label>
+              <label for="cancelled_cheque_Photo" class="py-md-2">Cancelled Cheque Photo<span
+                  class="required">*</span></label>
               <span id="cancelled_cheque_Photo-message" style="color: red;" class="error"></span>
               <input type="file" name="cancelled_cheque_Photo" id="cancelled_cheque_Photo" class="form-control"
                 onchange="document.getElementById('check-preview').src = window.URL.createObjectURL(this.files[0])">
@@ -1597,7 +1722,7 @@
           if (fuData.files && fuData.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
-            
+
               $('#photo').attr('src', e.target.result);
               console.log(e.target.result)
               condition = true;
@@ -2139,6 +2264,13 @@
     document.querySelector('.research-div-wrapper').addEventListener('mouseleave', function () {
       document.querySelector('.research-edit-box').classList.add('d-none');
     });
+    document.querySelector('.certification-div-wrapper').addEventListener('mouseover', function () {
+      document.querySelector('.certification-edit-box').classList.remove('d-none');
+    });
+
+    document.querySelector('.certification-div-wrapper').addEventListener('mouseleave', function () {
+      document.querySelector('.certification-edit-box').classList.add('d-none');
+    });
 
     document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
       document.querySelector('.bank-details-edit-box').classList.remove('d-none');
@@ -2174,7 +2306,8 @@
       // let temporaryAddress = personalDetailTemporaryAddressValidation(result.temporary_address);
       let country = personalDetailCountryValidation(result.nationality);
 
-      if (!firstName || !lastName || !gender || !contactNumber || !email || !pancard || !aadhar || !address || !country) {
+      if (!firstName || !lastName || !gender || !contactNumber || !email || !pancard || !aadhar || !address || !
+        country) {
         return;
       }
 
@@ -2309,42 +2442,10 @@
 
     //*************************************teaching-experience-modal JS****************************************
 
-    document.getElementById('teaching-experience-add-button').addEventListener('click', function () {
-      let table = ` <tr data-toggle="collapse" class="collapsed">
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="date"></td>
-        <td><input class="form-control" type="date"></td>
-        <td><input class="form-control" type="text"></td>
-        <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 teaching-experience-delete-button"></i></td>
-        </tr>
-       `
 
-      document.getElementById('teaching-experience-data').insertAdjacentHTML("beforeend", table);
-    })
-    $(document).on('click', '.teaching-experience-delete-button', function () {
-      $(this).closest('tr').remove()
-    })
 
-    document.getElementById('industrial-experience-add-button').addEventListener('click', function () {
-      let table = ` <tr data-toggle="collapse" class="collapsed">
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="date"></td>
-        <td><input class="form-control" type="date"></td>
-        <td><input class="form-control" type="text"></td>
-        <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 industrial-experience-delete-button"></i></td>
-        </tr>
-       `
-      document.getElementById('industrial-experience-data').insertAdjacentHTML("beforeend", table);
-    })
-    $(document).on('click', '.industrial-experience-delete-button', function () {
-      $(this).closest('tr').remove()
-    })
+
+
 
     document.querySelector(".work-experience-edit-box").addEventListener('click', function () {
       document.getElementById('body').classList.add('d-none');
@@ -2875,7 +2976,7 @@
       }
       // awardData.push(resume_achievement)
 
-console.log(JSON.stringify(object))
+      console.log(JSON.stringify(object))
       //Fetch Method
       function postdata() {
         url = "/award_Table_Data";
@@ -2993,7 +3094,7 @@ console.log(JSON.stringify(object))
       let publicationTableData = {
         "PublicationDetails": publicationTableArray
       }
-     // publicationData.push(publicationTableData)
+      // publicationData.push(publicationTableData)
       console.log(JSON.stringify(publicationTableData))
 
       let options = {
@@ -3219,7 +3320,7 @@ console.log(JSON.stringify(object))
       object = {
         "insert_research": resumeResearchTable
       }
-     // researchData.push(object)
+      // researchData.push(object)
       console.log(JSON.stringify(object));
 
       function postdata() {
@@ -3251,14 +3352,14 @@ console.log(JSON.stringify(object))
     let awardData = {}
     let publicationData = {}
     let researchData = {}
-    
-    achievement = {
-  "insert_Award": awardData,
-  "insert_publication": publicationData,
-  "insert_research": researchData
-}
 
-console.log(JSON.stringify(achievement))
+    achievement = {
+      "insert_Award": awardData,
+      "insert_publication": publicationData,
+      "insert_research": researchData
+    }
+
+    console.log(JSON.stringify(achievement))
 
     document.getElementById('research-add-button').addEventListener('click', function () {
 
@@ -3815,6 +3916,470 @@ console.log(JSON.stringify(achievement))
       }
 
     })
+    //suraj pal 17 august 2022
+    let count = 1;
+    document.querySelector('#work-experience-submit-button').addEventListener('click', function (e) {
+      e.preventDefault()
+      $.ajax({
+        url: '/fetchDesignationValue',
+        type: 'POST',
+        success: function (response) {
+          let select = document.querySelectorAll('.designation');
+          console.log("select " + select);
+          let rowCount = 1;
+          for (let j = 0; j < select.length; j++) {
+            let option = ``
+            for (let i = 0; i < response.length; i++) {
+
+              option += `<option value="\${response[i].id}">\${response[i].name}</option>`
+
+            }
+            select[rowCount].insertAdjacentHTML('afterbegin', option);
+            rowCount++
+          }
+        },
+
+        error: function (error) {
+          console.log("Error:::", error)
+        }
+      })
+      $.ajax({
+        url: '/fetchWorkExperienceValue',
+        type: 'POST',
+
+        success: function (response) {
+          let select = document.getElementById('experienceType');
+          console.log("select " + select);
+          for (let i = 0; i < response.length; i++) {
+            console.log("response id" + response[i].id);
+            console.log("response name" + response[i].name);
+            let option = `<option value="\${response[i].id}">\${response[i].name}</option>`
+
+            console.log("select " + select);
+            select.insertAdjacentHTML('afterbegin', option)
+            console.log("select " + select);
+          }
+
+        },
+
+        error: function (error) {
+          console.log("Error:::", error)
+        }
+      })
+      /*function fetchDesignationValue() {
+        url = "/fetchDesignationValue";
+        params = {
+          method: 'post',
+        }
+        fetch(url, params).then((response) => response)
+          .then((data) => {
+            console.log("return values is", data[0].id);
+            
+          })
+      } */
+      let workExperienceValue = {}
+      let workExperience = [];
+      let div = ''
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.work-experience-modal').classList.add('d-none');
+
+      let getSelectedValue = document.querySelector('input[name="experienceTimespan\${count}"]:checked');
+      let workExperienceRow = document.querySelectorAll('.workExperience-row');
+      for (let i = 0; i < workExperienceRow.length; i++) {
+        let universityValue = workExperienceRow[i].querySelector('.employeeName').value;
+        let subjectTaught = workExperienceRow[i].querySelector('.responsibility').value;
+        let program = workExperienceRow[i].querySelector('.description').value;
+        let designation_lid = workExperienceRow[i].querySelector('.designation').value;
+        let designationIdValue = document.getElementById("designation");
+        let designation = designationIdValue.options[designationIdValue.selectedIndex].text;
+
+        let start_Date = workExperienceRow[i].querySelector('.start_Date').value;
+        let end_Date = workExperienceRow[i].querySelector('.end_Date').value;
+        let durationOfTeaching = workExperienceRow[i].querySelector('.durationOfTeaching').value;
+        let experienceTypeValue = workExperienceRow[i].querySelector('.experienceType').value;
+        //let is_currentValue = document.querySelector('input[name="experienceTimespan"]').checked;
+        /*   let is_currentValue =workExperienceRow[i].querySelector('.experience').checked; */
+        let is_currentValue = workExperienceRow[i].querySelector('.form-check-input').checked;
+        let is_currentValue1 = workExperienceRow[i].querySelector('.form-check-input').checked;
+
+        console.log("value of is_currentValues is" + is_currentValue);
+        let id = i + 1;
+        id += "";
+        console.log("value of va" + universityValue);
+        if (universityValue != "" || subjectTaught != "" || program != "" || designation != "" ||
+          durationOfTeaching != "" || end_Date != "" || start_Date != "") {
+          obj = {
+            id: id,
+            resume_lid: "1",
+            experience_type_lid: experienceTypeValue,
+            employer_name: universityValue,
+            designation: designation,
+            designation_lid: designation_lid,
+            description: program,
+            start_Date: start_Date,
+            end_Date: end_Date,
+            responsibilities: subjectTaught,
+            //   duration_Of_teaching: durationOfTeaching,
+            is_current: is_currentValue
+          }
+
+          div += ` 
+
+              <div class="text-block right" >
+                      <div class="card-body">
+                        <div id="workExperience-display-div" class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1">
+                          <div class="row">
+
+                            <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                              <div class="row pt-lg-3">
+                                <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                  <p class="h5 pb-1">Experience Type :</p>
+                                  <p class="h5 py-1">Employee Name:</p>
+                                  <p class="h5 py-1">Responsibilities :</p>
+                                  <p class="h5 py-1">Start Date :</p>
+                                </div>
+                                <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                                  <p id="">\${experienceTypeValue}\</p>
+                                  <p id="">\${universityValue}\</p>
+                                  <p id="">\${subjectTaught}\</p>
+                                  <p id="">\${start_Date} \</p>
+                                 
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                              <div class="row pt-lg-3">
+                                <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                  <p class="h5 pb-1">Description :</p>
+                                  <p class="h5 py-1">Designation :</p>
+                                  <p class="h5 py-1">End Date :</p>
+                                  <p class="h5 py-1">Duration Of Teaching :</p>
+                                 
+                                </div>
+                                <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                                  <p class="" id="">\${program}\</p>
+                                  <p id="" class="">\${designation}\</p>
+                                  <p id="" class="">\${end_Date}\</p>
+                                  <p id="" class="">\${durationOfTeaching}\</p>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                            `
+          console.log("object 1" + obj);
+          workExperience.push(obj);
+
+        }
+
+      }
+
+      workExperienceValue = {
+        "work_Experience": workExperience
+      }
+
+      function isEmptyObject(obj) {
+        return JSON.stringify(obj) === '{}'
+      }
+      console.log("value of workexperienc", workExperienceValue);
+      JSON.stringify(workExperienceValue)
+
+      function postdata() {
+        url = "/insertWorkExperience";
+        params = {
+          method: 'post',
+          headers: {
+            contentType: "application/json; charset=utf-8"
+          },
+          body: JSON.stringify(workExperienceValue),
+        }
+        fetch(url, params).then((response) => response.json())
+          .then((data) => {
+            console.log("data", data);
+
+            ++count;
+
+
+            document.getElementById('workExperience-appending-div').firstElementChild.remove()
+            document.getElementById('workExperience-appending-div').insertAdjacentHTML('beforeend', div)
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.work-experience-modal').classList.add('d-none');
+
+          })
+      }
+      postdata()
+    });
+    let table = ``
+
+    let count1 = 2;
+    //change by suraj 23 august 2022
+    document.getElementById('work-experience-add-button').addEventListener('click', function (e) {
+
+
+  table  += `
+    <div class="workExperience-div-wrapper d-flex position-relative" style="cursor: pointer;">
+     <div class="container" >
+      <div id="workExperience-display-div" class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">Experience Type</p>
+                  </div>
+                  <div class="col-md-9"> 
+                    <select class="experienceType form-control down" id="experienceType"> `
+
+      $.ajax({
+        url: '/fetchDesignationValue',
+        type: 'POST',
+        success: function (response) {
+          console.log("RESPONSE",response)
+          console.log(response.length)
+          for (let i = 0; i < response.length; i++) {
+
+            console.log(response[i].name)
+            console.log(response[i].id)
+            table += `<option value="\${response[i].id}\">\${response[i].name}\</option>`
+                    
+            console.log(`
+                            <option value="\${response[i].id}\">\${response[i].name}\</option>
+                     `)
+
+          }
+        },
+
+        error: function (error) {
+          console.log("Error:::", error)
+        }
+      })
+
+      table += `                 
+             </select>
+                   </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">University</p>
+                  </div>
+                  <div class="col-md-9 "><input class="form-control employeeName"
+                      id="employeeName" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">Subject Taught</p>
+                  </div>
+                  <div class="col-md-9 "><input class="form-control responsibility"
+                      id="responsibility" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">Program</p>
+                  </div>
+                  <div class="col-md-9 "><input class="form-control description" id="description" type="text"
+                    >
+                  
+                 </div>
+                </div>
+
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+              <div class="row p-3">
+              <div class="col-md-3">
+                <p class="h6">Designation</p>
+              </div>
+              <div class="col-md-9 ">
+              
+              <select class="form-control designation" id="designation1">`
+
+      $.ajax({
+        url: '/fetchWorkExperienceValue',
+        type: 'POST',
+
+        success: function (response) {
+     
+          for (let i = 0; i < response.length; i++) {
+
+            table += `<option value="\${response[i].id}\">\${response[i].name}\</option>`
+          }
+
+        },
+
+        error: function (error) {
+          console.log("Error:::", error)
+        }
+      })
+      /*function fetchDesignationValue() {
+        url = "/fetchDesignationValue";
+        params = {
+          method: 'post',
+        }
+        fetch(url, params).then((response) => response)
+          .then((data) => {
+            console.log("return values is", data[0].id);
+            
+          })
+      } */
+
+
+      table += `  </select></div>
+              </div>              
+                <div class="row p-3">
+                  <div class="col-md-3">
+                    <p class="h6">Start Date</p>
+                  </div>
+                  <div class="col-md-9"><input class="form-control start_Date"
+                      id="startMaxDate" type="date"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">End Date</p>
+                  </div>
+                  <div class="col-md-9"><input class="form-control end_Date" id="endMaxDate"
+                    type="date"></div>
+                </div>
+                <div class="row p-3">
+                <div class="col-md-3 ">
+                  <p class="h6">Teaching Duration</p>
+                </div>
+                <div class="col-md-9"><input class="form-control durationOfTeaching" id="durationOfTeaching"
+                  type="text">
+                </div>
+              </div>
+              <div class="row p-3">
+				<div class="col-md-6 ">
+					<div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input checked" type="radio"
+								name="experienceTimespan\${count1}" value="1" id="experienceTimespan"> <label
+								class="form-check-label" for="experienceTimespan">
+								Past </label>
+						</div>
+                      <div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio"
+								name="experienceTimespan\${count1}" value="2" id="experienceTimespanCurrent"> <label
+								class="form-check-label"  for="experienceTimespanCurrent">
+								Current </label>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+              
+            </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="workExperience-edit-box d-none d-flex justify-content-center align-items-center">
+          <i class="fa-solid fa-pen fa-2x text-dark "></i>
+          </div>
+          </div> 
+          <hr style="height: 5px; margin: 30px 0">
+`
+
+      document.getElementById('workExperience-data').insertAdjacentHTML("beforeend", table);
+      ++count1;
+      let dtToday = new Date();
+      let month = dtToday.getMonth() + 1;
+      let day = dtToday.getDate();
+      let startDay = dtToday.getDate() - 1;
+      let year = dtToday.getFullYear();
+      if (month < 10) {
+        month = '0' + month.toString();
+      }
+      if (day < 10 || startDay < 10) {
+        startDay = '0' + startDay.toString();
+        day = '0' + day.toString();
+      }
+      let endMaxDate = year + '-' + month + '-' + day;
+      let startMaxDate = year + '-' + month + '-' + startDay;
+      let startDateElement = document.getElementById('startMaxDate');
+      let endDateElement = document.getElementById('endMaxDate');
+      startDateElement.setAttribute('max', startMaxDate);
+      endDateElement.setAttribute('max', endMaxDate);
+      console.log("value is endDateelement" + endDateElement.getAttribute('max'));
+    })
+    //suraj pal 22/08/2022
+    document.addEventListener("DOMContentLoaded", function (event) {
+      let dtToday = new Date();
+      let month = dtToday.getMonth() + 1;
+      let day = dtToday.getDate();
+      let startDay = dtToday.getDate() - 1;
+      let year = dtToday.getFullYear();
+      if (month < 10) {
+        month = '0' + month.toString();
+      }
+      if (day < 10 || startDay < 10) {
+        startDay = '0' + startDay.toString();
+        day = '0' + day.toString();
+      }
+      let endMaxDate = year + '-' + month + '-' + day;
+      let startMaxDate = year + '-' + month + '-' + startDay;
+      let startDateElement = document.getElementById('startMaxDate');
+      let endDateElement = document.getElementById('endMaxDate');
+      startDateElement.setAttribute('max', startMaxDate);
+      endDateElement.setAttribute('max', endMaxDate);
+      //fetchDesignationValue();
+    });
+    $.ajax({
+      url: '/fetchDesignationValue',
+      type: 'POST',
+
+      success: function (response) {
+        let select = document.getElementById('designation');
+        console.log("select " + select);
+        for (let i = 0; i < response.length; i++) {
+          let option = `<option value="\${response[i].id}">\${response[i].name}</option>`
+          select.insertAdjacentHTML('afterbegin', option)
+
+        }
+
+      },
+
+      error: function (error) {
+        console.log("Error:::", error)
+      }
+    })
+    $.ajax({
+      url: '/fetchWorkExperienceValue',
+      type: 'POST',
+
+      success: function (response) {
+        let select = document.getElementById('experienceType');
+        console.log("select " + select);
+        for (let i = 0; i < response.length; i++) {
+          console.log("response id" + response[i].id);
+          console.log("response name" + response[i].name);
+          let option = `<option value="\${response[i].id}">\${response[i].name}</option>`
+
+          console.log("select " + select);
+          select.insertAdjacentHTML('afterbegin', option)
+          console.log("select " + select);
+        }
+
+      },
+
+      error: function (error) {
+        console.log("Error:::", error)
+      }
+    })
+    /*function fetchDesignationValue() {
+      url = "/fetchDesignationValue";
+      params = {
+        method: 'post',
+      }
+      fetch(url, params).then((response) => response)
+        .then((data) => {
+          console.log("return values is", data[0].id);
+          
+        })
+    } */
   </script>
 </body>
 
