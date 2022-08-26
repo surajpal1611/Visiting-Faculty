@@ -900,3 +900,25 @@ button {
 .required {
   color: red;
 }
+
+#delete_btn_research_symbol {
+  width: 100px;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 100%;
+}
+
+#delete_btn_certification_symbol {
+  width: 100px;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 100%;
+}
