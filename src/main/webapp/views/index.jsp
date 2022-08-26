@@ -60,58 +60,109 @@
                       </div>
 
                       <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
-                        <h3 p-3 id="full-name-value" style="color: #740E00;"><b>Full Name</b></h3>
+                        <div class="d-flex" style="color: #740E00;">
+                          <h3><b id="first-name-value">Sameer</b></h3> &nbsp &nbsp
+                          <h3><b id="last-name-value">Shaikh</b></h3>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <div id="personal-details-div" class="pt-4 px-3 px-sm-4 px-lg-4 mt-1">
+                  <div id="personal-details-div" class="pt-lg-4 pt-md-5 px-3 px-sm-4 px-lg-4 mt-1">
                     <div class="row">
-                      <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
-                        <div class="row pt-lg-5">
-                          <div class="col-6 left-personal-div ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                            <h6 class="pb-4">Gender :</h6>
-                            <h6 class="pb-4">Date of birth :</h6>
-                            <h6 class="pb-4">Pancard :</h6>
-                            <h6 class="pb-4">Pancard Photo</h6>
-                            <h6 class="pb-4">Aadhar card :</h6>
-                            <h6 class="pb-4">Aadhar card Photo</h6>
+                      <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12 ps-4 pt-lg-5 pt-md-2 text-center">
+                          <div class="row py-1">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Gender :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="gender-value">Male</p>
+                            </div>
                           </div>
-                          <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                            <p id="gender-value">Male</p>
-                            <p class="pt-2" id="date-of-birth-value">2000-07-06</p>
-                            <p class="pt-3" id="pancard-value">AAAAA1111A</p>
-                            <p class="pt-3" id="pancard-photo"><i class="fa-solid fa-ban text-danger"></i></p>
-                            <p class="pt-2" id="aadhar-card-value">111122223333</p>
-                            <p class="pt-2" id="aadhar-card-photo"><i class="fa-solid fa-ban text-danger"></i></p>
+                          <div class="row py-1">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Date of birth :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="date-of-birth-value">2000-07-06</p>
+                            </div>
                           </div>
-                        </div>
+                          <div class="row py-1">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Pancard :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="pancard-value">AAAAA1111A</p>
+                            </div>
+                          </div>
+                          <div class="row py-1">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Pancard Photo</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="pancard-photo"><i class="fa-solid fa-ban text-danger"></i></p>
+                            </div>
+                          </div>
+                          <div class="row py-1">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Aadhar card :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="aadhar-card-value">111122223333</p>
+                            </div>
+                          </div>
+                          <div class="row py-1">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Aadhar card Photo</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="aadhar-card-photo"><i class="fa-solid fa-ban text-danger"></i></p>
+                            </div>
+                          </div>
                       </div>
 
-                      <div id="right-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
-                        <div class="row pt-lg-5">
-                          <div class="col-6 ps-lg-3 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                            <h6 class="pb-4">Contact No.</h6>
-                            <h6 class="pb-3">Email :</h6>
-                            <h6 class="pb-4">Address :</h6>
-                            <h6 class="pb-md-4 pt-md-3 mt-md-3 temporary-address-heading">Temporary Address :</h6>
-                            <!-- <h6 class="pb-3 city-line">City</h6> -->
-                            <!-- <h6 class="pb-3">State</h6> -->
-                            <!-- <h6 class="pb-3">Pincode</h6> -->
-                            <h6 class=" pt-2 country-heading">Country :</h6>
+                      <div id="right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
+                          <div class="row py-2">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Contact No.</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="contact-number-value">9876543210</p>
+                            </div>
                           </div>
-                          <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                            <p id="contact-number-value">9876543210</p>
-                            <p id="email-value" class="pt-2">example@gmail.com</p>
-                            <p id="address-value" class="pt-1">101-Ashok kamothe, Navi Mumbai-410209, India</p>
-                            <p id="temporary-address-value" class="pt-1">703-Satyam panvel, Navi Mumbai-410206, India
-                            </p>
-                            <!-- <p id="city-value" class="pt-1">Mumbai</p> -->
-                            <!-- <p id="state-value" class="pt-1">Maharashtra</p> -->
-                            <!-- <p id="pincode-value" class="pt-1">400001</p> -->
-                            <p id="country-value" class="pt-1">India</p>
+                          <div class="row py-2">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Email :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="email-value">example@gmail.com</p>
+                            </div>
                           </div>
-                        </div>
+                          <div class="row py-2">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Address :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="address-value">101-Ashok kamothe</p>
+                            </div>
+                          </div>
+                          <div class="row py-2">
+                            <div class="col-md-5 col-sm-3">
+                              <h6 class="temporary-address-heading">Temporary Address :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="temporary-address-value">703-Satyam panvel
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row py-2">
+                            <div class="col-md-5 col-sm-3">
+                              <h6 class="country-heading">Country :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="country-value">India</p>
+                            </div>
+                          </div>
                       </div>
                     </div>
                   </div>
@@ -499,10 +550,10 @@
                             <div class="row pt-lg-3">
                               <div class="col-5 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                                 <p class="h5 pb-1">Institution :</p>
-                              </div>
-                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                               </div>
+                               <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                                 <p class="" id="">St. Wilfred's College</p>
-                              </div>
+                               </div>
                             </div>
                           </div>
 
@@ -1669,11 +1720,11 @@
         if (isCharAlphabet(res)) {
           condition = true;
         } else {
-          document.getElementById("first-name-message").innerHTML = "*Only Alphabets are allowed";
+          document.getElementById("first-name-message").innerHTML = "Only Alphabets are allowed";
           condition = false;
         }
       } else {
-        document.getElementById("first-name-message").innerHTML = "*Invalid length";
+        document.getElementById("first-name-message").innerHTML = "Invalid length";
         condition = false;
       }
       return condition;
@@ -1681,14 +1732,14 @@
 
     function personalDetailLastNameValidation(res) {
       if (checkLength(res) > 2) {
-        if (!isCharAlphabet(res)) {
+        if (isCharAlphabet(res)) {
           condition = true;
         } else {
-          document.getElementById("last-name-message").innerHTML = "*Only Alphabets are allowed";
+          document.getElementById("last-name-message").innerHTML = "Only Alphabets are allowed";
           condition = false;
         }
       } else {
-        document.getElementById("last-name-message").innerHTML = "*Invalid length";
+        document.getElementById("last-name-message").innerHTML = "Invalid length";
         condition = false;
       }
       return condition;
@@ -1703,12 +1754,12 @@
         if (age > 18) {
           condition = true;
         } else {
-          document.getElementById("date-of-birth-message").innerHTML = "*Your age should be above 18 years";
+          document.getElementById("date-of-birth-message").innerHTML = "Your age should be above 18 years";
           condition = false;
         }
 
       } else {
-        document.getElementById("date-of-birth-message").innerHTML = "*Invalid length";
+        document.getElementById("date-of-birth-message").innerHTML = "Invalid length";
         condition = false;
       }
       return condition;
@@ -1730,10 +1781,10 @@
             reader.readAsDataURL(fuData.files[0]);
           }
         } else {
-          document.getElementById("photo-message").innerHTML = "*File type should be of PNG, JPG and JPEG";
+          document.getElementById("photo-message").innerHTML = "File type should be of PNG, JPG and JPEG";
         }
       } else {
-        document.getElementById("photo-message").innerHTML = "*Profile photo is Mandatory";
+        document.getElementById("photo-message").innerHTML = "Profile photo is Mandatory";
         condition = false;
       }
       return condition;
@@ -1752,11 +1803,11 @@
 
     function personalDetailContactNumberValidation(res) {
       if (res.length != 10) {
-        document.getElementById('contact-number-message').innerHTML = "*Invalid length";
+        document.getElementById('contact-number-message').innerHTML = "Invalid length";
         condition = false;
       } else {
         if (isNaN(res)) {
-          document.getElementById('contact-number-message').innerHTML = "*Characters Not Allowed";
+          document.getElementById('contact-number-message').innerHTML = "Characters Not Allowed";
           condition = false;
         } else {
           if ((res.charAt(0) != 9) && (res.charAt(0) != 8) && (res.charAt(0) != 7) && (res.charAt(0) != 6)) {
@@ -2311,17 +2362,6 @@
         return;
       }
 
-      document.getElementById('date-of-birth-value').innerText = result.date_of_birth
-      document.getElementById('pancard-value').innerText = result.pan_number
-      document.getElementById('aadhar-card-value').innerText = result.aadhar_number
-      document.getElementById('contact-number-value').innerText = result.contact_number
-      document.getElementById('email-value').innerText = result.email
-      document.getElementById('address-value').innerText = result.permanent_address
-      document.getElementById('temporary-address').innerText = result.temporary_address
-      document.getElementById('country-value').innerText = result.nationality
-      document.getElementById('gender-value').innerText = result.gender
-      document.getElementById('full-name-value').innerText = result.f_name + " " + result.l_name
-
       //loop and names has been changed therfore this image parameters cannot be added
 
       // if (submitPersonalDetailsForm.get('pancardPhoto').length != 0) {
@@ -2372,7 +2412,15 @@
       arrayresult[1] = addressObject2
 
       console.log(JSON.stringify(personalDetailsData))
-
+      let genderValue = ""
+      if (Number.parseInt(result.gender) == 1) {
+        genderValue = "Male"
+      } else if (result.gender == 2) {
+        genderValue = "Female"
+      } else {
+      genderValue = "Other"
+      }
+      console.log(genderValue)
       let options = {
 
         method: 'POST',
@@ -2388,13 +2436,26 @@
 
       fetchRes.then(success => {
 
-        if (success.status == 200) {
-          console.log(success)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.personal-details-modal').classList.add('d-none')
-        } else {
-          console.log("Error in personal Details")
-        }
+        // if (success.status == 200) {
+        console.log(success)
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.personal-details-modal').classList.add('d-none')
+
+        document.getElementById('date-of-birth-value').innerText = result.date_of_birth
+        document.getElementById('pancard-value').innerText = result.pan_number
+        document.getElementById('aadhar-card-value').innerText = result.aadhar_number
+        document.getElementById('contact-number-value').innerText = result.contact_number
+        document.getElementById('email-value').innerText = result.email
+        document.getElementById('address-value').innerText = result.permanent_address
+        document.getElementById('temporary-address').innerText = result.temporary_address
+        document.getElementById('country-value').innerText = result.nationality
+        document.getElementById('gender-value').innerText = genderValue
+        document.getElementById('first-name-value').innerText = result.f_name 
+        document.getElementById('last-name-value').innerText = result.l_name 
+        console.log(genderValue)
+        // } else {
+        // console.log("Error in personal Details")
+        // }
       })
     });
 
@@ -2403,6 +2464,10 @@
       let editPersonalDetailsForm = new FormData()
 
       editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
+        .innerText)
+      editPersonalDetailsForm.append('editFirstName', document.getElementById('first-name-value')
+        .innerText)
+      editPersonalDetailsForm.append('editLastName', document.getElementById('last-name-value')
         .innerText)
       editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
         .innerText)
@@ -2417,6 +2482,8 @@
       editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
       editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
 
+      document.getElementById('first-name').value = editPersonalDetailsForm.get('editFirstName')
+      document.getElementById('last-name').value = editPersonalDetailsForm.get('editLastName')
       document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
       document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
       document.getElementById('aadhar-number').value = editPersonalDetailsForm.get('editAadharCardNumber')
@@ -3524,28 +3591,33 @@
           body: JSON.stringify(bank_detail),
         }
         fetch(url, params).then((data) => {
-          console.log(data);
+          if (data.status == 200) {
+            console.log(data);
+
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.bank-details-modal').classList.add('d-none');
+
+
+
+            document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
+            document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
+            document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
+            document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
+            document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
+              'accountNumber')
+            document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
+
+            if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
+              document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
+              document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('text-danger')
+              document.getElementById('cancelled-check-photo').firstElementChild.classList.add(
+                'fa-circle-check')
+              document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
+            }
+          }
         })
       }
       postdata()
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.bank-details-modal').classList.add('d-none');
-
-
-
-      document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
-      document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
-      document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
-      document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-      document.getElementById('account-number-value').innerText = submitBankDetailsForm.get('accountNumber')
-      document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
-
-      if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('text-danger')
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('fa-circle-check')
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
-      }
 
     });
 
