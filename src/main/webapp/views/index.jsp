@@ -60,58 +60,109 @@
                       </div>
 
                       <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
-                        <h3 p-3 id="full-name-value" style="color: #740E00;"><b>Full Name</b></h3>
+                        <div class="d-flex" style="color: #740E00;">
+                          <h3><b id="first-name-value">Sameer</b></h3> &nbsp &nbsp
+                          <h3><b id="last-name-value">Shaikh</b></h3>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <div id="personal-details-div" class="pt-4 px-3 px-sm-4 px-lg-4 mt-1">
+                  <div id="personal-details-div" class="pt-lg-4 pt-md-5 px-3 px-sm-4 px-lg-4 mt-1">
                     <div class="row">
-                      <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
-                        <div class="row pt-lg-5">
-                          <div class="col-6 left-personal-div ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                            <h6 class="pb-4">Gender :</h6>
-                            <h6 class="pb-4">Date of birth :</h6>
-                            <h6 class="pb-4">Pancard :</h6>
-                            <h6 class="pb-4">Pancard Photo</h6>
-                            <h6 class="pb-4">Aadhar card :</h6>
-                            <h6 class="pb-4">Aadhar card Photo</h6>
+                      <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12 ps-4 pt-lg-5 pt-md-2 text-center">
+                          <div class="row py-1">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Gender :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="gender-value">Male</p>
+                            </div>
                           </div>
-                          <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                            <p id="gender-value">Male</p>
-                            <p class="pt-2" id="date-of-birth-value">2000-07-06</p>
-                            <p class="pt-3" id="pancard-value">AAAAA1111A</p>
-                            <p class="pt-3" id="pancard-photo"><i class="fa-solid fa-ban text-danger"></i></p>
-                            <p class="pt-2" id="aadhar-card-value">111122223333</p>
-                            <p class="pt-2" id="aadhar-card-photo"><i class="fa-solid fa-ban text-danger"></i></p>
+                          <div class="row py-1">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Date of birth :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="date-of-birth-value">2000-07-06</p>
+                            </div>
                           </div>
-                        </div>
+                          <div class="row py-1">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Pancard :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="pancard-value">AAAAA1111A</p>
+                            </div>
+                          </div>
+                          <div class="row py-1">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Pancard Photo</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="pancard-photo"><i class="fa-solid fa-ban text-danger"></i></p>
+                            </div>
+                          </div>
+                          <div class="row py-1">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Aadhar card :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="aadhar-card-value">111122223333</p>
+                            </div>
+                          </div>
+                          <div class="row py-1">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Aadhar card Photo</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="aadhar-card-photo"><i class="fa-solid fa-ban text-danger"></i></p>
+                            </div>
+                          </div>
                       </div>
 
-                      <div id="right-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
-                        <div class="row pt-lg-5">
-                          <div class="col-6 ps-lg-3 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                            <h6 class="pb-4">Contact No.</h6>
-                            <h6 class="pb-3">Email :</h6>
-                            <h6 class="pb-4">Address :</h6>
-                            <h6 class="pb-md-4 pt-md-3 mt-md-3 temporary-address-heading">Temporary Address :</h6>
-                            <!-- <h6 class="pb-3 city-line">City</h6> -->
-                            <!-- <h6 class="pb-3">State</h6> -->
-                            <!-- <h6 class="pb-3">Pincode</h6> -->
-                            <h6 class=" pt-2 country-heading">Country :</h6>
+                      <div id="right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
+                          <div class="row py-2">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Contact No.</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="contact-number-value">9876543210</p>
+                            </div>
                           </div>
-                          <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                            <p id="contact-number-value">9876543210</p>
-                            <p id="email-value" class="pt-2">example@gmail.com</p>
-                            <p id="address-value" class="pt-1">101-Ashok kamothe, Navi Mumbai-410209, India</p>
-                            <p id="temporary-address-value" class="pt-1">703-Satyam panvel, Navi Mumbai-410206, India
-                            </p>
-                            <!-- <p id="city-value" class="pt-1">Mumbai</p> -->
-                            <!-- <p id="state-value" class="pt-1">Maharashtra</p> -->
-                            <!-- <p id="pincode-value" class="pt-1">400001</p> -->
-                            <p id="country-value" class="pt-1">India</p>
+                          <div class="row py-2">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Email :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="email-value">example@gmail.com</p>
+                            </div>
                           </div>
-                        </div>
+                          <div class="row py-2">
+                            <div class="col-md-5 col-sm-3">
+                              <h6>Address :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="address-value">101-Ashok kamothe</p>
+                            </div>
+                          </div>
+                          <div class="row py-2">
+                            <div class="col-md-5 col-sm-3">
+                              <h6 class="temporary-address-heading">Temporary Address :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="temporary-address-value">703-Satyam panvel
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row py-2">
+                            <div class="col-md-5 col-sm-3">
+                              <h6 class="country-heading">Country :</h6>
+                            </div>
+                            <div class="col-md-7 col-sm-9">
+                              <p id="country-value">India</p>
+                            </div>
+                          </div>
                       </div>
                     </div>
                   </div>
@@ -197,50 +248,50 @@
                 <div class="d-flex justify-content-center align-items-center">
                   <h3 style="color: #740E00;"><b> Work Experience </b></h3>
                 </div>
+                <div id="workExperience-appending-div">
+                  <div class="text-block right">
+                    <div class="card-body">
+                      <h2>2017</h2>
 
-                <div class="text-block right">
-                  <div class="card-body">
-                    <h2>2017</h2>
+                      <div id="work-experience-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                        <div class="row">
 
-                    <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                      <div class="row">
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">University :</p>
-                              <p class="h5 py-1">Subject Taught :</p>
-                              <p class="h5 py-1">Program :</p>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">Mumbai University</p>
-                              <p id="">Discrete Maths</p>
-                              <p id="">BSc</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 py-1">Designation :</p>
-                              <p class="h5 py-1">Start Date :</p>
-                              <p class="h5 py-1">End date :</p>
-                            </div>
-                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                              <p class="" id="">Senior Maths faculty</p>
-                              <p id="" class="">2000-07-06</p>
-                              <p id="" class="">2007-07-06</p>
-                              <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">University :</p>
+                                <p class="h5 py-1">Subject Taught :</p>
+                                <p class="h5 py-1">Program :</p>
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                                <p id="">Mumbai University</p>
+                                <p id="">Discrete Maths</p>
+                                <p id="">BSc</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
 
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 py-1">Designation :</p>
+                                <p class="h5 py-1">Start Date :</p>
+                                <p class="h5 py-1">End date :</p>
+                              </div>
+                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                                <p class="" id="">Senior Maths faculty</p>
+                                <p id="" class="">2000-07-06</p>
+                                <p id="" class="">2007-07-06</p>
+                                <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
             <div class="d-none work-experience-edit-box d-flex justify-content-center align-items-center">
@@ -468,6 +519,71 @@
           </div>
           <hr />
 
+          <!------------------------------------------------ Qualification Section ------------------------------------------------>
+
+          <div class="position-relative certification-div-wrapper d-flex" style="cursor: pointer;">
+            <div class="container">
+              <div id="certification-div">
+                <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
+                  <h3><b>Professional Membership Certificate</b></h3>
+                </div>
+
+                <div id="certification-appending-div">
+                  <div class="text-block right" id="preview-qualification-div">
+                    <div class="card-body preview-certification-div">
+
+                      <div id="certification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                        <div class="row">
+
+                          <div class="col-12 col-md-4 col-lg-4 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Certification:</p>
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                                <p id="">Teaching</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-4 col-lg-4 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-5 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Institution :</p>
+                               </div>
+                               <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                                <p class="" id="">St. Wilfred's College</p>
+                               </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-3 col-lg-3 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-9  col-md-9 ps-md-0 ps-0 ps-sm-0 col-lg-9 col-sm-9">
+                                <p class="h5 pb-1">Year of passing:</p>
+                              </div>
+                              <div class="col-3 col-md-3 col-lg-3 col-sm-3">
+                                <p id="">2015</p>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="d-none certification-edit-box d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x text-white "></i>
+            </div>
+          </div>
+          <hr />
+
+
 
           <!------------------------------------------- Bank Details Section  ----------------------------------------->
 
@@ -537,13 +653,13 @@
           <div id="name-row" class="row mb-3">
 
             <div class="col-md-4 col-sm-12">
-              <label for="first-name" cl>First Name</label>
+              <label for="first-name" cl>First Name <span class="required">*</span></label>
               <span id="first-name-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
             </div>
 
             <div class="col-md-4 col-sm-12">
-              <label for="last-name">last Name</label>
+              <label for="last-name">last Name <span class="required">*</span></label>
               <span id="last-name-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
             </div>
@@ -560,12 +676,13 @@
           <div id="left-second-row" class="row">
 
             <div class="col-md-4 col-sm-12">
-              <label for="date-of-birth">date of birth</label>
+              <label for="date-of-birth">date of birth <span class="required">*</span></label>
               <span id="date-of-birth-message" style="color: red;" class="error"></span>
               <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
             </div>
 
-            <div id="gender-row" class="col-sm-12 col-md-4 pt-md-4">
+            <div id="gender-row" class="col-sm-12 col-md-4">
+              <label for="">Gender <span class="required">*</span></label><br>
               <label for="male">Male</label>
               <input style="height: auto ;" type="radio" name="gender" class="gender" id="male" value="1" />
               <label for="female">Female</label>
@@ -576,7 +693,7 @@
             </div>
 
             <div class="col-md-4 col-sm-12">
-              <label for="photo">passport Size Photo</label>
+              <label for="photo">passport Size Photo <span class="required">*</span></label>
               <span id="photo-message" style="color: red;" class="error"></span>
               <input type="file" class="form-control" id="photo"
                 onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
@@ -588,17 +705,17 @@
         <div class="container">
           <div id="left-third-row" class="row">
             <div class="col-md-4 col-sm-12">
-              <label for="contact-number">Contact No.</label>
+              <label for="contact-number">Contact No. <span class="required">*</span></label>
               <span id="contact-number-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="contact_number" id="contact-number" />
             </div>
             <div class="col-md-4 col-sm-12">
-              <label for="email">Email Id</label>
+              <label for="email">Email Id <span class="required">*</span></label>
               <span id="email-message" style="color: red;" class="error"></span>
               <input type="text" name="email" class="form-control" id="email">
             </div>
             <div class="col-md-4 col-sm-12">
-              <label for="country">Country</label>
+              <label for="country">Country <span class="required">*</span></label>
               <span id="country-message" style="color: red;" class="error"></span>
               <input type="text" name="nationality" class="form-control" id="country">
             </div>
@@ -608,17 +725,17 @@
         <div class="container">
           <div id="left-fourth-row" class="row">
             <div class="col-md-6 col-sm-12">
-              <label for="address">Address</label>
+              <label for="address">Address <span class="required">*</span></label>
               <span id="address-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="permanent_address" id="address" />
             </div>
             <div class="col-md-3 col-sm-12">
-              <label for="city">City</label>
+              <label for="city">City <span class="required">*</span></label>
               <span id="city-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="permanent_address_city" id="city" />
             </div>
             <div class="col-md-3 col-sm-12">
-              <label for="pincode">Pincode</label>
+              <label for="pincode">Pincode <span class="required">*</span></label>
               <span id="pincode-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="permanent_address_pincode" id="pincode" />
             </div>
@@ -638,12 +755,12 @@
         <div class="container">
           <div id="left-fourth-row" class="row">
             <div class="col-md-4 col-sm-12">
-              <label for="pan-number">Pan Card Number</label>
+              <label for="pan-number">Pan Card Number <span class="required">*</span></label>
               <span id="pan-number-message" style="color: red;" class="error"></span>
               <input type="text" name="pan_number" class="form-control" id="pan-number" />
             </div>
             <div class="col-md-4 col-sm-12">
-              <label for="pan-photo">Pan Card Photo</label>
+              <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
               <span id="pan-photo-message" style="color: red;" class="error"></span>
               <input type="file" class="form-control" id="pan-photo"
                 onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
@@ -658,12 +775,12 @@
         <div class="container">
           <div id="left-fourth-row" class="row">
             <div class="col-md-4 col-sm-12">
-              <label for="aadhar-number">Aadhar Card Number</label>
+              <label for="aadhar-number">Aadhar Card Number <span class="required">*</span></label>
               <span id="aadhar-number-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
             </div>
             <div class="col-md-4 col-sm-12">
-              <label for="aadhar-photo">Aadhar Card Photo</label>
+              <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
               <span id="aadhar-photo-message" style="color: red;" class="error"></span>
               <input type="file" class="form-control" id="aadhar-photo"
                 onchange="document.getElementById('aadhar-photo-preview').src = window.URL.createObjectURL(this.files[0])">
@@ -705,33 +822,32 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Title</p>
+                    <p class="h6">Title <span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><select class="form-control qualification-title"
                       id="bachelors-degree-title-data">
                       <option value="1">Bachelor's Degree</option>
                       <option value="2">Master's Degree</option>
                       <option class="phd-option" value="3">PHD</option>
-                      <option value="4">Professional Certification</option>
                     </select></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Subject</p>
+                    <p class="h6">Subject <span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control qualification-subject"
                       id="bachelors-degree-major-subject" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">University</p>
+                    <p class="h6">University<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control qualification-university"
                       id="bachelors-degree-university" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Year of Passing</p>
+                    <p class="h6">Year of Passing <span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control qualification-year"
                       id="bachelors-degree-year-of-passing" type="text"></div>
@@ -743,36 +859,36 @@
 
                 <div class="row p-3 qualification-status-wrapper d-none">
                   <div class="col-md-2 ">
-                    <p class="h6">Status</p>
+                    <p class="h6">Status<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><select class="form-control qualification-status"
-                    id="qualification-status-data">
-                    <option value="true">Awarded</option>
-                    <option value="false">Persuing</option>
-                  </select></div>
+                      id="qualification-status-data">
+                      <option value="true">Awarded</option>
+                      <option value="false">Persuing</option>
+                    </select></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">College</p>
+                    <p class="h6">College <span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control qualification-college"
                       id="bachelors-degree-college" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Percentage</p>
+                    <p class="h6">Percentage<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control qualification-percentile"
                       id="bachelors-degree-percentile" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Certificate</p>
+                    <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control qualification-certificate"
-                    id="bachelors-degree-certificate" type="file"></div>
+                      id="bachelors-degree-certificate" type="file"></div>
                 </div>
-               
+
               </div>
             </div>
             <div class="d-none qualification-delete-button d-flex justify-content-center align-items-center">
@@ -795,8 +911,135 @@
   <!-- ************************************************************************Work Experience Modal Div******************************************************************************************** -->
 
   <div class="work-experience-modal d-none">
+    <div class="full-screen container ">
+      <div class="main-content">
+        <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
+          <h3>
+            <b>Work Experience</b>
+          </h3>
+          <i id="work-experience-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+        </div>
+        <hr>
 
-    <div class="full-screen container">
+        <div class="bg-white">
+          <div id="workExperience-display-div" class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-2">
+                  <div class="col-md-3 ">
+                    <p class="h6">Experience Type</p>
+                  </div>
+                  <div class="col-md-9">
+                    <select class="experienceType form-control" id="experienceType">
+                      <option value="">Select Type</option>
+
+                    </select>
+                  </div>
+                </div>
+                `
+                <div class="row p-2">
+                  <div class="col-md-3 ">
+                    <p class="h6">University</p>
+                  </div>
+                  <div class="col-md-9 ">
+                    <input class="form-control employeeName" id="employeeName" type="text">
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">Subject Taught</p>
+                  </div>
+                  <div class="col-md-9 ">
+                    <input class="form-control responsibility" id="responsibility" type="text">
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">Program</p>
+                  </div>
+                  <div class="col-md-9 ">
+                    <input class="form-control description" id="description" type="text">
+
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-3">
+                    <p class="h6">Designation</p>
+                  </div>
+                  <div class="col-md-9 ">
+                    <select class="form-control designation" id="designation">
+                      <option value="0">Select Designation</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3">
+                    <p class="h6">Start Date</p>
+                  </div>
+                  <div class="col-md-9">
+                    <input class="form-control start_Date" id="startMaxDate" type="date">
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">End Date</p>
+                  </div>
+                  <div class="col-md-9">
+                    <input class="form-control end_Date" id="endMaxDate" type="date">
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">Teaching Duration</p>
+                  </div>
+                  <div class="col-md-9">
+                    <input class="form-control durationOfTeaching" id="durationOfTeaching" type="text">
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-6 ">
+                    <div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="experienceTimespan1" id="experienceTimespan">
+                        <label class="form-check-label" for="experienceTimespan">
+                          Past </label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="experienceTimespan1"
+                          id="experienceTimespanCurrent">
+                        <label class="form-check-label" for="experienceTimespanCurrent"> Current </label>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none workExperience-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x text-white "></i>
+            </div>
+          </div>
+          <hr style="height: 5px;">
+          <div id="workExperience-data" class="mt-4"></div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button id="work-experience-cancel-button" class="btn btn-danger m-4">Cancel</button>
+        <button id="work-experience-submit-button" class="btn btn-success m-4">Submit</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <div class="work-experience-modal d-none">
+
+     <div class="full-screen container">
       <div class="main-content">
         <div class="container d-flex justify-content-between">
           <h3 class="text-white h3 py-4">Teaching Experience</h3>
@@ -807,7 +1050,7 @@
           <div class="container">
             <div class="row table">
               <div class="table-responsive">
-                <table>
+                 <table>
                   <thead class="text-white">
                     <tr class="table-head">
                       <th>University</th>
@@ -832,7 +1075,7 @@
                       <td></td>
                     </tr>
                   </tbody>
-                </table>
+                </table> 
               </div>
             </div>
           </div>
@@ -884,7 +1127,7 @@
         <button id="work-experience-submit-button" class="btn btn-success m-4">Submit</button>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
   <!-- ************************************************************************Skills Modal Div******************************************************************************************** -->
@@ -1006,20 +1249,20 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Award name</p>
+                    <p class="h6">Award name<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control awardName" type="text" id="award-name"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Organisation</p>
+                    <p class="h6">Organisation<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control awardOrganization" type="text"
                       id="award-organization"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Organisation type</p>
+                    <p class="h6">Organisation type<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><select class="form-control awardOrganizationType"
                       id="award-organization-type">
@@ -1034,20 +1277,20 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Description</p>
+                    <p class="h6">Description<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Received date</p>
+                    <p class="h6">Received date<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control awardRecieveDate" type="date"
                       id="award-receive-date"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Certificate</p>
+                    <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control awardCertificationImage" type="file"
                       id="award-certification-image"></div>
@@ -1090,7 +1333,7 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Role</p>
+                    <p class="h6">Role <span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><select class="form-control role" id="role">
                       <option>-Select-</option>
@@ -1100,13 +1343,13 @@
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Number of Authors</p>
+                    <p class="h6">Number of Authors<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control number-of-authors" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Book Title</p>
+                    <p class="h6">Book Title<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control book-title" type="text"></div>
                 </div>
@@ -1115,19 +1358,19 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Publisher</p>
+                    <p class="h6">Publisher<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control publisher" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Year of Publication</p>
+                    <p class="h6">Year of Publication<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control year-of-publication" type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Certificate</p>
+                    <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control certification" type="file"></div>
                 </div>
@@ -1170,7 +1413,7 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Role</p>
+                    <p class="h6">Role<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><select name="role" class="form-control research_role">
                       <option value="0">-Select-</option>
@@ -1180,14 +1423,14 @@
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Journal Name</p>
+                    <p class="h6">Journal Name<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input name="journal_name" class="form-control research_Journal_name"
                       type="text"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Volume Year</p>
+                    <p class="h6">Volume Year<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input name="volume_year" class="form-control research_volume_year"
                       type="text"></div>
@@ -1204,14 +1447,14 @@
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Categoty</p>
+                    <p class="h6">Category<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input name="category" class="form-control research_category" type="text">
                   </div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Certificate</p>
+                    <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control research_photo" type="file"></div>
                 </div>
@@ -1275,6 +1518,63 @@
     </div>
   </div>
 
+
+  <!-- ************************************************************************Certification Modal Div******************************************************************************************** -->
+
+
+  <div class="certification-modal d-none">
+    <div class="full-screen container ">
+      <div class="main-content">
+        <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
+          <h3><b> Certification</b></h3>
+          <i id="certification-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+        </div>
+        <hr>
+
+        <div id="certification-appending-div" class="bg-white">
+          <div id="certification-display-div" class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+              <!-- px-lg-5 -->
+              <div class="col-12 col-md-12 col-lg-12 col-sm-12 ">
+
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate: <span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control certification-certificate" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Institution: <span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control certification-institution" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Year of Passing: <span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control certification-YOP" type="text"></div>
+                </div>
+              </div>
+
+            </div>
+            <div class="d-none certification-delete-button d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x text-white "></i>
+            </div>
+          </div>
+          <hr style="height: 5px;">
+          <div id="certification-data" class="mt-4">
+
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button id="certification-cancel-button" class="btn btn-danger m-4">Cancel</button>
+        <button id="certification-submit-button" class="btn btn-success m-4">Submit</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ************************************************************************Bank Details Modal Div******************************************************************************************** -->
   <div class="bank-details-modal d-none">
 
@@ -1286,13 +1586,13 @@
 
         <div class="row">
           <div class="col-md-6 col-sm-12">
-            <label for="bank-name" class="py-md-2">Name of the Bank</label>
+            <label for="bank-name" class="py-md-2">Name of the Bank<span class="required">*</span></label>
             <span id="bank-name-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-name">
 
           </div>
           <div class="col-md-6 col-sm-12">
-            <label for="bank-branch" class="py-md-2">Branch</label>
+            <label for="bank-branch" class="py-md-2">Branch<span class="required">*</span></label>
             <span id="bank-branch-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-branch">
 
@@ -1301,13 +1601,13 @@
 
         <div class="row">
           <div class="col-md-6 col-sm-12">
-            <label for="bank-ifsc-code" class="py-md-2">IFSC Code</label>
+            <label for="bank-ifsc-code" class="py-md-2">IFSC Code<span class="required">*</span></label>
             <span id="bank-ifsc-code-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-ifsc-code">
 
           </div>
           <div class="col-md-6 col-sm-12">
-            <label for="bank-micr-code" class="py-md-2">MICR code</label>
+            <label for="bank-micr-code" class="py-md-2">MICR code<span class="required">*</span></label>
             <span id="bank-micr-code-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-micr-code">
 
@@ -1316,23 +1616,27 @@
 
         <div class="row">
           <div class="col-md-6 col-sm-12">
-            <label for="bank-account-number" class="py-md-2">Account Number</label>
+            <label for="bank-account-number" class="py-md-2">Account Number<span class="required">*</span></label>
             <span id="bank-account-number-message" style="color: red;" class="error"></span>
             <input type="text" class="form-control" id="bank-account-number">
 
           </div>
           <div class="col-md-6 col-sm-12">
-            <label for="bank-account-type" class="py-md-2">Account Type</label>
+            <label for="bank-account-type" class="py-md-2">Account Type<span class="required">*</span></label>
             <span id="bank-account-type-message" style="color: red;" class="error"></span>
-            <input type="text" class="form-control" id="bank-account-type">
-
+            <select class="form-control" id="bank-account-type"><option value="1">Current Account</option>
+              <option value="2">Saving Account</option>
+              <option value="3">Salary Account</option>
+              <option value="4">Non-Residential Ordinary Account</option>
+              <option value="5">Recurring Deposit Account</option></select>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-6 col-sm-12">
             <div>
-              <label for="cancelled_cheque_Photo" class="py-md-2">Cancelled Cheque Photo</label>
+              <label for="cancelled_cheque_Photo" class="py-md-2">Cancelled Cheque Photo<span
+                  class="required">*</span></label>
               <span id="cancelled_cheque_Photo-message" style="color: red;" class="error"></span>
               <input type="file" name="cancelled_cheque_Photo" id="cancelled_cheque_Photo" class="form-control"
                 onchange="document.getElementById('check-preview').src = window.URL.createObjectURL(this.files[0])">
@@ -1416,14 +1720,14 @@
 
     function personalDetailFirstNameValidation(res) {
       if (checkLength(res) > 2) {
-        if (!isCharNumber(res)) {
+        if (isCharAlphabet(res)) {
           condition = true;
         } else {
-          document.getElementById("first-name-message").innerHTML = "*Numbers are not allowed";
+          document.getElementById("first-name-message").innerHTML = "Only Alphabets are allowed";
           condition = false;
         }
       } else {
-        document.getElementById("first-name-message").innerHTML = "*Invalid length";
+        document.getElementById("first-name-message").innerHTML = "Invalid length";
         condition = false;
       }
       return condition;
@@ -1431,14 +1735,14 @@
 
     function personalDetailLastNameValidation(res) {
       if (checkLength(res) > 2) {
-        if (!isCharNumber(res)) {
+        if (isCharAlphabet(res)) {
           condition = true;
         } else {
-          document.getElementById("last-name-message").innerHTML = "*Numbers are not allowed";
+          document.getElementById("last-name-message").innerHTML = "Only Alphabets are allowed";
           condition = false;
         }
       } else {
-        document.getElementById("last-name-message").innerHTML = "*Invalid length";
+        document.getElementById("last-name-message").innerHTML = "Invalid length";
         condition = false;
       }
       return condition;
@@ -1450,15 +1754,15 @@
       var today = new Date();
       var age = today.getFullYear() - year;
       if (res.length > 2) {
-        if (age>18) {
-            condition = true;
-          } else {
-        document.getElementById("date-of-birth-message").innerHTML = "*Your age should be above 18 years";
-        condition = false;
-      }
-                
+        if (age > 18) {
+          condition = true;
+        } else {
+          document.getElementById("date-of-birth-message").innerHTML = "Your age should be above 18 years";
+          condition = false;
+        }
+
       } else {
-        document.getElementById("date-of-birth-message").innerHTML = "*Invalid length";
+        document.getElementById("date-of-birth-message").innerHTML = "Invalid length";
         condition = false;
       }
       return condition;
@@ -1472,17 +1776,18 @@
           if (fuData.files && fuData.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
-              $('#blah').attr('src', e.target.result);
+
+              $('#photo').attr('src', e.target.result);
               console.log(e.target.result)
               condition = true;
             }
             reader.readAsDataURL(fuData.files[0]);
           }
         } else {
-          document.getElementById("photo-message").innerHTML = "*File type should be of PNG, JPG and JPEG";
+          document.getElementById("photo-message").innerHTML = "File type should be of PNG, JPG and JPEG";
         }
       } else {
-        document.getElementById("photo-message").innerHTML = "*Profile photo is Mandatory";
+        document.getElementById("photo-message").innerHTML = "Profile photo is Mandatory";
         condition = false;
       }
       return condition;
@@ -1501,11 +1806,11 @@
 
     function personalDetailContactNumberValidation(res) {
       if (res.length != 10) {
-        document.getElementById('contact-number-message').innerHTML = "*Invalid length";
+        document.getElementById('contact-number-message').innerHTML = "Invalid length";
         condition = false;
       } else {
         if (isNaN(res)) {
-          document.getElementById('contact-number-message').innerHTML = "*Characters Not Allowed";
+          document.getElementById('contact-number-message').innerHTML = "Characters Not Allowed";
           condition = false;
         } else {
           if ((res.charAt(0) != 9) && (res.charAt(0) != 8) && (res.charAt(0) != 7) && (res.charAt(0) != 6)) {
@@ -1680,8 +1985,7 @@
       return condition;
     }
 
-    function qualificationDetailPercentageValidation(res)
-    {
+    function qualificationDetailPercentageValidation(res) {
       if (checkLength(res) < 6 && checkLength(res) > 0) {
         if (isCharNumber(res)) {
           condition = true;
@@ -1866,58 +2170,41 @@
       return condition
     }
 
-     // ******************************************Validation Functions Start****************************************************
-function tabledatacheck(value)
-    {
+    // ******************************************Validation Functions Start****************************************************
+    function tabledatacheck(value) {
       let checkit = false;
-      if(value.length > 3)
-      {
+      if (value.length > 3) {
         checkit = true;
-      }
-      else
-      {
+      } else {
         checkit = false;
       }
       return checkit;
     }
 
-    function namecheck(value)
-    {
+    function namecheck(value) {
       let check = false;
-        if(value.length > 1)
-        {
-            for(let i = 0 ; i < value.length ;i++)
-            {
-                if(value[i] >= '!' && value[i] <= '@')
-                {
-                    check =false;
-                    break;
-                }
-                else
-                {
-                    check = true;    
-                }
-            }
+      if (value.length > 1) {
+        for (let i = 0; i < value.length; i++) {
+          if (value[i] >= '!' && value[i] <= '@') {
+            check = false;
+            break;
+          } else {
+            check = true;
+          }
         }
-        else
-        {
-             check=false;
-        }
-        return check;
+      } else {
+        check = false;
+      }
+      return check;
     }
 
-    function yearcheck(value)
-    {
+    function yearcheck(value) {
       let checkit = false;
-      if(value.length == 4)
-      {
-        if(!isNaN(value))
-        {
-        checkit = true;
+      if (value.length == 4) {
+        if (!isNaN(value)) {
+          checkit = true;
         }
-      }
-      else
-      {
+      } else {
         checkit = false;
       }
       return checkit;
@@ -1977,9 +2264,9 @@ function tabledatacheck(value)
 
     document.querySelector('.qualification-title').addEventListener('change', function () {
       let qualificationTitle = document.querySelector('.qualification-title')
-      if(qualificationTitle.value == 3){
+      if (qualificationTitle.value == 3) {
         document.querySelector('.qualification-status-wrapper').classList.remove('d-none');
-      }else{
+      } else {
         document.querySelector('.qualification-status-wrapper').classList.add('d-none');
       }
     });
@@ -2031,6 +2318,13 @@ function tabledatacheck(value)
     document.querySelector('.research-div-wrapper').addEventListener('mouseleave', function () {
       document.querySelector('.research-edit-box').classList.add('d-none');
     });
+    document.querySelector('.certification-div-wrapper').addEventListener('mouseover', function () {
+      document.querySelector('.certification-edit-box').classList.remove('d-none');
+    });
+
+    document.querySelector('.certification-div-wrapper').addEventListener('mouseleave', function () {
+      document.querySelector('.certification-edit-box').classList.add('d-none');
+    });
 
     document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
       document.querySelector('.bank-details-edit-box').classList.remove('d-none');
@@ -2063,24 +2357,13 @@ function tabledatacheck(value)
       let email = personalDetailEmailValidation(result.email);
       let aadhar = personalDetailAadharValidation(result.aadhar_number);
       let address = personalDetailAddressValidation(result.permanent_address);
-      let temporaryAddress = personalDetailTemporaryAddressValidation(result.temporary_address);
+      // let temporaryAddress = personalDetailTemporaryAddressValidation(result.temporary_address);
       let country = personalDetailCountryValidation(result.nationality);
 
       if (!firstName || !lastName || !gender || !contactNumber || !email || !pancard || !aadhar || !address || !
-        temporaryAddress || !country) {
+        country) {
         return;
       }
-
-      document.getElementById('date-of-birth-value').innerText = result.date_of_birth
-      document.getElementById('pancard-value').innerText = result.pan_number
-      document.getElementById('aadhar-card-value').innerText = result.aadhar_number
-      document.getElementById('contact-number-value').innerText = result.contact_number
-      document.getElementById('email-value').innerText = result.email
-      document.getElementById('address-value').innerText = result.permanent_address
-      document.getElementById('temporary-address').innerText = result.temporary_address
-      document.getElementById('country-value').innerText = result.nationality
-      document.getElementById('gender-value').innerText = result.gender
-      document.getElementById('full-name-value').innerText = result.f_name + " " + result.l_name
 
       //loop and names has been changed therfore this image parameters cannot be added
 
@@ -2132,7 +2415,15 @@ function tabledatacheck(value)
       arrayresult[1] = addressObject2
 
       console.log(JSON.stringify(personalDetailsData))
-
+      let genderValue = ""
+      if (Number.parseInt(result.gender) == 1) {
+        genderValue = "Male"
+      } else if (result.gender == 2) {
+        genderValue = "Female"
+      } else {
+      genderValue = "Other"
+      }
+      console.log(genderValue)
       let options = {
 
         method: 'POST',
@@ -2148,13 +2439,26 @@ function tabledatacheck(value)
 
       fetchRes.then(success => {
 
-        if (success.status == 200) {
-          console.log(success)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.personal-details-modal').classList.add('d-none')
-        } else {
-          console.log("Error in personal Details")
-        }
+        // if (success.status == 200) {
+        console.log(success)
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.personal-details-modal').classList.add('d-none')
+
+        document.getElementById('date-of-birth-value').innerText = result.date_of_birth
+        document.getElementById('pancard-value').innerText = result.pan_number
+        document.getElementById('aadhar-card-value').innerText = result.aadhar_number
+        document.getElementById('contact-number-value').innerText = result.contact_number
+        document.getElementById('email-value').innerText = result.email
+        document.getElementById('address-value').innerText = result.permanent_address
+        document.getElementById('temporary-address').innerText = result.temporary_address
+        document.getElementById('country-value').innerText = result.nationality
+        document.getElementById('gender-value').innerText = genderValue
+        document.getElementById('first-name-value').innerText = result.f_name 
+        document.getElementById('last-name-value').innerText = result.l_name 
+        console.log(genderValue)
+        // } else {
+        // console.log("Error in personal Details")
+        // }
       })
     });
 
@@ -2163,6 +2467,10 @@ function tabledatacheck(value)
       let editPersonalDetailsForm = new FormData()
 
       editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
+        .innerText)
+      editPersonalDetailsForm.append('editFirstName', document.getElementById('first-name-value')
+        .innerText)
+      editPersonalDetailsForm.append('editLastName', document.getElementById('last-name-value')
         .innerText)
       editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
         .innerText)
@@ -2177,6 +2485,8 @@ function tabledatacheck(value)
       editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
       editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
 
+      document.getElementById('first-name').value = editPersonalDetailsForm.get('editFirstName')
+      document.getElementById('last-name').value = editPersonalDetailsForm.get('editLastName')
       document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
       document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
       document.getElementById('aadhar-number').value = editPersonalDetailsForm.get('editAadharCardNumber')
@@ -2202,42 +2512,10 @@ function tabledatacheck(value)
 
     //*************************************teaching-experience-modal JS****************************************
 
-    document.getElementById('teaching-experience-add-button').addEventListener('click', function () {
-      let table = ` <tr data-toggle="collapse" class="collapsed">
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="date"></td>
-        <td><input class="form-control" type="date"></td>
-        <td><input class="form-control" type="text"></td>
-        <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 teaching-experience-delete-button"></i></td>
-        </tr>
-       `
 
-      document.getElementById('teaching-experience-data').insertAdjacentHTML("beforeend", table);
-    })
-    $(document).on('click', '.teaching-experience-delete-button', function () {
-      $(this).closest('tr').remove()
-    })
 
-    document.getElementById('industrial-experience-add-button').addEventListener('click', function () {
-      let table = ` <tr data-toggle="collapse" class="collapsed">
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="text"></td>
-        <td><input class="form-control" type="date"></td>
-        <td><input class="form-control" type="date"></td>
-        <td><input class="form-control" type="text"></td>
-        <td class="p-2 !important"><i class="fa-solid fa-trash-can text-white h4 industrial-experience-delete-button"></i></td>
-        </tr>
-       `
-      document.getElementById('industrial-experience-data').insertAdjacentHTML("beforeend", table);
-    })
-    $(document).on('click', '.industrial-experience-delete-button', function () {
-      $(this).closest('tr').remove()
-    })
+
+
 
     document.querySelector(".work-experience-edit-box").addEventListener('click', function () {
       document.getElementById('body').classList.add('d-none');
@@ -2295,11 +2573,11 @@ function tabledatacheck(value)
         let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
         let checkCertificate = tabledatacheck(qualificationCertificate);
         let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
-        
+
         console.log(qualificationPercentile)
         console.log(checkPercentile)
         // console.log(checkSubject)
-        
+
 
         //  to add the red border according to validations
         if (checkSubject == false) {
@@ -2317,15 +2595,15 @@ function tabledatacheck(value)
         } else if (checkPercentile == false) {
           qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
           return;
-        }else if (checkCertificate == false) {
+        } else if (checkCertificate == false) {
           qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
           return;
-        } 
-       
+        }
+
         let qualificationvalue = false;
-        if(qualificationStatus == 'true') {
+        if (qualificationStatus == 'true') {
           qualificationvalue = true
-        } 
+        }
 
         object = {
           resume_lid: 1,
@@ -2333,14 +2611,13 @@ function tabledatacheck(value)
           topic_of_study: qualificationSubject,
           university: qualificationUniversity,
           institute: qualificationCollege,
-          status:  qualificationvalue,
+          status: qualificationvalue,
           percentile: Number.parseFloat(qualificationPercentile),
           year_of_passing: qualificationYear,
           url_path: qualificationCertificate
         }
 
         div += ` 
-
           <div class="text-block right" >
                   <div class="card-body">
                     <h2 id="year-of-passing">\${qualificationYear}\</h2>
@@ -2761,8 +3038,6 @@ document.addEventListener('mouseover',function(){
 
 
         obj = {
-          resume_lid: "1",
-          achievement_type_lid: "2",
           title: title,
           organization_name: organization_name,
           organization_type_lid: organization_type_lid,
@@ -2819,8 +3094,9 @@ document.addEventListener('mouseover',function(){
       object = {
         "insert_award": resume_achievement
       }
+      // awardData.push(resume_achievement)
 
-
+      console.log(JSON.stringify(object))
       //Fetch Method
       function postdata() {
         url = "/award_Table_Data";
@@ -2876,22 +3152,21 @@ document.addEventListener('mouseover',function(){
       let publicationRow = document.querySelectorAll('.publication-row')
       for (i = 0; i < publicationRow.length; i++) {
 
-  let publicationRole  = publicationRow[i].querySelector('.role').value;
-  let publicationPublisher = publicationRow[i].querySelector('.publisher').value;
-  let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
-  let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
-  let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
-  let publicationCertificate = publicationRow[i].querySelector('.certification').value;
- 
-  object = {
-    resume_achievement_lid: 1,
-    role: publicationRole,
-    no_of_authors: publicationNumberOfAuthors,
-    book_title: publicationBookTitle,
-    publisher: publicationPublisher,
-    year_of_publication: publicationYearOfPublication,
-    url_path: publicationCertificate
-  }
+        let publicationRole = publicationRow[i].querySelector('.role').value;
+        let publicationPublisher = publicationRow[i].querySelector('.publisher').value;
+        let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
+        let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
+        let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
+        let publicationCertificate = publicationRow[i].querySelector('.certification').value;
+
+        object = {
+          role: publicationRole,
+          no_of_authors: publicationNumberOfAuthors,
+          book_title: publicationBookTitle,
+          publisher: publicationPublisher,
+          year_of_publication: publicationYearOfPublication,
+          publication_url_path: publicationCertificate
+        }
 
         div += `   
   <div id="publication-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
@@ -2938,6 +3213,7 @@ document.addEventListener('mouseover',function(){
       let publicationTableData = {
         "PublicationDetails": publicationTableArray
       }
+      // publicationData.push(publicationTableData)
       console.log(JSON.stringify(publicationTableData))
 
       let options = {
@@ -3070,7 +3346,7 @@ document.addEventListener('mouseover',function(){
       document.querySelector('.research-modal').classList.add('d-none');
     });
 
-       
+
 
     document.querySelector('#research-submit-button').addEventListener('click', function () {
       console.log("research button clicked");
@@ -3127,19 +3403,17 @@ document.addEventListener('mouseover',function(){
 
 
         obj = {
-          id: "1",
-          resume_achievement_lid: "3",
           role: Role,
           journal_name: Journal_name,
           volume_year: volume_year,
           number: description,
           category: category,
-          url_path: research_photo
+          research_url_path: research_photo
         }
 
         div += ` 
-
-                <div id="research-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+        
+                <div id="research-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1 ">
                   <div class="row">
 
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -3158,7 +3432,6 @@ document.addEventListener('mouseover',function(){
                       </div>
                     </div>
 
-
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
@@ -3175,14 +3448,15 @@ document.addEventListener('mouseover',function(){
                       </div>
                     </div>
                   </div>
-                </div>    
+                </div>                  
         `
         resumeResearchTable.push(obj);
       }
       object = {
-        "inser_research": resumeResearchTable
+        "insert_research": resumeResearchTable
       }
-      console.log('object VJS>>>', JSON.stringify(object));
+      // researchData.push(object)
+      console.log(JSON.stringify(object));
 
       function postdata() {
         url = "/research_Table_Data";
@@ -3210,7 +3484,17 @@ document.addEventListener('mouseover',function(){
       document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
 
     });
+    let awardData = {}
+    let publicationData = {}
+    let researchData = {}
 
+    achievement = {
+      "insert_Award": awardData,
+      "insert_publication": publicationData,
+      "insert_research": researchData
+    }
+
+    console.log(JSON.stringify(achievement))
 
     document.getElementById('research-add-button').addEventListener('click', function () {
 
@@ -3223,7 +3507,8 @@ document.addEventListener('mouseover',function(){
       }
 
       let table = ` 
-      <div id="research-display-div" class="research-row px-3 px-sm-4 px-lg-4 mt-1">
+      <div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
+      <div id="research-display-div" class="research-row px-3 px-sm-4 px-lg-4 mt-1 bg-white container">
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -3272,21 +3557,236 @@ document.addEventListener('mouseover',function(){
                 </div>
               </div>
             </div>
-            <div class="d-none research-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x"></i>
-            </div>
+            <div id="delete_btn_research_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_research_symbol">
+   <i class="fa-solid fa-trash text-danger fa-2x"></i>
+</div>
           </div>
-          <hr style="height: 5px;"> `
+          <hr style="height: 5px;"> 
+        </div>`
+         
 
 
 
       document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
+
+
+    });
+    document.addEventListener('mouseover',function(){
+        let deleteButtonClick = document.querySelectorAll('.delete_btn_research_symbol')
+        let deleteresearch = document.querySelectorAll('.research_delete_btn');
+        console.log("clicked buddy")
+        for(let i = 0 ; i<deleteresearch.length;i++)
+        {
+            deleteresearch[i].addEventListener('mouseover',function(){
+            deleteresearch[i].querySelector('.delete_btn_research_symbol').classList.remove('d-none');
+          });
+
+            deleteresearch[i].addEventListener('mouseleave',function(){
+            deleteresearch[i].querySelector('.delete_btn_research_symbol').classList.add('d-none');
+          });
+
+          deleteButtonClick[i].addEventListener('click',function(){
+            this.parentElement.parentElement.remove()
+          });
+        }
+        
+      })
+
+
+
+    //*************************************Certification-modal JS****************************************
+    document.querySelector('.certification-edit-box').addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.certification-modal').classList.remove('d-none');
     })
 
-    $(document).on('click', '.research-delete-button', function () {
-      $(this).closest('tr').remove()
-    })
+    
+    document.querySelector('#certification-cancel-button').addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.certification-modal').classList.add('d-none');
+    });
 
+    document.querySelector('#certification-submit-button').addEventListener('click', function (e) {
+
+       e.preventDefault()
+       let div = ''
+       let certificationTableArray = []
+       let certificationRow = document.querySelectorAll('.certification-row')
+       for (i = 0; i < certificationRow.length; i++) {
+       
+         //to remove the red border
+         certificationRow[i].querySelector('.certification-certificate').classList.remove('input-border');
+         certificationRow[i].querySelector('.certification-institution').classList.remove('input-border');
+         certificationRow[i].querySelector('.certification-YOP').classList.remove('input-border');
+         
+       
+         let professionalCertificate = certificationRow[i].querySelector('.certification-certificate').value;
+         let professionalInstitution = certificationRow[i].querySelector('.certification-institution').value;
+         let professionalYOP = certificationRow[i].querySelector('.certification-YOP').value;
+        
+         let checkCertification = namecheck(professionalCertificate);
+         let checkInstitution = namecheck(professionalInstitution);
+         let checkYOP = yearcheck(professionalYOP);
+        
+       
+         console.log(checkCertification)
+         console.log(checkInstitution)
+         console.log(checkYOP)
+         // console.log(checkSubject)
+       
+       
+         //  to add the red border according to validations
+         if (checkCertification == false) {
+          certificationRow[i].querySelector('.certification-certificate').classList.add('input-border');
+           return;
+         } else if (checkInstitution == false) {
+          certificationRow[i].querySelector('.certification-institution').classList.add('input-border');
+           return;
+         } else if (checkYOP == false) {
+          certificationRow[i].querySelector('.certification-YOP').classList.add('input-border');
+           return;
+         } 
+       
+       
+         object = {
+           resume_lid: 1,
+           qualification_type_lid: 4,
+           topic_of_study: professionalCertificate,
+           institute: professionalInstitution,
+           year_of_passing: professionalYOP,
+         }
+       
+         div += `
+                  <div class="text-block right" id="preview-qualification-div">
+                    <div class="card-body preview-certification-div">
+
+                      <div id="certification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                        <div class="row">
+
+                          <div class="col-12 col-md-4 col-lg-4 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Certification:</p>
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                                <p id="">\${professionalCertificate}\</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-4 col-lg-4 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-5 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Institution :</p>
+                              </div>
+                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                                <p class="" id="">\${professionalInstitution}\</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-3 col-lg-3 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-9  col-md-9 ps-md-0 ps-0 ps-sm-0 col-lg-9 col-sm-9">
+                                <p class="h5 pb-1">Year of passing:</p>
+                              </div>
+                              <div class="col-3 col-md-3 col-lg-3 col-sm-3">
+                                <p id="">\${professionalYOP}\</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 `
+       
+         certificationTableArray.push(object)
+       }
+       let certificationTableData = {
+         "qualificationDetails": certificationTableArray
+       }
+       console.log(JSON.stringify(certificationTableData))
+       
+       let options = {
+         method: 'POST',
+         headers: {
+           'Content-Type': 'application/json;charset=utf-8'
+         },
+         body:JSON.stringify(certificationTableData)
+       }
+       let fetchRes = fetch('/insert-qualification-details', options);
+       fetchRes.then(success => {
+         if (success.status == 200) {
+          document.getElementById('certification-appending-div').firstElementChild.remove()
+          document.getElementById('certification-appending-div').insertAdjacentHTML('beforeend', div)
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.certification-modal').classList.add('d-none');
+         } else {
+           alert('Check Professional certificate details');
+         }
+       })
+    });
+
+    document.querySelector('#certification-add-button').addEventListener('click', function () {
+
+      let table = `  
+      <div class="position-relative certification_delete_btn d-flex" style="cursor: pointer;"> 
+      <div id="certification-display-div" class="certification-row px-3 px-sm-4 px-lg-4 mt-1 container">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-12 col-sm-12">
+
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate: <span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control certification-certificate" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Institution: <span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control certification-institution" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Year of Passing: <span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control certification-YOP" type="text"></div>
+                </div>
+              </div>
+
+            </div>
+            <div id="delete_btn_certification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_certification_symbol">
+            <i class="fa-solid fa-trash text-danger fa-2x"></i>
+           </div>
+           <hr style="height: 5px;">
+           </div>
+           </div>`
+
+          document.getElementById('certification-data').insertAdjacentHTML("beforeend", table);
+    });
+
+    document.addEventListener('mouseover',function(){
+        let deleteButtonClick = document.querySelectorAll('.delete_btn_certification_symbol')
+        let deleteCertification = document.querySelectorAll('.certification_delete_btn');
+        console.log("clicked buddy")
+        for(let i = 0 ; i<deleteCertification.length;i++)
+        {
+            deleteCertification[i].addEventListener('mouseover',function(){
+            deleteCertification[i].querySelector('.delete_btn_certification_symbol').classList.remove('d-none');
+          });
+
+            deleteCertification[i].addEventListener('mouseleave',function(){
+            deleteCertification[i].querySelector('.delete_btn_certification_symbol').classList.add('d-none');
+          });
+
+          deleteButtonClick[i].addEventListener('click',function(){
+            this.parentElement.parentElement.remove()
+          });
+        }
+      })
 
     //*************************************Bank-details-modal JS****************************************
 
@@ -3300,14 +3800,14 @@ document.addEventListener('mouseover',function(){
       editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
       editBankDetailsForm.append('editAccountNumber', document.getElementById('account-number-value')
         .innerText)
-      editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value').innerText)
+    //  editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value').innerText)
 
       document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
       document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
       document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
       document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
       document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccountNumber')
-      document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
+      //document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
 
 
       document.getElementById('body').classList.add('d-none');
@@ -3342,28 +3842,24 @@ document.addEventListener('mouseover',function(){
       let facultyAccountType1 = bankDetailAccountTypeValidation(submitBankDetailsForm.get('accountType'))
 
       if (!facultyBankName1 || !facultyBankBranch1 || !facultyIfscCode1 || !facultyMicrCode1 || !
-        facultyAccountNumber1 || !facultyAccountType1) {
+        facultyAccountNumber1 ) {
         return;
       }
 
+     let bankDetailsJson = {
+        "insert_bank_data" : []
+      }
       let bank_detail = {};
-      let bankname = document.querySelector('#bank-name').value;
-      let branchname = document.querySelector('#bank-branch').value;
-      let bankifsc = document.querySelector('#bank-ifsc-code').value;
-      let bankmicr = document.querySelector('#bank-micr-code').value;
-      let bankaccountnumber = document.querySelector('#bank-account-number').value;
-      let bankaccounttype = document.querySelector('#bank-account-type').value;
-
-      bank_detail = [{
-        name: bankname,
-        branch: branchname,
-        ifsc_code: bankifsc,
-        micr_code: bankmicr,
-        account_number: bankaccountnumber,
-        account_type: bankaccounttype
-
-      }]
-      console.log(JSON.stringify(bank_detail))
+      bank_detail.user_lid = 1,
+      bank_detail.bank_name = document.querySelector('#bank-name').value;
+     bank_detail.branch_name = document.querySelector('#bank-branch').value;
+     bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code').value;
+     bank_detail.micr_code = document.querySelector('#bank-micr-code').value;
+     bank_detail.account_number = document.querySelector('#bank-account-number').value;
+     bank_detail.bank_account_type_lid = document.querySelector('#bank-account-type').value;
+     bank_detail.url_path = document.querySelector('#cancelled_cheque_Photo').value;
+      bankDetailsJson.insert_bank_data[0] = bank_detail
+      console.log(JSON.stringify(bankDetailsJson))
 
       function postdata() {
         url = "/insert-bank-details";
@@ -3372,31 +3868,34 @@ document.addEventListener('mouseover',function(){
           headers: {
             'content-Type': 'application/json'
           },
-          body: JSON.stringify(bank_detail),
+          body: JSON.stringify(bankDetailsJson),
         }
         fetch(url, params).then((data) => {
-          console.log(data);
+          if (data.status == 200) {
+            console.log(data);
+
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.bank-details-modal').classList.add('d-none');
+
+            // document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
+            // document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
+            // document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
+            // document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
+            // document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
+            //   'accountNumber')
+            // document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
+
+            // if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
+            //   document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
+            //   document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('text-danger')
+            //   document.getElementById('cancelled-check-photo').firstElementChild.classList.add(
+            //     'fa-circle-check')
+            //   document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
+            // }
+          }
         })
       }
       postdata()
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.bank-details-modal').classList.add('d-none');
-
-
-
-      document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
-      document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
-      document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
-      document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-      document.getElementById('account-number-value').innerText = submitBankDetailsForm.get('accountNumber')
-      document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
-
-      if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('text-danger')
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('fa-circle-check')
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
-      }
 
     });
 
@@ -3767,6 +4266,470 @@ document.addEventListener('mouseover',function(){
       }
 
     })
+    //suraj pal 17 august 2022
+    let count = 1;
+    document.querySelector('#work-experience-submit-button').addEventListener('click', function (e) {
+      e.preventDefault()
+      $.ajax({
+        url: '/fetchDesignationValue',
+        type: 'POST',
+        success: function (response) {
+          let select = document.querySelectorAll('.designation');
+          console.log("select " + select);
+          let rowCount = 1;
+          for (let j = 0; j < select.length; j++) {
+            let option = ``
+            for (let i = 0; i < response.length; i++) {
+
+              option += `<option value="\${response[i].id}">\${response[i].name}</option>`
+
+            }
+            select[rowCount].insertAdjacentHTML('afterbegin', option);
+            rowCount++
+          }
+        },
+
+        error: function (error) {
+          console.log("Error:::", error)
+        }
+      })
+      $.ajax({
+        url: '/fetchWorkExperienceValue',
+        type: 'POST',
+
+        success: function (response) {
+          let select = document.getElementById('experienceType');
+          console.log("select " + select);
+          for (let i = 0; i < response.length; i++) {
+            console.log("response id" + response[i].id);
+            console.log("response name" + response[i].name);
+            let option = `<option value="\${response[i].id}">\${response[i].name}</option>`
+
+            console.log("select " + select);
+            select.insertAdjacentHTML('afterbegin', option)
+            console.log("select " + select);
+          }
+
+        },
+
+        error: function (error) {
+          console.log("Error:::", error)
+        }
+      })
+      /*function fetchDesignationValue() {
+        url = "/fetchDesignationValue";
+        params = {
+          method: 'post',
+        }
+        fetch(url, params).then((response) => response)
+          .then((data) => {
+            console.log("return values is", data[0].id);
+            
+          })
+      } */
+      let workExperienceValue = {}
+      let workExperience = [];
+      let div = ''
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.work-experience-modal').classList.add('d-none');
+
+      let getSelectedValue = document.querySelector('input[name="experienceTimespan\${count}"]:checked');
+      let workExperienceRow = document.querySelectorAll('.workExperience-row');
+      for (let i = 0; i < workExperienceRow.length; i++) {
+        let universityValue = workExperienceRow[i].querySelector('.employeeName').value;
+        let subjectTaught = workExperienceRow[i].querySelector('.responsibility').value;
+        let program = workExperienceRow[i].querySelector('.description').value;
+        let designation_lid = workExperienceRow[i].querySelector('.designation').value;
+        let designationIdValue = document.getElementById("designation");
+        let designation = designationIdValue.options[designationIdValue.selectedIndex].text;
+
+        let start_Date = workExperienceRow[i].querySelector('.start_Date').value;
+        let end_Date = workExperienceRow[i].querySelector('.end_Date').value;
+        let durationOfTeaching = workExperienceRow[i].querySelector('.durationOfTeaching').value;
+        let experienceTypeValue = workExperienceRow[i].querySelector('.experienceType').value;
+        //let is_currentValue = document.querySelector('input[name="experienceTimespan"]').checked;
+        /*   let is_currentValue =workExperienceRow[i].querySelector('.experience').checked; */
+        let is_currentValue = workExperienceRow[i].querySelector('.form-check-input').checked;
+        let is_currentValue1 = workExperienceRow[i].querySelector('.form-check-input').checked;
+
+        console.log("value of is_currentValues is" + is_currentValue);
+        let id = i + 1;
+        id += "";
+        console.log("value of va" + universityValue);
+        if (universityValue != "" || subjectTaught != "" || program != "" || designation != "" ||
+          durationOfTeaching != "" || end_Date != "" || start_Date != "") {
+          obj = {
+            id: id,
+            resume_lid: "1",
+            experience_type_lid: experienceTypeValue,
+            employer_name: universityValue,
+            designation: designation,
+            designation_lid: designation_lid,
+            description: program,
+            start_Date: start_Date,
+            end_Date: end_Date,
+            responsibilities: subjectTaught,
+            //   duration_Of_teaching: durationOfTeaching,
+            is_current: is_currentValue
+          }
+
+          div += ` 
+
+              <div class="text-block right" >
+                      <div class="card-body">
+                        <div id="workExperience-display-div" class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1">
+                          <div class="row">
+
+                            <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                              <div class="row pt-lg-3">
+                                <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                  <p class="h5 pb-1">Experience Type :</p>
+                                  <p class="h5 py-1">Employee Name:</p>
+                                  <p class="h5 py-1">Responsibilities :</p>
+                                  <p class="h5 py-1">Start Date :</p>
+                                </div>
+                                <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                                  <p id="">\${experienceTypeValue}\</p>
+                                  <p id="">\${universityValue}\</p>
+                                  <p id="">\${subjectTaught}\</p>
+                                  <p id="">\${start_Date} \</p>
+                                 
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                              <div class="row pt-lg-3">
+                                <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                  <p class="h5 pb-1">Description :</p>
+                                  <p class="h5 py-1">Designation :</p>
+                                  <p class="h5 py-1">End Date :</p>
+                                  <p class="h5 py-1">Duration Of Teaching :</p>
+                                 
+                                </div>
+                                <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                                  <p class="" id="">\${program}\</p>
+                                  <p id="" class="">\${designation}\</p>
+                                  <p id="" class="">\${end_Date}\</p>
+                                  <p id="" class="">\${durationOfTeaching}\</p>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                            `
+          console.log("object 1" + obj);
+          workExperience.push(obj);
+
+        }
+
+      }
+
+      workExperienceValue = {
+        "work_Experience": workExperience
+      }
+
+      function isEmptyObject(obj) {
+        return JSON.stringify(obj) === '{}'
+      }
+      console.log("value of workexperienc", workExperienceValue);
+      JSON.stringify(workExperienceValue)
+
+      function postdata() {
+        url = "/insertWorkExperience";
+        params = {
+          method: 'post',
+          headers: {
+            contentType: "application/json; charset=utf-8"
+          },
+          body: JSON.stringify(workExperienceValue),
+        }
+        fetch(url, params).then((response) => response.json())
+          .then((data) => {
+            console.log("data", data);
+
+            ++count;
+
+
+            document.getElementById('workExperience-appending-div').firstElementChild.remove()
+            document.getElementById('workExperience-appending-div').insertAdjacentHTML('beforeend', div)
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.work-experience-modal').classList.add('d-none');
+
+          })
+      }
+      postdata()
+    });
+    let table = ``
+
+    let count1 = 2;
+    //change by suraj 23 august 2022
+    document.getElementById('work-experience-add-button').addEventListener('click', function (e) {
+
+
+  table  += `
+    <div class="workExperience-div-wrapper d-flex position-relative" style="cursor: pointer;">
+     <div class="container" >
+      <div id="workExperience-display-div" class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">Experience Type</p>
+                  </div>
+                  <div class="col-md-9"> 
+                    <select class="experienceType form-control down" id="experienceType"> `
+
+      $.ajax({
+        url: '/fetchDesignationValue',
+        type: 'POST',
+        success: function (response) {
+          console.log("RESPONSE",response)
+          console.log(response.length)
+          for (let i = 0; i < response.length; i++) {
+
+            console.log(response[i].name)
+            console.log(response[i].id)
+            table += `<option value="\${response[i].id}\">\${response[i].name}\</option>`
+                    
+            console.log(`
+                            <option value="\${response[i].id}\">\${response[i].name}\</option>
+                     `)
+
+          }
+        },
+
+        error: function (error) {
+          console.log("Error:::", error)
+        }
+      })
+
+      table += `                 
+             </select>
+                   </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">University</p>
+                  </div>
+                  <div class="col-md-9 "><input class="form-control employeeName"
+                      id="employeeName" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">Subject Taught</p>
+                  </div>
+                  <div class="col-md-9 "><input class="form-control responsibility"
+                      id="responsibility" type="text"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">Program</p>
+                  </div>
+                  <div class="col-md-9 "><input class="form-control description" id="description" type="text"
+                    >
+                  
+                 </div>
+                </div>
+
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+              <div class="row p-3">
+              <div class="col-md-3">
+                <p class="h6">Designation</p>
+              </div>
+              <div class="col-md-9 ">
+              
+              <select class="form-control designation" id="designation1">`
+
+      $.ajax({
+        url: '/fetchWorkExperienceValue',
+        type: 'POST',
+
+        success: function (response) {
+     
+          for (let i = 0; i < response.length; i++) {
+
+            table += `<option value="\${response[i].id}\">\${response[i].name}\</option>`
+          }
+
+        },
+
+        error: function (error) {
+          console.log("Error:::", error)
+        }
+      })
+      /*function fetchDesignationValue() {
+        url = "/fetchDesignationValue";
+        params = {
+          method: 'post',
+        }
+        fetch(url, params).then((response) => response)
+          .then((data) => {
+            console.log("return values is", data[0].id);
+            
+          })
+      } */
+
+
+      table += `  </select></div>
+              </div>              
+                <div class="row p-3">
+                  <div class="col-md-3">
+                    <p class="h6">Start Date</p>
+                  </div>
+                  <div class="col-md-9"><input class="form-control start_Date"
+                      id="startMaxDate" type="date"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-3 ">
+                    <p class="h6">End Date</p>
+                  </div>
+                  <div class="col-md-9"><input class="form-control end_Date" id="endMaxDate"
+                    type="date"></div>
+                </div>
+                <div class="row p-3">
+                <div class="col-md-3 ">
+                  <p class="h6">Teaching Duration</p>
+                </div>
+                <div class="col-md-9"><input class="form-control durationOfTeaching" id="durationOfTeaching"
+                  type="text">
+                </div>
+              </div>
+              <div class="row p-3">
+				<div class="col-md-6 ">
+					<div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input checked" type="radio"
+								name="experienceTimespan\${count1}" value="1" id="experienceTimespan"> <label
+								class="form-check-label" for="experienceTimespan">
+								Past </label>
+						</div>
+                      <div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio"
+								name="experienceTimespan\${count1}" value="2" id="experienceTimespanCurrent"> <label
+								class="form-check-label"  for="experienceTimespanCurrent">
+								Current </label>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+              
+            </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="workExperience-edit-box d-none d-flex justify-content-center align-items-center">
+          <i class="fa-solid fa-pen fa-2x text-dark "></i>
+          </div>
+          </div> 
+          <hr style="height: 5px; margin: 30px 0">
+`
+
+      document.getElementById('workExperience-data').insertAdjacentHTML("beforeend", table);
+      ++count1;
+      let dtToday = new Date();
+      let month = dtToday.getMonth() + 1;
+      let day = dtToday.getDate();
+      let startDay = dtToday.getDate() - 1;
+      let year = dtToday.getFullYear();
+      if (month < 10) {
+        month = '0' + month.toString();
+      }
+      if (day < 10 || startDay < 10) {
+        startDay = '0' + startDay.toString();
+        day = '0' + day.toString();
+      }
+      let endMaxDate = year + '-' + month + '-' + day;
+      let startMaxDate = year + '-' + month + '-' + startDay;
+      let startDateElement = document.getElementById('startMaxDate');
+      let endDateElement = document.getElementById('endMaxDate');
+      startDateElement.setAttribute('max', startMaxDate);
+      endDateElement.setAttribute('max', endMaxDate);
+      console.log("value is endDateelement" + endDateElement.getAttribute('max'));
+    })
+    //suraj pal 22/08/2022
+    document.addEventListener("DOMContentLoaded", function (event) {
+      let dtToday = new Date();
+      let month = dtToday.getMonth() + 1;
+      let day = dtToday.getDate();
+      let startDay = dtToday.getDate() - 1;
+      let year = dtToday.getFullYear();
+      if (month < 10) {
+        month = '0' + month.toString();
+      }
+      if (day < 10 || startDay < 10) {
+        startDay = '0' + startDay.toString();
+        day = '0' + day.toString();
+      }
+      let endMaxDate = year + '-' + month + '-' + day;
+      let startMaxDate = year + '-' + month + '-' + startDay;
+      let startDateElement = document.getElementById('startMaxDate');
+      let endDateElement = document.getElementById('endMaxDate');
+      startDateElement.setAttribute('max', startMaxDate);
+      endDateElement.setAttribute('max', endMaxDate);
+      //fetchDesignationValue();
+    });
+    $.ajax({
+      url: '/fetchDesignationValue',
+      type: 'POST',
+
+      success: function (response) {
+        let select = document.getElementById('designation');
+        console.log("select " + select);
+        for (let i = 0; i < response.length; i++) {
+          let option = `<option value="\${response[i].id}">\${response[i].name}</option>`
+          select.insertAdjacentHTML('afterbegin', option)
+
+        }
+
+      },
+
+      error: function (error) {
+        console.log("Error:::", error)
+      }
+    })
+    $.ajax({
+      url: '/fetchWorkExperienceValue',
+      type: 'POST',
+
+      success: function (response) {
+        let select = document.getElementById('experienceType');
+        console.log("select " + select);
+        for (let i = 0; i < response.length; i++) {
+          console.log("response id" + response[i].id);
+          console.log("response name" + response[i].name);
+          let option = `<option value="\${response[i].id}">\${response[i].name}</option>`
+
+          console.log("select " + select);
+          select.insertAdjacentHTML('afterbegin', option)
+          console.log("select " + select);
+        }
+
+      },
+
+      error: function (error) {
+        console.log("Error:::", error)
+      }
+    })
+    /*function fetchDesignationValue() {
+      url = "/fetchDesignationValue";
+      params = {
+        method: 'post',
+      }
+      fetch(url, params).then((response) => response)
+        .then((data) => {
+          console.log("return values is", data[0].id);
+          
+        })
+    } */
   </script>
 </body>
 

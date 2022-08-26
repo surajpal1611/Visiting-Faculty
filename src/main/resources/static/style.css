@@ -80,6 +80,7 @@ body {
 .input-border {
   border: 1px solid red;
 }
+
 /* **********************************************TimeLine******************************************************** */
 
 /* The actual timeline (the vertical ruler) */
@@ -108,7 +109,7 @@ body {
   padding: 10px 40px;
   position: relative;
   background-color: inherit;
-  border-left: 1px solid #b12828 ;
+  border-left: 1px solid #b12828;
 }
 
 /* The circles on the timeline */
@@ -129,7 +130,7 @@ body {
   content: "";
   display: inline-block;
   position: absolute;
-  background-color: #b12828 ;
+  background-color: #b12828;
   width: 29px;
   height: 2px;
   top: 31px;
@@ -147,7 +148,7 @@ body {
   background-color: fff;
   position: relative;
   border-radius: 6px;
-  border-left: 3px solid #b12828 ;
+  border-left: 3px solid #b12828;
   box-shadow: -1px 0px 5px -1px;
 }
 
@@ -162,7 +163,20 @@ body {
   right: 0;
   left: 100%;
 }
+.certification-edit-box {
+  width: 100px;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+  right: 0;
+  left: 100%;
+}
 .personal-details-edit-box i {
+  color: #b12828 !important;
+}
+
+.certification-edit-box i {
   color: #b12828 !important;
 }
 
@@ -216,7 +230,7 @@ body {
   position: absolute;
   right: 0;
   left: 100%;
-  
+
 }
 
 .award-edit-box i {
@@ -290,6 +304,20 @@ body {
 
 }
 
+.certification-edit-box {
+  width: 100px;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+  right: 0;
+  left: 100%;
+}
+
+.certification-edit-box i {
+  color: #b12828 !important;
+}
+
 .bank-details-edit-box {
   width: 100px;
   height: 100%;
@@ -299,11 +327,12 @@ body {
   right: 0;
   left: 100%;
 }
- 
+
 .bank-details-edit-box i {
   color: #b12828 !important;
 
 }
+
 /*************************************************************** Skills **************************************************/
 
 .coloured-cards .card {
@@ -326,10 +355,10 @@ body {
 
 .title {
   margin-bottom: 30px;
-  color: #740E00 ;
+  color: #740E00;
 }
 
-.card  {
+.card {
   padding: 25px 40px;
 }
 
@@ -376,13 +405,14 @@ body {
 .card[data-color="grey"] .description {
   color: white;
 }
+
 /* 
 .card[data-color="green"] {
 } */
 
 .skill-pill-div {
   width: max-content;
-  margin :20px 0 0 0;
+  margin: 20px 0 0 0;
   border-radius: 50px;
   padding: 10px;
   border: 1px solid #b12828;
@@ -452,19 +482,21 @@ label {
   font-size: 16px;
 }
 
-.temporary-address{
+.temporary-address {
   padding-top: 20px;
 }
 
 @media screen and (max-width: 1030px) {
 
-  .temporary-address{
+  .temporary-address {
     padding-top: 40px;
   }
-  .country-heading{
-    padding-top: 0!important;
+
+  .country-heading {
+    padding-top: 0 !important;
   }
 }
+
 /* ********************************Styling for Work Experience Modal***************************************/
 
 .full-screen {
@@ -479,6 +511,7 @@ table thead tr {
   height: 60px;
   background: #36304a;
 }
+
 /* 
 .main-content {
   width: 100%;
@@ -557,7 +590,7 @@ button {
 }
 
 #soft-skill-review-box ul {
-  padding:10px 0 0 0 !important;
+  padding: 10px 0 0 0 !important;
 }
 
 #soft-skill-review-box li {
@@ -567,10 +600,11 @@ button {
   width: 90%;
 }
 
-#add-custom-soft-skill, #add-custom-hard-skill {
+#add-custom-soft-skill,
+#add-custom-hard-skill {
   border: 1px solid #ddd;
   margin: 20px 20px 20px 0;
-  padding: 8px 5px 0 15px ;
+  padding: 8px 5px 0 15px;
   height: 55px;
 }
 
@@ -615,7 +649,7 @@ button {
 }
 
 #hard-skill-review-box ul {
-  padding:10px 0 0 0 !important;
+  padding: 10px 0 0 0 !important;
 }
 
 #hard-skill-review-box li {
@@ -712,7 +746,7 @@ button {
   /* margin-top: -1px; */
   /* Prevent double borders */
   /* padding-left:15%; */
-  padding-top:10px;
+  padding-top: 10px;
   text-decoration: none;
   font-size: 18px;
   color: black;
@@ -760,12 +794,14 @@ button {
   border-radius: 10px;
 }
 
-.Flipped{
+.Flipped {
   direction: rtl;
 }
+
 .flipping {
   direction: ltr;
 }
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #3983fa;
@@ -785,13 +821,13 @@ button {
 @media screen and (max-width: 1000px) {
 
   .soft-skill-add-button i {
-      padding: 7px 5px 0 4px ;
+    padding: 7px 5px 0 4px;
   }
 
   #hard-skill-box li a {
-      padding-left: 20px;
+    padding-left: 20px;
   }
-  
+
 }
 
 /* ********************************Styling for bank details Modal***************************************/
@@ -819,6 +855,7 @@ button {
 #bank-form-area img {
   text-align: center;
 }
+
 #check-preview {
   padding: 20px 0 10px 40px;
 }
@@ -881,7 +918,7 @@ button {
 }
 
 /*============================================================================================================*/
-.spacein{
+.spacein {
   padding: 9px;
   margin-top: 11px;
 }
@@ -889,9 +926,32 @@ button {
 
 
 /* **********************************border color************************************/
-.input-border{
+.input-border {
   border: 2px solid red;
 }
-.award_delete_btn{
-  background-color: white;
+
+.required {
+  color: red;
+}
+
+#delete_btn_research_symbol {
+  width: 100px;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 100%;
+}
+
+#delete_btn_certification_symbol {
+  width: 100px;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 100%;
 }

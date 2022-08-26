@@ -2,6 +2,8 @@ package com.visitingfaculty.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.visitingfaculty.dao.UserDaoInterface;
+import com.visitingfaculty.dao.userDao;
 import com.visitingfaculty.validations.jsoncheck;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class BankDetailsRestController {
 
     @Autowired jsoncheck jsoncheck;
+
+    @Autowired
+    UserDaoInterface userDaoInterface;
 
     @PostMapping(value="/insert-bank-details")
     public ResponseEntity<?> postMethodName(@RequestBody  String bank_details) {

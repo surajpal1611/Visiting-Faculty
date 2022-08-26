@@ -1,6 +1,9 @@
 package com.visitingfaculty.validations;
 
 import org.springframework.stereotype.Component;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Component
 public class validationsMethod 
@@ -162,15 +165,62 @@ public class validationsMethod
     return check;
     }
 
-    //Validation for Select Option
-    public Boolean selectCheck(String value)
-    {
-        Boolean check = false;
-        char select[] = value.toCharArray();
-        if(select.length > 0)
-        {
-            check = true;
-        }
-    return check;    
-    }
+
+    // Suraj Pal 22-August-2022
+
+	public boolean getNamesValidation(String nameValue) {
+		boolean check = false;
+		if (nameValue.length() > 1) {
+
+			for (int j = 0; j < nameValue.length(); j++) {
+
+				if (nameValue.charAt(j) >= 'a' && nameValue.charAt(j) <= 'z'
+						|| nameValue.charAt(j) >= 'A' && nameValue.charAt(j) <= 'Z') {
+					check = true;
+				} else {
+					check = false;
+				}
+			}
+		}
+		return check;
+	}
+
+	public boolean isAlphaNumbericValidation(String nameValue) {
+		boolean check = false;
+		if (nameValue.length() > 1) {
+
+			for (int j = 0; j < nameValue.length(); j++) {
+
+				if (nameValue.charAt(j) >= '0'
+						|| nameValue.charAt(j) <= '9' && nameValue.charAt(j) >= 'a' && nameValue.charAt(j) <= 'z'
+						|| nameValue.charAt(j) >= 'A' && nameValue.charAt(j) <= 'Z') {
+					check = true;
+				} else {
+					check = false;
+				}
+			}
+		}
+		return check;
+	}
+
+	public boolean isDateValid(String dateValue, String dateValueSecond) throws ParseException {
+		boolean checkDateValue = false;
+		if (!dateValue.isEmpty() || !dateValueSecond.isEmpty()) {
+			Date dateNow = new Date();
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			Date dateFirst = dateFormat.parse(dateValue);
+			Date dateSecond = dateFormat.parse(dateValueSecond);
+			int dateFirstWithNow = dateFirst.compareTo(dateNow);
+			int dateSecondWithNow = dateSecond.compareTo(dateNow);
+			if (dateFirstWithNow == -1 || dateSecondWithNow == -1) {
+				checkDateValue = true;
+			}
+			int difference = dateFirst.compareTo(dateSecond);
+			if (difference == -1)
+				checkDateValue = true;
+		}
+		System.out.println("values of isDateValid is "+checkDateValue);
+		return checkDateValue;
+
+	}
 }
