@@ -9,7 +9,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.visitingfaculty.dao.UserDaoInterface;
 import com.visitingfaculty.dto.UserDto;
@@ -29,8 +31,9 @@ public class UserRestController {
     @Autowired
     UserDaoInterface userDaoInterface;
 
-    @PostMapping(value = "/insert-personal-details", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/insert-personal-details")
     public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) {
+
         System.out.println(personalDetailsData);
         Boolean check =  jsonchk.UserJsonCheck(personalDetailsData);
         System.out.println("Check User Personal : "+check);
