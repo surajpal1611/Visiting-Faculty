@@ -52,7 +52,8 @@ public class jsoncheck {
             String l_name = user_info.getJSONObject(i).getString("l_name");
             String email = user_info.getJSONObject(i).getString("email");
             String pancardPhoto = user_info.getJSONObject(i).getString("pancard_url_path");
-            System.out.println("pancard photo : "+pancardPhoto);
+            String ok = JsonString.replaceAll(pancardPhoto, "Anything");
+            System.out.println("Check the String : "+ok);
 
             Boolean l_namecheck = checkVal.CheckWithNoSpectailChar(l_name);
             Boolean f_namecheck = checkVal.CheckWithNoSpectailChar(f_name);

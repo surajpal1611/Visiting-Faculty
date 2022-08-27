@@ -33,7 +33,6 @@ public class UserRestController {
 
     @PostMapping(value = "/insert-personal-details")
     public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) {
-
         Boolean check =  jsonchk.UserJsonCheck(personalDetailsData);
         if(check == true)
            {
