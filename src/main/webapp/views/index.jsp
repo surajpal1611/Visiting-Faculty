@@ -1749,7 +1749,7 @@
       var year = Number(dob.substr(0, 4));
       var today = new Date();
       var age = today.getFullYear() - year;
-      if (res.length > 2) {
+      if (res.length == 10) {
         if (age > 18) {
           condition = true;
         } else {
@@ -1885,7 +1885,6 @@
         condition = false;
       } else {
         for (let i = 0; i < res.length; i++) {
-          console.log("entered inside for loop")
           if (res[i] < '0' || res[i] > '9') {
             condition = false;
             document.getElementById('aadhar-number-message').innerHTML = "Special Character not allowed";
@@ -1989,78 +1988,6 @@
           condition = false;
         }
       } else {
-        condition = false;
-      }
-      return condition;
-    }
-
-    function publicationDetailRoleValidation(res) {
-      console.log(res)
-      if (res == "Edited" || res == "Authored") {
-        document.querySelector('.role').style = "border:1px solid green"
-        condition = true;
-      } else {
-        document.querySelector('.role').style = "border:1px solid red"
-        condition = false;
-      }
-      return condition;
-    }
-
-    function publicationDetailPublisherValidation(res) {
-      if (res.length != 0) {
-        condition = true;
-        document.querySelector('.publisher').style.borderColor = "green";
-      } else {
-        // document.getElementById("country-message").innerHTML = "*Invalid length";
-        document.querySelector('.publisher').style.borderColor = "red";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function publicationDetailNumberOfAuthorValidation(res) {
-      if (res.length != 0) {
-        document.querySelector('.number-of-authors').style.borderColor = "green";
-        condition = true;
-      } else {
-        // document.getElementById("country-message").innerHTML = "*Invalid length";
-        document.querySelector('.number-of-authors').style.borderColor = "red";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function publicationDetailYearOfPublicationValidation(res) {
-      if (res.length != 0) {
-        document.querySelector('.year-of-publication').style.borderColor = "green";
-        condition = true;
-      } else {
-        // document.getElementById("country-message").innerHTML = "*Invalid length";
-        document.querySelector('.year-of-publication').style.borderColor = "red";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function publicationDetailBookTitleValidation(res) {
-      if (res.length != 0) {
-        document.querySelector('.book-title').style.borderColor = "green";
-        condition = true;
-      } else {
-        // document.getElementById("country-message").innerHTML = "*Invalid length";
-        document.querySelector('.book-title').style.borderColor = "red";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function publicationDetailCertificateValidation(res) {
-      if (res.length != 0) {
-        document.querySelector('.certification').style.borderColor = "green";
-        condition = true;
-      } else {
-        // document.getElementById("country-message").innerHTML = "*Invalid length";
-        document.querySelector('.certification').style.borderColor = "red";
         condition = false;
       }
       return condition;
@@ -2355,6 +2282,8 @@
       let address = personalDetailAddressValidation(result.permanent_address);
       // let temporaryAddress = personalDetailTemporaryAddressValidation(result.temporary_address);
       let country = personalDetailCountryValidation(result.nationality);
+
+      console.log(result.date_of_birth.length)
 
       if (!firstName || !lastName || !gender || !contactNumber || !email || !pancard || !aadhar || !address || !
         country) {
@@ -2845,9 +2774,6 @@ document.addEventListener('mouseover',function(){
 
     // ***************************************************Award Section Script*************************************************************************
 
-
-
-
     document.getElementById('award-add-button').addEventListener('click', function () {
       console.log("Award Add Button clicked");
       let awardnameaddbtn = document.querySelector('.awardName').value.length;
@@ -3167,14 +3093,19 @@ document.addEventListener('mouseover',function(){
     });
 
     document.querySelector("#publication-submit-button").addEventListener('click', function (e) {
-
+      
       e.preventDefault()
-
 
       let div = ''
       let publicationTableArray = []
       let publicationRow = document.querySelectorAll('.publication-row')
       for (i = 0; i < publicationRow.length; i++) {
+         //to remove the red border
+        publicationRow[i].querySelector('.publisher').classList.remove('input-border');
+        publicationRow[i].querySelector('.number-of-authors').classList.remove('input-border');
+        publicationRow[i].querySelector('.year-of-publication').classList.remove('input-border');
+        publicationRow[i].querySelector('.book-title').classList.remove('input-border');
+        publicationRow[i].querySelector('.certification').classList.remove('input-border');
 
         let publicationRole = publicationRow[i].querySelector('.role').value;
         let publicationPublisher = publicationRow[i].querySelector('.publisher').value;
@@ -3182,6 +3113,31 @@ document.addEventListener('mouseover',function(){
         let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
         let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
         let publicationCertificate = publicationRow[i].querySelector('.certification').value;
+
+        let checkPublicationPublisher = tabledatacheck(publicationPublisher);
+        let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
+        let checkPublicationYearOfPublication = tabledatacheck(publicationYearOfPublication);
+        let checkPublicationBookTitle = tabledatacheck(publicationBookTitle);
+        let checkPublicationCertificate = tabledatacheck(publicationCertificate);
+       
+
+        // to add the red border according to validations
+         if(checkPublicationPublisher == false) {
+          publicationRow[i].querySelector('.publisher').classList.add('input-border');
+          return;
+        } else if(checkPublicationNumberOfAuthors == false) {
+          publicationRow[i].querySelector('.number-of-authors').classList.add('input-border');
+          return;
+        } else if(checkPublicationYearOfPublication == false) {
+          publicationRow[i].querySelector('.year-of-publication').classList.add('input-border');
+          return;
+        } else if(checkPublicationBookTitle == false) {
+          publicationRow[i].querySelector('.book-title').classList.add('input-border');
+          return;
+        } else if(checkPublicationCertificate == false) {
+          publicationRow[i].querySelector('.certification').classList.add('input-border');
+          return;
+        } 
 
 
         insertAchievementObject.role = publicationRole
@@ -3268,21 +3224,6 @@ document.addEventListener('mouseover',function(){
           
 
     document.getElementById('publication-add-button').addEventListener('click', function () {
-
-
-      const role = publicationDetailRoleValidation(document.querySelector('.role').value)
-      const publisher = publicationDetailPublisherValidation(document.querySelector('.publisher').value)
-      const numberOfAuthor = publicationDetailNumberOfAuthorValidation(document.querySelector('.number-of-authors')
-        .value)
-      const yearOfPublication = publicationDetailYearOfPublicationValidation(document.querySelector(
-        '.year-of-publication').value)
-      const bookTitle = publicationDetailBookTitleValidation(document.querySelector('.book-title').value)
-      const certificate = publicationDetailCertificateValidation(document.querySelector('.certification').value)
-      console.log(role)
-
-      // if (!role || !publisher || !numberOfAuthor || !yearOfPublication || !bookTitle || !certificate) {
-      //   return;
-      // }
 
       let table = `<div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;"> 
       <div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1 container">
