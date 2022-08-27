@@ -5,6 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
+
+import com.visitingfaculty.model.user_bank_details.UserBankAccountType;
+import com.visitingfaculty.model.user_qualification.UserQualificationType;
 import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
 
 @Repository
@@ -72,6 +75,22 @@ public class userDao implements UserDaoInterface {
                         .withFunctionName("insert_bank_details");
                         
         return jdbcCall.executeFunction( Object.class,bankDetailsData);
+    }
+
+    @Override
+    public List<UserQualificationType> getQualificationType() {
+       String sql = "select * from qualification_type where id<4";
+       return jdbcTemplate.query(sql, (rs,rownum) -> {
+        return new UserQualificationType(rs.getInt("id"),rs.getString("name"));
+    });
+    }
+
+    @Override
+    public List<UserBankAccountType> getBankAccountType() {
+        String sql = "select * from bank_account_type";
+       return jdbcTemplate.query(sql, (rs,rownum) -> {
+        return new UserBankAccountType(rs.getInt("id"),rs.getString("account_type"));
+    });
     }
 
 }

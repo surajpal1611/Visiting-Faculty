@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +18,6 @@
 </head>
 
 <body>
-
-
-
   <!-- id(body) of this div is used to hide as well as unhide the resume -->
   <div id="body">
 
@@ -44,6 +42,8 @@
         <!-- class(cover) of this div is used to give a one-page template for building simple home pages in bootstrap -->
         <!-- class(shadow-lg) of this div provides shadow to an element with box-shadow utilities in bootstrap -->
         <div class="cover shadow-lg">
+          
+          <h2 id="year-of-passing">${list}</h2>
 
           <!--------------------------------------Personal Details Section ---------------------------------------->
 
@@ -826,9 +826,7 @@
                   </div>
                   <div class="col-md-10"><select class="form-control qualification-title"
                       id="bachelors-degree-title-data">
-                      <option value="1">Bachelor's Degree</option>
-                      <option value="2">Master's Degree</option>
-                      <option class="phd-option" value="3">PHD</option>
+                     
                     </select></div>
                 </div>
                 <div class="row p-3">
@@ -1624,11 +1622,9 @@
           <div class="col-md-6 col-sm-12">
             <label for="bank-account-type" class="py-md-2">Account Type<span class="required">*</span></label>
             <span id="bank-account-type-message" style="color: red;" class="error"></span>
-            <select class="form-control" id="bank-account-type"><option value="1">Current Account</option>
-              <option value="2">Saving Account</option>
-              <option value="3">Salary Account</option>
-              <option value="4">Non-Residential Ordinary Account</option>
-              <option value="5">Recurring Deposit Account</option></select>
+            <select class="form-control" id="bank-account-type">
+              
+            </select>
           </div>
         </div>
 
@@ -1666,7 +1662,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-  </script>
+</script>
   <script>
     // --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
 
@@ -2531,8 +2527,38 @@
 
     //*************************************Qualification-modal JS****************************************
 
-
+    let qualificationType =  ""
+    console.log(qualificationType)
     document.querySelector(".qualification-edit-box").addEventListener('click', function () {
+      
+      $.ajax({
+        url: '/get-qualification-type',
+        type: 'get',
+        success: function (response) {
+           console.log(response)
+          for (let i = 0; i < response.length; i++) {
+            qualificationType +=  `<option value=\${response[i].id}\ >\${response[i].name}\</option>`
+          }
+          document.getElementById('bachelors-degree-title-data').insertAdjacentHTML("beforeend",qualificationType)
+        },
+        error: function (error) {
+          console.log("Error::::::::::::", error);
+        }
+      })
+      
+      // let options = {
+      //   method: 'GET',
+      //   headers: {
+      //     'Content-Type': 'application/json;charset=utf-8'
+      //   },
+      // }
+      // let fetchRes = fetch('/get-qualification-type', options);
+      // fetchRes.then(success => {
+      //   if (success.status == 200) {
+      //   } else {
+      //     alert('Check Qualification details');
+      //   }
+      // })
       document.getElementById('body').classList.add('d-none');
       document.querySelector('.qualification-modal').classList.remove('d-none');
     });
@@ -2718,11 +2744,8 @@
                   </div>
                   <div class="col-md-10"><select class="form-control qualification-title"
                       id="bachelors-degree-title-data">
-                      <option value="1">Bachelor's Degree</option>
-                      <option value="2">Master's Degree</option>
-                      <option value="3">PHD</option>
-                      <option value="4">Professional Certification</option>
-                    </select></div>
+                      
+                      </select></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
@@ -2776,12 +2799,14 @@
               </div>
             </div>
           </div> 
+          </div>
           <hr style="height: 5px; margin: 30px 0">
-          </div>
-          </div>
-`
+          </div>`
 
       document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
+      let appendingOptions =  document.querySelectorAll('.qualification-title')
+      appendingOptions[appendingOptions.length - 1].insertAdjacentHTML("beforeend",qualificationType )
+            
     })
 
     //************************************************On hover delete Function for qualification Section Start******************************** 
@@ -3794,8 +3819,25 @@ document.addEventListener('mouseover',function(){
       })
 
     //*************************************Bank-details-modal JS****************************************
+    let bankAccountType =  ""
 
     document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
+
+      $.ajax({
+        url: '/get-bank-account-type',
+        type: 'get',
+        success: function (response) {
+           console.log(response)
+          for (let i = 0; i < response.length; i++) {
+            console.log(bankAccountType)
+            bankAccountType +=  `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`
+          }
+          document.getElementById('bank-account-type').insertAdjacentHTML("beforeend",bankAccountType)
+        },
+        error: function (error) {
+          console.log("Error::::::::::::", error);
+        }
+      })
 
       let editBankDetailsForm = new FormData()
 
