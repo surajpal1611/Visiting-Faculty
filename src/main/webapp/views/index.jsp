@@ -2338,6 +2338,7 @@
 
       e.preventDefault()
 
+      
       let myForm = document.getElementById('myForm')
       let formData = new FormData(myForm)
       let arrayresult = [];
@@ -2345,36 +2346,7 @@
       for (let entry of formData.entries()) {
         result[entry[0]] = entry[1];
       }
-      let profilePhotoBase64 = ''
-      let profilePhoto = document.getElementById("photo").files[0]
-      if (profilePhoto) {
-        let filereader = new FileReader();
-        filereader.readAsDataURL(profilePhoto);
-        filereader.onload = function (evt) {
-          profilePhotoBase64 = evt.target.result;
-          console.log(profilePhotoBase64)
-        }
-      }
-      let aadharPhotobase64 = ''
-      let aadharPhoto = document.getElementById("pan-photo").files[0]
-      if (aadharPhoto) {
-        let filereader = new FileReader();
-        filereader.readAsDataURL(aadharPhoto);
-        filereader.onload = function (evt) {
-          aadharPhotobase64 = evt.target.result;
-          console.log(aadharPhotobase64)
-        }
-      }
-      let panphotobase64 = ''
-      let panPhoto = document.getElementById("aadhar-photo").files[0]
-      if (panPhoto) {
-        let filereader = new FileReader();
-        filereader.readAsDataURL(panPhoto);
-        filereader.onload = function (evt) {
-          panphotobase64 = evt.target.result;
-          console.log(panphotobase64)
-        }
-      }
+
       clearError();
 
       let firstName = personalDetailFirstNameValidation(result.f_name);
@@ -2416,12 +2388,49 @@
         }
       }
 
+      let photoArray = []
+      
+      let profilePhoto = document.getElementById("photo").files[0]
+      if (profilePhoto) {
+        let filereader = new FileReader();
+        filereader.readAsDataURL(profilePhoto);
+        filereader.onload = function (evt) {
+          let profilePhotoBase64 = evt.target.result;
+          photoArray[0] = profilePhotoBase64
+        }
+      }
+
+      let aadharPhoto = document.getElementById("aadhar-photo").files[0]
+      if (aadharPhoto) {
+        let filereader = new FileReader();
+        filereader.readAsDataURL(aadharPhoto);
+        filereader.onload = function (evt) {
+         let aadharPhotobase64 = evt.target.result;
+         photoArray[1] = aadharPhotobase64
+        }
+      }
+
+      let panPhoto = document.getElementById("pan-photo").files[0]
+      if (panPhoto) {
+        let filereader = new FileReader();
+        filereader.readAsDataURL(panPhoto);
+        filereader.onload = function (evt) {
+         let panphotobase64 = evt.target.result;
+         photoArray[2] = panphotobase64
+        }
+      }
+
+      console.log(photoArray)
+      let user_info = {}
       let user_contact = {}
+
+      setTimeout(function() {
+
+      
       user_contact.user_lid = 1
       user_contact.contact_number = result.contact_number
       user_contact.temp_contact_number = "8899337745"
       personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
-      let user_info = {}
       user_info.user_lid = 1
       user_info.f_name = result.f_name
       user_info.l_name = result.l_name
@@ -2429,14 +2438,14 @@
       user_info.temp_email = "sam@gmail.com"
       user_info.gender_lid = Number.parseInt(result.gender)
       user_info.pancard_no = pancard
-      user_info.pancard_url_path = "C://Fakepath://pancard"
-      user_info.aadhar_card_url_path = "C://Fakepath://aadharcard"
-      user_info.profile_url_path = "C://Fakepath://profilephoto"
+      user_info.pancard_url_path = photoArray[0]
+      user_info.aadhar_card_url_path = "C://fakePath"
+      user_info.profile_url_path = "C://fakePath"
       user_info.aadhar_card_no = aadhar
       user_info.date_of_birth = result.date_of_birth
       user_info.nationality = result.nationality
       personalDetailsData.insert_user_personal_details.user_info[0] = user_info
-
+    
       console.log(JSON.stringify(user_info))
       let addressObject = {}
       addressObject.user_lid = 1
@@ -2450,6 +2459,7 @@
 
       arrayresult[0] = addressObject
       arrayresult[1] = addressObject2
+
 
       console.log(JSON.stringify(personalDetailsData))
       let genderValue = ""
@@ -2497,6 +2507,7 @@
         // console.log("Error in personal Details")
         // }
       })
+    },2000)
     });
 
     document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
@@ -3140,7 +3151,7 @@
         // let publicationCertificate = publicationRow[i].querySelector('.certification').value;
 
         let publicationCertificate = document.querySelectorAll('.publication-certification')
-        
+
         if (publicationCertificate[i].files[0]) {
           let filereader = new FileReader();
           filereader.readAsDataURL(publicationCertificate[i].files[0]);
@@ -3231,7 +3242,8 @@
       const yearOfPublication = publicationDetailYearOfPublicationValidation(document.querySelector(
         '.year-of-publication').value)
       const bookTitle = publicationDetailBookTitleValidation(document.querySelector('.book-title').value)
-      const certificate = publicationDetailCertificateValidation(document.querySelector('.publication-certification').value)
+      const certificate = publicationDetailCertificateValidation(document.querySelector(
+        '.publication-certification').value)
       console.log(role)
 
       if (!role || !publisher || !numberOfAuthor || !yearOfPublication || !bookTitle || !certificate) {
@@ -3375,14 +3387,14 @@
         }
 
         let researchCertificate = document.querySelectorAll('.research_photo')
-      
-          let filereader = new FileReader();
-          filereader.readAsDataURL(researchCertificate[j].files[0]);
-          filereader.onload = function loadDataFunc (evt) {
-           let researchBase64 = evt.target.result;
-           newBase64 += researchBase64
-          }
-          console.log(newBase64)
+
+        let filereader = new FileReader();
+        filereader.readAsDataURL(researchCertificate[j].files[0]);
+        filereader.onload = function loadDataFunc(evt) {
+          let researchBase64 = evt.target.result;
+          newBase64 += researchBase64
+        }
+        console.log(newBase64)
 
         // let panphotobase64 = ''
         // let panPhoto = document.getElementById("aadhar-photo").files[0]

@@ -74,4 +74,12 @@ public class userDao implements UserDaoInterface {
         return jdbcCall.executeFunction( Object.class,bankDetailsData);
     }
 
+    @Override
+    public Object updatePersonalDetails(String personalDetailsData) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                        .withFunctionName("update_user_details");
+                        
+        return jdbcCall.executeFunction( Object.class,personalDetailsData);
+    }
+
 }
