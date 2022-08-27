@@ -2402,7 +2402,6 @@
         console.log(success)
         document.getElementById('body').classList.remove('d-none');
         document.querySelector('.personal-details-modal').classList.add('d-none')
-
         document.getElementById('date-of-birth-value').innerText = result.date_of_birth
         document.getElementById('pancard-value').innerText = result.pan_number
         document.getElementById('aadhar-card-value').innerText = result.aadhar_number
@@ -3090,15 +3089,14 @@
         publicationRow[i].querySelector('.number-of-authors').classList.remove('input-border');
         publicationRow[i].querySelector('.year-of-publication').classList.remove('input-border');
         publicationRow[i].querySelector('.book-title').classList.remove('input-border');
-        publicationRow[i].querySelector('.certification').classList.remove('input-border');
+        publicationRow[i].querySelector('.publication-certification').classList.remove('input-border');
 
         let publicationRole = publicationRow[i].querySelector('.role').value;
         let publicationPublisher = publicationRow[i].querySelector('.publisher').value;
         let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
         let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
         let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
-
-        let publicationCertificate = publicationRow[i].querySelector('.certification').value;
+        let publicationCertificate = publicationRow[i].querySelector('.publication-certification').value;
 
         let checkPublicationPublisher = tabledatacheck(publicationPublisher);
         let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
@@ -3209,6 +3207,8 @@
 
     document.getElementById('publication-add-button').addEventListener('click', function () {
 
+           let table= `<div id="publication-appending-div" class="bg-white">
+          <div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1"> 
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -3264,7 +3264,8 @@
               <i class="fa-solid fa-pen fa-2x"></i>
             </div>
           </div>
-          <hr style="height: 5px;">`
+          <hr style="height: 5px;">
+          </div>`
       document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
     })
 
