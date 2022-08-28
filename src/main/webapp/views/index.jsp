@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -3178,16 +3177,16 @@
 
         
 
-        let publicationCertificate = document.querySelectorAll('.publication-certification')
+        // let publicationCertificate = document.querySelectorAll('.publication-certification')
 
-        if (publicationCertificate[i].files[0]) {
-          let filereader = new FileReader();
-          filereader.readAsDataURL(publicationCertificate[i].files[0]);
-          filereader.onload = function (evt) {
-            publicationBase64 += evt.target.result;
-          }
-        }
-        console.log(publicationBase64)
+        // if (publicationCertificate[i].files[0]) {
+        //   let filereader = new FileReader();
+        //   filereader.readAsDataURL(publicationCertificate[i].files[0]);
+        //   filereader.onload = function (evt) {
+        //     publicationBase64 += evt.target.result;
+        //   }
+        // }
+        // console.log(publicationBase64)
 
         object = {
           role: publicationRole,

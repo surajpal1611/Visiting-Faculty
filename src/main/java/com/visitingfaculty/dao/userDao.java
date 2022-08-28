@@ -18,11 +18,11 @@ public class userDao implements UserDaoInterface {
 
     @Override
     public Object insertPersonalDetails(String personalDetailsData) {
-       
+
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
-                        .withFunctionName("insert_user_details");
-                        
-        return jdbcCall.executeFunction( Object.class,personalDetailsData);
+                .withFunctionName("insert_user_details");
+
+        return jdbcCall.executeFunction(Object.class, personalDetailsData);
     }
 
     @Override
@@ -45,59 +45,60 @@ public class userDao implements UserDaoInterface {
     @Override
     public UserSkillsFromDB getUserSkill(String skill_name) {
 
-       String sql = "select * from skill where skill_name = ?";
+        String sql = "select * from skill where skill_name = ?";
 
-       return jdbcTemplate.queryForObject(sql, (rs,rownum) -> {
-            return new UserSkillsFromDB(rs.getInt("id"),rs.getInt("skill_type_lid"),rs.getString("skill_name"));
-       },skill_name);
+        return jdbcTemplate.queryForObject(sql, (rs, rownum) -> {
+            return new UserSkillsFromDB(rs.getInt("id"), rs.getInt("skill_type_lid"), rs.getString("skill_name"));
+        }, skill_name);
     }
 
     @Override
     public Object insertQualificationDetails(String qualificationTableData) {
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
-        .withFunctionName("insert_qualification_details");
-        
-        return jdbcCall.executeFunction( Object.class,qualificationTableData);
+                .withFunctionName("insert_qualification_details");
+
+        return jdbcCall.executeFunction(Object.class, qualificationTableData);
     }
 
     @Override
     public Object insertAwardData(String data) {
-       
+
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
-                        .withFunctionName("insert_achievement_details");
-                        
-        return jdbcCall.executeFunction( Object.class,data);
+                .withFunctionName("insert_achievement_details");
+
+        return jdbcCall.executeFunction(Object.class, data);
     }
 
     @Override
     public Object insertBankDetails(String bankDetailsData) {
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
-                        .withFunctionName("insert_bank_details");
-                        
-        return jdbcCall.executeFunction( Object.class,bankDetailsData);
+                .withFunctionName("insert_bank_details");
+
+        return jdbcCall.executeFunction(Object.class, bankDetailsData);
     }
 
     @Override
 
     public List<UserQualificationType> getQualificationType() {
-       String sql = "select * from qualification_type where id<4";
-       return jdbcTemplate.query(sql, (rs,rownum) -> {
-        return new UserQualificationType(rs.getInt("id"),rs.getString("name"));
-    });
+        String sql = "select * from qualification_type where id<4";
+        return jdbcTemplate.query(sql, (rs, rownum) -> {
+            return new UserQualificationType(rs.getInt("id"), rs.getString("name"));
+        });
     }
 
     @Override
     public List<UserBankAccountType> getBankAccountType() {
         String sql = "select * from bank_account_type";
-       return jdbcTemplate.query(sql, (rs,rownum) -> {
-        return new UserBankAccountType(rs.getInt("id"),rs.getString("account_type"));
-    });
+        return jdbcTemplate.query(sql, (rs, rownum) -> {
+            return new UserBankAccountType(rs.getInt("id"), rs.getString("account_type"));
+        });
+    }
 
     public Object updatePersonalDetails(String personalDetailsData) {
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
-                        .withFunctionName("update_user_details");
-                        
-        return jdbcCall.executeFunction( Object.class,personalDetailsData);
+                .withFunctionName("update_user_details");
+
+        return jdbcCall.executeFunction(Object.class, personalDetailsData);
 
     }
 
