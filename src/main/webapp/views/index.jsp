@@ -2246,9 +2246,6 @@
       }
     });
 
-
-
-
     document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
       document.querySelector('.personal-details-edit-box').classList.remove('d-none');
     });
