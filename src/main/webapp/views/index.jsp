@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +18,6 @@
 </head>
 
 <body>
-
-
-
   <!-- id(body) of this div is used to hide as well as unhide the resume -->
   <div id="body">
 
@@ -44,6 +42,8 @@
         <!-- class(cover) of this div is used to give a one-page template for building simple home pages in bootstrap -->
         <!-- class(shadow-lg) of this div provides shadow to an element with box-shadow utilities in bootstrap -->
         <div class="cover shadow-lg">
+          
+          <h2 id="year-of-passing">${list}</h2>
 
           <!--------------------------------------Personal Details Section ---------------------------------------->
 
@@ -833,9 +833,7 @@
                   </div>
                   <div class="col-md-10"><select class="form-control qualification-title"
                       id="bachelors-degree-title-data">
-                      <option value="1">Bachelor's Degree</option>
-                      <option value="2">Master's Degree</option>
-                      <option class="phd-option" value="3">PHD</option>
+                     
                     </select></div>
                 </div>
                 <div class="row p-3">
@@ -1628,11 +1626,6 @@
             <label for="bank-account-type" class="py-md-2">Account Type<span class="required">*</span></label>
             <span id="bank-account-type-message" style="color: red;" class="error"></span>
             <select class="form-control" id="bank-account-type">
-              <option value="1">Current Account</option>
-              <option value="2">Saving Account</option>
-              <option value="3">Salary Account</option>
-              <option value="4">Non-Residential Ordinary Account</option>
-              <option value="5">Recurring Deposit Account</option>
             </select>
           </div>
         </div>
@@ -1671,7 +1664,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-  </script>
+</script>
   <script>
     // --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
 
@@ -1758,7 +1751,7 @@
       var year = Number(dob.substr(0, 4));
       var today = new Date();
       var age = today.getFullYear() - year;
-      if (res.length > 2) {
+      if (res.length == 10) {
         if (age > 18) {
           condition = true;
         } else {
@@ -1894,7 +1887,6 @@
         condition = false;
       } else {
         for (let i = 0; i < res.length; i++) {
-          console.log("entered inside for loop")
           if (res[i] < '0' || res[i] > '9') {
             condition = false;
             document.getElementById('aadhar-number-message').innerHTML = "Special Character not allowed";
@@ -1998,78 +1990,6 @@
           condition = false;
         }
       } else {
-        condition = false;
-      }
-      return condition;
-    }
-
-    function publicationDetailRoleValidation(res) {
-      console.log(res)
-      if (res == "Edited" || res == "Authored") {
-        document.querySelector('.role').style = "border:1px solid green"
-        condition = true;
-      } else {
-        document.querySelector('.role').style = "border:1px solid red"
-        condition = false;
-      }
-      return condition;
-    }
-
-    function publicationDetailPublisherValidation(res) {
-      if (res.length != 0) {
-        condition = true;
-        document.querySelector('.publisher').style.borderColor = "green";
-      } else {
-        // document.getElementById("country-message").innerHTML = "*Invalid length";
-        document.querySelector('.publisher').style.borderColor = "red";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function publicationDetailNumberOfAuthorValidation(res) {
-      if (res.length != 0) {
-        document.querySelector('.number-of-authors').style.borderColor = "green";
-        condition = true;
-      } else {
-        // document.getElementById("country-message").innerHTML = "*Invalid length";
-        document.querySelector('.number-of-authors').style.borderColor = "red";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function publicationDetailYearOfPublicationValidation(res) {
-      if (res.length != 0) {
-        document.querySelector('.year-of-publication').style.borderColor = "green";
-        condition = true;
-      } else {
-        // document.getElementById("country-message").innerHTML = "*Invalid length";
-        document.querySelector('.year-of-publication').style.borderColor = "red";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function publicationDetailBookTitleValidation(res) {
-      if (res.length != 0) {
-        document.querySelector('.book-title').style.borderColor = "green";
-        condition = true;
-      } else {
-        // document.getElementById("country-message").innerHTML = "*Invalid length";
-        document.querySelector('.book-title').style.borderColor = "red";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function publicationDetailCertificateValidation(res) {
-      if (res.length != 0) {
-        document.querySelector('.publication-certification').style.borderColor = "green";
-        condition = true;
-      } else {
-        // document.getElementById("country-message").innerHTML = "*Invalid length";
-        document.querySelector('.publication-certification').style.borderColor = "red";
         condition = false;
       }
       return condition;
@@ -2365,6 +2285,8 @@
       // let temporaryAddress = personalDetailTemporaryAddressValidation(result.temporary_address);
       let country = personalDetailCountryValidation(result.nationality);
 
+      console.log(result.date_of_birth.length)
+
       if (!firstName || !lastName || !gender || !contactNumber || !email || !pancard || !aadhar || !address || !
         country) {
         return;
@@ -2492,7 +2414,6 @@
         console.log(success)
         document.getElementById('body').classList.remove('d-none');
         document.querySelector('.personal-details-modal').classList.add('d-none')
-
         document.getElementById('date-of-birth-value').innerText = result.date_of_birth
         document.getElementById('pancard-value').innerText = result.pan_number
         document.getElementById('aadhar-card-value').innerText = result.aadhar_number
@@ -2600,8 +2521,38 @@
 
     //*************************************Qualification-modal JS****************************************
 
-
+    let qualificationType =  ""
+    console.log(qualificationType)
     document.querySelector(".qualification-edit-box").addEventListener('click', function () {
+      
+      $.ajax({
+        url: '/get-qualification-type',
+        type: 'get',
+        success: function (response) {
+           console.log(response)
+          for (let i = 0; i < response.length; i++) {
+            qualificationType +=  `<option value=\${response[i].id}\ >\${response[i].name}\</option>`
+          }
+          document.getElementById('bachelors-degree-title-data').insertAdjacentHTML("beforeend",qualificationType)
+        },
+        error: function (error) {
+          console.log("Error::::::::::::", error);
+        }
+      })
+      
+      // let options = {
+      //   method: 'GET',
+      //   headers: {
+      //     'Content-Type': 'application/json;charset=utf-8'
+      //   },
+      // }
+      // let fetchRes = fetch('/get-qualification-type', options);
+      // fetchRes.then(success => {
+      //   if (success.status == 200) {
+      //   } else {
+      //     alert('Check Qualification details');
+      //   }
+      // })
       document.getElementById('body').classList.add('d-none');
       document.querySelector('.qualification-modal').classList.remove('d-none');
     });
@@ -2787,11 +2738,8 @@
                   </div>
                   <div class="col-md-10"><select class="form-control qualification-title"
                       id="bachelors-degree-title-data">
-                      <option value="1">Bachelor's Degree</option>
-                      <option value="2">Master's Degree</option>
-                      <option value="3">PHD</option>
-                      <option value="4">Professional Certification</option>
-                    </select></div>
+                      
+                      </select></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
@@ -2842,10 +2790,16 @@
               </div>
             </div>
           </div> 
+
+      </div>
           <hr style="height: 5px; margin: 30px 0">
-`
+          </div>`
+
 
       document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
+      let appendingOptions =  document.querySelectorAll('.qualification-title')
+      appendingOptions[appendingOptions.length - 1].insertAdjacentHTML("beforeend",qualificationType )
+            
     })
 
     $(document).on('click', '.qualification-delete-button', function () {
@@ -3160,21 +3114,72 @@
     let publicationBase64 = ''
 
     document.querySelector("#publication-submit-button").addEventListener('click', function (e) {
-
+      
       e.preventDefault()
-
 
       let div = ''
       let publicationTableArray = []
       let publicationRow = document.querySelectorAll('.publication-row')
       for (i = 0; i < publicationRow.length; i++) {
+         //to remove the red border
+        publicationRow[i].querySelector('.publisher').classList.remove('input-border');
+        publicationRow[i].querySelector('.number-of-authors').classList.remove('input-border');
+        publicationRow[i].querySelector('.year-of-publication').classList.remove('input-border');
+        publicationRow[i].querySelector('.book-title').classList.remove('input-border');
+        publicationRow[i].querySelector('.publication-certification').classList.remove('input-border');
 
         let publicationRole = publicationRow[i].querySelector('.role').value;
         let publicationPublisher = publicationRow[i].querySelector('.publisher').value;
         let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
         let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
         let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
+        let publicationCertificate = publicationRow[i].querySelector('.publication-certification').value;
+
+        let checkPublicationPublisher = tabledatacheck(publicationPublisher);
+        let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
+        let checkPublicationYearOfPublication = tabledatacheck(publicationYearOfPublication);
+        let checkPublicationBookTitle = tabledatacheck(publicationBookTitle);
+        let checkPublicationCertificate = tabledatacheck(publicationCertificate);
+       
+
+        // to add the red border according to validations
+         if(checkPublicationPublisher == false) {
+          publicationRow[i].querySelector('.publisher').classList.add('input-border');
+          return;
+        } else if(checkPublicationNumberOfAuthors == false) {
+          publicationRow[i].querySelector('.number-of-authors').classList.add('input-border');
+          return;
+        } else if(checkPublicationYearOfPublication == false) {
+          publicationRow[i].querySelector('.year-of-publication').classList.add('input-border');
+          return;
+        } else if(checkPublicationBookTitle == false) {
+          publicationRow[i].querySelector('.book-title').classList.add('input-border');
+          return;
+        } else if(checkPublicationCertificate == false) {
+          publicationRow[i].querySelector('.certification').classList.add('input-border');
+          return;
+        } 
+
+
+        insertAchievementObject.role = publicationRole
+        insertAchievementObject.no_of_authors = publicationNumberOfAuthors
+        insertAchievementObject.book_title = publicationBookTitle
+        insertAchievementObject.publisher = publicationPublisher
+        insertAchievementObject.year_of_publication = publicationYearOfPublication
+        insertAchievementObject.publication_url_path = publicationCertificate
+        // object = {
+        //   role: publicationRole,
+        //   no_of_authors: publicationNumberOfAuthors,
+        //   book_title: publicationBookTitle,
+        //   publisher: publicationPublisher,
+        //   year_of_publication: publicationYearOfPublication,
+        //   publication_url_path: publicationCertificate
+        // }
+
         // let publicationCertificate = publicationRow[i].querySelector('.certification').value;
+
+
+        
 
         let publicationCertificate = document.querySelectorAll('.publication-certification')
 
@@ -3195,6 +3200,7 @@
           year_of_publication: publicationYearOfPublication,
           publication_url_path: publicationBase64
         }
+
 
         div += `   
   <div id="publication-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
@@ -3261,22 +3267,8 @@
     document.getElementById('publication-add-button').addEventListener('click', function () {
 
 
-      const role = publicationDetailRoleValidation(document.querySelector('.role').value)
-      const publisher = publicationDetailPublisherValidation(document.querySelector('.publisher').value)
-      const numberOfAuthor = publicationDetailNumberOfAuthorValidation(document.querySelector('.number-of-authors')
-        .value)
-      const yearOfPublication = publicationDetailYearOfPublicationValidation(document.querySelector(
-        '.year-of-publication').value)
-      const bookTitle = publicationDetailBookTitleValidation(document.querySelector('.book-title').value)
-      const certificate = publicationDetailCertificateValidation(document.querySelector(
-        '.publication-certification').value)
-      console.log(role)
-
-      if (!role || !publisher || !numberOfAuthor || !yearOfPublication || !bookTitle || !certificate) {
-        return;
-      }
-
-      let table = `<div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1">
+           let table= `<div id="publication-appending-div" class="bg-white">
+          <div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1"> 
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -3332,7 +3324,8 @@
               <i class="fa-solid fa-pen fa-2x"></i>
             </div>
           </div>
-          <hr style="height: 5px;">`
+          <hr style="height: 5px;">
+          </div>`
       document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
     })
 
@@ -3814,8 +3807,25 @@
     })
 
     //*************************************Bank-details-modal JS****************************************
+    let bankAccountType =  ""
 
     document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
+
+      $.ajax({
+        url: '/get-bank-account-type',
+        type: 'get',
+        success: function (response) {
+           console.log(response)
+          for (let i = 0; i < response.length; i++) {
+            console.log(bankAccountType)
+            bankAccountType +=  `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`
+          }
+          document.getElementById('bank-account-type').insertAdjacentHTML("beforeend",bankAccountType)
+        },
+        error: function (error) {
+          console.log("Error::::::::::::", error);
+        }
+      })
 
       let editBankDetailsForm = new FormData()
 

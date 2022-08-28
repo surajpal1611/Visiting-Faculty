@@ -1,12 +1,17 @@
 package com.visitingfaculty.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.visitingfaculty.dao.UserDaoInterface;
+import com.visitingfaculty.model.user_qualification.UserQualificationType;
 
 @RestController
 public class UserQualificationController {
@@ -22,13 +27,25 @@ public class UserQualificationController {
     //     return new ResponseEntity<String>("Inserted qualification Successfully", HttpStatus.OK);
     // }
 
+
+    
+    @GetMapping("/get-qualification-type")
+    public List<UserQualificationType> getQualificationTypeDB(ModelMap modelMap) {
+
+        List<UserQualificationType> list = userDaoInterface.getQualificationType();
+        modelMap.addAttribute("list",list);
+        System.out.println(list);
+        return list;
+    }
+
     @PostMapping(value="/insert-qualification-details")
-    public ResponseEntity<?> insertQualificationDetails(@RequestBody String qualificationTableData)
+    public ResponseEntity<?> insertQualificationDetails(@RequestBody String qualificationTableData,ModelMap modelMap)
     {
         System.out.println(qualificationTableData);
         //Boolean check = jsonchk.UserJsonCheck(personalDetailsData);
-       // if(check == true)
-      //  {
+        // if(check == true)
+        //  {
+       
             Object insertQualificationDetails = userDaoInterface.insertQualificationDetails(qualificationTableData);
             // if (insertPersonalDetails == null) {
             //     return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
