@@ -1,17 +1,16 @@
 package com.visitingfaculty.controller;
 
 import org.springframework.web.bind.annotation.RestController;
-
 import com.visitingfaculty.dao.UserDaoInterface;
-import com.visitingfaculty.dao.userDao;
+import com.visitingfaculty.model.user_bank_details.UserBankAccountType;
 import com.visitingfaculty.validations.jsoncheck;
-
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
 
 @RestController
 public class BankDetailsRestController {
@@ -20,6 +19,14 @@ public class BankDetailsRestController {
 
     @Autowired
     UserDaoInterface userDaoInterface;
+
+    @GetMapping("/get-bank-account-type")
+    public List<UserBankAccountType> getBankAccountTypeDB() {
+
+        List<UserBankAccountType> list = userDaoInterface.getBankAccountType();
+        System.out.println(list);
+        return list;
+    }
 
     @PostMapping(value="/insert-bank-details")
     public ResponseEntity<?> postMethodName(@RequestBody  String bank_details) {
