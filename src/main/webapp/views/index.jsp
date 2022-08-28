@@ -41,7 +41,7 @@
         <!-- class(cover) of this div is used to give a one-page template for building simple home pages in bootstrap -->
         <!-- class(shadow-lg) of this div provides shadow to an element with box-shadow utilities in bootstrap -->
         <div class="cover shadow-lg">
-          
+
           <!--------------------------------------Personal Details Section ---------------------------------------->
 
           <div class="edit-personal-details">
@@ -67,7 +67,8 @@
 
                   <div id="personal-details-div" class="pt-lg-4 pt-md-5 px-3 px-sm-4 px-lg-4 mt-1">
                     <div class="row">
-                      <div id="personaldetails-left-side" class="col-12 col-md-6 col-lg-6 col-sm-12 ps-4 pt-lg-5 pt-md-2 text-center">
+                      <div id="personaldetails-left-side"
+                        class="col-12 col-md-6 col-lg-6 col-sm-12 ps-4 pt-lg-5 pt-md-2 text-center">
                         <div class="row py-1">
                           <div class="col-md-5 col-sm-3">
                             <h6>Gender :</h6>
@@ -118,7 +119,8 @@
                         </div>
                       </div>
 
-                      <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
+                      <div id="personaldetails-right-side"
+                        class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
                         <div class="row py-2">
                           <div class="col-md-5 col-sm-3">
                             <h6>Contact No.</h6>
@@ -830,7 +832,7 @@
                   </div>
                   <div class="col-md-10"><select class="form-control qualification-title"
                       id="bachelors-degree-title-data">
-                     
+
                     </select></div>
                 </div>
                 <div class="row p-3">
@@ -1154,25 +1156,25 @@
             </ul>
             <div class="tab-content" id="pills-tabContent">
               <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                  <div id="soft-skill-box" class="col-12">
-                      <div class="col-12" style="list-style-type: none;">
-                        <input type="text" id="soft-skill-search" placeholder="Search for soft skills.."
-                          class="form-control" title="Type in a name">
-                        <li class="mx-5 d-none" id="add-custom-soft-skill" style="cursor: pointer;">
-                          <div class="row">
-                            <div class="col-md-2 col-sm-2 col-2 "><i
-                                class="fa-solid text-primary fa-circle-plus fa-2x"></i></div>
-                            <div class="col-md-10 col-sm-10 col-10 "><a class="ms-3 text-dark"
-                                id="custom-soft-skill-value" href="#"></a></div>
-                          </div>
-                        </li>
+                <div id="soft-skill-box" class="col-12">
+                  <div class="col-12" style="list-style-type: none;">
+                    <input type="text" id="soft-skill-search" placeholder="Search for soft skills.."
+                      class="form-control" title="Type in a name">
+                    <li class="mx-5 d-none" id="add-custom-soft-skill" style="cursor: pointer;">
+                      <div class="row">
+                        <div class="col-md-2 col-sm-2 col-2 "><i class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+                        </div>
+                        <div class="col-md-10 col-sm-10 col-10 "><a class="ms-3 text-dark" id="custom-soft-skill-value"
+                            href="#"></a></div>
                       </div>
-
-                      <ul id="soft-skill-UL">
-
-                      </ul>
-
+                    </li>
                   </div>
+
+                  <ul id="soft-skill-UL">
+
+                  </ul>
+
+                </div>
               </div>
               <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <div>
@@ -1661,7 +1663,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-</script>
+  </script>
   <script>
     // --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
 
@@ -2260,7 +2262,7 @@
 
       e.preventDefault()
 
-      
+
       let myForm = document.getElementById('myForm')
       let formData = new FormData(myForm)
       let arrayresult = [];
@@ -2313,7 +2315,7 @@
       }
 
       let photoArray = []
-      
+
       let profilePhoto = document.getElementById("photo").files[0]
       if (profilePhoto) {
         let filereader = new FileReader();
@@ -2329,8 +2331,8 @@
         let filereader = new FileReader();
         filereader.readAsDataURL(aadharPhoto);
         filereader.onload = function (evt) {
-         let aadharPhotobase64 = evt.target.result;
-         photoArray[1] = aadharPhotobase64
+          let aadharPhotobase64 = evt.target.result;
+          photoArray[1] = aadharPhotobase64
         }
       }
 
@@ -2339,8 +2341,8 @@
         let filereader = new FileReader();
         filereader.readAsDataURL(panPhoto);
         filereader.onload = function (evt) {
-         let panphotobase64 = evt.target.result;
-         photoArray[2] = panphotobase64
+          let panphotobase64 = evt.target.result;
+          photoArray[2] = panphotobase64
         }
       }
 
@@ -2348,85 +2350,85 @@
       let user_info = {}
       let user_contact = {}
 
-      setTimeout(function() {
-      
-      user_contact.user_lid = 1
-      user_contact.contact_number = result.contact_number
-      user_contact.temp_contact_number = result.temp_contact_number
-      personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
-      user_info.user_lid = 1
-      user_info.f_name = result.f_name
-      user_info.l_name = result.l_name
-      user_info.email = result.email
-      user_info.temp_email = result.temp_email
-      user_info.gender_lid = Number.parseInt(result.gender)
-      user_info.pancard_no = pancard
-      user_info.pancard_url_path = "C://Fakepath://pancardphoto"//photoArray[2]
-      user_info.aadhar_card_url_path = "C://Fakepath://aadharphoto"//photoArray[1]
-      user_info.profile_url_path = "C://Fakepath://profilephoto"//photoArray[0]
-      user_info.aadhar_card_no = aadhar
-      user_info.date_of_birth = result.date_of_birth
-      user_info.nationality = result.nationality
-      personalDetailsData.insert_user_personal_details.user_info[0] = user_info
-    
-      let addressObject = {}
-      addressObject.user_lid = 1
-      addressObject.address = result.permanent_address + "," + result.permanent_address_city + "," + result
-        .permanent_address_pincode
-      addressObject.address_type_lid = 1
-      let addressObject2 = {}
-      addressObject2.user_lid = 1
-      addressObject2.address = result.temporary_address
-      addressObject2.address_type_lid = 2
+      setTimeout(function () {
 
-      arrayresult[0] = addressObject
-      arrayresult[1] = addressObject2
+        user_contact.user_lid = 1
+        user_contact.contact_number = result.contact_number
+        user_contact.temp_contact_number = result.temp_contact_number
+        personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
+        user_info.user_lid = 1
+        user_info.f_name = result.f_name
+        user_info.l_name = result.l_name
+        user_info.email = result.email
+        user_info.temp_email = result.temp_email
+        user_info.gender_lid = Number.parseInt(result.gender)
+        user_info.pancard_no = pancard
+        user_info.pancard_url_path = "C://Fakepath://pancardphoto" //photoArray[2]
+        user_info.aadhar_card_url_path = "C://Fakepath://aadharphoto" //photoArray[1]
+        user_info.profile_url_path = "C://Fakepath://profilephoto" //photoArray[0]
+        user_info.aadhar_card_no = aadhar
+        user_info.date_of_birth = result.date_of_birth
+        user_info.nationality = result.nationality
+        personalDetailsData.insert_user_personal_details.user_info[0] = user_info
+
+        let addressObject = {}
+        addressObject.user_lid = 1
+        addressObject.address = result.permanent_address + "," + result.permanent_address_city + "," + result
+          .permanent_address_pincode
+        addressObject.address_type_lid = 1
+        let addressObject2 = {}
+        addressObject2.user_lid = 1
+        addressObject2.address = result.temporary_address
+        addressObject2.address_type_lid = 2
+
+        arrayresult[0] = addressObject
+        arrayresult[1] = addressObject2
 
 
-      console.log(JSON.stringify(personalDetailsData))
-      let genderValue = ""
-      if (Number.parseInt(result.gender) == 1) {
-        genderValue = "Male"
-      } else if (result.gender == 2) {
-        genderValue = "Female"
-      } else {
-        genderValue = "Other"
-      }
-      console.log(genderValue)
-      let options = {
+        console.log(JSON.stringify(personalDetailsData))
+        let genderValue = ""
+        if (Number.parseInt(result.gender) == 1) {
+          genderValue = "Male"
+        } else if (result.gender == 2) {
+          genderValue = "Female"
+        } else {
+          genderValue = "Other"
+        }
+        console.log(genderValue)
+        let options = {
 
-        method: 'POST',
-        headers: {
+          method: 'POST',
+          headers: {
 
-          'Content-Type': 'application/json;charset=utf-8'
+            'Content-Type': 'application/json;charset=utf-8'
 
-        },
-        body: JSON.stringify(personalDetailsData)
+          },
+          body: JSON.stringify(personalDetailsData)
 
-      }
-      let fetchRes = fetch('/insert-personal-details', options);
+        }
+        let fetchRes = fetch('/insert-personal-details', options);
 
-      fetchRes.then(success => {
+        fetchRes.then(success => {
 
-        // if (success.status == 200) {
-        console.log(success)
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.personal-details-modal').classList.add('d-none')
-        document.getElementById('date-of-birth-value').innerText = result.date_of_birth
-        document.getElementById('pancard-value').innerText = result.pan_number
-        document.getElementById('aadhar-card-value').innerText = result.aadhar_number
-        document.getElementById('contact-number-value').innerText = result.contact_number
-        document.getElementById('email-value').innerText = result.email
-        document.getElementById('address-value').innerText = result.permanent_address
-        document.getElementById('temporary-address').innerText = result.temporary_address
-        document.getElementById('country-value').innerText = result.nationality
-        document.getElementById('gender-value').innerText = genderValue
-        document.getElementById('first-name-value').innerText = result.f_name
-        document.getElementById('last-name-value').innerText = result.l_name
-        if (result.temp_email.length > 1) {
-          
-          document.getElementById('personaldetails-right-side').insertAdjacentHTML('beforeend',
-                      ` <div class="row py-2">
+          // if (success.status == 200) {
+          console.log(success)
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.personal-details-modal').classList.add('d-none')
+          document.getElementById('date-of-birth-value').innerText = result.date_of_birth
+          document.getElementById('pancard-value').innerText = result.pan_number
+          document.getElementById('aadhar-card-value').innerText = result.aadhar_number
+          document.getElementById('contact-number-value').innerText = result.contact_number
+          document.getElementById('email-value').innerText = result.email
+          document.getElementById('address-value').innerText = result.permanent_address
+          document.getElementById('temporary-address').innerText = result.temporary_address
+          document.getElementById('country-value').innerText = result.nationality
+          document.getElementById('gender-value').innerText = genderValue
+          document.getElementById('first-name-value').innerText = result.f_name
+          document.getElementById('last-name-value').innerText = result.l_name
+          if (result.temp_email.length > 1) {
+
+            document.getElementById('personaldetails-right-side').insertAdjacentHTML('beforeend',
+              ` <div class="row py-2">
                           <div class="col-md-5 col-sm-3">
                             <h6>Temporary Email :</h6>
                           </div>
@@ -2434,11 +2436,11 @@
                             <p id="temp-email-value">\${result.temp_email}\</p>
                           </div>
                         </div>`)
-        }
-        if (result.temp_contact_number.length > 1) {
-          
-          document.getElementById('personaldetails-left-side').insertAdjacentHTML('beforeend',
-                      ` <div class="row py-2">
+          }
+          if (result.temp_contact_number.length > 1) {
+
+            document.getElementById('personaldetails-left-side').insertAdjacentHTML('beforeend',
+              ` <div class="row py-2">
                           <div class="col-md-5 col-sm-3">
                             <h6>Temporary Contact :</h6>
                           </div>
@@ -2446,13 +2448,13 @@
                             <p id="temp-contact-value">\${result.temp_contact_number}\</p>
                           </div>
                         </div>`)
-        }
-        console.log(genderValue)
-        // } else {
-        // console.log("Error in personal Details")
-        // }
-      })
-    },1000)
+          }
+          console.log(genderValue)
+          // } else {
+          // console.log("Error in personal Details")
+          // }
+        })
+      }, 1000)
     });
 
     document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
@@ -2518,27 +2520,32 @@
 
 
     //*************************************Qualification-modal JS****************************************
+
     let qualificationDataDB = 1
     let qualificationType =  ""
     console.log(qualificationType)
     document.querySelector(".qualification-edit-box").addEventListener('click', function () {
       if(qualificationDataDB == 1){
+
       $.ajax({
         url: '/get-qualification-type',
         type: 'get',
         success: function (response) {
-           console.log(response)
+          console.log(response)
           for (let i = 0; i < response.length; i++) {
-            qualificationType +=  `<option value=\${response[i].id}\ >\${response[i].name}\</option>`
+            qualificationType += `<option value=\${response[i].id}\ >\${response[i].name}\</option>`
           }
-          document.getElementById('bachelors-degree-title-data').insertAdjacentHTML("beforeend",qualificationType)
+          document.getElementById('bachelors-degree-title-data').insertAdjacentHTML("beforeend",
+            qualificationType)
         },
         error: function (error) {
           console.log("Error::::::::::::", error);
         }
       })
+
       ++qualificationDataDB;
     }
+
       // let options = {
       //   method: 'GET',
       //   headers: {
@@ -2626,6 +2633,7 @@
 
         object = {
           resume_lid: 1,
+          resume_qualification_lid: 28,
           qualification_type_lid: qualificationTitle,
           topic_of_study: qualificationSubject,
           university: qualificationUniversity,
@@ -2800,9 +2808,9 @@
 
 
       document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
-      let appendingOptions =  document.querySelectorAll('.qualification-title')
-      appendingOptions[appendingOptions.length - 1].insertAdjacentHTML("beforeend",qualificationType )
-            
+      let appendingOptions = document.querySelectorAll('.qualification-title')
+      appendingOptions[appendingOptions.length - 1].insertAdjacentHTML("beforeend", qualificationType)
+
     })
 
     document.addEventListener('mouseover', function () {
@@ -3141,14 +3149,14 @@
     let publicationBase64 = ''
 
     document.querySelector("#publication-submit-button").addEventListener('click', function (e) {
-      
+
       e.preventDefault()
 
       let div = ''
       let publicationTableArray = []
       let publicationRow = document.querySelectorAll('.publication-row')
       for (i = 0; i < publicationRow.length; i++) {
-         //to remove the red border
+        //to remove the red border
         publicationRow[i].querySelector('.publisher').classList.remove('input-border');
         publicationRow[i].querySelector('.number-of-authors').classList.remove('input-border');
         publicationRow[i].querySelector('.year-of-publication').classList.remove('input-border');
@@ -3167,25 +3175,25 @@
         let checkPublicationYearOfPublication = tabledatacheck(publicationYearOfPublication);
         let checkPublicationBookTitle = tabledatacheck(publicationBookTitle);
         let checkPublicationCertificate = tabledatacheck(publicationCertificate);
-       
+
 
         // to add the red border according to validations
-         if(checkPublicationPublisher == false) {
+        if (checkPublicationPublisher == false) {
           publicationRow[i].querySelector('.publisher').classList.add('input-border');
           return;
-        } else if(checkPublicationNumberOfAuthors == false) {
+        } else if (checkPublicationNumberOfAuthors == false) {
           publicationRow[i].querySelector('.number-of-authors').classList.add('input-border');
           return;
-        } else if(checkPublicationYearOfPublication == false) {
+        } else if (checkPublicationYearOfPublication == false) {
           publicationRow[i].querySelector('.year-of-publication').classList.add('input-border');
           return;
-        } else if(checkPublicationBookTitle == false) {
+        } else if (checkPublicationBookTitle == false) {
           publicationRow[i].querySelector('.book-title').classList.add('input-border');
           return;
-        } else if(checkPublicationCertificate == false) {
+        } else if (checkPublicationCertificate == false) {
           publicationRow[i].querySelector('.certification').classList.add('input-border');
           return;
-        } 
+        }
 
 
         insertAchievementObject.role = publicationRole
@@ -3206,7 +3214,7 @@
         // let publicationCertificate = publicationRow[i].querySelector('.certification').value;
 
 
-        
+
 
         // let publicationCertificate = document.querySelectorAll('.publication-certification')
 
@@ -3292,6 +3300,7 @@
     });
 
     document.getElementById('publication-add-button').addEventListener('click', function () {
+
 
            let table= ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
             <div class="container">
@@ -3707,6 +3716,7 @@
 
         object = {
           resume_lid: 1,
+          resume_qualification_lid: 26,
           qualification_type_lid: 4,
           topic_of_study: professionalCertificate,
           institute: professionalInstitution,
@@ -3844,6 +3854,7 @@
     })
 
     //*************************************Bank-details-modal JS****************************************
+
     let bankDataDB = 1;
     let bankAccountType =  ""
     document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
@@ -3924,14 +3935,14 @@
         "insert_bank_data": []
       }
       let bank_detail = {};
-      bank_detail.user_lid = 1,
+      bank_detail.user_lid = 2,
         bank_detail.bank_name = document.querySelector('#bank-name').value;
       bank_detail.branch_name = document.querySelector('#bank-branch').value;
       bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code').value;
       bank_detail.micr_code = document.querySelector('#bank-micr-code').value;
       bank_detail.account_number = document.querySelector('#bank-account-number').value;
       bank_detail.bank_account_type_lid = document.querySelector('#bank-account-type').value;
-      bank_detail.url_path = document.querySelector('#cancelled_cheque_Photo').value;
+      bank_detail.url_path = "C://fakepath://bankphoto";
       bankDetailsJson.insert_bank_data[0] = bank_detail
       console.log(JSON.stringify(bankDetailsJson))
 
@@ -4059,7 +4070,7 @@
       // let value =  element.parentElement.parentElement.lastElementChild.lastElementChild.innerText
 
       let skillJson = {
-        "resume_skill_selected": []
+        "skill_details": []
       }
 
       let softSkillAppendingDiv1 = document.getElementById('soft-skill-appending-div1')
@@ -4079,10 +4090,12 @@
                                 \${value2}\
                               </div>`
 
+                            let  index = 21
         let obj = {}
-        obj.resume_lid = 1
+        obj.resume_lid = 2
         obj.skill_lid = Number.parseInt(value)
-        skillJson.resume_skill_selected[skillIndex] = obj
+        obj.skill_selected_lid = index++
+        skillJson.skill_details[skillIndex] = obj
         skillIndex++;
       }
 
@@ -4095,18 +4108,37 @@
         hardSkillAppendingDiv1.innerHTML += `<div class="skill-pill-div text-center"><input type="hidden" value=\${value}\ >
                                 \${value2}\
                               </div>`
-
+                              let  index = 25
         let obj = {}
-        obj.resume_lid = 1
+        obj.resume_lid = 2
+        obj.skill_selected_lid = index++
         obj.skill_lid = Number.parseInt(value)
-        skillJson.resume_skill_selected[skillIndex] = obj
+        skillJson.skill_details[skillIndex] = obj
         skillIndex++;
       }
 
-      console.log(JSON.stringify(skillJson))
+      function postdata() {
+        url = "/insert-all-skills";
+        params = {
+          method: 'post',
+          headers: {
+            'content-Type': 'application/json'
+          },
+          body: JSON.stringify(skillJson),
+        }
+        fetch(url, params).then((data) => {
 
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.skills-modal').classList.add('d-none');
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.skills-modal').classList.add('d-none');
+
+          // }
+        })
+      }
+      postdata()
+
+
+
+
 
     })
 

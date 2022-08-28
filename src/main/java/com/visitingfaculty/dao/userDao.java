@@ -61,6 +61,32 @@ public class userDao implements UserDaoInterface {
     }
 
     @Override
+    public Object updateQualificationDetails(String qualificationTableData) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("update_qualification_details");
+
+        return jdbcCall.executeFunction(Object.class, qualificationTableData);
+    }
+
+
+    @Override
+    public Object insertAllSkills(String skills) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("insert_skill_details");
+
+        return jdbcCall.executeFunction(Object.class, skills);
+    }
+
+    @Override
+    public Object updateAllSkills(String skills) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("update_skill_details");
+
+        return jdbcCall.executeFunction(Object.class, skills);
+    }
+
+
+    @Override
     public Object insertAwardData(String data) {
 
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
@@ -73,6 +99,13 @@ public class userDao implements UserDaoInterface {
     public Object insertBankDetails(String bankDetailsData) {
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
                 .withFunctionName("insert_bank_details");
+
+        return jdbcCall.executeFunction(Object.class, bankDetailsData);
+    }
+    @Override
+    public Object updateBankDetails(String bankDetailsData) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("update_bank_details");
 
         return jdbcCall.executeFunction(Object.class, bankDetailsData);
     }

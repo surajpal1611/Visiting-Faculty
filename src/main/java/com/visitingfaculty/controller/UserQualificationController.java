@@ -46,7 +46,9 @@ public class UserQualificationController {
         // if(check == true)
         //  {
        
-            Object insertQualificationDetails = userDaoInterface.insertQualificationDetails(qualificationTableData);
+            // Object insertQualificationDetails = userDaoInterface.insertQualificationDetails(qualificationTableData);
+            Object updateQualificationDetails = userDaoInterface.updateQualificationDetails(qualificationTableData);
+            System.out.println(updateQualificationDetails);
             // if (insertPersonalDetails == null) {
             //     return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             // }

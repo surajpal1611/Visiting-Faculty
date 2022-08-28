@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 public class BankDetailsRestController {
 
-    @Autowired jsoncheck jsoncheck;
+    @Autowired
+    jsoncheck jsoncheck;
 
     @Autowired
     UserDaoInterface userDaoInterface;
@@ -28,17 +29,20 @@ public class BankDetailsRestController {
         return list;
     }
 
-    @PostMapping(value="/insert-bank-details")
-    public ResponseEntity<?> postMethodName(@RequestBody  String bank_details) {
-        
-        System.out.println("Json Bank From Front End :"+bank_details);
-        Boolean check = jsoncheck.bankJsonCheck(bank_details);
-        if(check == true)
-        {
-            System.out.println("Success");
-            return ResponseEntity.status(HttpStatus.OK).build();
-        }
-        System.out.println("Error");
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-    }   
+    @PostMapping(value = "/insert-bank-details")
+    public ResponseEntity<?> postMethodName(@RequestBody String bank_details) {
+
+        System.out.println("Json Bank From Front End :" + bank_details);
+        // Boolean check = jsoncheck.bankJsonCheck(bank_details);
+        // if(check == true)
+        // {
+        // System.out.println("Success");
+        // Object bankInsert = userDaoInterface.insertBankDetails(bank_details);
+        Object bankUpdate = userDaoInterface.updateBankDetails(bank_details);
+        System.out.println(bankUpdate);
+        return ResponseEntity.status(HttpStatus.OK).build();
+        // }
+        // System.out.println("Error");
+        // return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
 }
