@@ -78,6 +78,7 @@ public class userDao implements UserDaoInterface {
     }
 
     @Override
+
     public List<UserQualificationType> getQualificationType() {
        String sql = "select * from qualification_type where id<4";
        return jdbcTemplate.query(sql, (rs,rownum) -> {
@@ -91,6 +92,13 @@ public class userDao implements UserDaoInterface {
        return jdbcTemplate.query(sql, (rs,rownum) -> {
         return new UserBankAccountType(rs.getInt("id"),rs.getString("account_type"));
     });
+
+    public Object updatePersonalDetails(String personalDetailsData) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                        .withFunctionName("update_user_details");
+                        
+        return jdbcCall.executeFunction( Object.class,personalDetailsData);
+
     }
 
 }

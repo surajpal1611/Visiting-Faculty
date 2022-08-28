@@ -29,4 +29,6 @@ public interface UserDaoInterface {
 
     Object insertBankDetails(String bankDetailsData);
 
+    Object updatePersonalDetails(String personalDetailsData);
+
 }
