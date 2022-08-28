@@ -70,7 +70,7 @@
 
                   <div id="personal-details-div" class="pt-lg-4 pt-md-5 px-3 px-sm-4 px-lg-4 mt-1">
                     <div class="row">
-                      <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12 ps-4 pt-lg-5 pt-md-2 text-center">
+                      <div id="personaldetails-left-side" class="col-12 col-md-6 col-lg-6 col-sm-12 ps-4 pt-lg-5 pt-md-2 text-center">
                         <div class="row py-1">
                           <div class="col-md-5 col-sm-3">
                             <h6>Gender :</h6>
@@ -121,7 +121,7 @@
                         </div>
                       </div>
 
-                      <div id="right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
+                      <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
                         <div class="row py-2">
                           <div class="col-md-5 col-sm-3">
                             <h6>Contact No.</h6>
@@ -703,20 +703,23 @@
 
         <div class="container">
           <div id="left-third-row" class="row">
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-3 col-sm-12">
               <label for="contact-number">Contact No. <span class="required">*</span></label>
               <span id="contact-number-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" name="contact_number" id="contact-number" />
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-3 col-sm-12">
+              <label for="temp_contact-number">Temp Contact No.</label>
+              <input type="text" class="form-control" name="temp_contact_number" id="temp_contact-number" />
+            </div>
+            <div class="col-md-3 col-sm-12">
               <label for="email">Email Id <span class="required">*</span></label>
               <span id="email-message" style="color: red;" class="error"></span>
               <input type="text" name="email" class="form-control" id="email">
             </div>
-            <div class="col-md-4 col-sm-12">
-              <label for="country">Country <span class="required">*</span></label>
-              <span id="country-message" style="color: red;" class="error"></span>
-              <input type="text" name="nationality" class="form-control" id="country">
+            <div class="col-md-3 col-sm-12">
+              <label for="temp_email">Temp Email</label>
+              <input type="text" name="temp_email" class="form-control" id="temp_email">
             </div>
           </div>
         </div>
@@ -743,10 +746,15 @@
 
         <div class="container">
           <div id="left-fourth-row" class="row">
-            <div class="col-md-12 col-sm-12">
+            <div class="col-md-8 col-sm-12">
               <label for="temporary-address">Temporary Address</label>
               <span id="temporary-address-message" style="color: red;" class="error"></span>
               <input type="text" name="temporary_address" class="form-control" id="temporary-address">
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <label for="country">Country <span class="required">*</span></label>
+              <span id="country-message" style="color: red;" class="error"></span>
+              <input type="text" name="nationality" class="form-control" id="country">
             </div>
           </div>
         </div>
@@ -1151,9 +1159,7 @@
             </ul>
             <div class="tab-content" id="pills-tabContent">
               <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <div>
                   <div id="soft-skill-box" class="col-12">
-                    <div>
                       <div class="col-12" style="list-style-type: none;">
                         <input type="text" id="soft-skill-search" placeholder="Search for soft skills.."
                           class="form-control" title="Type in a name">
@@ -1171,9 +1177,7 @@
 
                       </ul>
 
-                    </div>
                   </div>
-                </div>
               </div>
               <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <div>
@@ -2425,28 +2429,26 @@
       let user_contact = {}
 
       setTimeout(function() {
-
       
       user_contact.user_lid = 1
       user_contact.contact_number = result.contact_number
-      user_contact.temp_contact_number = "8899337745"
+      user_contact.temp_contact_number = result.temp_contact_number
       personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
       user_info.user_lid = 1
       user_info.f_name = result.f_name
       user_info.l_name = result.l_name
       user_info.email = result.email
-      user_info.temp_email = "sam@gmail.com"
+      user_info.temp_email = result.temp_email
       user_info.gender_lid = Number.parseInt(result.gender)
       user_info.pancard_no = pancard
-      user_info.pancard_url_path = photoArray[0]
-      user_info.aadhar_card_url_path = "C://fakePath"
-      user_info.profile_url_path = "C://fakePath"
+      user_info.pancard_url_path = "C://Fakepath://pancardphoto"//photoArray[2]
+      user_info.aadhar_card_url_path = "C://Fakepath://aadharphoto"//photoArray[1]
+      user_info.profile_url_path = "C://Fakepath://profilephoto"//photoArray[0]
       user_info.aadhar_card_no = aadhar
       user_info.date_of_birth = result.date_of_birth
       user_info.nationality = result.nationality
       personalDetailsData.insert_user_personal_details.user_info[0] = user_info
     
-      console.log(JSON.stringify(user_info))
       let addressObject = {}
       addressObject.user_lid = 1
       addressObject.address = result.permanent_address + "," + result.permanent_address_city + "," + result
@@ -2502,12 +2504,36 @@
         document.getElementById('gender-value').innerText = genderValue
         document.getElementById('first-name-value').innerText = result.f_name
         document.getElementById('last-name-value').innerText = result.l_name
+        if (result.temp_email.length > 1) {
+          
+          document.getElementById('personaldetails-right-side').insertAdjacentHTML('beforeend',
+                      ` <div class="row py-2">
+                          <div class="col-md-5 col-sm-3">
+                            <h6>Temporary Email :</h6>
+                          </div>
+                          <div class="col-md-7 col-sm-9">
+                            <p id="temp-email-value">\${result.temp_email}\</p>
+                          </div>
+                        </div>`)
+        }
+        if (result.temp_contact_number.length > 1) {
+          
+          document.getElementById('personaldetails-left-side').insertAdjacentHTML('beforeend',
+                      ` <div class="row py-2">
+                          <div class="col-md-5 col-sm-3">
+                            <h6>Temporary Contact :</h6>
+                          </div>
+                          <div class="col-md-7 col-sm-9">
+                            <p id="temp-contact-value">\${result.temp_contact_number}\</p>
+                          </div>
+                        </div>`)
+        }
         console.log(genderValue)
         // } else {
         // console.log("Error in personal Details")
         // }
       })
-    },2000)
+    },1000)
     });
 
     document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
@@ -4655,69 +4681,69 @@
       console.log("value is endDateelement" + endDateElement.getAttribute('max'));
     })
     //suraj pal 22/08/2022
-    document.addEventListener("DOMContentLoaded", function (event) {
-      let dtToday = new Date();
-      let month = dtToday.getMonth() + 1;
-      let day = dtToday.getDate();
-      let startDay = dtToday.getDate() - 1;
-      let year = dtToday.getFullYear();
-      if (month < 10) {
-        month = '0' + month.toString();
-      }
-      if (day < 10 || startDay < 10) {
-        startDay = '0' + startDay.toString();
-        day = '0' + day.toString();
-      }
-      let endMaxDate = year + '-' + month + '-' + day;
-      let startMaxDate = year + '-' + month + '-' + startDay;
-      let startDateElement = document.getElementById('startMaxDate');
-      let endDateElement = document.getElementById('endMaxDate');
-      startDateElement.setAttribute('max', startMaxDate);
-      endDateElement.setAttribute('max', endMaxDate);
-      //fetchDesignationValue();
-    });
-    $.ajax({
-      url: '/fetchDesignationValue',
-      type: 'POST',
+    // document.addEventListener("DOMContentLoaded", function (event) {
+    //   let dtToday = new Date();
+    //   let month = dtToday.getMonth() + 1;
+    //   let day = dtToday.getDate();
+    //   let startDay = dtToday.getDate() - 1;
+    //   let year = dtToday.getFullYear();
+    //   if (month < 10) {
+    //     month = '0' + month.toString();
+    //   }
+    //   if (day < 10 || startDay < 10) {
+    //     startDay = '0' + startDay.toString();
+    //     day = '0' + day.toString();
+    //   }
+    //   let endMaxDate = year + '-' + month + '-' + day;
+    //   let startMaxDate = year + '-' + month + '-' + startDay;
+    //   let startDateElement = document.getElementById('startMaxDate');
+    //   let endDateElement = document.getElementById('endMaxDate');
+    //   startDateElement.setAttribute('max', startMaxDate);
+    //   endDateElement.setAttribute('max', endMaxDate);
+    //   //fetchDesignationValue();
+    // });
+    // $.ajax({
+    //   url: '/fetchDesignationValue',
+    //   type: 'POST',
 
-      success: function (response) {
-        let select = document.getElementById('designation');
-        console.log("select " + select);
-        for (let i = 0; i < response.length; i++) {
-          let option = `<option value="\${response[i].id}">\${response[i].name}</option>`
-          select.insertAdjacentHTML('afterbegin', option)
+    //   success: function (response) {
+    //     let select = document.getElementById('designation');
+    //     console.log("select " + select);
+    //     for (let i = 0; i < response.length; i++) {
+    //       let option = `<option value="\${response[i].id}">\${response[i].name}</option>`
+    //       select.insertAdjacentHTML('afterbegin', option)
 
-        }
+    //     }
 
-      },
+    //   },
 
-      error: function (error) {
-        console.log("Error:::", error)
-      }
-    })
-    $.ajax({
-      url: '/fetchWorkExperienceValue',
-      type: 'POST',
+    //   error: function (error) {
+    //     console.log("Error:::", error)
+    //   }
+    // })
+    // $.ajax({
+    //   url: '/fetchWorkExperienceValue',
+    //   type: 'POST',
 
-      success: function (response) {
-        let select = document.getElementById('experienceType');
-        console.log("select " + select);
-        for (let i = 0; i < response.length; i++) {
-          console.log("response id" + response[i].id);
-          console.log("response name" + response[i].name);
-          let option = `<option value="\${response[i].id}">\${response[i].name}</option>`
+    //   success: function (response) {
+    //     let select = document.getElementById('experienceType');
+    //     console.log("select " + select);
+    //     for (let i = 0; i < response.length; i++) {
+    //       console.log("response id" + response[i].id);
+    //       console.log("response name" + response[i].name);
+    //       let option = `<option value="\${response[i].id}">\${response[i].name}</option>`
 
-          console.log("select " + select);
-          select.insertAdjacentHTML('afterbegin', option)
-          console.log("select " + select);
-        }
+    //       console.log("select " + select);
+    //       select.insertAdjacentHTML('afterbegin', option)
+    //       console.log("select " + select);
+    //     }
 
-      },
+    //   },
 
-      error: function (error) {
-        console.log("Error:::", error)
-      }
-    })
+    //   error: function (error) {
+    //     console.log("Error:::", error)
+    //   }
+    // })
     /*function fetchDesignationValue() {
       url = "/fetchDesignationValue";
       params = {
