@@ -42,8 +42,6 @@
         <!-- class(shadow-lg) of this div provides shadow to an element with box-shadow utilities in bootstrap -->
         <div class="cover shadow-lg">
 
-          <h2 id="year-of-passing">${list}</h2>
-
           <!--------------------------------------Personal Details Section ---------------------------------------->
 
           <div class="edit-personal-details">
@@ -1984,15 +1982,19 @@
     }
 
     function qualificationDetailPercentageValidation(res) {
-      if (checkLength(res) < 6 && checkLength(res) > 0) {
-        if (isCharNumber(res)) {
-          condition = true;
-        } else {
-          condition = false;
-        }
-      } else {
-        condition = false;
+      if(res.length>0){
+      let value = parseFloat(res)
+      console.log(value)
+      if(isNaN(value)|| value<0 || value>100 ){
+        return condtion=false;
       }
+      else{
+        condition=true;
+      }
+    }
+    else{
+      condition=false;
+    }
       return condition;
     }
 
@@ -2519,9 +2521,11 @@
 
     //*************************************Qualification-modal JS****************************************
 
-    let qualificationType = ""
+    let qualificationDataDB = 1
+    let qualificationType =  ""
     console.log(qualificationType)
     document.querySelector(".qualification-edit-box").addEventListener('click', function () {
+      if(qualificationDataDB == 1){
 
       $.ajax({
         url: '/get-qualification-type',
@@ -2538,6 +2542,9 @@
           console.log("Error::::::::::::", error);
         }
       })
+
+      ++qualificationDataDB;
+    }
 
       // let options = {
       //   method: 'GET',
@@ -2728,7 +2735,8 @@
       //   return;
       // }
 
-      let table = `
+      let table = ` <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
+ <div class="container">
       <div id="qualification-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -2789,11 +2797,14 @@
                 </div>
               </div>
             </div>
-          </div> 
-
-      </div>
-          <hr style="height: 5px; margin: 30px 0">
-          </div>`
+          </div>
+          <hr style="height: 5px;">
+          </div>
+            <div id="delete_btn_qualification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_qualification_symbol">
+            <i class="fa-solid fa-trash text-danger fa-2x"></i>
+               </div>
+        </div> 
+          `
 
 
       document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
@@ -2802,8 +2813,20 @@
 
     })
 
-    $(document).on('click', '.qualification-delete-button', function () {
-      $(this).closest('tr').remove()
+    document.addEventListener('mouseover', function () {
+      let deleteButtonClick = document.querySelectorAll('.delete_btn_qualification_symbol')
+      let deleteQualification = document.querySelectorAll('.qualification_delete_btn');
+      for (let i = 0; i < deleteQualification.length; i++) {
+        deleteQualification[i].addEventListener('mouseover', function () {
+          deleteQualification[i].querySelector('.delete_btn_qualification_symbol').classList.remove('d-none');
+        });
+        deleteQualification[i].addEventListener('mouseleave', function () {
+          deleteQualification[i].querySelector('.delete_btn_qualification_symbol').classList.add('d-none');
+        });
+        deleteButtonClick[i].addEventListener('click', function () {
+          this.parentElement.remove()
+        });
+      }
     })
 
     //*************************************Award-modal JS****************************************
@@ -2837,7 +2860,9 @@
       }
 
 
-      let table = `          <div id="publication-award-div" class="bg-white">
+      let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
+        <div class="container">   
+      <div id="publication-award-div" class="bg-white">
           <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
 
@@ -2887,18 +2912,34 @@
                 </div>
               </div>
             </div>
-            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x"></i>
-            </div>
+          </div>
+            <div id="delete_btn_award_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_award_symbol">
+                <i class="fa-solid fa-trash text-danger fa-2x"></i>
+             </div>
           </div>
           <hr style="height: 5px;">
-        
+        </div>
         </div> 
        `
       document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
-
-
     });
+
+    document.addEventListener('mouseover', function () {
+      let deleteButtonClick = document.querySelectorAll('.delete_btn_award_symbol')
+      let deleteAward = document.querySelectorAll('.award_delete_btn');
+      for (let i = 0; i < deleteAward.length; i++) {
+        deleteAward[i].addEventListener('mouseover', function () {
+          deleteAward[i].querySelector('.delete_btn_award_symbol').classList.remove('d-none');
+        });
+
+        deleteAward[i].addEventListener('mouseleave', function () {
+          deleteAward[i].querySelector('.delete_btn_award_symbol').classList.add('d-none');
+        });
+        deleteButtonClick[i].addEventListener('click', function () {
+          this.parentElement.parentElement.parentElement.remove()
+        });
+      }
+    })
 
     // ******************************************Validation Functions Start****************************************************
     function tabledatacheck(value) {
@@ -3094,12 +3135,6 @@
     });
 
 
-
-    $(document).on('click', '.award-delete-button', function () {
-      $(this).closest('tr').remove()
-    })
-
-
     //*************************************Publications-modal JS****************************************
 
     document.querySelector(".publication-edit-box").addEventListener('click', function () {
@@ -3267,7 +3302,9 @@
     document.getElementById('publication-add-button').addEventListener('click', function () {
 
 
-      let table = `<div id="publication-appending-div" class="bg-white">
+           let table= ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
+            <div class="container">
+           <div id="publication-appending-div" class="bg-white">
           <div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1"> 
             <div class="row">
 
@@ -3317,24 +3354,36 @@
                 </div>
               </div>
             </div>
-            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x"></i>
             </div>
-            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x"></i>
-            </div>
+             <div id="delete_btn_publication_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_publication_symbol">
+                <i class="fa-solid fa-trash text-danger fa-2x"></i>
+             </div>
           </div>
           <hr style="height: 5px;">
-          </div>`
+          </div>
+          </div>
+        `
       document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
     })
 
+    document.addEventListener('mouseover', function () {
+      let deleteButtonClick = document.querySelectorAll('.delete_btn_publication_symbol')
+      let deletepublication = document.querySelectorAll('.publication_delete_btn');
+      for (let i = 0; i < deletepublication.length; i++) {
+        deletepublication[i].addEventListener('mouseover', function () {
+          deletepublication[i].querySelector('.delete_btn_publication_symbol').classList.remove('d-none');
+        });
 
-    $(document).on('click', '.publication-delete-button', function () {
-      $(this).closest('tr').remove()
+        deletepublication[i].addEventListener('mouseleave', function () {
+          deletepublication[i].querySelector('.delete_btn_publication_symbol').classList.add('d-none');
+        });
+
+        deleteButtonClick[i].addEventListener('click', function () {
+          this.parentElement.parentElement.parentElement.remove()
+        });
+      }
+
     })
-
-
 
 
     //*************************************Research-modal JS*******************************************************
@@ -3600,16 +3649,13 @@
         deleteresearch[i].addEventListener('mouseover', function () {
           deleteresearch[i].querySelector('.delete_btn_research_symbol').classList.remove('d-none');
         });
-
         deleteresearch[i].addEventListener('mouseleave', function () {
           deleteresearch[i].querySelector('.delete_btn_research_symbol').classList.add('d-none');
         });
-
         deleteButtonClick[i].addEventListener('click', function () {
           this.parentElement.parentElement.remove()
         });
       }
-
     })
 
 
@@ -3808,25 +3854,28 @@
     })
 
     //*************************************Bank-details-modal JS****************************************
-    let bankAccountType = ""
 
+    let bankDataDB = 1;
+    let bankAccountType =  ""
     document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
-
-      $.ajax({
-        url: '/get-bank-account-type',
-        type: 'get',
-        success: function (response) {
-          console.log(response)
-          for (let i = 0; i < response.length; i++) {
-            console.log(bankAccountType)
-            bankAccountType += `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`
-          }
-          document.getElementById('bank-account-type').insertAdjacentHTML("beforeend", bankAccountType)
-        },
-        error: function (error) {
-          console.log("Error::::::::::::", error);
-        }
-      })
+    if(bankDataDB == 1) {
+          $.ajax({
+            url: '/get-bank-account-type',
+            type: 'get',
+            success: function (response) {
+               console.log(response)
+              for (let i = 0; i < response.length; i++) {
+                console.log(bankAccountType)
+                bankAccountType +=  `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`
+              }
+              document.getElementById('bank-account-type').insertAdjacentHTML("beforeend",bankAccountType)
+            },
+            error: function (error) {
+              console.log("Error::::::::::::", error);
+            }
+          })
+    ++bankDataDB;
+    }
 
       let editBankDetailsForm = new FormData()
 
