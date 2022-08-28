@@ -12,8 +12,12 @@ import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
 public interface UserDaoInterface {
 
     Object insertPersonalDetails(String personalDetailsData);
+
+    Object updatePersonalDetails(String personalDetailsData);
     
     Object insertQualificationDetails(String qualificationTableData);
+
+    Object updateQualificationDetails(String qualificationTableData);
 
     List<UserQualificationType> getQualificationType();
     
@@ -23,12 +27,17 @@ public interface UserDaoInterface {
 
     UserSkillsFromDB getUserSkill(String skill_name);
 
+    Object insertAllSkills(String skills);
+
+    Object updateAllSkills(String skills);
+
     Object insertAwardData(String data);
 
     List<UserBankAccountType> getBankAccountType();
 
     Object insertBankDetails(String bankDetailsData);
 
-    Object updatePersonalDetails(String personalDetailsData);
+    Object updateBankDetails(String bankDetailsData);
+
 
 }
