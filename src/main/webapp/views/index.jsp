@@ -52,7 +52,7 @@
                     <div class="row">
                       <div class="col-md-4 col-sm-12 col-lg-3">
                         <div class="avatar bg-white shadow-sm p-1">
-                          <img src="/download (3).jpg" alt="Passport Size photo" width="200" height="200" />
+                          <img src="/download (3).jpg" alt="Passport Size photo" id="profile-photo-value" width="200" height="200" />
                         </div>
                       </div>
 
@@ -98,7 +98,7 @@
                             <h6>Pancard Photo</h6>
                           </div>
                           <div class="col-md-7 col-sm-9">
-                            <p id="pancard-photo"><i class="fa-solid fa-ban text-danger"></i></p>
+                            <p id="pancard-photo"><i id="pancard-photo-preview" class="fa-solid fa-ban text-danger"></i></p>
                           </div>
                         </div>
                         <div class="row py-1">
@@ -114,7 +114,7 @@
                             <h6>Aadhar card Photo</h6>
                           </div>
                           <div class="col-md-7 col-sm-9">
-                            <p id="aadhar-card-photo"><i class="fa-solid fa-ban text-danger"></i></p>
+                            <p id="aadhar-card-photo"><i id="aadhar-photo-preview"  class="fa-solid fa-ban text-danger"></i></p>
                           </div>
                         </div>
                       </div>
@@ -353,7 +353,7 @@
                 <div id="award-preview-div">
 
 
-                  <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div id="Award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                     <div class="row">
 
                       <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -620,7 +620,7 @@
                         <p id="account-number-value" class="pt-2">778866445523</p>
                         <p id="account-type-value" class="pt-2">Current Account</p>
                         <p id="cancelled-check-photo" class="pt-3">
-                          <i class="fa-solid fa-ban text-danger"></i>
+                          <i id="cancelled-cheque-photo-preview" class="fa-solid fa-ban text-danger"></i>
                         </p>
                       </div>
                     </div>
@@ -663,7 +663,7 @@
             </div>
 
             <div class="col-md-4 col-sm-12">
-              <img id="photo-preview" alt="your image" width="100" height="100"
+              <img id="photo-preview" alt="your image" name="photo_preview" width="100" height="100"
                 style="border: 1px solid #ced4da; margin-left:100px;" />
             </div>
 
@@ -693,7 +693,7 @@
             <div class="col-md-4 col-sm-12">
               <label for="photo">passport Size Photo <span class="required">*</span></label>
               <span id="photo-message" style="color: red;" class="error"></span>
-              <input type="file" class="form-control" id="photo"
+              <input type="file" class="form-control" id="photo" name="profile_photo"
                 onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
             </div>
 
@@ -788,11 +788,11 @@
             <div class="col-md-4 col-sm-12">
               <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
               <span id="aadhar-photo-message" style="color: red;" class="error"></span>
-              <input type="file" class="form-control" id="aadhar-photo" name="file[]"
-                onchange="document.getElementById('aadhar-photo-preview').src = window.URL.createObjectURL(this.files[0])">
+              <input type="file" class="form-control" id="aadhar-photo" 
+                onchange="document.getElementById('aadhar-photo-preview-1').src = window.URL.createObjectURL(this.files[0])">
             </div>
             <div class="col-md-4 col-sm-12">
-              <img id="aadhar-photo-preview" alt="your image" width="100" height="100"
+              <img id="aadhar-photo-preview-1" alt="your image" width="100" height="100"
                 style="border: 1px solid #ced4da; margin-left:100px;" />
             </div>
           </div>
@@ -890,7 +890,10 @@
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control qualification-certificate"
-                      id="bachelors-degree-certificate" type="file"></div>
+                      id="bachelors-degree-certificate"  onchange="document.getElementById('qualification-certificate-preview').src = window.URL.createObjectURL(this.files[0])" type="file">
+                      <p hidden><img id="qualification-certificate-preview" type="hidden" alt="your image" width="100" height="100"
+                        style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+                    </div>
                 </div>
 
               </div>
@@ -1654,6 +1657,71 @@
     </div>
   </div>
 
+ <!-- ************************************************************************Pancard Photo Modal Div******************************************************************************************** -->
+ <div class="pancard-photo-modal d-none">
+
+  <div id="bank-form-area">
+    <div class="container">
+      <div class="d-flex justify-content-center align-items-center my-4">
+        <h2>Preview Pancard Photo</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+          <img src="/download (3).jpg" alt="Pancard-photo-uploaded" id="Pancard-photo-uploaded" style="width:450px;height:300px;">
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <button id="pancard-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ************************************************************************Aadhar Photo Modal Div******************************************************************************************** -->
+ <div class="aadhar-photo-modal d-none">
+
+  <div id="bank-form-area">
+    <div class="container">
+      <div class="d-flex justify-content-center align-items-center my-4">
+        <h2>Preview Aadhar Photo</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+          <img src="/download (3).jpg" alt="aadhar-photo-uploaded" id="aadhar-photo-uploaded" style="width:450px;height:300px;">
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <button id="aadhar-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ************************************************************************Aadhar Photo Modal Div******************************************************************************************** -->
+ <div class="cancelled-cheque-photo-modal d-none">
+
+  <div id="bank-form-area">
+    <div class="container">
+      <div class="d-flex justify-content-center align-items-center my-4">
+        <h2>Preview Cancelled Cheque Photo</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+          <img src="/download (3).jpg" alt="cancelled-cheque-photo-uploaded" id="cancelled-cheque-photo-uploaded" style="width:450px;height:300px;">
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <button id="cancelled-cheque-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
   <!-- INCLUDE JS -->
@@ -1773,9 +1841,8 @@
           if (fuData.files && fuData.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
-
               $('#photo').attr('src', e.target.result);
-              console.log(e.target.result)
+              document.getElementById("profile-photo-value").src = e.target.result
               condition = true;
             }
             reader.readAsDataURL(fuData.files[0]);
@@ -1870,14 +1937,27 @@
     }
 
     function personalDetailPancardPhotoValidation(res) {
+      var fuData = document.getElementById('pan-photo');
       if (res.length > 0) {
-        condition = true;
+        var Extension = res.substring(res.lastIndexOf('.') + 1).toLowerCase();
+        if (Extension == "png" || Extension == "jpeg" || Extension == "jpg") {
+          if (fuData.files && fuData.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $('#pan-photo').attr('src', e.target.result);
+              document.getElementById("Pancard-photo-uploaded").src = e.target.result
+              condition = true;
+            }
+            reader.readAsDataURL(fuData.files[0]);
+          }
+        } else {
+          document.getElementById("pan-photo-message").innerHTML = "File type should be of PNG, JPG and JPEG";
+        }
       } else {
-        document.getElementById("pan-photo-message").innerHTML = "*Pancard photo is Mandatory";
+        document.getElementById("pan-photo-message").innerHTML = "Pancard photo is Mandatory";
         condition = false;
       }
       return condition;
-
     }
 
     function personalDetailAadharValidation(res) {
@@ -1899,14 +1979,29 @@
     }
 
     function personalDetailAadharPhotoValidation(res) {
+      var fuData = document.getElementById('aadhar-photo');
       if (res.length > 0) {
-        condition = true;
+        var Extension = res.substring(res.lastIndexOf('.') + 1).toLowerCase();
+        if (Extension == "png" || Extension == "jpeg" || Extension == "jpg") {
+          if (fuData.files && fuData.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $('#aadhar-photo').attr('src', e.target.result);
+              document.getElementById("aadhar-photo-uploaded").src = e.target.result
+              condition = true;
+            }
+            reader.readAsDataURL(fuData.files[0]);
+          }
+        } else {
+          document.getElementById("aadhar-photo-message").innerHTML = "File type should be of PNG, JPG and JPEG";
+        }
       } else {
-        document.getElementById("aadhar-photo-message").innerHTML = "*Aadhar-card photo is Mandatory";
+        document.getElementById("aadhar-photo-message").innerHTML = "Aadhar photo is Mandatory";
         condition = false;
       }
       return condition;
     }
+
 
     function personalDetailAddressValidation(res) {
       if (checkLength(res) > 5) {
@@ -1995,6 +2090,30 @@
     else{
       condition=false;
     }
+      return condition;
+    }
+
+    function qualificationDetailCertificateValidation(res) {
+      var fuData = document.querySelector('.qualification-certificate');
+      if (res.length > 0) {
+        var Extension = res.substring(res.lastIndexOf('.') + 1).toLowerCase();
+        if (Extension == "png" || Extension == "jpeg" || Extension == "jpg") {
+          if (fuData.files && fuData.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $('.qualification-certificate').attr('src', e.target.result);
+              document.getElementById("cancelled-cheque-photo-uploaded").src = e.target.result
+              condition = true;
+            }
+            reader.readAsDataURL(fuData.files[0]);
+          }
+        } else {
+          document.getElementById("cancelled_cheque_Photo-message").innerHTML = "File type should be of PNG, JPG and JPEG";
+        }
+      } else {
+        document.getElementById("cancelled_cheque_Photo-message").innerHTML = "Cancelled Cheque photo is Mandatory";
+        condition = false;
+      }
       return condition;
     }
 
@@ -2096,6 +2215,30 @@
         condition = false;
       }
       return condition
+    }
+    
+    function bankDetailCancelledChequeValidation(res) {
+      var fuData = document.getElementById("cancelled_cheque_Photo");
+      if (res.length > 0) {
+        var Extension = res.substring(res.lastIndexOf('.') + 1).toLowerCase();
+        if (Extension == "png" || Extension == "jpeg" || Extension == "jpg") {
+          if (fuData.files && fuData.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $('#cancelled_cheque_Photo').attr('src', e.target.result);
+              document.getElementById("cancelled-cheque-photo-uploaded").src = e.target.result
+              condition = true;
+            }
+            reader.readAsDataURL(fuData.files[0]);
+          }
+        } else {
+          document.getElementById("cancelled_cheque_Photo-message").innerHTML = "File type should be of PNG, JPG and JPEG";
+        }
+      } else {
+        document.getElementById("cancelled_cheque_Photo-message").innerHTML = "Cancelled Cheque photo is Mandatory";
+        condition = false;
+      }
+      return condition;
     }
 
     // ******************************************Validation Functions Start****************************************************
@@ -2258,10 +2401,39 @@
       document.querySelector('.bank-details-edit-box').classList.add('d-none');
     });
 
+    document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.pancard-photo-modal').classList.remove('d-none');
+    })
+
+    document.querySelector('#pancard-photo-cancel-button').addEventListener('click', function (e) {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.pancard-photo-modal').classList.add('d-none');
+    })
+
+    document.querySelector('#aadhar-photo-preview').addEventListener('click', function (e) {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.aadhar-photo-modal').classList.remove('d-none');
+    })
+
+    document.querySelector('#aadhar-photo-cancel-button').addEventListener('click', function (e) {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.aadhar-photo-modal').classList.add('d-none');
+    })
+
+    document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
+    })
+
+    document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
+    })
+
     document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
 
       e.preventDefault()
-
 
       let myForm = document.getElementById('myForm')
       let formData = new FormData(myForm)
@@ -2275,36 +2447,38 @@
 
       let firstName = personalDetailFirstNameValidation(result.f_name);
       let lastName = personalDetailLastNameValidation(result.l_name);
+      let profilePhoto1 = personalDetailProfilePhotoValidation(document.getElementById("photo").value);
       let DOB = personalDetailDateOfBirthValidation(result.date_of_birth);
       let gender = personalDetailGenderValidation(result.gender);
       let contactNumber = personalDetailContactNumberValidation(result.contact_number);
       let pancard = personalDetailPancardValidation(result.pan_number);
+      let pancardPhoto = personalDetailPancardPhotoValidation(document.getElementById("pan-photo").value);
       let email = personalDetailEmailValidation(result.email);
       let aadhar = personalDetailAadharValidation(result.aadhar_number);
+      let aadharPhoto1 = personalDetailAadharPhotoValidation(document.getElementById("aadhar-photo").value);
       let address = personalDetailAddressValidation(result.permanent_address);
       // let temporaryAddress = personalDetailTemporaryAddressValidation(result.temporary_address);
       let country = personalDetailCountryValidation(result.nationality);
 
-      console.log(result.date_of_birth.length)
 
-      if (!firstName || !lastName || !gender || !contactNumber || !email || !pancard || !aadhar || !address || !
+      if (!firstName || !lastName || !profilePhoto1 ||!gender || !contactNumber || !email || !pancard || !pancardPhoto || !aadhar || !aadharPhoto1 || !address || !
         country) {
         return;
       }
 
-      //loop and names has been changed therfore this image parameters cannot be added
+      if (pancardPhoto.length != 0) {
+        document.getElementById('pancard-photo').firstElementChild.classList.remove('fa-ban')
+        document.getElementById('pancard-photo').firstElementChild.classList.remove('text-danger')
+        document.getElementById('pancard-photo').firstElementChild.classList.add('fa-image')
+        document.getElementById('pancard-photo').firstElementChild.classList.add('text-success')
+      }
 
-      // if (submitPersonalDetailsForm.get('pancardPhoto').length != 0) {
-      //   document.getElementById('pancard-photo').firstElementChild.classList.remove('fa-ban')
-      //   document.getElementById('pancard-photo').firstElementChild.classList.add('fa-circle-check')
-      //   document.getElementById('pancard-photo').firstElementChild.classList.add('text-success')
-      // }
-
-      // if (submitPersonalDetailsForm.get('aadharCardPhoto').length != 0) {
-      //   document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('fa-ban')
-      //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('fa-circle-check')
-      //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('text-success')
-      // }
+      if (aadharPhoto1.length != 0) {
+        document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('fa-ban')
+        document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('text-danger')
+        document.getElementById('aadhar-card-photo').firstElementChild.classList.add('fa-image')
+        document.getElementById('aadhar-card-photo').firstElementChild.classList.add('text-success')
+      }
 
       let personalDetailsData = {
         "insert_user_personal_details": {
@@ -2546,19 +2720,6 @@
       ++qualificationDataDB;
     }
 
-      // let options = {
-      //   method: 'GET',
-      //   headers: {
-      //     'Content-Type': 'application/json;charset=utf-8'
-      //   },
-      // }
-      // let fetchRes = fetch('/get-qualification-type', options);
-      // fetchRes.then(success => {
-      //   if (success.status == 200) {
-      //   } else {
-      //     alert('Check Qualification details');
-      //   }
-      // })
       document.getElementById('body').classList.add('d-none');
       document.querySelector('.qualification-modal').classList.remove('d-none');
     });
@@ -2567,6 +2728,8 @@
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.qualification-modal').classList.add('d-none');
     });
+
+    let qualificationID = 1;
 
     document.querySelector("#qualification-submit-button").addEventListener('click', function (e) {
       e.preventDefault()
@@ -2592,6 +2755,7 @@
         let qualificationPercentile = qualificationRow[i].querySelector('.qualification-percentile').value;
         let qualificationYear = qualificationRow[i].querySelector('.qualification-year').value;
         let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
+        // let qualificationCertificateImage = qualificationRow[i].querySelector('#qualification-certificate-preview').src;
 
         let checkSubject = namecheck(qualificationSubject);
         let checkUniversity = namecheck(qualificationUniversity);
@@ -2599,8 +2763,9 @@
         let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
         let checkCertificate = tabledatacheck(qualificationCertificate);
         let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
+       // let checkCancelledCheque = qualificationDetailCertificateValidation(qualificationCertificate);
 
-        console.log(qualificationPercentile)
+        // console.log(qualificationCertificateImage)
         console.log(checkPercentile)
         // console.log(checkSubject)
 
@@ -2626,6 +2791,14 @@
           return;
         }
 
+        
+      // if (qualificationCertificate.length != 0) {
+      //   $('.qualification-update i').remove('.fa-ban');
+      //   $('.qualification-update i').remove('.text-danger');
+      //   $('.qualification-update i').add('.fa-image');
+      //   $('.qualification-update i').add('.text-success');
+      // }
+
         let qualificationvalue = false;
         if (qualificationStatus == 'true') {
           qualificationvalue = true
@@ -2645,7 +2818,7 @@
         }
 
         div += ` 
-          <div class="text-block right" >
+          <div class="text-block right qualification-update" >
                   <div class="card-body">
                     <h2 id="year-of-passing">\${qualificationYear}\</h2>
 
@@ -2677,7 +2850,7 @@
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">\${qualificationCollege}\</p>
                               <p id="" class="">\${qualificationPercentile}\</p>
-                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+                              <p ><i id="qualification-certificate-update`+qualificationID++ +`"class="fa-solid fa-image text-success"></i></p>
                             </div>
                           </div>
                         </div>
@@ -2719,23 +2892,26 @@
 
 
     document.getElementById('qualification-add-button').addEventListener('click', function (e) {
-      // e.preventDefault();
-      // clearError();
-      // let bachelorsTitle = document.getElementById('bachelors-degree-title-data').value;
-      // let bachelorsSubject = document.getElementById('bachelors-degree-major-subject').value;
-      // let bachelorsUniversity = document.getElementById('bachelors-degree-university').value;
-      // let bachelorsCollege = document.getElementById('bachelors-degree-college').value;
-      // let bachelorsPercentile = document.getElementById('bachelors-degree-percentile').value;
-      // let bachelorsYOP = document.getElementById('bachelors-degree-year-of-passing').value;
-      // let bachelorsCertificate = document.getElementById('bachelors-degree-certificate').value;
+       e.preventDefault();
 
-      // if ( bachelorsSubject.length < 3 || bachelorsUniversity.length < 3 || bachelorsCollege.length < 3 || bachelorsPercentile.length < 3 || bachelorsYOP.length < 3 || bachelorsCertificate.length < 4)
-      //  {
-      //   document.getElementById('qualification-message').innerHTML = "*Complition of bachelors degree is required";
-      //   return;
-      // }
+       e.preventDefault()
 
-      let table = ` <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
+let table = ''
+let qualificationRow = document.querySelectorAll('.qualification-row')
+for (i = 0; i < qualificationRow.length; i++) {
+
+  let qualificationTitle = qualificationRow[i].querySelector('.qualification-title')
+console.log(qualificationTitle)
+  qualificationTitle.addEventListener('change', function () {
+      let qualificationTitle = document.querySelectorAll('.qualification-title')
+      if (qualificationTitle.value == 3) {
+        qualificationRow[i].querySelectorAll('.qualification-status-wrapper').classList.remove('d-none');
+      } else {
+        qualificationRow[i].querySelectorAll('.qualification-status-wrapper').classList.add('d-none');
+      }
+    });
+  
+   table += ` <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
  <div class="container">
       <div id="qualification-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
@@ -2774,6 +2950,18 @@
               </div>
 
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+
+                <div class="row p-3 qualification-status-wrapper d-none">
+                  <div class="col-md-2 ">
+                    <p class="h6">Status<span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10"><select class="form-control qualification-status"
+                      id="qualification-status-data">
+                      <option value="true">Awarded</option>
+                      <option value="false">Persuing</option>
+                    </select></div>
+                </div>
+
                 <div class="row p-3">
                   <div class="col-md-2">
                     <p class="h6">College</p>
@@ -2792,8 +2980,11 @@
                   <div class="col-md-2 ">
                     <p class="h6">Certificate</p>
                   </div>
-                  <div class="col-md-10"><input class="form-control qualification-certificate" id="bachelors-degree-certificate"
-                    type="file"></div>
+                  <div class="col-md-10"><input class="form-control qualification-certificate"
+                      id="bachelors-degree-certificate"  onchange="document.getElementById('qualification-certificate-preview').src = window.URL.createObjectURL(this.files[0])" type="file">
+                      <p hidden><img id="qualification-certificate-preview" type="hidden" alt="your image" width="100" height="100"
+                        style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+                    </div>
                 </div>
               </div>
             </div>
@@ -2806,10 +2997,15 @@
         </div> 
           `
 
+}
+
+
 
       document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
       let appendingOptions = document.querySelectorAll('.qualification-title')
       appendingOptions[appendingOptions.length - 1].insertAdjacentHTML("beforeend", qualificationType)
+
+    
 
     })
 
@@ -3043,11 +3239,6 @@
           return;
         }
 
-
-
-
-
-
         obj = {
           title: title,
           organization_name: organization_name,
@@ -3059,7 +3250,7 @@
 
         console.log(obj)
         div += `
-        <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+        <div id="award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                     <div class="row">
 
                       <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -3077,7 +3268,6 @@
                           </div>
                         </div>
                       </div>
-
 
                       <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                         <div class="row pt-lg-3">
@@ -3098,9 +3288,9 @@
                     </div>
                   </div>
                     `
+            
         resume_achievement.push(obj);
       }
-
 
       object = {
         "insert_award": resume_achievement
@@ -3176,7 +3366,6 @@
         let checkPublicationBookTitle = tabledatacheck(publicationBookTitle);
         let checkPublicationCertificate = tabledatacheck(publicationCertificate);
 
-
         // to add the red border according to validations
         if (checkPublicationPublisher == false) {
           publicationRow[i].querySelector('.publisher').classList.add('input-border');
@@ -3194,7 +3383,6 @@
           publicationRow[i].querySelector('.certification').classList.add('input-border');
           return;
         }
-
 
         insertAchievementObject.role = publicationRole
         insertAchievementObject.no_of_authors = publicationNumberOfAuthors
@@ -3925,10 +4113,17 @@
       let facultyMicrCode1 = bankDetailMicrCodeValidation(submitBankDetailsForm.get('micrCode'))
       let facultyAccountNumber1 = bankDetailAccountNumberValidation(submitBankDetailsForm.get('accountNumber'))
       let facultyAccountType1 = bankDetailAccountTypeValidation(submitBankDetailsForm.get('accountType'))
-
+      let facultyCancelledCheque = bankDetailCancelledChequeValidation(submitBankDetailsForm.get('cancelledCheckPhoto'))
+      
       if (!facultyBankName1 || !facultyBankBranch1 || !facultyIfscCode1 || !facultyMicrCode1 || !
-        facultyAccountNumber1) {
+      facultyAccountNumber1 || !facultyCancelledCheque) {
         return;
+      }
+      if (facultyCancelledCheque.length != 0) {
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('text-danger')
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('fa-image')
+        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
       }
 
       let bankDetailsJson = {
@@ -3970,13 +4165,6 @@
             //   'accountNumber')
             // document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
 
-            // if (submitBankDetailsForm.get('cancelledCheckPhoto').length != 0) {
-            //   document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
-            //   document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('text-danger')
-            //   document.getElementById('cancelled-check-photo').firstElementChild.classList.add(
-            //     'fa-circle-check')
-            //   document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
-            // }
           }
         })
       }
