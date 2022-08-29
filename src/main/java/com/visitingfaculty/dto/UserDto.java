@@ -6,6 +6,11 @@ public class UserDto {
     private String password;
     private String email;
 
+    @Override
+    public String toString() {
+        return "UserDto [email=" + email + ", password=" + password + ", user_id=" + user_id + "]";
+    }
+
     public UserDto() {
     }
 
@@ -23,11 +28,11 @@ public class UserDto {
         this.user_id = user_id;
     }
 
-    public String getPassword_hash() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword_hash(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -38,10 +43,4 @@ public class UserDto {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    @Override
-    public String toString() {
-        return "UserDto [email=" + email + ", password=" + password + ", user_id=" + user_id + "]";
-    }
-
 }

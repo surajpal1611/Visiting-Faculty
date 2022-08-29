@@ -1,9 +1,11 @@
 package com.visitingfaculty.service.faculty_service;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,24 +45,27 @@ public class UserService {
         } catch (Exception e) {
             return false;
         }
-
     }
 
-    public boolean uploadPersonalDetailsFile(List<MultipartFile> files,String user_id) {
+    public String uploadPersonalDetailsFile(String base64String, String user_id) {
 
-        for (int i = 0; i < files.size(); i++) {
+        String filename = user_id;
 
-            String filename = user_id + files.get(i).getOriginalFilename();
+        String newFile = base64String.substring(base64String.indexOf(",") + 1);
 
-            Path fileNameAndPath = Paths.get(uploadDirectory, filename);
+        Path destinationFile = Paths.get(uploadDirectory, filename + ".jpg");
 
-            try {
-                Files.write(fileNameAndPath, files.get(i).getBytes());
-                return true;
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        byte[] data = Base64.getDecoder()
+                        .decode(newFile.getBytes(StandardCharsets.UTF_8));
+
+        try {
+            Files.write(destinationFile, data);
+            return filename;
+        } catch (IOException e) {
+           
+            e.printStackTrace();
+            return null;
+
         }
-        return false;
     }
 }

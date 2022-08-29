@@ -5,10 +5,15 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.visitingfaculty.service.faculty_service.UserService;
+
 @Component
 public class jsoncheck {
     @Autowired
     validationsMethod checkVal;
+
+    @Autowired
+    UserService userService;
 
     // **************************************************************************************************---->For
     // Award Section
@@ -23,7 +28,6 @@ public class jsoncheck {
             String discription = award.getJSONObject(i).getString("description");
             String achivement_date = award.getJSONObject(i).getString("achievement_date");
             String url_path = award.getJSONObject(i).getString("url_path");
-
             Boolean titlecheck = checkVal.CheckWithNoSpectailChar(title);
             Boolean organizationcheck = checkVal.CheckWithNoSpectailChar(organization_name);
             Boolean discriptioncheck = checkVal.checkLengthThree(discription);
@@ -40,7 +44,7 @@ public class jsoncheck {
 
     // **************************************************************************************************---->For
     // Personal Details
-    public Boolean UserJsonCheck(String JsonString) {
+    public Boolean UserJsonCheck(String JsonString, String user_id) {
         Boolean check = false;
         JSONObject jsonString = new JSONObject(JsonString);
         // for userinfo
@@ -52,7 +56,11 @@ public class jsoncheck {
             String l_name = user_info.getJSONObject(i).getString("l_name");
             String email = user_info.getJSONObject(i).getString("email");
             String pancardPhoto = user_info.getJSONObject(i).getString("pancard_url_path");
-            String ok = JsonString.replaceAll(pancardPhoto, "Anything");
+
+            userService.uploadPersonalDetailsFile(pancardPhoto, user_id);
+            
+
+            String ok = JsonString.replace(pancardPhoto, "Anything");
             System.out.println("Check the String : "+ok);
 
             Boolean l_namecheck = checkVal.CheckWithNoSpectailChar(l_name);
@@ -80,7 +88,7 @@ public class jsoncheck {
         JSONArray jsonStringArray = new JSONArray(JsonString);
         System.out.println("JSON String Array for Bank : " + jsonStringArray);
 
-        // Value Fron Key
+        // Value From Key
         String account_number = jsonStringArray.getJSONObject(0).getString("account_number");
         String name = jsonStringArray.getJSONObject(0).getString("name");
         String branch = jsonStringArray.getJSONObject(0).getString("branch");

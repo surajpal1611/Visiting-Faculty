@@ -36,7 +36,6 @@
       </div>
 
       <!-- id(download-page) of this div is used to get the particular element in order to download the entire resume content -->
-      <div id="download-page">
 
         <!-- class(cover) of this div is used to give a one-page template for building simple home pages in bootstrap -->
         <!-- class(shadow-lg) of this div provides shadow to an element with box-shadow utilities in bootstrap -->
@@ -634,7 +633,6 @@
           </div>
 
 
-        </div>
       </div>
     </div>
   </div>
@@ -1982,19 +1980,17 @@
     }
 
     function qualificationDetailPercentageValidation(res) {
-      if(res.length>0){
-      let value = parseFloat(res)
-      console.log(value)
-      if(isNaN(value)|| value<0 || value>100 ){
-        return condtion=false;
+      if (res.length > 0) {
+        let value = parseFloat(res)
+        console.log(value)
+        if (isNaN(value) || value < 0 || value > 100) {
+          return condtion = false;
+        } else {
+          condition = true;
+        }
+      } else {
+        condition = false;
       }
-      else{
-        condition=true;
-      }
-    }
-    else{
-      condition=false;
-    }
       return condition;
     }
 
@@ -2140,35 +2136,6 @@
 
     // ******************************************Validation Functions End***************************************************
 
-    let downloadButton = document.getElementById("download-btn");
-    downloadButton.addEventListener("click", function () {
-      let elementHTML = document.getElementById("body");
-      let confirmDownload = confirm("Do you want to download this Resume??");
-
-      if (confirmDownload) {
-        let opt = {
-          margin: 1,
-          filename: "Resume.pdf",
-          html2canvas: {
-            scale: 1
-          },
-          jsPDF: {
-            unit: "in",
-            format: "a1",
-            orientation: "portrait"
-          },
-        };
-        html2pdf().set({
-          pagebreak: {
-            mode: ["avoid-all", "css", "legacy"]
-          },
-        });
-
-        // New Promise-based usage:
-        html2pdf().set(opt).from(elementHTML).save();
-      }
-    });
-
     document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
       document.querySelector('.personal-details-edit-box').classList.remove('d-none');
     });
@@ -2261,7 +2228,6 @@
     document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
 
       e.preventDefault()
-
 
       let myForm = document.getElementById('myForm')
       let formData = new FormData(myForm)
@@ -2363,7 +2329,7 @@
         user_info.temp_email = result.temp_email
         user_info.gender_lid = Number.parseInt(result.gender)
         user_info.pancard_no = pancard
-        user_info.pancard_url_path = "C://Fakepath://pancardphoto" //photoArray[2]
+        user_info.pancard_url_path =  photoArray[2] //"C://Fakepath://pancardphoto"
         user_info.aadhar_card_url_path = "C://Fakepath://aadharphoto" //photoArray[1]
         user_info.profile_url_path = "C://Fakepath://profilephoto" //photoArray[0]
         user_info.aadhar_card_no = aadhar
@@ -2522,29 +2488,29 @@
     //*************************************Qualification-modal JS****************************************
 
     let qualificationDataDB = 1
-    let qualificationType =  ""
+    let qualificationType = ""
     console.log(qualificationType)
     document.querySelector(".qualification-edit-box").addEventListener('click', function () {
-      if(qualificationDataDB == 1){
+      if (qualificationDataDB == 1) {
 
-      $.ajax({
-        url: '/get-qualification-type',
-        type: 'get',
-        success: function (response) {
-          console.log(response)
-          for (let i = 0; i < response.length; i++) {
-            qualificationType += `<option value=\${response[i].id}\ >\${response[i].name}\</option>`
-          }
-          document.getElementById('bachelors-degree-title-data').insertAdjacentHTML("beforeend",
-            qualificationType)
-        },
-        error: function (error) {
-          console.log("Error::::::::::::", error);
-        }
-      })
+        $.ajax({
+            url: '/get-qualification-type',
+            type: 'get',
+            success: function (response) {
+              console.log(response)
+              for (let i = 0; i < response.length; i++) {
+                qualificationType += `<option value=\${response[i].id}\ >\${response[i].name}\</option>`
+              }
+              document.getElementById('bachelors-degree-title-data').insertAdjacentHTML("beforeend",
+                qualificationType)
+            },
+            error: function (error) {
+              console.log("Error::::::::::::", error);
+            }
+          })
 
-      ++qualificationDataDB;
-    }
+          ++qualificationDataDB;
+      }
 
       // let options = {
       //   method: 'GET',
@@ -3302,7 +3268,7 @@
     document.getElementById('publication-add-button').addEventListener('click', function () {
 
 
-           let table= ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
+      let table = ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
             <div class="container">
            <div id="publication-appending-div" class="bg-white">
           <div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1"> 
@@ -3856,26 +3822,26 @@
     //*************************************Bank-details-modal JS****************************************
 
     let bankDataDB = 1;
-    let bankAccountType =  ""
+    let bankAccountType = ""
     document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
-    if(bankDataDB == 1) {
-          $.ajax({
+      if (bankDataDB == 1) {
+        $.ajax({
             url: '/get-bank-account-type',
             type: 'get',
             success: function (response) {
-               console.log(response)
+              console.log(response)
               for (let i = 0; i < response.length; i++) {
                 console.log(bankAccountType)
-                bankAccountType +=  `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`
+                bankAccountType += `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`
               }
-              document.getElementById('bank-account-type').insertAdjacentHTML("beforeend",bankAccountType)
+              document.getElementById('bank-account-type').insertAdjacentHTML("beforeend", bankAccountType)
             },
             error: function (error) {
               console.log("Error::::::::::::", error);
             }
           })
-    ++bankDataDB;
-    }
+          ++bankDataDB;
+      }
 
       let editBankDetailsForm = new FormData()
 
@@ -4090,7 +4056,7 @@
                                 \${value2}\
                               </div>`
 
-                            let  index = 21
+        let index = 21
         let obj = {}
         obj.resume_lid = 2
         obj.skill_lid = Number.parseInt(value)
@@ -4108,7 +4074,7 @@
         hardSkillAppendingDiv1.innerHTML += `<div class="skill-pill-div text-center"><input type="hidden" value=\${value}\ >
                                 \${value2}\
                               </div>`
-                              let  index = 25
+        let index = 25
         let obj = {}
         obj.resume_lid = 2
         obj.skill_selected_lid = index++
