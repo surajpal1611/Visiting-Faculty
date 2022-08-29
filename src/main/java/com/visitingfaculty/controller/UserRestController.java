@@ -34,7 +34,8 @@ public class UserRestController {
 
     @PostMapping(value = "/insert-personal-details")
     public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) {
-        Boolean check =  jsonchk.UserJsonCheck(personalDetailsData);
+
+        Boolean check =  jsonchk.UserJsonCheck(personalDetailsData, "EOLPS0161D");
         if(check == true)
            {
              Object insertPersonalDetails = userDaoInterface.updatePersonalDetails(personalDetailsData);
@@ -58,6 +59,8 @@ public class UserRestController {
         // verification
         System.out.println(userDto);
 
+        httpSession.setAttribute("user_id", userDto.getUser_id());
+
         int tokenGenerated = (int) Math.floor(100000 + Math.random() * 900000);
         httpSession.setAttribute("tokenGenerated", tokenGenerated);
 
@@ -69,7 +72,7 @@ public class UserRestController {
 
         } else {
 
-            return null;
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
 
     }
@@ -82,7 +85,7 @@ public class UserRestController {
         // String tokenValidation = (String) httpSession.getAttribute("tokenGenerated");
 
         if (tokenGenerated != tokenToVerify) {
-            return null;
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         return ResponseEntity.ok("verification success");
     }
