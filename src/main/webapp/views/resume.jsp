@@ -4719,17 +4719,6 @@
           console.log("Error:::", error)
         }
       })
-      /*function fetchDesignationValue() {
-        url = "/fetchDesignationValue";
-        params = {
-          method: 'post',
-        }
-        fetch(url, params).then((response) => response)
-          .then((data) => {
-            console.log("return values is", data[0].id);
-            
-          })
-      } */
 
 
       table += `  </select></div>

@@ -308,7 +308,7 @@
         </div>
         <div class="col-md-6" id="login-left">
           <form  method="POST" class="text-center" id="login-form">
-            <h3><span>Wel</span>come</h3>
+            <h3><span>Reg</span>ister</h3>
             <span class="bottom-line mx-auto"></span>
             <div class="cust-btn-group mt-3 mb-3">
               <div class="cust-input-prepend">
@@ -335,11 +335,9 @@
               </div>
               <input type="text"  name="tokenToVerify" id="verify-token-input" placeholder="Verify Token">
             </div>
-            <!-- <label>Is trusted device</label>
-            <input type="checkbox" name="is_trusted" id="is_trusted"> -->
-            <button class="btn btn-dark login-btn"><i class="fas fa-sign-in-alt"></i> Sign In</button>
+            <button class="btn btn-dark login-btn pb-2"><i class="fas fa-sign-in-alt"></i> Sign In</button>
+             Already a user? <a href="/login">Sign In</a>
             <button class="btn btn-dark d-none verify-button"><i class="fas fa-sign-in-alt"></i> Verify Email</button>
-            <!-- <button type="button" class="btn btn-dark test-btn"><i class="fas fa-sign-in-alt"></i> Test Btn</button> -->
           </form>
         </div>
       </div>

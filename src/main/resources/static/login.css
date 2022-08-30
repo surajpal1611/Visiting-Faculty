@@ -676,12 +676,12 @@ table tr:nth-child(even):hover {
 }
 
 .active {
-    background: #ffc800;
+    /* background: #ffc800; */
     color: #000;
 }
 
 .active::before {
-    border-left: 25px solid #ffc800;
+    /* border-left: 25px solid #ffc800; */
 }
 
 .submitted {
