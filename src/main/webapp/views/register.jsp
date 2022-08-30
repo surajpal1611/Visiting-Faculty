@@ -335,7 +335,7 @@
               </div>
               <input type="text"  name="tokenToVerify" id="verify-token-input" placeholder="Verify Token">
             </div>
-            <button class="btn btn-dark login-btn pb-2"><i class="fas fa-sign-in-alt"></i> Sign In</button>
+            <button class="btn btn-dark login-btn pb-2"><i class="fas fa-sign-in-alt"></i> Sign Up</button>
              Already a user? <a href="/login">Sign In</a>
             <button class="btn btn-dark d-none verify-button"><i class="fas fa-sign-in-alt"></i> Verify Email</button>
           </form>

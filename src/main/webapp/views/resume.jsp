@@ -473,7 +473,8 @@
             <div class="container">
               <div id="research-div" class="px-3 px-sm-4 px-lg-4">
                 <div class="d-flex justify-content-center align-items-center">
-                  <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><i class="fa-solid fa-telescope"></i><b> Research </b></h3>
+                  <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><i class="fa-solid fa-telescope"></i><b> Research
+                    </b></h3>
                 </div>
 
                 <div id="research-appending-div">
@@ -598,7 +599,8 @@
             <div id="bank-details-div">
               <div class="px-3 px-sm-4 ps-lg-5">
                 <div class="d-flex justify-content-center align-items-center">
-                  <h3 class="p-md-3 pb-sm-3" style="color: #740E00;"><b><i class="fa-solid fa-building-columns"></i> Bank Details </b></h3>
+                  <h3 class="p-md-3 pb-sm-3" style="color: #740E00;"><b><i class="fa-solid fa-building-columns"></i>
+                      Bank Details </b></h3>
                 </div>
                 <div class="row">
                   <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -1100,25 +1102,25 @@
                   </div>
                 </div>
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                    <div id="hard-skill-box" class="col-12">
+                  <div id="hard-skill-box" class="col-12">
 
-                      <div class="col-12" style="list-style-type: none;">
-                        <input type="text" id="hard-skill-search" placeholder="Search for hard skills.."
-                          class="form-control" title="Type in a name">
-                        <li class="mx-5 d-none" id="add-custom-hard-skill" style="cursor: pointer;">
-                          <div class="row">
-                            <div class="col-md-2 col-sm-2 col-2 "><i
-                                class="fa-solid text-primary fa-circle-plus fa-2x"></i></div>
-                            <div class="col-md-10 col-sm-10 col-10 "><a class="ms-3 text-dark"
-                                id="custom-hard-skill-value" href="#"></a></div>
-                          </div>
-                        </li>
-                      </div>
-
-                      <ul id="hard-skill-UL">
-                      </ul>
-
+                    <div class="col-12" style="list-style-type: none;">
+                      <input type="text" id="hard-skill-search" placeholder="Search for hard skills.."
+                        class="form-control" title="Type in a name">
+                      <li class="mx-5 d-none" id="add-custom-hard-skill" style="cursor: pointer;">
+                        <div class="row">
+                          <div class="col-md-2 col-sm-2 col-2 "><i
+                              class="fa-solid text-primary fa-circle-plus fa-2x"></i></div>
+                          <div class="col-md-10 col-sm-10 col-10 "><a class="ms-3 text-dark"
+                              id="custom-hard-skill-value" href="#"></a></div>
+                        </div>
+                      </li>
                     </div>
+
+                    <ul id="hard-skill-UL">
+                    </ul>
+
+                  </div>
 
                 </div>
               </div>
@@ -2437,8 +2439,8 @@
 
         }
         let fetchRes = fetch('/insert-personal-details', options);
-   
-        console.log("before", flag1,flag2)
+
+        console.log("before", flag1, flag2)
         fetchRes.then(success => {
 
           // if (success.status == 200) {
@@ -2467,7 +2469,7 @@
                             <p id="temp-email-value">\${result.temp_email}\</p>
                           </div>
                         </div>`)
-                flag1 = 2;
+            flag1 = 2;
           }
           if (result.temp_contact_number.length > 1 && flag2 === 1) {
 
@@ -2480,10 +2482,10 @@
                             <p id="temp-contact-value">\${result.temp_contact_number}\</p>
                           </div>
                         </div>`)
-              flag2 = 2;
-            
+            flag2 = 2;
+
           }
-          console.log(flag1 , flag2)
+          console.log(flag1, flag2)
           // } else {
           // console.log("Error in personal Details")
           // }
