@@ -15,8 +15,7 @@ public class jsoncheck {
     @Autowired
     UserService userService;
 
-    // **************************************************************************************************---->For
-    // Award Section
+    // **************************************************************************************************---->For Award Section
     public Boolean JsonStringValues(String JsonString) {
         Boolean check = false;
         JSONObject jsonString = new JSONObject(JsonString);
@@ -42,8 +41,7 @@ public class jsoncheck {
         return check;
     }
 
-    // **************************************************************************************************---->For
-    // Personal Details
+    // **************************************************************************************************---->For Personal Details
     public Boolean UserJsonCheck(String JsonString, String user_id) {
         Boolean check = false;
         JSONObject jsonString = new JSONObject(JsonString);
@@ -81,8 +79,7 @@ public class jsoncheck {
         return check;
     }
 
-    // **************************************************************************************************---->For
-    // Bank Details
+    // **************************************************************************************************---->For Bank Details
     public Boolean bankJsonCheck(String JsonString) {
         Boolean check = false;
         JSONArray jsonStringArray = new JSONArray(JsonString);
@@ -108,8 +105,7 @@ public class jsoncheck {
         return check;
     }
 
-    // **************************************************************************************************---->For
-    // Qualification Details
+    // **************************************************************************************************---->For Qualification Details
     public Boolean qualificationCheck(String JsonString) {
         Boolean check = false;
         JSONObject jsonString = new JSONObject(JsonString);
@@ -137,25 +133,30 @@ public class jsoncheck {
         return check;
     }
 
-    // *******************************************************************************---->For//
-    // Research Details
+    // *******************************************************************************---->For Research Details
     public Boolean researchJsonCheck(String JsonString) {
         Boolean check = false;
         JSONObject jsonString = new JSONObject(JsonString);
-        JSONArray research = jsonString.getJSONArray("inser_research");
+        JSONArray research = jsonString.getJSONArray("insert_research");
         for (int i = 0; i < research.length(); i++) {
-            String journal_name = research.getJSONObject(i).getString("journal_name");
-            String role = research.getJSONObject(i).getString("role");
+            String journal_name = research.getJSONObject(i).getString("title");
+            String role = research.getJSONObject(i).getString("research_role");
             String volume_year = research.getJSONObject(i).getString("volume_year");
-            String number = research.getJSONObject(i).getString("number");
+            String number = research.getJSONObject(i).getString("description");
             String category = research.getJSONObject(i).getString("category");
-            String url_path = research.getJSONObject(i).getString("url_path");
+            String url_path = research.getJSONObject(i).getString("research_url_path");
 
             Boolean journal_nameCheck = checkVal.checkLengthThree(journal_name);
             Boolean volume_yearCheck = checkVal.yearCheck(volume_year);
             Boolean numberCheck = checkVal.checkLengthThree(number);
             Boolean categoryCheck = checkVal.checkLengthThree(category);
             Boolean url_pathCheck = checkVal.checkLengthThree(url_path);
+
+            System.out.println("journal_nameCheck : "+journal_nameCheck);
+            System.out.println("volume_yearCheck : "+volume_yearCheck);
+            System.out.println("numberCheck : "+numberCheck);
+            System.out.println("categoryCheck : "+categoryCheck);
+            System.out.println("url_pathCheck : "+url_pathCheck);
 
             if (journal_nameCheck == true && volume_yearCheck == true && numberCheck == true && categoryCheck == true
                     && url_pathCheck == true) {
@@ -167,4 +168,38 @@ public class jsoncheck {
         }
         return check;
     }
+
+      // **************************************************************************************************---->For Publication Section
+    public boolean publicationJsonCheck(String jsonString){
+        boolean check = false;
+        JSONObject jsonstring = new JSONObject(jsonString);
+        JSONArray publication = jsonstring.getJSONArray("insert_publication");
+           for(int k=0;k<publication.length();k++)
+           {
+               String publicationrole = publication.getJSONObject(k).getString("publication_role");
+               String title = publication.getJSONObject(k).getString("title");
+               String publisher = publication.getJSONObject(k).getString("publisher");
+               String publication_url_path = publication.getJSONObject(k).getString("publication_url_path");
+               String year_of_publication = publication.getJSONObject(k).getString("year_of_publication");
+   
+               Boolean publicationroleCheck = checkVal.checkLengthThree(publicationrole);
+               Boolean titleCheck = checkVal.checkLengthThree(title);
+               Boolean publisherCheck = checkVal.checkLengthThree(publisher);
+               Boolean publication_url_pathCheck = checkVal.checkLengthThree(publication_url_path);
+               Boolean year_of_publicationCheck = checkVal.yearCheck(year_of_publication);
+   
+                    if (publicationroleCheck == true && titleCheck == true && publisherCheck == true && publication_url_pathCheck == true
+                    && year_of_publicationCheck == true) 
+                    {
+                        check = true;
+                    }
+                    else 
+                    {
+                        check = false;
+                        break;
+                    }
+           }
+        return check;
+        }
 }
+

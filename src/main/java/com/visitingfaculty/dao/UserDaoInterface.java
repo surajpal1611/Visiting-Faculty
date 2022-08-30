@@ -33,6 +33,16 @@ public interface UserDaoInterface {
 
     Object insertAwardData(String data);
 
+    Object insertPublications(String data);
+    
+    Object insertResearch(String data);
+
+    Object updateAward(String data);
+
+    Object updatePublications(String data);
+    
+    Object updateResearch(String data);
+
     List<UserBankAccountType> getBankAccountType();
 
     Object insertBankDetails(String bankDetailsData);

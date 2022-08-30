@@ -68,7 +68,6 @@ public class userDao implements UserDaoInterface {
         return jdbcCall.executeFunction(Object.class, qualificationTableData);
     }
 
-
     @Override
     public Object insertAllSkills(String skills) {
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
@@ -85,12 +84,11 @@ public class userDao implements UserDaoInterface {
         return jdbcCall.executeFunction(Object.class, skills);
     }
 
-
     @Override
     public Object insertAwardData(String data) {
 
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
-                .withFunctionName("insert_achievement_details");
+                .withFunctionName("insert_achievement");
 
         return jdbcCall.executeFunction(Object.class, data);
     }
@@ -102,6 +100,7 @@ public class userDao implements UserDaoInterface {
 
         return jdbcCall.executeFunction(Object.class, bankDetailsData);
     }
+
     @Override
     public Object updateBankDetails(String bankDetailsData) {
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
@@ -133,6 +132,46 @@ public class userDao implements UserDaoInterface {
 
         return jdbcCall.executeFunction(Object.class, personalDetailsData);
 
+    }
+
+    @Override
+    public Object insertPublications(String data) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("insert_publication");
+
+        return jdbcCall.executeFunction(Object.class, data);
+    }
+
+    @Override
+    public Object insertResearch(String data) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("insert_research");
+
+        return jdbcCall.executeFunction(Object.class, data);
+    }
+
+    @Override
+    public Object updateAward(String data) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("update_achievement");
+
+        return jdbcCall.executeFunction(Object.class, data);
+    }
+
+    @Override
+    public Object updatePublications(String data) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("update_publication");
+
+        return jdbcCall.executeFunction(Object.class, data);
+    }
+
+    @Override
+    public Object updateResearch(String data) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("update_research");
+
+        return jdbcCall.executeFunction(Object.class, data);
     }
 
 }

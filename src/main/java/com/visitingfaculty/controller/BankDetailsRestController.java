@@ -37,9 +37,9 @@ public class BankDetailsRestController {
         // if(check == true)
         // {
         // System.out.println("Success");
-        // Object bankInsert = userDaoInterface.insertBankDetails(bank_details);
-        Object bankUpdate = userDaoInterface.updateBankDetails(bank_details);
-        System.out.println(bankUpdate);
+        Object bankInsert = userDaoInterface.insertBankDetails(bank_details);
+        // Object bankUpdate = userDaoInterface.updateBankDetails(bank_details);
+        System.out.println(bankInsert);
         return ResponseEntity.status(HttpStatus.OK).build();
         // }
         // System.out.println("Error");
