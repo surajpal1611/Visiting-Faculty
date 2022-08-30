@@ -13,6 +13,11 @@ public class UserController {
         return "login";
     }
 
+    @GetMapping("/register")
+    public String getRegistrationPage() {
+        return "register";
+    }
+
     @GetMapping("/resume")
     public String getResume() {
         return "resume";
@@ -20,8 +25,8 @@ public class UserController {
 
     @GetMapping("/dashboard")
     public String getDashboard(HttpSession httpSession) {
-        String user_id = (String) httpSession.getAttribute("user_id");
-        System.out.println(user_id);
+        // String user_id = (String) httpSession.getAttribute("user_id");
+        // System.out.println(user_id);
         // if (user_id != null) {
             return "dashboard";
         // }
