@@ -11,6 +11,8 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
   <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./login.css" />
+  <link rel="stylesheet" href="./simpleAlert.css">
 
   <title>Resume</title>
   <link rel="icon" type="image/x-icon" href="/images.jpg">
@@ -18,24 +20,29 @@
 
 <body>
   <!-- id(body) of this div is used to hide as well as unhide the resume -->
-  <div id="body">
 
-    <!-- id(resume-box) of this div is used to give css for the resume created -->
-    <!-- class(container) of this div is used to bring the content inside to centre of page using bootstrap -->
-    <div id="resume-box" class="container">
+  <jsp:include page="left-sidebar.jsp" />
+  <main class="main">
+    <jsp:include page="header.jsp" />
 
-      <!-- class(d-flex) of this div is used to enable flexbox in bootstrap and align the items to the desired position -->
-      <!-- class(justify-content-end) of this div is used to change the alignment of flex items on the main axis and put it in the end -->
-      <div class="d-flex justify-content-end">
+    <div id="body">
 
-        <!-- id(download-btn) of this div is used to give css for the download button created -->
-        <!-- class(h1) of this div is used to give size in bootstrap -->
-        <!-- class(fa-solid) of this div is used to give a bulk look in font-awesome -->
-        <!-- class(fa-solid) of this div is used to give a download font through font-awesome -->
-        <i id="download-btn" class="h1 fa-solid fa-download"></i>
-      </div>
+      <!-- id(resume-box) of this div is used to give css for the resume created -->
+      <!-- class(container) of this div is used to bring the content inside to centre of page using bootstrap -->
+      <div id="resume-box" class="container">
 
-      <!-- id(download-page) of this div is used to get the particular element in order to download the entire resume content -->
+        <!-- class(d-flex) of this div is used to enable flexbox in bootstrap and align the items to the desired position -->
+        <!-- class(justify-content-end) of this div is used to change the alignment of flex items on the main axis and put it in the end -->
+        <div class="d-flex justify-content-end">
+
+          <!-- id(download-btn) of this div is used to give css for the download button created -->
+          <!-- class(h1) of this div is used to give size in bootstrap -->
+          <!-- class(fa-solid) of this div is used to give a bulk look in font-awesome -->
+          <!-- class(fa-solid) of this div is used to give a download font through font-awesome -->
+          <i id="download-btn" class="h1 fa-solid fa-download"></i>
+        </div>
+
+        <!-- id(download-page) of this div is used to get the particular element in order to download the entire resume content -->
 
         <!-- class(cover) of this div is used to give a one-page template for building simple home pages in bootstrap -->
         <!-- class(shadow-lg) of this div provides shadow to an element with box-shadow utilities in bootstrap -->
@@ -51,7 +58,8 @@
                     <div class="row">
                       <div class="col-md-4 col-sm-12 col-lg-3">
                         <div class="avatar bg-white shadow-sm p-1">
-                          <img src="/download (3).jpg" alt="Passport Size photo" id="profile-photo-value" width="200" height="200" />
+                          <img src="/download (3).jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
+                            height="200" />
                         </div>
                       </div>
 
@@ -97,7 +105,8 @@
                             <h6>Pancard Photo</h6>
                           </div>
                           <div class="col-md-7 col-sm-9">
-                            <p id="pancard-photo"><i id="pancard-photo-preview" class="fa-solid fa-ban text-danger"></i></p>
+                            <p id="pancard-photo"><i id="pancard-photo-preview" class="fa-solid fa-ban text-danger"></i>
+                            </p>
                           </div>
                         </div>
                         <div class="row py-1">
@@ -113,7 +122,8 @@
                             <h6>Aadhar card Photo</h6>
                           </div>
                           <div class="col-md-7 col-sm-9">
-                            <p id="aadhar-card-photo"><i id="aadhar-photo-preview"  class="fa-solid fa-ban text-danger"></i></p>
+                            <p id="aadhar-card-photo"><i id="aadhar-photo-preview"
+                                class="fa-solid fa-ban text-danger"></i></p>
                           </div>
                         </div>
                       </div>
@@ -179,7 +189,7 @@
             <div class="container">
               <div id="qualification-div">
                 <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
-                  <h3><b> Qualification</b></h3>
+                  <h3><b> <i class="fa-solid fa-graduation-cap"></i>Qualification</b></h3>
                 </div>
 
                 <div id="qualification-appending-div">
@@ -243,7 +253,7 @@
             <div class="container">
               <div id="work-experience-div">
                 <div class="d-flex justify-content-center align-items-center">
-                  <h3 style="color: #740E00;"><b> Work Experience </b></h3>
+                  <h3 style="color: #740E00;"><i class="fa-solid fa-briefcase"></i><b> Work Experience </b></h3>
                 </div>
                 <div id="workExperience-appending-div">
                   <div class="text-block right">
@@ -304,7 +314,7 @@
               <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
                 <div class="d-flex justify-content-center align-items-center">
                   <h3 class="mb-4 h3" style="color: #740E00;">
-                    <b> Skills</b>
+                    <img src="/icons/skills.png" alt="" height="40px"><b> Skills</b>
                   </h3>
                 </div>
                 <div class="container bootstrap snippets bootdeys">
@@ -347,7 +357,7 @@
             <div class="container">
               <div id="award-div" class="px-3 px-sm-4 px-lg-4">
                 <div class="d-flex justify-content-center align-items-center">
-                  <h3 style="color: #740E00;"><b> Awards </b></h3>
+                  <h3 style="color: #740E00;"><i class="fa-solid fa-award"></i><b> Awards </b></h3>
                 </div>
                 <div id="award-preview-div">
 
@@ -406,7 +416,7 @@
             <div class="container">
               <div id="publication-div" class="px-3 px-sm-4 px-lg-4">
                 <div class="d-flex justify-content-center align-items-center">
-                  <h3 class="mb-4 h3" style="color: #740E00;"><b> Publications </b></h3>
+                  <h3 class="mb-4 h3" style="color: #740E00;"> <b> Publications </b></h3>
                 </div>
                 <div id="publication-appending-div" class="bg-white">
                   <div id="publication-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
@@ -463,7 +473,7 @@
             <div class="container">
               <div id="research-div" class="px-3 px-sm-4 px-lg-4">
                 <div class="d-flex justify-content-center align-items-center">
-                  <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><b> Research </b></h3>
+                  <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><i class="fa-solid fa-telescope"></i><b> Research </b></h3>
                 </div>
 
                 <div id="research-appending-div">
@@ -516,13 +526,13 @@
           </div>
           <hr />
 
-          <!------------------------------------------------ Qualification Section ------------------------------------------------>
+          <!------------------------------------------------ Certification Section ------------------------------------------------>
 
           <div class="position-relative certification-div-wrapper d-flex" style="cursor: pointer;">
             <div class="container">
               <div id="certification-div">
                 <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
-                  <h3><b>Professional Membership Certificate</b></h3>
+                  <h3><i class="fa-solid fa-certificate"></i><b>Professional Membership Certificate</b></h3>
                 </div>
 
                 <div id="certification-appending-div">
@@ -588,7 +598,7 @@
             <div id="bank-details-div">
               <div class="px-3 px-sm-4 ps-lg-5">
                 <div class="d-flex justify-content-center align-items-center">
-                  <h3 class="p-md-3 pb-sm-3" style="color: #740E00;"><b> Bank Details </b></h3>
+                  <h3 class="p-md-3 pb-sm-3" style="color: #740E00;"><b><i class="fa-solid fa-building-columns"></i> Bank Details </b></h3>
                 </div>
                 <div class="row">
                   <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -633,1103 +643,978 @@
           </div>
 
 
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ************************************************************************Personal Details Modal Div******************************************************************************************** -->
-  <div class="personal-details-modal d-none">
-    <div id="main-form-area">
+    <!-- ************************************************************************Personal Details Modal Div******************************************************************************************** -->
+    <div class="personal-details-modal d-none">
+      <div id="main-form-area">
 
-      <form id="myForm">
-        <div class="d-flex justify-content-center align-items-center">
-          <h1 class="p-5" style="color: #740E00;"><b> Personal Details</b></h1>
-        </div>
-        <div class="container">
-          <div id="name-row" class="row mb-3">
-
-            <div class="col-md-4 col-sm-12">
-              <label for="first-name" cl>First Name <span class="required">*</span></label>
-              <span id="first-name-message" style="color: red;" class="error"></span>
-              <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
-            </div>
-
-            <div class="col-md-4 col-sm-12">
-              <label for="last-name">last Name <span class="required">*</span></label>
-              <span id="last-name-message" style="color: red;" class="error"></span>
-              <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
-            </div>
-
-            <div class="col-md-4 col-sm-12">
-              <img id="photo-preview" alt="your image" name="photo_preview" width="100" height="100"
-                style="border: 1px solid #ced4da; margin-left:100px;" />
-            </div>
-
+        <form id="myForm">
+          <div class="d-flex justify-content-center align-items-center">
+            <h1 class="p-5" style="color: #740E00;"><b> Personal Details</b></h1>
           </div>
-        </div>
+          <div class="container">
+            <div id="name-row" class="row mb-3">
 
-        <div class="container">
-          <div id="left-second-row" class="row">
-
-            <div class="col-md-4 col-sm-12">
-              <label for="date-of-birth">date of birth <span class="required">*</span></label>
-              <span id="date-of-birth-message" style="color: red;" class="error"></span>
-              <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
-            </div>
-
-            <div id="gender-row" class="col-sm-12 col-md-4">
-              <label for="">Gender <span class="required">*</span></label><br>
-              <label for="male">Male</label>
-              <input style="height: auto ;" type="radio" name="gender" class="gender" id="male" value="1" />
-              <label for="female">Female</label>
-              <input style="height: auto ;" type="radio" name="gender" class="gender" id="female" value="2" />
-              <label for="other">other</label>
-              <input style="height: auto ;" type="radio" name="gender" class="gender" id="other" value="3" />
-              <span id="gender-message" style="color: red;" class="error"></span>
-            </div>
-
-            <div class="col-md-4 col-sm-12">
-              <label for="photo">passport Size Photo <span class="required">*</span></label>
-              <span id="photo-message" style="color: red;" class="error"></span>
-              <input type="file" class="form-control" id="photo" name="profile_photo"
-                onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
-            </div>
-
-          </div>
-        </div>
-
-        <div class="container">
-          <div id="left-third-row" class="row">
-            <div class="col-md-3 col-sm-12">
-              <label for="contact-number">Contact No. <span class="required">*</span></label>
-              <span id="contact-number-message" style="color: red;" class="error"></span>
-              <input type="text" class="form-control" name="contact_number" id="contact-number" />
-            </div>
-            <div class="col-md-3 col-sm-12">
-              <label for="temp_contact-number">Temp Contact No.</label>
-              <input type="text" class="form-control" name="temp_contact_number" id="temp_contact-number" />
-            </div>
-            <div class="col-md-3 col-sm-12">
-              <label for="email">Email Id <span class="required">*</span></label>
-              <span id="email-message" style="color: red;" class="error"></span>
-              <input type="text" name="email" class="form-control" id="email">
-            </div>
-            <div class="col-md-3 col-sm-12">
-              <label for="temp_email">Temp Email</label>
-              <input type="text" name="temp_email" class="form-control" id="temp_email">
-            </div>
-          </div>
-        </div>
-
-        <div class="container">
-          <div id="left-fourth-row" class="row">
-            <div class="col-md-6 col-sm-12">
-              <label for="address">Address <span class="required">*</span></label>
-              <span id="address-message" style="color: red;" class="error"></span>
-              <input type="text" class="form-control" name="permanent_address" id="address" />
-            </div>
-            <div class="col-md-3 col-sm-12">
-              <label for="city">City <span class="required">*</span></label>
-              <span id="city-message" style="color: red;" class="error"></span>
-              <input type="text" class="form-control" name="permanent_address_city" id="city" />
-            </div>
-            <div class="col-md-3 col-sm-12">
-              <label for="pincode">Pincode <span class="required">*</span></label>
-              <span id="pincode-message" style="color: red;" class="error"></span>
-              <input type="text" class="form-control" name="permanent_address_pincode" id="pincode" />
-            </div>
-          </div>
-        </div>
-
-        <div class="container">
-          <div id="left-fourth-row" class="row">
-            <div class="col-md-8 col-sm-12">
-              <label for="temporary-address">Temporary Address</label>
-              <span id="temporary-address-message" style="color: red;" class="error"></span>
-              <input type="text" name="temporary_address" class="form-control" id="temporary-address">
-            </div>
-            <div class="col-md-4 col-sm-12">
-              <label for="country">Country <span class="required">*</span></label>
-              <span id="country-message" style="color: red;" class="error"></span>
-              <input type="text" name="nationality" class="form-control" id="country">
-            </div>
-          </div>
-        </div>
-
-        <div class="container">
-          <div id="left-fourth-row" class="row">
-            <div class="col-md-4 col-sm-12">
-              <label for="pan-number">Pan Card Number <span class="required">*</span></label>
-              <span id="pan-number-message" style="color: red;" class="error"></span>
-              <input type="text" name="pan_number" class="form-control" id="pan-number" />
-            </div>
-            <div class="col-md-4 col-sm-12">
-              <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
-              <span id="pan-photo-message" style="color: red;" class="error"></span>
-              <input type="file" class="form-control" id="pan-photo"
-                onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
-            </div>
-            <div class="col-md-4 col-sm-12">
-              <img id="pan-photo-preview" alt="your image" width="100" height="100"
-                style="border: 1px solid #ced4da; margin-left:100px;" />
-            </div>
-          </div>
-        </div>
-
-        <div class="container">
-          <div id="left-fourth-row" class="row">
-            <div class="col-md-4 col-sm-12">
-              <label for="aadhar-number">Aadhar Card Number <span class="required">*</span></label>
-              <span id="aadhar-number-message" style="color: red;" class="error"></span>
-              <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
-            </div>
-            <div class="col-md-4 col-sm-12">
-              <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
-              <span id="aadhar-photo-message" style="color: red;" class="error"></span>
-              <input type="file" class="form-control" id="aadhar-photo" 
-                onchange="document.getElementById('aadhar-photo-preview-1').src = window.URL.createObjectURL(this.files[0])">
-            </div>
-            <div class="col-md-4 col-sm-12">
-              <img id="aadhar-photo-preview-1" alt="your image" width="100" height="100"
-                style="border: 1px solid #ced4da; margin-left:100px;" />
-            </div>
-          </div>
-        </div>
-
-        <div class="d-flex justify-content-center py-3">
-          <button id="personal-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          <button id="personal-details-submit-button" class="btn btn-success m-4">Submit</button>
-        </div>
-
-      </form>
-
-    </div>
-  </div>
-  </div>
-
-  <!-- ************************************************************************Qualification Modal Div******************************************************************************************** -->
-
-
-  <div class="qualification-modal d-none">
-    <div class="full-screen container ">
-      <div class="main-content">
-        <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
-          <h3><b> Qualification</b></h3>
-          <i id="qualification-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
-        </div>
-        <hr>
-
-        <div id="qualification-appending-div" class="bg-white">
-          <div id="qualification-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1">
-            <div class="row">
-
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Title <span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><select class="form-control qualification-title"
-                      id="bachelors-degree-title-data">
-
-                    </select></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Subject <span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control qualification-subject"
-                      id="bachelors-degree-major-subject" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">University<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control qualification-university"
-                      id="bachelors-degree-university" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Year of Passing <span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control qualification-year"
-                      id="bachelors-degree-year-of-passing" type="text"></div>
-                </div>
-
+              <div class="col-md-4 col-sm-12">
+                <label for="first-name" cl>First Name <span class="required">*</span></label>
+                <span id="first-name-message" style="color: red;" class="error"></span>
+                <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
               </div>
 
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+              <div class="col-md-4 col-sm-12">
+                <label for="last-name">last Name <span class="required">*</span></label>
+                <span id="last-name-message" style="color: red;" class="error"></span>
+                <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
+              </div>
 
-                <div class="row p-3 qualification-status-wrapper d-none">
-                  <div class="col-md-2 ">
-                    <p class="h6">Status<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><select class="form-control qualification-status"
-                      id="qualification-status-data">
-                      <option value="true">Awarded</option>
-                      <option value="false">Persuing</option>
-                    </select></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2">
-                    <p class="h6">College <span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control qualification-college"
-                      id="bachelors-degree-college" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2">
-                    <p class="h6">Percentage<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><input class="form-control qualification-percentile"
-                      id="bachelors-degree-percentile" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Certificate<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><input class="form-control qualification-certificate"
-                      id="bachelors-degree-certificate"  onchange="document.getElementById('qualification-certificate-preview').src = window.URL.createObjectURL(this.files[0])" type="file">
-                      <p hidden><img id="qualification-certificate-preview" type="hidden" alt="your image" width="100" height="100"
-                        style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+              <div class="col-md-4 col-sm-12">
+                <img id="photo-preview" alt="your image" name="photo_preview" width="100" height="100"
+                  style="border: 1px solid #ced4da; margin-left:100px;" />
+              </div>
+
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="left-second-row" class="row">
+
+              <div class="col-md-4 col-sm-12">
+                <label for="date-of-birth">date of birth <span class="required">*</span></label>
+                <span id="date-of-birth-message" style="color: red;" class="error"></span>
+                <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
+              </div>
+
+              <div id="gender-row" class="col-sm-12 col-md-4">
+                <label for="">Gender <span class="required">*</span></label><br>
+                <label for="male">Male</label>
+                <input style="height: auto ;" type="radio" name="gender" class="gender" id="male" value="1" />
+                <label for="female">Female</label>
+                <input style="height: auto ;" type="radio" name="gender" class="gender" id="female" value="2" />
+                <label for="other">other</label>
+                <input style="height: auto ;" type="radio" name="gender" class="gender" id="other" value="3" />
+                <span id="gender-message" style="color: red;" class="error"></span>
+              </div>
+
+              <div class="col-md-4 col-sm-12">
+                <label for="photo">passport Size Photo <span class="required">*</span></label>
+                <span id="photo-message" style="color: red;" class="error"></span>
+                <input type="file" class="form-control" id="photo" name="profile_photo"
+                  onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
+              </div>
+
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="left-third-row" class="row">
+              <div class="col-md-3 col-sm-12">
+                <label for="contact-number">Contact No. <span class="required">*</span></label>
+                <span id="contact-number-message" style="color: red;" class="error"></span>
+                <input type="text" class="form-control" name="contact_number" id="contact-number" />
+              </div>
+              <div class="col-md-3 col-sm-12">
+                <label for="temp_contact-number">Temp Contact No.</label>
+                <input type="text" class="form-control" name="temp_contact_number" id="temp_contact-number" />
+              </div>
+              <div class="col-md-3 col-sm-12">
+                <label for="email">Email Id <span class="required">*</span></label>
+                <span id="email-message" style="color: red;" class="error"></span>
+                <input type="text" name="email" class="form-control" id="email">
+              </div>
+              <div class="col-md-3 col-sm-12">
+                <label for="temp_email">Temp Email</label>
+                <input type="text" name="temp_email" class="form-control" id="temp_email">
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="left-fourth-row" class="row">
+              <div class="col-md-6 col-sm-12">
+                <label for="address">Address <span class="required">*</span></label>
+                <span id="address-message" style="color: red;" class="error"></span>
+                <input type="text" class="form-control" name="permanent_address" id="address" />
+              </div>
+              <div class="col-md-3 col-sm-12">
+                <label for="city">City <span class="required">*</span></label>
+                <span id="city-message" style="color: red;" class="error"></span>
+                <input type="text" class="form-control" name="permanent_address_city" id="city" />
+              </div>
+              <div class="col-md-3 col-sm-12">
+                <label for="pincode">Pincode <span class="required">*</span></label>
+                <span id="pincode-message" style="color: red;" class="error"></span>
+                <input type="text" class="form-control" name="permanent_address_pincode" id="pincode" />
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="left-fourth-row" class="row">
+              <div class="col-md-8 col-sm-12">
+                <label for="temporary-address">Temporary Address</label>
+                <span id="temporary-address-message" style="color: red;" class="error"></span>
+                <input type="text" name="temporary_address" class="form-control" id="temporary-address">
+              </div>
+              <div class="col-md-4 col-sm-12">
+                <label for="country">Country <span class="required">*</span></label>
+                <span id="country-message" style="color: red;" class="error"></span>
+                <input type="text" name="nationality" class="form-control" id="country">
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="left-fourth-row" class="row">
+              <div class="col-md-4 col-sm-12">
+                <label for="pan-number">Pan Card Number <span class="required">*</span></label>
+                <span id="pan-number-message" style="color: red;" class="error"></span>
+                <input type="text" name="pan_number" class="form-control" id="pan-number" />
+              </div>
+              <div class="col-md-4 col-sm-12">
+                <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
+                <span id="pan-photo-message" style="color: red;" class="error"></span>
+                <input type="file" class="form-control" id="pan-photo"
+                  onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
+              </div>
+              <div class="col-md-4 col-sm-12">
+                <img id="pan-photo-preview" alt="your image" width="100" height="100"
+                  style="border: 1px solid #ced4da; margin-left:100px;" />
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="left-fourth-row" class="row">
+              <div class="col-md-4 col-sm-12">
+                <label for="aadhar-number">Aadhar Card Number <span class="required">*</span></label>
+                <span id="aadhar-number-message" style="color: red;" class="error"></span>
+                <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
+              </div>
+              <div class="col-md-4 col-sm-12">
+                <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
+                <span id="aadhar-photo-message" style="color: red;" class="error"></span>
+                <input type="file" class="form-control" id="aadhar-photo"
+                  onchange="document.getElementById('aadhar-photo-preview-1').src = window.URL.createObjectURL(this.files[0])">
+              </div>
+              <div class="col-md-4 col-sm-12">
+                <img id="aadhar-photo-preview-1" alt="your image" width="100" height="100"
+                  style="border: 1px solid #ced4da; margin-left:100px;" />
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center py-3">
+            <button id="personal-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="personal-details-submit-button" class="btn btn-success m-4">Submit</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+    </div>
+
+    <!-- ************************************************************************Qualification Modal Div******************************************************************************************** -->
+
+
+    <div class="qualification-modal d-none">
+      <div class="full-screen container ">
+        <div class="main-content">
+          <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
+            <h3><b> Qualification</b></h3>
+            <i id="qualification-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+          </div>
+          <hr>
+
+          <div id="qualification-appending-div" class="bg-white">
+            <div id="qualification-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1">
+              <div class="row">
+
+                <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Title <span class="required">*</span></p>
                     </div>
+                    <div class="col-md-10"><select class="form-control qualification-title"
+                        id="bachelors-degree-title-data">
+
+                      </select></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Subject <span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input class="form-control qualification-subject"
+                        id="bachelors-degree-major-subject" type="text"></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">University<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input class="form-control qualification-university"
+                        id="bachelors-degree-university" type="text"></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Year of Passing <span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input class="form-control qualification-year"
+                        id="bachelors-degree-year-of-passing" type="text"></div>
+                  </div>
+
                 </div>
 
+                <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+
+                  <div class="row p-3 qualification-status-wrapper d-none">
+                    <div class="col-md-2 ">
+                      <p class="h6">Status<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10"><select class="form-control qualification-status"
+                        id="qualification-status-data">
+                        <option value="true">Awarded</option>
+                        <option value="false">Persuing</option>
+                      </select></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2">
+                      <p class="h6">College <span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input class="form-control qualification-college"
+                        id="bachelors-degree-college" type="text"></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2">
+                      <p class="h6">Percentage<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10"><input class="form-control qualification-percentile"
+                        id="bachelors-degree-percentile" type="text"></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Certificate<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10"><input class="form-control qualification-certificate"
+                        id="bachelors-degree-certificate"
+                        onchange="document.getElementById('qualification-certificate-preview').src = window.URL.createObjectURL(this.files[0])"
+                        type="file">
+                      <p hidden><img id="qualification-certificate-preview" type="hidden" alt="your image" width="100"
+                          height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="d-none qualification-delete-button d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-pen fa-2x text-white "></i>
               </div>
             </div>
-            <div class="d-none qualification-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
+            <hr style="height: 5px;">
+            <div id="qualification-data" class="mt-4">
+
             </div>
           </div>
-          <hr style="height: 5px;">
-          <div id="qualification-data" class="mt-4">
-
+          <div class="d-flex justify-content-center">
+            <button id="qualification-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="qualification-submit-button" class="btn btn-success m-4">Submit</button>
           </div>
         </div>
-      </div>
-      <div class="d-flex justify-content-center">
-        <button id="qualification-cancel-button" class="btn btn-danger m-4">Cancel</button>
-        <button id="qualification-submit-button" class="btn btn-success m-4">Submit</button>
       </div>
     </div>
-  </div>
 
-  <!-- ************************************************************************Work Experience Modal Div******************************************************************************************** -->
+    <!-- ************************************************************************Work Experience Modal Div******************************************************************************************** -->
 
-  <div class="work-experience-modal d-none">
-    <div class="full-screen container ">
-      <div class="main-content">
-        <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
-          <h3>
-            <b>Work Experience</b>
-          </h3>
-          <i id="work-experience-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
-        </div>
-        <hr>
+    <div class="work-experience-modal d-none">
+      <div class="full-screen container ">
+        <div class="main-content">
+          <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
+            <h3>
+              <b>Work Experience</b>
+            </h3>
+            <i id="work-experience-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+          </div>
+          <hr>
 
-        <div class="bg-white">
-          <div id="workExperience-display-div" class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1">
-            <div class="row">
+          <div class="bg-white">
+            <div id="workExperience-display-div" class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1">
+              <div class="row">
 
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                <div class="row p-2">
-                  <div class="col-md-3 ">
-                    <p class="h6">Experience Type</p>
-                  </div>
-                  <div class="col-md-9">
-                    <select class="experienceType form-control" id="experienceType">
-                      <option value="">Select Type</option>
+                <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                  <div class="row p-2">
+                    <div class="col-md-3 ">
+                      <p class="h6">Experience Type</p>
+                    </div>
+                    <div class="col-md-9">
+                      <select class="experienceType form-control" id="experienceType">
+                        <option value="">Select Type</option>
 
-                    </select>
+                      </select>
+                    </div>
                   </div>
-                </div>
-                `
-                <div class="row p-2">
-                  <div class="col-md-3 ">
-                    <p class="h6">University</p>
+                  `
+                  <div class="row p-2">
+                    <div class="col-md-3 ">
+                      <p class="h6">University</p>
+                    </div>
+                    <div class="col-md-9 ">
+                      <input class="form-control employeeName" id="employeeName" type="text">
+                    </div>
                   </div>
-                  <div class="col-md-9 ">
-                    <input class="form-control employeeName" id="employeeName" type="text">
+                  <div class="row p-3">
+                    <div class="col-md-3 ">
+                      <p class="h6">Subject Taught</p>
+                    </div>
+                    <div class="col-md-9 ">
+                      <input class="form-control responsibility" id="responsibility" type="text">
+                    </div>
                   </div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-3 ">
-                    <p class="h6">Subject Taught</p>
-                  </div>
-                  <div class="col-md-9 ">
-                    <input class="form-control responsibility" id="responsibility" type="text">
-                  </div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-3 ">
-                    <p class="h6">Program</p>
-                  </div>
-                  <div class="col-md-9 ">
-                    <input class="form-control description" id="description" type="text">
-
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                <div class="row p-3">
-                  <div class="col-md-3">
-                    <p class="h6">Designation</p>
-                  </div>
-                  <div class="col-md-9 ">
-                    <select class="form-control designation" id="designation">
-                      <option value="0">Select Designation</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-3">
-                    <p class="h6">Start Date</p>
-                  </div>
-                  <div class="col-md-9">
-                    <input class="form-control start_Date" id="startMaxDate" type="date">
-                  </div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-3 ">
-                    <p class="h6">End Date</p>
-                  </div>
-                  <div class="col-md-9">
-                    <input class="form-control end_Date" id="endMaxDate" type="date">
-                  </div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-3 ">
-                    <p class="h6">Teaching Duration</p>
-                  </div>
-                  <div class="col-md-9">
-                    <input class="form-control durationOfTeaching" id="durationOfTeaching" type="text">
-                  </div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-6 ">
-                    <div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="experienceTimespan1" id="experienceTimespan">
-                        <label class="form-check-label" for="experienceTimespan">
-                          Past </label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="experienceTimespan1"
-                          id="experienceTimespanCurrent">
-                        <label class="form-check-label" for="experienceTimespanCurrent"> Current </label>
-                      </div>
+                  <div class="row p-3">
+                    <div class="col-md-3 ">
+                      <p class="h6">Program</p>
+                    </div>
+                    <div class="col-md-9 ">
+                      <input class="form-control description" id="description" type="text">
 
                     </div>
                   </div>
+
                 </div>
-              </div>
-            </div>
-            <div class="d-none workExperience-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
-            </div>
-          </div>
-          <hr style="height: 5px;">
-          <div id="workExperience-data" class="mt-4"></div>
-        </div>
-      </div>
-      <div class="d-flex justify-content-center">
-        <button id="work-experience-cancel-button" class="btn btn-danger m-4">Cancel</button>
-        <button id="work-experience-submit-button" class="btn btn-success m-4">Submit</button>
-      </div>
-    </div>
-  </div>
 
-
-
-  <!-- <div class="work-experience-modal d-none">
-
-     <div class="full-screen container">
-      <div class="main-content">
-        <div class="container d-flex justify-content-between">
-          <h3 class="text-white h3 py-4">Teaching Experience</h3>
-          <i id="teaching-experience-add-button" class="fa-solid text-white fa-circle-plus fa-2x px-4 py-4"></i>
-        </div>
-        <hr>
-        <div class="d-flex align-items-centre justify-content-centre">
-          <div class="container">
-            <div class="row table">
-              <div class="table-responsive">
-                 <table>
-                  <thead class="text-white">
-                    <tr class="table-head">
-                      <th>University</th>
-                      <th>Subject taught</th>
-                      <th>Program</th>
-                      <th>Designation</th>
-                      <th>From</th>
-                      <th>To</th>
-                      <th>Duration of teaching</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody id="teaching-experience-data">
-                    <tr data-toggle="collapse" class="collapsed">
-                      <td><input class="form-control" type="text"></td>
-                      <td><input class="form-control" type="text"></td>
-                      <td><input class="form-control" type="text"></td>
-                      <td><input class="form-control" type="text"></td>
-                      <td><input class="form-control" type="date"></td>
-                      <td><input class="form-control" type="date"></td>
-                      <td><input class="form-control" type="text"></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table> 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="main-content middle-screen container">
-        <div class="container d-flex justify-content-between">
-          <h3 class="text-white h3 py-4">Industrial Experience</h3>
-          <i id="industrial-experience-add-button" class="fa-solid text-white fa-circle-plus fa-2x px-4 py-4"></i>
-        </div>
-        <hr>
-        <div class="d-flex align-items-centre justify-content-centre">
-          <div class="container">
-            <div class="row table">
-              <div class="table-responsive">
-                <table>
-                  <thead class="text-white">
-                    <tr class="table-head">
-                      <th>University</th>
-                      <th>Subject taught</th>
-                      <th>Program</th>
-                      <th>Designation</th>
-                      <th>From</th>
-                      <th>To</th>
-                      <th>Duration of teaching</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody id="industrial-experience-data">
-                    <tr data-toggle="collapse" class="collapsed">
-                      <td><input class="form-control" type="text"></td>
-                      <td><input class="form-control" type="text"></td>
-                      <td><input class="form-control" type="text"></td>
-                      <td><input class="form-control" type="text"></td>
-                      <td><input class="form-control" type="date"></td>
-                      <td><input class="form-control" type="date"></td>
-                      <td><input class="form-control" type="text"></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="d-flex justify-content-center">
-        <button id="work-experience-cancel-button" class="btn btn-danger m-4">Cancel</button>
-        <button id="work-experience-submit-button" class="btn btn-success m-4">Submit</button>
-      </div>
-    </div>
-  </div> -->
-
-
-  <!-- ************************************************************************Skills Modal Div******************************************************************************************** -->
-
-  <div class="skills-modal d-none">
-    <div id="skill-box" class="container-lg">
-
-      <div class="row ">
-
-        <div class="col-md-6 col-sm-12">
-          <div>
-
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-                  type="button" role="tab" aria-controls="pills-home" aria-selected="true">Soft Skill</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-                  type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Hard Skill</button>
-              </li>
-            </ul>
-            <div class="tab-content" id="pills-tabContent">
-              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <div id="soft-skill-box" class="col-12">
-                  <div class="col-12" style="list-style-type: none;">
-                    <input type="text" id="soft-skill-search" placeholder="Search for soft skills.."
-                      class="form-control" title="Type in a name">
-                    <li class="mx-5 d-none" id="add-custom-soft-skill" style="cursor: pointer;">
-                      <div class="row">
-                        <div class="col-md-2 col-sm-2 col-2 "><i class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+                <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                  <div class="row p-3">
+                    <div class="col-md-3">
+                      <p class="h6">Designation</p>
+                    </div>
+                    <div class="col-md-9 ">
+                      <select class="form-control designation" id="designation">
+                        <option value="0">Select Designation</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-3">
+                      <p class="h6">Start Date</p>
+                    </div>
+                    <div class="col-md-9">
+                      <input class="form-control start_Date" id="startMaxDate" type="date">
+                    </div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-3 ">
+                      <p class="h6">End Date</p>
+                    </div>
+                    <div class="col-md-9">
+                      <input class="form-control end_Date" id="endMaxDate" type="date">
+                    </div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-3 ">
+                      <p class="h6">Teaching Duration</p>
+                    </div>
+                    <div class="col-md-9">
+                      <input class="form-control durationOfTeaching" id="durationOfTeaching" type="text">
+                    </div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-6 ">
+                      <div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="experienceTimespan1"
+                            id="experienceTimespan">
+                          <label class="form-check-label" for="experienceTimespan">
+                            Past </label>
                         </div>
-                        <div class="col-md-10 col-sm-10 col-10 "><a class="ms-3 text-dark" id="custom-soft-skill-value"
-                            href="#"></a></div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="experienceTimespan1"
+                            id="experienceTimespanCurrent">
+                          <label class="form-check-label" for="experienceTimespanCurrent"> Current </label>
+                        </div>
+
                       </div>
-                    </li>
+                    </div>
                   </div>
-
-                  <ul id="soft-skill-UL">
-
-                  </ul>
-
                 </div>
               </div>
-              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <div>
-                  <div id="hard-skill-box" class="col-12">
+              <div class="d-none workExperience-delete-button d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-pen fa-2x text-white "></i>
+              </div>
+            </div>
+            <hr style="height: 5px;">
+            <div id="workExperience-data" class="mt-4"></div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button id="work-experience-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="work-experience-submit-button" class="btn btn-success m-4">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
+
+
+
+    <!-- ************************************************************************Skills Modal Div******************************************************************************************** -->
+
+    <div class="skills-modal d-none">
+      <div id="skill-box" class="container-lg">
+
+        <div class="row ">
+
+          <div class="col-md-6 col-sm-12">
+            <div>
+
+              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                    type="button" role="tab" aria-controls="pills-home" aria-selected="true">Soft Skill</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                    type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Hard Skill</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                  <div id="soft-skill-box" class="col-12">
                     <div class="col-12" style="list-style-type: none;">
-                      <input type="text" id="hard-skill-search" placeholder="Search for hard skills.."
+                      <input type="text" id="soft-skill-search" placeholder="Search for soft skills.."
                         class="form-control" title="Type in a name">
-                      <li class="mx-5 d-none" id="add-custom-hard-skill" style="cursor: pointer;">
+                      <li class="mx-5 d-none" id="add-custom-soft-skill" style="cursor: pointer;">
                         <div class="row">
                           <div class="col-md-2 col-sm-2 col-2 "><i
-                              class="fa-solid text-primary fa-circle-plus fa-2x"></i></div>
+                              class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+                          </div>
                           <div class="col-md-10 col-sm-10 col-10 "><a class="ms-3 text-dark"
-                              id="custom-hard-skill-value" href="#"></a></div>
+                              id="custom-soft-skill-value" href="#"></a></div>
                         </div>
                       </li>
                     </div>
 
-                    <ul id="hard-skill-UL">
+                    <ul id="soft-skill-UL">
+
                     </ul>
 
                   </div>
                 </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div id="hard-skill-box" class="col-12">
 
+                      <div class="col-12" style="list-style-type: none;">
+                        <input type="text" id="hard-skill-search" placeholder="Search for hard skills.."
+                          class="form-control" title="Type in a name">
+                        <li class="mx-5 d-none" id="add-custom-hard-skill" style="cursor: pointer;">
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2 col-2 "><i
+                                class="fa-solid text-primary fa-circle-plus fa-2x"></i></div>
+                            <div class="col-md-10 col-sm-10 col-10 "><a class="ms-3 text-dark"
+                                id="custom-hard-skill-value" href="#"></a></div>
+                          </div>
+                        </li>
+                      </div>
+
+                      <ul id="hard-skill-UL">
+                      </ul>
+
+                    </div>
+
+                </div>
               </div>
-            </div>
 
-          </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-          <div id="review-box">
-            <h4 class="ms-2 text-primary text-center">Review Your Soft Skills</h4>
-            <div id="soft-skill-review-box">
-              <ul id="soft-skill-display">
-              </ul>
             </div>
-            <hr>
-            <div class="col-sm-12">
-              <h4 class="ms-2 text-primary text-center">Review Your Hard Skills</h4>
-              <div id="hard-skill-review-box">
-                <ul id="hard-skill-display">
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div id="review-box">
+              <h4 class="ms-2 text-primary text-center">Review Your Soft Skills</h4>
+              <div id="soft-skill-review-box">
+                <ul id="soft-skill-display">
                 </ul>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="save-submit-div">
-        <div id="buttons-row" class="d-flex justify-content-center">
-          <button id="skills-modal-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          <button id="skills-modal-submit-button" class="btn btn-success m-4">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ************************************************************************Achievement Modal Div******************************************************************************************** -->
-
-  <div class="award-modal d-none">
-    <div class="full-screen container">
-      <div class="main-content">
-        <div class="container d-flex justify-content-between mt-4">
-          <h3 class="h3 ps-1 py-4">Award</h3>
-          <i id="award-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
-        </div>
-        <hr>
-
-
-        <div id="publication-award-div" class="bg-white">
-          <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
-            <div class="row">
-
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Award name<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><input class="form-control awardName" type="text" id="award-name"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Organisation<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control awardOrganization" type="text"
-                      id="award-organization"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Organisation type<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><select class="form-control awardOrganizationType"
-                      id="award-organization-type">
-                      <option value="0">-select-</option>
-                      <option value="1">School</option>
-                      <option value="2">University</option>
-                    </select></div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                <div class="row p-3">
-                  <div class="col-md-2">
-                    <p class="h6">Description<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2">
-                    <p class="h6">Received date<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><input class="form-control awardRecieveDate" type="date"
-                      id="award-receive-date"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Certificate<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file"
-                      id="award-certification-image"></div>
-                </div>
-              </div>
-            </div>
-            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x"></i>
-            </div>
-          </div>
-          <hr style="height: 5px;">
-        </div>
-
-        <div class="d-flex justify-content-center">
-          <button id="award-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          <button id="award-submit-button" class="btn btn-success m-4">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- ************************************************************************Publication Modal Div******************************************************************************************** -->
-
-  <div class="publication-modal d-none">
-
-    <div class="full-screen container ">
-      <div class="main-content">
-        <div class="container d-flex justify-content-between mt-4">
-          <h3 class="h3 ps-1 py-4">Publication</h3>
-          <i id="publication-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
-        </div>
-        <hr>
-
-
-        <div id="publication-appending-div" class="bg-white">
-          <div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1">
-            <div class="row">
-
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Role <span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><select class="form-control role" id="role">
-                      <option>-Select-</option>
-                      <option>Edited</option>
-                      <option>Authored</option>
-                    </select></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Number of Authors<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control number-of-authors" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Book Title<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control book-title" type="text"></div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                <div class="row p-3">
-                  <div class="col-md-2">
-                    <p class="h6">Publisher<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control publisher" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2">
-                    <p class="h6">Year of Publication<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><input class="form-control year-of-publication" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Certificate<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><input class="form-control publication-certification" type="file"></div>
-                </div>
-              </div>
-            </div>
-            <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x"></i>
-            </div>
-          </div>
-          <hr style="height: 5px;">
-          <div id="publication-data" class="mt-4">
-
-          </div>
-        </div>
-
-      </div>
-      <div class="d-flex justify-content-center">
-        <button id="publication-cancel-button" class="btn btn-danger m-4">Cancel</button>
-        <button id="publication-submit-button" class="btn btn-success m-4">Submit</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ************************************************************************Research Modal Div******************************************************************************************** -->
-
-  <div class="research-modal d-none">
-    <div class="full-screen container ">
-      <div class="main-content">
-        <div class="container d-flex justify-content-between mt-4">
-          <h3 class="h3 py-4">Research</h3>
-          <i id="research-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
-        </div>
-        <hr>
-
-
-        <div id="research-appending-div" class="bg-white">
-          <div id="research-display-div" class="research-row px-3 px-sm-4 px-lg-4 mt-1">
-            <div class="row">
-
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Role<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><select name="role" class="form-control research_role">
-                      <option value="0">-Select-</option>
-                      <option value="1">Sole</option>
-                      <option value="2">Author</option>
-                    </select></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Journal Name<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input name="journal_name" class="form-control research_Journal_name"
-                      type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Volume Year<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input name="volume_year" class="form-control research_volume_year"
-                      type="text"></div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                <div class="row p-3">
-                  <div class="col-md-2">
-                    <p class="h6">Description</p>
-                  </div>
-                  <div class="col-md-10 "><input name="number" class="form-control research_description" type="text">
-                  </div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2">
-                    <p class="h6">Category<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><input name="category" class="form-control research_category" type="text">
-                  </div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Certificate<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><input class="form-control research_photo" type="file"></div>
-                </div>
-              </div>
-            </div>
-            <div class="d-none research-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x"></i>
-            </div>
-          </div>
-          <hr style="height: 5px;">
-          <div id="research-data" class="mt-4">
-
-          </div>
-        </div>
-        <!-- <div class="d-flex align-items-centre justify-content-centre">
-          <div class="container resume-box">
-            <div class="row table">
-              <div class="table-responsive">
-                <div id="no-more-tables">
-                  <table>
-                    <thead class="text-white">
-                      <tr class="table-head">
-                        <th>Role-?</th>
-                        <th>Journal-name</th>
-                        <th>Volume-year</th>
-                        <th>Description</th>
-                        <th>Category</th>
-                        <th>Certificate</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody id="research-data">
-                      <tr data-toggle="collapse" class="collapsed research-data-tr">
-                        <td class="text-white pb-3 d-none">Research</td>
-                        <td><select name="role" class="form-control research_role">
-                            <option>-Select-</option>
-                            <option value="Sole">Sole</option>
-                            <option value="Author">Author</option>
-                          </select></td>
-                        <td><input name="journal_name" class="form-control research_Journal_name" type="text"></td>
-                        <td><input name="volume_year" class="form-control research-volume-year" type="text"></td>
-                        <td><input name="number" class="form-control research_description" type="text"></td>
-                        <td><input name="category" class="form-control research_category" type="text">
-                        <td><input data-title="Certificate" class="form-control" type="file"></td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
+              <hr>
+              <div class="col-sm-12">
+                <h4 class="ms-2 text-primary text-center">Review Your Hard Skills</h4>
+                <div id="hard-skill-review-box">
+                  <ul id="hard-skill-display">
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-        </div> -->
-
-
-      </div>
-      <div class="d-flex justify-content-center ">
-        <button id="research-cancel-button" class="btn btn-danger m-4">Cancel</button>
-        <button id="research-submit-button" class="btn btn-success m-4">Submit</button>
+        </div>
+        <div id="save-submit-div">
+          <div id="buttons-row" class="d-flex justify-content-center">
+            <button id="skills-modal-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="skills-modal-submit-button" class="btn btn-success m-4">Submit</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- ************************************************************************Achievement Modal Div******************************************************************************************** -->
+
+    <div class="award-modal d-none">
+      <div class="full-screen container">
+        <div class="main-content">
+          <div class="container d-flex justify-content-between mt-4">
+            <h3 class="h3 ps-1 py-4">Award</h3>
+            <i id="award-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+          </div>
+          <hr>
 
 
-  <!-- ************************************************************************Certification Modal Div******************************************************************************************** -->
+          <div id="publication-award-div" class="bg-white">
+            <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
+              <div class="row">
 
-
-  <div class="certification-modal d-none">
-    <div class="full-screen container ">
-      <div class="main-content">
-        <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
-          <h3><b> Certification</b></h3>
-          <i id="certification-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
-        </div>
-        <hr>
-
-        <div id="certification-appending-div" class="bg-white">
-          <div id="certification-display-div" class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
-            <div class="row">
-              <!-- px-lg-5 -->
-              <div class="col-12 col-md-12 col-lg-12 col-sm-12 ">
-
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Certificate: <span class="required">*</span></p>
+                <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Award name<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10"><input class="form-control awardName" type="text" id="award-name"></div>
                   </div>
-                  <div class="col-md-10 "><input class="form-control certification-certificate" type="text"></div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Organisation<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input class="form-control awardOrganization" type="text"
+                        id="award-organization"></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Organisation type<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><select class="form-control awardOrganizationType"
+                        id="award-organization-type">
+                        <option value="0">-select-</option>
+                        <option value="1">School</option>
+                        <option value="2">University</option>
+                      </select></div>
+                  </div>
                 </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Institution: <span class="required">*</span></p>
+
+                <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                  <div class="row p-3">
+                    <div class="col-md-2">
+                      <p class="h6">Description<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
                   </div>
-                  <div class="col-md-10 "><input class="form-control certification-institution" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Year of Passing: <span class="required">*</span></p>
+                  <div class="row p-3">
+                    <div class="col-md-2">
+                      <p class="h6">Received date<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10"><input class="form-control awardRecieveDate" type="date"
+                        id="award-receive-date"></div>
                   </div>
-                  <div class="col-md-10 "><input class="form-control certification-YOP" type="text"></div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Certificate<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10"><input class="form-control awardCertificationImage" type="file"
+                        id="award-certification-image"></div>
+                  </div>
                 </div>
               </div>
+              <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-pen fa-2x"></i>
+              </div>
+            </div>
+            <hr style="height: 5px;">
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button id="award-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="award-submit-button" class="btn btn-success m-4">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ************************************************************************Publication Modal Div******************************************************************************************** -->
+
+    <div class="publication-modal d-none">
+
+      <div class="full-screen container ">
+        <div class="main-content">
+          <div class="container d-flex justify-content-between mt-4">
+            <h3 class="h3 ps-1 py-4">Publication</h3>
+            <i id="publication-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+          </div>
+          <hr>
+
+
+          <div id="publication-appending-div" class="bg-white">
+            <div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1">
+              <div class="row">
+
+                <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Role <span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10"><select class="form-control role" id="role">
+                        <option>-Select-</option>
+                        <option>Edited</option>
+                        <option>Authored</option>
+                      </select></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Number of Authors<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input class="form-control number-of-authors" type="text"></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Book Title<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input class="form-control book-title" type="text"></div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                  <div class="row p-3">
+                    <div class="col-md-2">
+                      <p class="h6">Publisher<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input class="form-control publisher" type="text"></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2">
+                      <p class="h6">Year of Publication<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10"><input class="form-control year-of-publication" type="text"></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Certificate<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10"><input class="form-control publication-certification" type="file"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-pen fa-2x"></i>
+              </div>
+            </div>
+            <hr style="height: 5px;">
+            <div id="publication-data" class="mt-4">
 
             </div>
-            <div class="d-none certification-delete-button d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button id="publication-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="publication-submit-button" class="btn btn-success m-4">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ************************************************************************Research Modal Div******************************************************************************************** -->
+
+    <div class="research-modal d-none">
+      <div class="full-screen container ">
+        <div class="main-content">
+          <div class="container d-flex justify-content-between mt-4">
+            <h3 class="h3 py-4">Research</h3>
+            <i id="research-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+          </div>
+          <hr>
+
+
+          <div id="research-appending-div" class="bg-white">
+            <div id="research-display-div" class="research-row px-3 px-sm-4 px-lg-4 mt-1">
+              <div class="row">
+
+                <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Role<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10"><select name="role" class="form-control research_role">
+                        <option value="0">-Select-</option>
+                        <option value="1">Sole</option>
+                        <option value="2">Author</option>
+                      </select></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Journal Name<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input name="journal_name" class="form-control research_Journal_name"
+                        type="text"></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Volume Year<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input name="volume_year" class="form-control research_volume_year"
+                        type="text"></div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                  <div class="row p-3">
+                    <div class="col-md-2">
+                      <p class="h6">Description</p>
+                    </div>
+                    <div class="col-md-10 "><input name="number" class="form-control research_description" type="text">
+                    </div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2">
+                      <p class="h6">Category<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10"><input name="category" class="form-control research_category" type="text">
+                    </div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Certificate<span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10"><input class="form-control research_photo" type="file"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-none research-delete-button d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-pen fa-2x"></i>
+              </div>
+            </div>
+            <hr style="height: 5px;">
+            <div id="research-data" class="mt-4">
+
             </div>
           </div>
-          <hr style="height: 5px;">
-          <div id="certification-data" class="mt-4">
-
+          <div class="d-flex justify-content-center ">
+            <button id="research-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="research-submit-button" class="btn btn-success m-4">Submit</button>
           </div>
         </div>
-      </div>
-      <div class="d-flex justify-content-center">
-        <button id="certification-cancel-button" class="btn btn-danger m-4">Cancel</button>
-        <button id="certification-submit-button" class="btn btn-success m-4">Submit</button>
       </div>
     </div>
-  </div>
 
-  <!-- ************************************************************************Bank Details Modal Div******************************************************************************************** -->
-  <div class="bank-details-modal d-none">
 
-    <div id="bank-form-area">
-      <div class="container">
-        <div class="d-flex justify-content-center align-items-center my-4">
-          <h2>Bank Details</h2>
-        </div>
+    <!-- ************************************************************************Certification Modal Div******************************************************************************************** -->
 
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <label for="bank-name" class="py-md-2">Name of the Bank<span class="required">*</span></label>
-            <span id="bank-name-message" style="color: red;" class="error"></span>
-            <input type="text" class="form-control" id="bank-name">
 
+    <div class="certification-modal d-none">
+      <div class="full-screen container ">
+        <div class="main-content">
+          <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
+            <h3><b> Certification</b></h3>
+            <i id="certification-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
           </div>
-          <div class="col-md-6 col-sm-12">
-            <label for="bank-branch" class="py-md-2">Branch<span class="required">*</span></label>
-            <span id="bank-branch-message" style="color: red;" class="error"></span>
-            <input type="text" class="form-control" id="bank-branch">
+          <hr>
 
-          </div>
-        </div>
+          <div id="certification-appending-div" class="bg-white">
+            <div id="certification-display-div" class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
+              <div class="row">
+                <!-- px-lg-5 -->
+                <div class="col-12 col-md-12 col-lg-12 col-sm-12 ">
 
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <label for="bank-ifsc-code" class="py-md-2">IFSC Code<span class="required">*</span></label>
-            <span id="bank-ifsc-code-message" style="color: red;" class="error"></span>
-            <input type="text" class="form-control" id="bank-ifsc-code">
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Certificate: <span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input class="form-control certification-certificate" type="text"></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Institution: <span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input class="form-control certification-institution" type="text"></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Year of Passing: <span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input class="form-control certification-YOP" type="text"></div>
+                  </div>
+                </div>
 
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <label for="bank-micr-code" class="py-md-2">MICR code<span class="required">*</span></label>
-            <span id="bank-micr-code-message" style="color: red;" class="error"></span>
-            <input type="text" class="form-control" id="bank-micr-code">
+              </div>
+              <div class="d-none certification-delete-button d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-pen fa-2x text-white "></i>
+              </div>
+            </div>
+            <hr style="height: 5px;">
+            <div id="certification-data" class="mt-4">
 
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <label for="bank-account-number" class="py-md-2">Account Number<span class="required">*</span></label>
-            <span id="bank-account-number-message" style="color: red;" class="error"></span>
-            <input type="text" class="form-control" id="bank-account-number">
-
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <label for="bank-account-type" class="py-md-2">Account Type<span class="required">*</span></label>
-            <span id="bank-account-type-message" style="color: red;" class="error"></span>
-            <select class="form-control" id="bank-account-type">
-            </select>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <div>
-              <label for="cancelled_cheque_Photo" class="py-md-2">Cancelled Cheque Photo<span
-                  class="required">*</span></label>
-              <span id="cancelled_cheque_Photo-message" style="color: red;" class="error"></span>
-              <input type="file" name="cancelled_cheque_Photo" id="cancelled_cheque_Photo" class="form-control"
-                onchange="document.getElementById('check-preview').src = window.URL.createObjectURL(this.files[0])">
             </div>
           </div>
-          <div class="col-md-6 col-sm-12 py-md-2">
-            <div>
-              <img id="check-preview" alt="Cancelled Cheque photo" width="150" />
-            </div>
+          <div class="d-flex justify-content-center">
+            <button id="certification-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="certification-submit-button" class="btn btn-success m-4">Submit</button>
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="d-flex justify-content-center">
-          <button id="bank-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          <button id="bank-details-submit-button" class="btn btn-success m-4">Submit</button>
+    <!-- ************************************************************************Bank Details Modal Div******************************************************************************************** -->
+    <div class="bank-details-modal d-none">
+
+      <div id="bank-form-area">
+        <div class="container">
+          <div class="d-flex justify-content-center align-items-center my-4">
+            <h2>Bank Details</h2>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <label for="bank-name" class="py-md-2">Name of the Bank<span class="required">*</span></label>
+              <span id="bank-name-message" style="color: red;" class="error"></span>
+              <input type="text" class="form-control" id="bank-name">
+
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <label for="bank-branch" class="py-md-2">Branch<span class="required">*</span></label>
+              <span id="bank-branch-message" style="color: red;" class="error"></span>
+              <input type="text" class="form-control" id="bank-branch">
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <label for="bank-ifsc-code" class="py-md-2">IFSC Code<span class="required">*</span></label>
+              <span id="bank-ifsc-code-message" style="color: red;" class="error"></span>
+              <input type="text" class="form-control" id="bank-ifsc-code">
+
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <label for="bank-micr-code" class="py-md-2">MICR code<span class="required">*</span></label>
+              <span id="bank-micr-code-message" style="color: red;" class="error"></span>
+              <input type="text" class="form-control" id="bank-micr-code">
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <label for="bank-account-number" class="py-md-2">Account Number<span class="required">*</span></label>
+              <span id="bank-account-number-message" style="color: red;" class="error"></span>
+              <input type="text" class="form-control" id="bank-account-number">
+
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <label for="bank-account-type" class="py-md-2">Account Type<span class="required">*</span></label>
+              <span id="bank-account-type-message" style="color: red;" class="error"></span>
+              <select class="form-control" id="bank-account-type">
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <div>
+                <label for="cancelled_cheque_Photo" class="py-md-2">Cancelled Cheque Photo<span
+                    class="required">*</span></label>
+                <span id="cancelled_cheque_Photo-message" style="color: red;" class="error"></span>
+                <input type="file" name="cancelled_cheque_Photo" id="cancelled_cheque_Photo" class="form-control"
+                  onchange="document.getElementById('check-preview').src = window.URL.createObjectURL(this.files[0])">
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12 py-md-2">
+              <div>
+                <img id="check-preview" alt="Cancelled Cheque photo" width="150" />
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button id="bank-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="bank-details-submit-button" class="btn btn-success m-4">Submit</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
- <!-- ************************************************************************Pancard Photo Modal Div******************************************************************************************** -->
- <div class="pancard-photo-modal d-none">
+    <!-- ************************************************************************Pancard Photo Modal Div******************************************************************************************** -->
+    <div class="pancard-photo-modal d-none">
 
-  <div id="bank-form-area">
-    <div class="container">
-      <div class="d-flex justify-content-center align-items-center my-4">
-        <h2>Preview Pancard Photo</h2>
-      </div>
+      <div id="bank-form-area">
+        <div class="container">
+          <div class="d-flex justify-content-center align-items-center my-4">
+            <h2>Preview Pancard Photo</h2>
+          </div>
 
-      <div class="row">
-        <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-          <img src="/download (3).jpg" alt="Pancard-photo-uploaded" id="Pancard-photo-uploaded" style="width:450px;height:300px;">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+              <img src="/download (3).jpg" alt="Pancard-photo-uploaded" id="Pancard-photo-uploaded"
+                style="width:450px;height:300px;">
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button id="pancard-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
+          </div>
         </div>
       </div>
-
-      <div class="d-flex justify-content-center">
-        <button id="pancard-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
-      </div>
     </div>
-  </div>
-</div>
 
-<!-- ************************************************************************Aadhar Photo Modal Div******************************************************************************************** -->
- <div class="aadhar-photo-modal d-none">
+    <!-- ************************************************************************Aadhar Photo Modal Div******************************************************************************************** -->
+    <div class="aadhar-photo-modal d-none">
 
-  <div id="bank-form-area">
-    <div class="container">
-      <div class="d-flex justify-content-center align-items-center my-4">
-        <h2>Preview Aadhar Photo</h2>
-      </div>
+      <div id="bank-form-area">
+        <div class="container">
+          <div class="d-flex justify-content-center align-items-center my-4">
+            <h2>Preview Aadhar Photo</h2>
+          </div>
 
-      <div class="row">
-        <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-          <img src="/download (3).jpg" alt="aadhar-photo-uploaded" id="aadhar-photo-uploaded" style="width:450px;height:300px;">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+              <img src="/download (3).jpg" alt="aadhar-photo-uploaded" id="aadhar-photo-uploaded"
+                style="width:450px;height:300px;">
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button id="aadhar-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
+          </div>
         </div>
       </div>
-
-      <div class="d-flex justify-content-center">
-        <button id="aadhar-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
-      </div>
     </div>
-  </div>
-</div>
 
-<!-- ************************************************************************Aadhar Photo Modal Div******************************************************************************************** -->
- <div class="cancelled-cheque-photo-modal d-none">
+    <!-- ************************************************************************Aadhar Photo Modal Div******************************************************************************************** -->
+    <div class="cancelled-cheque-photo-modal d-none">
+      <div id="bank-form-area">
+        <div class="container">
+          <div class="d-flex justify-content-center align-items-center my-4">
+            <h2>Preview Cancelled Cheque Photo</h2>
+          </div>
 
-  <div id="bank-form-area">
-    <div class="container">
-      <div class="d-flex justify-content-center align-items-center my-4">
-        <h2>Preview Cancelled Cheque Photo</h2>
-      </div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+              <img src="/download (3).jpg" alt="cancelled-cheque-photo-uploaded" id="cancelled-cheque-photo-uploaded"
+                style="width:450px;height:300px;">
+            </div>
+          </div>
 
-      <div class="row">
-        <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-          <img src="/download (3).jpg" alt="cancelled-cheque-photo-uploaded" id="cancelled-cheque-photo-uploaded" style="width:450px;height:300px;">
+          <div class="d-flex justify-content-center">
+            <button id="cancelled-cheque-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
+          </div>
         </div>
       </div>
-
-      <div class="d-flex justify-content-center">
-        <button id="cancelled-cheque-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
-      </div>
     </div>
-  </div>
-</div>
 
-
+  </main>
   <!-- INCLUDE JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"
-    integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-  </script>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+  <!-- <script src="/js/session-timeout.js"></script> -->
+  <script src="/js/SimpleAlert.js"></script>
+  <script src="/js/script.js"></script>
+  <script src="/js/leftsidebartoggle.js"></script>
+  <script src="/js/ajaxApi.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+  <script src="/js/jquery.bootpag.min.js"></script>
   <script>
     // --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
 
@@ -2104,7 +1989,8 @@
             reader.readAsDataURL(fuData.files[0]);
           }
         } else {
-          document.getElementById("cancelled_cheque_Photo-message").innerHTML = "File type should be of PNG, JPG and JPEG";
+          document.getElementById("cancelled_cheque_Photo-message").innerHTML =
+            "File type should be of PNG, JPG and JPEG";
         }
       } else {
         document.getElementById("cancelled_cheque_Photo-message").innerHTML = "Cancelled Cheque photo is Mandatory";
@@ -2212,7 +2098,7 @@
       }
       return condition
     }
-    
+
     function bankDetailCancelledChequeValidation(res) {
       var fuData = document.getElementById("cancelled_cheque_Photo");
       if (res.length > 0) {
@@ -2228,7 +2114,8 @@
             reader.readAsDataURL(fuData.files[0]);
           }
         } else {
-          document.getElementById("cancelled_cheque_Photo-message").innerHTML = "File type should be of PNG, JPG and JPEG";
+          document.getElementById("cancelled_cheque_Photo-message").innerHTML =
+            "File type should be of PNG, JPG and JPEG";
         }
       } else {
         document.getElementById("cancelled_cheque_Photo-message").innerHTML = "Cancelled Cheque photo is Mandatory";
@@ -2397,7 +2284,8 @@
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
     })
-
+    let flag1 = 1;
+    let flag2 = 1;
     document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
 
       e.preventDefault()
@@ -2428,7 +2316,8 @@
       let country = personalDetailCountryValidation(result.nationality);
 
 
-      if (!firstName || !lastName || !profilePhoto1 ||!gender || !contactNumber || !email || !pancard || !pancardPhoto || !aadhar || !aadharPhoto1 || !address || !
+      if (!firstName || !lastName || !profilePhoto1 || !gender || !contactNumber || !email || !pancard || !
+        pancardPhoto || !aadhar || !aadharPhoto1 || !address || !
         country) {
         return;
       }
@@ -2504,7 +2393,7 @@
         user_info.temp_email = result.temp_email
         user_info.gender_lid = Number.parseInt(result.gender)
         user_info.pancard_no = pancard
-        user_info.pancard_url_path =  photoArray[2] //"C://Fakepath://pancardphoto"
+        user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
         user_info.aadhar_card_url_path = "C://Fakepath://aadharphoto" //photoArray[1]
         user_info.profile_url_path = "C://Fakepath://profilephoto" //photoArray[0]
         user_info.aadhar_card_no = aadhar
@@ -2548,7 +2437,8 @@
 
         }
         let fetchRes = fetch('/insert-personal-details', options);
-
+   
+        console.log("before", flag1,flag2)
         fetchRes.then(success => {
 
           // if (success.status == 200) {
@@ -2566,7 +2456,7 @@
           document.getElementById('gender-value').innerText = genderValue
           document.getElementById('first-name-value').innerText = result.f_name
           document.getElementById('last-name-value').innerText = result.l_name
-          if (result.temp_email.length > 1) {
+          if (result.temp_email.length > 1 && flag1 === 1) {
 
             document.getElementById('personaldetails-right-side').insertAdjacentHTML('beforeend',
               ` <div class="row py-2">
@@ -2577,8 +2467,9 @@
                             <p id="temp-email-value">\${result.temp_email}\</p>
                           </div>
                         </div>`)
+                flag1 = 2;
           }
-          if (result.temp_contact_number.length > 1) {
+          if (result.temp_contact_number.length > 1 && flag2 === 1) {
 
             document.getElementById('personaldetails-left-side').insertAdjacentHTML('beforeend',
               ` <div class="row py-2">
@@ -2589,8 +2480,10 @@
                             <p id="temp-contact-value">\${result.temp_contact_number}\</p>
                           </div>
                         </div>`)
+              flag2 = 2;
+            
           }
-          console.log(genderValue)
+          console.log(flag1 , flag2)
           // } else {
           // console.log("Error in personal Details")
           // }
@@ -2730,7 +2623,7 @@
         let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
         let checkCertificate = tabledatacheck(qualificationCertificate);
         let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
-       // let checkCancelledCheque = qualificationDetailCertificateValidation(qualificationCertificate);
+        // let checkCancelledCheque = qualificationDetailCertificateValidation(qualificationCertificate);
 
         // console.log(qualificationCertificateImage)
         console.log(checkPercentile)
@@ -2758,13 +2651,13 @@
           return;
         }
 
-        
-      // if (qualificationCertificate.length != 0) {
-      //   $('.qualification-update i').remove('.fa-ban');
-      //   $('.qualification-update i').remove('.text-danger');
-      //   $('.qualification-update i').add('.fa-image');
-      //   $('.qualification-update i').add('.text-success');
-      // }
+
+        // if (qualificationCertificate.length != 0) {
+        //   $('.qualification-update i').remove('.fa-ban');
+        //   $('.qualification-update i').remove('.text-danger');
+        //   $('.qualification-update i').add('.fa-image');
+        //   $('.qualification-update i').add('.text-success');
+        // }
 
         let qualificationvalue = false;
         if (qualificationStatus == 'true') {
@@ -2817,7 +2710,7 @@
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">\${qualificationCollege}\</p>
                               <p id="" class="">\${qualificationPercentile}\</p>
-                              <p ><i id="qualification-certificate-update`+qualificationID++ +`"class="fa-solid fa-image text-success"></i></p>
+                              <p ><i id="qualification-certificate-update` + qualificationID++ + `"class="fa-solid fa-image text-success"></i></p>
                             </div>
                           </div>
                         </div>
@@ -2859,26 +2752,26 @@
 
 
     document.getElementById('qualification-add-button').addEventListener('click', function (e) {
-       e.preventDefault();
+      e.preventDefault();
 
-       e.preventDefault()
+      e.preventDefault()
 
-let table = ''
-let qualificationRow = document.querySelectorAll('.qualification-row')
-for (i = 0; i < qualificationRow.length; i++) {
+      let table = ''
+      let qualificationRow = document.querySelectorAll('.qualification-row')
+      for (i = 0; i < qualificationRow.length; i++) {
 
-  let qualificationTitle = qualificationRow[i].querySelector('.qualification-title')
-console.log(qualificationTitle)
-  qualificationTitle.addEventListener('change', function () {
-      let qualificationTitle = document.querySelectorAll('.qualification-title')
-      if (qualificationTitle.value == 3) {
-        qualificationRow[i].querySelectorAll('.qualification-status-wrapper').classList.remove('d-none');
-      } else {
-        qualificationRow[i].querySelectorAll('.qualification-status-wrapper').classList.add('d-none');
-      }
-    });
-  
-   table += ` <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
+        let qualificationTitle = qualificationRow[i].querySelector('.qualification-title')
+        console.log(qualificationTitle)
+        qualificationTitle.addEventListener('change', function () {
+          let qualificationTitle = document.querySelectorAll('.qualification-title')
+          if (qualificationTitle.value == 3) {
+            qualificationRow[i].querySelectorAll('.qualification-status-wrapper').classList.remove('d-none');
+          } else {
+            qualificationRow[i].querySelectorAll('.qualification-status-wrapper').classList.add('d-none');
+          }
+        });
+
+        table += ` <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
  <div class="container">
       <div id="qualification-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
@@ -2964,7 +2857,7 @@ console.log(qualificationTitle)
         </div> 
           `
 
-}
+      }
 
 
 
@@ -2972,7 +2865,7 @@ console.log(qualificationTitle)
       let appendingOptions = document.querySelectorAll('.qualification-title')
       appendingOptions[appendingOptions.length - 1].insertAdjacentHTML("beforeend", qualificationType)
 
-    
+
 
     })
 
@@ -3255,7 +3148,7 @@ console.log(qualificationTitle)
                     </div>
                   </div>
                     `
-            
+
         resume_achievement.push(obj);
       }
 
@@ -4080,10 +3973,11 @@ console.log(qualificationTitle)
       let facultyMicrCode1 = bankDetailMicrCodeValidation(submitBankDetailsForm.get('micrCode'))
       let facultyAccountNumber1 = bankDetailAccountNumberValidation(submitBankDetailsForm.get('accountNumber'))
       let facultyAccountType1 = bankDetailAccountTypeValidation(submitBankDetailsForm.get('accountType'))
-      let facultyCancelledCheque = bankDetailCancelledChequeValidation(submitBankDetailsForm.get('cancelledCheckPhoto'))
-      
+      let facultyCancelledCheque = bankDetailCancelledChequeValidation(submitBankDetailsForm.get(
+        'cancelledCheckPhoto'))
+
       if (!facultyBankName1 || !facultyBankBranch1 || !facultyIfscCode1 || !facultyMicrCode1 || !
-      facultyAccountNumber1 || !facultyCancelledCheque) {
+        facultyAccountNumber1 || !facultyCancelledCheque) {
         return;
       }
       if (facultyCancelledCheque.length != 0) {

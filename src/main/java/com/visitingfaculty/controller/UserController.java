@@ -15,17 +15,17 @@ public class UserController {
 
     @GetMapping("/resume")
     public String getResume() {
-        return "index";
+        return "resume";
     }
 
     @GetMapping("/dashboard")
     public String getDashboard(HttpSession httpSession) {
         String user_id = (String) httpSession.getAttribute("user_id");
         System.out.println(user_id);
-        if (user_id != null) {
+        // if (user_id != null) {
             return "dashboard";
-        }
-        return "login";
+        // }
+        // return "redirect:/login";
       
     }
 
