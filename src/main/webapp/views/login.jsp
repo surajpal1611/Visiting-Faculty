@@ -338,7 +338,7 @@
             <!-- <label>Is trusted device</label>
             <input type="checkbox" name="is_trusted" id="is_trusted"> -->
             <button class="btn btn-dark login-btn"><i class="fas fa-sign-in-alt"></i> Sign In</button>
-            Already a user? <a href="/register">Sign Up</a>
+              New user? <a href="/register">Sign Up</a>
             <button class="btn btn-dark d-none verify-button"><i class="fas fa-sign-in-alt"></i> Verify Email</button>
             <!-- <button type="button" class="btn btn-dark test-btn"><i class="fas fa-sign-in-alt"></i> Test Btn</button> -->
           </form>
