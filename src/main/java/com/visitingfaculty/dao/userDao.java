@@ -113,9 +113,9 @@ public class userDao implements UserDaoInterface {
     @Override
 
     public List<UserQualificationType> getQualificationType() {
-        String sql = "select * from qualification_type where id<4";
+        String sql = "select id, name, abbr from qualification_type where id < 4";
         return jdbcTemplate.query(sql, (rs, rownum) -> {
-            return new UserQualificationType(rs.getInt("id"), rs.getString("name"));
+            return new UserQualificationType(rs.getInt("id"), rs.getString("name"),rs.getString("abbr"));
         });
     }
 

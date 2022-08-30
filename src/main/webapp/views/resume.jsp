@@ -126,11 +126,12 @@
                                 class="fa-solid fa-ban text-danger"></i></p>
                           </div>
                         </div>
+                        
                       </div>
 
                       <div id="personaldetails-right-side"
                         class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
-                        <div class="row py-2">
+                        <div class="row py-1">
                           <div class="col-md-5 col-sm-3">
                             <h6>Contact No.</h6>
                           </div>
@@ -138,9 +139,17 @@
                             <p id="contact-number-value">9876543210</p>
                           </div>
                         </div>
+                        <div class="row py-1">
+                          <div class="col-md-5 col-sm-3">
+                            <h6>Secondary Contact No.</h6>
+                          </div>
+                          <div class="col-md-7 col-sm-9">
+                            <p id="temp-contact-value">ANY</p>
+                          </div>
+                        </div>
                         <div class="row py-2">
                           <div class="col-md-5 col-sm-3">
-                            <h6>Email :</h6>
+                            <h6>Primary Email :</h6>
                           </div>
                           <div class="col-md-7 col-sm-9">
                             <p id="email-value">example@gmail.com</p>
@@ -148,7 +157,15 @@
                         </div>
                         <div class="row py-2">
                           <div class="col-md-5 col-sm-3">
-                            <h6>Address :</h6>
+                            <h6>Temperory Email :</h6>
+                          </div>
+                          <div class="col-md-7 col-sm-9">
+                            <p id="temp-email-value">ANY</p>
+                          </div>
+                        </div>
+                        <div class="row py-2">
+                          <div class="col-md-5 col-sm-3">
+                            <h6>Permanent Address :</h6>
                           </div>
                           <div class="col-md-7 col-sm-9">
                             <p id="address-value">101-Ashok kamothe</p>
@@ -156,7 +173,7 @@
                         </div>
                         <div class="row py-2">
                           <div class="col-md-5 col-sm-3">
-                            <h6 class="temporary-address-heading">Temporary Address :</h6>
+                            <h6 class="temporary-address-heading">Temperory Address :</h6>
                           </div>
                           <div class="col-md-7 col-sm-9">
                             <p id="temporary-address-value">703-Satyam panvel
@@ -385,13 +402,11 @@
                         <div class="row pt-lg-3">
                           <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                             <p class="h5 pb-1">Place :</p>
-                            <p class="h5 pb-1">Date :</p>
                             <p class="h5 pb-1">Recieved date :</p>
                             <p class="h5 py-1">Certificate :</p>
                           </div>
                           <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                             <p class="" id="">Mumbai</p>
-                            <p class="" id="">2012-07-06</p>
                             <p class="" id="">2018-07-07</p>
                             <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
                           </div>
@@ -484,13 +499,11 @@
                       <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                         <div class="row pt-lg-3">
                           <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                            <p class="h5 pb-1">Role :</p>
-                            <p class="h5 py-1">Journal Name :</p>
+                            <p class="h5 py-1">Title :</p>
                             <p class="h5 py-1">Volume year :</p>
 
                           </div>
                           <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                            <p id="">Reviewier</p>
                             <p id="">Algebra and logic</p>
                             <p id="">2017</p>
                           </div>
@@ -542,10 +555,10 @@
                       <div id="certification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                         <div class="row">
 
-                          <div class="col-12 col-md-4 col-lg-4 col-sm-12">
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             <div class="row pt-lg-3">
                               <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                                <p class="h5 pb-1">Certification:</p>
+                                <p class="h5 pb-1">Certification name:</p>
                               </div>
                               <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                                 <p id="">Teaching</p>
@@ -553,9 +566,9 @@
                             </div>
                           </div>
 
-                          <div class="col-12 col-md-4 col-lg-4 col-sm-12">
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             <div class="row pt-lg-3">
-                              <div class="col-5 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <div class="col-6 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                                 <p class="h5 pb-1">Institution :</p>
                               </div>
                               <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
@@ -564,13 +577,24 @@
                             </div>
                           </div>
 
-                          <div class="col-12 col-md-3 col-lg-3 col-sm-12">
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             <div class="row pt-lg-3">
-                              <div class="col-9  col-md-9 ps-md-0 ps-0 ps-sm-0 col-lg-9 col-sm-9">
-                                <p class="h5 pb-1">Year of passing:</p>
+                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Recieved Date:</p>
                               </div>
-                              <div class="col-3 col-md-3 col-lg-3 col-sm-3">
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                                 <p id="">2015</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Certificate:</p>
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                                <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
                               </div>
                             </div>
                           </div>
@@ -716,7 +740,8 @@
                 <input type="text" class="form-control" name="contact_number" id="contact-number" />
               </div>
               <div class="col-md-3 col-sm-12">
-                <label for="temp_contact-number">Temp Contact No.</label>
+                <label for="temp_contact-number">Secondary Contact No.</label>
+                <span id="temporary-contact-number-message" style="color: red;" class="error"></span>
                 <input type="text" class="form-control" name="temp_contact_number" id="temp_contact-number" />
               </div>
               <div class="col-md-3 col-sm-12">
@@ -725,7 +750,7 @@
                 <input type="text" name="email" class="form-control" id="email">
               </div>
               <div class="col-md-3 col-sm-12">
-                <label for="temp_email">Temp Email</label>
+                <label for="temp_email">Secondary Email</label>
                 <input type="text" name="temp_email" class="form-control" id="temp_email">
               </div>
             </div>
@@ -734,7 +759,7 @@
           <div class="container">
             <div id="left-fourth-row" class="row">
               <div class="col-md-6 col-sm-12">
-                <label for="address">Address <span class="required">*</span></label>
+                <label for="address">Permanent Address <span class="required">*</span></label>
                 <span id="address-message" style="color: red;" class="error"></span>
                 <input type="text" class="form-control" name="permanent_address" id="address" />
               </div>
@@ -754,7 +779,7 @@
           <div class="container">
             <div id="left-fourth-row" class="row">
               <div class="col-md-8 col-sm-12">
-                <label for="temporary-address">Temporary Address</label>
+                <label for="temporary-address">Secondary Address</label>
                 <span id="temporary-address-message" style="color: red;" class="error"></span>
                 <input type="text" name="temporary_address" class="form-control" id="temporary-address">
               </div>
@@ -829,94 +854,10 @@
           </div>
           <hr>
 
-          <div id="qualification-appending-div" class="bg-white">
-            <div id="qualification-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1">
-              <div class="row">
-
-                <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                  <div class="row p-3">
-                    <div class="col-md-2 ">
-                      <p class="h6">Title <span class="required">*</span></p>
-                    </div>
-                    <div class="col-md-10"><select class="form-control qualification-title"
-                        id="bachelors-degree-title-data">
-
-                      </select></div>
-                  </div>
-                  <div class="row p-3">
-                    <div class="col-md-2 ">
-                      <p class="h6">Subject <span class="required">*</span></p>
-                    </div>
-                    <div class="col-md-10 "><input class="form-control qualification-subject"
-                        id="bachelors-degree-major-subject" type="text"></div>
-                  </div>
-                  <div class="row p-3">
-                    <div class="col-md-2 ">
-                      <p class="h6">University<span class="required">*</span></p>
-                    </div>
-                    <div class="col-md-10 "><input class="form-control qualification-university"
-                        id="bachelors-degree-university" type="text"></div>
-                  </div>
-                  <div class="row p-3">
-                    <div class="col-md-2 ">
-                      <p class="h6">Year of Passing <span class="required">*</span></p>
-                    </div>
-                    <div class="col-md-10 "><input class="form-control qualification-year"
-                        id="bachelors-degree-year-of-passing" type="text"></div>
-                  </div>
-
-                </div>
-
-                <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-
-                  <div class="row p-3 qualification-status-wrapper d-none">
-                    <div class="col-md-2 ">
-                      <p class="h6">Status<span class="required">*</span></p>
-                    </div>
-                    <div class="col-md-10"><select class="form-control qualification-status"
-                        id="qualification-status-data">
-                        <option value="true">Awarded</option>
-                        <option value="false">Persuing</option>
-                      </select></div>
-                  </div>
-                  <div class="row p-3">
-                    <div class="col-md-2">
-                      <p class="h6">College <span class="required">*</span></p>
-                    </div>
-                    <div class="col-md-10 "><input class="form-control qualification-college"
-                        id="bachelors-degree-college" type="text"></div>
-                  </div>
-                  <div class="row p-3">
-                    <div class="col-md-2">
-                      <p class="h6">Percentage<span class="required">*</span></p>
-                    </div>
-                    <div class="col-md-10"><input class="form-control qualification-percentile"
-                        id="bachelors-degree-percentile" type="text"></div>
-                  </div>
-                  <div class="row p-3">
-                    <div class="col-md-2 ">
-                      <p class="h6">Certificate<span class="required">*</span></p>
-                    </div>
-                    <div class="col-md-10"><input class="form-control qualification-certificate"
-                        id="bachelors-degree-certificate"
-                        onchange="document.getElementById('qualification-certificate-preview').src = window.URL.createObjectURL(this.files[0])"
-                        type="file">
-                      <p hidden><img id="qualification-certificate-preview" type="hidden" alt="your image" width="100"
-                          height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="d-none qualification-delete-button d-flex justify-content-center align-items-center">
-                <i class="fa-solid fa-pen fa-2x text-white "></i>
-              </div>
-            </div>
-            <hr style="height: 5px;">
-            <div id="qualification-data" class="mt-4">
-
-            </div>
+          <div class="bg-white qualification-data">
           </div>
+          
+          <hr>
           <div class="d-flex justify-content-center">
             <button id="qualification-cancel-button" class="btn btn-danger m-4">Cancel</button>
             <button id="qualification-submit-button" class="btn btn-success m-4">Submit</button>
@@ -1191,6 +1132,7 @@
                         <option value="0">-select-</option>
                         <option value="1">School</option>
                         <option value="2">University</option>
+                        <option value="3">Industry</option>
                       </select></div>
                   </div>
                 </div>
@@ -1334,17 +1276,7 @@
                 <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                   <div class="row p-3">
                     <div class="col-md-2 ">
-                      <p class="h6">Role<span class="required">*</span></p>
-                    </div>
-                    <div class="col-md-10"><select name="role" class="form-control research_role">
-                        <option value="0">-Select-</option>
-                        <option value="1">Sole</option>
-                        <option value="2">Author</option>
-                      </select></div>
-                  </div>
-                  <div class="row p-3">
-                    <div class="col-md-2 ">
-                      <p class="h6">Journal Name<span class="required">*</span></p>
+                      <p class="h6">Title<span class="required">*</span></p>
                     </div>
                     <div class="col-md-10 "><input name="journal_name" class="form-control research_Journal_name"
                         type="text"></div>
@@ -1419,7 +1351,7 @@
 
                   <div class="row p-3">
                     <div class="col-md-2 ">
-                      <p class="h6">Certificate: <span class="required">*</span></p>
+                      <p class="h6">Certification Name: <span class="required">*</span></p>
                     </div>
                     <div class="col-md-10 "><input class="form-control certification-certificate" type="text"></div>
                   </div>
@@ -1431,9 +1363,15 @@
                   </div>
                   <div class="row p-3">
                     <div class="col-md-2 ">
-                      <p class="h6">Year of Passing: <span class="required">*</span></p>
+                      <p class="h6">Recieved Date: <span class="required">*</span></p>
                     </div>
                     <div class="col-md-10 "><input class="form-control certification-YOP" type="text"></div>
+                  </div>
+                  <div class="row p-3">
+                    <div class="col-md-2 ">
+                      <p class="h6">Certificate: <span class="required">*</span></p>
+                    </div>
+                    <div class="col-md-10 "><input class="form-control certificate-photo" type="file"></div>
                   </div>
                 </div>
 
@@ -1603,568 +1541,62 @@
     </div>
 
   </main>
+
+
+  <div class="modal-loader" id="main-loader">
+    <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+  <circle fill="#FF4136" stroke="none" cx="6" cy="50" r="6">
+    <animateTransform 
+       attributeName="transform" 
+       dur="1s" 
+       type="translate" 
+       values="0 15 ; 0 -15; 0 15" 
+       repeatCount="indefinite" 
+       begin="0.1"/>
+  </circle>
+  <circle fill="#FF851B" stroke="none" cx="30" cy="50" r="6">
+    <animateTransform 
+       attributeName="transform" 
+       dur="1s" 
+       type="translate" 
+       values="0 10 ; 0 -10; 0 10" 
+       repeatCount="indefinite" 
+       begin="0.2"/>
+  </circle>
+  <circle fill="#FFDC00" stroke="none" cx="54" cy="50" r="6">
+    <animateTransform 
+       attributeName="transform" 
+       dur="1s" 
+       type="translate" 
+       values="0 5 ; 0 -5; 0 5" 
+       repeatCount="indefinite" 
+       begin="0.3"/>
+  </circle>
+</svg>
+  </div>
+
+
+
   <!-- INCLUDE JS -->
   <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.bundle.min.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
-  <!-- <script src="/js/session-timeout.js"></script> -->
   <script src="/js/SimpleAlert.js"></script>
   <script src="/js/script.js"></script>
   <script src="/js/leftsidebartoggle.js"></script>
-  <script src="/js/ajaxApi.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
   <script src="/js/jquery.bootpag.min.js"></script>
   <script>
-    // --------------------------methods to use for Front-End Validations through Java-Script------------------------------------
 
-    function isCharNumber(res) {
-      for (let i = 0; i < checkLength(res); i++) {
-        var c = res.charCodeAt(i);
+    document.addEventListener('readystatechange', function() {
+      if(document.readyState === 'interactive') {
 
-        if (!(c > 47 && c < 58)) {
-          return false;
-        }
+        document.querySelector('#main-loader').classList.add('d-none')
+
+
       }
-      return true;
-    }
+    });
 
-    function isCharAlphabet(res) {
-      for (let i = 0; i < checkLength(res); i++) {
-        var c = res.charCodeAt(i);
-
-        if (
-          !(c > 47 && c < 58) &&
-          !(c > 64 && c < 91) &&
-          !(c > 96 && c < 123) &&
-          c != 32
-        ) {
-          return false;
-        }
-      }
-      return true;
-    }
-
-    function isSpecialChar(char) {
-      return (
-        (char >= 65 && char < 91) ||
-        (char >= 97 && char < 123) ||
-        (char >= "0" && char <= "9")
-      );
-    }
-
-    function checkLength(value) {
-      return value.length;
-    }
-
-    function clearError() {
-      errors = document.getElementsByClassName("error");
-      for (const item of errors) {
-        item.innerHTML = "";
-      }
-    }
-
-    let condition;
-
-    function personalDetailFirstNameValidation(res) {
-      if (checkLength(res) > 2) {
-        if (isCharAlphabet(res)) {
-          condition = true;
-        } else {
-          document.getElementById("first-name-message").innerHTML = "Only Alphabets are allowed";
-          condition = false;
-        }
-      } else {
-        document.getElementById("first-name-message").innerHTML = "Invalid length";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function personalDetailLastNameValidation(res) {
-      if (checkLength(res) > 2) {
-        if (isCharAlphabet(res)) {
-          condition = true;
-        } else {
-          document.getElementById("last-name-message").innerHTML = "Only Alphabets are allowed";
-          condition = false;
-        }
-      } else {
-        document.getElementById("last-name-message").innerHTML = "Invalid length";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function personalDetailDateOfBirthValidation(res) {
-      var dob = res;
-      var year = Number(dob.substr(0, 4));
-      var today = new Date();
-      var age = today.getFullYear() - year;
-      if (res.length == 10) {
-        if (age > 18) {
-          condition = true;
-        } else {
-          document.getElementById("date-of-birth-message").innerHTML = "Your age should be above 18 years";
-          condition = false;
-        }
-
-      } else {
-        document.getElementById("date-of-birth-message").innerHTML = "Invalid length";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function personalDetailProfilePhotoValidation(res) {
-      var fuData = document.getElementById('photo');
-      if (res.length > 0) {
-        var Extension = res.substring(res.lastIndexOf('.') + 1).toLowerCase();
-        if (Extension == "png" || Extension == "jpeg" || Extension == "jpg") {
-          if (fuData.files && fuData.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-              $('#photo').attr('src', e.target.result);
-              document.getElementById("profile-photo-value").src = e.target.result
-              condition = true;
-            }
-            reader.readAsDataURL(fuData.files[0]);
-          }
-        } else {
-          document.getElementById("photo-message").innerHTML = "File type should be of PNG, JPG and JPEG";
-        }
-      } else {
-        document.getElementById("photo-message").innerHTML = "Profile photo is Mandatory";
-        condition = false;
-      }
-      return condition;
-    }
-
-
-    function personalDetailGenderValidation(gender) {
-      if (gender == 1 || gender == 2 || gender == 3) {
-        condition = true;
-      } else {
-        document.getElementById("gender-message").innerHTML = "*Mandatory";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function personalDetailContactNumberValidation(res) {
-      if (res.length != 10) {
-        document.getElementById('contact-number-message').innerHTML = "Invalid length";
-        condition = false;
-      } else {
-        if (isNaN(res)) {
-          document.getElementById('contact-number-message').innerHTML = "Characters Not Allowed";
-          condition = false;
-        } else {
-          if ((res.charAt(0) != 9) && (res.charAt(0) != 8) && (res.charAt(0) != 7) && (res.charAt(0) != 6)) {
-            document.getElementById('contact-number-message').innerHTML = "*Invalid phone number";
-            condition = false;
-          } else {
-            condition = true;
-          }
-        }
-      }
-      return condition;
-    }
-
-    function personalDetailEmailValidation(res) {
-      var atposition = res.indexOf('@');
-      var dotposition = res.lastIndexOf('.');
-      if (atposition < 1 || (res.length - 2) == dotposition) {
-        (document).getElementById('email-message').innerHTML = "*Invalid email address";
-        condition = false;
-      } else if (atposition < dotposition) {
-        condition = true;
-      } else {
-        (document).getElementById('email-message').innerHTML = "*Invalid email address";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function personalDetailPancardValidation(res) {
-      if (res.length != 10) {
-        document.getElementById('pan-number-message').innerHTML = "*Invalid length of Pancard Number";
-        condition = false;
-      } else {
-        let firstfive = res.substring(0, 5);
-        let nextfour = res.substring(5, 9);
-        for (let i = 0; i < firstfive.length; i++) {
-          if (firstfive[i] >= 'A' && firstfive[i] <= 'Z') {
-            for (let k = 0; k < nextfour.length; k++) {
-              if (nextfour[k] >= '0' && nextfour[k] <= '9') {
-                if (res[9] >= 'A' && res[9] <= 'Z') {
-                  condition = true;
-                } else {
-                  document.getElementById('pan-number-message').innerHTML = "*Invalid Last Digit";
-                  condition = false;
-                }
-              } else {
-                document.getElementById('pan-number-message').innerHTML = "*Error Inbetween Numbers";
-                condition = false;
-                break;
-              }
-            }
-          } else {
-            document.getElementById('pan-number-message').innerHTML = "Error Inbetween First Five Characters";
-            condition = false;
-            break;
-          }
-        }
-      }
-      return condition;
-    }
-
-    function personalDetailPancardPhotoValidation(res) {
-      var fuData = document.getElementById('pan-photo');
-      if (res.length > 0) {
-        var Extension = res.substring(res.lastIndexOf('.') + 1).toLowerCase();
-        if (Extension == "png" || Extension == "jpeg" || Extension == "jpg") {
-          if (fuData.files && fuData.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-              $('#pan-photo').attr('src', e.target.result);
-              document.getElementById("Pancard-photo-uploaded").src = e.target.result
-              condition = true;
-            }
-            reader.readAsDataURL(fuData.files[0]);
-          }
-        } else {
-          document.getElementById("pan-photo-message").innerHTML = "File type should be of PNG, JPG and JPEG";
-        }
-      } else {
-        document.getElementById("pan-photo-message").innerHTML = "Pancard photo is Mandatory";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function personalDetailAadharValidation(res) {
-      if (res.length != 12) {
-        document.getElementById('aadhar-number-message').innerHTML = "*Invalid Adhar Number";
-        condition = false;
-      } else {
-        for (let i = 0; i < res.length; i++) {
-          if (res[i] < '0' || res[i] > '9') {
-            condition = false;
-            document.getElementById('aadhar-number-message').innerHTML = "Special Character not allowed";
-            break;
-          } else {
-            condition = true;
-          }
-        }
-      }
-      return condition;
-    }
-
-    function personalDetailAadharPhotoValidation(res) {
-      var fuData = document.getElementById('aadhar-photo');
-      if (res.length > 0) {
-        var Extension = res.substring(res.lastIndexOf('.') + 1).toLowerCase();
-        if (Extension == "png" || Extension == "jpeg" || Extension == "jpg") {
-          if (fuData.files && fuData.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-              $('#aadhar-photo').attr('src', e.target.result);
-              document.getElementById("aadhar-photo-uploaded").src = e.target.result
-              condition = true;
-            }
-            reader.readAsDataURL(fuData.files[0]);
-          }
-        } else {
-          document.getElementById("aadhar-photo-message").innerHTML = "File type should be of PNG, JPG and JPEG";
-        }
-      } else {
-        document.getElementById("aadhar-photo-message").innerHTML = "Aadhar photo is Mandatory";
-        condition = false;
-      }
-      return condition;
-    }
-
-
-    function personalDetailAddressValidation(res) {
-      if (checkLength(res) > 5) {
-        condition = true;
-      } else {
-        document.getElementById("address-message").innerHTML = "*Invalid length";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function personalDetailCityValidation(res) {
-      if (checkLength(res) > 3) {
-        if (!isCharNumber(res)) {
-          condition = true;
-        } else {
-          document.getElementById("city-message").innerHTML = "*Only characters are allowed";
-          condition = false;
-        }
-      } else {
-        document.getElementById("city-message").innerHTML = "*Invalid length";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function personalDetailPincodeValidation(res) {
-      if (checkLength(res) > 3) {
-        if (isCharNumber(res)) {
-          condition = true;
-        } else {
-          document.getElementById("pincode-message").innerHTML = "*Only Numbers are allowed";
-          condition = false;
-        }
-      } else {
-        document.getElementById("pincode-message").innerHTML = "*Invalid length";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function personalDetailTemporaryAddressValidation(res) {
-      if (checkLength(res) > 5) {
-        condition = true;
-      } else {
-        document.getElementById("temporary-address-message").innerHTML = "*Invalid length";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function personalDetailCountryValidation(res) {
-      if (checkLength(res) > 2) {
-        condition = true;
-      } else {
-        document.getElementById("country-message").innerHTML = "*Invalid length";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function qualificationDetailYearOfPassingValidation(res) {
-      if (checkLength(res) == 4) {
-        if (isCharNumber(res)) {
-          condition = true;
-        } else {
-          condition = false;
-        }
-      } else {
-        condition = false;
-      }
-      return condition;
-    }
-
-    function qualificationDetailPercentageValidation(res) {
-      if (res.length > 0) {
-        let value = parseFloat(res)
-        console.log(value)
-        if (isNaN(value) || value < 0 || value > 100) {
-          return condtion = false;
-        } else {
-          condition = true;
-        }
-      } else {
-        condition = false;
-      }
-      return condition;
-    }
-
-    function qualificationDetailCertificateValidation(res) {
-      var fuData = document.querySelector('.qualification-certificate');
-      if (res.length > 0) {
-        var Extension = res.substring(res.lastIndexOf('.') + 1).toLowerCase();
-        if (Extension == "png" || Extension == "jpeg" || Extension == "jpg") {
-          if (fuData.files && fuData.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-              $('.qualification-certificate').attr('src', e.target.result);
-              document.getElementById("cancelled-cheque-photo-uploaded").src = e.target.result
-              condition = true;
-            }
-            reader.readAsDataURL(fuData.files[0]);
-          }
-        } else {
-          document.getElementById("cancelled_cheque_Photo-message").innerHTML =
-            "File type should be of PNG, JPG and JPEG";
-        }
-      } else {
-        document.getElementById("cancelled_cheque_Photo-message").innerHTML = "Cancelled Cheque photo is Mandatory";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function bankDetailBankNameValidation(res) {
-      if (checkLength(res) > 3) {
-        condition = true;
-      } else {
-        document.getElementById("bank-name-message").innerHTML = "*Invalid length";
-        condition = false;
-      }
-      return condition;
-    }
-
-    function bankDetailBankBranchValidation(res) {
-      if (checkLength(res) > 3) {
-        condition = true;
-      } else {
-        document.getElementById("bank-branch-message").innerHTML = "*Invalid length";
-        condition = false;
-      }
-      return condition;
-    }
-
-
-    function bankDetailIfscCodeValidation(res) {
-      if (res.length != 11) {
-        condition = false;
-        document.getElementById('bank-ifsc-code-message').innerHTML = "*Invalid length";
-      } else {
-        let firstfour = res.substring(0, 4);
-        let lastseven = res.substring(4, 11);
-        for (let i = 0; i < firstfour.length; i++) {
-          if (firstfour[i] < 'A' || firstfour[i] > 'Z') {
-            condition = false;
-            document.getElementById('bank-ifsc-code-message').innerHTML = "*Invalid ifsc character";
-            break;
-          } else {
-            for (let j = 0; j < lastseven.length; j++) {
-              if (lastseven[j] >= '0' && lastseven[j] <= '9') {
-                condition = true;
-              } else {
-                console.log('in loop' + lastseven[j]);
-                condition = false;
-                document.getElementById('bank-ifsc-code-message').innerHTML = "*Invalid last seven number";
-                break;
-              }
-            }
-
-          }
-        }
-      }
-      return condition;
-    }
-
-    function bankDetailMicrCodeValidation(res) {
-      if (res.length < 3) {
-        document.getElementById('bank-micr-code-message').innerHTML = "*Invalid length";
-        condition = false;
-      } else {
-        if (isNaN(res)) {
-          document.getElementById('bank-micr-code-message').innerHTML = "*Character not allowed";
-          condition = false;
-        } else {
-          condition = true;
-        }
-      }
-      return condition;
-    }
-
-    function bankDetailAccountNumberValidation(res) {
-      if ((checkLength(res) <= 10) || (checkLength(res) > 16)) {
-        document.getElementById('bank-account-number-message').innerHTML = "*Invalid length"
-        condition = false;
-      } else {
-        if (isNaN(res)) {
-          document.getElementById('bank-account-number-message').innerHTML = "*Charaters not allowed";
-          condition = false;
-        } else {
-          condition = true;
-        }
-      }
-      return condition;
-    }
-
-
-    function bankDetailAccountTypeValidation(res) {
-      if (res.length > 4) {
-        for (let j = 0; j < res.length; j++) {
-          if (res[j] >= '!' && res[j] <= '@') {
-            document.getElementById('bank-account-type-message').innerHTML = "*Special charater is allowed";
-            condition = false;
-            break;
-          } else {
-            condition = true;
-          }
-        }
-      } else {
-        document.getElementById('bank-account-type-message').innerHTML = "*Invalid length";
-        condition = false;
-      }
-      return condition
-    }
-
-    function bankDetailCancelledChequeValidation(res) {
-      var fuData = document.getElementById("cancelled_cheque_Photo");
-      if (res.length > 0) {
-        var Extension = res.substring(res.lastIndexOf('.') + 1).toLowerCase();
-        if (Extension == "png" || Extension == "jpeg" || Extension == "jpg") {
-          if (fuData.files && fuData.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-              $('#cancelled_cheque_Photo').attr('src', e.target.result);
-              document.getElementById("cancelled-cheque-photo-uploaded").src = e.target.result
-              condition = true;
-            }
-            reader.readAsDataURL(fuData.files[0]);
-          }
-        } else {
-          document.getElementById("cancelled_cheque_Photo-message").innerHTML =
-            "File type should be of PNG, JPG and JPEG";
-        }
-      } else {
-        document.getElementById("cancelled_cheque_Photo-message").innerHTML = "Cancelled Cheque photo is Mandatory";
-        condition = false;
-      }
-      return condition;
-    }
-
-    // ******************************************Validation Functions Start****************************************************
-    function tabledatacheck(value) {
-      let checkit = false;
-      if (value.length > 3) {
-        checkit = true;
-      } else {
-        checkit = false;
-      }
-      return checkit;
-    }
-
-    function namecheck(value) {
-      let check = false;
-      if (value.length > 1) {
-        for (let i = 0; i < value.length; i++) {
-          if (value[i] >= '!' && value[i] <= '@') {
-            check = false;
-            break;
-          } else {
-            check = true;
-          }
-        }
-      } else {
-        check = false;
-      }
-      return check;
-    }
-
-    function yearcheck(value) {
-      let checkit = false;
-      if (value.length == 4) {
-        if (!isNaN(value)) {
-          checkit = true;
-        }
-      } else {
-        checkit = false;
-      }
-      return checkit;
-    }
-
-    // ******************************************Validation Functions End***************************************************
 
     document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
       document.querySelector('.personal-details-edit-box').classList.remove('d-none');
@@ -2184,14 +1616,15 @@
       document.querySelector('.qualification-edit-box').classList.add('d-none');
     });
 
-    document.querySelector('.qualification-title').addEventListener('change', function () {
-      let qualificationTitle = document.querySelector('.qualification-title')
-      if (qualificationTitle.value == 3) {
-        document.querySelector('.qualification-status-wrapper').classList.remove('d-none');
-      } else {
-        document.querySelector('.qualification-status-wrapper').classList.add('d-none');
-      }
-    });
+
+    // document.querySelector('.qualification-title').addEventListener('change', function () {
+    //   let qualificationTitle = document.querySelector('.qualification-title')
+    //   if (qualificationTitle.value == 3) {
+    //     document.querySelector('.qualification-status-wrapper').classList.remove('d-none');
+    //   } else {
+    //     document.querySelector('.qualification-status-wrapper').classList.add('d-none');
+    //   }
+    // });
 
 
     document.querySelector('.work-experience-div-wrapper').addEventListener('mouseover', function () {
@@ -2284,8 +1717,8 @@
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
     })
-    let flag1 = 1;
-    let flag2 = 1;
+
+
     document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
 
       e.preventDefault()
@@ -2306,19 +1739,19 @@
       let DOB = personalDetailDateOfBirthValidation(result.date_of_birth);
       let gender = personalDetailGenderValidation(result.gender);
       let contactNumber = personalDetailContactNumberValidation(result.contact_number);
+      let temporaryContact = personalDetailTemporaryContactValidation(result.temp_contact_number);
       let pancard = personalDetailPancardValidation(result.pan_number);
       let pancardPhoto = personalDetailPancardPhotoValidation(document.getElementById("pan-photo").value);
       let email = personalDetailEmailValidation(result.email);
       let aadhar = personalDetailAadharValidation(result.aadhar_number);
       let aadharPhoto1 = personalDetailAadharPhotoValidation(document.getElementById("aadhar-photo").value);
       let address = personalDetailAddressValidation(result.permanent_address);
-      // let temporaryAddress = personalDetailTemporaryAddressValidation(result.temporary_address);
       let country = personalDetailCountryValidation(result.nationality);
 
 
       if (!firstName || !lastName || !profilePhoto1 || !gender || !contactNumber || !email || !pancard || !
         pancardPhoto || !aadhar || !aadharPhoto1 || !address || !
-        country) {
+        country || !DOB) {
         return;
       }
 
@@ -2382,18 +1815,18 @@
 
       setTimeout(function () {
 
-        user_contact.user_lid = 1
+        user_contact.user_lid = 3
         user_contact.contact_number = result.contact_number
         user_contact.temp_contact_number = result.temp_contact_number
         personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
-        user_info.user_lid = 1
+        user_info.user_lid = 3
         user_info.f_name = result.f_name
         user_info.l_name = result.l_name
         user_info.email = result.email
         user_info.temp_email = result.temp_email
         user_info.gender_lid = Number.parseInt(result.gender)
-        user_info.pancard_no = pancard
-        user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
+        user_info.pancard_no = result.pan_number
+        user_info.pancard_url_path =  "C://Fakepath://pancardphoto"//photoArray[2]
         user_info.aadhar_card_url_path = "C://Fakepath://aadharphoto" //photoArray[1]
         user_info.profile_url_path = "C://Fakepath://profilephoto" //photoArray[0]
         user_info.aadhar_card_no = aadhar
@@ -2402,14 +1835,14 @@
         personalDetailsData.insert_user_personal_details.user_info[0] = user_info
 
         let addressObject = {}
-        addressObject.user_lid = 1
-        addressObject.address = result.permanent_address + "," + result.permanent_address_city + "," + result
+        addressObject.user_lid = 3
+        addressObject.address = result.permanent_address + "," + result.permanent_address_city + "," + result.permanent_address_pincode
           .permanent_address_pincode
-        addressObject.address_type_lid = 1
+        addressObject.address_type_lid = 3
         let addressObject2 = {}
-        addressObject2.user_lid = 1
+        addressObject2.user_lid = 3
         addressObject2.address = result.temporary_address
-        addressObject2.address_type_lid = 2
+        addressObject2.address_type_lid = 4
 
         arrayresult[0] = addressObject
         arrayresult[1] = addressObject2
@@ -2438,55 +1871,27 @@
         }
         let fetchRes = fetch('/insert-personal-details', options);
    
-        console.log("before", flag1,flag2)
         fetchRes.then(success => {
 
           // if (success.status == 200) {
           console.log(success)
+          console.log(result.date_of_birth)
+          console.log(result.temp_contact_number)
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.personal-details-modal').classList.add('d-none')
-          document.getElementById('date-of-birth-value').innerText = result.date_of_birth
+          document.getElementById('date-of-birth-value').innerText = changeDateFormat(result.date_of_birth);
           document.getElementById('pancard-value').innerText = result.pan_number
           document.getElementById('aadhar-card-value').innerText = result.aadhar_number
           document.getElementById('contact-number-value').innerText = result.contact_number
+          document.getElementById('temp-contact-value').innerText = result.temp_contact_number
           document.getElementById('email-value').innerText = result.email
-          document.getElementById('address-value').innerText = result.permanent_address
+          document.getElementById('temp-email-value').innerText = result.temp_email
+          document.getElementById('address-value').innerText = result.permanent_address + "," + result.permanent_address_city + "-" + result.permanent_address_pincode
           document.getElementById('temporary-address').innerText = result.temporary_address
           document.getElementById('country-value').innerText = result.nationality
           document.getElementById('gender-value').innerText = genderValue
           document.getElementById('first-name-value').innerText = result.f_name
           document.getElementById('last-name-value').innerText = result.l_name
-          if (result.temp_email.length > 1 && flag1 === 1) {
-
-            document.getElementById('personaldetails-right-side').insertAdjacentHTML('beforeend',
-              ` <div class="row py-2">
-                          <div class="col-md-5 col-sm-3">
-                            <h6>Temporary Email :</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="temp-email-value">\${result.temp_email}\</p>
-                          </div>
-                        </div>`)
-                flag1 = 2;
-          }
-          if (result.temp_contact_number.length > 1 && flag2 === 1) {
-
-            document.getElementById('personaldetails-left-side').insertAdjacentHTML('beforeend',
-              ` <div class="row py-2">
-                          <div class="col-md-5 col-sm-3">
-                            <h6>Temporary Contact :</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="temp-contact-value">\${result.temp_contact_number}\</p>
-                          </div>
-                        </div>`)
-              flag2 = 2;
-            
-          }
-          console.log(flag1 , flag2)
-          // } else {
-          // console.log("Error in personal Details")
-          // }
         })
       }, 1000)
     });
@@ -2556,8 +1961,10 @@
     //*************************************Qualification-modal JS****************************************
 
     let qualificationDataDB = 1
-    let qualificationType = ""
+    let qualificationType = `<option value disabled selected>--Select--</option>`
+
     console.log(qualificationType)
+
     document.querySelector(".qualification-edit-box").addEventListener('click', function () {
       if (qualificationDataDB == 1) {
 
@@ -2567,10 +1974,9 @@
             success: function (response) {
               console.log(response)
               for (let i = 0; i < response.length; i++) {
-                qualificationType += `<option value=\${response[i].id}\ >\${response[i].name}\</option>`
+                qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`
               }
-              document.getElementById('bachelors-degree-title-data').insertAdjacentHTML("beforeend",
-                qualificationType)
+              //document.getElementById('bachelors-degree-title-data').insertAdjacentHTML("beforeend", qualificationType)
             },
             error: function (error) {
               console.log("Error::::::::::::", error);
@@ -2618,8 +2024,8 @@
         // let qualificationCertificateImage = qualificationRow[i].querySelector('#qualification-certificate-preview').src;
 
         let checkSubject = namecheck(qualificationSubject);
-        let checkUniversity = namecheck(qualificationUniversity);
-        let checkCollege = namecheck(qualificationCollege);
+        let checkUniversity = tabledatacheck(qualificationUniversity);
+        let checkCollege = tabledatacheck(qualificationCollege);
         let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
         let checkCertificate = tabledatacheck(qualificationCertificate);
         let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
@@ -2651,13 +2057,14 @@
           return;
         }
 
-
-        // if (qualificationCertificate.length != 0) {
-        //   $('.qualification-update i').remove('.fa-ban');
-        //   $('.qualification-update i').remove('.text-danger');
-        //   $('.qualification-update i').add('.fa-image');
-        //   $('.qualification-update i').add('.text-success');
-        // }
+        let qualificationTitle1 = ""
+        if (qualificationTitle == 1) {
+          qualificationTitle1 = "Bachelor's Degree"
+        } else if (qualificationTitle == 2) {
+          qualificationTitle1 = "Master's Degree"
+        } else {
+          qualificationTitle1 = "PHD"
+        }
 
         let qualificationvalue = false;
         if (qualificationStatus == 'true') {
@@ -2693,7 +2100,7 @@
                               <p class="h5 py-1">University :</p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">\${qualificationTitle}\</p>
+                              <p id="">\${qualificationTitle1}\</p>
                               <p id="">\${qualificationSubject}\</p>
                               <p id="">\${qualificationUniversity}\</p>
                             </div>
@@ -2749,125 +2156,123 @@
 
     })
 
-
-
     document.getElementById('qualification-add-button').addEventListener('click', function (e) {
       e.preventDefault();
 
-      e.preventDefault()
-
-      let table = ''
-      let qualificationRow = document.querySelectorAll('.qualification-row')
-      for (i = 0; i < qualificationRow.length; i++) {
-
-        let qualificationTitle = qualificationRow[i].querySelector('.qualification-title')
-        console.log(qualificationTitle)
-        qualificationTitle.addEventListener('change', function () {
-          let qualificationTitle = document.querySelectorAll('.qualification-title')
-          if (qualificationTitle.value == 3) {
-            qualificationRow[i].querySelectorAll('.qualification-status-wrapper').classList.remove('d-none');
-          } else {
-            qualificationRow[i].querySelectorAll('.qualification-status-wrapper').classList.add('d-none');
-          }
-        });
-
-        table += ` <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
- <div class="container">
-      <div id="qualification-display-div" class="qualification-row px-3 px-sm-4 px-lg-4 mt-1">
-            <div class="row">
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Title</p>
-                  </div>
-                  <div class="col-md-10"><select class="form-control qualification-title"
-                      id="bachelors-degree-title-data">
-                      
-                      </select></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Subject</p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control qualification-subject"
-                      id="bachelors-degree-major-subject" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">University</p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control qualification-university"
-                      id="bachelors-degree-university" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Year of Passing</p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control qualification-year" id="bachelors-degree-year-of-passing"
-                    type="text"></div>
-                </div>
-
-              </div>
-
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-
-                <div class="row p-3 qualification-status-wrapper d-none">
-                  <div class="col-md-2 ">
-                    <p class="h6">Status<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><select class="form-control qualification-status"
-                      id="qualification-status-data">
-                      <option value="true">Awarded</option>
-                      <option value="false">Persuing</option>
-                    </select></div>
-                </div>
-
-                <div class="row p-3">
-                  <div class="col-md-2">
-                    <p class="h6">College</p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control qualification-college"
-                      id="bachelors-degree-college" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2">
-                    <p class="h6">Percentage</p>
-                  </div>
-                  <div class="col-md-10"><input class="form-control qualification-percentile"
-                      id="bachelors-degree-percentile" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Certificate</p>
-                  </div>
-                  <div class="col-md-10"><input class="form-control qualification-certificate"
-                      id="bachelors-degree-certificate"  onchange="document.getElementById('qualification-certificate-preview').src = window.URL.createObjectURL(this.files[0])" type="file">
-                      <p hidden><img id="qualification-certificate-preview" type="hidden" alt="your image" width="100" height="100"
-                        style="border: 1px solid #ced4da; margin-left:100px;" /></p>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr style="height: 5px;">
-          </div>
-            <div id="delete_btn_qualification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_qualification_symbol">
-            <i class="fa-solid fa-trash text-danger fa-2x"></i>
-               </div>
-        </div> 
+       let table = `<div class="row qualification-row">
+       <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+         <div class="row p-3">
+           <div class="col-md-2 ">
+             <p class="h6">Title <span class="required">*</span></p>
+           </div>
+           <div class="col-md-10">
+            <select class="form-control qualification-title">
+              \${qualificationType}
+             </select>
+             </div>
+         </div>
+         <div class="row p-3">
+           <div class="col-md-2 ">
+             <p class="h6">Subject <span class="required">*</span></p>
+           </div>
+           <div class="col-md-10 "><input class="form-control qualification-subject"
+               id="bachelors-degree-major-subject" type="text"></div>
+         </div>
+         <div class="row p-3">
+           <div class="col-md-2 ">
+             <p class="h6">University<span class="required">*</span></p>
+           </div>
+           <div class="col-md-10 "><input class="form-control qualification-university"
+               id="bachelors-degree-university" type="text"></div>
+         </div>
+         <div class="row p-3">
+           <div class="col-md-2 ">
+             <p class="h6">Year of Passing <span class="required">*</span></p>
+           </div>
+           <div class="col-md-10 "><input class="form-control qualification-year"
+               id="bachelors-degree-year-of-passing" type="text"></div>
+         </div>
+       
+       </div>
+       
+       <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+       
+         <div class="row p-3 qualification-phd-wrapper d-none">
+           <div class="col-md-2 ">
+             <p class="h6">Status<span class="required">*</span></p>
+           </div>
+           <div class="col-md-10"><select class="form-control qualification-status"
+               id="qualification-status-data">
+               <option value="true">Awarded</option>
+               <option value="false">Persuing</option>
+             </select></div>
+         </div>
+         <div class="row p-3">
+           <div class="col-md-2">
+             <p class="h6">College <span class="required">*</span></p>
+           </div>
+           <div class="col-md-10 "><input class="form-control qualification-college"
+               id="bachelors-degree-college" type="text"></div>
+         </div>
+         <div class="row p-3">
+           <div class="col-md-2">
+             <p class="h6">Percentage<span class="required">*</span></p>
+           </div>
+           <div class="col-md-10"><input class="form-control qualification-percentile"
+               id="bachelors-degree-percentile" type="text"></div>
+         </div>
+         <div class="row p-3">
+           <div class="col-md-2 ">
+             <p class="h6">Certificate<span class="required">*</span></p>
+           </div>
+           <div class="col-md-10"><input class="form-control qualification-certificate"
+               id="bachelors-degree-certificate"
+               onchange="document.getElementById('qualification-certificate-preview').src = window.URL.createObjectURL(this.files[0])"
+               type="file">
+             <p hidden><img id="qualification-certificate-preview" type="hidden" alt="your image" width="100"
+                 height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+           </div>
+         </div>
+       
+       </div>
+       </div>
+            <hr style="height: 5px;">
           `
 
-      }
+     document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
 
+      // let appendingOptions = document.querySelectorAll('.qualification-title');
+      // let optionSelcted = document.querySelectorAll('.qualification-phd-wrapper');
 
-
-      document.getElementById('qualification-data').insertAdjacentHTML("beforeend", table);
-      let appendingOptions = document.querySelectorAll('.qualification-title')
-      appendingOptions[appendingOptions.length - 1].insertAdjacentHTML("beforeend", qualificationType)
-
-
+      // appendingOptions[appendingOptions.length - 1].addEventListener('change', function () {
+      //     if (appendingOptions[appendingOptions.length - 1].value == 3) {
+      //       optionSelcted[optionSelcted.length - 1].classList.remove('d-none');
+      //     } else {
+      //       optionSelcted[optionSelcted.length - 1].classList.add('d-none');
+      //     }
+      //   })
+      // console.log(appendingOptions[appendingOptions.length - 1])
 
     })
+
+
+    document.querySelector('.qualification-data').addEventListener('change', function(e) {
+      let target = e.target;
+
+      if(target.classList.contains('qualification-title')) {
+
+        let closestParent = findClosest(e.target, 'qualification-row').querySelector('.qualification-phd-wrapper');
+        
+        if(target.value === 'phd') {
+          closestParent.classList.remove('d-none');
+        } else {
+          closestParent.classList.add('d-none');
+        }
+        
+      }
+    })
+
+
 
     document.addEventListener('mouseover', function () {
       let deleteButtonClick = document.querySelectorAll('.delete_btn_qualification_symbol')
@@ -2925,24 +2330,25 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Award name</p>
+                    <p class="h6">Award name<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control awardName" type="text" id="award-name"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Organisation</p>
+                    <p class="h6">Organisation<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control awardOrganization" type="text" id="award-organization"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Organisation type</p>
+                    <p class="h6">Organisation type<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><select class="form-control awardOrganizationType" id="award-organization-type">
                     <option value="0">-select-</option>
                     <option value="1">School</option>
                     <option value="2">University</option>
+                    <option value="3">Industry</option>
                   </select></div>
                 </div>
               </div>
@@ -2950,19 +2356,19 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Description</p>
+                    <p class="h6">Description<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2">
-                    <p class="h6">Received date</p>
+                    <p class="h6">Received date<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Certificate</p>
+                    <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
                   <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></div>
                 </div>
@@ -3108,7 +2514,8 @@
           url_path: url_path
         }
 
-        console.log(obj)
+
+        let recievedAwardDate = changeDateFormat(achievement_date)
         div += `
         <div id="award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                     <div class="row">
@@ -3138,7 +2545,7 @@
                           </div>
                           <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                             <p class="" id="">\${description}\</p>
-                            <p class="" id="">\${achievement_date}\</p>
+                            <p class="" id="">\${recievedAwardDate}\</p>
                             <p id=""><i class="fa-solid fa-ban text-success"></i></p>
 
                           </div>
@@ -3218,13 +2625,13 @@
         let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
         let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
         let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
-        let publicationCertificate = publicationRow[i].querySelector('.publication-certification').value;
-
+        let publicationCertificate1 = publicationRow[i].querySelector('.publication-certification').value;
+console.log(publicationCertificate1)
         let checkPublicationPublisher = tabledatacheck(publicationPublisher);
         let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
         let checkPublicationYearOfPublication = tabledatacheck(publicationYearOfPublication);
         let checkPublicationBookTitle = tabledatacheck(publicationBookTitle);
-        let checkPublicationCertificate = tabledatacheck(publicationCertificate);
+        let checkPublicationCertificate = tabledatacheck(publicationCertificate1);
 
         // to add the red border according to validations
         if (checkPublicationPublisher == false) {
@@ -3240,7 +2647,7 @@
           publicationRow[i].querySelector('.book-title').classList.add('input-border');
           return;
         } else if (checkPublicationCertificate == false) {
-          publicationRow[i].querySelector('.certification').classList.add('input-border');
+          publicationRow[i].querySelector('.publication-certification').classList.add('input-border');
           return;
         }
 
@@ -3457,30 +2864,23 @@
       let resumeResearchTable = [];
       let div = ''
       for (let j = 0; j < noofrows; j++) {
-        researchTableElem[j].querySelector('.research_role').classList.remove('input-border');
         researchTableElem[j].querySelector('.research_Journal_name').classList.remove('input-border');
         researchTableElem[j].querySelector('.research_volume_year').classList.remove('input-border');
         researchTableElem[j].querySelector('.research_description').classList.remove('input-border');
         researchTableElem[j].querySelector('.research_category').classList.remove('input-border');
         researchTableElem[j].querySelector('.research_photo').classList.remove('input-border');
 
-        let Role = researchTableElem[j].querySelector('.research_role').value;
         let Journal_name = researchTableElem[j].querySelector('.research_Journal_name').value;
         let volume_year = researchTableElem[j].querySelector('.research_volume_year').value;
         let description = researchTableElem[j].querySelector('.research_description').value;
         let category = researchTableElem[j].querySelector('.research_category').value;
         // let research_photo = researchTableElem[j].querySelector('.research_photo').value;
 
-        // let check_research_role = namecheck(Role);
         let check_journal_name = tabledatacheck(Journal_name);
         let check_volume_year = yearcheck(volume_year);
         let check_description = namecheck(description);
         let check_category = namecheck(category);
 
-        // if (check_research_role == false) {
-        //   researchTableElem[j].querySelector('.research_role').classList.add('input-border');
-        //   return;
-        // }
 
         if (check_journal_name == false) {
           researchTableElem[j].querySelector('.research_Journal_name').classList.add('input-border');
@@ -3524,7 +2924,6 @@
         // }
 
         obj = {
-          role: Role,
           journal_name: Journal_name,
           volume_year: volume_year,
           number: description,
@@ -3538,13 +2937,11 @@
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Role :</p>
-                          <p class="h5 py-1">Journal Name :</p>
+                          <p class="h5 py-1">Title :</p>
                           <p class="h5 py-1">Volume year :</p>
 
                         </div>
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p id="">\${Role}\</p>
                           <p id="">\${Journal_name}\</p>
                           <p id="">\${volume_year}\</p>
                         </div>
@@ -3633,17 +3030,7 @@
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Role</p>
-                  </div>
-                  <div class="col-md-10"><select name="role" class="form-control research_role">
-                      <option>-Select-</option>
-                      <option value="Sole">Sole</option>
-                      <option value="Author">Author</option>
-                    </select></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Journal Name</p>
+                    <p class="h6">Title</p>
                   </div>
                   <div class="col-md-10 "><input name="journal_name" class="form-control research_Journal_name"
                       type="text"></div>
@@ -3771,17 +3158,13 @@
           year_of_passing: professionalYOP,
         }
 
-        div += `
-                  <div class="text-block right" id="preview-qualification-div">
-                    <div class="card-body preview-certification-div">
-
-                      <div id="certification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+        div += `<div id="certification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                         <div class="row">
 
-                          <div class="col-12 col-md-4 col-lg-4 col-sm-12">
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             <div class="row pt-lg-3">
                               <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                                <p class="h5 pb-1">Certification:</p>
+                                <p class="h5 pb-1">Certification name:</p>
                               </div>
                               <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                                 <p id="">\${professionalCertificate}\</p>
@@ -3789,9 +3172,9 @@
                             </div>
                           </div>
 
-                          <div class="col-12 col-md-4 col-lg-4 col-sm-12">
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             <div class="row pt-lg-3">
-                              <div class="col-5 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <div class="col-6 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                                 <p class="h5 pb-1">Institution :</p>
                               </div>
                               <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
@@ -3800,20 +3183,30 @@
                             </div>
                           </div>
 
-                          <div class="col-12 col-md-3 col-lg-3 col-sm-12">
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                             <div class="row pt-lg-3">
-                              <div class="col-9  col-md-9 ps-md-0 ps-0 ps-sm-0 col-lg-9 col-sm-9">
-                                <p class="h5 pb-1">Year of passing:</p>
+                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Recieved Date:</p>
                               </div>
-                              <div class="col-3 col-md-3 col-lg-3 col-sm-3">
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                                 <p id="">\${professionalYOP}\</p>
                               </div>
                             </div>
                           </div>
+
+                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                            <div class="row pt-lg-3">
+                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                                <p class="h5 pb-1">Certificate:</p>
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                                <p id=""><i class="fa-solid fa-image text-success"></i></p>
+                              </div>
+                            </div>
+                          </div>
+
                         </div>
                       </div>
-                    </div>
-                  </div>
                  `
 
         certificationTableArray.push(object)
@@ -3854,7 +3247,7 @@
 
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Certificate: <span class="required">*</span></p>
+                    <p class="h6">Certification Name: <span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control certification-certificate" type="text"></div>
                 </div>
@@ -3866,12 +3259,17 @@
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
-                    <p class="h6">Year of Passing: <span class="required">*</span></p>
+                    <p class="h6">Recieved Date: <span class="required">*</span></p>
                   </div>
                   <div class="col-md-10 "><input class="form-control certification-YOP" type="text"></div>
                 </div>
               </div>
-
+              <div class="row p-3">
+                <div class="col-md-2 ">
+                  <p class="h6">Certificate: <span class="required">*</span></p>
+                </div>
+                <div class="col-md-10 "><input class="form-control certificate-photo" type="file"></div>
+               </div>
             </div>
             <div id="delete_btn_certification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_certification_symbol">
             <i class="fa-solid fa-trash text-danger fa-2x"></i>
@@ -3931,17 +3329,13 @@
       editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
       editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
       editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
-      editBankDetailsForm.append('editAccountNumber', document.getElementById('account-number-value')
-        .innerText)
-      //  editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value').innerText)
+      editBankDetailsForm.append('editAccountNumber', document.getElementById('account-number-value').innerText)
 
       document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
       document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
       document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
       document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
       document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccountNumber')
-      //document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
-
 
       document.getElementById('body').classList.add('d-none');
       document.querySelector('.bank-details-modal').classList.remove('d-none');
@@ -3956,15 +3350,31 @@
 
       e.preventDefault()
 
+      let accountType1 = ""
+      let flag3 = document.getElementById('bank-account-type').value
+        if (flag3 == 1) {
+          accountType1 = "Current Account"
+        } else if (flag3 == 2) {
+          accountType1 = "Savings Account"
+        } else if (flag3 == 3) {
+          accountType1 = "Salary Account"
+        } else if (flag3 == 4) {
+          accountType1 = "Non Residential Ordinary Account"
+        } else {
+          accountType1 = "Reccuring Deposit Account"
+        }
+
       let submitBankDetailsForm = new FormData()
+
       submitBankDetailsForm.append('bankName', document.getElementById('bank-name').value)
       submitBankDetailsForm.append('branchName', document.getElementById('bank-branch').value)
       submitBankDetailsForm.append('ifscCode', document.getElementById('bank-ifsc-code').value)
       submitBankDetailsForm.append('micrCode', document.getElementById('bank-micr-code').value)
       submitBankDetailsForm.append('accountNumber', document.getElementById('bank-account-number').value)
-      submitBankDetailsForm.append('accountType', document.getElementById('bank-account-type').value)
-      submitBankDetailsForm.append('cancelledCheckPhoto', document.getElementById('cancelled_cheque_Photo')
-        .value)
+      submitBankDetailsForm.append('accountType', accountType1)
+      submitBankDetailsForm.append('cancelledCheckPhoto', document.getElementById('cancelled_cheque_Photo').value)
+
+        
       clearError();
 
       let facultyBankName1 = bankDetailBankNameValidation(submitBankDetailsForm.get('bankName'))
@@ -3973,8 +3383,7 @@
       let facultyMicrCode1 = bankDetailMicrCodeValidation(submitBankDetailsForm.get('micrCode'))
       let facultyAccountNumber1 = bankDetailAccountNumberValidation(submitBankDetailsForm.get('accountNumber'))
       let facultyAccountType1 = bankDetailAccountTypeValidation(submitBankDetailsForm.get('accountType'))
-      let facultyCancelledCheque = bankDetailCancelledChequeValidation(submitBankDetailsForm.get(
-        'cancelledCheckPhoto'))
+      let facultyCancelledCheque = bankDetailCancelledChequeValidation(submitBankDetailsForm.get('cancelledCheckPhoto'))
 
       if (!facultyBankName1 || !facultyBankBranch1 || !facultyIfscCode1 || !facultyMicrCode1 || !
         facultyAccountNumber1 || !facultyCancelledCheque) {
