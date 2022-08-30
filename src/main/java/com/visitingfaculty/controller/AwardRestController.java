@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.visitingfaculty.dao.UserDaoInterface;
 import com.visitingfaculty.service.UserInsertionService;
 import com.visitingfaculty.validations.jsoncheck;
 
@@ -18,7 +19,7 @@ public class AwardRestController
     @Autowired jsoncheck jsoncheck;
 
     @Autowired
-    UserInsertionService service;
+    UserDaoInterface service;
 
     @PostMapping(value="/award_Table_Data")
     @ResponseBody
@@ -32,7 +33,9 @@ public class AwardRestController
             System.out.println("Error");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-            service.insertAwardData(resume_achievement);
+            // Object data = service.insertAwardData(resume_achievement);
+            Object data = service.updateAward(resume_achievement);
+            System.out.println(data);
             System.out.println("Success");
             return ResponseEntity.status(HttpStatus.OK).build();
     }

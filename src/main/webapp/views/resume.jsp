@@ -419,7 +419,7 @@
                   <h3 class="mb-4 h3" style="color: #740E00;"> <b> Publications </b></h3>
                 </div>
                 <div id="publication-appending-div" class="bg-white">
-                  <div id="publication-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class=" px-3 px-sm-4 px-lg-4 mt-1">
                     <div class="row">
 
                       <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -478,7 +478,7 @@
 
                 <div id="research-appending-div">
 
-                  <div id="research-display-div" class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
+                  <div  class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
                     <div class="row">
 
                       <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -539,7 +539,7 @@
                   <div class="text-block right" id="preview-qualification-div">
                     <div class="card-body preview-certification-div">
 
-                      <div id="certification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div  class=" px-3 px-sm-4 px-lg-4 mt-1">
                         <div class="row">
 
                           <div class="col-12 col-md-4 col-lg-4 col-sm-12">
@@ -1247,8 +1247,8 @@
           <hr>
 
 
-          <div id="publication-appending-div" class="bg-white">
-            <div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1">
+          <div id="publication-modal-appending-div" class="bg-white">
+            <div class="publication-row px-3 px-sm-4 px-lg-4 mt-1">
               <div class="row">
 
                 <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -1300,11 +1300,9 @@
               <div class="d-none publication-delete-button d-flex justify-content-center align-items-center">
                 <i class="fa-solid fa-pen fa-2x"></i>
               </div>
+              <hr style="height: 5px;">
             </div>
-            <hr style="height: 5px;">
-            <div id="publication-data" class="mt-4">
-
-            </div>
+           
           </div>
 
           <div class="d-flex justify-content-center">
@@ -1327,8 +1325,8 @@
           <hr>
 
 
-          <div id="research-appending-div" class="bg-white">
-            <div id="research-display-div" class="research-row px-3 px-sm-4 px-lg-4 mt-1">
+          <div id="research-model-appending-div" class="bg-white">
+            <div  class="research-row px-3 px-sm-4 px-lg-4 mt-1">
               <div class="row">
 
                 <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -1386,9 +1384,6 @@
               </div>
             </div>
             <hr style="height: 5px;">
-            <div id="research-data" class="mt-4">
-
-            </div>
           </div>
           <div class="d-flex justify-content-center ">
             <button id="research-cancel-button" class="btn btn-danger m-4">Cancel</button>
@@ -1412,7 +1407,7 @@
           <hr>
 
           <div id="certification-appending-div" class="bg-white">
-            <div id="certification-display-div" class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
+            <div  class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
               <div class="row">
                 <!-- px-lg-5 -->
                 <div class="col-12 col-md-12 col-lg-12 col-sm-12 ">
@@ -2902,18 +2897,19 @@
 
     document.getElementById('award-add-button').addEventListener('click', function () {
       console.log("Award Add Button clicked");
-      let awardnameaddbtn = document.querySelector('.awardName').value.length;
-      let awardOrganizationaddbtn = document.querySelector('.awardOrganization').value.length;
-      let awardOrganizationTypeaddbtn = document.querySelector('.awardOrganizationType').value.length;
-      let awardPlaceaddbtn = document.querySelector('.awardPlace').value.length;
-      let awardRecieveDateaddbtn = document.querySelector('.awardRecieveDate').value.length;
-      let awardCertificationImageaddbtn = document.querySelector('.awardCertificationImage').value.length;
 
-      if (awardnameaddbtn == 0 || awardOrganizationaddbtn == 0 || awardOrganizationTypeaddbtn == 0 ||
-        awardPlaceaddbtn == 0 || awardRecieveDateaddbtn == 0 || awardCertificationImageaddbtn == 0) {
-        alert('Fill the data before');
-        return;
-      }
+      // let awardnameaddbtn = document.querySelector('.awardName').value.length;
+      // let awardOrganizationaddbtn = document.querySelector('.awardOrganization').value.length;
+      // let awardOrganizationTypeaddbtn = document.querySelector('.awardOrganizationType').value.length;
+      // let awardPlaceaddbtn = document.querySelector('.awardPlace').value.length;
+      // let awardRecieveDateaddbtn = document.querySelector('.awardRecieveDate').value.length;
+      // let awardCertificationImageaddbtn = document.querySelector('.awardCertificationImage').value.length;
+
+      // if (awardnameaddbtn == 0 || awardOrganizationaddbtn == 0 || awardOrganizationTypeaddbtn == 0 ||
+      //   awardPlaceaddbtn == 0 || awardRecieveDateaddbtn == 0 || awardCertificationImageaddbtn == 0) {
+      //   alert('Fill the data before');
+      //   return;
+      // }
 
 
       let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
@@ -3100,7 +3096,10 @@
         }
 
         obj = {
+          resume_lid : "1",
+          achievement_type_lid:"2",
           title: title,
+          resume_achievement_lid :63,
           organization_name: organization_name,
           organization_type_lid: organization_type_lid,
           achievement_date: achievement_date,
@@ -3155,9 +3154,7 @@
       object = {
         "insert_award": resume_achievement
       }
-      // awardData.push(resume_achievement)
 
-      console.log(JSON.stringify(object))
       //Fetch Method
       function postdata() {
         url = "/award_Table_Data";
@@ -3244,20 +3241,12 @@
           return;
         }
 
-        insertAchievementObject.role = publicationRole
-        insertAchievementObject.no_of_authors = publicationNumberOfAuthors
-        insertAchievementObject.book_title = publicationBookTitle
-        insertAchievementObject.publisher = publicationPublisher
-        insertAchievementObject.year_of_publication = publicationYearOfPublication
-        insertAchievementObject.publication_url_path = publicationCertificate
-        // object = {
-        //   role: publicationRole,
-        //   no_of_authors: publicationNumberOfAuthors,
-        //   book_title: publicationBookTitle,
-        //   publisher: publicationPublisher,
-        //   year_of_publication: publicationYearOfPublication,
-        //   publication_url_path: publicationCertificate
-        // }
+        // insertAchievementObject.role = publicationRole
+        // insertAchievementObject.no_of_authors = publicationNumberOfAuthors
+        // insertAchievementObject.book_title = publicationBookTitle
+        // insertAchievementObject.publisher = publicationPublisher
+        // insertAchievementObject.year_of_publication = publicationYearOfPublication
+        // insertAchievementObject.publication_url_path = publicationCertificate
 
         // let publicationCertificate = publicationRow[i].querySelector('.certification').value;
 
@@ -3276,17 +3265,21 @@
         // console.log(publicationBase64)
 
         object = {
-          role: publicationRole,
+          resume_lid: "1",
+          achievement_type_lid : "1",
+          resume_achievement_lid : 81,
+          publication_role : publicationRole,
           no_of_authors: publicationNumberOfAuthors,
-          book_title: publicationBookTitle,
+          title: publicationBookTitle,
           publisher: publicationPublisher,
           year_of_publication: publicationYearOfPublication,
           publication_url_path: publicationBase64
         }
+        publicationTableArray.push(object)
 
 
         div += `   
-  <div id="publication-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+  <div class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
                  <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
@@ -3322,14 +3315,11 @@
                 </div>
                   `
 
-        publicationTableArray.push(object)
       }
 
       let publicationTableData = {
-        "PublicationDetails": publicationTableArray
+        "insert_publication": publicationTableArray
       }
-      // publicationData.push(publicationTableData)
-      console.log(JSON.stringify(publicationTableData))
 
       let options = {
         method: 'POST',
@@ -3340,10 +3330,17 @@
       }
       let fetchRes = fetch("/insert-publication-details", options);
       fetchRes.then(success => {
+        if(success.status == 200)
+        {
         document.getElementById('publication-appending-div').firstElementChild.remove()
         document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
         document.getElementById('body').classList.remove('d-none');
         document.querySelector('.publication-modal').classList.add('d-none');
+        }
+        else
+        {
+          alert('Check');
+        }
       })
     });
 
@@ -3352,8 +3349,8 @@
 
       let table = ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
             <div class="container">
-           <div id="publication-appending-div" class="bg-white">
-          <div id="publication-display-div" class="publication-row px-3 px-sm-4 px-lg-4 mt-1"> 
+          
+          <div class="publication-row px-3 px-sm-4 px-lg-4 mt-1"> 
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -3402,16 +3399,15 @@
                 </div>
               </div>
             </div>
-            </div>
              <div id="delete_btn_publication_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_publication_symbol">
                 <i class="fa-solid fa-trash text-danger fa-2x"></i>
              </div>
           </div>
           <hr style="height: 5px;">
-          </div>
+      </div>
           </div>
         `
-      document.getElementById('publication-data').insertAdjacentHTML("beforeend", table);
+      document.getElementById('publication-modal-appending-div').insertAdjacentHTML("beforeend", table);
     })
 
     document.addEventListener('mouseover', function () {
@@ -3504,13 +3500,12 @@
 
         let researchCertificate = document.querySelectorAll('.research_photo')
 
-        let filereader = new FileReader();
-        filereader.readAsDataURL(researchCertificate[j].files[0]);
-        filereader.onload = function loadDataFunc(evt) {
-          let researchBase64 = evt.target.result;
-          newBase64 += researchBase64
-        }
-        console.log(newBase64)
+        // let filereader = new FileReader();
+        // filereader.readAsDataURL(researchCertificate[j].files[0]);
+        // filereader.onload = function loadDataFunc(evt) {
+        //   let researchBase64 = evt.target.result;
+        //   newBase64 += researchBase64
+        // }
 
         // let panphotobase64 = ''
         // let panPhoto = document.getElementById("aadhar-photo").files[0]
@@ -3524,15 +3519,18 @@
         // }
 
         obj = {
-          role: Role,
-          journal_name: Journal_name,
+          resume_lid : "1",
+          achievement_type_lid : "3",
+          resume_achievement_lid : 83,
+          research_role: Role,
+          title : Journal_name,
           volume_year: volume_year,
-          number: description,
+          description : description,
           category: category,
-          research_url_path: researchBase64
+          research_url_path: "fake-path"
         }
 
-        div += `<div id="research-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1 ">
+        div += `<div  class=" px-3 px-sm-4 px-lg-4 mt-1 ">
                   <div class="row">
 
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -3571,49 +3569,69 @@
         `
         resumeResearchTable.push(obj);
       }
+
       object = {
         "insert_research": resumeResearchTable
       }
-      // researchData.push(object)
-      console.log(JSON.stringify(object));
+      console.log('resrearch : ',JSON.stringify(object));
 
-      function postdata() {
-        url = "/research_Table_Data";
-        params = {
-          method: "post",
-          headers: {
-            contentType: 'application/json'
-          },
-          body: JSON.stringify(object),
-        }
-        fetch(url, params).then((data) => {
-          console.log("This is the responce : ", data);
-          if (data.status == 200) {
-            console.log("OK")
+      let options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(object),
+      }
+      let fetchRes = fetch("/research_Table_Data", options);
+      fetchRes.then(success => {
+        if(success.status == 200)
+        {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.research-modal').classList.add('d-none');
-          } else {
-            console.log("Error");
-            alert('Check Research Details');
-          }
-        })
-      }
-      postdata()
+        }
+        else
+        {
+          alert('Check');
+        }
+      })
+      
+
+      // function postdata() {
+      //   url = "/research_Table_Data";
+      //   params = {
+      //     method: "post",
+      //     headers: {
+      //       contentType: 'application/json'
+      //     },
+      //     body: JSON.stringify(object),
+      //   }
+      //   fetch(url, params).then((data) => {
+      //     if (data.status == 200) {
+      //       console.log("OK")
+      //       document.getElementById('body').classList.remove('d-none');
+      //       document.querySelector('.research-modal').classList.add('d-none');
+      //     } else {
+      //       console.log("Error");
+      //       alert('Check Research Details');
+      //     }
+      //   })
+      // }
+      // postdata()
       document.getElementById('research-appending-div').firstElementChild.remove()
       document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
 
     });
-    let awardData = {}
-    let publicationData = {}
-    let researchData = {}
+    // let awardData = {}
+    // let publicationData = {}
+    // let researchData = {}
 
-    achievement = {
-      "insert_Award": awardData,
-      "insert_publication": publicationData,
-      "insert_research": researchData
-    }
+    // achievement = {
+    //   "insert_Award": awardData,
+    //   "insert_publication": publicationData,
+    //   "insert_research": researchData
+    // }
 
-    console.log(JSON.stringify(achievement))
+    // console.log(JSON.stringify(achievement))
 
     document.getElementById('research-add-button').addEventListener('click', function () {
 
@@ -3627,7 +3645,7 @@
 
       let table = ` 
       <div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
-      <div id="research-display-div" class="research-row px-3 px-sm-4 px-lg-4 mt-1 bg-white container">
+      <div  class="research-row px-3 px-sm-4 px-lg-4 mt-1 bg-white container">
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -3676,17 +3694,17 @@
                 </div>
               </div>
             </div>
-            <div id="delete_btn_research_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_research_symbol">
-   <i class="fa-solid fa-trash text-danger fa-2x"></i>
-</div>
+            <hr style="height: 5px;"> 
+            </div>
+            <div class="d-none d-flex justify-content-center align-items-center delete_btn_research_symbol">
+                     <i class="fa-solid fa-trash text-danger fa-2x"></i>
           </div>
-          <hr style="height: 5px;"> 
         </div>`
 
 
 
 
-      document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
+      document.getElementById('research-model-appending-div').insertAdjacentHTML("beforeend", table);
 
 
     });
@@ -3701,7 +3719,7 @@
           deleteresearch[i].querySelector('.delete_btn_research_symbol').classList.add('d-none');
         });
         deleteButtonClick[i].addEventListener('click', function () {
-          this.parentElement.parentElement.remove()
+          this.parentElement.remove()
         });
       }
     })
@@ -3775,7 +3793,7 @@
                   <div class="text-block right" id="preview-qualification-div">
                     <div class="card-body preview-certification-div">
 
-                      <div id="certification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div  class=" px-3 px-sm-4 px-lg-4 mt-1">
                         <div class="row">
 
                           <div class="col-12 col-md-4 col-lg-4 col-sm-12">
@@ -3847,7 +3865,7 @@
 
       let table = `  
       <div class="position-relative certification_delete_btn d-flex" style="cursor: pointer;"> 
-      <div id="certification-display-div" class="certification-row px-3 px-sm-4 px-lg-4 mt-1 container">
+      <div  class="certification-row px-3 px-sm-4 px-lg-4 mt-1 container">
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-12 col-sm-12">
@@ -3972,7 +3990,7 @@
       let facultyIfscCode1 = bankDetailIfscCodeValidation(submitBankDetailsForm.get('ifscCode'))
       let facultyMicrCode1 = bankDetailMicrCodeValidation(submitBankDetailsForm.get('micrCode'))
       let facultyAccountNumber1 = bankDetailAccountNumberValidation(submitBankDetailsForm.get('accountNumber'))
-      let facultyAccountType1 = bankDetailAccountTypeValidation(submitBankDetailsForm.get('accountType'))
+      // let facultyAccountType1 = bankDetailAccountTypeValidation(submitBankDetailsForm.get('accountType'))
       let facultyCancelledCheque = bankDetailCancelledChequeValidation(submitBankDetailsForm.get(
         'cancelledCheckPhoto'))
 
