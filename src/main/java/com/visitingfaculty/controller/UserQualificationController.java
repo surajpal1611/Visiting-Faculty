@@ -33,8 +33,6 @@ public class UserQualificationController {
     public List<UserQualificationType> getQualificationTypeDB(ModelMap modelMap) {
 
         List<UserQualificationType> list = userDaoInterface.getQualificationType();
-        modelMap.addAttribute("list",list);
-        System.out.println(list);
         return list;
     }
 
