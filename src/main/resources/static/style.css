@@ -446,14 +446,14 @@ h1 {
   margin: 0;
 }
 
-select {
-  min-width: 150px;
+.radio-inline {
+  padding: 0 10px;
 }
 
 input {
   /* min-width: 150px !important; */
   padding: 5px;
-  border-radius: 25px !important;
+  /* border-radius: 25px !important; */
   background-color: #eee;
 }
 
@@ -491,7 +491,7 @@ label {
 @media screen and (max-width: 1030px) {
 
   .temporary-address {
-    padding-top: 40px;
+    padding-top: 30px;
   }
 
   .country-heading {

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.visitingfaculty.dao.UserDaoInterface;
-import com.visitingfaculty.service.UserInsertionService;
 import com.visitingfaculty.validations.jsoncheck;
 
 @RestController

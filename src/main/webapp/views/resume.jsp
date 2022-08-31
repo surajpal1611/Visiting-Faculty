@@ -126,7 +126,7 @@
                                 class="fa-solid fa-ban text-danger"></i></p>
                           </div>
                         </div>
-                        
+
                       </div>
 
                       <div id="personaldetails-right-side"
@@ -144,7 +144,7 @@
                             <h6>Secondary Contact No.</h6>
                           </div>
                           <div class="col-md-7 col-sm-9">
-                            <p id="temp-contact-value">ANY</p>
+                            <p id="temp-contact-value">N.A</p>
                           </div>
                         </div>
                         <div class="row py-2">
@@ -160,7 +160,7 @@
                             <h6>Temperory Email :</h6>
                           </div>
                           <div class="col-md-7 col-sm-9">
-                            <p id="temp-email-value">ANY</p>
+                            <p id="temp-email-value">N.A</p>
                           </div>
                         </div>
                         <div class="row py-2">
@@ -494,7 +494,7 @@
 
                 <div id="research-appending-div">
 
-                  <div  class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
+                  <div class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
                     <div class="row">
 
                       <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -553,7 +553,7 @@
                   <div class="text-block right" id="preview-qualification-div">
                     <div class="card-body preview-certification-div">
 
-                      <div  class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class=" px-3 px-sm-4 px-lg-4 mt-1">
                         <div class="row">
 
                           <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -681,25 +681,48 @@
           <div class="d-flex justify-content-center align-items-center">
             <h1 class="p-5" style="color: #740E00;"><b> Personal Details</b></h1>
           </div>
+
           <div class="container">
             <div id="name-row" class="row mb-3">
 
               <div class="col-md-4 col-sm-12">
+                <div class="form-group">
+                  <label for="first-name" cl>First Name <span class="required">*</span></label>
+                  <span id="first-name-message" style="color: red;" class="error"></span>
+                  <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="last-name">last Name <span class="required">*</span></label>
+                  <span id="last-name-message" style="color: red;" class="error"></span>
+                  <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-12">
+                <div class="form-group">
+                  <img id="photo-preview" alt="your image" name="photo_preview" width="100" height="100"
+                    style="border: 1px solid #ced4da; margin-left:100px;" />
+                </div>
+              </div>
+              <!-- <div class="col-md-4 col-sm-12">
                 <label for="first-name" cl>First Name <span class="required">*</span></label>
                 <span id="first-name-message" style="color: red;" class="error"></span>
                 <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
-              </div>
+              </div> -->
 
-              <div class="col-md-4 col-sm-12">
+              <!-- <div class="col-md-4 col-sm-12">
                 <label for="last-name">last Name <span class="required">*</span></label>
                 <span id="last-name-message" style="color: red;" class="error"></span>
                 <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
-              </div>
+              </div> -->
 
-              <div class="col-md-4 col-sm-12">
+              <!-- <div class="col-md-4 col-sm-12">
                 <img id="photo-preview" alt="your image" name="photo_preview" width="100" height="100"
                   style="border: 1px solid #ced4da; margin-left:100px;" />
-              </div>
+              </div> -->
 
             </div>
           </div>
@@ -708,21 +731,38 @@
             <div id="left-second-row" class="row">
 
               <div class="col-md-4 col-sm-12">
+                <div class="form-group">
+                  <label for="date-of-birth">date of birth <span class="required">*</span></label>
+                  <span id="date-of-birth-message" style="color: red;" class="error"></span>
+                  <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
+                </div>
+              </div>
+
+              <div id="gender-row" class="col-md-4 col-sm-12">
+                <div class="form-group">
+                  <label for="date-of-birth">Gender<span class="required">*</span></label><br>
+                  <label class="radio-inline">Male<input type="radio" name="gender" class="gender ms-1" id="male" value="1" /></label>
+                  <label class="radio-inline">Female<input type="radio" name="gender" class="gender ms-1" id="female" value="2" /></label>
+                  <label class="radio-inline">Other<input type="radio" name="gender" class="gender ms-1" id="other" value="3" /></label>
+                </div>
+              </div>
+
+              <!-- <div class="col-md-4 col-sm-12">
                 <label for="date-of-birth">date of birth <span class="required">*</span></label>
                 <span id="date-of-birth-message" style="color: red;" class="error"></span>
                 <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
-              </div>
+              </div> -->
 
-              <div id="gender-row" class="col-sm-12 col-md-4">
+              <!-- <div id="gender-row" class="col-sm-12 col-md-4">
                 <label for="">Gender <span class="required">*</span></label><br>
                 <label for="male">Male</label>
                 <input style="height: auto ;" type="radio" name="gender" class="gender" id="male" value="1" />
                 <label for="female">Female</label>
                 <input style="height: auto ;" type="radio" name="gender" class="gender" id="female" value="2" />
                 <label for="other">other</label>
-                <input style="height: auto ;" type="radio" name="gender" class="gender" id="other" value="3" />
+                <input type="radio" name="gender" class="gender" id="other" value="3" />
                 <span id="gender-message" style="color: red;" class="error"></span>
-              </div>
+              </div> -->
 
               <div class="col-md-4 col-sm-12">
                 <label for="photo">passport Size Photo <span class="required">*</span></label>
@@ -858,7 +898,7 @@
 
           <div class="bg-white qualification-data">
           </div>
-          
+
           <hr>
           <div class="d-flex justify-content-center">
             <button id="qualification-cancel-button" class="btn btn-danger m-4">Cancel</button>
@@ -1246,7 +1286,7 @@
               </div>
               <hr style="height: 5px;">
             </div>
-           
+
           </div>
 
           <div class="d-flex justify-content-center">
@@ -1270,7 +1310,7 @@
 
 
           <div id="research-model-appending-div" class="bg-white">
-            <div  class="research-row px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="research-row px-3 px-sm-4 px-lg-4 mt-1">
               <div class="row">
 
                 <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -1341,7 +1381,7 @@
           <hr>
 
           <div id="certification-appending-div" class="bg-white">
-            <div  class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
               <div class="row">
                 <!-- px-lg-5 -->
                 <div class="col-12 col-md-12 col-lg-12 col-sm-12 ">
@@ -1540,37 +1580,22 @@
   </main>
 
 
-  <div class="modal-loader d-none id="main-loader">
-    <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-  viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
-  <circle fill="#FF4136" stroke="none" cx="6" cy="50" r="6">
-    <animateTransform 
-       attributeName="transform" 
-       dur="1s" 
-       type="translate" 
-       values="0 15 ; 0 -15; 0 15" 
-       repeatCount="indefinite" 
-       begin="0.1"/>
-  </circle>
-  <circle fill="#FF851B" stroke="none" cx="30" cy="50" r="6">
-    <animateTransform 
-       attributeName="transform" 
-       dur="1s" 
-       type="translate" 
-       values="0 10 ; 0 -10; 0 10" 
-       repeatCount="indefinite" 
-       begin="0.2"/>
-  </circle>
-  <circle fill="#FFDC00" stroke="none" cx="54" cy="50" r="6">
-    <animateTransform 
-       attributeName="transform" 
-       dur="1s" 
-       type="translate" 
-       values="0 5 ; 0 -5; 0 5" 
-       repeatCount="indefinite" 
-       begin="0.3"/>
-  </circle>
-</svg>
+  <div class="modal-loader d-none" id="main-loader">
+    <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+      y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+      <circle fill="#FF4136" stroke="none" cx="6" cy="50" r="6">
+        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 15 ; 0 -15; 0 15"
+          repeatCount="indefinite" begin="0.1" />
+      </circle>
+      <circle fill="#FF851B" stroke="none" cx="30" cy="50" r="6">
+        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 10 ; 0 -10; 0 10"
+          repeatCount="indefinite" begin="0.2" />
+      </circle>
+      <circle fill="#FFDC00" stroke="none" cx="54" cy="50" r="6">
+        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5"
+          repeatCount="indefinite" begin="0.3" />
+      </circle>
+    </svg>
   </div>
 
 
@@ -1584,7 +1609,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
   <script src="/js/jquery.bootpag.min.js"></script>
   <script>
-  
     // ******************************************Validation Functions End***************************************************
 
     document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
@@ -1815,7 +1839,7 @@
         user_info.temp_email = result.temp_email
         user_info.gender_lid = Number.parseInt(result.gender)
         user_info.pancard_no = result.pan_number
-        user_info.pancard_url_path =  "C://Fakepath://pancardphoto"//photoArray[2]
+        user_info.pancard_url_path = "C://Fakepath://pancardphoto" //photoArray[2]
         user_info.aadhar_card_url_path = "C://Fakepath://aadharphoto" //photoArray[1]
         user_info.profile_url_path = "C://Fakepath://profilephoto" //photoArray[0]
         user_info.aadhar_card_no = aadhar
@@ -1825,7 +1849,8 @@
 
         let addressObject = {}
         addressObject.user_lid = 3
-        addressObject.address = result.permanent_address + "," + result.permanent_address_city + "," + result.permanent_address_pincode
+        addressObject.address = result.permanent_address + "," + result.permanent_address_city + "," + result
+          .permanent_address_pincode
           .permanent_address_pincode
         addressObject.address_type_lid = 3
         let addressObject2 = {}
@@ -1859,7 +1884,7 @@
 
         }
         let fetchRes = fetch('/insert-personal-details', options);
-   
+
         fetchRes.then(success => {
 
           // if (success.status == 200) {
@@ -1875,7 +1900,8 @@
           document.getElementById('temp-contact-value').innerText = result.temp_contact_number
           document.getElementById('email-value').innerText = result.email
           document.getElementById('temp-email-value').innerText = result.temp_email
-          document.getElementById('address-value').innerText = result.permanent_address + "," + result.permanent_address_city + "-" + result.permanent_address_pincode
+          document.getElementById('address-value').innerText = result.permanent_address + "," + result
+            .permanent_address_city + "-" + result.permanent_address_pincode
           document.getElementById('temporary-address').innerText = result.temporary_address
           document.getElementById('country-value').innerText = result.nationality
           document.getElementById('gender-value').innerText = genderValue
@@ -2148,7 +2174,7 @@
     document.getElementById('qualification-add-button').addEventListener('click', function (e) {
       e.preventDefault();
 
-       let table = `<div class="row qualification-row">
+      let table = `<div class="row qualification-row">
        <div class="col-12 col-md-12 col-lg-6 col-sm-12">
          <div class="row p-3">
            <div class="col-md-2 ">
@@ -2228,7 +2254,7 @@
             <hr style="height: 5px;">
           `
 
-     document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
+      document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
 
       // let appendingOptions = document.querySelectorAll('.qualification-title');
       // let optionSelcted = document.querySelectorAll('.qualification-phd-wrapper');
@@ -2245,19 +2271,19 @@
     })
 
 
-    document.querySelector('.qualification-data').addEventListener('change', function(e) {
+    document.querySelector('.qualification-data').addEventListener('change', function (e) {
       let target = e.target;
 
-      if(target.classList.contains('qualification-title')) {
+      if (target.classList.contains('qualification-title')) {
 
         let closestParent = findClosest(e.target, 'qualification-row').querySelector('.qualification-phd-wrapper');
-        
-        if(target.value === 'phd') {
+
+        if (target.value === 'phd') {
           closestParent.classList.remove('d-none');
         } else {
           closestParent.classList.add('d-none');
         }
-        
+
       }
     })
 
@@ -2495,10 +2521,10 @@
         }
 
         obj = {
-          resume_lid : "1",
-          achievement_type_lid:"2",
+          resume_lid: "1",
+          achievement_type_lid: "2",
           title: title,
-          resume_achievement_lid :63,
+          resume_achievement_lid: 63,
           organization_name: organization_name,
           organization_type_lid: organization_type_lid,
           achievement_date: achievement_date,
@@ -2616,7 +2642,7 @@
         let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
         let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
         let publicationCertificate1 = publicationRow[i].querySelector('.publication-certification').value;
-console.log(publicationCertificate1)
+        console.log(publicationCertificate1)
         let checkPublicationPublisher = tabledatacheck(publicationPublisher);
         let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
         let checkPublicationYearOfPublication = tabledatacheck(publicationYearOfPublication);
@@ -2666,9 +2692,9 @@ console.log(publicationCertificate1)
 
         object = {
           resume_lid: "1",
-          achievement_type_lid : "1",
-          resume_achievement_lid : 81,
-          publication_role : publicationRole,
+          achievement_type_lid: "1",
+          resume_achievement_lid: 81,
+          publication_role: publicationRole,
           no_of_authors: publicationNumberOfAuthors,
           title: publicationBookTitle,
           publisher: publicationPublisher,
@@ -2730,15 +2756,12 @@ console.log(publicationCertificate1)
       }
       let fetchRes = fetch("/insert-publication-details", options);
       fetchRes.then(success => {
-        if(success.status == 200)
-        {
-        document.getElementById('publication-appending-div').firstElementChild.remove()
-        document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.publication-modal').classList.add('d-none');
-        }
-        else
-        {
+        if (success.status == 200) {
+          document.getElementById('publication-appending-div').firstElementChild.remove()
+          document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.publication-modal').classList.add('d-none');
+        } else {
           alert('Check');
         }
       })
@@ -2912,13 +2935,13 @@ console.log(publicationCertificate1)
         // }
 
         obj = {
-          resume_lid : "1",
-          achievement_type_lid : "3",
-          resume_achievement_lid : 83,
+          resume_lid: "1",
+          achievement_type_lid: "3",
+          resume_achievement_lid: 83,
           research_role: Role,
-          title : Journal_name,
+          title: Journal_name,
           volume_year: volume_year,
-          description : description,
+          description: description,
           category: category,
           research_url_path: "fake-path"
         }
@@ -2964,7 +2987,7 @@ console.log(publicationCertificate1)
       object = {
         "insert_research": resumeResearchTable
       }
-      console.log('resrearch : ',JSON.stringify(object));
+      console.log('resrearch : ', JSON.stringify(object));
 
       let options = {
         method: 'POST',
@@ -2975,17 +2998,14 @@ console.log(publicationCertificate1)
       }
       let fetchRes = fetch("/research_Table_Data", options);
       fetchRes.then(success => {
-        if(success.status == 200)
-        {
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.research-modal').classList.add('d-none');
-        }
-        else
-        {
+        if (success.status == 200) {
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.research-modal').classList.add('d-none');
+        } else {
           alert('Check');
         }
       })
-      
+
 
       // function postdata() {
       //   url = "/research_Table_Data";
@@ -3368,17 +3388,17 @@ console.log(publicationCertificate1)
 
       let accountType1 = ""
       let flag3 = document.getElementById('bank-account-type').value
-        if (flag3 == 1) {
-          accountType1 = "Current Account"
-        } else if (flag3 == 2) {
-          accountType1 = "Savings Account"
-        } else if (flag3 == 3) {
-          accountType1 = "Salary Account"
-        } else if (flag3 == 4) {
-          accountType1 = "Non Residential Ordinary Account"
-        } else {
-          accountType1 = "Reccuring Deposit Account"
-        }
+      if (flag3 == 1) {
+        accountType1 = "Current Account"
+      } else if (flag3 == 2) {
+        accountType1 = "Savings Account"
+      } else if (flag3 == 3) {
+        accountType1 = "Salary Account"
+      } else if (flag3 == 4) {
+        accountType1 = "Non Residential Ordinary Account"
+      } else {
+        accountType1 = "Reccuring Deposit Account"
+      }
 
       let submitBankDetailsForm = new FormData()
 
@@ -3390,7 +3410,7 @@ console.log(publicationCertificate1)
       submitBankDetailsForm.append('accountType', accountType1)
       submitBankDetailsForm.append('cancelledCheckPhoto', document.getElementById('cancelled_cheque_Photo').value)
 
-        
+
       clearError();
 
       let facultyBankName1 = bankDetailBankNameValidation(submitBankDetailsForm.get('bankName'))

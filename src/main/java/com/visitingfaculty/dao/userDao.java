@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
 
+import com.visitingfaculty.model.User;
 import com.visitingfaculty.model.user_bank_details.UserBankAccountType;
 import com.visitingfaculty.model.user_qualification.UserQualificationType;
 import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
@@ -114,7 +115,7 @@ public class userDao implements UserDaoInterface {
     public List<UserQualificationType> getQualificationType() {
         String sql = "select id, name, abbr from qualification_type where id < 4";
         return jdbcTemplate.query(sql, (rs, rownum) -> {
-            return new UserQualificationType(rs.getInt("id"), rs.getString("name"),rs.getString("abbr"));
+            return new UserQualificationType(rs.getInt("id"), rs.getString("name"), rs.getString("abbr"));
         });
     }
 
@@ -172,6 +173,21 @@ public class userDao implements UserDaoInterface {
                 .withFunctionName("update_research");
 
         return jdbcCall.executeFunction(Object.class, data);
+    }
+
+    @Override
+    public int insertUser(User user) {
+
+        String sql = "insert into public.user( user_id , password) values( ? , ? )";
+        return jdbcTemplate.update(sql,user.getUser_id(),user.getPassword_hash());
+    }
+
+    @Override
+    public String getPasswordById(String user_id) {
+
+        String sql = "Select Password from public.user where user_id = ?";
+        String Password = (String) jdbcTemplate.queryForObject(sql, String.class, user_id);
+        return Password;
     }
 
 }

@@ -4,6 +4,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.visitingfaculty.dto.UserDto;
 
 @Controller
 public class UserController {
@@ -33,6 +36,19 @@ public class UserController {
         // return "redirect:/login";
       
     }
+    
+    @PostMapping("/verify-login")
+    public String verifyUserLogin( UserDto object ,HttpSession httpSession) {
+
+        // if user not exist then we will generatae a random 6 digit token for
+        // verification
+        // System.out.println(userDto);
+        System.out.println(object);
+
+        // httpSession.setAttribute("user_id", userDto.getUser_id());
+
+        return "redirect:/dashboard";
+    }
 
     @GetMapping("/logout")
     public String logout(HttpSession httpSession) {
@@ -40,4 +56,5 @@ public class UserController {
         httpSession.invalidate();
         return "login";
     }
+
 }

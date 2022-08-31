@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.visitingfaculty.model.User;
 import com.visitingfaculty.model.user_bank_details.UserBankAccountType;
 import com.visitingfaculty.model.user_qualification.UserQualificationType;
 import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
@@ -49,5 +50,7 @@ public interface UserDaoInterface {
 
     Object updateBankDetails(String bankDetailsData);
 
+    int insertUser(User user);
 
+    String getPasswordById(String user_id);
 }

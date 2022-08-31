@@ -253,7 +253,21 @@ function isCharNumber(res) {
     return condition;
   }
 
+  function emailValidation(res) {
+    var atposition = res.indexOf('@');
+    var dotposition = res.lastIndexOf('.');
+    if (atposition < 1 || (res.length - 2) == dotposition) {
+      condition = false;
+    } else if (atposition < dotposition) {
+      condition = true;
+    } else {
+      condition = false;
+    }
+    return condition;
+  }
+
   function personalDetailPancardValidation(res) {
+
     if (res.length != 10) {
       document.getElementById('pan-number-message').innerHTML = "*Invalid length of Pancard Number";
       condition = false;
@@ -278,6 +292,35 @@ function isCharNumber(res) {
           }
         } else {
           document.getElementById('pan-number-message').innerHTML = "Error Inbetween First Five Characters";
+          condition = false;
+          break;
+        }
+      }
+    }
+    return condition;
+  }
+
+  function pancardValidation(res) {
+    if (res.length != 10) {
+      condition = false;
+    } else {
+      let firstfive = res.substring(0, 5);
+      let nextfour = res.substring(5, 9);
+      for (let i = 0; i < firstfive.length; i++) {
+        if (firstfive[i] >= 'A' && firstfive[i] <= 'Z') {
+          for (let k = 0; k < nextfour.length; k++) {
+            if (nextfour[k] >= '0' && nextfour[k] <= '9') {
+              if (res[9] >= 'A' && res[9] <= 'Z') {
+                condition = true;
+              } else {
+                condition = false;
+              }
+            } else {
+              condition = false;
+              break;
+            }
+          }
+        } else {
           condition = false;
           break;
         }

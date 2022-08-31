@@ -5,18 +5,14 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
-
 import com.visitingfaculty.dao.UserDaoInterface;
 import com.visitingfaculty.dto.UserDto;
 import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
+import com.visitingfaculty.service.PasswordService;
 import com.visitingfaculty.service.faculty_service.UserService;
 import com.visitingfaculty.validations.jsoncheck;
 
@@ -30,30 +26,29 @@ public class UserRestController {
     jsoncheck jsonchk;
 
     @Autowired
+    PasswordService passwordService;
+
+    @Autowired
     UserDaoInterface userDaoInterface;
 
     @PostMapping(value = "/insert-personal-details")
     public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) {
 
-        Boolean check =  jsonchk.UserJsonCheck(personalDetailsData, "EOLPS0161D");
-        if(check == true)
-           {
-             Object insertPersonalDetails = userDaoInterface.updatePersonalDetails(personalDetailsData);
-             if (insertPersonalDetails == null) 
-                {
-                    return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-                }
-              return ResponseEntity.ok("Inserted Successfully");
+        Boolean check = jsonchk.UserJsonCheck(personalDetailsData, "EOLPS0161D");
+        if (check == true) {
+            Object insertPersonalDetails = userDaoInterface.updatePersonalDetails(personalDetailsData);
+            if (insertPersonalDetails == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
-        else
-        {
+            return ResponseEntity.ok("Inserted Successfully");
+        } else {
             System.out.println("Error");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }       
+        }
     }
 
-    @PostMapping("/verify-login")
-    public ResponseEntity<?> verifyUserLogin(@RequestBody UserDto userDto, HttpSession httpSession) {
+    @PostMapping("/verify-registration")
+    public ResponseEntity<?> verifyUserRegistration(@RequestBody UserDto userDto, HttpSession httpSession) {
 
         // if user not exist then we will generatae a random 6 digit token for
         // verification
@@ -68,7 +63,7 @@ public class UserRestController {
 
         if (userService.sendEmail(message, userDto.getEmail())) {
 
-            return ResponseEntity.ok("otp send successfully");
+            return ResponseEntity.status(HttpStatus.OK).build();
 
         } else {
 
@@ -87,7 +82,7 @@ public class UserRestController {
         if (tokenGenerated != tokenToVerify) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-        return ResponseEntity.ok("verification success");
+        return ResponseEntity.ok("success");
     }
 
     @PostMapping("/get-all-skill")
@@ -113,5 +108,13 @@ public class UserRestController {
         }
 
     }
+
+    // @PostMapping("/verify-password")
+    // public boolean passwordVerificationTest(@RequestBody String password) {
+
+    //     boolean password_hash = passwordService.verifyPassword("$argon2i$v=19$m=65536,t=22,p=1$IgVmDdUI0nslYj6gsRrGyA$Zvb8lsykt3BN/VQ4PkUrTJSfuNscDaHLV57I3MSeC7M",password);
+    //     System.out.println(password_hash);
+    //     return password_hash;
+    // }
 
 }

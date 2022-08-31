@@ -18,8 +18,8 @@ public class UserPublicationController {
     public ResponseEntity<String> insert(@RequestBody String publicationTableData) 
     {
         System.out.println("Publication Json : "+publicationTableData);
-        // Object insertData = userDaoInterface.insertPublications(publicationTableData);
-        Object insertData = userDaoInterface.updatePublications(publicationTableData);
+        Object insertData = userDaoInterface.insertPublications(publicationTableData);
+        // Object insertData = userDaoInterface.updatePublications(publicationTableData);
         System.out.println(insertData);
         return new ResponseEntity<String>("Inserted publication Successfully", HttpStatus.OK);
     }    

@@ -2,7 +2,6 @@ package com.visitingfaculty.controller;
 
 import java.text.ParseException;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,7 +46,6 @@ public class FacultyControllerForWorkExperience {
 	@ResponseBody
 	public String insertWorkExperience(@RequestBody String workExperienceData) throws ParseException {
 		System.out.println(workExperienceData);
-		Map<String, String> validationValue = validationOfJson.validationOfJson(workExperienceData);
 
 		/*
 		 * for(int i=0;i<validationValue.size();i++)
