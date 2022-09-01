@@ -2996,7 +2996,7 @@
         },
         body: JSON.stringify(object),
       }
-      let fetchRes = fetch("/research_Table_Data", options);
+      let fetchRes = fetch("/research-table-data", options);
       fetchRes.then(success => {
         if (success.status == 200) {
           document.getElementById('body').classList.remove('d-none');

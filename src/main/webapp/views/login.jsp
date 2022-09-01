@@ -310,7 +310,7 @@
         </div>
         <div class="col-md-6" id="login-left">
 
-          <form method="POST" action="/verify-login" class="text-center" id="login-form">
+          <form method="POST" class="text-center" id="login-form">
             <h3><span>Wel</span>come</h3>
             <span class="bottom-line mx-auto"></span>
 
@@ -403,35 +403,41 @@
 
 
     let loginButton = document.querySelector('.login-btn')
+    let status = 400;
+    loginButton.addEventListener('click', function (e) {
+      document.getElementById('main-loader').classList.remove('d-none')
+      e.preventDefault();
 
-    // loginButton.addEventListener('click', function (e) {
+      let myForm = document.getElementById('login-form')
+      let formData = new FormData(myForm)
 
-    //   e.preventDefault();
+      let result = {};
+      for (let entry of formData.entries()) {
+        result[entry[0]] = entry[1];
+      }
+      console.log(JSON.stringify(result))
 
-    //   let myForm = document.getElementById('login-form')
-    //   let formData = new FormData(myForm)
 
-    //   let result = {};
-    //   for (let entry of formData.entries()) {
-    //     result[entry[0]] = entry[1];
-    //   }
+      fetch('/verify-login', {
+          method: "POST",
+          body: JSON.stringify(result),
+          headers: {
 
-    //   console.log(JSON.stringify(result))
-
-    //  $.ajax({
-    //   type : "POST",
-    //   url : "/verify-login",
-    //   data : JSON.stringify(result),
-    //   contentType : 'application/json',
-    //   success : function() {
-    //     console.log("success")
-    //   },
-    //   error : function(error) {
-    //     console.log("Error", error)
-    //   }
-    //  })
-
-    // })
+            "Content-Type": "application/json; charset=UTF-8",
+          }
+        })
+        .then(response => status = response.status)
+        .then(response => {
+          if (status === 200) {
+            document.getElementById('main-loader').classList.add('d-none')
+            console.log("success")
+            location.href = 'http://localhost:8080/dashboard';
+          } else {
+            location.href = 'http://localhost:8080/login';
+          }
+        })
+        .catch(exception => console.log(exception));
+    })
 
     let loginErrorMessage = ``;
 

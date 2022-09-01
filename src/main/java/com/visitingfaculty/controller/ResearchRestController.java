@@ -13,12 +13,13 @@ import com.visitingfaculty.validations.jsoncheck;
 @RestController
 public class ResearchRestController {
 
-    @Autowired jsoncheck jsoncheck;
+    @Autowired
+    jsoncheck jsoncheck;
 
     @Autowired
     UserDaoInterface userDaoInterface;
 
-    @PostMapping(value = "/research_Table_Data")
+    @PostMapping(value = "/research-table-data")
     public ResponseEntity<String> postResearchMethod(@RequestBody String object)
     {
         System.out.println("Research Data"+object);

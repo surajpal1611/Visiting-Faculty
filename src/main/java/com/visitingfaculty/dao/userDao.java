@@ -178,14 +178,14 @@ public class userDao implements UserDaoInterface {
     @Override
     public int insertUser(User user) {
 
-        String sql = "insert into public.user( user_id , password) values( ? , ? )";
+        String sql = "insert into public.user( user_id , password_hash) values( ? , ? )";
         return jdbcTemplate.update(sql,user.getUser_id(),user.getPassword_hash());
     }
 
     @Override
     public String getPasswordById(String user_id) {
 
-        String sql = "Select Password from public.user where user_id = ?";
+        String sql = "Select Password_hash from public.user where user_id = ?";
         String Password = (String) jdbcTemplate.queryForObject(sql, String.class, user_id);
         return Password;
     }

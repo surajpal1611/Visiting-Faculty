@@ -15,6 +15,11 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.visitingfaculty.dao.UserDaoInterface;
+import com.visitingfaculty.dto.UserDto;
+import com.visitingfaculty.model.User;
+import com.visitingfaculty.service.PasswordService;
+
 @Service
 public class UserService {
 
@@ -22,6 +27,12 @@ public class UserService {
 
     @Autowired
     private JavaMailSender javaMailSender;
+
+    @Autowired
+    UserDaoInterface daoInterface;
+
+    @Autowired
+    PasswordService passwordService;
 
     @Value("${spring.mail.username}")
     private String fromEmail;
@@ -67,5 +78,19 @@ public class UserService {
             return null;
 
         }
+    }
+
+    public boolean validateToken(int tokenToVerify,int tokenGenerated,String user_id,String password) {
+
+        if (tokenGenerated != tokenToVerify) {
+
+            return false;
+        }
+        String password_hash = passwordService.encodePassword(password);
+        User user = new User();
+        user.setPassword_hash(password_hash);
+        user.setUser_id(user_id);
+        daoInterface.insertUser(user);
+        return true;
     }
 }
