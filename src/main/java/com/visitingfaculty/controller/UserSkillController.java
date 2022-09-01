@@ -28,9 +28,9 @@ public class UserSkillController {
     public ResponseEntity<?> insertAllSkills(@RequestBody String skills) {
 
         System.out.println(skills);
-        // Object insertSkills = userDaoInterface.insertAllSkills(skills);
-        Object updateSkills = userDaoInterface.updateAllSkills(skills);
-        System.out.println(updateSkills);
+        Object insertSkills = userDaoInterface.insertAllSkills(skills);
+        // Object updateSkills = userDaoInterface.updateAllSkills(skills);
+        // System.out.println(updateSkills);
 
         return ResponseEntity.status(HttpStatus.OK).build();
 

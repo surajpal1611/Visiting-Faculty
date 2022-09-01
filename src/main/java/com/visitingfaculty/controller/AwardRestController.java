@@ -32,8 +32,8 @@ public class AwardRestController
             System.out.println("Error");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-            // Object data = service.insertAwardData(resume_achievement);
-            Object data = service.updateAward(resume_achievement);
+            Object data = service.insertAwardData(resume_achievement);
+            // Object data = service.updateAward(resume_achievement);
             System.out.println(data);
             System.out.println("Success");
             return ResponseEntity.status(HttpStatus.OK).build();

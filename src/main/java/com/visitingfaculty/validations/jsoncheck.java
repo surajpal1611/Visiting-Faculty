@@ -55,7 +55,7 @@ public class jsoncheck {
             String email = user_info.getJSONObject(i).getString("email");
             String pancardPhoto = user_info.getJSONObject(i).getString("pancard_url_path");
 
-            userService.uploadPersonalDetailsFile(pancardPhoto, user_id);
+            // userService.uploadPersonalDetailsFile(pancardPhoto, user_id);
             
 
             String ok = JsonString.replace(pancardPhoto, "Anything");

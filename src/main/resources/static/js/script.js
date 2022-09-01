@@ -371,7 +371,7 @@ function isCharNumber(res) {
     return condition;
   }
 
-  function personalDetailAadharPhotoValidation(res) {
+function personalDetailAadharPhotoValidation(res) {
     var fuData = document.getElementById('aadhar-photo');
     if (res.length > 0) {
       var Extension = res.substring(res.lastIndexOf('.') + 1).toLowerCase();
@@ -440,7 +440,6 @@ function isCharNumber(res) {
     if (res.length < 1) {
       condition = true;
     } else {
-      //document.getElementById("temporary-address-message").innerHTML = "*Invalid length";
       if (res.length != 10) {
       document.getElementById('temporary-contact-number-message').innerHTML = "Invalid length";
       condition = false;
@@ -508,7 +507,7 @@ function isCharNumber(res) {
           var reader = new FileReader();
           reader.onload = function (e) {
             $('.qualification-certificate').attr('src', e.target.result);
-            document.getElementById("cancelled-cheque-photo-uploaded").src = e.target.result
+            document.querySelector(".qualification-certificate-uploaded").src = e.target.result
             condition = true;
           }
           reader.readAsDataURL(fuData.files[0]);
@@ -606,23 +605,7 @@ function isCharNumber(res) {
   }
 
 
-  function bankDetailAccountTypeValidation(res) {
-    if (res.length > 4) {
-      for (let j = 0; j < res.length; j++) {
-        if (res[j] >= '!' && res[j] <= '@') {
-          document.getElementById('bank-account-type-message').innerHTML = "*Special charater is allowed";
-          condition = false;
-          break;
-        } else {
-          condition = true;
-        }
-      }
-    } else {
-      document.getElementById('bank-account-type-message').innerHTML = "*Invalid length";
-      condition = false;
-    }
-    return condition
-  }
+  
 
   function bankDetailCancelledChequeValidation(res) {
     var fuData = document.getElementById("cancelled_cheque_Photo");
