@@ -27,8 +27,8 @@ public class ResearchRestController {
         if(check == true)
         {
             System.out.println("Success");
-            //Object insertData = userDaoInterface.insertResearch(object);
-            Object insertData = userDaoInterface.updateResearch(object);
+            Object insertData = userDaoInterface.insertResearch(object);
+            // Object insertData = userDaoInterface.updateResearch(object);
             System.out.println(insertData);
             return new ResponseEntity<String>("Ressearch data inserted",HttpStatus.OK);
         }

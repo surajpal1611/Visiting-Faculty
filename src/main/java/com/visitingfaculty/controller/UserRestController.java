@@ -40,9 +40,10 @@ public class UserRestController {
     @PostMapping(value = "/insert-personal-details")
     public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) {
 
-        Boolean check = jsonchk.UserJsonCheck(personalDetailsData, "EOLPS0161D");
+        Boolean check = true;
+        // jsonchk.UserJsonCheck(personalDetailsData, "EOLPS0161D");
         if (check == true) {
-            Object insertPersonalDetails = userDaoInterface.updatePersonalDetails(personalDetailsData);
+            Object insertPersonalDetails = userDaoInterface.insertPersonalDetails(personalDetailsData);
             if (insertPersonalDetails == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
