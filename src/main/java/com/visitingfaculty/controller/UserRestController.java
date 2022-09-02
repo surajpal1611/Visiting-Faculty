@@ -37,6 +37,8 @@ public class UserRestController {
     @Autowired
     UserDaoInterface userDaoInterface;
 
+    String password;
+
     @PostMapping(value = "/insert-personal-details")
     public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) {
 
@@ -62,7 +64,7 @@ public class UserRestController {
         System.out.println(userDto);
 
         httpSession.setAttribute("user_id", userDto.getUser_id());
-        httpSession.setAttribute("password", userDto.getPassword());
+        password = userDto.getPassword();
 
         int tokenGenerated = (int) Math.floor(100000 + Math.random() * 900000);
         httpSession.setAttribute("tokenGenerated", tokenGenerated);
@@ -86,9 +88,9 @@ public class UserRestController {
         int tokenToVerify = Integer.parseInt(token);
         int tokenGenerated = (int) httpSession.getAttribute("tokenGenerated");
         String user_id = (String) httpSession.getAttribute("user_id");
-        String password = (String) httpSession.getAttribute("password");
+        String passwordToVerify = password;
         System.out.println("VERIFY TOKEN>>>>>" );
-        if (userService.validateToken(tokenToVerify, tokenGenerated, user_id,password)) {
+        if (userService.validateToken(tokenToVerify, tokenGenerated, user_id,passwordToVerify)) {
             return ResponseEntity.status(HttpStatus.OK).build();
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

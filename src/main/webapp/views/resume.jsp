@@ -25,651 +25,648 @@
   <main class="main">
     <jsp:include page="header.jsp" />
 
-    <div id="body">
+    <div id="body" class="container">
 
       <!-- id(resume-box) of this div is used to give css for the resume created -->
       <!-- class(container) of this div is used to bring the content inside to centre of page using bootstrap -->
-      <div id="resume-box" class="container">
 
-        <!-- class(d-flex) of this div is used to enable flexbox in bootstrap and align the items to the desired position -->
-        <!-- class(justify-content-end) of this div is used to change the alignment of flex items on the main axis and put it in the end -->
-        <div class="d-flex justify-content-end">
+      <!-- class(d-flex) of this div is used to enable flexbox in bootstrap and align the items to the desired position -->
+      <!-- class(justify-content-end) of this div is used to change the alignment of flex items on the main axis and put it in the end -->
+      <div class="d-flex justify-content-end">
 
-          <!-- id(download-btn) of this div is used to give css for the download button created -->
-          <!-- class(h1) of this div is used to give size in bootstrap -->
-          <!-- class(fa-solid) of this div is used to give a bulk look in font-awesome -->
-          <!-- class(fa-solid) of this div is used to give a download font through font-awesome -->
-          <i id="download-btn" class="h1 fa-solid fa-download"></i>
+        <!-- id(download-btn) of this div is used to give css for the download button created -->
+        <!-- class(h1) of this div is used to give size in bootstrap -->
+        <!-- class(fa-solid) of this div is used to give a bulk look in font-awesome -->
+        <!-- class(fa-solid) of this div is used to give a download font through font-awesome -->
+        <i id="download-btn" class="h1 fa-solid fa-download"></i>
+      </div>
+
+      <!-- id(download-page) of this div is used to get the particular element in order to download the entire resume content -->
+
+      <!-- class(cover) of this div is used to give a one-page template for building simple home pages in bootstrap -->
+      <!-- class(shadow-lg) of this div provides shadow to an element with box-shadow utilities in bootstrap -->
+      <div class="shadow-lg">
+
+        <!--------------------------------------Personal Details Section ---------------------------------------->
+
+        <div class="edit-personal-details">
+          <div class="position-relative personal-information-div-wrapper d-flex" style="cursor: pointer;">
+            <div class="container p-0">
+              <div class="personal-information-div">
+                <div class="cover-div p-3 px-sm-4 p-lg-4">
+                  <div class="row">
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                      <div class="avatar bg-white shadow-sm p-1">
+                        <img src="/download (3).jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
+                          height="200" />
+                      </div>
+                    </div>
+
+                    <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
+                      <div class="d-flex" style="color: #740E00;">
+                        <h3><b id="first-name-value">Sameer</b></h3> &nbsp &nbsp
+                        <h3><b id="last-name-value">Shaikh</b></h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="personal-details-div" class="pt-lg-4 pt-md-5 px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+                    <div id="personaldetails-left-side"
+                      class="col-12 col-md-6 col-lg-6 col-sm-12 ps-4 pt-lg-5 pt-md-2 text-center">
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Gender :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="gender-value">Male</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Date of birth :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="date-of-birth-value">2000-07-06</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Pancard :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="pancard-value">AAAAA1111A</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Pancard Photo</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="pancard-photo"><i id="pancard-photo-preview" class="fa-solid fa-ban text-danger"></i>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Aadhar card :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="aadhar-card-value">111122223333</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Aadhar card Photo</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview"
+                              class="fa-solid fa-ban text-danger"></i></p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Contact No.</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="contact-number-value">9876543210</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Secondary Contact No.</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="temp-contact-value">N.A</p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Email :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="email-value">example@gmail.com</p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Secondary Email :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="temp-email-value">N.A</p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Permanent Address :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="address-value">101-Ashok kamothe</p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6 class="temporary-address-heading">Temporary Address :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="temporary-address-value">703-Satyam panvel
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6 class="country-heading">Country :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="country-value">India</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="d-none personal-details-edit-box d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x text-white "></i>
+            </div>
+          </div>
         </div>
+        <hr />
+        <!------------------------------------------------ Qualification Section ------------------------------------------------>
 
-        <!-- id(download-page) of this div is used to get the particular element in order to download the entire resume content -->
+        <div class="position-relative qualification-div-wrapper d-flex" style="cursor: pointer;">
+          <div class="container">
+            <div id="qualification-div">
+              <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
+                <h3><b> <i class="fa-solid fa-graduation-cap"></i>Qualification</b></h3>
+              </div>
 
-        <!-- class(cover) of this div is used to give a one-page template for building simple home pages in bootstrap -->
-        <!-- class(shadow-lg) of this div provides shadow to an element with box-shadow utilities in bootstrap -->
-        <div class="cover shadow-lg">
+              <div id="qualification-appending-div">
+                <div class="text-block right" id="preview-qualification-div">
+                  <div class="card-body preview-qualification-div">
+                    <h2 id="year-of-passing">2015</h2>
 
-          <!--------------------------------------Personal Details Section ---------------------------------------->
+                    <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
 
-          <div class="edit-personal-details">
-            <div class="position-relative personal-information-div-wrapper d-flex" style="cursor: pointer;">
-              <div class="container p-0">
-                <div class="personal-information-div">
-                  <div class="cover-div p-3 px-sm-4 p-lg-4">
-                    <div class="row">
-                      <div class="col-md-4 col-sm-12 col-lg-3">
-                        <div class="avatar bg-white shadow-sm p-1">
-                          <img src="/download (3).jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
-                            height="200" />
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Title :</p>
+                              <p class="h5 py-1">Major Subject :</p>
+                              <p class="h5 py-1">University :</p>
+
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">Bachelors Degree</p>
+                              <p id="">Discrete Maths</p>
+                              <p id="">Mumbai</p>
+                            </div>
+                          </div>
                         </div>
-                      </div>
 
-                      <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
-                        <div class="d-flex" style="color: #740E00;">
-                          <h3><b id="first-name-value">Sameer</b></h3> &nbsp &nbsp
-                          <h3><b id="last-name-value">Shaikh</b></h3>
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">College :</p>
+                              <p class="h5 py-1">percentage :</p>
+                              <p class="h5 py-1">Certificate :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">St. Wilfred's College</p>
+                              <p id="" class="">82.61%</p>
+                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                            </div>
+                          </div>
                         </div>
+
                       </div>
                     </div>
+
                   </div>
-
-                  <div id="personal-details-div" class="pt-lg-4 pt-md-5 px-3 px-sm-4 px-lg-4 mt-1">
-                    <div class="row">
-                      <div id="personaldetails-left-side"
-                        class="col-12 col-md-6 col-lg-6 col-sm-12 ps-4 pt-lg-5 pt-md-2 text-center">
-                        <div class="row py-1">
-                          <div class="col-md-5 col-sm-3">
-                            <h6>Gender :</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="gender-value">Male</p>
-                          </div>
-                        </div>
-                        <div class="row py-1">
-                          <div class="col-md-5 col-sm-3">
-                            <h6>Date of birth :</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="date-of-birth-value">2000-07-06</p>
-                          </div>
-                        </div>
-                        <div class="row py-1">
-                          <div class="col-md-5 col-sm-3">
-                            <h6>Pancard :</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="pancard-value">AAAAA1111A</p>
-                          </div>
-                        </div>
-                        <div class="row py-1">
-                          <div class="col-md-5 col-sm-3">
-                            <h6>Pancard Photo</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="pancard-photo"><i id="pancard-photo-preview" class="fa-solid fa-ban text-danger"></i>
-                            </p>
-                          </div>
-                        </div>
-                        <div class="row py-1">
-                          <div class="col-md-5 col-sm-3">
-                            <h6>Aadhar card :</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="aadhar-card-value">111122223333</p>
-                          </div>
-                        </div>
-                        <div class="row py-1">
-                          <div class="col-md-5 col-sm-3">
-                            <h6>Aadhar card Photo</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="aadhar-card-photo"><i id="aadhar-photo-preview"
-                                class="fa-solid fa-ban text-danger"></i></p>
-                          </div>
-                        </div>
-
-                      </div>
-
-                      <div id="personaldetails-right-side"
-                        class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
-                        <div class="row py-1">
-                          <div class="col-md-5 col-sm-3">
-                            <h6>Contact No.</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="contact-number-value">9876543210</p>
-                          </div>
-                        </div>
-                        <div class="row py-1">
-                          <div class="col-md-5 col-sm-3">
-                            <h6>Secondary Contact No.</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="temp-contact-value">N.A</p>
-                          </div>
-                        </div>
-                        <div class="row py-2">
-                          <div class="col-md-5 col-sm-3">
-                            <h6>Email :</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="email-value">example@gmail.com</p>
-                          </div>
-                        </div>
-                        <div class="row py-2">
-                          <div class="col-md-5 col-sm-3">
-                            <h6>Secondary Email :</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="temp-email-value">N.A</p>
-                          </div>
-                        </div>
-                        <div class="row py-2">
-                          <div class="col-md-5 col-sm-3">
-                            <h6>Permanent Address :</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="address-value">101-Ashok kamothe</p>
-                          </div>
-                        </div>
-                        <div class="row py-2">
-                          <div class="col-md-5 col-sm-3">
-                            <h6 class="temporary-address-heading">Temporary Address :</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="temporary-address-value">703-Satyam panvel
-                            </p>
-                          </div>
-                        </div>
-                        <div class="row py-2">
-                          <div class="col-md-5 col-sm-3">
-                            <h6 class="country-heading">Country :</h6>
-                          </div>
-                          <div class="col-md-7 col-sm-9">
-                            <p id="country-value">India</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
               </div>
-              <div class="d-none personal-details-edit-box d-flex justify-content-center align-items-center">
-                <i class="fa-solid fa-pen fa-2x text-white "></i>
+
+            </div>
+          </div>
+          <div class="d-none qualification-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+        </div>
+        <hr />
+
+        <!------------------------------------------------ Work Experience Section ------------------------------------------------>
+
+        <div class="work-experience-div-wrapper position-relative d-flex" style="cursor: pointer;">
+          <div class="container">
+            <div id="work-experience-div">
+              <div class="d-flex justify-content-center align-items-center">
+                <h3 style="color: #740E00;"><i class="fa-solid fa-briefcase"></i><b> Work Experience </b></h3>
+              </div>
+              <div id="workExperience-appending-div">
+                <div class="text-block right">
+                  <div class="card-body">
+                    <h2>2017</h2>
+
+                    <div id="work-experience-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">University :</p>
+                              <p class="h5 py-1">Subject Taught :</p>
+                              <p class="h5 py-1">Program :</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">Mumbai University</p>
+                              <p id="">Discrete Maths</p>
+                              <p id="">BSc</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 py-1">Designation :</p>
+                              <p class="h5 py-1">Start Date :</p>
+                              <p class="h5 py-1">End date :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">Senior Maths faculty</p>
+                              <p id="" class="">2000-07-06</p>
+                              <p id="" class="">2007-07-06</p>
+                              <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <hr />
-          <!------------------------------------------------ Qualification Section ------------------------------------------------>
-
-          <div class="position-relative qualification-div-wrapper d-flex" style="cursor: pointer;">
-            <div class="container">
-              <div id="qualification-div">
-                <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
-                  <h3><b> <i class="fa-solid fa-graduation-cap"></i>Qualification</b></h3>
-                </div>
-
-                <div id="qualification-appending-div">
-                  <div class="text-block right" id="preview-qualification-div">
-                    <div class="card-body preview-qualification-div">
-                      <h2 id="year-of-passing">2015</h2>
-
-                      <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                        <div class="row">
-
-                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                            <div class="row pt-lg-3">
-                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                                <p class="h5 pb-1">Title :</p>
-                                <p class="h5 py-1">Major Subject :</p>
-                                <p class="h5 py-1">University :</p>
-
-                              </div>
-                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                                <p id="">Bachelors Degree</p>
-                                <p id="">Discrete Maths</p>
-                                <p id="">Mumbai</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                            <div class="row pt-lg-3">
-                              <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                                <p class="h5 pb-1">College :</p>
-                                <p class="h5 py-1">percentage :</p>
-                                <p class="h5 py-1">Certificate :</p>
-                              </div>
-                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                                <p class="" id="">St. Wilfred's College</p>
-                                <p id="" class="">82.61%</p>
-                                <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="d-none qualification-edit-box d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
-            </div>
+          <div class="d-none work-experience-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
           </div>
-          <hr />
+        </div>
+        <hr />
 
-          <!------------------------------------------------ Work Experience Section ------------------------------------------------>
+        <!-------------------------------------------------- Skills Section----------------------------------------------->
 
-          <div class="work-experience-div-wrapper position-relative d-flex" style="cursor: pointer;">
-            <div class="container">
-              <div id="work-experience-div">
-                <div class="d-flex justify-content-center align-items-center">
-                  <h3 style="color: #740E00;"><i class="fa-solid fa-briefcase"></i><b> Work Experience </b></h3>
-                </div>
-                <div id="workExperience-appending-div">
-                  <div class="text-block right">
-                    <div class="card-body">
-                      <h2>2017</h2>
+        <div class="skills-div-wrapper position-relative d-flex" style="cursor: pointer;">
+          <div class="container">
+            <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
+              <div class="d-flex justify-content-center align-items-center">
+                <h3 class="mb-4 h3" style="color: #740E00;">
+                  <img src="/icons/skills.png" alt="" height="40px"><b> Skills</b>
+                </h3>
+              </div>
+              <div class="container bootstrap snippets bootdeys">
+                <div class="row">
 
-                      <div id="work-experience-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                        <div class="row">
+                  <div class="col-md-6 col-sm-12 content-card">
+                    <div class="card card-just-text" data-background="color" data-color="grey" data-radius="none">
+                      <h4 class="title">Hard Skills</h4>
 
-                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                            <div class="row pt-lg-3">
-                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                                <p class="h5 pb-1">University :</p>
-                                <p class="h5 py-1">Subject Taught :</p>
-                                <p class="h5 py-1">Program :</p>
-                              </div>
-                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                                <p id="">Mumbai University</p>
-                                <p id="">Discrete Maths</p>
-                                <p id="">BSc</p>
-                              </div>
-                            </div>
-                          </div>
+                      <div id="hard-skill-appending-div1" class="d-flex w-100 flex-wrap">
 
-                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                            <div class="row pt-lg-3">
-                              <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                                <p class="h5 py-1">Designation :</p>
-                                <p class="h5 py-1">Start Date :</p>
-                                <p class="h5 py-1">End date :</p>
-                              </div>
-                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                                <p class="" id="">Senior Maths faculty</p>
-                                <p id="" class="">2000-07-06</p>
-                                <p id="" class="">2007-07-06</p>
-                                <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
-                              </div>
-                            </div>
-                          </div>
 
-                        </div>
+
                       </div>
-                    </div>
+                    </div> <!-- end card -->
+                  </div>
+
+                  <div class="col-md-6 col-sm-12 content-card">
+                    <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
+                      <h4 class="title">Soft Skills</h4>
+
+                      <div id="soft-skill-appending-div1" class="d-flex w-100 flex-wrap">
+
+                      </div>
+                    </div> <!-- end card -->
                   </div>
                 </div>
               </div>
             </div>
-            <div class="d-none work-experience-edit-box d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
-            </div>
           </div>
-          <hr />
+          <div class="d-none skills-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+        </div>
+        <hr>
 
-          <!-------------------------------------------------- Skills Section----------------------------------------------->
+        <!-------------------------------------------------- Award Section----------------------------------------------->
 
-          <div class="skills-div-wrapper position-relative d-flex" style="cursor: pointer;">
-            <div class="container">
-              <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
-                <div class="d-flex justify-content-center align-items-center">
-                  <h3 class="mb-4 h3" style="color: #740E00;">
-                    <img src="/icons/skills.png" alt="" height="40px"><b> Skills</b>
-                  </h3>
-                </div>
-                <div class="container bootstrap snippets bootdeys">
+        <div class="award-div-wrapper d-flex position-relative" style="cursor: pointer;">
+          <div class="container">
+            <div id="award-div" class="px-3 px-sm-4 px-lg-4">
+              <div class="d-flex justify-content-center align-items-center">
+                <h3 style="color: #740E00;"><i class="fa-solid fa-award"></i><b> Awards </b></h3>
+              </div>
+              <div id="award-preview-div">
+
+
+                <div id="Award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
 
-                    <div class="col-md-6 col-sm-12 content-card">
-                      <div class="card card-just-text" data-background="color" data-color="grey" data-radius="none">
-                        <h4 class="title">Hard Skills</h4>
-
-                        <div id="hard-skill-appending-div1" class="d-flex w-100 flex-wrap">
-
-
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Award Name :</p>
+                          <p class="h5 py-1">organization :</p>
+                          <p class="h5 py-1">Organization Type :</p>
 
                         </div>
-                      </div> <!-- end card -->
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">Engagement Award</p>
+                          <p id="">Campus Compact </p>
+                          <p id="">University</p>
+                        </div>
+                      </div>
                     </div>
 
-                    <div class="col-md-6 col-sm-12 content-card">
-                      <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
-                        <h4 class="title">Soft Skills</h4>
-
-                        <div id="soft-skill-appending-div1" class="d-flex w-100 flex-wrap">
-
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Place :</p>
+                          <p class="h5 pb-1">Recieved date :</p>
+                          <p class="h5 py-1">Certificate :</p>
                         </div>
-                      </div> <!-- end card -->
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">Mumbai</p>
+                          <p class="" id="">2018-07-07</p>
+                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="d-none skills-edit-box d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
-            </div>
-          </div>
-          <hr>
 
-          <!-------------------------------------------------- Award Section----------------------------------------------->
-
-          <div class="award-div-wrapper d-flex position-relative" style="cursor: pointer;">
-            <div class="container">
-              <div id="award-div" class="px-3 px-sm-4 px-lg-4">
-                <div class="d-flex justify-content-center align-items-center">
-                  <h3 style="color: #740E00;"><i class="fa-solid fa-award"></i><b> Awards </b></h3>
-                </div>
-                <div id="award-preview-div">
-
-
-                  <div id="Award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                    <div class="row">
-
-                      <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                        <div class="row pt-lg-3">
-                          <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                            <p class="h5 pb-1">Award Name :</p>
-                            <p class="h5 py-1">organization :</p>
-                            <p class="h5 py-1">Organization Type :</p>
-
-                          </div>
-                          <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                            <p id="">Engagement Award</p>
-                            <p id="">Campus Compact </p>
-                            <p id="">University</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                        <div class="row pt-lg-3">
-                          <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                            <p class="h5 pb-1">Place :</p>
-                            <p class="h5 pb-1">Recieved date :</p>
-                            <p class="h5 py-1">Certificate :</p>
-                          </div>
-                          <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                            <p class="" id="">Mumbai</p>
-                            <p class="" id="">2018-07-07</p>
-                            <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <div class="d-none award-edit-box d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
-            </div>
-          </div>
-          <hr />
-
-          <!------------------------------------------- Publication Section  ----------------------------------------->
-
-          <div class="publication-div-wrapper d-flex position-relative" style="cursor: pointer;">
-            <div class="container">
-              <div id="publication-div" class="px-3 px-sm-4 px-lg-4">
-                <div class="d-flex justify-content-center align-items-center">
-                  <h3 class="mb-4 h3" style="color: #740E00;"> <b> Publications </b></h3>
-                </div>
-                <div id="publication-appending-div" class="bg-white">
-                  <div class=" px-3 px-sm-4 px-lg-4 mt-1">
-                    <div class="row">
-
-                      <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                        <div class="row pt-lg-3">
-                          <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                            <p class="h5 pb-1">Role :</p>
-                            <p class="h5 py-1">No. of Authors :</p>
-                            <p class="h5 py-1">Book Title :</p>
-
-                          </div>
-                          <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                            <p id="">Editor</p>
-                            <p id="">10 </p>
-                            <p id="">A Million Thoughts</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                        <div class="row pt-lg-3">
-                          <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                            <p class="h5 pb-1">Publisher :</p>
-                            <p class="h5 pb-1">Publication Year:</p>
-                            <p class="h5 py-1">Certificate :</p>
-                          </div>
-                          <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                            <p class="" id="">Nationpress</p>
-                            <p class="" id="">2016</p>
-                            <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="d-none publication-edit-box d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
-            </div>
-          </div>
-
-          <hr />
-
-          <!------------------------------------------- Research Section  ----------------------------------------->
-
-
-          <div class="research-div-wrapper d-flex position-relative" style="cursor: pointer;">
-            <div class="container">
-              <div id="research-div" class="px-3 px-sm-4 px-lg-4">
-                <div class="d-flex justify-content-center align-items-center">
-                  <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><i class="fa-solid fa-telescope"></i><b> Research
-                    </b></h3>
-                </div>
-
-                <div id="research-appending-div">
-
-                  <div class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
-                    <div class="row">
-
-                      <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                        <div class="row pt-lg-3">
-                          <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                            <p class="h5 py-1">Title :</p>
-                            <p class="h5 py-1">Volume year :</p>
-
-                          </div>
-                          <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                            <p id="">Algebra and logic</p>
-                            <p id="">2017</p>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                        <div class="row pt-lg-3">
-                          <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                            <p class="h5 pb-1">Description :</p>
-                            <p class="h5 pb-1">Category :</p>
-                            <p class="h5 py-1">Certificate :</p>
-                          </div>
-                          <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                            <p class="" id="">example</p>
-                            <p class="" id="">example</p>
-                            <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <div class="d-none research-edit-box d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
-            </div>
-          </div>
-          <hr />
-
-          <!------------------------------------------------ Certification Section ------------------------------------------------>
-
-          <div class="position-relative certification-div-wrapper d-flex" style="cursor: pointer;">
-            <div class="container">
-              <div id="certification-div">
-                <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
-                  <h3><i class="fa-solid fa-certificate"></i><b>Professional Membership Certificate</b></h3>
-                </div>
-
-                <div id="certification-appending-div">
-                  <div class="text-block right" id="preview-qualification-div">
-                    <div class="card-body preview-certification-div">
-
-                      <div class=" px-3 px-sm-4 px-lg-4 mt-1">
-                        <div class="row">
-
-                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                            <div class="row pt-lg-3">
-                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                                <p class="h5 pb-1">Certification name:</p>
-                              </div>
-                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                                <p id="">Teaching</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                            <div class="row pt-lg-3">
-                              <div class="col-6 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                                <p class="h5 pb-1">Institution :</p>
-                              </div>
-                              <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                                <p class="" id="">St. Wilfred's College</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                            <div class="row pt-lg-3">
-                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                                <p class="h5 pb-1">Recieved Year:</p>
-                              </div>
-                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                                <p id="">2015</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                            <div class="row pt-lg-3">
-                              <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                                <p class="h5 pb-1">Certificate:</p>
-                              </div>
-                              <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                                <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-
-                    </div>
                   </div>
                 </div>
 
               </div>
             </div>
-            <div class="d-none certification-edit-box d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
-            </div>
           </div>
-          <hr />
-
-
-
-          <!------------------------------------------- Bank Details Section  ----------------------------------------->
-
-          <div class="bank-details-div-wrapper d-flex position-relative" style="cursor: pointer;">
-            <div id="bank-details-div">
-              <div class="px-3 px-sm-4 ps-lg-5">
-                <div class="d-flex justify-content-center align-items-center">
-                  <h3 class="p-md-3 pb-sm-3" style="color: #740E00;"><b><i class="fa-solid fa-building-columns"></i>
-                      Bank Details </b></h3>
-                </div>
-                <div class="row">
-                  <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
-                    <div class="row pt-lg-3">
-                      <div class="col-6 col-md-6 col-lg-6 col-sm-6 ps-lg-4 ps-md-0 ps-0 ps-sm-0">
-                        <h6 class="pb-4">Name of Bank</h6>
-                        <h6 class="pb-4">Branch</h6>
-                        <h6 class="pb-4">IFSC Code</h6>
-                      </div>
-                      <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                        <p id="bank-name-value">ICICI Bank</p>
-                        <p id="branch-name-value" class="pt-2">Panvel</p>
-                        <p id="ifsc-code-value" class="pt-2">ICIC0000007</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div id="right-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
-                    <div class="row pt-lg-3">
-                      <div class="col-6 ps-lg-4 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                        <h6 class="pb-4">MICR Code</h6>
-                        <h6 class="pb-4">Account Number</h6>
-                        <h6 class="pb-4">Account Type</h6>
-                        <h6 class="pb-4">Cancalled Cheque Photo</h6>
-                      </div>
-                      <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                        <p id="micr-code-value">600002025</p>
-                        <p id="account-number-value" class="pt-2">778866445523</p>
-                        <p id="account-type-value" class="pt-2">Current Account</p>
-                        <p id="cancelled-check-photo" class="pt-3">
-                          <i id="cancelled-cheque-photo-preview" class="fa-solid fa-ban text-danger"></i>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="d-none bank-details-edit-box d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
-            </div>
+          <div class="d-none award-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
           </div>
-
-
         </div>
+        <hr />
+
+        <!------------------------------------------- Publication Section  ----------------------------------------->
+
+        <div class="publication-div-wrapper d-flex position-relative" style="cursor: pointer;">
+          <div class="container">
+            <div id="publication-div" class="px-3 px-sm-4 px-lg-4">
+              <div class="d-flex justify-content-center align-items-center">
+                <h3 class="mb-4 h3" style="color: #740E00;"> <b> Publications </b></h3>
+              </div>
+              <div id="publication-appending-div" class="bg-white">
+                <div class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Role :</p>
+                          <p class="h5 py-1">No. of Authors :</p>
+                          <p class="h5 py-1">Book Title :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">Editor</p>
+                          <p id="">10 </p>
+                          <p id="">A Million Thoughts</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Publisher :</p>
+                          <p class="h5 pb-1">Publication Year:</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">Nationpress</p>
+                          <p class="" id="">2016</p>
+                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-none publication-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+        </div>
+
+        <hr />
+
+        <!------------------------------------------- Research Section  ----------------------------------------->
+
+
+        <div class="research-div-wrapper d-flex position-relative" style="cursor: pointer;">
+          <div class="container">
+            <div id="research-div" class="px-3 px-sm-4 px-lg-4">
+              <div class="d-flex justify-content-center align-items-center">
+                <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><i class="fa-solid fa-telescope"></i><b> Research
+                  </b></h3>
+              </div>
+
+              <div id="research-appending-div">
+
+                <div class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 py-1">Title :</p>
+                          <p class="h5 py-1">Volume year :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">Algebra and logic</p>
+                          <p id="">2017</p>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Description :</p>
+                          <p class="h5 pb-1">Category :</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">example</p>
+                          <p class="" id="">example</p>
+                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="d-none research-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+        </div>
+        <hr />
+
+        <!------------------------------------------------ Certification Section ------------------------------------------------>
+
+        <div class="position-relative certification-div-wrapper d-flex" style="cursor: pointer;">
+          <div class="container">
+            <div id="certification-div">
+              <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
+                <h3><i class="fa-solid fa-certificate"></i><b>Professional Membership Certificate</b></h3>
+              </div>
+
+              <div id="certification-appending-div">
+                <div class="text-block right" id="preview-qualification-div">
+                  <div class="card-body preview-certification-div">
+
+                    <div class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Certification name:</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">Teaching</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Institution :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">St. Wilfred's College</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Recieved Year:</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">2015</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Certificate:</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="d-none certification-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+        </div>
+        <hr />
+
+
+
+        <!------------------------------------------- Bank Details Section  ----------------------------------------->
+
+        <div class="bank-details-div-wrapper d-flex position-relative" style="cursor: pointer;">
+          <div id="bank-details-div">
+            <div class="px-3 px-sm-4 ps-lg-5">
+              <div class="d-flex justify-content-center align-items-center">
+                <h3 class="p-md-3 pb-sm-3" style="color: #740E00;"><b><i class="fa-solid fa-building-columns"></i>
+                    Bank Details </b></h3>
+              </div>
+              <div class="row">
+                <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
+                  <div class="row pt-lg-3">
+                    <div class="col-6 col-md-6 col-lg-6 col-sm-6 ps-lg-4 ps-md-0 ps-0 ps-sm-0">
+                      <h6 class="pb-4">Name of Bank</h6>
+                      <h6 class="pb-4">Branch</h6>
+                      <h6 class="pb-4">IFSC Code</h6>
+                    </div>
+                    <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                      <p id="bank-name-value">ICICI Bank</p>
+                      <p id="branch-name-value" class="pt-2">Panvel</p>
+                      <p id="ifsc-code-value" class="pt-2">ICIC0000007</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="right-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
+                  <div class="row pt-lg-3">
+                    <div class="col-6 ps-lg-4 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                      <h6 class="pb-4">MICR Code</h6>
+                      <h6 class="pb-4">Account Number</h6>
+                      <h6 class="pb-4">Account Type</h6>
+                      <h6 class="pb-4">Cancalled Cheque Photo</h6>
+                    </div>
+                    <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                      <p id="micr-code-value">600002025</p>
+                      <p id="account-number-value" class="pt-2">778866445523</p>
+                      <p id="account-type-value" class="pt-2">Current Account</p>
+                      <p id="cancelled-check-photo" class="pt-3">
+                        <i id="cancelled-cheque-photo-preview" class="fa-solid fa-ban text-danger"></i>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-none bank-details-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+        </div>
+
+
       </div>
     </div>
 
@@ -741,9 +738,12 @@
               <div id="gender-row" class="col-md-4 col-sm-12">
                 <div class="form-group">
                   <label for="date-of-birth">Gender<span class="required">*</span></label><br>
-                  <label class="radio-inline">Male<input type="radio" name="gender" class="gender ms-1" id="male" value="1" /></label>
-                  <label class="radio-inline">Female<input type="radio" name="gender" class="gender ms-1" id="female" value="2" /></label>
-                  <label class="radio-inline">Other<input type="radio" name="gender" class="gender ms-1" id="other" value="3" /></label>
+                  <label class="radio-inline">Male<input type="radio" name="gender" class="gender ms-1" id="male"
+                      value="1" /></label>
+                  <label class="radio-inline">Female<input type="radio" name="gender" class="gender ms-1" id="female"
+                      value="2" /></label>
+                  <label class="radio-inline">Other<input type="radio" name="gender" class="gender ms-1" id="other"
+                      value="3" /></label>
                 </div>
               </div>
 
@@ -1148,7 +1148,7 @@
 
 
           <div id="publication-award-div" class="bg-white">
-           
+
           </div>
 
           <div class="d-flex justify-content-center">
@@ -1174,7 +1174,7 @@
 
 
           <div id="publication-modal-appending-div" class="bg-white">
-           
+
           </div>
 
           <div class="d-flex justify-content-center">
@@ -1197,7 +1197,7 @@
           <hr>
 
           <div id="research-data" class="bg-white">
-            
+
 
           </div>
           <div class="d-flex justify-content-center ">
@@ -1222,7 +1222,7 @@
           <hr>
 
           <div id="certification-data" class="bg-white">
-            
+
           </div>
           <div class="d-flex justify-content-center">
             <button id="certification-cancel-button" class="btn btn-danger m-4">Cancel</button>
@@ -1560,7 +1560,7 @@
       document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
     })
 
-   
+
 
     // document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
     //   document.getElementById('body').classList.remove('d-none');
@@ -1909,7 +1909,7 @@
           qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
           return;
         }
-      
+
 
         let qualificationTitle1 = ""
         let qualification_type = 0;
@@ -1944,7 +1944,7 @@
           url_path: qualificationCertificate
         }
 
-   div += ` 
+        div += ` 
           <div class="text-block right qualification-update" >
                   <div class="card-body">
                     <h2 id="year-of-passing">\${qualificationYear}\</h2>
@@ -1987,8 +1987,9 @@
                 </div>
                   `
 
-  qualificatonModal += `
-                             <div class="qualification-photo-modal` + ++qualificationModalID + ` d-none">
+        qualificatonModal += `
+                             <div class="qualification-photo-modal` + ++qualificationModalID +
+          ` d-none">
                                <div id="bank-form-area">
                                  <div class="container">
                                    <div class="d-flex justify-content-center align-items-center my-4">
@@ -2125,8 +2126,7 @@
            <div id="delete_btn_qualification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_qualification_symbol">
                   <i class="fa-solid fa-trash text-danger fa-2x"></i>
                </div>      
-       </div>
-          `
+       </div>`
 
       document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
 
@@ -2157,7 +2157,6 @@
 
       }
     })
-
 
 
     document.addEventListener('mouseover', function () {
@@ -2405,14 +2404,14 @@
 
 
         let organizationType = organization_type_lid
-      console.log(organizationType)
-      if (organizationType == 1) {
-        organizationType1 = "School"
-      } else if (organizationType == 2) {
-        organizationType1 = "University"
-      } else {
-        organizationType1 = "Industry"
-      }
+        console.log(organizationType)
+        if (organizationType == 1) {
+          organizationType1 = "School"
+        } else if (organizationType == 2) {
+          organizationType1 = "University"
+        } else {
+          organizationType1 = "Industry"
+        }
 
 
         let recievedAwardDate = changeDateFormat(achievement_date)
@@ -3266,8 +3265,8 @@
       editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
       editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
       editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
-      editBankDetailsForm.append('editAccountNumber',document.getElementById('account-number-value').innerText)
-      editBankDetailsForm.append('editAccountType',document.getElementById('account-type-value'.innerText))
+      editBankDetailsForm.append('editAccountNumber', document.getElementById('account-number-value').innerText)
+      editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value'.innerText))
 
       document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
       document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
@@ -3285,7 +3284,7 @@
       document.querySelector('.bank-details-modal').classList.add('d-none');
     });
 
-     let accountType1;
+    let accountType1;
     document.querySelector('#bank-details-submit-button').addEventListener('click', function (e) {
 
       e.preventDefault()
@@ -3369,7 +3368,8 @@
             document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
             document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
             document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-            document.getElementById('account-number-value').innerText = submitBankDetailsForm.get('accountNumber')
+            document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
+              'accountNumber')
             document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
 
           }

@@ -4,6 +4,10 @@
   padding: 0;
 } */
 
+.main {
+  background-color:  #f5f5f5;
+}
+
 #body {
   color: #434a54;
   width: 80%;
@@ -868,7 +872,7 @@ button {
 @media screen and (max-width: 768px) {
 
   /* main resume box */
-  #resume-box {
+  #body {
     margin: auto !important;
   }
 
