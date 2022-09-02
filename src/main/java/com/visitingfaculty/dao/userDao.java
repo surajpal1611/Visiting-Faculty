@@ -190,4 +190,11 @@ public class userDao implements UserDaoInterface {
         return Password;
     }
 
+    @Override
+    public Integer getUserLid(String user_id) {
+        String sql = "Select id from public.user where user_id = ?";
+        Integer Password = (Integer) jdbcTemplate.queryForObject(sql, Integer.class, user_id);
+        return Password;
+    }
+
 }

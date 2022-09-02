@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  <%  java source code %>  
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
@@ -20,6 +20,10 @@
 
 <body>
   <!-- id(body) of this div is used to hide as well as unhide the resume -->
+  <script>
+    <%= String user_lid = (String)request.getSession().getAttribute() %>
+    console.log('user_lid : ',user_lid);
+  </script>
 
   <jsp:include page="left-sidebar.jsp" />
   <main class="main">
@@ -1662,13 +1666,12 @@
       let user_info = {}
       let user_contact = {}
 
-      setTimeout(function () {
 
-        user_contact.user_lid = 3
+        user_contact.user_lid = '${user_lid}'
         user_contact.contact_number = result.contact_number
         user_contact.temp_contact_number = result.temp_contact_number
         personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
-        user_info.user_lid = 3
+        user_info.user_lid = '${user_lid}'
         user_info.f_name = result.f_name
         user_info.l_name = result.l_name
         user_info.email = result.email
@@ -1684,13 +1687,13 @@
         personalDetailsData.insert_user_personal_details.user_info[0] = user_info
 
         let addressObject = {}
-        addressObject.user_lid = 3
+        addressObject.user_lid = ''
         addressObject.address = result.permanent_address + "," + result.permanent_address_city + "," + result
           .permanent_address_pincode
           .permanent_address_pincode
         addressObject.address_type_lid = 1
         let addressObject2 = {}
-        addressObject2.user_lid = 3
+        addressObject2.user_lid = '${user_lid}'
         addressObject2.address = result.temporary_address
         addressObject2.address_type_lid = 2
 
@@ -1744,7 +1747,7 @@
           document.getElementById('first-name-value').innerText = result.f_name
           document.getElementById('last-name-value').innerText = result.l_name
         })
-      }, 1000)
+  
     });
 
     document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
@@ -1998,7 +2001,8 @@
                          
                                    <div class="row">
                                      <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-                                       <img src="/download (3).jpg" alt="qualification-photo-uploaded" id="qualification-photo-uploaded` + qualificationModalID + `"
+                                       <img src="/download (3).jpg" alt="qualification-photo-uploaded" id="qualification-photo-uploaded` +
+          qualificationModalID + `"
                                          style="width:450px;height:300px;">
                                      </div>
                                    </div>

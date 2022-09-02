@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -50,10 +51,10 @@ public class UserRestController {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
             return ResponseEntity.ok("Inserted Successfully");
-        } else {
+        } 
             System.out.println("Error");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        
     }
 
     @PostMapping("/verify-registration")
@@ -75,15 +76,15 @@ public class UserRestController {
 
             return ResponseEntity.status(HttpStatus.OK).build();
 
-        } else {
+        } 
 
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+      
 
     }
 
     @PostMapping("/verify-token")
-    public ResponseEntity<?> verifyToken(@RequestBody String token, HttpSession httpSession) {
+    public ResponseEntity<?> verifyToken(@RequestBody String token, HttpSession httpSession,Model m) {
 
         int tokenToVerify = Integer.parseInt(token);
         int tokenGenerated = (int) httpSession.getAttribute("tokenGenerated");
@@ -91,10 +92,11 @@ public class UserRestController {
         String passwordToVerify = password;
         System.out.println("VERIFY TOKEN>>>>>" );
         if (userService.validateToken(tokenToVerify, tokenGenerated, user_id,passwordToVerify)) {
+          
             return ResponseEntity.status(HttpStatus.OK).build();
-        } else {
+        } 
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        
     }
 
     @PostMapping("/get-all-skill")
@@ -127,7 +129,10 @@ public class UserRestController {
         System.out.println(userDto);
 
         if (loginService.verifyPassword(userDto)) {
-            return ResponseEntity.status(HttpStatus.OK).build();
+
+            Integer user_lid = userDaoInterface.getUserLid(userDto.getUser_id());
+            httpSession.setAttribute("user_lid", user_lid);
+            return ResponseEntity.ok(user_lid);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }

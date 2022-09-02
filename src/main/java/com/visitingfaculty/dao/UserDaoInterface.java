@@ -53,4 +53,6 @@ public interface UserDaoInterface {
     int insertUser(User user);
 
     String getPasswordById(String user_id);
+
+    Integer getUserLid(String user_id);
 }
