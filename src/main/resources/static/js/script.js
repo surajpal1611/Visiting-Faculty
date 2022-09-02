@@ -500,6 +500,7 @@ function personalDetailAadharPhotoValidation(res) {
 
   function qualificationDetailCertificateValidation(res) {
     var fuData = document.querySelector('.qualification-certificate');
+    console.log(fuData.value)
     if (res.length > 0) {
       var Extension = res.substring(res.lastIndexOf('.') + 1).toLowerCase();
       if (Extension == "png" || Extension == "jpeg" || Extension == "jpg") {
@@ -507,7 +508,9 @@ function personalDetailAadharPhotoValidation(res) {
           var reader = new FileReader();
           reader.onload = function (e) {
             $('.qualification-certificate').attr('src', e.target.result);
-            document.querySelector(".qualification-certificate-uploaded").src = e.target.result
+            // let qualificationPhoto = document.querySelector('.qualification-certificate').src
+            // document.querySelector(".qualification-photo-uploaded").src = qualificationPhoto
+            // console.log(document.querySelector(".qualification-photo-uploaded").src)
             condition = true;
           }
           reader.readAsDataURL(fuData.files[0]);

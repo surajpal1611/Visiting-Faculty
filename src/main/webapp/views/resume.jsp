@@ -241,15 +241,15 @@
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">St. Wilfred's College</p>
                               <p id="" class="">82.61%</p>
-                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+                              <p id=""><i id="qualification-certificate-display"
+                                  class="fa-solid fa-ban text-danger qualification-certificate-display"></i></p>
+                              <!-- <p id=""><i id="" class="fa-solid fa-ban text-danger"></i></p> -->
 
                             </div>
                           </div>
                         </div>
-
                       </div>
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -406,7 +406,7 @@
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">Mumbai</p>
                           <p class="" id="">2018-07-07</p>
-                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+                          <p ><i id="award-certificate-display" class="fa-solid fa-ban text-danger award-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
@@ -461,8 +461,7 @@
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">Nationpress</p>
                           <p class="" id="">2016</p>
-                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
+                          <p><i id="publication-certificate-display" class="fa-solid fa-ban text-danger publication-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
@@ -520,8 +519,7 @@
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">example</p>
                           <p class="" id="">example</p>
-                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
+                          <p><i id="research-certificate-display" class="fa-solid fa-ban text-danger research-certificate-display" ></i></p>
                         </div>
                       </div>
                     </div>
@@ -593,7 +591,8 @@
                               <p class="h5 pb-1">Certificate:</p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+                              <p id=""><i class=""></i></p>
+                              <p><i id="professional-certificate-display" class="fa-solid fa-ban text-danger professional-certificate-display"></i></p>
                             </div>
                           </div>
                         </div>
@@ -1380,33 +1379,29 @@
       </div>
     </div>
 
-    <!-- ************************************************************************Qualification photo Modal Div********************************************************************************************
-    <div class="qualification-photo-modal d-none">
+    <!-- ************************************************************************Qualification photo Modal Div******************************************************************************************** -->
+    <div class="image-preview-modal d-none">
       <div id="bank-form-area">
         <div class="container">
           <div class="d-flex justify-content-center align-items-center my-4">
-            <h2>Preview Qualification Certificate Photo</h2>
+            <h2> Image Preview </h2>
           </div>
 
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="/download (3).jpg" alt="qualification-photo-uploaded" id="qualification-photo-uploaded"
-                style="width:450px;height:300px;">
+              <img src="/download (3).jpg" alt="image-uploaded" id="image-uploaded"
+                class="image-uploaded" style="width:450px;height:300px;">
             </div>
           </div>
 
           <div class="d-flex justify-content-center">
-            <button id="qualification-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="image-preview-cancel-button" class="btn btn-danger m-4">Cancel</button>
           </div>
         </div>
       </div>
-    </div> -->
-    <div id="qualification-photo-data">
-
     </div>
 
   </main>
-
 
   <div class="modal-loader d-none" id="main-loader">
     <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -1444,11 +1439,9 @@
       document.querySelector('.personal-details-edit-box').classList.remove('d-none');
     });
 
-
     document.querySelector('.personal-information-div-wrapper').addEventListener('mouseleave', function () {
       document.querySelector('.personal-details-edit-box').classList.add('d-none');
     });
-
 
     document.querySelector('.qualification-div-wrapper').addEventListener('mouseover', function () {
       document.querySelector('.qualification-edit-box').classList.remove('d-none');
@@ -1457,17 +1450,6 @@
     document.querySelector('.qualification-div-wrapper').addEventListener('mouseleave', function () {
       document.querySelector('.qualification-edit-box').classList.add('d-none');
     });
-
-
-    // document.querySelector('.qualification-title').addEventListener('change', function () {
-    //   let qualificationTitle = document.querySelector('.qualification-title')
-    //   if (qualificationTitle.value == 3) {
-    //     document.querySelector('.qualification-status-wrapper').classList.remove('d-none');
-    //   } else {
-    //     document.querySelector('.qualification-status-wrapper').classList.add('d-none');
-    //   }
-    // });
-
 
     document.querySelector('.work-experience-div-wrapper').addEventListener('mouseover', function () {
       document.querySelector('.work-experience-edit-box').classList.remove('d-none');
@@ -1560,12 +1542,22 @@
       document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
     })
 
+    document.querySelector('#body').addEventListener('click', function (e) {
+      if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains('award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target.classList.contains('research-certificate-display') || e.target.classList.contains('professional-certificate-display')) {
+       document.getElementById('body').classList.add('d-none');
+       document.querySelector('.image-preview-modal').classList.remove('d-none');
+       document.querySelector(".image-uploaded").src = e.target.dataset.image;
+      }
+    })
+
+    document.querySelector('#image-preview-cancel-button').addEventListener('click', function (e) {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.image-preview-modal').classList.add('d-none');
+      document.getElementById("image-uploaded").src = " ";
+    })
 
 
-    // document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
-    //   document.getElementById('body').classList.remove('d-none');
-    //   document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
-    // })
+
 
 
     document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
@@ -1685,9 +1677,9 @@
 
         let addressObject = {}
         addressObject.user_lid = 3
-        addressObject.address = result.permanent_address + "," + result.permanent_address_city + "," + result
-          .permanent_address_pincode
-          .permanent_address_pincode
+        addressObject.address = result.permanent_address 
+        addressObject.city =  result.permanent_address_city 
+        addressObject.pincode = result.permanent_address_pincode
         addressObject.address_type_lid = 1
         let addressObject2 = {}
         addressObject2.user_lid = 3
@@ -1846,8 +1838,7 @@
       document.querySelector('.qualification-modal').classList.add('d-none');
     });
 
-    let qualificationID = 0;
-    let qualificationModalID = 0;
+    // let qualificationID = 0;
 
     document.querySelector("#qualification-submit-button").addEventListener('click', function (e) {
       e.preventDefault()
@@ -1876,11 +1867,12 @@
         let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
         // let qualificationCertificateImage = qualificationRow[i].querySelector('#qualification-certificate-preview').src;
 
+        console.log(qualificationRow[i].querySelector('.qualification-certificate').src)
         let checkSubject = tabledatacheck(qualificationSubject);
         let checkUniversity = tabledatacheck(qualificationUniversity);
         let checkCollege = tabledatacheck(qualificationCollege);
         let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
-        let checkCertificate = tabledatacheck(qualificationCertificate);
+        let checkCertificate = qualificationDetailCertificateValidation(qualificationCertificate);
         let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
         // let checkCancelledCheque = qualificationDetailCertificateValidation(qualificationCertificate);
 
@@ -1888,7 +1880,8 @@
         console.log(checkPercentile)
         // console.log(checkSubject)
 
-
+        let qualificationCertificateSRC = qualificationRow[i].querySelector('.qualification-certificate-preview')
+          .src
         //  to add the red border according to validations
         if (checkSubject == false) {
           qualificationRow[i].querySelector('.qualification-subject').classList.add('input-border');
@@ -1932,7 +1925,7 @@
         }
 
         object = {
-          resume_lid: 1,
+          resume_lid: 2,
           resume_qualification_lid: 3,
           qualification_type_lid: qualification_type,
           topic_of_study: qualificationSubject,
@@ -1977,7 +1970,7 @@
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">\${qualificationCollege}\</p>
                               <p id="" class="">\${qualificationPercentile}\</p>
-                              <p ><i id="qualification-certificate-update` + qualificationID++ + `"class="fa-solid fa-image text-success"></i></p>
+                              <p ><i id="qualification-certificate-display" data-image = "\${qualificationCertificateSRC}" class="fa-solid fa-image text-success qualification-certificate-display"></i></p>
                             </div>
                           </div>
                         </div>
@@ -1987,28 +1980,7 @@
                 </div>
                   `
 
-        qualificatonModal += `
-                             <div class="qualification-photo-modal` + ++qualificationModalID +
-          ` d-none">
-                               <div id="bank-form-area">
-                                 <div class="container">
-                                   <div class="d-flex justify-content-center align-items-center my-4">
-                                     <h2>Preview Qualification Certificate Photo</h2>
-                                   </div>
-                         
-                                   <div class="row">
-                                     <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-                                       <img src="/download (3).jpg" alt="qualification-photo-uploaded" id="qualification-photo-uploaded` + qualificationModalID + `"
-                                         style="width:450px;height:300px;">
-                                     </div>
-                                   </div>
-                         
-                                   <div class="d-flex justify-content-center">
-                                     <button id="qualification-photo-cancel-button` + qualificationModalID + `" class="btn btn-danger m-4">Cancel</button>
-                                   </div>
-                                 </div>
-                               </div>
-                             </div>`
+
 
         qualificationTableArray.push(object)
       }
@@ -2029,7 +2001,6 @@
         if (success.status == 200) {
           document.getElementById('qualification-appending-div').firstElementChild.remove()
           document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
-          document.getElementById('qualification-photo-data').insertAdjacentHTML('beforeend', qualificatonModal)
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.qualification-modal').classList.add('d-none');
         } else {
@@ -2112,10 +2083,9 @@
              <p class="h6">Certificate<span class="required">*</span></p>
            </div>
            <div class="col-md-10"><input class="form-control qualification-certificate"
-               id="bachelors-degree-certificate"
-               onchange="document.getElementById('qualification-certificate-preview').src = window.URL.createObjectURL(this.files[0])"
+               onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])"
                type="file">
-             <p hidden><img id="qualification-certificate-preview" type="hidden" alt="your image" width="100"
+             <p hidden><img class="qualification-certificate-preview" type="hidden" alt="your image" width="100"
                  height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
            </div>
            </div>
@@ -2128,19 +2098,8 @@
                </div>      
        </div>`
 
+
       document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
-
-      // let appendingOptions = document.querySelectorAll('.qualification-title');
-      // let optionSelcted = document.querySelectorAll('.qualification-phd-wrapper');
-
-      // appendingOptions[appendingOptions.length - 1].addEventListener('change', function () {
-      //     if (appendingOptions[appendingOptions.length - 1].value == 3) {
-      //       optionSelcted[optionSelcted.length - 1].classList.remove('d-none');
-      //     } else {
-      //       optionSelcted[optionSelcted.length - 1].classList.add('d-none');
-      //     }
-      //   })
-      // console.log(appendingOptions[appendingOptions.length - 1])
 
     })
 
@@ -2157,6 +2116,8 @@
 
       }
     })
+
+
 
 
     document.addEventListener('mouseover', function () {
@@ -2192,19 +2153,7 @@
 
     document.getElementById('award-add-button').addEventListener('click', function () {
       console.log("Award Add Button clicked");
-      // let awardnameaddbtn = document.querySelector('.awardName').value.length;
-      // let awardOrganizationaddbtn = document.querySelector('.awardOrganization').value.length;
-      // let awardOrganizationTypeaddbtn = document.querySelector('.awardOrganizationType').value.length;
-      // let awardPlaceaddbtn = document.querySelector('.awardPlace').value.length;
-      // let awardRecieveDateaddbtn = document.querySelector('.awardRecieveDate').value.length;
-      // let awardCertificationImageaddbtn = document.querySelector('.awardCertificationImage').value.length;
-
-      // if (awardnameaddbtn == 0 || awardOrganizationaddbtn == 0 || awardOrganizationTypeaddbtn == 0 ||
-      //   awardPlaceaddbtn == 0 || awardRecieveDateaddbtn == 0 || awardCertificationImageaddbtn == 0) {
-      //   alert('Fill the data before');
-      //   return;
-      // }
-
+    
 
       let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
         <div class="container">   
@@ -2255,7 +2204,12 @@
                   <div class="col-md-2 ">
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></div>
+                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" 
+                     onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+                    <p hidden><img class="award-certificate-preview" type="hidden" alt="your image" width="100"
+                    height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+                  </div>
+                 </div>
                 </div>
               </div>
             </div>
@@ -2361,6 +2315,7 @@
         let description = vjstableelement[i].querySelector('.awardPlace').value;
         let achievement_date = vjstableelement[i].querySelector('.awardRecieveDate').value;
         let url_path = vjstableelement[i].querySelector('.awardCertificationImage').value;
+        let awardCertificateSRC = vjstableelement[i].querySelector('.award-certificate-preview').src;
 
         let checktitle = tabledatacheck(title);
         let checkorganization_name = namecheck(organization_name);
@@ -2445,8 +2400,7 @@
                           <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                             <p class="" id="">\${description}\</p>
                             <p class="" id="">\${recievedAwardDate}\</p>
-                            <p id=""><i class="fa-solid fa-image text-success"></i></p>
-
+                            <p ><i id="award-certificate-display" data-image = "\${awardCertificateSRC}" class="fa-solid fa-image text-success award-certificate-display"></i></p>
                           </div>
                         </div>
                       </div>
@@ -2523,7 +2477,8 @@
         let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
         let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
         let publicationCertificate1 = publicationRow[i].querySelector('.publication-certification').value;
-        console.log(publicationCertificate1)
+        let publicationCertificateSRC = publicationRow[i].querySelector('.publication-certificate-preview').src;
+
         let checkPublicationPublisher = tabledatacheck(publicationPublisher);
         let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
         let checkPublicationYearOfPublication = tabledatacheck(publicationYearOfPublication);
@@ -2614,7 +2569,7 @@
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${publicationPublisher}\</p>
                           <p class="" id="">\${publicationYearOfPublication}\</p>
-                          <p class="" id=""><i class="fa-solid fa-image text-success"></i></p>
+                          <p><i id="publication-certificate-display" data-image = "\${publicationCertificateSRC}" class="fa-solid fa-image text-success publication-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
@@ -2699,7 +2654,11 @@
                   <div class="col-md-2 ">
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10"><input class="form-control publication-certification" type="file"></div>
+                  <div class="col-md-10"><input class="form-control publication-certification" type="file"
+                    onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+                      <p hidden><img class="publication-certificate-preview" type="hidden" alt="your image" width="100"
+                       height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+                    </div>
                 </div>
               </div>
             </div>
@@ -2768,6 +2727,7 @@
         let description = researchTableElem[j].querySelector('.research_description').value;
         let category = researchTableElem[j].querySelector('.research_category').value;
         // let research_photo = researchTableElem[j].querySelector('.research_photo').value;
+        let researchCertificateSRC = researchTableElem[i].querySelector('.research-certificate-preview').src;
 
         let check_journal_name = tabledatacheck(Journal_name);
         let check_volume_year = yearcheck(volume_year);
@@ -2796,25 +2756,7 @@
         }
 
         let researchCertificate = document.querySelectorAll('.research_photo')
-
-        // let filereader = new FileReader();
-        // filereader.readAsDataURL(researchCertificate[j].files[0]);
-        // filereader.onload = function loadDataFunc(evt) {
-        //   let researchBase64 = evt.target.result;
-        //   newBase64 += researchBase64
-        // }
-
-        // let panphotobase64 = ''
-        // let panPhoto = document.getElementById("aadhar-photo").files[0]
-        // if (panPhoto) {
-        //   let filereader = new FileReader();
-        //   filereader.readAsDataURL(panPhoto);
-        //   filereader.onload = function (evt) {
-        //     panphotobase64 = evt.target.result;
-        //     console.log(panphotobase64)
-        //   }
-        // }
-
+    
         obj = {
           resume_lid: "1",
           achievement_type_lid: "3",
@@ -2837,8 +2779,8 @@
 
                         </div>
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p id="">\${Journal_name}\</p>
-                          <p id="">\${volume_year}\</p>
+                          <p id="">\${Journal_name}</p>
+                          <p id="">\${volume_year}</p>
                         </div>
                       </div>
                     </div>
@@ -2851,10 +2793,9 @@
                           <p class="h5 py-1">Certificate :</p>
                         </div>
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                          <p class="" id="">\${description}\</p>
-                          <p class="" id="">\${category}\</p>
-                          <p id=""><i class="fa-solid fa-image text-success"></i></p>
-
+                          <p class="" id="">\${description}</p>
+                          <p class="" id="">\${category}</p>
+                          <p><i id="research-certificate-display" data-image = "\${researchCertificateSRC}" class="fa-solid fa-image text-success research-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
@@ -2971,7 +2912,11 @@
                   <div class="col-md-2 ">
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10"><input class="form-control research_photo" type="file"></div>
+                  <div class="col-md-10"><input class="form-control research_photo" type="file"
+                    onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+                   <p hidden><img class="research-certificate-preview" type="hidden" alt="your image" width="100"
+                      height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+                    </div>
                 </div>
               </div>
             </div>
@@ -3038,6 +2983,7 @@
         let professionalInstitution = certificationRow[i].querySelector('.certification-institution').value;
         let professionalYOP = certificationRow[i].querySelector('.certification-YOP').value;
         let professionalCertification = certificationRow[i].querySelector('.certificate-photo').value;
+        let professionalCertificationCertificateSRC = certificationRow[i].querySelector('.certificate-photo-preview').src;
 
         let checkCertificateName = namecheck(professionalCertificateName);
         let checkInstitution = namecheck(professionalInstitution);
@@ -3122,7 +3068,7 @@
                                 <p class="h5 pb-1">Certificate:</p>
                               </div>
                               <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                                <p id=""><i class="fa-solid fa-image text-success"></i></p>
+                                <p><i id="professional-certificate-display" data-image = "\${professionalCertificationCertificateSRC}" class="fa-solid fa-image text-success professional-certificate-display"></i></p>
                               </div>
                             </div>
                           </div>
@@ -3200,7 +3146,7 @@
                           </div>
                           <div class="col-md-10 "><input class="form-control certificate-photo"
                              onchange="document.getElementById('certificate-photo-preview').src = window.URL.createObjectURL(this.files[0])" type="file">
-                              <p hidden><img id="certificate-photo-preview" type="hidden" alt="your image" width="100"
+                              <p hidden><img class="certificate-photo-preview" type="hidden" alt="your image" width="100"
                              height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
                          </div>
                     </div>
@@ -3487,7 +3433,7 @@
 
         let index = 21
         let obj = {}
-        obj.resume_lid = 2
+        obj.resume_lid = 1
         obj.skill_lid = Number.parseInt(value)
         obj.skill_selected_lid = index++
         skillJson.skill_details[skillIndex] = obj
@@ -3505,7 +3451,7 @@
                               </div>`
         let index = 25
         let obj = {}
-        obj.resume_lid = 2
+        obj.resume_lid = 1
         obj.skill_selected_lid = index++
         obj.skill_lid = Number.parseInt(value)
         skillJson.skill_details[skillIndex] = obj
