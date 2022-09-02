@@ -1679,8 +1679,9 @@
         addressObject.user_lid = 3
         addressObject.address = result.permanent_address 
         addressObject.city =  result.permanent_address_city 
-        addressObject.pincode = result.permanent_address_pincode
+        addressObject.pin_code = result.permanent_address_pincode
         addressObject.address_type_lid = 1
+
         let addressObject2 = {}
         addressObject2.user_lid = 3
         addressObject2.address = result.temporary_address
