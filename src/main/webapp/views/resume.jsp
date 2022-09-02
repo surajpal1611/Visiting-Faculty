@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%  java source code %>  
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
@@ -21,7 +20,6 @@
 <body>
   <!-- id(body) of this div is used to hide as well as unhide the resume -->
   <script>
-    <%= String user_lid = (String)request.getSession().getAttribute() %>
     console.log('user_lid : ',user_lid);
   </script>
 
