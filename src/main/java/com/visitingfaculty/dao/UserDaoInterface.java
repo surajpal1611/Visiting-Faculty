@@ -55,4 +55,6 @@ public interface UserDaoInterface {
     String getPasswordById(String user_id);
 
     Integer getUserLid(String user_id);
+
+    Object getUserResume(String resume_lid);
 }

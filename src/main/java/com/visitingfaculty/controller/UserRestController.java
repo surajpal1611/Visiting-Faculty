@@ -139,6 +139,14 @@ public class UserRestController {
 
     }
 
+    @PostMapping("/get-user-details")
+    public Object getUserResume() {
+
+       Object resume = userDaoInterface.getUserResume("1");
+       System.out.println("RESUME>>>>>>>>" + resume);
+       return resume;
+    }
+
     // @PostMapping("/verify-password")
     // public boolean passwordVerificationTest(@RequestBody String password) {
 

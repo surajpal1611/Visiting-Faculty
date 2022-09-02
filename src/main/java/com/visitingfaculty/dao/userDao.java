@@ -197,4 +197,12 @@ public class userDao implements UserDaoInterface {
         return Password;
     }
 
+    @Override
+    public Object getUserResume(String resume_lid) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("get_user_resume_details");
+
+        return jdbcCall.executeFunction(Object.class, resume_lid);
+    }
+
 }
