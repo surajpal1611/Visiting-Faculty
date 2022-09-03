@@ -44,9 +44,10 @@ public class UserRestController {
     public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) {
 
         Boolean check = true;
-        // jsonchk.UserJsonCheck(personalDetailsData, "EOLPS0161D");
+        String json = jsonchk.UserJsonCheck(personalDetailsData);
+        System.out.println(json);
         if (check == true) {
-            Object insertPersonalDetails = userDaoInterface.insertPersonalDetails(personalDetailsData);
+            Object insertPersonalDetails = userDaoInterface.insertPersonalDetails(json);
             if (insertPersonalDetails == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }

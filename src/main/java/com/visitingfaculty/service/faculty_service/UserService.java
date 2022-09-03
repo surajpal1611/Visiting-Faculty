@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Base64;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -58,29 +59,27 @@ public class UserService {
         }
     }
 
-    public String uploadPersonalDetailsFile(String base64String, String user_id) {
+    public String uploadPhotos(String base64String) {
 
-        String filename = user_id;
+        String filename = UUID.randomUUID().toString();
 
-        String newFile = base64String.substring(base64String.indexOf(",") + 1);
+        String base64Image = base64String.split(",")[1];
+        byte[] imageBytes = javax.xml.bind.DatatypeConverter.parseBase64Binary(base64Image);
 
         Path destinationFile = Paths.get(uploadDirectory, filename + ".jpg");
-
-        byte[] data = Base64.getDecoder()
-                        .decode(newFile.getBytes(StandardCharsets.UTF_8));
-
+        s
         try {
-            Files.write(destinationFile, data);
+            Files.write(destinationFile, imageBytes);
             return filename;
         } catch (IOException e) {
-           
+
             e.printStackTrace();
             return null;
 
         }
     }
 
-    public boolean validateToken(int tokenToVerify,int tokenGenerated,String user_id,String password) {
+    public boolean validateToken(int tokenToVerify, int tokenGenerated, String user_id, String password) {
 
         if (tokenGenerated != tokenToVerify) {
 

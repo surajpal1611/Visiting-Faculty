@@ -1,5 +1,7 @@
 package com.visitingfaculty.validations;
 
+import java.util.UUID;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,9 +44,10 @@ public class jsoncheck {
     }
 
     // **************************************************************************************************---->For Personal Details
-    public Boolean UserJsonCheck(String JsonString, String user_id) {
+    public String UserJsonCheck(String JsonString) {
         Boolean check = false;
         JSONObject jsonString = new JSONObject(JsonString);
+        String replacedData = null;
         // for userinfo
         JSONObject insert_user_personal_details = jsonString.getJSONObject("insert_user_personal_details");
         JSONArray user_info = insert_user_personal_details.getJSONArray("user_info");
@@ -55,11 +58,10 @@ public class jsoncheck {
             String email = user_info.getJSONObject(i).getString("email");
             String pancardPhoto = user_info.getJSONObject(i).getString("pancard_url_path");
 
-            // userService.uploadPersonalDetailsFile(pancardPhoto, user_id);
-            
+            String replacedName = userService.uploadPhotos(pancardPhoto);
 
-            String ok = JsonString.replace(pancardPhoto, "Anything");
-            System.out.println("Check the String : "+ok);
+            replacedData = JsonString.replace(pancardPhoto, replacedName);
+            System.out.println("Check the String : "+replacedData);
 
             Boolean l_namecheck = checkVal.CheckWithNoSpectailChar(l_name);
             Boolean f_namecheck = checkVal.CheckWithNoSpectailChar(f_name);
@@ -74,9 +76,16 @@ public class jsoncheck {
                 break;
             } else {
                 check = true;
+               
             }
         }
-        return check;
+        if (check == true) {
+            System.out.println(jsonString);
+            return replacedData;
+        } else {
+            return null;
+        }
+     
     }
 
     // **************************************************************************************************---->For Bank Details
