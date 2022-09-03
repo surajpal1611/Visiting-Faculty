@@ -144,7 +144,6 @@ public class UserRestController {
     public Object getUserResume() {
 
        Object resume = userDaoInterface.getUserResume("1");
-       System.out.println("RESUME>>>>>>>>" + resume);
        return resume;
     }
 

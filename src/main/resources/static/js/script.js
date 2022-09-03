@@ -676,3 +676,82 @@ function personalDetailAadharPhotoValidation(res) {
   }
 
   // ******************************************Validation Functions End***************************************************
+
+  function tempemailvalidation(value){
+    let checkit = false;
+    if(value.length > 0)
+    {
+      var atposition = value.indexOf('@');
+      var dotposition = value.lastIndexOf('.');
+      if (atposition < 1 || (value.length - 2) == dotposition) 
+          {
+            document.querySelector('#temp-email-message').innerHTML="Invalid";
+            checkit = false;
+          } 
+          else if (atposition < dotposition) 
+               {
+                 checkit = true;
+               } 
+          else 
+          {
+            document.querySelector('#temp-email-message').innerHTML="Invalid";
+            checkit = false;
+          }
+    }
+    else
+    {
+      checkit = true;
+    }
+  return checkit;
+  }
+
+  
+    // ******************************************Validation Functions Start****************************************************
+    function tabledatacheck(value) {
+      let checkit = false;
+      if (value.length > 3) {
+        checkit = true;
+      } else {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    function checknotnull(value) {
+      let checkit = false;
+      if (value > 0) {
+        checkit = true;
+      } else {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    function namecheck(value) {
+      let check = false;
+      if (value.length > 1) {
+        for (let i = 0; i < value.length; i++) {
+          if (value[i] >= '!' && value[i] <= '@') {
+            check = false;
+            break;
+          } else {
+            check = true;
+          }
+        }
+      } else {
+        check = false;
+      }
+      return check;
+    }
+
+    function checkdate(value) {
+      let checkit = false;
+      if (value.length == 10) {
+        checkit = true;
+      } else {
+        checkit = false;
+      }
+      return checkit;
+    }
+
+    // ******************************************Validation Functions End***************************************************

@@ -67,7 +67,7 @@ public class UserService {
         byte[] imageBytes = javax.xml.bind.DatatypeConverter.parseBase64Binary(base64Image);
 
         Path destinationFile = Paths.get(uploadDirectory, filename + ".jpg");
-        s
+
         try {
             Files.write(destinationFile, imageBytes);
             return filename;

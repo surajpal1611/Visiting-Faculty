@@ -149,7 +149,6 @@ public class jsoncheck {
         JSONArray research = jsonString.getJSONArray("insert_research");
         for (int i = 0; i < research.length(); i++) {
             String journal_name = research.getJSONObject(i).getString("title");
-            String role = research.getJSONObject(i).getString("research_role");
             String volume_year = research.getJSONObject(i).getString("volume_year");
             String number = research.getJSONObject(i).getString("description");
             String category = research.getJSONObject(i).getString("category");
