@@ -147,7 +147,6 @@ public class validationsMethod
     public Boolean percentageCheck(String value)
     {
         String values = value.replace('.','0');
-        System.out.println("replace : "+values);
         char pergentage[] = values.toCharArray();
         Boolean check = false;
         for(int i = 0 ; i < pergentage.length ; i++)

@@ -33,16 +33,17 @@ public class BankDetailsRestController {
     public ResponseEntity<?> postMethodName(@RequestBody String bank_details) {
 
         System.out.println("Json Bank From Front End :" + bank_details);
-        // Boolean check = jsoncheck.bankJsonCheck(bank_details);
-        // if(check == true)
-        // {
-        // System.out.println("Success");
-        Object bankInsert = userDaoInterface.insertBankDetails(bank_details);
-        // Object bankUpdate = userDaoInterface.updateBankDetails(bank_details);
-        System.out.println(bankInsert);
-        return ResponseEntity.status(HttpStatus.OK).build();
-        // }
-        // System.out.println("Error");
-        // return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        String check = jsoncheck.bankJsonCheck(bank_details);
+        if (check != null) {
+            System.out.println("Success");
+            Object bankInsert = userDaoInterface.insertBankDetails(check);
+            // Object bankUpdate = userDaoInterface.updateBankDetails(bank_details);
+            System.out.println(bankInsert);
+            return ResponseEntity.status(HttpStatus.OK).build();
+            // }
+            // System.out.println("Error");
+            // return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 }

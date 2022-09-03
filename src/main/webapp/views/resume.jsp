@@ -64,8 +64,8 @@
 
                     <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
                       <div class="d-flex" style="color: #740E00;">
-                        <h3><b id="first-name-value">Sameer</b></h3> &nbsp &nbsp
-                        <h3><b id="last-name-value">Shaikh</b></h3>
+                        <h3><b id="first-name-value">Arun</b></h3> &nbsp &nbsp
+                        <h3><b id="last-name-value">Babu</b></h3>
                       </div>
                     </div>
                   </div>
@@ -406,7 +406,8 @@
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">Mumbai</p>
                           <p class="" id="">2018-07-07</p>
-                          <p ><i id="award-certificate-display" class="fa-solid fa-ban text-danger award-certificate-display"></i></p>
+                          <p><i id="award-certificate-display"
+                              class="fa-solid fa-ban text-danger award-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
@@ -461,7 +462,8 @@
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">Nationpress</p>
                           <p class="" id="">2016</p>
-                          <p><i id="publication-certificate-display" class="fa-solid fa-ban text-danger publication-certificate-display"></i></p>
+                          <p><i id="publication-certificate-display"
+                              class="fa-solid fa-ban text-danger publication-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
@@ -519,7 +521,8 @@
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">example</p>
                           <p class="" id="">example</p>
-                          <p><i id="research-certificate-display" class="fa-solid fa-ban text-danger research-certificate-display" ></i></p>
+                          <p><i id="research-certificate-display"
+                              class="fa-solid fa-ban text-danger research-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
@@ -592,7 +595,8 @@
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id=""><i class=""></i></p>
-                              <p><i id="professional-certificate-display" class="fa-solid fa-ban text-danger professional-certificate-display"></i></p>
+                              <p><i id="professional-certificate-display"
+                                  class="fa-solid fa-ban text-danger professional-certificate-display"></i></p>
                             </div>
                           </div>
                         </div>
@@ -1389,8 +1393,8 @@
 
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="/download (3).jpg" alt="image-uploaded" id="image-uploaded"
-                class="image-uploaded" style="width:450px;height:300px;">
+              <img src="/download (3).jpg" alt="image-uploaded" id="image-uploaded" class="image-uploaded"
+                style="width:450px;height:300px;">
             </div>
           </div>
 
@@ -1543,10 +1547,13 @@
     })
 
     document.querySelector('#body').addEventListener('click', function (e) {
-      if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains('award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target.classList.contains('research-certificate-display') || e.target.classList.contains('professional-certificate-display')) {
-       document.getElementById('body').classList.add('d-none');
-       document.querySelector('.image-preview-modal').classList.remove('d-none');
-       document.querySelector(".image-uploaded").src = e.target.dataset.image;
+      if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains(
+          'award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target
+        .classList.contains('research-certificate-display') || e.target.classList.contains(
+          'professional-certificate-display')) {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.image-preview-modal').classList.remove('d-none');
+        document.querySelector(".image-uploaded").src = e.target.dataset.image;
       }
     })
 
@@ -1667,9 +1674,9 @@
         user_info.temp_email = result.temp_email
         user_info.gender_lid = Number.parseInt(result.gender)
         user_info.pancard_no = result.pan_number
-        user_info.pancard_url_path = "C://Fakepath://pancardphoto" //photoArray[2]
-        user_info.aadhar_card_url_path = "C://Fakepath://aadharphoto" //photoArray[1]
-        user_info.profile_url_path = "C://Fakepath://profilephoto" //photoArray[0]
+        user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
+        user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
+        user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
         user_info.aadhar_card_no = aadhar
         user_info.date_of_birth = result.date_of_birth
         user_info.nationality = result.nationality
@@ -1677,8 +1684,8 @@
 
         let addressObject = {}
         addressObject.user_lid = 3
-        addressObject.address = result.permanent_address 
-        addressObject.city =  result.permanent_address_city 
+        addressObject.address = result.permanent_address
+        addressObject.city = result.permanent_address_city
         addressObject.pin_code = result.permanent_address_pincode
         addressObject.address_type_lid = 1
 
@@ -1905,6 +1912,7 @@
         }
 
 
+
         let qualificationTitle1 = ""
         let qualification_type = 0;
         if (qualificationTitle == "bachelor") {
@@ -1925,20 +1933,35 @@
           qualificationvalue = true
         }
 
-        object = {
-          resume_lid: 2,
-          resume_qualification_lid: 3,
-          qualification_type_lid: qualification_type,
-          topic_of_study: qualificationSubject,
-          university: qualificationUniversity,
-          institute: qualificationCollege,
-          status: qualificationvalue,
-          percentile: Number.parseFloat(qualificationPercentile),
-          year_of_passing: qualificationYear,
-          url_path: qualificationCertificate
+        let photoArray = []
+
+        let qualificationCertificateInput = qualificationRow[i].querySelector('.qualification-certificate').files[0]
+        if (qualificationCertificateInput) {
+          let filereader = new FileReader();
+          filereader.readAsDataURL(qualificationCertificateInput);
+          filereader.onload = function (evt) {
+            let qualificationPhotoBase64 = evt.target.result;
+            photoArray[i] = qualificationPhotoBase64
+          }
         }
 
-        div += ` 
+        setTimeout(function () {
+
+          object = {
+            resume_lid: 2,
+            resume_qualification_lid: 3,
+            qualification_type_lid: qualification_type,
+            topic_of_study: qualificationSubject,
+            university: qualificationUniversity,
+            institute: qualificationCollege,
+            status: qualificationvalue,
+            percentile: Number.parseFloat(qualificationPercentile),
+            year_of_passing: qualificationYear,
+            url_path: photoArray[i]
+          }
+
+
+          div += ` 
           <div class="text-block right qualification-update" >
                   <div class="card-body">
                     <h2 id="year-of-passing">\${qualificationYear}\</h2>
@@ -1983,31 +2006,36 @@
 
 
 
-        qualificationTableArray.push(object)
+          qualificationTableArray.push(object)
+        }, 1000)
       }
-      let qualificationTableData = {
-        "qualificationDetails": qualificationTableArray
-      }
-      console.log(JSON.stringify(qualificationTableData))
+      setTimeout(function () {
 
-      let options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(qualificationTableData)
-      }
-      let fetchRes = fetch('/insert-qualification-details', options);
-      fetchRes.then(success => {
-        if (success.status == 200) {
-          document.getElementById('qualification-appending-div').firstElementChild.remove()
-          document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.qualification-modal').classList.add('d-none');
-        } else {
-          alert('Check Qualification details');
+        let qualificationTableData = {
+          "qualificationDetails": qualificationTableArray
         }
-      })
+        console.log(JSON.stringify(qualificationTableData))
+
+        let options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(qualificationTableData)
+        }
+        let fetchRes = fetch('/insert-qualification-details', options);
+        fetchRes.then(success => {
+          if (success.status == 200) {
+            document.getElementById('qualification-appending-div').firstElementChild.remove()
+            document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.qualification-modal').classList.add('d-none');
+          } else {
+            alert('Check Qualification details');
+          }
+        })
+      }, 1000)
+
 
     })
 
@@ -2154,7 +2182,7 @@
 
     document.getElementById('award-add-button').addEventListener('click', function () {
       console.log("Award Add Button clicked");
-    
+
 
       let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
         <div class="container">   
@@ -2346,6 +2374,20 @@
           return;
         }
 
+        let photoArray = []
+
+        let awardCertificateInput = vjstableelement[i].querySelector('.awardCertificationImage').files[0]
+        if (awardCertificateInput) {
+          let filereader = new FileReader();
+          filereader.readAsDataURL(awardCertificateInput);
+          filereader.onload = function (evt) {
+            let awardPhotoBase64 = evt.target.result;
+            photoArray[i] = awardPhotoBase64
+          }
+        }
+
+
+ setTimeout(function () {
         obj = {
           resume_lid: "1",
           achievement_type_lid: "2",
@@ -2355,7 +2397,7 @@
           organization_type_lid: organization_type_lid,
           achievement_date: achievement_date,
           description: description,
-          url_path: url_path
+          url_path: photoArray[i]
         }
 
 
@@ -2411,6 +2453,7 @@
                     `
 
         resume_achievement.push(obj);
+                },1000)
       }
 
       object = {
@@ -2418,6 +2461,8 @@
       }
 
       //Fetch Method
+ setTimeout(function () {
+
       function postdata() {
         url = "/award_Table_Data";
         params = {
@@ -2441,6 +2486,7 @@
         })
       }
       postdata()
+          },1000)
     });
 
 
@@ -2504,29 +2550,21 @@
           return;
         }
 
-        // insertAchievementObject.role = publicationRole
-        // insertAchievementObject.no_of_authors = publicationNumberOfAuthors
-        // insertAchievementObject.book_title = publicationBookTitle
-        // insertAchievementObject.publisher = publicationPublisher
-        // insertAchievementObject.year_of_publication = publicationYearOfPublication
-        // insertAchievementObject.publication_url_path = publicationCertificate
+        let photoArray = []
 
-        // let publicationCertificate = publicationRow[i].querySelector('.certification').value;
+let publicationCertificateInput = publicationRow[i].querySelector('.publication-certification').files[0]
+if (publicationCertificateInput) {
+  let filereader = new FileReader();
+  filereader.readAsDataURL(publicationCertificateInput);
+  filereader.onload = function (evt) {
+    let publicationPhotoBase64 = evt.target.result;
+    photoArray[i] = publicationPhotoBase64
+  }
+}
 
+setTimeout(function () {
 
-
-
-        // let publicationCertificate = document.querySelectorAll('.publication-certification')
-
-        // if (publicationCertificate[i].files[0]) {
-        //   let filereader = new FileReader();
-        //   filereader.readAsDataURL(publicationCertificate[i].files[0]);
-        //   filereader.onload = function (evt) {
-        //     publicationBase64 += evt.target.result;
-        //   }
-        // }
-        // console.log(publicationBase64)
-
+    
         object = {
           resume_lid: "1",
           achievement_type_lid: "1",
@@ -2536,7 +2574,7 @@
           title: publicationBookTitle,
           publisher: publicationPublisher,
           year_of_publication: publicationYearOfPublication,
-          publication_url_path: publicationBase64
+          publication_url_path: photoArray[i]
         }
         publicationTableArray.push(object)
 
@@ -2577,12 +2615,13 @@
                   </div>
                 </div>
                   `
-
+              },1000)
       }
 
       let publicationTableData = {
         "insert_publication": publicationTableArray
       }
+setTimeout(function(){
 
       let options = {
         method: 'POST',
@@ -2602,7 +2641,8 @@
           alert('Check');
         }
       })
-    });
+    },1000)
+  })
 
     document.getElementById('publication-add-button').addEventListener('click', function () {
 
@@ -2728,7 +2768,8 @@
         let description = researchTableElem[j].querySelector('.research_description').value;
         let category = researchTableElem[j].querySelector('.research_category').value;
         // let research_photo = researchTableElem[j].querySelector('.research_photo').value;
-        let researchCertificateSRC = researchTableElem[i].querySelector('.research-certificate-preview').src;
+        let researchCertificateSRC = researchTableElem[j].querySelector('.research-certificate-preview').src;
+        console.log(researchCertificateSRC)
 
         let check_journal_name = tabledatacheck(Journal_name);
         let check_volume_year = yearcheck(volume_year);
@@ -2756,8 +2797,21 @@
           return;
         }
 
-        let researchCertificate = document.querySelectorAll('.research_photo')
-    
+
+        let photoArray = []
+       let researchCertificateInput = researchTableElem[j].querySelector('.research_photo').files[0]
+       if (researchCertificateInput) {
+         let filereader = new FileReader();
+         filereader.readAsDataURL(researchCertificateInput);
+         filereader.onload = function (evt) {
+           let researchPhotoBase64 = evt.target.result;
+           photoArray[j] = researchPhotoBase64
+         }
+       }
+       console.log(photoArray[j])
+
+       setTimeout(function(){
+
         obj = {
           resume_lid: "1",
           achievement_type_lid: "3",
@@ -2766,9 +2820,10 @@
           volume_year: volume_year,
           description: description,
           category: category,
-          research_url_path: "fake-path"
+          research_url_path: photoArray[j] //"c/fakepath://gghs" 
         }
 
+        console.log(JSON.stringify(obj))
         div += `<div  class=" px-3 px-sm-4 px-lg-4 mt-1 ">
                   <div class="row">
 
@@ -2804,12 +2859,14 @@
                 </div>                  
         `
         resumeResearchTable.push(obj);
+      },1000)
       }
 
       object = {
         "insert_research": resumeResearchTable
       }
       console.log('resrearch : ', JSON.stringify(object));
+setTimeout(function(){
 
       let options = {
         method: 'POST',
@@ -2821,60 +2878,27 @@
       let fetchRes = fetch("/research-table-data", options);
       fetchRes.then(success => {
         if (success.status == 200) {
+          document.getElementById('research-appending-div').firstElementChild.remove()
+          document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.research-modal').classList.add('d-none');
         } else {
           alert('Check');
         }
       })
+    },1000)
 
 
-      // function postdata() {
-      //   url = "/research_Table_Data";
-      //   params = {
-      //     method: "post",
-      //     headers: {
-      //       contentType: 'application/json'
-      //     },
-      //     body: JSON.stringify(object),
-      //   }
-      //   fetch(url, params).then((data) => {
-      //     if (data.status == 200) {
-      //       console.log("OK")
-      //       document.getElementById('body').classList.remove('d-none');
-      //       document.querySelector('.research-modal').classList.add('d-none');
-      //     } else {
-      //       console.log("Error");
-      //       alert('Check Research Details');
-      //     }
-      //   })
-      // }
-      // postdata()
-      document.getElementById('research-appending-div').firstElementChild.remove()
-      document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
+
+    
 
     });
-    // let awardData = {}
-    // let publicationData = {}
-    // let researchData = {}
 
-    // achievement = {
-    //   "insert_Award": awardData,
-    //   "insert_publication": publicationData,
-    //   "insert_research": researchData
-    // }
-
-    // console.log(JSON.stringify(achievement))
 
     document.getElementById('research-add-button').addEventListener('click', function () {
 
       console.log("Research add button clicked");
-      // let Journal_name_btn = document.querySelector('.research_Journal_name').value.length;
-
-      // if (Journal_name_btn == 0) {
-      //   alert('Plz Fill The Below Data');
-      //   return;
-      // }
+ 
 
       let table = ` 
       <div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
@@ -2984,7 +3008,8 @@
         let professionalInstitution = certificationRow[i].querySelector('.certification-institution').value;
         let professionalYOP = certificationRow[i].querySelector('.certification-YOP').value;
         let professionalCertification = certificationRow[i].querySelector('.certificate-photo').value;
-        let professionalCertificationCertificateSRC = certificationRow[i].querySelector('.certificate-photo-preview').src;
+        let professionalCertificationCertificateSRC = certificationRow[i].querySelector(
+          '.certificate-photo-preview').src;
 
         let checkCertificateName = namecheck(professionalCertificateName);
         let checkInstitution = namecheck(professionalInstitution);
@@ -3013,6 +3038,19 @@
           return;
         }
 
+        let photoArray = []
+
+        let professionalCertificateInput = certificationRow[i].querySelector('.certificate-photo').files[0]
+        if (professionalCertificateInput) {
+          let filereader = new FileReader();
+          filereader.readAsDataURL(professionalCertificateInput);
+          filereader.onload = function (evt) {
+            let professionalPhotoBase64 = evt.target.result;
+            photoArray[i] = professionalPhotoBase64
+          }
+        }
+setTimeout(function(){
+
         object = {
           resume_lid: 1,
           resume_qualification_lid: 26,
@@ -3020,7 +3058,7 @@
           topic_of_study: professionalCertificateName,
           institute: professionalInstitution,
           year_of_passing: professionalYOP,
-          url_path: professionalCertification,
+          url_path: photoArray[i],
         }
 
         div += `
@@ -3083,11 +3121,13 @@
                  `
 
         certificationTableArray.push(object)
+},1000)
       }
       let certificationTableData = {
         "qualificationDetails": certificationTableArray
       }
       console.log(JSON.stringify(certificationTableData))
+setTimeout(function(){
 
       let options = {
         method: 'POST',
@@ -3096,7 +3136,7 @@
         },
         body: JSON.stringify(certificationTableData)
       }
-      let fetchRes = fetch('/insert-qualification-details', options);
+      let fetchRes = fetch('/insert-certification-details', options);
       fetchRes.then(success => {
         if (success.status == 200) {
           document.getElementById('certification-appending-div').firstElementChild.remove()
@@ -3107,7 +3147,8 @@
           alert('Check Professional certificate details');
         }
       })
-    });
+    },1000)
+  })
 
     document.querySelector('#certification-add-button').addEventListener('click', function () {
       console.log("entered inside certification add button")
@@ -3146,7 +3187,7 @@
                             <p class="h6">Certificate: <span class="required">*</span></p>
                           </div>
                           <div class="col-md-10 "><input class="form-control certificate-photo"
-                             onchange="document.getElementById('certificate-photo-preview').src = window.URL.createObjectURL(this.files[0])" type="file">
+                             onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])" type="file">
                               <p hidden><img class="certificate-photo-preview" type="hidden" alt="your image" width="100"
                              height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
                          </div>
@@ -3281,48 +3322,65 @@
         document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
       }
 
-      let bankDetailsJson = {
-        "insert_bank_data": []
-      }
-      let bank_detail = {};
-      bank_detail.user_lid = 2,
-        bank_detail.bank_name = document.querySelector('#bank-name').value;
-      bank_detail.branch_name = document.querySelector('#bank-branch').value;
-      bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code').value;
-      bank_detail.micr_code = document.querySelector('#bank-micr-code').value;
-      bank_detail.account_number = document.querySelector('#bank-account-number').value;
-      bank_detail.bank_account_type_lid = document.querySelector('#bank-account-type').value;
-      bank_detail.url_path = "C://fakepath://bankphoto";
-      bankDetailsJson.insert_bank_data[0] = bank_detail
-      console.log(JSON.stringify(bankDetailsJson))
+      let photoArray = []
 
-      function postdata() {
-        url = "/insert-bank-details";
-        params = {
-          method: 'post',
-          headers: {
-            'content-Type': 'application/json'
-          },
-          body: JSON.stringify(bankDetailsJson),
+      let bankPhoto = document.getElementById("cancelled_cheque_Photo").files[0]
+      if (bankPhoto) {
+        let filereader = new FileReader();
+        filereader.readAsDataURL(bankPhoto);
+        filereader.onload = function (evt) {
+          let bankPhotoBase64 = evt.target.result;
+          photoArray[0] = bankPhotoBase64
         }
-        fetch(url, params).then((data) => {
-          if (data.status == 200) {
-            console.log(data);
-
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.bank-details-modal').classList.add('d-none');
-            document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
-            document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
-            document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
-            document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-            document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
-              'accountNumber')
-            document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
-
-          }
-        })
       }
-      postdata()
+
+      setTimeout(function () {
+
+        let bankDetailsJson = {
+          "insert_bank_data": []
+        }
+        let bank_detail = {};
+        bank_detail.user_lid = 2,
+          bank_detail.bank_name = document.querySelector('#bank-name').value;
+        bank_detail.branch_name = document.querySelector('#bank-branch').value;
+        bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code').value;
+        bank_detail.micr_code = document.querySelector('#bank-micr-code').value;
+        bank_detail.account_number = document.querySelector('#bank-account-number').value;
+        bank_detail.bank_account_type_lid = document.querySelector('#bank-account-type').value;
+        bank_detail.url_path = photoArray[0];
+        bankDetailsJson.insert_bank_data[0] = bank_detail
+        console.log(JSON.stringify(bankDetailsJson))
+
+        function postdata() {
+          url = "/insert-bank-details";
+          params = {
+            method: 'post',
+            headers: {
+              'content-Type': 'application/json'
+            },
+            body: JSON.stringify(bankDetailsJson),
+          }
+          fetch(url, params).then((data) => {
+            if (data.status == 200) {
+              console.log(data);
+
+              document.getElementById('body').classList.remove('d-none');
+              document.querySelector('.bank-details-modal').classList.add('d-none');
+              document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
+              document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get(
+                'branchName')
+              document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
+              document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
+              document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
+                'accountNumber')
+              document.getElementById('account-type-value').innerText = submitBankDetailsForm.get(
+                'accountType')
+
+            }
+          })
+        }
+        postdata()
+      }, 1000)
 
     });
 

@@ -24,18 +24,20 @@ public class AwardRestController
     @ResponseBody
     public ResponseEntity<?> awardTableData(@RequestBody String resume_achievement)
     {
-        System.out.println("JSON String from FrontEnd : "+resume_achievement);
-        boolean lastcheck = jsoncheck.JsonStringValues(resume_achievement);
+        String lastcheck = jsoncheck.JsonStringValues(resume_achievement);
         
-        if(lastcheck == false)
+        if(lastcheck != null)
         {
-            System.out.println("Error");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-            Object data = service.insertAwardData(resume_achievement);
+            Object data = service.insertAwardData(lastcheck);
             // Object data = service.updateAward(resume_achievement);
             System.out.println(data);
             System.out.println("Success");
             return ResponseEntity.status(HttpStatus.OK).build();
+          
+        }
+          
+        System.out.println("Error");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+       
     }
 }
