@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
@@ -19,13 +20,651 @@
 
 <body>
   <!-- id(body) of this div is used to hide as well as unhide the resume -->
+
   <jsp:include page="left-sidebar.jsp" />
   <main class="main">
     <jsp:include page="header.jsp" />
 
     <div id="body" class="container">
 
-     
+      <!-- id(resume-box) of this div is used to give css for the resume created -->
+      <!-- class(container) of this div is used to bring the content inside to centre of page using bootstrap -->
+
+      <!-- class(d-flex) of this div is used to enable flexbox in bootstrap and align the items to the desired position -->
+      <!-- class(justify-content-end) of this div is used to change the alignment of flex items on the main axis and put it in the end -->
+      <div class="d-flex justify-content-end">
+
+        <!-- id(download-btn) of this div is used to give css for the download button created -->
+        <!-- class(h1) of this div is used to give size in bootstrap -->
+        <!-- class(fa-solid) of this div is used to give a bulk look in font-awesome -->
+        <!-- class(fa-solid) of this div is used to give a download font through font-awesome -->
+        <i id="download-btn" class="h1 fa-solid fa-download"></i>
+      </div>
+
+      <!-- id(download-page) of this div is used to get the particular element in order to download the entire resume content -->
+
+      <!-- class(cover) of this div is used to give a one-page template for building simple home pages in bootstrap -->
+      <!-- class(shadow-lg) of this div provides shadow to an element with box-shadow utilities in bootstrap -->
+      <div class="shadow-lg">
+
+        <!--------------------------------------Personal Details Section ---------------------------------------->
+
+        <div class="edit-personal-details">
+          <div class="position-relative personal-information-div-wrapper d-flex" style="cursor: pointer;">
+            <div class="container p-0">
+              <div class="personal-information-div">
+                <div class="cover-div p-3 px-sm-4 p-lg-4">
+                  <div class="row">
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                      <div class="avatar bg-white shadow-sm p-1">
+                        <img src="/download (3).jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
+                          height="200" />
+                      </div>
+                    </div>
+
+                    <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
+                      <div class="d-flex" style="color: #740E00;">
+                        <h3><b id="first-name-value">Sameer</b></h3> &nbsp &nbsp
+                        <h3><b id="last-name-value">Shaikh</b></h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="personal-details-div" class="pt-lg-4 pt-md-5 px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+                    <div id="personaldetails-left-side"
+                      class="col-12 col-md-6 col-lg-6 col-sm-12 ps-4 pt-lg-5 pt-md-2 text-center">
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Gender :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="gender-value">Male</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Date of birth :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="date-of-birth-value">2000-07-06</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Pancard :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="pancard-value">AAAAA1111A</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Pancard Photo</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="pancard-photo"><i id="pancard-photo-preview" class="fa-solid fa-ban text-danger"></i></p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Aadhar card :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="aadhar-card-value">111122223333</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Aadhar card Photo</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" class="fa-solid fa-ban text-danger"></i></p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Contact No.</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="contact-number-value">9876543210</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Secondary Contact No.</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="temp-contact-value">N.A</p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Email :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="email-value">example@gmail.com</p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Secondary Email :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="temp-email-value">N.A</p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Permanent Address :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="address-value">101-Ashok kamothe</p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6 class="temporary-address-heading">Temporary Address :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="temporary-address-value">703-Satyam panvel
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6 class="country-heading">Country :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="country-value">India</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="d-none personal-details-edit-box d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-pen fa-2x text-white "></i>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <!------------------------------------------------ Qualification Section ------------------------------------------------>
+
+        <div class="position-relative qualification-div-wrapper d-flex" style="cursor: pointer;">
+          <div class="container">
+            <div id="qualification-div">
+              <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
+                <h3><b> <i class="fa-solid fa-graduation-cap"></i>Qualification</b></h3>
+              </div>
+
+              <div id="qualification-appending-div">
+                <div class="text-block right" id="preview-qualification-div">
+                  <div class="card-body preview-qualification-div">
+                    <h2 id="year-of-passing">2015</h2>
+
+                    <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Title :</p>
+                              <p class="h5 py-1">Major Subject :</p>
+                              <p class="h5 py-1">University :</p>
+
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">Bachelors Degree</p>
+                              <p id="">Discrete Maths</p>
+                              <p id="">Mumbai</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">College :</p>
+                              <p class="h5 py-1">percentage :</p>
+                              <p class="h5 py-1">Certificate :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">St. Wilfred's College</p>
+                              <p id="" class="">82.61%</p>
+                              <p id=""><i id="qualification-certificate-display"
+                                  class="fa-solid fa-ban text-danger qualification-certificate-display"></i></p>
+                              <!-- <p id=""><i id="" class="fa-solid fa-ban text-danger"></i></p> -->
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="d-none qualification-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+        </div>
+        <hr />
+
+        <!------------------------------------------------ Work Experience Section ------------------------------------------------>
+
+        <div class="work-experience-div-wrapper position-relative d-flex" style="cursor: pointer;">
+          <div class="container">
+            <div id="work-experience-div">
+              <div class="d-flex justify-content-center align-items-center">
+                <h3 style="color: #740E00;"><i class="fa-solid fa-briefcase"></i><b> Work Experience </b></h3>
+              </div>
+              <div id="workExperience-appending-div">
+                <div class="text-block right">
+                  <div class="card-body">
+                    <h2>2017</h2>
+
+                    <div id="work-experience-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">University :</p>
+                              <p class="h5 py-1">Subject Taught :</p>
+                              <p class="h5 py-1">Program :</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">Mumbai University</p>
+                              <p id="">Discrete Maths</p>
+                              <p id="">BSc</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 py-1">Designation :</p>
+                              <p class="h5 py-1">Start Date :</p>
+                              <p class="h5 py-1">End date :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">Senior Maths faculty</p>
+                              <p id="" class="">2000-07-06</p>
+                              <p id="" class="">2007-07-06</p>
+                              <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-none work-experience-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+        </div>
+        <hr />
+
+        <!-------------------------------------------------- Skills Section----------------------------------------------->
+
+        <div class="skills-div-wrapper position-relative d-flex" style="cursor: pointer;">
+          <div class="container">
+            <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
+              <div class="d-flex justify-content-center align-items-center">
+                <h3 class="mb-4 h3" style="color: #740E00;">
+                  <img src="/icons/skills.png" alt="" height="40px"><b> Skills</b>
+                </h3>
+              </div>
+              <div class="container bootstrap snippets bootdeys">
+                <div class="row">
+
+                  <div class="col-md-6 col-sm-12 content-card">
+                    <div class="card card-just-text" data-background="color" data-color="grey" data-radius="none">
+                      <h4 class="title">Hard Skills</h4>
+
+                      <div id="hard-skill-appending-div1" class="d-flex w-100 flex-wrap">
+
+
+
+                      </div>
+                    </div> <!-- end card -->
+                  </div>
+
+                  <div class="col-md-6 col-sm-12 content-card">
+                    <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
+                      <h4 class="title">Soft Skills</h4>
+
+                      <div id="soft-skill-appending-div1" class="d-flex w-100 flex-wrap">
+
+                      </div>
+                    </div> <!-- end card -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-none skills-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+        </div>
+        <hr>
+
+        <!-------------------------------------------------- Award Section----------------------------------------------->
+
+        <div class="award-div-wrapper d-flex position-relative" style="cursor: pointer;">
+          <div class="container">
+            <div id="award-div" class="px-3 px-sm-4 px-lg-4">
+              <div class="d-flex justify-content-center align-items-center">
+                <h3 style="color: #740E00;"><i class="fa-solid fa-award"></i><b> Awards </b></h3>
+              </div>
+              <div id="award-preview-div">
+
+
+                <div id="Award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Award Name :</p>
+                          <p class="h5 py-1">organization :</p>
+                          <p class="h5 py-1">Organization Type :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">Engagement Award</p>
+                          <p id="">Campus Compact </p>
+                          <p id="">University</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Place :</p>
+                          <p class="h5 pb-1">Recieved date :</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">Mumbai</p>
+                          <p class="" id="">2018-07-07</p>
+                          <p ><i id="award-certificate-display" class="fa-solid fa-ban text-danger award-certificate-display"></i></p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="d-none award-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+        </div>
+        <hr />
+
+        <!------------------------------------------- Publication Section  ----------------------------------------->
+
+        <div class="publication-div-wrapper d-flex position-relative" style="cursor: pointer;">
+          <div class="container">
+            <div id="publication-div" class="px-3 px-sm-4 px-lg-4">
+              <div class="d-flex justify-content-center align-items-center">
+                <h3 class="mb-4 h3" style="color: #740E00;"> <b> Publications </b></h3>
+              </div>
+              <div id="publication-appending-div" class="bg-white">
+                <div class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Role :</p>
+                          <p class="h5 py-1">No. of Authors :</p>
+                          <p class="h5 py-1">Book Title :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">Editor</p>
+                          <p id="">10 </p>
+                          <p id="">A Million Thoughts</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Publisher :</p>
+                          <p class="h5 pb-1">Publication Year:</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">Nationpress</p>
+                          <p class="" id="">2016</p>
+                          <p><i id="publication-certificate-display" class="fa-solid fa-ban text-danger publication-certificate-display"></i></p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-none publication-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+        </div>
+
+        <hr />
+
+        <!------------------------------------------- Research Section  ----------------------------------------->
+
+
+        <div class="research-div-wrapper d-flex position-relative" style="cursor: pointer;">
+          <div class="container">
+            <div id="research-div" class="px-3 px-sm-4 px-lg-4">
+              <div class="d-flex justify-content-center align-items-center">
+                <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><i class="fa-solid fa-telescope"></i><b> Research
+                  </b></h3>
+              </div>
+
+              <div id="research-appending-div">
+
+                <div class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 py-1">Title :</p>
+                          <p class="h5 py-1">Volume year :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">Algebra and logic</p>
+                          <p id="">2017</p>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Description :</p>
+                          <p class="h5 pb-1">Category :</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">example</p>
+                          <p class="" id="">example</p>
+                          <p><i id="research-certificate-display" class="fa-solid fa-ban text-danger research-certificate-display" ></i></p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="d-none research-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+        </div>
+        <hr />
+
+        <!------------------------------------------------ Certification Section ------------------------------------------------>
+
+        <div class="position-relative certification-div-wrapper d-flex" style="cursor: pointer;">
+          <div class="container">
+            <div id="certification-div">
+              <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
+                <h3><i class="fa-solid fa-certificate"></i><b>Professional Membership Certificate</b></h3>
+              </div>
+
+              <div id="certification-appending-div">
+                <div class="text-block right" id="preview-qualification-div">
+                  <div class="card-body preview-certification-div">
+
+                    <div class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Certification name:</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">Teaching</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Institution :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">St. Wilfred's College</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Recieved Year:</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">2015</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Certificate:</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id=""><i class=""></i></p>
+                              <p><i id="professional-certificate-display" class="fa-solid fa-ban text-danger professional-certificate-display"></i></p>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="d-none certification-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+        </div>
+        <hr />
+
+
+
+        <!------------------------------------------- Bank Details Section  ----------------------------------------->
+
+        <div class="bank-details-div-wrapper d-flex position-relative" style="cursor: pointer;">
+          <div id="bank-details-div">
+            <div class="px-3 px-sm-4 ps-lg-5">
+              <div class="d-flex justify-content-center align-items-center">
+                <h3 class="p-md-3 pb-sm-3" style="color: #740E00;"><b><i class="fa-solid fa-building-columns"></i>
+                    Bank Details </b></h3>
+              </div>
+              <div class="row">
+                <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
+                  <div class="row pt-lg-3">
+                    <div class="col-6 col-md-6 col-lg-6 col-sm-6 ps-lg-4 ps-md-0 ps-0 ps-sm-0">
+                      <h6 class="pb-4">Name of Bank</h6>
+                      <h6 class="pb-4">Branch</h6>
+                      <h6 class="pb-4">IFSC Code</h6>
+                    </div>
+                    <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                      <p id="bank-name-value">ICICI Bank</p>
+                      <p id="branch-name-value" class="pt-2">Panvel</p>
+                      <p id="ifsc-code-value" class="pt-2">ICIC0000007</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="right-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
+                  <div class="row pt-lg-3">
+                    <div class="col-6 ps-lg-4 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                      <h6 class="pb-4">MICR Code</h6>
+                      <h6 class="pb-4">Account Number</h6>
+                      <h6 class="pb-4">Account Type</h6>
+                      <h6 class="pb-4">Cancalled Cheque Photo</h6>
+                    </div>
+                    <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                      <p id="micr-code-value">600002025</p>
+                      <p id="account-number-value" class="pt-2">778866445523</p>
+                      <p id="account-type-value" class="pt-2">Current Account</p>
+                      <p id="cancelled-check-photo" class="pt-3">
+                        <i id="cancelled-cheque-photo-preview" class="fa-solid fa-ban text-danger"></i>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-none bank-details-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+        </div>
+
+
+      </div>
     </div>
 
     <!-- ************************************************************************Personal Details Modal Div******************************************************************************************** -->
@@ -738,33 +1377,29 @@
       </div>
     </div>
 
-    <!-- ************************************************************************Qualification photo Modal Div********************************************************************************************
-    <div class="qualification-photo-modal d-none">
+    <!-- ************************************************************************Qualification photo Modal Div******************************************************************************************** -->
+    <div class="image-preview-modal d-none">
       <div id="bank-form-area">
         <div class="container">
           <div class="d-flex justify-content-center align-items-center my-4">
-            <h2>Preview Qualification Certificate Photo</h2>
+            <h2> Image Preview </h2>
           </div>
 
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="/download (3).jpg" alt="qualification-photo-uploaded" id="qualification-photo-uploaded"
-                style="width:450px;height:300px;">
+              <img src="/download (3).jpg" alt="image-uploaded" id="image-uploaded"
+                class="image-uploaded" style="width:450px;height:300px;">
             </div>
           </div>
 
           <div class="d-flex justify-content-center">
-            <button id="qualification-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="image-preview-cancel-button" class="btn btn-danger m-4">Cancel</button>
           </div>
         </div>
       </div>
-    </div> -->
-    <div id="qualification-photo-data">
-
     </div>
 
   </main>
-
 
   <div class="modal-loader d-none" id="main-loader">
     <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -796,704 +1431,15 @@
   <script src="/js/jquery.bootpag.min.js"></script>
   <script id="script-data"></script>
   <script>
-
-    $.ajax({
-      url: '/get-user-details',
-      type : 'POST',
-      success : function(response) {
-        let data = JSON.parse(response.value)
-        console.log('data',data)
-        let personal_details = data.personal_details;
-        let bank_details = data.bank_details;
-
-       
-
-
-        let resume = `
-      <div class="d-flex justify-content-end">
-
-        <i id="download-btn" class="h1 fa-solid fa-download"></i>
-      </div>
-
-      <div class="shadow-lg">
-
-        <!--------------------------------------Personal Details Section ---------------------------------------->
-
-        <div class="edit-personal-details">
-          <div class="position-relative personal-information-div-wrapper d-flex" style="cursor: pointer;">
-            <div class="container p-0">
-              <div class="personal-information-div">
-                <div class="cover-div p-3 px-sm-4 p-lg-4">
-                  <div class="row">
-                    <div class="col-md-4 col-sm-12 col-lg-3">
-                      <div class="avatar bg-white shadow-sm p-1">
-                        <img src="/download (3).jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
-                          height="200" />
-                      </div>
-                    </div>
-
-                    <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
-                      <div class="d-flex" style="color: #740E00;">
-                        <h3><b id="first-name-value">\${personal_details.f_name}</b></h3> &nbsp &nbsp
-                        <h3><b id="last-name-value">\${personal_details.l_name}</b></h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div id="personal-details-div" class="pt-lg-4 pt-md-5 px-3 px-sm-4 px-lg-4 mt-1">
-                  <div class="row">
-                    <div id="personaldetails-left-side"
-                      class="col-12 col-md-6 col-lg-6 col-sm-12 ps-4 pt-lg-5 pt-md-2 text-center">
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Gender :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="gender-value">\${personal_details.name}</p> 
-                        </div>
-                      </div>
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Date of birth :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="date-of-birth-value">\${personal_details.date_of_birth}</p>
-                        </div>
-                      </div>
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Pancard :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="pancard-value">\${personal_details.pancard_no}</p>
-                        </div>
-                      </div>
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Pancard Photo</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="pancard-photo"><i id="pancard-photo-preview" class="fa-solid fa-ban text-danger"></i>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Aadhar card :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-value">\${personal_details.aadhar_card_no}</p>
-                        </div>
-                      </div>
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Aadhar card Photo</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview"
-                              class="fa-solid fa-ban text-danger"></i></p>
-                        </div>
-                      </div>
-
-                    </div>
-
-                    <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Contact No.</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="contact-number-value">\${personal_details.contact_number}</p>
-                        </div>
-                      </div>
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Secondary Contact No.</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="temp-contact-value">\${personal_details.temp_contact_number}</p>
-                        </div>
-                      </div>
-                      <div class="row py-2">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Email :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="email-value">\${personal_details.email}</p>
-                        </div>
-                      </div>
-                      <div class="row py-2">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Secondary Email :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="temp-email-value">\${personal_details.temp_email}</p>
-                        </div>
-                      </div>
-                      <div class="row py-2">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Permanent Address :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="address-value">\${personal_details.temp_email}</p>
-                        </div>
-                      </div>
-                      <div class="row py-2">
-                        <div class="col-md-5 col-sm-3">
-                          <h6 class="temporary-address-heading">Temporary Address :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="temporary-address-value">703-Satyam panvel
-                          </p>
-                        </div>
-                      </div>
-                      <div class="row py-2">
-                        <div class="col-md-5 col-sm-3">
-                          <h6 class="country-heading">Country :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="country-value">\${personal_details.nationality}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="d-none personal-details-edit-box d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-pen fa-2x text-white "></i>
-            </div>
-          </div>
-        </div>
-        <hr />
-        <!------------------------------------------------ Qualification Section ------------------------------------------------>
-
-        <div class="position-relative qualification-div-wrapper d-flex" style="cursor: pointer;">
-          <div class="container">
-            <div id="qualification-div">
-              <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
-                <h3><b> <i class="fa-solid fa-graduation-cap"></i>Qualification</b></h3>
-              </div>
-
-              <div id="qualification-appending-div">`
-              
-                for(let qual of data.resume_qualification)
-        {
-        
-          resume+= ` <div class="text-block right" id="preview-qualification-div">
-                  <div class="card-body preview-qualification-div">
-                    <h2 id="year-of-passing">2015</h2>
-
-                    <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                      <div class="row">
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Title :</p>
-                              <p class="h5 py-1">Major Subject :</p>
-                              <p class="h5 py-1">University :</p>
-
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">\${qual.qualification_type_lid}</p>
-                              <p id="">\${qual.topic_of_study}</p>
-                              <p id="">\${qual.university}</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">College :</p>
-                              <p class="h5 py-1">percentage :</p>
-                              <p class="h5 py-1">Certificate :</p>
-                            </div>
-                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                              <p class="" id="">\${qual.institute}</p>
-                              <p id="" class="">\${qual.institute}</p>
-                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-            
-              `
-            }
-            resume+=`
-            </div>
-          </div>
-
-          </div>
-          <div class="d-none qualification-edit-box d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-pen fa-2x text-white "></i>
-          </div>
-        </div>
-        <hr />
-
-        <!------------------------------------------------ Work Experience Section ------------------------------------------------>
-
-        <div class="work-experience-div-wrapper position-relative d-flex" style="cursor: pointer;">
-          <div class="container">
-            <div id="work-experience-div">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 style="color: #740E00;"><i class="fa-solid fa-briefcase"></i><b> Work Experience </b></h3>
-              </div>
-              <div id="workExperience-appending-div">`
-                for(let exp of data.resume_experience)
-                {
-                  resume+=` <div class="text-block right">
-                  <div class="card-body">
-                    <h2>2017</h2>
-
-                    <div id="work-experience-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                      <div class="row">
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">University :</p>
-                              <p class="h5 py-1">Subject Taught :</p>
-                              <p class="h5 py-1">Program :</p>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">\${exp.employer_name}</p>
-                              <p id="">\${exp.responsibilities}</p>
-                              <p id="">\${exp.description}</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 py-1">Designation :</p>
-                              <p class="h5 py-1">Start Date :</p>
-                              <p class="h5 py-1">End date :</p>
-                            </div>
-                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                              <p class="" id="">\${exp.designation}</p>
-                              <p id="" class="">\${exp.start_date}</p>
-                              <p id="" class="">\${exp.end_date}</p>
-                              <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>`
-                }
-               
-             resume+=`</div>
-            </div>
-          </div>
-          <div class="d-none work-experience-edit-box d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-pen fa-2x text-white "></i>
-          </div>
-        </div>
-        <hr />
-
-        <!-------------------------------------------------- Skills Section----------------------------------------------->
-
-        <div class="skills-div-wrapper position-relative d-flex" style="cursor: pointer;">
-          <div class="container">
-            <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 class="mb-4 h3" style="color: #740E00;">
-                  <img src="/icons/skills.png" alt="" height="40px"><b> Skills</b>
-                </h3>
-              </div>
-              <div class="container bootstrap snippets bootdeys">
-                <div class="row">
-
-                  <div class="col-md-6 col-sm-12 content-card">
-                    <div class="card card-just-text" data-background="color" data-color="grey" data-radius="none">
-                      <h4 class="title">Hard Skills</h4>
-
-                  <div id="hard-skill-appending-div1" class="d-flex w-100 flex-wrap">`
-                    for(hardskill of data.resume_skill_selected)
-                    {
-                      if(hardskill.skill_type_lid === 1)
-                      resume+= ` <div data-skill-id="\${hardskill.skill_type_lid}" data-skill-type-lid=\${hardskill.skill_lid} class="skill-pill-div text-center">
-                                    \${hardskill.skill_name}\
-                                </div>`
-                    }
-           
-                     resume+=` </div>
-                    </div> <!-- end card -->
-                  </div>
-
-                  <div class="col-md-6 col-sm-12 content-card">
-                    <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
-                      <h4 class="title">Soft Skills</h4>
-                      <div id="soft-skill-appending-div1" class="d-flex w-100 flex-wrap">`
-                      for(softskill of data.resume_skill_selected)
-                      {
-                        if(softskill.skill_type_lid ===2)
-                        {
-                          resume+=`<div data-skill-id="\${softskill.skill_type_lid}" data-skill-type-lid=\${softskill.skill_lid} class="skill-pill-div text-center">
-                                    \${softskill.skill_name}\
-                                </div>`
-                        }
-                      }
-
-                     resume+=` </div>
-                    </div> <!-- end card -->
-                  </div>`
-               resume+=` </div>
-              </div>
-            </div>
-          </div>
-          <div class="d-none skills-edit-box d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-pen fa-2x text-white "></i>
-          </div>
-        </div>
-        <hr>
-
-        <!-------------------------------------------------- Award Section----------------------------------------------->
-
-        <div class="award-div-wrapper d-flex position-relative" style="cursor: pointer;">
-          <div class="container">
-            <div id="award-div" class="px-3 px-sm-4 px-lg-4">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 style="color: #740E00;"><i class="fa-solid fa-award"></i><b> Awards </b></h3>
-              </div>`
-                for(let award of data.resume_achievement)
-                { 
-                  resume+=`                <div id="Award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                  <div class="row">
-
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Award Name :</p>
-                          <p class="h5 py-1">organization :</p>
-                          <p class="h5 py-1">Organization Type :</p>
-
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p id="">\${award.title}</p>
-                          <p id="">\${award.organization_name} </p>
-                          <p id="">\${award.name}</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Place :</p>
-                          <p class="h5 pb-1">Recieved date :</p>
-                          <p class="h5 py-1">Certificate :</p>
-                        </div>
-                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                          <p class="" id="">\${award.description}</p>
-                          <p class="" id="">\${award.achievement_date}</p>
-                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                <hr>
-
-              `
-
-                }
-
-            resume+=`</div>
-          </div>
-          <div class="d-none award-edit-box d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-pen fa-2x text-white "></i>
-          </div>
-        </div>
-        <hr />
-
-        <!------------------------------------------- Publication Section  ----------------------------------------->
-
-        <div class="publication-div-wrapper d-flex position-relative" style="cursor: pointer;">
-          <div class="container">
-            <div id="publication-div" class="px-3 px-sm-4 px-lg-4">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 class="mb-4 h3" style="color: #740E00;"> <b> Publications </b></h3>
-              </div>
-              <div id="publication-appending-div" class="bg-white">`
-                for(let public of data.resume_publication)
-                {
-                  resume +=`<div class=" px-3 px-sm-4 px-lg-4 mt-1">
-                  <div class="row">
-
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Role :</p>
-                          <p class="h5 py-1">No. of Authors :</p>
-                          <p class="h5 py-1">Book Title :</p>
-
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p id="">\${public.publication_role}</p>
-                          <p id="">\${public.no_of_authors} </p>
-                          <p id="">\${public.title}</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Publisher :</p>
-                          <p class="h5 pb-1">Publication Year:</p>
-                          <p class="h5 py-1">Certificate :</p>
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p class="" id="">\${public.publisher}</p>
-                          <p class="" id="">\${public.year_of_publication}</p>
-                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>`
-                }
-                
-            resume+=`</div>
-          </div>
-          <div class="d-none publication-edit-box d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-pen fa-2x text-white "></i>
-          </div>
-        </div>
-
-        <hr />
-
-        <!------------------------------------------- Research Section  ----------------------------------------->
-
-
-        <div class="research-div-wrapper d-flex position-relative" style="cursor: pointer;">
-          <div class="container">
-            <div id="research-div" class="px-3 px-sm-4 px-lg-4">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 class="mb-4 pt-2 h3" style="color: #740E00;"><i class="fa-solid fa-telescope"></i><b> Research
-                  </b></h3>
-              </div>
-
-              <div id="research-appending-div">`
-                for(let research of data.resume_research)
-                {
-                  resume+=` <div class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
-                  <div class="row">
-
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 py-1">Title :</p>
-                          <p class="h5 py-1">Volume year :</p>
-
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p id="">\${research.title}</p>
-                          <p id="">\${research.volume_year}</p>
-                        </div>
-                      </div>
-                    </div>
-
-
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Description :</p>
-                          <p class="h5 pb-1">Category :</p>
-                          <p class="h5 py-1">Certificate :</p>
-                        </div>
-                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                          <p class="" id="">\${research.description}</p>
-                          <p class="" id="">\${research.category}</p>
-                          <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-
-              </div>`
-                  }
-
-               
-            resume+=`</div>
-          </div>
-          <div class="d-none research-edit-box d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-pen fa-2x text-white "></i>
-          </div>
-        </div>
-        <hr />
-
-        <!------------------------------------------------ Certification Section ------------------------------------------------>
-
-        <div class="position-relative certification-div-wrapper d-flex" style="cursor: pointer;">
-          <div class="container">
-            <div id="certification-div">
-              <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
-                <h3><i class="fa-solid fa-certificate"></i><b>Professional Membership Certificate</b></h3>
-              </div>
-
-              <div id="certification-appending-div">
-                <div class="text-block right" id="preview-qualification-div">
-                  <div class="card-body preview-certification-div">
-
-                    <div class=" px-3 px-sm-4 px-lg-4 mt-1">
-                      <div class="row">
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Certification name:</p>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">Teaching</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Institution :</p>
-                            </div>
-                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                              <p class="" id="">St. Wilfred's College</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Recieved Year:</p>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">2015</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Certificate:</p>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="d-none certification-edit-box d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-pen fa-2x text-white "></i>
-          </div>
-        </div>
-        <hr />
-
-
-
-        <!------------------------------------------- Bank Details Section  ----------------------------------------->
-
-        <div class="bank-details-div-wrapper d-flex position-relative" style="cursor: pointer;">
-          <div id="bank-details-div">
-            <div class="px-3 px-sm-4 ps-lg-5">
-              <div class="d-flex justify-content-center align-items-center">
-                <h3 class="p-md-3 pb-sm-3" style="color: #740E00;"><b><i class="fa-solid fa-building-columns"></i>
-                    Bank Details </b></h3>
-              </div>
-              <div class="row">
-                <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
-                  <div class="row pt-lg-3">
-                    <div class="col-6 col-md-6 col-lg-6 col-sm-6 ps-lg-4 ps-md-0 ps-0 ps-sm-0">
-                      <h6 class="pb-4">Name of Bank</h6>
-                      <h6 class="pb-4">Branch</h6>
-                      <h6 class="pb-4">IFSC Code</h6>
-                    </div>
-                    <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                      <p id="bank-name-value">\${bank_details.bank_name}</p>
-                      <p id="branch-name-value" class="pt-2">\${bank_details.branch_name}</p>
-                      <p id="ifsc-code-value" class="pt-2">\${bank_details.ifsc_code}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div id="right-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
-                  <div class="row pt-lg-3">
-                    <div class="col-6 ps-lg-4 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                      <h6 class="pb-4">MICR Code</h6>
-                      <h6 class="pb-4">Account Number</h6>
-                      <h6 class="pb-4">Account Type</h6>
-                      <h6 class="pb-4">Cancalled Cheque Photo</h6>
-                    </div>
-                    <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                      <p id="micr-code-value">\${bank_details.micr_code}</p>
-                      <p id="account-number-value" class="pt-2">\${bank_details.account_number}</p>
-                      <p id="account-type-value" class="pt-2">\${bank_details.account_type}</p>
-                      <p id="cancelled-check-photo" class="pt-3">
-                        <i id="cancelled-cheque-photo-preview" class="fa-solid fa-ban text-danger"></i>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="d-none bank-details-edit-box d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-pen fa-2x text-white "></i>
-          </div>
-        </div>
-      </div>`
-      document.querySelector('#body').insertAdjacentHTML('afterbegin',resume);
-    },
-
-      error : function(error) {
-        console.log("error", error)
-      }
-    });
-
-
     // ******************************************Validation Functions End***************************************************
-
-    document.querySelector('#body').addEventListener('mouseover',function(){
 
     document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
       document.querySelector('.personal-details-edit-box').classList.remove('d-none');
     });
 
-
     document.querySelector('.personal-information-div-wrapper').addEventListener('mouseleave', function () {
       document.querySelector('.personal-details-edit-box').classList.add('d-none');
     });
-
 
     document.querySelector('.qualification-div-wrapper').addEventListener('mouseover', function () {
       document.querySelector('.qualification-edit-box').classList.remove('d-none');
@@ -1502,17 +1448,6 @@
     document.querySelector('.qualification-div-wrapper').addEventListener('mouseleave', function () {
       document.querySelector('.qualification-edit-box').classList.add('d-none');
     });
-
-
-    // document.querySelector('.qualification-title').addEventListener('change', function () {
-    //   let qualificationTitle = document.querySelector('.qualification-title')
-    //   if (qualificationTitle.value == 3) {
-    //     document.querySelector('.qualification-status-wrapper').classList.remove('d-none');
-    //   } else {
-    //     document.querySelector('.qualification-status-wrapper').classList.add('d-none');
-    //   }
-    // });
-
 
     document.querySelector('.work-experience-div-wrapper').addEventListener('mouseover', function () {
       document.querySelector('.work-experience-edit-box').classList.remove('d-none');
@@ -1605,251 +1540,22 @@
       document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
     })
 
-  });
-
-
-let qualificationDataDB = 1
-let bankDataDB = 1;
-let bankAccountType = ""
-let qualificationType = `<option value disabled selected>--Select--</option>`
-document.querySelector('#body').addEventListener('click',function(e){
-
-//************************************Personal Details Section Start***************************************************************
-
-  //Personal details Edit Btn
-  document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
-
-      let editPersonalDetailsForm = new FormData()
-      
-      editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
-        .innerText)
-      editPersonalDetailsForm.append('editFirstName', document.getElementById('first-name-value')
-        .innerText)
-      editPersonalDetailsForm.append('editLastName', document.getElementById('last-name-value')
-        .innerText)
-      editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
-        .innerText)
-      editPersonalDetailsForm.append('editAadharCardNumber', document.getElementById('aadhar-card-value')
-        .innerText)
-      editPersonalDetailsForm.append('editContactNumber', document.getElementById('contact-number-value')
-        .innerText)
-      editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
-      editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
-      editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
-        'temporary-address-value').innerText)
-      editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
-      editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
-      
-      document.getElementById('first-name').value = editPersonalDetailsForm.get('editFirstName')
-      document.getElementById('last-name').value = editPersonalDetailsForm.get('editLastName')
-      document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
-      document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
-      document.getElementById('aadhar-number').value = editPersonalDetailsForm.get('editAadharCardNumber')
-      document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
-      document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
-      document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
-      document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
-        'editTemporaryAddress')
-      document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
-      
-      
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.personal-details-modal').classList.remove('d-none');
-  });
-
-//************************************Qualification Section Start*************************************************************** 
-
-    //Qualidication Details Btn
-    document.querySelector(".qualification-edit-box").addEventListener('click', function () {
-      if (qualificationDataDB == 1) {
-
-        $.ajax({
-            url: '/get-qualification-type',
-            type: 'get',
-            success: function (response) {
-              console.log(response)
-              for (let i = 0; i < response.length; i++) {
-                qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`
-              }
-              //document.getElementById('bachelors-degree-title-data').insertAdjacentHTML("beforeend", qualificationType)
-            },
-            error: function (error) {
-              console.log("Error::::::::::::", error);
-            }
-          })
-
-          ++qualificationDataDB;
+    document.querySelector('#body').addEventListener('click', function (e) {
+      if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains('award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target.classList.contains('research-certificate-display') || e.target.classList.contains('professional-certificate-display')) {
+       document.getElementById('body').classList.add('d-none');
+       document.querySelector('.image-preview-modal').classList.remove('d-none');
+       document.querySelector(".image-uploaded").src = e.target.dataset.image;
       }
+    })
 
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.qualification-modal').classList.remove('d-none');
-    });
-
-    document.querySelector("#qualification-cancel-button").addEventListener('click', function () {
+    document.querySelector('#image-preview-cancel-button').addEventListener('click', function (e) {
       document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.qualification-modal').classList.add('d-none');
-    });
-
-
-//************************************Work Experience Section Start***********************************************************
-
-document.querySelector(".work-experience-edit-box").addEventListener('click', function () {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.work-experience-modal').classList.remove('d-none');
-    });
-
-//************************************Skills Section Start******************************************************************
-
-
-document.querySelector('.skills-edit-box').addEventListener('click', function () {
-
-let softSkillUl = document.getElementById('soft-skill-UL')
-let hardSkillUl = document.getElementById('hard-skill-UL')
-let softSkillDisplay = document.getElementById('soft-skill-display')
-let hardSkillDisplay = document.getElementById('hard-skill-display')
-
-let softSkills = document.getElementById('soft-skill-appending-div1')
-let hardSkills = document.getElementById('hard-skill-appending-div1')
-
-// softSkillDisplay.innerHTML = ''
-// hardSkillDisplay.innerHTML = ''
-// softSkillUl.innerHTML = ''
-// hardSkillUl.innerHTML = ''
-$.ajax({
-  url: '/get-all-skill',
-  type: 'POST',
-  success: function (response) {
-
-    for (let i = 0; i < response.length; i++) {
-
-      if (response[i].skill_type_lid === 1) {
-
-        // for (let j = 0; j < softSkills.children.length; j++) {
-        //   if (softSkills[j].firstElementChild.firstElementChild.value == response[i].id) {
-        //     console.log("Matched")
-        //   }
-        // }
-        softSkillUl.insertAdjacentHTML('beforeend',
-          `
-                 <li class="soft-skill-list">
-                    <div class="row">
-                      <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button">
-                        <i class="fa-solid fa-circle-plus fa-2x"></i>
-                      </div>
-                      <div class="col-md-10 col-sm-10 col-12"><input type="hidden" value=\${response[i].id}\ ><a href="#">\${response[i].skill_name}\</a></div>
-                    </div>
-                  </li>
-                `
-        )
-
-      } else if (response[i].skill_type_lid === 2) {
-
-        hardSkillUl.insertAdjacentHTML('beforeend',
-
-          `<li class="hard-skill-list">
-                  <div class="row">
-                    <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
-                        class="fa-solid fa-circle-plus fa-2x"></i>
-                    </div>
-                    <div class="col-md-10 col-sm-10 col-12"> <input type="hidden" value=\${response[i].id}\ ><a href="#">\${response[i].skill_name}\</a></div>
-                  </div>
-                </li>`
-        )
-      } else {
-        console.log("Error")
-      }
-    }
-
-  },
-  error: function (error) {
-    console.log("Error::::::::::::", error);
-  }
-});
-
-document.getElementById('body').classList.add('d-none');
-document.querySelector('.skills-modal').classList.remove('d-none');
-
-});
-
-//************************************Award Section Start******************************************************************
-
-document.querySelector(".award-edit-box").addEventListener('click', function () {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.award-modal').classList.remove('d-none');
-});
-
-//************************************Publication Section Start************************************************************
-
-    document.querySelector(".publication-edit-box").addEventListener('click', function () {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.publication-modal').classList.remove('d-none');
-    });
-
-//************************************Research Section Start************************************************************
-
-    document.querySelector(".research-edit-box").addEventListener('click', function () {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.research-modal').classList.remove('d-none');
-    });
-
-//************************************Profrctional Certificates Section Start***********************************************
-
-    document.querySelector('.certification-edit-box').addEventListener('click', function () {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.certification-modal').classList.remove('d-none');
-    });
-
-//************************************Bank Details Section Start***********************************************
-
-
-    document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
-      if (bankDataDB == 1) {
-        $.ajax({
-            url: '/get-bank-account-type',
-            type: 'get',
-            success: function (response) {
-              console.log(response)
-              for (let i = 0; i < response.length; i++) {
-                console.log(bankAccountType)
-                bankAccountType += `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`
-              }
-              document.getElementById('bank-account-type').insertAdjacentHTML("beforeend", bankAccountType)
-            },
-            error: function (error) {
-              console.log("Error::::::::::::", error);
-            }
-          })
-          ++bankDataDB;
-      }
-
-      let editBankDetailsForm = new FormData()
-
-      editBankDetailsForm.append('editBankName', document.getElementById('bank-name-value').innerText)
-      editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
-      editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
-      editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
-      editBankDetailsForm.append('editAccountNumber', document.getElementById('account-number-value').innerText)
-      editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value'.innerText))
-
-      document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
-      document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
-      document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
-      document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
-      document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccountNumber')
-      document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
-
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.bank-details-modal').classList.remove('d-none');
-    });
-
-});
+      document.querySelector('.image-preview-modal').classList.add('d-none');
+      document.getElementById("image-uploaded").src = " ";
+    })
 
 
 
-    // document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
-    //   document.getElementById('body').classList.remove('d-none');
-    //   document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
-    // })
 
 
     document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
@@ -1946,12 +1652,13 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
       let user_info = {}
       let user_contact = {}
 
+      setTimeout(function () {
 
-        user_contact.user_lid = '${user_lid}'
+        user_contact.user_lid = 3
         user_contact.contact_number = result.contact_number
         user_contact.temp_contact_number = result.temp_contact_number
         personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
-        user_info.user_lid = '${user_lid}'
+        user_info.user_lid = 3
         user_info.f_name = result.f_name
         user_info.l_name = result.l_name
         user_info.email = result.email
@@ -1967,13 +1674,14 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         personalDetailsData.insert_user_personal_details.user_info[0] = user_info
 
         let addressObject = {}
-        addressObject.user_lid = ''
-        addressObject.address = result.permanent_address + "," + result.permanent_address_city + "," + result
-          .permanent_address_pincode
-          .permanent_address_pincode
+        addressObject.user_lid = 3
+        addressObject.address = result.permanent_address 
+        addressObject.city =  result.permanent_address_city 
+        addressObject.pin_code = result.permanent_address_pincode
         addressObject.address_type_lid = 1
+
         let addressObject2 = {}
-        addressObject2.user_lid = '${user_lid}'
+        addressObject2.user_lid = 3
         addressObject2.address = result.temporary_address
         addressObject2.address_type_lid = 2
 
@@ -2027,7 +1735,47 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
           document.getElementById('first-name-value').innerText = result.f_name
           document.getElementById('last-name-value').innerText = result.l_name
         })
-  
+      }, 1000)
+    });
+
+    document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
+
+      let editPersonalDetailsForm = new FormData()
+
+      editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
+        .innerText)
+      editPersonalDetailsForm.append('editFirstName', document.getElementById('first-name-value')
+        .innerText)
+      editPersonalDetailsForm.append('editLastName', document.getElementById('last-name-value')
+        .innerText)
+      editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
+        .innerText)
+      editPersonalDetailsForm.append('editAadharCardNumber', document.getElementById('aadhar-card-value')
+        .innerText)
+      editPersonalDetailsForm.append('editContactNumber', document.getElementById('contact-number-value')
+        .innerText)
+      editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
+      editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
+      editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
+        'temporary-address-value').innerText)
+      editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
+      editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
+
+      document.getElementById('first-name').value = editPersonalDetailsForm.get('editFirstName')
+      document.getElementById('last-name').value = editPersonalDetailsForm.get('editLastName')
+      document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
+      document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
+      document.getElementById('aadhar-number').value = editPersonalDetailsForm.get('editAadharCardNumber')
+      document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
+      document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
+      document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
+      document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
+        'editTemporaryAddress')
+      document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
+
+
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.personal-details-modal').classList.remove('d-none');
     });
 
     document.querySelector('#personal-details-cancel-button').addEventListener('click', function (e) {
@@ -2036,10 +1784,15 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
       document.querySelector('.personal-details-modal').classList.add('d-none')
     });
 
+
     //*************************************teaching-experience-modal JS****************************************
 
 
-  
+    document.querySelector(".work-experience-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.work-experience-modal').classList.remove('d-none');
+    });
+
     document.querySelector("#work-experience-cancel-button").addEventListener('click', function () {
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.work-experience-modal').classList.add('d-none')
@@ -2049,8 +1802,42 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
     //*************************************Qualification-modal JS****************************************
 
-    let qualificationID = 0;
-    let qualificationModalID = 0;
+    let qualificationDataDB = 1
+    let qualificationType = `<option value disabled selected>--Select--</option>`
+
+    console.log(qualificationType)
+
+    document.querySelector(".qualification-edit-box").addEventListener('click', function () {
+      if (qualificationDataDB == 1) {
+
+        $.ajax({
+            url: '/get-qualification-type',
+            type: 'get',
+            success: function (response) {
+              console.log(response)
+              for (let i = 0; i < response.length; i++) {
+                qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`
+              }
+              //document.getElementById('bachelors-degree-title-data').insertAdjacentHTML("beforeend", qualificationType)
+            },
+            error: function (error) {
+              console.log("Error::::::::::::", error);
+            }
+          })
+
+          ++qualificationDataDB;
+      }
+
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.qualification-modal').classList.remove('d-none');
+    });
+
+    document.querySelector("#qualification-cancel-button").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.qualification-modal').classList.add('d-none');
+    });
+
+    // let qualificationID = 0;
 
     document.querySelector("#qualification-submit-button").addEventListener('click', function (e) {
       e.preventDefault()
@@ -2079,11 +1866,12 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
         // let qualificationCertificateImage = qualificationRow[i].querySelector('#qualification-certificate-preview').src;
 
+        console.log(qualificationRow[i].querySelector('.qualification-certificate').src)
         let checkSubject = tabledatacheck(qualificationSubject);
         let checkUniversity = tabledatacheck(qualificationUniversity);
         let checkCollege = tabledatacheck(qualificationCollege);
         let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
-        let checkCertificate = tabledatacheck(qualificationCertificate);
+        let checkCertificate = qualificationDetailCertificateValidation(qualificationCertificate);
         let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
         // let checkCancelledCheque = qualificationDetailCertificateValidation(qualificationCertificate);
 
@@ -2091,7 +1879,8 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         console.log(checkPercentile)
         // console.log(checkSubject)
 
-
+        let qualificationCertificateSRC = qualificationRow[i].querySelector('.qualification-certificate-preview')
+          .src
         //  to add the red border according to validations
         if (checkSubject == false) {
           qualificationRow[i].querySelector('.qualification-subject').classList.add('input-border');
@@ -2135,7 +1924,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         }
 
         object = {
-          resume_lid: 1,
+          resume_lid: 2,
           resume_qualification_lid: 3,
           qualification_type_lid: qualification_type,
           topic_of_study: qualificationSubject,
@@ -2180,7 +1969,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">\${qualificationCollege}\</p>
                               <p id="" class="">\${qualificationPercentile}\</p>
-                              <p ><i id="qualification-certificate-update` + qualificationID++ + `"class="fa-solid fa-image text-success"></i></p>
+                              <p ><i id="qualification-certificate-display" data-image = "\${qualificationCertificateSRC}" class="fa-solid fa-image text-success qualification-certificate-display"></i></p>
                             </div>
                           </div>
                         </div>
@@ -2190,29 +1979,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                 </div>
                   `
 
-        qualificatonModal += `
-                             <div class="qualification-photo-modal` + ++qualificationModalID +
-          ` d-none">
-                               <div id="bank-form-area">
-                                 <div class="container">
-                                   <div class="d-flex justify-content-center align-items-center my-4">
-                                     <h2>Preview Qualification Certificate Photo</h2>
-                                   </div>
-                         
-                                   <div class="row">
-                                     <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-                                       <img src="/download (3).jpg" alt="qualification-photo-uploaded" id="qualification-photo-uploaded` +
-          qualificationModalID + `"
-                                         style="width:450px;height:300px;">
-                                     </div>
-                                   </div>
-                         
-                                   <div class="d-flex justify-content-center">
-                                     <button id="qualification-photo-cancel-button` + qualificationModalID + `" class="btn btn-danger m-4">Cancel</button>
-                                   </div>
-                                 </div>
-                               </div>
-                             </div>`
+
 
         qualificationTableArray.push(object)
       }
@@ -2230,10 +1997,10 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
       }
       let fetchRes = fetch('/insert-qualification-details', options);
       fetchRes.then(success => {
+        console.log('Status:',success);
         if (success.status == 200) {
           document.getElementById('qualification-appending-div').firstElementChild.remove()
           document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
-          document.getElementById('qualification-photo-data').insertAdjacentHTML('beforeend', qualificatonModal)
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.qualification-modal').classList.add('d-none');
         } else {
@@ -2244,7 +2011,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
     })
 
     document.getElementById('qualification-add-button').addEventListener('click', function (e) {
-      console.log('OK!!')
+      e.preventDefault();
 
       let table = `
       <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
@@ -2316,10 +2083,9 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
              <p class="h6">Certificate<span class="required">*</span></p>
            </div>
            <div class="col-md-10"><input class="form-control qualification-certificate"
-               id="bachelors-degree-certificate"
-               onchange="document.getElementById('qualification-certificate-preview').src = window.URL.createObjectURL(this.files[0])"
+               onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])"
                type="file">
-             <p hidden><img id="qualification-certificate-preview" type="hidden" alt="your image" width="100"
+             <p hidden><img class="qualification-certificate-preview" type="hidden" alt="your image" width="100"
                  height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
            </div>
            </div>
@@ -2332,19 +2098,8 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                </div>      
        </div>`
 
+
       document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
-
-      // let appendingOptions = document.querySelectorAll('.qualification-title');
-      // let optionSelcted = document.querySelectorAll('.qualification-phd-wrapper');
-
-      // appendingOptions[appendingOptions.length - 1].addEventListener('change', function () {
-      //     if (appendingOptions[appendingOptions.length - 1].value == 3) {
-      //       optionSelcted[optionSelcted.length - 1].classList.remove('d-none');
-      //     } else {
-      //       optionSelcted[optionSelcted.length - 1].classList.add('d-none');
-      //     }
-      //   })
-      // console.log(appendingOptions[appendingOptions.length - 1])
 
     })
 
@@ -2361,6 +2116,8 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
       }
     })
+
+
 
 
     document.addEventListener('mouseover', function () {
@@ -2381,7 +2138,10 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
     //*************************************Award-modal JS****************************************
 
-
+    document.querySelector(".award-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.award-modal').classList.remove('d-none');
+    });
 
     document.querySelector("#award-cancel-button").addEventListener('click', function () {
       document.getElementById('body').classList.remove('d-none');
@@ -2393,19 +2153,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
     document.getElementById('award-add-button').addEventListener('click', function () {
       console.log("Award Add Button clicked");
-      // let awardnameaddbtn = document.querySelector('.awardName').value.length;
-      // let awardOrganizationaddbtn = document.querySelector('.awardOrganization').value.length;
-      // let awardOrganizationTypeaddbtn = document.querySelector('.awardOrganizationType').value.length;
-      // let awardPlaceaddbtn = document.querySelector('.awardPlace').value.length;
-      // let awardRecieveDateaddbtn = document.querySelector('.awardRecieveDate').value.length;
-      // let awardCertificationImageaddbtn = document.querySelector('.awardCertificationImage').value.length;
-
-      // if (awardnameaddbtn == 0 || awardOrganizationaddbtn == 0 || awardOrganizationTypeaddbtn == 0 ||
-      //   awardPlaceaddbtn == 0 || awardRecieveDateaddbtn == 0 || awardCertificationImageaddbtn == 0) {
-      //   alert('Fill the data before');
-      //   return;
-      // }
-
+    
 
       let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
         <div class="container">   
@@ -2456,7 +2204,12 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                   <div class="col-md-2 ">
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" id="award-certification-image"></div>
+                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" 
+                     onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+                    <p hidden><img class="award-certificate-preview" type="hidden" alt="your image" width="100"
+                    height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+                  </div>
+                 </div>
                 </div>
               </div>
             </div>
@@ -2562,6 +2315,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         let description = vjstableelement[i].querySelector('.awardPlace').value;
         let achievement_date = vjstableelement[i].querySelector('.awardRecieveDate').value;
         let url_path = vjstableelement[i].querySelector('.awardCertificationImage').value;
+        let awardCertificateSRC = vjstableelement[i].querySelector('.award-certificate-preview').src;
 
         let checktitle = tabledatacheck(title);
         let checkorganization_name = namecheck(organization_name);
@@ -2646,8 +2400,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                           <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                             <p class="" id="">\${description}\</p>
                             <p class="" id="">\${recievedAwardDate}\</p>
-                            <p id=""><i class="fa-solid fa-image text-success"></i></p>
-
+                            <p ><i id="award-certificate-display" data-image = "\${awardCertificateSRC}" class="fa-solid fa-image text-success award-certificate-display"></i></p>
                           </div>
                         </div>
                       </div>
@@ -2692,7 +2445,10 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
     //*************************************Publications-modal JS****************************************
 
-
+    document.querySelector(".publication-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.publication-modal').classList.remove('d-none');
+    });
 
     document.querySelector("#publication-cancel-button").addEventListener('click', function () {
       document.getElementById('body').classList.remove('d-none');
@@ -2721,7 +2477,8 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
         let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
         let publicationCertificate1 = publicationRow[i].querySelector('.publication-certification').value;
-        console.log(publicationCertificate1)
+        let publicationCertificateSRC = publicationRow[i].querySelector('.publication-certificate-preview').src;
+
         let checkPublicationPublisher = tabledatacheck(publicationPublisher);
         let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
         let checkPublicationYearOfPublication = tabledatacheck(publicationYearOfPublication);
@@ -2812,7 +2569,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${publicationPublisher}\</p>
                           <p class="" id="">\${publicationYearOfPublication}\</p>
-                          <p class="" id=""><i class="fa-solid fa-image text-success"></i></p>
+                          <p><i id="publication-certificate-display" data-image = "\${publicationCertificateSRC}" class="fa-solid fa-image text-success publication-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
@@ -2897,7 +2654,11 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                   <div class="col-md-2 ">
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10"><input class="form-control publication-certification" type="file"></div>
+                  <div class="col-md-10"><input class="form-control publication-certification" type="file"
+                    onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+                      <p hidden><img class="publication-certificate-preview" type="hidden" alt="your image" width="100"
+                       height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+                    </div>
                 </div>
               </div>
             </div>
@@ -2934,7 +2695,10 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
     //*************************************Research-modal JS*******************************************************
 
-
+    document.querySelector(".research-edit-box").addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.research-modal').classList.remove('d-none');
+    });
 
     document.querySelector("#research-cancel-button").addEventListener('click', function () {
       document.getElementById('body').classList.remove('d-none');
@@ -2963,6 +2727,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         let description = researchTableElem[j].querySelector('.research_description').value;
         let category = researchTableElem[j].querySelector('.research_category').value;
         // let research_photo = researchTableElem[j].querySelector('.research_photo').value;
+        let researchCertificateSRC = researchTableElem[i].querySelector('.research-certificate-preview').src;
 
         let check_journal_name = tabledatacheck(Journal_name);
         let check_volume_year = yearcheck(volume_year);
@@ -2991,25 +2756,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         }
 
         let researchCertificate = document.querySelectorAll('.research_photo')
-
-        // let filereader = new FileReader();
-        // filereader.readAsDataURL(researchCertificate[j].files[0]);
-        // filereader.onload = function loadDataFunc(evt) {
-        //   let researchBase64 = evt.target.result;
-        //   newBase64 += researchBase64
-        // }
-
-        // let panphotobase64 = ''
-        // let panPhoto = document.getElementById("aadhar-photo").files[0]
-        // if (panPhoto) {
-        //   let filereader = new FileReader();
-        //   filereader.readAsDataURL(panPhoto);
-        //   filereader.onload = function (evt) {
-        //     panphotobase64 = evt.target.result;
-        //     console.log(panphotobase64)
-        //   }
-        // }
-
+    
         obj = {
           resume_lid: "1",
           achievement_type_lid: "3",
@@ -3032,8 +2779,8 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
                         </div>
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p id="">\${Journal_name}\</p>
-                          <p id="">\${volume_year}\</p>
+                          <p id="">\${Journal_name}</p>
+                          <p id="">\${volume_year}</p>
                         </div>
                       </div>
                     </div>
@@ -3046,10 +2793,9 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                           <p class="h5 py-1">Certificate :</p>
                         </div>
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                          <p class="" id="">\${description}\</p>
-                          <p class="" id="">\${category}\</p>
-                          <p id=""><i class="fa-solid fa-image text-success"></i></p>
-
+                          <p class="" id="">\${description}</p>
+                          <p class="" id="">\${category}</p>
+                          <p><i id="research-certificate-display" data-image = "\${researchCertificateSRC}" class="fa-solid fa-image text-success research-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
@@ -3166,7 +2912,11 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                   <div class="col-md-2 ">
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10"><input class="form-control research_photo" type="file"></div>
+                  <div class="col-md-10"><input class="form-control research_photo" type="file"
+                    onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+                   <p hidden><img class="research-certificate-preview" type="hidden" alt="your image" width="100"
+                      height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+                    </div>
                 </div>
               </div>
             </div>
@@ -3203,6 +2953,10 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
 
     //*************************************Certification-modal JS****************************************
+    document.querySelector('.certification-edit-box').addEventListener('click', function () {
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.certification-modal').classList.remove('d-none');
+    })
 
 
     document.querySelector('#certification-cancel-button').addEventListener('click', function () {
@@ -3229,6 +2983,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         let professionalInstitution = certificationRow[i].querySelector('.certification-institution').value;
         let professionalYOP = certificationRow[i].querySelector('.certification-YOP').value;
         let professionalCertification = certificationRow[i].querySelector('.certificate-photo').value;
+        let professionalCertificationCertificateSRC = certificationRow[i].querySelector('.certificate-photo-preview').src;
 
         let checkCertificateName = namecheck(professionalCertificateName);
         let checkInstitution = namecheck(professionalInstitution);
@@ -3313,7 +3068,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                                 <p class="h5 pb-1">Certificate:</p>
                               </div>
                               <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                                <p id=""><i class="fa-solid fa-image text-success"></i></p>
+                                <p><i id="professional-certificate-display" data-image = "\${professionalCertificationCertificateSRC}" class="fa-solid fa-image text-success professional-certificate-display"></i></p>
                               </div>
                             </div>
                           </div>
@@ -3391,7 +3146,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                           </div>
                           <div class="col-md-10 "><input class="form-control certificate-photo"
                              onchange="document.getElementById('certificate-photo-preview').src = window.URL.createObjectURL(this.files[0])" type="file">
-                              <p hidden><img id="certificate-photo-preview" type="hidden" alt="your image" width="100"
+                              <p hidden><img class="certificate-photo-preview" type="hidden" alt="your image" width="100"
                              height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
                          </div>
                     </div>
@@ -3428,7 +3183,47 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
     //*************************************Bank-details-modal JS****************************************
 
+    let bankDataDB = 1;
+    let bankAccountType = ""
+    document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
+      if (bankDataDB == 1) {
+        $.ajax({
+            url: '/get-bank-account-type',
+            type: 'get',
+            success: function (response) {
+              console.log(response)
+              for (let i = 0; i < response.length; i++) {
+                console.log(bankAccountType)
+                bankAccountType += `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`
+              }
+              document.getElementById('bank-account-type').insertAdjacentHTML("beforeend", bankAccountType)
+            },
+            error: function (error) {
+              console.log("Error::::::::::::", error);
+            }
+          })
+          ++bankDataDB;
+      }
 
+      let editBankDetailsForm = new FormData()
+
+      editBankDetailsForm.append('editBankName', document.getElementById('bank-name-value').innerText)
+      editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
+      editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
+      editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
+      editBankDetailsForm.append('editAccountNumber', document.getElementById('account-number-value').innerText)
+      editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value'.innerText))
+
+      document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
+      document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
+      document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
+      document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
+      document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccountNumber')
+      document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
+
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.bank-details-modal').classList.remove('d-none');
+    });
 
     document.querySelector('#bank-details-cancel-button').addEventListener('click', function () {
       document.getElementById('body').classList.remove('d-none');
@@ -3532,16 +3327,84 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
     // ****************************************************JS for skills Modal****************************************************************
 
+    document.querySelector('.skills-edit-box').addEventListener('click', function () {
 
+      let softSkillUl = document.getElementById('soft-skill-UL')
+      let hardSkillUl = document.getElementById('hard-skill-UL')
+      let softSkillDisplay = document.getElementById('soft-skill-display')
+      let hardSkillDisplay = document.getElementById('hard-skill-display')
+
+      let softSkills = document.getElementById('soft-skill-appending-div1')
+      let hardSkills = document.getElementById('hard-skill-appending-div1')
+
+      // softSkillDisplay.innerHTML = ''
+      // hardSkillDisplay.innerHTML = ''
+      // softSkillUl.innerHTML = ''
+      // hardSkillUl.innerHTML = ''
+      $.ajax({
+        url: '/get-all-skill',
+        type: 'POST',
+        success: function (response) {
+
+          for (let i = 0; i < response.length; i++) {
+
+            if (response[i].skill_type_lid === 1) {
+
+              // for (let j = 0; j < softSkills.children.length; j++) {
+              //   if (softSkills[j].firstElementChild.firstElementChild.value == response[i].id) {
+              //     console.log("Matched")
+              //   }
+              // }
+              softSkillUl.insertAdjacentHTML('beforeend',
+                `
+                       <li class="soft-skill-list">
+                          <div class="row">
+                            <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button">
+                              <i class="fa-solid fa-circle-plus fa-2x"></i>
+                            </div>
+                            <div class="col-md-10 col-sm-10 col-12"><input type="hidden" value=\${response[i].id}\ ><a href="#">\${response[i].skill_name}\</a></div>
+                          </div>
+                        </li>
+                      `
+              )
+
+            } else if (response[i].skill_type_lid === 2) {
+
+              hardSkillUl.insertAdjacentHTML('beforeend',
+
+                `<li class="hard-skill-list">
+                        <div class="row">
+                          <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
+                              class="fa-solid fa-circle-plus fa-2x"></i>
+                          </div>
+                          <div class="col-md-10 col-sm-10 col-12"> <input type="hidden" value=\${response[i].id}\ ><a href="#">\${response[i].skill_name}\</a></div>
+                        </div>
+                      </li>`
+              )
+            } else {
+              console.log("Error")
+            }
+          }
+
+        },
+        error: function (error) {
+          console.log("Error::::::::::::", error);
+        }
+      })
+
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.skills-modal').classList.remove('d-none');
+
+    })
 
     document.querySelector('#skills-modal-cancel-button').addEventListener('click', function () {
-      console.log('OK!')
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.skills-modal').classList.add('d-none');
-    });
 
+    })
 
-
+    let hardSkillIndex = 1
+    let softSkillIndex = 1
     document.querySelector('#skills-modal-submit-button').addEventListener('click', function () {
 
 
@@ -3570,7 +3433,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
         let index = 21
         let obj = {}
-        obj.resume_lid = 2
+        obj.resume_lid = 1
         obj.skill_lid = Number.parseInt(value)
         obj.skill_selected_lid = index++
         skillJson.skill_details[skillIndex] = obj
@@ -3588,7 +3451,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                               </div>`
         let index = 25
         let obj = {}
-        obj.resume_lid = 2
+        obj.resume_lid = 1
         obj.skill_selected_lid = index++
         obj.skill_lid = Number.parseInt(value)
         skillJson.skill_details[skillIndex] = obj

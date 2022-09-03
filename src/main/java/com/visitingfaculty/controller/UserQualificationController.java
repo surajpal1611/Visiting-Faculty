@@ -51,12 +51,14 @@ public class UserQualificationController {
         if(check != null)
          {
        
+
             Object insertQualificationDetails = userDaoInterface.insertQualificationDetails(check);
             // Object updateQualificationDetails = userDaoInterface.updateQualificationDetails(qualificationTableData);
             System.out.println(insertQualificationDetails);
             if (insertQualificationDetails == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
+
             return ResponseEntity.ok("Inserted Successfully");
         }
         else

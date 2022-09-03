@@ -21,6 +21,7 @@ public class UserPublicationController {
     @PostMapping(value="/insert-publication-details")
     public ResponseEntity<String> insert(@RequestBody String publicationTableData) 
     {
+
         String publicationcheck = jsoncheck.publicationJsonCheck(publicationTableData);
 
         if(publicationcheck != null)
@@ -36,5 +37,6 @@ public class UserPublicationController {
           
         System.out.println("Error");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
     }    
 }

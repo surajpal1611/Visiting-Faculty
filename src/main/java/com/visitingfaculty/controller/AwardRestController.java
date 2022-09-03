@@ -28,8 +28,10 @@ public class AwardRestController
         
         if(lastcheck != null)
         {
+
             Object data = service.insertAwardData(lastcheck);
             // Object data = service.updateAward(resume_achievement);
+
             System.out.println(data);
             System.out.println("Success");
             return ResponseEntity.status(HttpStatus.OK).build();
