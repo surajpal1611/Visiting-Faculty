@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
@@ -25,7 +26,7 @@
 
     <div id="body" class="container">
 
-     
+
     </div>
 
     <!-- ************************************************************************Personal Details Modal Div******************************************************************************************** -->
@@ -748,8 +749,8 @@
       </div>
     </div>
 
-<!-- Rana Changes -->
-<!-- ************************************************************************Qualification photo Modal Div******************************************************************************************** -->
+    <!-- Rana Changes -->
+    <!-- ************************************************************************Qualification photo Modal Div******************************************************************************************** -->
     <div class="image-preview-modal d-none">
       <div id="bank-form-area">
         <div class="container">
@@ -759,8 +760,8 @@
 
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="/download (3).jpg" alt="image-uploaded" id="image-uploaded"
-                class="image-uploaded" style="width:450px;height:300px;">
+              <img src="/download (3).jpg" alt="image-uploaded" id="image-uploaded" class="image-uploaded"
+                style="width:450px;height:300px;">
             </div>
           </div>
 
@@ -804,21 +805,21 @@
   <script src="/js/jquery.bootpag.min.js"></script>
   <script id="script-data"></script>
   <script>
-let qualificationType = `<option value disabled selected>--Select--</option>`
+    let qualificationType = `<option value disabled selected>--Select--</option>`
 
 
-let resumeinfo;
+    let resumeinfo;
     $.ajax({
       url: '/get-user-details',
-      type : 'POST',
-      success : function(response) {
+      type: 'POST',
+      success: function (response) {
         let data = JSON.parse(response.value)
         resumeinfo = data;
         let personal_details = data.personal_details;
         let bank_details = data.bank_details;
-        console.log('Resume info :',resumeinfo);
+        console.log('Resume info :', resumeinfo);
 
-       
+
 
 
         let resume = `
@@ -1007,11 +1008,10 @@ let resumeinfo;
               </div>
 
               <div id="qualification-appending-div">`
-              
-                for(let qual of data.resume_qualification)
-        {
-        
-          resume+= ` <div class="text-block right" id="preview-qualification-div">
+
+        for (let qual of data.resume_qualification) {
+
+          resume += ` <div class="text-block right" id="preview-qualification-div">
                   <div class="card-body preview-qualification-div">
                     <h2 id="year-of-passing">2015</h2>
 
@@ -1059,8 +1059,8 @@ let resumeinfo;
                 </div>
             
               `
-            }
-            resume+=`
+        }
+        resume += `
             </div>
           </div>
 
@@ -1080,9 +1080,8 @@ let resumeinfo;
                 <h3 style="color: #740E00;"><i class="fa-solid fa-briefcase"></i><b> Work Experience </b></h3>
               </div>
               <div id="workExperience-appending-div">`
-                for(let exp of data.resume_experience)
-                {
-                  resume+=` <div class="text-block right">
+        for (let exp of data.resume_experience) {
+          resume += ` <div class="text-block right">
                   <div class="card-body">
                     <h2>2017</h2>
 
@@ -1124,9 +1123,9 @@ let resumeinfo;
                     </div>
                   </div>
                 </div>`
-                }
-               
-             resume+=`</div>
+        }
+
+        resume += `</div>
             </div>
           </div>
           <div class="d-none work-experience-edit-box d-flex justify-content-center align-items-center">
@@ -1153,15 +1152,14 @@ let resumeinfo;
                       <h4 class="title">Hard Skills</h4>
 
                   <div id="hard-skill-appending-div1" class="d-flex w-100 flex-wrap">`
-                    for(hardskill of data.resume_skill_selected)
-                    {
-                      if(hardskill.skill_type_lid === 1)
-                      resume+= ` <div data-skill-id="\${hardskill.skill_type_lid}" data-skill-type-lid=\${hardskill.skill_lid} class="skill-pill-div text-center">
+        for (hardskill of data.resume_skill_selected) {
+          if (hardskill.skill_type_lid === 1)
+            resume += ` <div data-skill-id="\${hardskill.skill_type_lid}" data-skill-type-lid=\${hardskill.skill_lid} class="skill-pill-div text-center">
                                     \${hardskill.skill_name}\
                                 </div>`
-                    }
-           
-                     resume+=` </div>
+        }
+
+        resume += ` </div>
                     </div> <!-- end card -->
                   </div>
 
@@ -1169,20 +1167,18 @@ let resumeinfo;
                     <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
                       <h4 class="title">Soft Skills</h4>
                       <div id="soft-skill-appending-div1" class="d-flex w-100 flex-wrap">`
-                      for(softskill of data.resume_skill_selected)
-                      {
-                        if(softskill.skill_type_lid ===2)
-                        {
-                          resume+=`<div data-skill-id="\${softskill.skill_type_lid}" data-skill-type-lid=\${softskill.skill_lid} class="skill-pill-div text-center">
+        for (softskill of data.resume_skill_selected) {
+          if (softskill.skill_type_lid === 2) {
+            resume += `<div data-skill-id="\${softskill.skill_type_lid}" data-skill-type-lid=\${softskill.skill_lid} class="skill-pill-div text-center">
                                     \${softskill.skill_name}\
                                 </div>`
-                        }
-                      }
+          }
+        }
 
-                     resume+=` </div>
+        resume += ` </div>
                     </div> <!-- end card -->
                   </div>`
-               resume+=` </div>
+        resume += ` </div>
               </div>
             </div>
           </div>
@@ -1201,9 +1197,8 @@ let resumeinfo;
                 <h3 style="color: #740E00;"><i class="fa-solid fa-award"></i><b> Awards </b></h3>
               </div>
               <div id="award-preview-div">`
-                for(let award of data.resume_achievement)
-                { 
-                  resume+=`                <div id="Award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+        for (let award of data.resume_achievement) {
+          resume += `                <div id="Award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
 
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -1243,9 +1238,9 @@ let resumeinfo;
 
               `
 
-                }
+        }
 
-            resume+=`</div>
+        resume += `</div>
           </div>
           </div>
           <div class="d-none award-edit-box d-flex justify-content-center align-items-center">
@@ -1263,9 +1258,8 @@ let resumeinfo;
                 <h3 class="mb-4 h3" style="color: #740E00;"> <b> Publications </b></h3>
               </div>
               <div id="publication-appending-div" class="bg-white">`
-                for(let public of data.resume_publication)
-                {
-                  resume +=`<div class=" px-3 px-sm-4 px-lg-4 mt-1">
+        for (let public of data.resume_publication) {
+          resume += `<div class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
 
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -1303,9 +1297,9 @@ let resumeinfo;
                   </div>
                 
               </div>`
-                }
-                
-            resume+=`</div>
+        }
+
+        resume += `</div>
             </div>
           </div>
           <div class="d-none publication-edit-box d-flex justify-content-center align-items-center">
@@ -1328,9 +1322,8 @@ let resumeinfo;
               </div>
 
               <div id="research-appending-div">`
-                for(let research of data.resume_research)
-                {
-                  resume+=` <div class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
+        for (let research of data.resume_research) {
+          resume += ` <div class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
                   <div class="row">
 
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -1368,10 +1361,10 @@ let resumeinfo;
                 </div>
 
 `
-                  }
+        }
 
-               
-            resume+=`</div>              
+
+        resume += `</div>              
             </div>
           </div>
           <div class="d-none research-edit-box d-flex justify-content-center align-items-center">
@@ -1508,10 +1501,10 @@ let resumeinfo;
           </div>
         </div>
       </div>`
-      document.querySelector('#body').insertAdjacentHTML('afterbegin',resume);
-    },
+        document.querySelector('#body').insertAdjacentHTML('afterbegin', resume);
+      },
 
-      error : function(error) {
+      error: function (error) {
         console.log("error", error)
       }
     });
@@ -1519,253 +1512,254 @@ let resumeinfo;
 
     // ******************************************Validation Functions End***************************************************
 
-    document.querySelector('#body').addEventListener('mouseover',function(){
+    document.querySelector('#body').addEventListener('mouseover', function () {
 
-    document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
-      document.querySelector('.personal-details-edit-box').classList.remove('d-none');
+      document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.personal-details-edit-box').classList.remove('d-none');
+      });
+
+
+      document.querySelector('.personal-information-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.personal-details-edit-box').classList.add('d-none');
+      });
+
+
+      document.querySelector('.qualification-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.qualification-edit-box').classList.remove('d-none');
+      });
+
+      document.querySelector('.qualification-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.qualification-edit-box').classList.add('d-none');
+      });
+
+
+      // document.querySelector('.qualification-title').addEventListener('change', function () {
+      //   let qualificationTitle = document.querySelector('.qualification-title')
+      //   if (qualificationTitle.value == 3) {
+      //     document.querySelector('.qualification-status-wrapper').classList.remove('d-none');
+      //   } else {
+      //     document.querySelector('.qualification-status-wrapper').classList.add('d-none');
+      //   }
+      // });
+
+
+      document.querySelector('.work-experience-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.work-experience-edit-box').classList.remove('d-none');
+      });
+
+
+      document.querySelector('.work-experience-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.work-experience-edit-box').classList.add('d-none')
+      })
+
+
+      document.querySelector('.skills-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.skills-edit-box').classList.remove('d-none');
+      });
+
+
+      document.querySelector('.skills-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.skills-edit-box').classList.add('d-none');
+      });
+
+
+      document.querySelector('.award-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.award-edit-box').classList.remove('d-none');
+      });
+
+
+      document.querySelector('.award-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.award-edit-box').classList.add('d-none');
+      });
+
+      document.querySelector('.publication-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.publication-edit-box').classList.remove('d-none');
+      });
+
+
+      document.querySelector('.publication-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.publication-edit-box').classList.add('d-none');
+      });
+
+      document.querySelector('.research-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.research-edit-box').classList.remove('d-none');
+      });
+
+      document.querySelector('.research-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.research-edit-box').classList.add('d-none');
+      });
+      document.querySelector('.certification-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.certification-edit-box').classList.remove('d-none');
+      });
+
+      document.querySelector('.certification-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.certification-edit-box').classList.add('d-none');
+      });
+
+      document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
+        document.querySelector('.bank-details-edit-box').classList.remove('d-none');
+      });
+
+      document.querySelector('.bank-details-div-wrapper').addEventListener('mouseleave', function () {
+        document.querySelector('.bank-details-edit-box').classList.add('d-none');
+      });
+
+      document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.pancard-photo-modal').classList.remove('d-none');
+      })
+
+      document.querySelector('#pancard-photo-cancel-button').addEventListener('click', function (e) {
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.pancard-photo-modal').classList.add('d-none');
+      })
+
+      document.querySelector('#aadhar-photo-preview').addEventListener('click', function (e) {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.aadhar-photo-modal').classList.remove('d-none');
+      })
+
+      document.querySelector('#aadhar-photo-cancel-button').addEventListener('click', function (e) {
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.aadhar-photo-modal').classList.add('d-none');
+      })
+
+      document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
+      })
+
+      document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
+      })
+
+      document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.pancard-photo-modal').classList.remove('d-none');
+      })
+
+      document.querySelector('#pancard-photo-cancel-button').addEventListener('click', function (e) {
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.pancard-photo-modal').classList.add('d-none');
+      })
+
+      document.querySelector('#aadhar-photo-preview').addEventListener('click', function (e) {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.aadhar-photo-modal').classList.remove('d-none');
+      })
+
+      document.querySelector('#aadhar-photo-cancel-button').addEventListener('click', function (e) {
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.aadhar-photo-modal').classList.add('d-none');
+      })
+
+      document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
+      })
+
+      document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
+      })
+
     });
 
-
-    document.querySelector('.personal-information-div-wrapper').addEventListener('mouseleave', function () {
-      document.querySelector('.personal-details-edit-box').classList.add('d-none');
-    });
-
-
-    document.querySelector('.qualification-div-wrapper').addEventListener('mouseover', function () {
-      document.querySelector('.qualification-edit-box').classList.remove('d-none');
-    });
-
-    document.querySelector('.qualification-div-wrapper').addEventListener('mouseleave', function () {
-      document.querySelector('.qualification-edit-box').classList.add('d-none');
-    });
-
-
-    // document.querySelector('.qualification-title').addEventListener('change', function () {
-    //   let qualificationTitle = document.querySelector('.qualification-title')
-    //   if (qualificationTitle.value == 3) {
-    //     document.querySelector('.qualification-status-wrapper').classList.remove('d-none');
-    //   } else {
-    //     document.querySelector('.qualification-status-wrapper').classList.add('d-none');
-    //   }
-    // });
-
-
-    document.querySelector('.work-experience-div-wrapper').addEventListener('mouseover', function () {
-      document.querySelector('.work-experience-edit-box').classList.remove('d-none');
-    });
-
-
-    document.querySelector('.work-experience-div-wrapper').addEventListener('mouseleave', function () {
-      document.querySelector('.work-experience-edit-box').classList.add('d-none')
-    })
-
-
-    document.querySelector('.skills-div-wrapper').addEventListener('mouseover', function () {
-      document.querySelector('.skills-edit-box').classList.remove('d-none');
-    });
-
-
-    document.querySelector('.skills-div-wrapper').addEventListener('mouseleave', function () {
-      document.querySelector('.skills-edit-box').classList.add('d-none');
-    });
-
-
-    document.querySelector('.award-div-wrapper').addEventListener('mouseover', function () {
-      document.querySelector('.award-edit-box').classList.remove('d-none');
-    });
-
-
-    document.querySelector('.award-div-wrapper').addEventListener('mouseleave', function () {
-      document.querySelector('.award-edit-box').classList.add('d-none');
-    });
-
-    document.querySelector('.publication-div-wrapper').addEventListener('mouseover', function () {
-      document.querySelector('.publication-edit-box').classList.remove('d-none');
-    });
-
-
-    document.querySelector('.publication-div-wrapper').addEventListener('mouseleave', function () {
-      document.querySelector('.publication-edit-box').classList.add('d-none');
-    });
-
-    document.querySelector('.research-div-wrapper').addEventListener('mouseover', function () {
-      document.querySelector('.research-edit-box').classList.remove('d-none');
-    });
-
-    document.querySelector('.research-div-wrapper').addEventListener('mouseleave', function () {
-      document.querySelector('.research-edit-box').classList.add('d-none');
-    });
-    document.querySelector('.certification-div-wrapper').addEventListener('mouseover', function () {
-      document.querySelector('.certification-edit-box').classList.remove('d-none');
-    });
-
-    document.querySelector('.certification-div-wrapper').addEventListener('mouseleave', function () {
-      document.querySelector('.certification-edit-box').classList.add('d-none');
-    });
-
-    document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
-      document.querySelector('.bank-details-edit-box').classList.remove('d-none');
-    });
-
-    document.querySelector('.bank-details-div-wrapper').addEventListener('mouseleave', function () {
-      document.querySelector('.bank-details-edit-box').classList.add('d-none');
-    });
-
-    document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.pancard-photo-modal').classList.remove('d-none');
-    })
-
-    document.querySelector('#pancard-photo-cancel-button').addEventListener('click', function (e) {
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.pancard-photo-modal').classList.add('d-none');
-    })
-
-    document.querySelector('#aadhar-photo-preview').addEventListener('click', function (e) {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.aadhar-photo-modal').classList.remove('d-none');
-    })
-
-    document.querySelector('#aadhar-photo-cancel-button').addEventListener('click', function (e) {
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.aadhar-photo-modal').classList.add('d-none');
-    })
-
-    document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
-    })
-
-    document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
-    })
-
-    document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.pancard-photo-modal').classList.remove('d-none');
-    })
-
-    document.querySelector('#pancard-photo-cancel-button').addEventListener('click', function (e) {
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.pancard-photo-modal').classList.add('d-none');
-    })
-
-    document.querySelector('#aadhar-photo-preview').addEventListener('click', function (e) {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.aadhar-photo-modal').classList.remove('d-none');
-    })
-
-    document.querySelector('#aadhar-photo-cancel-button').addEventListener('click', function (e) {
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.aadhar-photo-modal').classList.add('d-none');
-    })
-
-    document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
-    })
-
-    document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
-    })
-
-  });
-
-  //Rana Changes 
-  document.querySelector('#body').addEventListener('click', function (e) {
-      if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains('award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target.classList.contains('research-certificate-display') || e.target.classList.contains('professional-certificate-display')) {
-       document.getElementById('body').classList.add('d-none');
-       document.querySelector('.image-preview-modal').classList.remove('d-none');
-       document.querySelector(".image-uploaded").src = e.target.dataset.image;
+    //Rana Changes 
+    document.querySelector('#body').addEventListener('click', function (e) {
+      if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains(
+          'award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target
+        .classList.contains('research-certificate-display') || e.target.classList.contains(
+          'professional-certificate-display')) {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.image-preview-modal').classList.remove('d-none');
+        document.querySelector(".image-uploaded").src = e.target.dataset.image;
       }
-  });
+    });
 
-  //Rana Changes 
-  document.querySelector('.qualification-modal').addEventListener('click', function (e) {
-      if ( e.target.classList.contains('qualification_delete_btn')) 
-      {
-       console.log("delete-button has been clicked")
+    //Rana Changes 
+    document.querySelector('.qualification-modal').addEventListener('click', function (e) {
+      if (e.target.classList.contains('qualification_delete_btn')) {
+        console.log("delete-button has been clicked")
       }
-  });
+    });
 
-  //Rana Changes 
+    //Rana Changes 
     document.querySelector('#image-preview-cancel-button').addEventListener('click', function (e) {
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.image-preview-modal').classList.add('d-none');
       document.getElementById("image-uploaded").src = " ";
-  });
+    });
 
 
-let qualificationDataDB = 1
-let bankDataDB = 1;
-let bankAccountType = ""
-document.querySelector('#body').addEventListener('click',function(e){
+    let qualificationDataDB = 1
+    let bankDataDB = 1;
+    let bankAccountType = ""
+    document.querySelector('#body').addEventListener('click', function (e) {
 
-//************************************Personal Details Section Start***************************************************************
+      //************************************Personal Details Section Start***************************************************************
 
-  //Personal details Edit Btn
-  document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
+      //Personal details Edit Btn
+      document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
 
-      let editPersonalDetailsForm = new FormData()
-      
-      editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
-        .innerText)
-      editPersonalDetailsForm.append('editFirstName', document.getElementById('first-name-value')
-        .innerText)
-      editPersonalDetailsForm.append('editLastName', document.getElementById('last-name-value')
-        .innerText)
-      editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
-        .innerText)
-      editPersonalDetailsForm.append('editAadharCardNumber', document.getElementById('aadhar-card-value')
-        .innerText)
-      editPersonalDetailsForm.append('editContactNumber', document.getElementById('contact-number-value')
-        .innerText)
-      editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
-      editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
-      editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
-        'temporary-address-value').innerText)
-      editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
-      editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
-      
-      document.getElementById('first-name').value = editPersonalDetailsForm.get('editFirstName')
-      document.getElementById('last-name').value = editPersonalDetailsForm.get('editLastName')
-      document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
-      document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
-      document.getElementById('aadhar-number').value = editPersonalDetailsForm.get('editAadharCardNumber')
-      document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
-      document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
-      document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
-      document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
-        'editTemporaryAddress')
-      document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
-      
-      
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.personal-details-modal').classList.remove('d-none');
+        let editPersonalDetailsForm = new FormData()
 
-  });
+        editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
+          .innerText)
+        editPersonalDetailsForm.append('editFirstName', document.getElementById('first-name-value')
+          .innerText)
+        editPersonalDetailsForm.append('editLastName', document.getElementById('last-name-value')
+          .innerText)
+        editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
+          .innerText)
+        editPersonalDetailsForm.append('editAadharCardNumber', document.getElementById('aadhar-card-value')
+          .innerText)
+        editPersonalDetailsForm.append('editContactNumber', document.getElementById('contact-number-value')
+          .innerText)
+        editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
+        editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
+        editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
+          'temporary-address-value').innerText)
+        editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
+        editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
 
-//************************************Qualification Section Start*************************************************************** 
+        document.getElementById('first-name').value = editPersonalDetailsForm.get('editFirstName')
+        document.getElementById('last-name').value = editPersonalDetailsForm.get('editLastName')
+        document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
+        document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
+        document.getElementById('aadhar-number').value = editPersonalDetailsForm.get('editAadharCardNumber')
+        document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
+        document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
+        document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
+        document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
+          'editTemporaryAddress')
+        document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
 
-    //Qualidication Details Btn
-    document.querySelector(".qualification-edit-box").addEventListener('click', function () {
-      if (qualificationDataDB == 1) {
 
-        $.ajax({
-            url: '/get-qualification-type',
-            type: 'get',
-            success: function (response) {
-              console.log(response)
-              for (let i = 0; i < response.length; i++) {
-                qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.personal-details-modal').classList.remove('d-none');
 
-              }
-              for(qualedit of resumeinfo.resume_qualification)
-    {
-      console.log(qualedit.resume_qualification_lid)
-      let table = `
+      });
+
+      //************************************Qualification Section Start*************************************************************** 
+
+      //Qualidication Details Btn
+      document.querySelector(".qualification-edit-box").addEventListener('click', function () {
+        if (qualificationDataDB == 1) {
+
+          $.ajax({
+              url: '/get-qualification-type',
+              type: 'get',
+              success: function (response) {
+                console.log(response)
+                for (let i = 0; i < response.length; i++) {
+                  qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`
+
+                }
+                for (qualedit of resumeinfo.resume_qualification) {
+                  console.log(qualedit.resume_qualification_lid)
+                  let table = `
       <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
         <div class="container">
       <div class="row qualification-row"  data-lid = "\${qualedit.resume_qualification_lid}" >
@@ -1850,72 +1844,72 @@ document.querySelector('#body').addEventListener('click',function(e){
                </div>      
        </div>`
 
-      document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
-    }
-              //document.getElementById('bachelors-degree-title-data').insertAdjacentHTML("beforeend", qualificationType)
-            },
-            error: function (error) {
-              console.log("Error::::::::::::", error);
-            }
-          })
+                  document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
+                }
+                //document.getElementById('bachelors-degree-title-data').insertAdjacentHTML("beforeend", qualificationType)
+              },
+              error: function (error) {
+                console.log("Error::::::::::::", error);
+              }
+            })
 
-          ++qualificationDataDB;
-      }
-
-      
-
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.qualification-modal').classList.remove('d-none');
-    });
-
-    document.querySelector("#qualification-cancel-button").addEventListener('click', function () {
-      document.getElementById('body').classList.remove('d-none');
-      document.querySelector('.qualification-modal').classList.add('d-none');
-    });
+            ++qualificationDataDB;
+        }
 
 
 
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.qualification-modal').classList.remove('d-none');
+      });
 
-//************************************Work Experience Section Start***********************************************************
-
-document.querySelector(".work-experience-edit-box").addEventListener('click', function () {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.work-experience-modal').classList.remove('d-none');
-    });
-
-//************************************Skills Section Start******************************************************************
+      document.querySelector("#qualification-cancel-button").addEventListener('click', function () {
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.qualification-modal').classList.add('d-none');
+      });
 
 
-document.querySelector('.skills-edit-box').addEventListener('click', function () {
 
-let softSkillUl = document.getElementById('soft-skill-UL')
-let hardSkillUl = document.getElementById('hard-skill-UL')
-let softSkillDisplay = document.getElementById('soft-skill-display')
-let hardSkillDisplay = document.getElementById('hard-skill-display')
 
-let softSkills = document.getElementById('soft-skill-appending-div1')
-let hardSkills = document.getElementById('hard-skill-appending-div1')
+      //************************************Work Experience Section Start***********************************************************
 
-// softSkillDisplay.innerHTML = ''
-// hardSkillDisplay.innerHTML = ''
-// softSkillUl.innerHTML = ''
-// hardSkillUl.innerHTML = ''
-$.ajax({
-  url: '/get-all-skill',
-  type: 'POST',
-  success: function (response) {
+      document.querySelector(".work-experience-edit-box").addEventListener('click', function () {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.work-experience-modal').classList.remove('d-none');
+      });
 
-    for (let i = 0; i < response.length; i++) {
+      //************************************Skills Section Start******************************************************************
 
-      if (response[i].skill_type_lid === 1) {
 
-        // for (let j = 0; j < softSkills.children.length; j++) {
-        //   if (softSkills[j].firstElementChild.firstElementChild.value == response[i].id) {
-        //     console.log("Matched")
-        //   }
-        // }
-        softSkillUl.insertAdjacentHTML('beforeend',
-          `
+      document.querySelector('.skills-edit-box').addEventListener('click', function () {
+
+        let softSkillUl = document.getElementById('soft-skill-UL')
+        let hardSkillUl = document.getElementById('hard-skill-UL')
+        let softSkillDisplay = document.getElementById('soft-skill-display')
+        let hardSkillDisplay = document.getElementById('hard-skill-display')
+
+        let softSkills = document.getElementById('soft-skill-appending-div1')
+        let hardSkills = document.getElementById('hard-skill-appending-div1')
+
+        // softSkillDisplay.innerHTML = ''
+        // hardSkillDisplay.innerHTML = ''
+        // softSkillUl.innerHTML = ''
+        // hardSkillUl.innerHTML = ''
+        $.ajax({
+          url: '/get-all-skill',
+          type: 'POST',
+          success: function (response) {
+
+            for (let i = 0; i < response.length; i++) {
+
+              if (response[i].skill_type_lid === 1) {
+
+                // for (let j = 0; j < softSkills.children.length; j++) {
+                //   if (softSkills[j].firstElementChild.firstElementChild.value == response[i].id) {
+                //     console.log("Matched")
+                //   }
+                // }
+                softSkillUl.insertAdjacentHTML('beforeend',
+                  `
                  <li class="soft-skill-list">
                     <div class="row">
                       <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button">
@@ -1925,13 +1919,13 @@ $.ajax({
                     </div>
                   </li>
                 `
-        )
+                )
 
-      } else if (response[i].skill_type_lid === 2) {
+              } else if (response[i].skill_type_lid === 2) {
 
-        hardSkillUl.insertAdjacentHTML('beforeend',
+                hardSkillUl.insertAdjacentHTML('beforeend',
 
-          `<li class="hard-skill-list">
+                  `<li class="hard-skill-list">
                   <div class="row">
                     <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
                         class="fa-solid fa-circle-plus fa-2x"></i>
@@ -1939,31 +1933,30 @@ $.ajax({
                     <div class="col-md-10 col-sm-10 col-12"> <input type="hidden" value=\${response[i].id}\ ><a href="#">\${response[i].skill_name}\</a></div>
                   </div>
                 </li>`
-        )
-      } else {
-        console.log("Error")
-      }
-    }
+                )
+              } else {
+                console.log("Error")
+              }
+            }
 
-  },
-  error: function (error) {
-    console.log("Error::::::::::::", error);
-  }
-});
+          },
+          error: function (error) {
+            console.log("Error::::::::::::", error);
+          }
+        });
 
-document.getElementById('body').classList.add('d-none');
-document.querySelector('.skills-modal').classList.remove('d-none');
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.skills-modal').classList.remove('d-none');
 
-});
+      });
 
-//************************************Award Section Start******************************************************************
+      //************************************Award Section Start******************************************************************
 
-document.querySelector(".award-edit-box").addEventListener('click', function () {
+      document.querySelector(".award-edit-box").addEventListener('click', function () {
 
-      for(awardedit of resumeinfo.resume_achievement)
-      {
+        for (awardedit of resumeinfo.resume_achievement) {
 
-        let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
+          let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
         <div class="container">   
       <div id="publication-award-div" class="bg-white">
           <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1" data-awardlid = "\${awardedit.resume_achievement_lid}">
@@ -2030,19 +2023,18 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         </div>
         </div> 
        `
-      document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
-      }
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.award-modal').classList.remove('d-none');
-});
+          document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
+        }
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.award-modal').classList.remove('d-none');
+      });
 
-//************************************Publication Section Start************************************************************
+      //************************************Publication Section Start************************************************************
 
-    document.querySelector(".publication-edit-box").addEventListener('click', function () {
+      document.querySelector(".publication-edit-box").addEventListener('click', function () {
 
-      for(pubedit of resumeinfo.resume_publication)
-      {
-        let table = ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
+        for (pubedit of resumeinfo.resume_publication) {
+          let table = ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
             <div class="container">
           
           <div class="publication-row px-3 px-sm-4 px-lg-4 mt-1" data-publicationlid = "\${pubedit.resume_achievement_lid}">
@@ -2107,19 +2099,18 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
       </div>
           </div>
         `
-      document.getElementById('publication-modal-appending-div').insertAdjacentHTML("beforeend", table);
-      }
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.publication-modal').classList.remove('d-none');
-    });
+          document.getElementById('publication-modal-appending-div').insertAdjacentHTML("beforeend", table);
+        }
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.publication-modal').classList.remove('d-none');
+      });
 
-//************************************Research Section Start************************************************************
+      //************************************Research Section Start************************************************************
 
-    document.querySelector(".research-edit-box").addEventListener('click', function () {
+      document.querySelector(".research-edit-box").addEventListener('click', function () {
 
-      for(researchedit of resumeinfo.resume_research)
-      {
-        let table = ` 
+        for (researchedit of resumeinfo.resume_research) {
+          let table = ` 
       <div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
       <div  class="research-row px-3 px-sm-4 px-lg-4 mt-1 bg-white container" data-researchlid="\${researchedit.resume_achievement_lid}">
             <div class="row">
@@ -2175,66 +2166,69 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
 
 
-      document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
+          document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
 
-      }
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.research-modal').classList.remove('d-none');
-    });
+        }
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.research-modal').classList.remove('d-none');
+      });
 
-//************************************Profrctional Certificates Section Start***********************************************
+      //************************************Profrctional Certificates Section Start***********************************************
 
-    document.querySelector('.certification-edit-box').addEventListener('click', function () {
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.certification-modal').classList.remove('d-none');
-    });
+      document.querySelector('.certification-edit-box').addEventListener('click', function () {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.certification-modal').classList.remove('d-none');
+      });
 
-//************************************Bank Details Section Start***********************************************
+      //************************************Bank Details Section Start***********************************************
 
 
-    document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
-      if (bankDataDB == 1) {
-        $.ajax({
-            url: '/get-bank-account-type',
-            type: 'get',
-            success: function (response) {
-              console.log(response)
-              for (let i = 0; i < response.length; i++) {
-                console.log(bankAccountType)
-                bankAccountType += `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`
+      document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
+        if (bankDataDB == 1) {
+          $.ajax({
+              url: '/get-bank-account-type',
+              type: 'get',
+              success: function (response) {
+                console.log(response)
+                for (let i = 0; i < response.length; i++) {
+                  console.log(bankAccountType)
+                  bankAccountType +=
+                    `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`
+                }
+                document.getElementById('bank-account-type').insertAdjacentHTML("beforeend",
+                  bankAccountType)
+              },
+              error: function (error) {
+                console.log("Error::::::::::::", error);
               }
-              document.getElementById('bank-account-type').insertAdjacentHTML("beforeend", bankAccountType)
-            },
-            error: function (error) {
-              console.log("Error::::::::::::", error);
-            }
-          })
-          ++bankDataDB;
-      }
+            })
+            ++bankDataDB;
+        }
 
-      let editBankDetailsForm = new FormData()
+        let editBankDetailsForm = new FormData()
 
-      editBankDetailsForm.append('editBankName', document.getElementById('bank-name-value').innerText)
-      editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
-      editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
-      editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
-      editBankDetailsForm.append('editAccountNumber', document.getElementById('account-number-value').innerText)
-      editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value'.innerText))
+        editBankDetailsForm.append('editBankName', document.getElementById('bank-name-value').innerText)
+        editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
+        editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
+        editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
+        editBankDetailsForm.append('editAccountNumber', document.getElementById('account-number-value')
+          .innerText)
+        editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value'.innerText))
 
 
-      document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
-      document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
-      document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
-      document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
-      document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccountNumber')
-      document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
+        document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
+        document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
+        document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
+        document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
+        document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccountNumber')
+        document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
 
 
-      document.getElementById('body').classList.add('d-none');
-      document.querySelector('.bank-details-modal').classList.remove('d-none');
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.bank-details-modal').classList.remove('d-none');
+      });
+
     });
-
-});
 
 
 
@@ -2335,94 +2329,96 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         }
       }
 
+      setTimeout(function() {
+
       console.log(photoArray)
       let user_info = {}
       let user_contact = {}
 
+      user_contact.user_lid = '${user_lid}'
+      user_contact.contact_number = result.contact_number
+      user_contact.temp_contact_number = result.temp_contact_number
+      personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
+      user_info.user_lid = '${user_lid}'
+      user_info.f_name = result.f_name
+      user_info.l_name = result.l_name
+      user_info.email = result.email
+      user_info.temp_email = result.temp_email
+      user_info.gender_lid = Number.parseInt(result.gender)
+      user_info.pancard_no = result.pan_number
+      user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
+      user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
+      user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
+      user_info.aadhar_card_no = aadhar
+      user_info.date_of_birth = result.date_of_birth
+      user_info.nationality = result.nationality
+      personalDetailsData.insert_user_personal_details.user_info[0] = user_info
 
-        user_contact.user_lid = '${user_lid}'
-        user_contact.contact_number = result.contact_number
-        user_contact.temp_contact_number = result.temp_contact_number
-        personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
-        user_info.user_lid = '${user_lid}'
-        user_info.f_name = result.f_name
-        user_info.l_name = result.l_name
-        user_info.email = result.email
-        user_info.temp_email = result.temp_email
-        user_info.gender_lid = Number.parseInt(result.gender)
-        user_info.pancard_no = result.pan_number
-        user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
-        user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
-        user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
-        user_info.aadhar_card_no = aadhar
-        user_info.date_of_birth = result.date_of_birth
-        user_info.nationality = result.nationality
-        personalDetailsData.insert_user_personal_details.user_info[0] = user_info
+      let addressObject = {}
 
-        let addressObject = {}
+      addressObject.user_lid = '${user_lid}'
+      addressObject.address = result.permanent_address
+      addressObject.city = result.permanent_address_city
+      addressObject.pin_code = result.permanent_address_pincode
 
-        addressObject.user_lid ='${user_lid}'
-        addressObject.address = result.permanent_address
-        addressObject.city = result.permanent_address_city
-        addressObject.pin_code = result.permanent_address_pincode
+      addressObject.address_type_lid = 1
+      let addressObject2 = {}
+      addressObject2.user_lid = '${user_lid}'
+      addressObject2.address = result.temporary_address
+      addressObject2.address_type_lid = 2
 
-        addressObject.address_type_lid = 1
-        let addressObject2 = {}
-        addressObject2.user_lid = '${user_lid}'
-        addressObject2.address = result.temporary_address
-        addressObject2.address_type_lid = 2
-
-        arrayresult[0] = addressObject
-        arrayresult[1] = addressObject2
+      arrayresult[0] = addressObject
+      arrayresult[1] = addressObject2
 
 
-        console.log(JSON.stringify(personalDetailsData))
-        let genderValue = ""
-        if (Number.parseInt(result.gender) == 1) {
-          genderValue = "Male"
-        } else if (result.gender == 2) {
-          genderValue = "Female"
-        } else {
-          genderValue = "Other"
-        }
-        console.log(genderValue)
-        let options = {
+      console.log(JSON.stringify(personalDetailsData))
+      let genderValue = ""
+      if (Number.parseInt(result.gender) == 1) {
+        genderValue = "Male"
+      } else if (result.gender == 2) {
+        genderValue = "Female"
+      } else {
+        genderValue = "Other"
+      }
+      console.log(genderValue)
+      let options = {
 
-          method: 'POST',
-          headers: {
+        method: 'POST',
+        headers: {
 
-            'Content-Type': 'application/json;charset=utf-8'
+          'Content-Type': 'application/json;charset=utf-8'
 
-          },
-          body: JSON.stringify(personalDetailsData)
+        },
+        body: JSON.stringify(personalDetailsData)
 
-        }
-        let fetchRes = fetch('/insert-personal-details', options);
+      }
+      let fetchRes = fetch('/insert-personal-details', options);
 
-        fetchRes.then(success => {
+      fetchRes.then(success => {
 
-          // if (success.status == 200) {
-          console.log(success)
-          console.log(result.date_of_birth)
-          console.log(result.temp_contact_number)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.personal-details-modal').classList.add('d-none')
-          document.getElementById('date-of-birth-value').innerText = changeDateFormat(result.date_of_birth);
-          document.getElementById('pancard-value').innerText = result.pan_number
-          document.getElementById('aadhar-card-value').innerText = result.aadhar_number
-          document.getElementById('contact-number-value').innerText = result.contact_number
-          document.getElementById('temp-contact-value').innerText = result.temp_contact_number
-          document.getElementById('email-value').innerText = result.email
-          document.getElementById('temp-email-value').innerText = result.temp_email
-          document.getElementById('address-value').innerText = result.permanent_address + "," + result
-            .permanent_address_city + "-" + result.permanent_address_pincode
-          document.getElementById('temporary-address').innerText = result.temporary_address
-          document.getElementById('country-value').innerText = result.nationality
-          document.getElementById('gender-value').innerText = genderValue
-          document.getElementById('first-name-value').innerText = result.f_name
-          document.getElementById('last-name-value').innerText = result.l_name
-        })
-  
+        // if (success.status == 200) {
+        console.log(success)
+        console.log(result.date_of_birth)
+        console.log(result.temp_contact_number)
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.personal-details-modal').classList.add('d-none')
+        document.getElementById('date-of-birth-value').innerText = changeDateFormat(result.date_of_birth);
+        document.getElementById('pancard-value').innerText = result.pan_number
+        document.getElementById('aadhar-card-value').innerText = result.aadhar_number
+        document.getElementById('contact-number-value').innerText = result.contact_number
+        document.getElementById('temp-contact-value').innerText = result.temp_contact_number
+        document.getElementById('email-value').innerText = result.email
+        document.getElementById('temp-email-value').innerText = result.temp_email
+        document.getElementById('address-value').innerText = result.permanent_address + "," + result
+          .permanent_address_city + "-" + result.permanent_address_pincode
+        document.getElementById('temporary-address').innerText = result.temporary_address
+        document.getElementById('country-value').innerText = result.nationality
+        document.getElementById('gender-value').innerText = genderValue
+        document.getElementById('first-name-value').innerText = result.f_name
+        document.getElementById('last-name-value').innerText = result.l_name
+      })
+    },1000)
+
     });
 
     document.querySelector('#personal-details-cancel-button').addEventListener('click', function (e) {
@@ -2434,7 +2430,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
     //*************************************teaching-experience-modal JS****************************************
 
 
-  
+
     document.querySelector("#work-experience-cancel-button").addEventListener('click', function () {
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.work-experience-modal').classList.add('d-none')
@@ -2464,7 +2460,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         qualificationRow[i].querySelector('.qualification-year').classList.remove('input-border');
         qualificationRow[i].querySelector('.qualification-certificate').classList.remove('input-border');
 
-        let resume_qualification_lid =   qualificationRow[i].dataset.lid
+        let resume_qualification_lid = qualificationRow[i].dataset.lid
         let qualificationTitle = qualificationRow[i].querySelector('.qualification-title').value;
         let qualificationSubject = qualificationRow[i].querySelector('.qualification-subject').value;
         let qualificationUniversity = qualificationRow[i].querySelector('.qualification-university').value;
@@ -2487,7 +2483,8 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         console.log(checkPercentile)
         // console.log(checkSubject)
 
-        let qualificationCertificateSRC = qualificationRow[i].querySelector('.qualification-certificate-preview').src
+        let qualificationCertificateSRC = qualificationRow[i].querySelector('.qualification-certificate-preview')
+          .src
         //  to add the red border according to validations
         if (checkSubject == false) {
           qualificationRow[i].querySelector('.qualification-subject').classList.add('input-border');
@@ -2542,23 +2539,24 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
             let qualificationPhotoBase64 = evt.target.result;
             photoArray[i] = qualificationPhotoBase64
           }
+        }
 
 
         setTimeout(function () {
 
-               object = {
-          resume_lid: 1,
-          resume_qualification_lid: resume_qualification_lid,
-          qualification_type_lid: qualification_type,
-          topic_of_study: qualificationSubject,
-          university: qualificationUniversity,
-          institute: qualificationCollege,
-          status: qualificationvalue,
-          percentile: Number.parseFloat(qualificationPercentile),
-          year_of_passing: qualificationYear,
-          url_path: photoArray[i]
+          object = {
+            resume_lid: 1,
+            resume_qualification_lid: resume_qualification_lid,
+            qualification_type_lid: qualification_type,
+            topic_of_study: qualificationSubject,
+            university: qualificationUniversity,
+            institute: qualificationCollege,
+            status: qualificationvalue,
+            percentile: Number.parseFloat(qualificationPercentile),
+            year_of_passing: qualificationYear,
+            url_path: photoArray[i]
 
-        }
+          }
 
 
 
@@ -2605,7 +2603,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                 </div>
                   `
 
-       
+
 
           qualificationTableArray.push(object)
         }, 1000)
@@ -2896,7 +2894,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         vjstableelement[i].querySelector('.awardOrganizationType').classList.remove('input-border');
 
         let resume_achievement_lid1 = vjstableelement[i].dataset.awardlid;
-        console.log('resume_achievement_lid1',resume_achievement_lid1);
+        console.log('resume_achievement_lid1', resume_achievement_lid1);
         let title = vjstableelement[i].querySelector('.awardName').value;
         let organization_name = vjstableelement[i].querySelector('.awardOrganization').value;
         let organization_type_lid = vjstableelement[i].querySelector('.awardOrganizationType').value;
@@ -2946,33 +2944,33 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         }
 
 
- setTimeout(function () {
-        obj = {
-          resume_lid: "1",
-          achievement_type_lid:"2" ,
-          title: title,
-          resume_achievement_lid: resume_achievement_lid1,
-          organization_name: organization_name,
-          organization_type_lid: organization_type_lid,
-          achievement_date: achievement_date,
-          description: description,
-          url_path: photoArray[i]
-        }
+        setTimeout(function () {
+          obj = {
+            resume_lid: "1",
+            achievement_type_lid: "2",
+            title: title,
+            resume_achievement_lid: resume_achievement_lid1,
+            organization_name: organization_name,
+            organization_type_lid: organization_type_lid,
+            achievement_date: achievement_date,
+            description: description,
+            url_path: photoArray[i]
+          }
 
 
-        let organizationType = organization_type_lid
-        console.log(organizationType)
-        if (organizationType == 1) {
-          organizationType1 = "School"
-        } else if (organizationType == 2) {
-          organizationType1 = "University"
-        } else {
-          organizationType1 = "Industry"
-        }
+          let organizationType = organization_type_lid
+          console.log(organizationType)
+          if (organizationType == 1) {
+            organizationType1 = "School"
+          } else if (organizationType == 2) {
+            organizationType1 = "University"
+          } else {
+            organizationType1 = "Industry"
+          }
 
 
-        let recievedAwardDate = changeDateFormat(achievement_date)
-        div += `
+          let recievedAwardDate = changeDateFormat(achievement_date)
+          div += `
         <div id="award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                     <div class="row">
 
@@ -3012,8 +3010,8 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                   </div>
                     `
 
-        resume_achievement.push(obj);
-                },1000)
+          resume_achievement.push(obj);
+        }, 1000)
       }
 
       object = {
@@ -3021,32 +3019,32 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
       }
 
       //Fetch Method
- setTimeout(function () {
+      setTimeout(function () {
 
-      function postdata() {
-        url = "/award_Table_Data";
-        params = {
-          method: "POST",
-          headers: {
-            contentType: 'application/json'
-          },
-          body: JSON.stringify(object),
-        }
-        fetch(url, params).then((data) => {
-
-          if (data.status == 200) {
-            document.getElementById('award-preview-div').firstElementChild.remove()
-            document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.award-modal').classList.add('d-none');
-          } else {
-            console.log("Error");
-            alert('Check Award Entries');
+        function postdata() {
+          url = "/award_Table_Data";
+          params = {
+            method: "POST",
+            headers: {
+              contentType: 'application/json'
+            },
+            body: JSON.stringify(object),
           }
-        })
-      }
-      postdata()
-          },1000)
+          fetch(url, params).then((data) => {
+
+            if (data.status == 200) {
+              document.getElementById('award-preview-div').firstElementChild.remove()
+              document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
+              document.getElementById('body').classList.remove('d-none');
+              document.querySelector('.award-modal').classList.add('d-none');
+            } else {
+              console.log("Error");
+              alert('Check Award Entries');
+            }
+          })
+        }
+        postdata()
+      }, 1000)
     });
 
 
@@ -3080,11 +3078,11 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
         let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
         let resume_publication_lid = publicationRow[i].dataset.publicationlid;
-        console.log("PUBLICATION LID>>>>>>>>" , resume_publication_lid)
+        console.log("PUBLICATION LID>>>>>>>>", resume_publication_lid)
         let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
         let publicationCertificate1 = publicationRow[i].querySelector('.publication-certification').value;
         let publicationCertificateSRC = publicationRow[i].querySelector('.publication-certificate-preview').src;
-  
+
         let checkPublicationPublisher = tabledatacheck(publicationPublisher);
         let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
         let checkPublicationYearOfPublication = tabledatacheck(publicationYearOfPublication);
@@ -3111,34 +3109,34 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
         let photoArray = []
 
-let publicationCertificateInput = publicationRow[i].querySelector('.publication-certification').files[0]
-if (publicationCertificateInput) {
-  let filereader = new FileReader();
-  filereader.readAsDataURL(publicationCertificateInput);
-  filereader.onload = function (evt) {
-    let publicationPhotoBase64 = evt.target.result;
-    photoArray[i] = publicationPhotoBase64
-  }
-}
-
-setTimeout(function () {
-
-    
-        object = {
-          resume_lid: "1",
-          achievement_type_lid: "1",
-          resume_achievement_lid: resume_publication_lid,
-          publication_role: publicationRole,
-          no_of_authors: publicationNumberOfAuthors,
-          title: publicationBookTitle,
-          publisher: publicationPublisher,
-          year_of_publication: publicationYearOfPublication,
-          publication_url_path: photoArray[i]
+        let publicationCertificateInput = publicationRow[i].querySelector('.publication-certification').files[0]
+        if (publicationCertificateInput) {
+          let filereader = new FileReader();
+          filereader.readAsDataURL(publicationCertificateInput);
+          filereader.onload = function (evt) {
+            let publicationPhotoBase64 = evt.target.result;
+            photoArray[i] = publicationPhotoBase64
+          }
         }
-        publicationTableArray.push(object)
+
+        setTimeout(function () {
 
 
-        div += `   
+          object = {
+            resume_lid: "1",
+            achievement_type_lid: "1",
+            resume_achievement_lid: resume_publication_lid,
+            publication_role: publicationRole,
+            no_of_authors: publicationNumberOfAuthors,
+            title: publicationBookTitle,
+            publisher: publicationPublisher,
+            year_of_publication: publicationYearOfPublication,
+            publication_url_path: photoArray[i]
+          }
+          publicationTableArray.push(object)
+
+
+          div += `   
   <div class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
                  <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -3174,34 +3172,34 @@ setTimeout(function () {
                   </div>
                 </div>
                   `
-              },1000)
+        }, 1000)
       }
 
       let publicationTableData = {
         "insert_publication": publicationTableArray
       }
-setTimeout(function(){
+      setTimeout(function () {
 
-      let options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(publicationTableData)
-      }
-      let fetchRes = fetch("/insert-publication-details", options);
-      fetchRes.then(success => {
-        if (success.status == 200) {
-          document.getElementById('publication-appending-div').firstElementChild.remove()
-          document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.publication-modal').classList.add('d-none');
-        } else {
-          alert('Check');
+        let options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(publicationTableData)
         }
-      })
-    },1000)
-  })
+        let fetchRes = fetch("/insert-publication-details", options);
+        fetchRes.then(success => {
+          if (success.status == 200) {
+            document.getElementById('publication-appending-div').firstElementChild.remove()
+            document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.publication-modal').classList.add('d-none');
+          } else {
+            alert('Check');
+          }
+        })
+      }, 1000)
+    })
 
     document.getElementById('publication-add-button').addEventListener('click', function () {
 
@@ -3325,12 +3323,9 @@ setTimeout(function(){
         let description = researchTableElem[j].querySelector('.research_description').value;
         let category = researchTableElem[j].querySelector('.research_category').value;
 
-        // let research_photo = researchTableElem[j].querySelector('.research_photo').value;
-        let researchCertificateSRC = researchTableElem[j].querySelector('.research-certificate-preview').src;
-        console.log(researchCertificateSRC)
 
         let research__lid = researchTableElem[j].dataset.researchlid
-        console.log("RESEARCH>>>>>>>>",research__lid)
+        console.log("RESEARCH>>>>>>>>", research__lid)
         let researchCertificateSRC = researchTableElem[j].querySelector('.research-certificate-preview').src;
 
 
@@ -3363,33 +3358,33 @@ setTimeout(function(){
 
 
         let photoArray = []
-       let researchCertificateInput = researchTableElem[j].querySelector('.research_photo').files[0]
-       if (researchCertificateInput) {
-         let filereader = new FileReader();
-         filereader.readAsDataURL(researchCertificateInput);
-         filereader.onload = function (evt) {
-           let researchPhotoBase64 = evt.target.result;
-           photoArray[j] = researchPhotoBase64
-         }
-       }
-       console.log(photoArray[j])
-
-       setTimeout(function(){
-
-
-        obj = {
-          resume_lid: "1",
-          achievement_type_lid: "3",
-          resume_achievement_lid: research__lid,
-          title: Journal_name,
-          volume_year: volume_year,
-          description: description,
-          category: category,
-          research_url_path: photoArray[j] //"c/fakepath://gghs" 
+        let researchCertificateInput = researchTableElem[j].querySelector('.research_photo').files[0]
+        if (researchCertificateInput) {
+          let filereader = new FileReader();
+          filereader.readAsDataURL(researchCertificateInput);
+          filereader.onload = function (evt) {
+            let researchPhotoBase64 = evt.target.result;
+            photoArray[j] = researchPhotoBase64
+          }
         }
+        console.log(photoArray[j])
 
-        console.log(JSON.stringify(obj))
-        div += `<div  class=" px-3 px-sm-4 px-lg-4 mt-1 ">
+        setTimeout(function () {
+
+
+          obj = {
+            resume_lid: "1",
+            achievement_type_lid: "3",
+            resume_achievement_lid: research__lid,
+            title: Journal_name,
+            volume_year: volume_year,
+            description: description,
+            category: category,
+            research_url_path: photoArray[j] //"c/fakepath://gghs" 
+          }
+
+          console.log(JSON.stringify(obj))
+          div += `<div  class=" px-3 px-sm-4 px-lg-4 mt-1 ">
                   <div class="row">
 
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -3424,39 +3419,39 @@ setTimeout(function(){
                   </div>
                 </div>                  
         `
-        resumeResearchTable.push(obj);
-      },1000)
+          resumeResearchTable.push(obj);
+        }, 1000)
       }
 
       object = {
         "insert_research": resumeResearchTable
       }
       console.log('resrearch : ', JSON.stringify(object));
-setTimeout(function(){
+      setTimeout(function () {
 
-      let options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(object),
-      }
-      let fetchRes = fetch("/research-table-data", options);
-      fetchRes.then(success => {
-        if (success.status == 200) {
-          document.getElementById('research-appending-div').firstElementChild.remove()
-          document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.research-modal').classList.add('d-none');
-        } else {
-          alert('Check');
+        let options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(object),
         }
-      })
-    },1000)
+        let fetchRes = fetch("/research-table-data", options);
+        fetchRes.then(success => {
+          if (success.status == 200) {
+            document.getElementById('research-appending-div').firstElementChild.remove()
+            document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.research-modal').classList.add('d-none');
+          } else {
+            alert('Check');
+          }
+        })
+      }, 1000)
 
 
 
-    
+
 
     });
 
@@ -3464,7 +3459,7 @@ setTimeout(function(){
     document.getElementById('research-add-button').addEventListener('click', function () {
 
       console.log("Research add button clicked");
- 
+
 
       let table = ` 
       <div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
@@ -3614,19 +3609,19 @@ setTimeout(function(){
             photoArray[i] = professionalPhotoBase64
           }
         }
-setTimeout(function(){
+        setTimeout(function () {
 
-        object = {
-          resume_lid: 1,
-          resume_qualification_lid: 26,
-          qualification_type_lid: 4,
-          topic_of_study: professionalCertificateName,
-          institute: professionalInstitution,
-          year_of_passing: professionalYOP,
-          url_path: photoArray[i],
-        }
+          object = {
+            resume_lid: 1,
+            resume_qualification_lid: 26,
+            qualification_type_lid: 4,
+            topic_of_study: professionalCertificateName,
+            institute: professionalInstitution,
+            year_of_passing: professionalYOP,
+            url_path: photoArray[i],
+          }
 
-        div += `
+          div += `
                   <div class="text-block right" id="preview-qualification-div">
                     <div class="card-body preview-certification-div">
 
@@ -3685,35 +3680,35 @@ setTimeout(function(){
 
                  `
 
-        certificationTableArray.push(object)
-},1000)
+          certificationTableArray.push(object)
+        }, 1000)
       }
       let certificationTableData = {
         "qualificationDetails": certificationTableArray
       }
       console.log(JSON.stringify(certificationTableData))
-setTimeout(function(){
+      setTimeout(function () {
 
-      let options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(certificationTableData)
-      }
-      let fetchRes = fetch('/insert-certification-details', options);
-      fetchRes.then(success => {
-        if (success.status == 200) {
-          document.getElementById('certification-appending-div').firstElementChild.remove()
-          document.getElementById('certification-appending-div').insertAdjacentHTML('beforeend', div)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.certification-modal').classList.add('d-none');
-        } else {
-          alert('Check Professional certificate details');
+        let options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(certificationTableData)
         }
-      })
-    },1000)
-  })
+        let fetchRes = fetch('/insert-certification-details', options);
+        fetchRes.then(success => {
+          if (success.status == 200) {
+            document.getElementById('certification-appending-div').firstElementChild.remove()
+            document.getElementById('certification-appending-div').insertAdjacentHTML('beforeend', div)
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.certification-modal').classList.add('d-none');
+          } else {
+            alert('Check Professional certificate details');
+          }
+        })
+      }, 1000)
+    })
 
     document.querySelector('#certification-add-button').addEventListener('click', function () {
       console.log("entered inside certification add button")
