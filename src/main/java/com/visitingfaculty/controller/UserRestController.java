@@ -43,10 +43,9 @@ public class UserRestController {
     @PostMapping(value = "/insert-personal-details")
     public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) {
 
-        Boolean check = true;
         String json = jsonchk.UserJsonCheck(personalDetailsData);
         System.out.println(json);
-        if (check == true) {
+        if (json != null) {
             Object insertPersonalDetails = userDaoInterface.insertPersonalDetails(json);
             if (insertPersonalDetails == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

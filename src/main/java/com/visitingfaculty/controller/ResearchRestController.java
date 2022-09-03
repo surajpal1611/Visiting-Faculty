@@ -22,13 +22,15 @@ public class ResearchRestController {
     @PostMapping(value = "/research-table-data")
     public ResponseEntity<String> postResearchMethod(@RequestBody String object)
     {
-        System.out.println("Research Data"+object);
-        Boolean check = jsoncheck.researchJsonCheck(object);
-        if(check == true)
+        String check = jsoncheck.researchJsonCheck(object);
+        System.out.println("Research Data"+ check);
+        if(check != null)
         {
             System.out.println("Success");
-            // Object insertData = userDaoInterface.insertResearch(object);
-            Object insertData = userDaoInterface.updateResearch(object);
+
+            Object insertData = userDaoInterface.insertResearch(check);
+            // Object insertData = userDaoInterface.updateResearch(object);
+
             System.out.println(insertData);
             return new ResponseEntity<String>("Ressearch data inserted",HttpStatus.OK);
         }

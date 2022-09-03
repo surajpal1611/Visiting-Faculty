@@ -48,11 +48,13 @@
                 </div>
               </div>
 
+
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="last-name">last Name <span class="required">*</span></label>
                   <span id="last-name-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
+
                 </div>
               </div>
 
@@ -199,6 +201,7 @@
                 <span id="pan-number-message" style="color: red;" class="error"></span>
                 <input type="text" name="pan_number" class="form-control" id="pan-number" />
               </div>
+
               <div class="col-md-4 col-sm-12">
                 <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
                 <span id="pan-photo-message" style="color: red;" class="error"></span>
@@ -208,6 +211,7 @@
               <div class="col-md-4 col-sm-12">
                 <img id="pan-photo-preview" alt="your image" width="100" height="100"
                   style="border: 1px solid #ced4da; margin-left:100px;" />
+
               </div>
             </div>
           </div>
@@ -219,6 +223,7 @@
                 <span id="aadhar-number-message" style="color: red;" class="error"></span>
                 <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
               </div>
+
               <div class="col-md-4 col-sm-12">
                 <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
                 <span id="aadhar-photo-message" style="color: red;" class="error"></span>
@@ -228,6 +233,7 @@
               <div class="col-md-4 col-sm-12">
                 <img id="aadhar-photo-preview-1" alt="your image" width="100" height="100"
                   style="border: 1px solid #ced4da; margin-left:100px;" />
+
               </div>
             </div>
           </div>
@@ -369,10 +375,12 @@
                           <label class="form-check-label" for="experienceTimespan">
                             Past </label>
                         </div>
+
                         <div class="form-check form-check-inline">
                           <input class="form-check-input" type="radio" name="experienceTimespan1"
                             id="experienceTimespanCurrent">
                           <label class="form-check-label" for="experienceTimespanCurrent"> Current </label>
+
                         </div>
 
                       </div>
@@ -428,6 +436,7 @@
                         <div class="row">
                           <div class="col-md-2 col-sm-2 col-2 "><i
                               class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+
                           </div>
                           <div class="col-md-10 col-sm-10 col-10 "><a class="ms-3 text-dark"
                               id="custom-soft-skill-value" href="#"></a></div>
@@ -1304,8 +1313,8 @@ let resumeinfo;
           </div>
         </div>
 
-
         <hr />
+
 
         <!------------------------------------------- Research Section  ----------------------------------------->
 
@@ -2212,12 +2221,14 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
       editBankDetailsForm.append('editAccountNumber', document.getElementById('account-number-value').innerText)
       editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value'.innerText))
 
+
       document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
       document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
       document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
       document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
       document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccountNumber')
       document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
+
 
       document.getElementById('body').classList.add('d-none');
       document.querySelector('.bank-details-modal').classList.remove('d-none');
@@ -2340,19 +2351,21 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         user_info.temp_email = result.temp_email
         user_info.gender_lid = Number.parseInt(result.gender)
         user_info.pancard_no = result.pan_number
-        user_info.pancard_url_path = "C://Fakepath://pancardphoto" //photoArray[2]
-        user_info.aadhar_card_url_path = "C://Fakepath://aadharphoto" //photoArray[1]
-        user_info.profile_url_path = "C://Fakepath://profilephoto" //photoArray[0]
+        user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
+        user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
+        user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
         user_info.aadhar_card_no = aadhar
         user_info.date_of_birth = result.date_of_birth
         user_info.nationality = result.nationality
         personalDetailsData.insert_user_personal_details.user_info[0] = user_info
 
         let addressObject = {}
-        addressObject.user_lid = ''
-        addressObject.address = result.permanent_address + "," + result.permanent_address_city + "," + result
-          .permanent_address_pincode
-          .permanent_address_pincode
+
+        addressObject.user_lid ='${user_lid}'
+        addressObject.address = result.permanent_address
+        addressObject.city = result.permanent_address_city
+        addressObject.pin_code = result.permanent_address_pincode
+
         addressObject.address_type_lid = 1
         let addressObject2 = {}
         addressObject2.user_lid = '${user_lid}'
@@ -2497,6 +2510,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         }
 
 
+
         let qualificationTitle1 = ""
         let qualification_type = 0;
         if (qualificationTitle == "bachelor") {
@@ -2517,7 +2531,22 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
           qualificationvalue = true
         }
 
-        object = {
+
+        let photoArray = []
+
+        let qualificationCertificateInput = qualificationRow[i].querySelector('.qualification-certificate').files[0]
+        if (qualificationCertificateInput) {
+          let filereader = new FileReader();
+          filereader.readAsDataURL(qualificationCertificateInput);
+          filereader.onload = function (evt) {
+            let qualificationPhotoBase64 = evt.target.result;
+            photoArray[i] = qualificationPhotoBase64
+          }
+
+
+        setTimeout(function () {
+
+               object = {
           resume_lid: 1,
           resume_qualification_lid: resume_qualification_lid,
           qualification_type_lid: qualification_type,
@@ -2527,10 +2556,13 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
           status: qualificationvalue,
           percentile: Number.parseFloat(qualificationPercentile),
           year_of_passing: qualificationYear,
-          url_path: qualificationCertificate
+          url_path: photoArray[i]
+
         }
 
-        div += ` 
+
+
+          div += ` 
           <div class="text-block right qualification-update" >
                   <div class="card-body">
                     <h2 id="year-of-passing">\${qualificationYear}\</h2>
@@ -2575,31 +2607,36 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
        
 
-        qualificationTableArray.push(object)
+          qualificationTableArray.push(object)
+        }, 1000)
       }
-      let qualificationTableData = {
-        "qualificationDetails": qualificationTableArray
-      }
-      console.log(JSON.stringify(qualificationTableData))
+      setTimeout(function () {
 
-      let options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(qualificationTableData)
-      }
-      let fetchRes = fetch('/insert-qualification-details', options);
-      fetchRes.then(success => {
-        if (success.status == 200) {
-          document.getElementById('qualification-appending-div').firstElementChild.remove()
-          document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.qualification-modal').classList.add('d-none');
-        } else {
-          alert('Check Qualification details');
+        let qualificationTableData = {
+          "qualificationDetails": qualificationTableArray
         }
-      })
+        console.log(JSON.stringify(qualificationTableData))
+
+        let options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(qualificationTableData)
+        }
+        let fetchRes = fetch('/insert-qualification-details', options);
+        fetchRes.then(success => {
+          if (success.status == 200) {
+            document.getElementById('qualification-appending-div').firstElementChild.remove()
+            document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.qualification-modal').classList.add('d-none');
+          } else {
+            alert('Check Qualification details');
+          }
+        })
+      }, 1000)
+
 
     })
 
@@ -2751,18 +2788,6 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
 
     document.getElementById('award-add-button').addEventListener('click', function () {
       console.log("Award Add Button clicked");
-      // let awardnameaddbtn = document.querySelector('.awardName').value.length;
-      // let awardOrganizationaddbtn = document.querySelector('.awardOrganization').value.length;
-      // let awardOrganizationTypeaddbtn = document.querySelector('.awardOrganizationType').value.length;
-      // let awardPlaceaddbtn = document.querySelector('.awardPlace').value.length;
-      // let awardRecieveDateaddbtn = document.querySelector('.awardRecieveDate').value.length;
-      // let awardCertificationImageaddbtn = document.querySelector('.awardCertificationImage').value.length;
-
-      // if (awardnameaddbtn == 0 || awardOrganizationaddbtn == 0 || awardOrganizationTypeaddbtn == 0 ||
-      //   awardPlaceaddbtn == 0 || awardRecieveDateaddbtn == 0 || awardCertificationImageaddbtn == 0) {
-      //   alert('Fill the data before');
-      //   return;
-      // }
 
 
       let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
@@ -2908,6 +2933,20 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
           return;
         }
 
+        let photoArray = []
+
+        let awardCertificateInput = vjstableelement[i].querySelector('.awardCertificationImage').files[0]
+        if (awardCertificateInput) {
+          let filereader = new FileReader();
+          filereader.readAsDataURL(awardCertificateInput);
+          filereader.onload = function (evt) {
+            let awardPhotoBase64 = evt.target.result;
+            photoArray[i] = awardPhotoBase64
+          }
+        }
+
+
+ setTimeout(function () {
         obj = {
           resume_lid: "1",
           achievement_type_lid:"2" ,
@@ -2917,7 +2956,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
           organization_type_lid: organization_type_lid,
           achievement_date: achievement_date,
           description: description,
-          url_path: url_path
+          url_path: photoArray[i]
         }
 
 
@@ -2974,6 +3013,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                     `
 
         resume_achievement.push(obj);
+                },1000)
       }
 
       object = {
@@ -2981,6 +3021,8 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
       }
 
       //Fetch Method
+ setTimeout(function () {
+
       function postdata() {
         url = "/award_Table_Data";
         params = {
@@ -3004,6 +3046,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         })
       }
       postdata()
+          },1000)
     });
 
 
@@ -3066,29 +3109,21 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
           return;
         }
 
-        // insertAchievementObject.role = publicationRole
-        // insertAchievementObject.no_of_authors = publicationNumberOfAuthors
-        // insertAchievementObject.book_title = publicationBookTitle
-        // insertAchievementObject.publisher = publicationPublisher
-        // insertAchievementObject.year_of_publication = publicationYearOfPublication
-        // insertAchievementObject.publication_url_path = publicationCertificate
+        let photoArray = []
 
-        // let publicationCertificate = publicationRow[i].querySelector('.certification').value;
+let publicationCertificateInput = publicationRow[i].querySelector('.publication-certification').files[0]
+if (publicationCertificateInput) {
+  let filereader = new FileReader();
+  filereader.readAsDataURL(publicationCertificateInput);
+  filereader.onload = function (evt) {
+    let publicationPhotoBase64 = evt.target.result;
+    photoArray[i] = publicationPhotoBase64
+  }
+}
 
+setTimeout(function () {
 
-
-
-        // let publicationCertificate = document.querySelectorAll('.publication-certification')
-
-        // if (publicationCertificate[i].files[0]) {
-        //   let filereader = new FileReader();
-        //   filereader.readAsDataURL(publicationCertificate[i].files[0]);
-        //   filereader.onload = function (evt) {
-        //     publicationBase64 += evt.target.result;
-        //   }
-        // }
-        // console.log(publicationBase64)
-
+    
         object = {
           resume_lid: "1",
           achievement_type_lid: "1",
@@ -3098,7 +3133,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
           title: publicationBookTitle,
           publisher: publicationPublisher,
           year_of_publication: publicationYearOfPublication,
-          publication_url_path: publicationBase64
+          publication_url_path: photoArray[i]
         }
         publicationTableArray.push(object)
 
@@ -3139,12 +3174,13 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                   </div>
                 </div>
                   `
-
+              },1000)
       }
 
       let publicationTableData = {
         "insert_publication": publicationTableArray
       }
+setTimeout(function(){
 
       let options = {
         method: 'POST',
@@ -3164,7 +3200,8 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
           alert('Check');
         }
       })
-    });
+    },1000)
+  })
 
     document.getElementById('publication-add-button').addEventListener('click', function () {
 
@@ -3287,9 +3324,15 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         let volume_year = researchTableElem[j].querySelector('.research_volume_year').value;
         let description = researchTableElem[j].querySelector('.research_description').value;
         let category = researchTableElem[j].querySelector('.research_category').value;
+
+        // let research_photo = researchTableElem[j].querySelector('.research_photo').value;
+        let researchCertificateSRC = researchTableElem[j].querySelector('.research-certificate-preview').src;
+        console.log(researchCertificateSRC)
+
         let research__lid = researchTableElem[j].dataset.researchlid
         console.log("RESEARCH>>>>>>>>",research__lid)
         let researchCertificateSRC = researchTableElem[j].querySelector('.research-certificate-preview').src;
+
 
         let check_journal_name = tabledatacheck(Journal_name);
         let check_volume_year = yearcheck(volume_year);
@@ -3317,25 +3360,22 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
           return;
         }
 
-        let researchCertificate = document.querySelectorAll('.research_photo')
 
-        // let filereader = new FileReader();
-        // filereader.readAsDataURL(researchCertificate[j].files[0]);
-        // filereader.onload = function loadDataFunc(evt) {
-        //   let researchBase64 = evt.target.result;
-        //   newBase64 += researchBase64
-        // }
 
-        // let panphotobase64 = ''
-        // let panPhoto = document.getElementById("aadhar-photo").files[0]
-        // if (panPhoto) {
-        //   let filereader = new FileReader();
-        //   filereader.readAsDataURL(panPhoto);
-        //   filereader.onload = function (evt) {
-        //     panphotobase64 = evt.target.result;
-        //     console.log(panphotobase64)
-        //   }
-        // }
+        let photoArray = []
+       let researchCertificateInput = researchTableElem[j].querySelector('.research_photo').files[0]
+       if (researchCertificateInput) {
+         let filereader = new FileReader();
+         filereader.readAsDataURL(researchCertificateInput);
+         filereader.onload = function (evt) {
+           let researchPhotoBase64 = evt.target.result;
+           photoArray[j] = researchPhotoBase64
+         }
+       }
+       console.log(photoArray[j])
+
+       setTimeout(function(){
+
 
         obj = {
           resume_lid: "1",
@@ -3345,9 +3385,10 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
           volume_year: volume_year,
           description: description,
           category: category,
-          research_url_path: "fake-path"
+          research_url_path: photoArray[j] //"c/fakepath://gghs" 
         }
 
+        console.log(JSON.stringify(obj))
         div += `<div  class=" px-3 px-sm-4 px-lg-4 mt-1 ">
                   <div class="row">
 
@@ -3384,12 +3425,14 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                 </div>                  
         `
         resumeResearchTable.push(obj);
+      },1000)
       }
 
       object = {
         "insert_research": resumeResearchTable
       }
       console.log('resrearch : ', JSON.stringify(object));
+setTimeout(function(){
 
       let options = {
         method: 'POST',
@@ -3401,60 +3444,27 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
       let fetchRes = fetch("/research-table-data", options);
       fetchRes.then(success => {
         if (success.status == 200) {
+          document.getElementById('research-appending-div').firstElementChild.remove()
+          document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.research-modal').classList.add('d-none');
         } else {
           alert('Check');
         }
       })
+    },1000)
 
 
-      // function postdata() {
-      //   url = "/research_Table_Data";
-      //   params = {
-      //     method: "post",
-      //     headers: {
-      //       contentType: 'application/json'
-      //     },
-      //     body: JSON.stringify(object),
-      //   }
-      //   fetch(url, params).then((data) => {
-      //     if (data.status == 200) {
-      //       console.log("OK")
-      //       document.getElementById('body').classList.remove('d-none');
-      //       document.querySelector('.research-modal').classList.add('d-none');
-      //     } else {
-      //       console.log("Error");
-      //       alert('Check Research Details');
-      //     }
-      //   })
-      // }
-      // postdata()
-      document.getElementById('research-appending-div').firstElementChild.remove()
-      document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
+
+    
 
     });
-    // let awardData = {}
-    // let publicationData = {}
-    // let researchData = {}
 
-    // achievement = {
-    //   "insert_Award": awardData,
-    //   "insert_publication": publicationData,
-    //   "insert_research": researchData
-    // }
-
-    // console.log(JSON.stringify(achievement))
 
     document.getElementById('research-add-button').addEventListener('click', function () {
 
       console.log("Research add button clicked");
-      // let Journal_name_btn = document.querySelector('.research_Journal_name').value.length;
-
-      // if (Journal_name_btn == 0) {
-      //   alert('Plz Fill The Below Data');
-      //   return;
-      // }
+ 
 
       let table = ` 
       <div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
@@ -3562,6 +3572,10 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         let professionalYOP = certificationRow[i].querySelector('.certification-YOP').value;
         let professionalCertification = certificationRow[i].querySelector('.certificate-photo').value;
 
+        let professionalCertificationCertificateSRC = certificationRow[i].querySelector(
+          '.certificate-photo-preview').src;
+
+
         let checkCertificateName = namecheck(professionalCertificateName);
         let checkInstitution = namecheck(professionalInstitution);
         let checkYOP = yearcheck(professionalYOP);
@@ -3589,6 +3603,19 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
           return;
         }
 
+        let photoArray = []
+
+        let professionalCertificateInput = certificationRow[i].querySelector('.certificate-photo').files[0]
+        if (professionalCertificateInput) {
+          let filereader = new FileReader();
+          filereader.readAsDataURL(professionalCertificateInput);
+          filereader.onload = function (evt) {
+            let professionalPhotoBase64 = evt.target.result;
+            photoArray[i] = professionalPhotoBase64
+          }
+        }
+setTimeout(function(){
+
         object = {
           resume_lid: 1,
           resume_qualification_lid: 26,
@@ -3596,7 +3623,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
           topic_of_study: professionalCertificateName,
           institute: professionalInstitution,
           year_of_passing: professionalYOP,
-          url_path: professionalCertification,
+          url_path: photoArray[i],
         }
 
         div += `
@@ -3659,11 +3686,13 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                  `
 
         certificationTableArray.push(object)
+},1000)
       }
       let certificationTableData = {
         "qualificationDetails": certificationTableArray
       }
       console.log(JSON.stringify(certificationTableData))
+setTimeout(function(){
 
       let options = {
         method: 'POST',
@@ -3672,7 +3701,7 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         },
         body: JSON.stringify(certificationTableData)
       }
-      let fetchRes = fetch('/insert-qualification-details', options);
+      let fetchRes = fetch('/insert-certification-details', options);
       fetchRes.then(success => {
         if (success.status == 200) {
           document.getElementById('certification-appending-div').firstElementChild.remove()
@@ -3683,7 +3712,8 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
           alert('Check Professional certificate details');
         }
       })
-    });
+    },1000)
+  })
 
     document.querySelector('#certification-add-button').addEventListener('click', function () {
       console.log("entered inside certification add button")
@@ -3722,8 +3752,10 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
                             <p class="h6">Certificate: <span class="required">*</span></p>
                           </div>
                           <div class="col-md-10 "><input class="form-control certificate-photo"
-                             onchange="document.getElementById('certificate-photo-preview').src = window.URL.createObjectURL(this.files[0])" type="file">
-                              <p hidden><img id="certificate-photo-preview" type="hidden" alt="your image" width="100"
+
+                             onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])" type="file">
+                              <p hidden><img class="certificate-photo-preview" type="hidden" alt="your image" width="100"
+
                              height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
                          </div>
                     </div>
@@ -3817,48 +3849,65 @@ document.querySelector(".award-edit-box").addEventListener('click', function () 
         document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
       }
 
-      let bankDetailsJson = {
-        "insert_bank_data": []
-      }
-      let bank_detail = {};
-      bank_detail.user_lid = 2,
-        bank_detail.bank_name = document.querySelector('#bank-name').value;
-      bank_detail.branch_name = document.querySelector('#bank-branch').value;
-      bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code').value;
-      bank_detail.micr_code = document.querySelector('#bank-micr-code').value;
-      bank_detail.account_number = document.querySelector('#bank-account-number').value;
-      bank_detail.bank_account_type_lid = document.querySelector('#bank-account-type').value;
-      bank_detail.url_path = "C://fakepath://bankphoto";
-      bankDetailsJson.insert_bank_data[0] = bank_detail
-      console.log(JSON.stringify(bankDetailsJson))
+      let photoArray = []
 
-      function postdata() {
-        url = "/insert-bank-details";
-        params = {
-          method: 'post',
-          headers: {
-            'content-Type': 'application/json'
-          },
-          body: JSON.stringify(bankDetailsJson),
+      let bankPhoto = document.getElementById("cancelled_cheque_Photo").files[0]
+      if (bankPhoto) {
+        let filereader = new FileReader();
+        filereader.readAsDataURL(bankPhoto);
+        filereader.onload = function (evt) {
+          let bankPhotoBase64 = evt.target.result;
+          photoArray[0] = bankPhotoBase64
         }
-        fetch(url, params).then((data) => {
-          if (data.status == 200) {
-            console.log(data);
-
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.bank-details-modal').classList.add('d-none');
-            document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
-            document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get('branchName')
-            document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
-            document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-            document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
-              'accountNumber')
-            document.getElementById('account-type-value').innerText = submitBankDetailsForm.get('accountType')
-
-          }
-        })
       }
-      postdata()
+
+      setTimeout(function () {
+
+        let bankDetailsJson = {
+          "insert_bank_data": []
+        }
+        let bank_detail = {};
+        bank_detail.user_lid = 2,
+          bank_detail.bank_name = document.querySelector('#bank-name').value;
+        bank_detail.branch_name = document.querySelector('#bank-branch').value;
+        bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code').value;
+        bank_detail.micr_code = document.querySelector('#bank-micr-code').value;
+        bank_detail.account_number = document.querySelector('#bank-account-number').value;
+        bank_detail.bank_account_type_lid = document.querySelector('#bank-account-type').value;
+        bank_detail.url_path = photoArray[0];
+        bankDetailsJson.insert_bank_data[0] = bank_detail
+        console.log(JSON.stringify(bankDetailsJson))
+
+        function postdata() {
+          url = "/insert-bank-details";
+          params = {
+            method: 'post',
+            headers: {
+              'content-Type': 'application/json'
+            },
+            body: JSON.stringify(bankDetailsJson),
+          }
+          fetch(url, params).then((data) => {
+            if (data.status == 200) {
+              console.log(data);
+
+              document.getElementById('body').classList.remove('d-none');
+              document.querySelector('.bank-details-modal').classList.add('d-none');
+              document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
+              document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get(
+                'branchName')
+              document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
+              document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
+              document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
+                'accountNumber')
+              document.getElementById('account-type-value').innerText = submitBankDetailsForm.get(
+                'accountType')
+
+            }
+          })
+        }
+        postdata()
+      }, 1000)
 
     });
 
