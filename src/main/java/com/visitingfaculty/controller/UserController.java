@@ -45,4 +45,14 @@ public class UserController {
         return "resume-search";
     }
 
+    @GetMapping("/resume-dashboard")
+    public String getResumeDashboard(){
+        return "resume-dashboard";
+    }
+
+    @GetMapping("/create-new-resume")
+    public String getNewResumePage() {
+        return "new-resume";
+    }
+
 }

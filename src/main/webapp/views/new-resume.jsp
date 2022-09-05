@@ -57,15 +57,14 @@
                   <div class="row">
                     <div class="col-md-4 col-sm-12 col-lg-3">
                       <div class="avatar bg-white shadow-sm p-1">
-                        <img src="/download (3).jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
-                          height="200" />
+                        <img src="" alt="Passport Size photo" id="profile-photo-value" width="200" height="200" />
                       </div>
                     </div>
 
                     <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
                       <div class="d-flex" style="color: #740E00;">
-                        <h3><b id="first-name-value">Sameer</b></h3> &nbsp &nbsp
-                        <h3><b id="last-name-value">Shaikh</b></h3>
+                        <h3><b id="first-name-value"></b></h3> &nbsp &nbsp
+                        <h3><b id="last-name-value"></b></h3>
                       </div>
                     </div>
                   </div>
@@ -74,29 +73,29 @@
                 <div id="personal-details-div" class="pt-lg-4 pt-md-5 px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
                     <div id="personaldetails-left-side"
-                      class="col-12 col-md-6 col-lg-6 col-sm-12 ps-4 pt-lg-5 pt-md-2 text-center">
-                      <div class="row py-1">
+                      class="col-12 col-md-6 col-lg-6 col-sm-12 ps-lg-4 pt-lg-5 pt-md-2">
+                      <div class="row py-1 my-1">
                         <div class="col-md-5 col-sm-3">
                           <h6>Gender :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="gender-value">Male</p>
+                          <p id="gender-value"></p>
                         </div>
                       </div>
-                      <div class="row py-1">
+                      <div class="row py-1 my-1">
                         <div class="col-md-5 col-sm-3">
                           <h6>Date of birth :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="date-of-birth-value">2000-07-06</p>
+                          <p id="date-of-birth-value"></p>
                         </div>
                       </div>
-                      <div class="row py-1">
+                      <div class="row py-1 my-1">
                         <div class="col-md-5 col-sm-3">
                           <h6>Pancard :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="pancard-value">AAAAA1111A</p>
+                          <p id="pancard-value"></p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -104,35 +103,37 @@
                           <h6>Pancard Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="pancard-photo"><i id="pancard-photo-preview" class="fa-solid fa-ban text-danger"></i></p>
+                          <p id="pancard-photo"><i id="pancard-photo-preview" class="fa-solid fa-ban text-danger"></i>
+                          </p>
                         </div>
                       </div>
-                      <div class="row py-1">
+                      <div class="row pb-1 mb-1">
                         <div class="col-md-5 col-sm-3">
                           <h6>Aadhar card :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-value">111122223333</p>
+                          <p id="aadhar-card-value"></p>
                         </div>
                       </div>
-                      <div class="row py-1">
+                      <div class="row py-1 my-1">
                         <div class="col-md-5 col-sm-3">
                           <h6>Aadhar card Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" class="fa-solid fa-ban text-danger"></i></p>
+                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview"
+                              class="fa-solid fa-ban text-danger"></i></p>
                         </div>
                       </div>
 
                     </div>
 
-                    <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
+                    <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 ">
                       <div class="row py-1">
                         <div class="col-md-5 col-sm-3">
                           <h6>Contact No.</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="contact-number-value">9876543210</p>
+                          <p id="contact-number-value"></p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -140,7 +141,7 @@
                           <h6>Secondary Contact No.</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temp-contact-value">N.A</p>
+                          <p id="temp-contact-value"></p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -148,7 +149,7 @@
                           <h6>Email :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="email-value">example@gmail.com</p>
+                          <p id="email-value"></p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -156,7 +157,7 @@
                           <h6>Secondary Email :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temp-email-value">N.A</p>
+                          <p id="temp-email-value"></p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -164,7 +165,7 @@
                           <h6>Permanent Address :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="address-value">101-Ashok kamothe</p>
+                          <p id="address-value"></p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -172,7 +173,7 @@
                           <h6 class="temporary-address-heading">Temporary Address :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temporary-address-value">703-Satyam panvel
+                          <p id="temporary-address-value">
                           </p>
                         </div>
                       </div>
@@ -181,7 +182,7 @@
                           <h6 class="country-heading">Country :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="country-value">India</p>
+                          <p id="country-value"></p>
                         </div>
                       </div>
                     </div>
@@ -208,44 +209,59 @@
               <div id="qualification-appending-div">
                 <div class="text-block right" id="preview-qualification-div">
                   <div class="card-body preview-qualification-div">
-                    <h2 id="year-of-passing">2015</h2>
+                    <h2 id="year-of-passing">&nbsp &nbsp</h2>
 
                     <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                       <div class="row">
 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Title :</p>
-                              <p class="h5 py-1">Major Subject :</p>
-                              <p class="h5 py-1">University :</p>
-
+                        <div class="col-md-6 col-sm-12">
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h6 pb-1 font-weight-bold">Title :</p>
                             </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">Bachelors Degree</p>
-                              <p id="">Discrete Maths</p>
-                              <p id="">Mumbai</p>
+                            <div class="col-md-6 col-sm-6"></div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h6 py-1">Major Subject :</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6"></div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h6 py-1">University :</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6"></div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12">
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h6 pb-1">College :</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6"></div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h6 py-1">percentage :</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6"></div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h6 py-1">Certificate :</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                              <p id=""><i id="" class="fa-solid fa-ban text-danger"></i></p>
                             </div>
                           </div>
                         </div>
 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">College :</p>
-                              <p class="h5 py-1">percentage :</p>
-                              <p class="h5 py-1">Certificate :</p>
-                            </div>
-                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                              <p class="" id="">St. Wilfred's College</p>
-                              <p id="" class="">82.61%</p>
-                              <p id=""><i id="qualification-certificate-display"
-                                  class="fa-solid fa-ban text-danger qualification-certificate-display"></i></p>
-                              <!-- <p id=""><i id="" class="fa-solid fa-ban text-danger"></i></p> -->
-
-                            </div>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -271,12 +287,63 @@
               <div id="workExperience-appending-div">
                 <div class="text-block right">
                   <div class="card-body">
-                    <h2>2017</h2>
+                    <h2>&nbsp</h2>
 
                     <div id="work-experience-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                       <div class="row">
 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12">
+
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h5 pb-1">Title :</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6"></div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h5 py-1">Major Subject :</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6"></div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h5 py-1">University :</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6"></div>
+                          </div>
+
+                        </div>
+
+                        <div class="col-md-6 col-sm-12">
+
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h5 pb-1">College :</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6"></div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h5 py-1">percentage :</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6"></div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h5 py-1">Certificate :</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                              <p id=""><i id="" class="fa-solid fa-ban text-danger"></i></p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                               <p class="h5 pb-1">University :</p>
@@ -302,10 +369,10 @@
                               <p class="" id="">Senior Maths faculty</p>
                               <p id="" class="">2000-07-06</p>
                               <p id="" class="">2007-07-06</p>
-                              <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
+                               <p id=""><i class="fa-solid fa-ban text-danger"></i></p> 
                             </div>
                           </div>
-                        </div>
+                        </div> -->
 
                       </div>
                     </div>
@@ -327,7 +394,7 @@
             <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
               <div class="d-flex justify-content-center align-items-center">
                 <h3 class="mb-4 h3" style="color: #740E00;">
-                  <img src="/icons/skills.png" alt="" height="40px"><b> Skills</b>
+                  <img src="/icons/skill-2.png" alt="" height="40px"><b> Skills</b>
                 </h3>
               </div>
               <div class="container bootstrap snippets bootdeys">
@@ -375,36 +442,55 @@
               <div id="award-preview-div">
 
 
-                <div id="Award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                <div id="Award-display-div" style="white-space: nowrap;" class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
 
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Award Name :</p>
-                          <p class="h5 py-1">organization :</p>
-                          <p class="h5 py-1">Organization Type :</p>
 
+                    <div class="col-md-6 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h6 pb-1">Award Name :</p>
                         </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p id="">Engagement Award</p>
-                          <p id="">Campus Compact </p>
-                          <p id="">University</p>
+                        <div class="col-md-6 col-sm-6"></div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h6 py-1">organization :</p>
                         </div>
+                        <div class="col-md-6 col-sm-6"></div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h6 py-1">Organization Type :</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6"></div>
                       </div>
                     </div>
 
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Place :</p>
-                          <p class="h5 pb-1">Recieved date :</p>
-                          <p class="h5 py-1">Certificate :</p>
+                    <div class="col-md-6 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h6 pb-1">Place :</p>
                         </div>
-                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                          <p class="" id="">Mumbai</p>
-                          <p class="" id="">2018-07-07</p>
-                          <p ><i id="award-certificate-display" class="fa-solid fa-ban text-danger award-certificate-display"></i></p>
+                        <div class="col-md-6 col-sm-6"></div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h6 pb-1">Recieved date :</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6"></div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h6 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                          <p><i id="award-certificate-display"
+                              class="fa-solid fa-ban text-danger award-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
@@ -433,7 +519,57 @@
                 <div class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
 
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+
+                    <div class="col-md-6 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h6 pb-1">Role :</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6"></div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h6 py-1">No. of Authors :</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6"></div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h6 py-1">Book Title :</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6"></div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h5 pb-1">Publisher :</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6"></div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h5 pb-1">Publication Year:</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6"></div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                          <p><i id="publication-certificate-display"
+                            class="fa-solid fa-ban text-danger publication-certificate-display"></i></p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                           <p class="h5 pb-1">Role :</p>
@@ -459,10 +595,11 @@
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">Nationpress</p>
                           <p class="" id="">2016</p>
-                          <p><i id="publication-certificate-display" class="fa-solid fa-ban text-danger publication-certificate-display"></i></p>
+                          <p><i id="publication-certificate-display"
+                              class="fa-solid fa-ban text-danger publication-certificate-display"></i></p>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
 
                   </div>
                 </div>
@@ -492,6 +629,49 @@
                 <div class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
                   <div class="row">
 
+                    <div class="col-md-6 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h6 py-1">Title :</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6"></div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h6 py-1">Volume year :</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6"></div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h6 pb-1">Description :</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6"></div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h6 pb-1">Category :</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6"></div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <p class="h6 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                          <p><i id="research-certificate-display"
+                            class="fa-solid fa-ban text-danger research-certificate-display"></i></p>
+                        </div>
+                      </div>
+                    </div>
+
+<!--                     
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
@@ -517,10 +697,11 @@
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">example</p>
                           <p class="" id="">example</p>
-                          <p><i id="research-certificate-display" class="fa-solid fa-ban text-danger research-certificate-display" ></i></p>
+                          <p><i id="research-certificate-display"
+                              class="fa-solid fa-ban text-danger research-certificate-display"></i></p>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
 
                   </div>
                 </div>
@@ -550,7 +731,42 @@
                     <div class=" px-3 px-sm-4 px-lg-4 mt-1">
                       <div class="row">
 
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12">
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h6 pb-1">Certification name:</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6"></div>
+                          </div>
+    
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h6 pb-1">Institution :</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6"></div>
+                          </div>
+                        </div>
+    
+                        <div class="col-md-6 col-sm-12">
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h6 pb-1">Recieved Year:</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6"></div>
+                          </div>
+    
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <p class="h6 py-1">Certificate :</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                              <p><i id="professional-certificate-display"
+                                class="fa-solid fa-ban text-danger professional-certificate-display"></i></p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                               <p class="h5 pb-1">Certification name:</p>
@@ -590,10 +806,11 @@
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id=""><i class=""></i></p>
-                              <p><i id="professional-certificate-display" class="fa-solid fa-ban text-danger professional-certificate-display"></i></p>
+                              <p><i id="professional-certificate-display"
+                                  class="fa-solid fa-ban text-danger professional-certificate-display"></i></p>
                             </div>
                           </div>
-                        </div>
+                        </div> -->
 
                       </div>
                     </div>
@@ -621,8 +838,79 @@
                 <h3 class="p-md-3 pb-sm-3" style="color: #740E00;"><b><i class="fa-solid fa-building-columns"></i>
                     Bank Details </b></h3>
               </div>
+
               <div class="row">
-                <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
+
+                <div class="col-md-6 col-sm-12">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <p class="h6 pb-1">Name of Bank</p>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <p id="bank-name-value"></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <p class="h6 py-1">Branch</p>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <p id="branch-name-value" class="pt-2"></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <p class="h6 py-1">IFSC Code</p>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <p id="ifsc-code-value" class="pt-2"></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <p class="h6 pb-1">MICR Code</p>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <p id="micr-code-value"></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <p class="h6 pb-1">Account Number</p>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <p id="account-number-value" class="pt-2"></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <p class="h6 pb-1">Account Type</p>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <p id="account-type-value" class="pt-2"></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <p class="h6 py-1">Cancelled Cheque Photo</p>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <p id="cancelled-check-photo">
+                        <i id="cancelled-cheque-photo-preview" class="fa-solid fa-ban text-danger"></i>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div id="left-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
                   <div class="row pt-lg-3">
                     <div class="col-6 col-md-6 col-lg-6 col-sm-6 ps-lg-4 ps-md-0 ps-0 ps-sm-0">
                       <h6 class="pb-4">Name of Bank</h6>
@@ -654,7 +942,8 @@
                       </p>
                     </div>
                   </div>
-                </div>
+                </div> -->
+
               </div>
             </div>
           </div>
@@ -1387,8 +1676,8 @@
 
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="/download (3).jpg" alt="image-uploaded" id="image-uploaded"
-                class="image-uploaded" style="width:450px;height:300px;">
+              <img src="/download (3).jpg" alt="image-uploaded" id="image-uploaded" class="image-uploaded"
+                style="width:450px;height:300px;">
             </div>
           </div>
 
@@ -1541,10 +1830,13 @@
     })
 
     document.querySelector('#body').addEventListener('click', function (e) {
-      if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains('award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target.classList.contains('research-certificate-display') || e.target.classList.contains('professional-certificate-display')) {
-       document.getElementById('body').classList.add('d-none');
-       document.querySelector('.image-preview-modal').classList.remove('d-none');
-       document.querySelector(".image-uploaded").src = e.target.dataset.image;
+      if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains(
+          'award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target
+        .classList.contains('research-certificate-display') || e.target.classList.contains(
+          'professional-certificate-display')) {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.image-preview-modal').classList.remove('d-none');
+        document.querySelector(".image-uploaded").src = e.target.dataset.image;
       }
     })
 
@@ -1665,9 +1957,9 @@
         user_info.temp_email = result.temp_email
         user_info.gender_lid = Number.parseInt(result.gender)
         user_info.pancard_no = result.pan_number
-        user_info.pancard_url_path = "C://Fakepath://pancardphoto" //photoArray[2]
-        user_info.aadhar_card_url_path = "C://Fakepath://aadharphoto" //photoArray[1]
-        user_info.profile_url_path = "C://Fakepath://profilephoto" //photoArray[0]
+        user_info.pancard_url_path =  photoArray[2]
+        user_info.aadhar_card_url_path = photoArray[1]
+        user_info.profile_url_path = photoArray[0]
         user_info.aadhar_card_no = aadhar
         user_info.date_of_birth = result.date_of_birth
         user_info.nationality = result.nationality
@@ -1675,8 +1967,8 @@
 
         let addressObject = {}
         addressObject.user_lid = 3
-        addressObject.address = result.permanent_address 
-        addressObject.city =  result.permanent_address_city 
+        addressObject.address = result.permanent_address
+        addressObject.city = result.permanent_address_city
         addressObject.pin_code = result.permanent_address_pincode
         addressObject.address_type_lid = 1
 
@@ -1716,8 +2008,6 @@
 
           // if (success.status == 200) {
           console.log(success)
-          console.log(result.date_of_birth)
-          console.log(result.temp_contact_number)
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.personal-details-modal').classList.add('d-none')
           document.getElementById('date-of-birth-value').innerText = changeDateFormat(result.date_of_birth);
@@ -1997,7 +2287,7 @@
       }
       let fetchRes = fetch('/insert-qualification-details', options);
       fetchRes.then(success => {
-        console.log('Status:',success);
+        console.log('Status:', success);
         if (success.status == 200) {
           document.getElementById('qualification-appending-div').firstElementChild.remove()
           document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
@@ -2153,7 +2443,7 @@
 
     document.getElementById('award-add-button').addEventListener('click', function () {
       console.log("Award Add Button clicked");
-    
+
 
       let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
         <div class="container">   
@@ -2756,7 +3046,7 @@
         }
 
         let researchCertificate = document.querySelectorAll('.research_photo')
-    
+
         obj = {
           resume_lid: "1",
           achievement_type_lid: "3",
@@ -2983,7 +3273,8 @@
         let professionalInstitution = certificationRow[i].querySelector('.certification-institution').value;
         let professionalYOP = certificationRow[i].querySelector('.certification-YOP').value;
         let professionalCertification = certificationRow[i].querySelector('.certificate-photo').value;
-        let professionalCertificationCertificateSRC = certificationRow[i].querySelector('.certificate-photo-preview').src;
+        let professionalCertificationCertificateSRC = certificationRow[i].querySelector(
+          '.certificate-photo-preview').src;
 
         let checkCertificateName = namecheck(professionalCertificateName);
         let checkInstitution = namecheck(professionalInstitution);

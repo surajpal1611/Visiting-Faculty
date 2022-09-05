@@ -61,4 +61,6 @@ public interface UserDaoInterface {
     Object getFacultyApplication(String user_id);
 
     Object getFacultyResumeByName(String user_id);
+
+    int insertResume(String user_id);
 }

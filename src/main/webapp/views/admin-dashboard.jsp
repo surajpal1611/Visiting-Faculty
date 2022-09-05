@@ -1,18 +1,25 @@
 <div class="row">
     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-4">
+        <a href="/resume-dashboard"
+            class="card_school_vf text-center  d-flex flex-column justify-content-center align-items-center">
+            <img src="/icons/application.png" alt="">
+            <p>Resume</p>
+        </a>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-4">
         <a href="/visiting-faculty-applications"
             class="card_school_vf text-center  d-flex flex-column justify-content-center align-items-center">
             <img src="/icons/search.png" alt="">
             <p>Search</p>
         </a>
     </div>
-    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-4">
+    <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-4">
         <a href=""
             class="card_school_vf text-center  d-flex flex-column justify-content-center align-items-center">
             <img src="/icons/application.png" alt="">
             <p>VISITING FACULTY APPLICATIONS </p>
         </a>
-    </div>
+    </div> -->
     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-4">
         <a href=""
             class="card_school_vf text-center d-flex flex-column justify-content-center align-items-center ">

@@ -165,6 +165,12 @@ public class UserRestController {
         return data;
     }
 
+    @PostMapping("/create-resume")
+    public Object createResume() {
+
+        return null;
+    }
+
     // @PostMapping("/verify-password")
     // public boolean passwordVerificationTest(@RequestBody String password) {
 

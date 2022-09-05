@@ -1377,3 +1377,17 @@ width: 12.5%;
     padding: 10px;
 
 }
+
+
+.resumeCard {
+    border-radius: 20px;
+    text-decoration: none;
+    color: #000;
+  }
+  .resumeCard:hover {
+    transform: scale(1.1);
+    background-color: #ad0000;
+    color: white;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+  }

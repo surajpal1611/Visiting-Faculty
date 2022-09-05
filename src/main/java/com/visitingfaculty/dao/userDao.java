@@ -223,4 +223,12 @@ public class userDao implements UserDaoInterface {
         return jdbcCall.executeFunction(Object.class, user_id);
     }
 
+    @Override
+    public int insertResume(String user_id) {
+        
+        String sql = "insert into resume values(?,?,?)";
+
+        return 0;
+    }
+
 }
