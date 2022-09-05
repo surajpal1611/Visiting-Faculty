@@ -1736,7 +1736,6 @@
           'editTemporaryAddress')
         document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
 
-
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.personal-details-modal').classList.remove('d-none');
 
@@ -1758,91 +1757,91 @@
 
                 }
                 for (qualedit of resumeinfo.resume_qualification) {
-                  console.log(qualedit.resume_qualification_lid)
+
                   let table = `
-      <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
-        <div class="container">
-      <div class="row qualification-row"  data-lid = "\${qualedit.resume_qualification_lid}" >
-       <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-         <div class="row p-3">
-           <div class="col-md-2 ">
-             <p class="h6">Title <span class="required">*</span></p>
-           </div>
-           <div class="col-md-10">
-            <select class="form-control qualification-title">
-              \${qualificationType}\
-             </select>
-             </div>
-         </div>
-         <div class="row p-3">
-           <div class="col-md-2 ">
-             <p class="h6">Subject <span class="required">*</span></p>
-           </div>
-           <div class="col-md-10 "><input value="\${qualedit.topic_of_study}" class="form-control qualification-subject"
-               id="bachelors-degree-major-subject" type="text"></div>
-         </div>
-         <div class="row p-3">
-           <div class="col-md-2 ">
-             <p class="h6">University<span class="required">*</span></p>
-           </div>
-           <div class="col-md-10 "><input value="\${qualedit.university}" class="form-control qualification-university"
-               id="bachelors-degree-university" type="text"></div>
-         </div>
-         <div class="row p-3">
-           <div class="col-md-2 ">
-             <p class="h6">Year of Passing <span class="required">*</span></p>
-           </div>
-           <div class="col-md-10 "><input value="\${qualedit.year_of_passing}" class="form-control qualification-year"
-               id="bachelors-degree-year-of-passing" type="text"></div>
-         </div>
-       
-       </div>
-       
-       <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-       
-         <div class="row p-3 qualification-phd-wrapper d-none">
-           <div class="col-md-2 ">
-             <p class="h6">Status<span class="required">*</span></p>
-           </div>
-           <div class="col-md-10"><select class="form-control qualification-status"
-               id="qualification-status-data">
-               <option value="true">Awarded</option>
-               <option value="false">Persuing</option>
-             </select></div>
-         </div>
-         <div class="row p-3">
-           <div class="col-md-2">
-             <p class="h6">College <span class="required">*</span></p>
-           </div>
-           <div class="col-md-10 "><input value="\${qualedit.institute}" class="form-control qualification-college"
-               id="bachelors-degree-college" type="text"></div>
-         </div>
-         <div class="row p-3">
-           <div class="col-md-2">
-             <p class="h6">Percentage<span class="required">*</span></p>
-           </div>
-           <div class="col-md-10"><input value="\${qualedit.percentile}" class="form-control qualification-percentile"
-               id="bachelors-degree-percentile" type="text"></div>
-         </div>
-         <div class="row p-3">
-           <div class="col-md-2 ">
-             <p class="h6">Certificate<span class="required">*</span></p>
-           </div>
-           <div class="col-md-10"><input value="\${qualedit.url_path}" class="form-control qualification-certificate"
-               onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])"
-               type="file">
-             <p hidden><img class="qualification-certificate-preview" type="hidden" alt="your image" width="100"
-                 height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
-           </div>
-           </div>
-           </div>
-           </div>
-           <hr style="height: 5px;">
-           </div>
-           <div id="delete_btn_qualification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_qualification_symbol">
-                  <i class="fa-solid fa-trash text-danger fa-2x"></i>
-               </div>      
-       </div>`
+                    <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
+                      <div class="container">
+                    <div class="row qualification-row"  data-lid = "\${qualedit.resume_qualification_lid}" >
+                    <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                      <div class="row p-3">
+                        <div class="col-md-2 ">
+                          <p class="h6">Title <span class="required">*</span></p>
+                        </div>
+                        <div class="col-md-10">
+                          <select class="form-control qualification-title" value="\${qualedit.abbr}">
+                            \${qualificationType}\
+                          </select>
+                          </div>
+                      </div>
+                      <div class="row p-3">
+                        <div class="col-md-2 ">
+                          <p class="h6">Subject <span class="required">*</span></p>
+                        </div>
+                        <div class="col-md-10 "><input value="\${qualedit.topic_of_study}" class="form-control qualification-subject"
+                            id="bachelors-degree-major-subject" type="text"></div>
+                      </div>
+                      <div class="row p-3">
+                        <div class="col-md-2 ">
+                          <p class="h6">University<span class="required">*</span></p>
+                        </div>
+                        <div class="col-md-10 "><input value="\${qualedit.university}" class="form-control qualification-university"
+                            id="bachelors-degree-university" type="text"></div>
+                      </div>
+                      <div class="row p-3">
+                        <div class="col-md-2 ">
+                          <p class="h6">Year of Passing <span class="required">*</span></p>
+                        </div>
+                        <div class="col-md-10 "><input value="\${qualedit.year_of_passing}" class="form-control qualification-year"
+                            id="bachelors-degree-year-of-passing" type="text"></div>
+                      </div>
+                    
+                    </div>
+                    
+                    <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                    
+                      <div class="row p-3 qualification-phd-wrapper d-none">
+                        <div class="col-md-2 ">
+                          <p class="h6">Status<span class="required">*</span></p>
+                        </div>
+                        <div class="col-md-10"><select class="form-control qualification-status"
+                            id="qualification-status-data">
+                            <option value="true">Awarded</option>
+                            <option value="false">Persuing</option>
+                          </select></div>
+                      </div>
+                      <div class="row p-3">
+                        <div class="col-md-2">
+                          <p class="h6">College <span class="required">*</span></p>
+                        </div>
+                        <div class="col-md-10 "><input value="\${qualedit.institute}" class="form-control qualification-college"
+                            id="bachelors-degree-college" type="text"></div>
+                      </div>
+                      <div class="row p-3">
+                        <div class="col-md-2">
+                          <p class="h6">Percentage<span class="required">*</span></p>
+                        </div>
+                        <div class="col-md-10"><input value="\${qualedit.percentile}" class="form-control qualification-percentile"
+                            id="bachelors-degree-percentile" type="text"></div>
+                      </div>
+                      <div class="row p-3">
+                        <div class="col-md-2 ">
+                          <p class="h6">Certificate<span class="required">*</span></p>
+                        </div>
+                        <div class="col-md-10"><input value="\${qualedit.url_path}" class="form-control qualification-certificate"
+                            onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])"
+                            type="file">
+                          <p hidden><img class="qualification-certificate-preview" type="hidden" alt="your image" width="100"
+                              height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        <hr style="height: 5px;">
+                        </div>
+                        <div id="delete_btn_qualification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_qualification_symbol">
+                                <i class="fa-solid fa-trash text-danger fa-2x"></i>
+                            </div>      
+                    </div>`
 
                   document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
                 }
