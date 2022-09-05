@@ -1158,13 +1158,14 @@
                 <h3><b> <i class="fa-solid fa-graduation-cap"></i>Qualification</b></h3>
               </div>
 
-              <div id="qualification-appending-div">`
+              <div id="qualification-list">`
 
         if(data.resume_qualification != null)
         {
         for (let qual of data.resume_qualification) {
 
-          resume += ` <div class="text-block right" id="preview-qualification-div">
+          resume += `<div class="qualification-item d-flex position-relative"> 
+          <div class="text-block right container" >
                   <div class="card-body preview-qualification-div">
                     <h2 id="year-of-passing">2015</h2>
 
@@ -1197,20 +1198,23 @@
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">\${qual.institute}</p>
                               <p id="" class="">\${qual.institute}</p>
-                              <!--Rana Changes--!>
                               <p id=""><i id="qualification-certificate-display"
                                   class="fa-solid fa-ban text-danger qualification-certificate-display"></i></p>
 
                             </div>
                           </div>
-                        </div>
-
-                      </div>
+                          
+                          </div>
+                          </div>
+                         
                     </div>
 
                   </div>
                 </div>
-            
+                  <div class="d-none qualification-edit-box d-flex justify-content-center align-items-center" data-edit-lid = "\${qual.resume_qualification_lid}">
+                           <i class="fa-solid fa-pen fa-2x text-white "></i>
+                          </div>
+                        </div>
               `
         }}
         else
@@ -1227,9 +1231,9 @@
           </div>
 
           </div>
-          <div class="d-none qualification-edit-box d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-pen fa-2x text-white "></i>
-          </div>
+         
+
+
         </div>
         <hr />
 
@@ -1414,7 +1418,7 @@
 
         <!-------------------------------------------------- Award Section----------------------------------------------->
 
-        <div class="award-div-wrapper d-flex position-relative" style="cursor: pointer;">
+        <div class="award-list d-flex position-relative" style="cursor: pointer;">
           <div class="container">
             <div id="award-div" class="px-3 px-sm-4 px-lg-4">
               <div class="d-flex justify-content-center align-items-center">
@@ -1424,7 +1428,8 @@
         if(data.resume_achievement != null)
         {
         for (let award of data.resume_achievement) {
-          resume += `                <div id="Award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+          resume += `  <div class="award-item d-flex position-relative">             
+            <div id="Award-display-div" class="px-3 px-sm-4 px-lg-4 mt-1 container">
                   <div class="row">
 
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -1459,13 +1464,17 @@
                     </div>
 
                   </div>
-                </div>
+                  </div>
+                  <div class="d-none award-edit-box d-flex justify-content-center align-items-center">
+                  <i class="fa-solid fa-pen fa-2x text-white "></i>
+                    </div>
+                    </div>
                 <hr>
               `
         }}
         else
         {
-          resume += `                <div id="Award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+          resume += `    <div id="Award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
 
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -1508,15 +1517,13 @@
         resume += `</div>
           </div>
           </div>
-          <div class="d-none award-edit-box d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-pen fa-2x text-white "></i>
-          </div>
+         
         </div>
         <hr />
 
         <!------------------------------------------- Publication Section  ----------------------------------------->
 
-        <div class="publication-div-wrapper d-flex position-relative" style="cursor: pointer;">
+        <div class="publication-list d-flex position-relative" style="cursor: pointer;">
           <div class="container">
             <div id="publication-div" class="px-3 px-sm-4 px-lg-4">
               <div class="d-flex justify-content-center align-items-center">
@@ -1526,7 +1533,8 @@
         if(data.resume_publication != null)
         {
         for (let public of data.resume_publication) {
-          resume += `<div class=" px-3 px-sm-4 px-lg-4 mt-1">
+          resume += `<div class="publication-item d-flex position-relative"> 
+           <div class=" px-3 px-sm-4 px-lg-4 mt-1 container">
                   <div class="row">
 
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -1563,7 +1571,13 @@
                     
                   </div>
                 
-              </div>`
+              </div>
+              <div class="d-none publication-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+          </div>
+              
+              `
         }}
         else
         {
@@ -1610,9 +1624,7 @@
         resume += `</div>
             </div>
           </div>
-          <div class="d-none publication-edit-box d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-pen fa-2x text-white "></i>
-          </div>
+         
         </div>
 
         <hr />
@@ -1621,7 +1633,7 @@
         <!------------------------------------------- Research Section  ----------------------------------------->
 
 
-        <div class="research-div-wrapper d-flex position-relative" style="cursor: pointer;">
+        <div class="research-list d-flex position-relative" style="cursor: pointer;">
           <div class="container">
             <div id="research-div" class="px-3 px-sm-4 px-lg-4">
               <div class="d-flex justify-content-center align-items-center">
@@ -1633,7 +1645,8 @@
         if(data.resume_research != null)
         {
         for (let research of data.resume_research) {
-          resume += ` <div class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
+          resume += `<div class="research-item d-flex position-relative"> 
+           <div class=" ps-3 ps-sm-4 ps-lg-4 mt-1 container">
                   <div class="row">
 
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -1669,8 +1682,13 @@
 
                   </div>
                 </div>
+                <div class="d-none research-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+          </div>
 
-`
+
+                `
         }}
         else
         {
@@ -1710,23 +1728,20 @@
 
                   </div>
                 </div>
-
-`         
+             `         
         }
 
 
         resume += `</div>              
             </div>
           </div>
-          <div class="d-none research-edit-box d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-pen fa-2x text-white "></i>
-          </div>
+        
         </div>
         <hr />
 
         <!------------------------------------------------ Certification Section ------------------------------------------------>
 
-        <div class="position-relative certification-div-wrapper d-flex" style="cursor: pointer;">
+        <div class="position-relative certification-list d-flex" style="cursor: pointer;">
           <div class="container">
             <div id="certification-div">
               <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
@@ -1739,8 +1754,8 @@
                 if (data.resume_qualification_lid ==4 )
                 {
                 for (let qual of data.resume_qualification) {
-                  resume += `
-                <div class="text-block right" id="preview-qualification-div">
+                  resume += `<div class="professional-certificate-item d-flex position-relative"> 
+                <div class="text-block right container" id="preview-qualification-div">
                   <div class="card-body preview-certification-div">
 
                     <div class=" px-3 px-sm-4 px-lg-4 mt-1">
@@ -1794,7 +1809,12 @@
                     </div>
 
                   </div>
-                </div>`
+                </div>
+                <div class="d-none certification-edit-box d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-pen fa-2x text-white "></i>
+          </div>
+          </div>
+                `
               }
             }}
             else
@@ -1861,9 +1881,7 @@
 
             </div>
           </div>
-          <div class="d-none certification-edit-box d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-pen fa-2x text-white "></i>
-          </div>
+         
         </div>
         <hr />
 
@@ -1950,6 +1968,8 @@
         </div>
       </div>`
         document.querySelector('#body').insertAdjacentHTML('afterbegin', resume);
+        initResume();
+
       },
 
       error: function (error) {
@@ -1960,97 +1980,146 @@
 
     // ******************************************Validation Functions End***************************************************
 
-    document.querySelector('#body').addEventListener('mouseover', function () {
+    //document.querySelector('#body').addEventListener('mouseover', function (e) {
 
+
+
+function initResume() { 
+
+      document.querySelector('#body').addEventListener('mouseleave', function() {
+        for(let box of this.querySelectorAll('.edit-show')) {
+          box.classList.add('d-none');
+          box.classList.remove('edit-show');
+        }
+      })
+  
       document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
+        
+        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+          box.classList.add('d-none');
+          box.classList.remove('edit-show');
+        }
+
         document.querySelector('.personal-details-edit-box').classList.remove('d-none');
+        document.querySelector('.personal-details-edit-box').classList.add('edit-show');
       });
 
+      
 
-      document.querySelector('.personal-information-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.personal-details-edit-box').classList.add('d-none');
-      });
+      document.querySelector('#qualification-list').addEventListener('mouseover', function(e) {
+
+        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+          box.classList.add('d-none');
+          box.classList.remove('edit-show');
+        }
+
+        if((e.target.classList.contains('qualification-item') || findClosest(e.target, 'qualification-item'))) {
+          let thisParent = e.target.classList.contains('qualification-item') ? e.target : findClosest(e.target, 'qualification-item');
+          thisParent.querySelector('.qualification-edit-box').classList.remove('d-none');
+          thisParent.querySelector('.qualification-edit-box').classList.add('edit-show');
+        }
 
 
-      document.querySelector('.qualification-div-wrapper').addEventListener('mouseover', function () {
-        document.querySelector('.qualification-edit-box').classList.remove('d-none');
-      });
-
-      document.querySelector('.qualification-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.qualification-edit-box').classList.add('d-none');
-      });
+    
+      })
 
 
-      // document.querySelector('.qualification-title').addEventListener('change', function () {
-      //   let qualificationTitle = document.querySelector('.qualification-title')
-      //   if (qualificationTitle.value == 3) {
-      //     document.querySelector('.qualification-status-wrapper').classList.remove('d-none');
-      //   } else {
-      //     document.querySelector('.qualification-status-wrapper').classList.add('d-none');
-      //   }
-      // });
 
 
       document.querySelector('.work-experience-div-wrapper').addEventListener('mouseover', function () {
+
+        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+          box.classList.add('d-none');
+          box.classList.remove('edit-show');
+        }
+
+        document.querySelector('.work-experience-edit-box').classList.add('edit-show');
         document.querySelector('.work-experience-edit-box').classList.remove('d-none');
       });
 
 
-      document.querySelector('.work-experience-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.work-experience-edit-box').classList.add('d-none')
-      })
-
-
       document.querySelector('.skills-div-wrapper').addEventListener('mouseover', function () {
+
+        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+          box.classList.add('d-none');
+          box.classList.remove('edit-show');
+        }
+
+        document.querySelector('.skills-edit-box').classList.add('edit-show');
         document.querySelector('.skills-edit-box').classList.remove('d-none');
       });
 
 
-      document.querySelector('.skills-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.skills-edit-box').classList.add('d-none');
+      document.querySelector('.award-list').addEventListener('mouseover', function (e) {
+
+        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+          box.classList.add('d-none');
+          box.classList.remove('edit-show');
+        }
+
+        if((e.target.classList.contains('award-item') || findClosest(e.target, 'award-item'))) {
+          let thisParent = e.target.classList.contains('award-item') ? e.target : findClosest(e.target, 'award-item');
+          thisParent.querySelector('.award-edit-box').classList.remove('d-none');
+          thisParent.querySelector('.award-edit-box').classList.add('edit-show');
+        }
+
       });
 
 
-      document.querySelector('.award-div-wrapper').addEventListener('mouseover', function () {
-        document.querySelector('.award-edit-box').classList.remove('d-none');
+      document.querySelector('.publication-list').addEventListener('mouseover', function (e) {
+
+        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+          box.classList.add('d-none');
+          box.classList.remove('edit-show');
+        }
+
+        if((e.target.classList.contains('publication-item') || findClosest(e.target, 'publication-item'))) {
+          let thisParent = e.target.classList.contains('publication-item') ? e.target : findClosest(e.target, 'publication-item');
+          thisParent.querySelector('.publication-edit-box').classList.remove('d-none');
+          thisParent.querySelector('.publication-edit-box').classList.add('edit-show');
+        }
       });
 
+      document.querySelector('.research-list').addEventListener('mouseover', function (e) {
+        
+        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+          box.classList.add('d-none');
+          box.classList.remove('edit-show');
+        }
 
-      document.querySelector('.award-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.award-edit-box').classList.add('d-none');
+        if((e.target.classList.contains('research-item') || findClosest(e.target, 'research-item'))) {
+          let thisParent = e.target.classList.contains('research-item') ? e.target : findClosest(e.target, 'research-item');
+          thisParent.querySelector('.research-edit-box').classList.remove('d-none');
+          thisParent.querySelector('.research-edit-box').classList.add('edit-show');
+        }
       });
 
-      document.querySelector('.publication-div-wrapper').addEventListener('mouseover', function () {
-        document.querySelector('.publication-edit-box').classList.remove('d-none');
-      });
+      document.querySelector('.certification-list').addEventListener('mouseover', function (e) {
 
+        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+          box.classList.add('d-none');
+          box.classList.remove('edit-show');
+        }
 
-      document.querySelector('.publication-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.publication-edit-box').classList.add('d-none');
-      });
-
-      document.querySelector('.research-div-wrapper').addEventListener('mouseover', function () {
-        document.querySelector('.research-edit-box').classList.remove('d-none');
-      });
-
-      document.querySelector('.research-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.research-edit-box').classList.add('d-none');
-      });
-      document.querySelector('.certification-div-wrapper').addEventListener('mouseover', function () {
-        document.querySelector('.certification-edit-box').classList.remove('d-none');
-      });
-
-      document.querySelector('.certification-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.certification-edit-box').classList.add('d-none');
+        if((e.target.classList.contains('professional-certificate-item') || findClosest(e.target, 'professional-certificate-item'))) {
+          let thisParent = e.target.classList.contains('professional-certificate-item') ? e.target : findClosest(e.target, 'professional-certificate-item');
+          thisParent.querySelector('.certification-edit-box').classList.remove('d-none');
+          thisParent.querySelector('.certification-edit-box').classList.add('edit-show');
+        }
       });
 
       document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
+
+        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+          box.classList.add('d-none');
+          box.classList.remove('edit-show');
+        }
+
         document.querySelector('.bank-details-edit-box').classList.remove('d-none');
+        document.querySelector('.bank-details-edit-box').classList.add('edit-show');
+
       });
 
-      document.querySelector('.bank-details-div-wrapper').addEventListener('mouseleave', function () {
-        document.querySelector('.bank-details-edit-box').classList.add('d-none');
-      });
 
       document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
         document.getElementById('body').classList.add('d-none');
@@ -2112,7 +2181,9 @@
         document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
       })
 
-    });
+    }
+
+   // });
 
     //Rana Changes 
     document.querySelector('#body').addEventListener('click', function (e) {
@@ -2192,7 +2263,7 @@
       //************************************Qualification Section Start*************************************************************** 
 
       //Qualidication Details Btn
-      document.querySelector(".qualification-edit-box").addEventListener('click', function () {
+    function editQualificationDetail() {
         if (qualificationDataDB == 1) {
 
           $.ajax({
@@ -2309,7 +2380,14 @@
 
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.qualification-modal').classList.remove('d-none');
-      });
+      }
+
+      document.querySelector('#qualification-div').addEventListener('click', function(e) {
+        if (findClosest(e.target,'qualification-item').querySelector('.qualification-edit-box')) {
+          editQualificationDetail()
+        }
+      })
+
 
       document.querySelector("#qualification-cancel-button").addEventListener('click', function () {
         document.getElementById('body').classList.remove('d-none');
@@ -2630,10 +2708,10 @@
 
       //************************************Profrctional Certificates Section Start***********************************************
 
-      document.querySelector('.certification-edit-box').addEventListener('click', function () {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.certification-modal').classList.remove('d-none');
-      });
+      // document.querySelector('.certification-edit-box').addEventListener('click', function () {
+      //   document.getElementById('body').classList.add('d-none');
+      //   document.querySelector('.certification-modal').classList.remove('d-none');
+      // });
 
       //************************************Bank Details Section Start***********************************************
 
@@ -3080,8 +3158,8 @@
         let fetchRes = fetch('/insert-qualification-details', options);
         fetchRes.then(success => {
           if (success.status == 200) {
-            document.getElementById('qualification-appending-div').firstElementChild.remove()
-            document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
+            document.getElementById('qualification-list').firstElementChild.remove()
+            document.getElementById('qualification-list').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.qualification-modal').classList.add('d-none');
           } else {
@@ -4077,7 +4155,7 @@
           }
 
           div += `
-                  <div class="text-block right" id="preview-qualification-div">
+                  <div class="text-block right " id="preview-qualification-div">
                     <div class="card-body preview-certification-div">
 
                       <div  class=" px-3 px-sm-4 px-lg-4 mt-1">
