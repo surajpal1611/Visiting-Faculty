@@ -39,8 +39,8 @@
                 </div>
                 <div class="col-md-6">
                     <div class="input-group col-md-6">
-                        <input type="search" id="search-by-name" class="form-control rounded"
-                            placeholder="Enter Name" aria-label="Search" aria-describedby="search-addon" />
+                        <input type="search" id="search-by-name" class="form-control rounded" placeholder="Enter Name"
+                            aria-label="Search" aria-describedby="search-addon" />
                         <button type="button" class="btn btn-outline-primary faculty-search-button">search</button>
                     </div>
                 </div>
@@ -90,13 +90,49 @@
                 $.ajax({
                     type: 'POST',
                     url: '/get-faculty-application',
-                    data: {user_id : value},
+                    data: {
+                        user_id: value
+                    },
                     success: function (response) {
                         let data = JSON.parse(response.value)
                         console.log(data)
 
-                        if (data != null) {
-                            $('.table-appending-div').html(JSON.stringify(data))
+                        if (data.resume_details != null) {
+
+
+                            let tableToAppend = `
+                            <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                       
+                                <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Pan Card No</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>`
+                            for (let obj of data.resume_details) {
+                                tableToAppend += `
+                                    <tr>
+                                        <td>\${obj.f_name}</td>
+                                        <td>\${obj.user_id}</td>
+                                        <td>
+                                            <a href="" class="application-preview" style="border:none; outline:none" >
+                                            <i class="fa-solid fa-eye forwardIcon" data-toggle="tooltip" title="View Resume"></i></a>
+                                        </td>
+                                    </tr>`
+                            }
+
+                            tableToAppend += `  </tbody>
+                                </table>
+                            
+                        
+                        </div>
+                                                    `
+
+                            $('.table-appending-div').html(tableToAppend)
                         }
 
                     },
@@ -106,14 +142,58 @@
                 })
                 console.log(value);
             }
+
             function searchFunctionByName(value) {
                 $.ajax({
                     type: 'POST',
                     url: '/get-faculty-by-name',
-                    data: {user_id : value},
+                    data: {
+                        user_id: value
+                    },
                     success: function (response) {
                         let data = JSON.parse(response.value)
                         console.log(data)
+
+
+
+                        if (data.resume_details != null) {
+
+
+                            let tableToAppend = `
+                                <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                    <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Pan Card No</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>`
+                            for (let obj of data.resume_details) {
+                                tableToAppend += `
+                                        <tr>
+                                            <td>\${obj.f_name}</td>
+                                            <td>\${obj.user_id}</td>
+                                            <td>
+                                                <a href="" class="application-preview" style="border:none; outline:none" >
+                                                <i class="fa-solid fa-eye forwardIcon" data-toggle="tooltip" title="View Resume"></i></a>
+                                            </td>
+                                        </tr>`
+                            }
+
+                            tableToAppend += `  </tbody>
+                                    </table>
+
+
+                                </div>
+                                                        `
+
+                            $('.table-appending-div').html(tableToAppend)
+                        }
+
 
                     },
                     error: function (error) {
@@ -135,7 +215,7 @@
 
                 clearTimeout(timeout)
                 const value = this.value
-                timeout = setTimeout(() => searchFunctionByNamess(value), 2000)
+                timeout = setTimeout(() => searchFunctionByName(value), 2000)
 
             })
 
