@@ -1159,13 +1159,9 @@
               </div>
 
               <div id="qualification-appending-div">`
-<<<<<<< HEAD
-                if (qual.resume_qualification_lid==1 || qual.resume_qualification_lid==2 || qual.resume_qualification_lid==3)
-          {
-=======
+
         if(data.resume_qualification != null)
         {
->>>>>>> 125c6f0ddf3b4071305d8a37b99754e8e61383fa
         for (let qual of data.resume_qualification) {
 
           resume += ` <div class="text-block right" id="preview-qualification-div">
@@ -1216,11 +1212,6 @@
                 </div>
             
               `
-<<<<<<< HEAD
-          
-        }
-      }
-=======
         }}
         else
         {
@@ -1231,7 +1222,6 @@
                       </div>
               `         
         }  
->>>>>>> 125c6f0ddf3b4071305d8a37b99754e8e61383fa
         resume += `
             </div>
           </div>
@@ -1744,7 +1734,9 @@
               </div>
 
               <div id="certification-appending-div">`
-                if (qual.resume_qualification_lid==4 )
+                if(data.resume_qualification_lid != null)
+                {
+                if (data.resume_qualification_lid ==4 )
                 {
                 for (let qual of data.resume_qualification) {
                   resume += `
@@ -1804,6 +1796,65 @@
                   </div>
                 </div>`
               }
+            }}
+            else
+            {
+              resume += `
+                <div class="text-block right" id="preview-qualification-div">
+                  <div class="card-body preview-certification-div">
+
+                    <div class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Certification name:</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">Teaching</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Institution :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">St. Wilfred's College</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Recieved Year:</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">2015</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Certificate:</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>`
             }
                 resume += `
               </div>
