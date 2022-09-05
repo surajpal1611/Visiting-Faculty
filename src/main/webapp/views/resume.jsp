@@ -1159,6 +1159,7 @@
               </div>
 
               <div id="qualification-appending-div">`
+
         if(data.resume_qualification != null)
         {
         for (let qual of data.resume_qualification) {
@@ -1732,7 +1733,13 @@
                 <h3><i class="fa-solid fa-certificate"></i><b>Professional Membership Certificate</b></h3>
               </div>
 
-              <div id="certification-appending-div">
+              <div id="certification-appending-div">`
+                if(data.resume_qualification_lid != null)
+                {
+                if (data.resume_qualification_lid ==4 )
+                {
+                for (let qual of data.resume_qualification) {
+                  resume += `
                 <div class="text-block right" id="preview-qualification-div">
                   <div class="card-body preview-certification-div">
 
@@ -1787,7 +1794,69 @@
                     </div>
 
                   </div>
-                </div>
+                </div>`
+              }
+            }}
+            else
+            {
+              resume += `
+                <div class="text-block right" id="preview-qualification-div">
+                  <div class="card-body preview-certification-div">
+
+                    <div class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Certification name:</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">Teaching</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Institution :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">St. Wilfred's College</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Recieved Year:</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">2015</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">Certificate:</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>`
+            }
+                resume += `
               </div>
 
             </div>
