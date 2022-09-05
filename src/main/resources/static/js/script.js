@@ -69,16 +69,13 @@ function changeDateFormat(date) {
 }
 
 function findClosest(elem, className) {
-    
-    let closestParent = elem.parentElement;
-
-    while (!closestParent.classList.contains(className)) {
-        closestParent = closestParent.parentElement
-    }
-    
-    return closestParent;
-    
+  let closestParent = elem.parentElement;
+  while (closestParent && !closestParent.classList.contains(className)) {
+      closestParent = closestParent.parentElement
+  }
+  return closestParent;
 }
+
 
 
 
