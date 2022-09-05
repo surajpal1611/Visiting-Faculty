@@ -1211,7 +1211,7 @@
 
                   </div>
                 </div>
-                  <div class="d-none qualification-edit-box d-flex justify-content-center align-items-center" data-edit-lid = "\${qual.resume_qualification_lid}">
+                  <div class="d-none qualification-edit-box d-flex justify-content-center align-items-center" data-edit_lid = "\${qual.resume_qualification_lid}">
                            <i class="fa-solid fa-pen fa-2x text-white "></i>
                           </div>
                         </div>
@@ -2479,7 +2479,7 @@ function initResume() {
 
       //************************************Award Section Start******************************************************************
 
-      document.querySelector(".award-edit-box").addEventListener('click', function () {
+     function editAwardDetail() {
 
       if(resumeinfo.resume_achievement != null)
       {
@@ -2556,11 +2556,18 @@ function initResume() {
         }}
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.award-modal').classList.remove('d-none');
-      });
+      }
+
+      document.querySelector('#award-div').addEventListener('click', function(e) {
+        if (findClosest(e.target,'award-item').querySelector('.award-edit-box')) {
+          editAwardDetail()
+        }
+      })
+
 
       //************************************Publication Section Start************************************************************
 
-      document.querySelector(".publication-edit-box").addEventListener('click', function () {
+      function editPublicationDetail() {
 
       if(resumeinfo.resume_publication != null)
       {
@@ -2634,11 +2641,17 @@ function initResume() {
         }}
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.publication-modal').classList.remove('d-none');
-      });
+      }
+
+      document.querySelector('#publication-div').addEventListener('click', function(e) {
+        if (findClosest(e.target,'publication-item').querySelector('.publication-edit-box')) {
+          editPublicationDetail()
+        }
+      })
 
       //************************************Research Section Start************************************************************
 
-      document.querySelector(".research-edit-box").addEventListener('click', function () {
+       function editResearchBox() {
 
       if(resumeinfo.resume_research)
       {
@@ -2704,7 +2717,13 @@ function initResume() {
         }}
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.research-modal').classList.remove('d-none');
-      });
+      }
+
+      document.querySelector('#research-div').addEventListener('click', function(e) {
+        if (findClosest(e.target,'research-item').querySelector('.research-edit-box')) {
+          editResearchBox()
+        }
+      })
 
       //************************************Profrctional Certificates Section Start***********************************************
 
