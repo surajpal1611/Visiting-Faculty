@@ -5,7 +5,6 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.visitingfaculty.dao.UserDaoInterface;
 import com.visitingfaculty.dto.UserDto;
-import com.visitingfaculty.model.User;
 import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
 import com.visitingfaculty.service.PasswordService;
 import com.visitingfaculty.service.faculty_service.UserLoginService;
@@ -144,6 +142,27 @@ public class UserRestController {
 
        Object resume = userDaoInterface.getUserResume("1");
        return resume;
+    }
+
+    @PostMapping("/get-faculty-application")
+    public Object searchFacultyById(String user_id) {
+
+
+        Object data = userDaoInterface.getFacultyApplication(user_id);
+        
+        return data;
+    }
+
+    @PostMapping("/get-faculty-by-name")
+    public Object searchFacultyByName(String user_id) {
+
+        System.out.println(user_id);
+
+        Object data = userDaoInterface.getFacultyResumeByName(user_id);
+
+        System.out.println(data);
+        
+        return data;
     }
 
     // @PostMapping("/verify-password")

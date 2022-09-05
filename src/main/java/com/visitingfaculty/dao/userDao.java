@@ -179,7 +179,7 @@ public class userDao implements UserDaoInterface {
     public int insertUser(User user) {
 
         String sql = "insert into public.user( user_id , password_hash) values( ? , ? )";
-        return jdbcTemplate.update(sql,user.getUser_id(),user.getPassword_hash());
+        return jdbcTemplate.update(sql, user.getUser_id(), user.getPassword_hash());
     }
 
     @Override
@@ -203,6 +203,24 @@ public class userDao implements UserDaoInterface {
                 .withFunctionName("get_user_resume_details");
 
         return jdbcCall.executeFunction(Object.class, resume_lid);
+    }
+
+    @Override
+    public Object getFacultyApplication(String user_id) {
+
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("faculty_resume_search");
+
+        return jdbcCall.executeFunction(Object.class, user_id);
+    }
+
+    @Override
+    public Object getFacultyResumeByName(String user_id) {
+
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("faculty_search_by_name");
+
+        return jdbcCall.executeFunction(Object.class, user_id);
     }
 
 }

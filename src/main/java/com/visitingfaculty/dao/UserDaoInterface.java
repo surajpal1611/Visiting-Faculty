@@ -57,4 +57,8 @@ public interface UserDaoInterface {
     Integer getUserLid(String user_id);
 
     Object getUserResume(String resume_lid);
+
+    Object getFacultyApplication(String user_id);
+
+    Object getFacultyResumeByName(String user_id);
 }

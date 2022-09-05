@@ -42,7 +42,7 @@ public class UserController {
 
     @GetMapping("/visiting-faculty-applications")
     public String getFacultyApplcation() {
-        return "visiting-faculty-application";
+        return "resume-search";
     }
 
 }
