@@ -344,8 +344,8 @@
               <input type="text" name="tokenToVerify" id="verify-token-input" placeholder="Verify Token">
             </div>
             <button class="btn btn-dark register-btn pb-2"><i class="fas fa-sign-in-alt"></i> Sign Up</button>
-            <div class="py-2">Already a user?<a style="text-decoration: none;" href="/login"> Sign In</a> </div>
             <button class="btn btn-dark d-none verify-button"><i class="fas fa-sign-in-alt"></i> Verify Email</button>
+            <div class="py-2">Already a user?<a style="text-decoration: none;" href="/login"> Sign In</a> </div>
           </form>
         </div>
       </div>

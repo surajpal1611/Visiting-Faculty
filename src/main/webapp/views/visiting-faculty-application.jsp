@@ -31,7 +31,26 @@
         <jsp:include page="header.jsp" />
 
         <div class="main-content">
-          <jsp:include page="admin-dashboard.jsp" />
+            <jsp:include page="admin-dashboard.jsp" />
+
+            <div class="container" id="visiting-form-div">
+                <h3 class="text-center py-4">Visiting Faculty Application</h3>
+                <form id="search-faculty-form">
+                    <div class="form-group">
+                        <label for="search-by-id" class="h6">Search by pancard no.</label>
+                        <input type="text" id="search-by-id" class="form-control">
+                    </div>
+                    <h1 class="dashedOr">OR</h1>
+                    <div class="form-group">
+                        <label for="search-by-name" class="h6">Search by Name</label>
+                        <input type="text" id="search-by-name" class="form-control">
+                    </div>
+                    <div class="text-center pt-4">
+                        <input type="button" class="btn btn-danger" value="Search">
+                    </div>
+                </form>
+            </div>
+
         </div>
     </main>
     <script src="/js/jquery.min.js"></script>

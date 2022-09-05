@@ -993,3 +993,10 @@ button {
   top: 0;
   left: 100%;
 }
+
+.addbtn{
+  padding: 2px;
+  width: 96%;
+  background-color: whitesmoke;
+  box-shadow: 5px 2px 6px -1px;
+}

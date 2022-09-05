@@ -5,12 +5,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
 @Controller
 public class UserController {
 
-   
-    
     @GetMapping("/login")
     public String getLoginPage() {
         return "login";
@@ -31,10 +28,9 @@ public class UserController {
         // String user_id = (String) httpSession.getAttribute("user_id");
         // System.out.println(user_id);
         // if (user_id != null) {
-            return "dashboard";
+        return "dashboard";
         // }
         // return "redirect:/login";
-      
     }
 
     @GetMapping("/logout")
@@ -42,6 +38,11 @@ public class UserController {
 
         httpSession.invalidate();
         return "login";
+    }
+
+    @GetMapping("/visiting-faculty-applications")
+    public String getFacultyApplcation() {
+        return "visiting-faculty-application";
     }
 
 }
