@@ -1008,7 +1008,8 @@
               </div>
 
               <div id="qualification-appending-div">`
-
+                if (qual.resume_qualification_lid==1 || qual.resume_qualification_lid==2 || qual.resume_qualification_lid==3)
+          {
         for (let qual of data.resume_qualification) {
 
           resume += ` <div class="text-block right" id="preview-qualification-div">
@@ -1059,7 +1060,9 @@
                 </div>
             
               `
+          
         }
+      }
         resume += `
             </div>
           </div>
@@ -1382,7 +1385,11 @@
                 <h3><i class="fa-solid fa-certificate"></i><b>Professional Membership Certificate</b></h3>
               </div>
 
-              <div id="certification-appending-div">
+              <div id="certification-appending-div">`
+                if (qual.resume_qualification_lid==4 )
+                {
+                for (let qual of data.resume_qualification) {
+                  resume += `
                 <div class="text-block right" id="preview-qualification-div">
                   <div class="card-body preview-certification-div">
 
@@ -1437,7 +1444,10 @@
                     </div>
 
                   </div>
-                </div>
+                </div>`
+              }
+            }
+                resume += `
               </div>
 
             </div>
