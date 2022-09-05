@@ -843,9 +843,10 @@
                         <img src="/download (3).jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
                           height="200" />
                       </div>
-                    </div>
-
-                    <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
+                    </div>`
+                    if(personal_details != null)
+                    {
+                    resume+=`<div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
                       <div class="d-flex" style="color: #740E00;">
                         <h3><b id="first-name-value">\${personal_details.f_name}</b></h3> &nbsp &nbsp
                         <h3><b id="last-name-value">\${personal_details.l_name}</b></h3>
@@ -989,8 +990,158 @@
                     </div>
                   </div>
                 </div>
+                `
+              }
+              else
+              {
+                resume+=`<div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
+                      <div class="d-flex" style="color: #740E00;">
+                        <h3><b id="first-name-value">N.A</b></h3> &nbsp &nbsp
+                        <h3><b id="last-name-value">N.A</b></h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-              </div>
+                <div id="personal-details-div" class="pt-lg-4 pt-md-5 px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+                    <div id="personaldetails-left-side"
+                      class="col-12 col-md-6 col-lg-6 col-sm-12 ps-4 pt-lg-5 pt-md-2 text-center">
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Gender :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="gender-value">N.A</p> 
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Date of birth :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="date-of-birth-value">N.A</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Pancard :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="pancard-value">N.A</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Pancard Photo</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="pancard-photo"><i id="pancard-photo-preview" class="fa-solid fa-ban text-danger"></i></p>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Aadhar card :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="aadhar-card-value">N.A</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Aadhar card Photo</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" class="fa-solid fa-ban text-danger"></i></p>
+                        </div>
+                      </div>
+
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>City :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="aadhar-card-value">N.A</p>
+                        </div>
+                      </div>
+
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Pincode :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="aadhar-card-value">N.A</p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Contact No.</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="contact-number-value">N.A</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Secondary Contact No.</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="temp-contact-value">N.A</p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Email :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="email-value">N.A</p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Secondary Email :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="temp-email-value">N.A</p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Permanent Address :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="address-value">N.A</p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6 class="temporary-address-heading">Temporary Address :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="temporary-address-value">703-Satyam panvel
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row py-2">
+                        <div class="col-md-5 col-sm-3">
+                          <h6 class="country-heading">Country :</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="country-value">N.A</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                `               
+              }
+
+              resume+=`</div>
             </div>
             <div class="d-none personal-details-edit-box d-flex justify-content-center align-items-center">
               <i class="fa-solid fa-pen fa-2x text-white "></i>
@@ -1008,7 +1159,8 @@
               </div>
 
               <div id="qualification-appending-div">`
-
+        if(data.resume_qualification != null)
+        {
         for (let qual of data.resume_qualification) {
 
           resume += ` <div class="text-block right" id="preview-qualification-div">
@@ -1059,7 +1211,16 @@
                 </div>
             
               `
-        }
+        }}
+        else
+        {
+          resume += ` <div class="text-block right" id="preview-qualification-div">
+                        <div class="card-body preview-qualification-div">
+                          <button class="addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                        </div>
+                      </div>
+              `         
+        }  
         resume += `
             </div>
           </div>
@@ -1080,6 +1241,8 @@
                 <h3 style="color: #740E00;"><i class="fa-solid fa-briefcase"></i><b> Work Experience </b></h3>
               </div>
               <div id="workExperience-appending-div">`
+        if(data.resume_experience != null)
+        {
         for (let exp of data.resume_experience) {
           resume += ` <div class="text-block right">
                   <div class="card-body">
@@ -1123,6 +1286,51 @@
                     </div>
                   </div>
                 </div>`
+        }}
+        else
+        {
+          resume += ` <div class="text-block right">
+                  <div class="card-body">
+                    <h2>2017</h2>
+
+                    <div id="work-experience-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                      <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 pb-1">University :</p>
+                              <p class="h5 py-1">Subject Taught :</p>
+                              <p class="h5 py-1">Program :</p>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                              <p id="">N.A</p>
+                              <p id="">N.A</p>
+                              <p id="">N.A</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                          <div class="row pt-lg-3">
+                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                              <p class="h5 py-1">Designation :</p>
+                              <p class="h5 py-1">Start Date :</p>
+                              <p class="h5 py-1">End date :</p>
+                            </div>
+                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                              <p class="" id="">N.A</p>
+                              <p id="" class="">N.A</p>
+                              <p id="" class="">N.A</p>
+                              <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>`
         }
 
         resume += `</div>
@@ -1152,6 +1360,8 @@
                       <h4 class="title">Hard Skills</h4>
 
                   <div id="hard-skill-appending-div1" class="d-flex w-100 flex-wrap">`
+        if(data.resume_skill_selected != null)
+        {
         for (hardskill of data.resume_skill_selected) {
           if (hardskill.skill_type_lid === 1)
             resume += ` <div data-skill-id="\${hardskill.skill_type_lid}" data-skill-type-lid=\${hardskill.skill_lid} class="skill-pill-div text-center">
@@ -1173,6 +1383,19 @@
                                     \${softskill.skill_name}\
                                 </div>`
           }
+        }}
+        else
+        {
+          resume+=`                      </div>
+                    </div> <!-- end card -->
+                  </div>
+
+                  <div class="col-md-6 col-sm-12 content-card">
+                    <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
+                      <h4 class="title">Soft Skills</h4>
+
+                      <div id="soft-skill-appending-div1" class="d-flex w-100 flex-wrap">
+`
         }
 
         resume += ` </div>
@@ -1197,6 +1420,8 @@
                 <h3 style="color: #740E00;"><i class="fa-solid fa-award"></i><b> Awards </b></h3>
               </div>
               <div id="award-preview-div">`
+        if(data.resume_achievement != null)
+        {
         for (let award of data.resume_achievement) {
           resume += `                <div id="Award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
@@ -1235,9 +1460,48 @@
                   </div>
                 </div>
                 <hr>
-
               `
+        }}
+        else
+        {
+          resume += `                <div id="Award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
 
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Award Name :</p>
+                          <p class="h5 py-1">organization :</p>
+                          <p class="h5 py-1">Organization Type :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">N.A</p>
+                          <p id="">N.A </p>
+                          <p id="">N.A</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Place :</p>
+                          <p class="h5 pb-1">Recieved date :</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">N.A</p>
+                          <p class="" id="">N.A</p>
+                          <p ><i id="award-certificate-display" class="fa-solid fa-ban text-danger award-certificate-display"></i></p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <hr>
+              `
         }
 
         resume += `</div>
@@ -1258,6 +1522,8 @@
                 <h3 class="mb-4 h3" style="color: #740E00;"> <b> Publications </b></h3>
               </div>
               <div id="publication-appending-div" class="bg-white">`
+        if(data.resume_publication != null)
+        {
         for (let public of data.resume_publication) {
           resume += `<div class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
@@ -1297,6 +1563,47 @@
                   </div>
                 
               </div>`
+        }}
+        else
+        {
+          resume += `<div class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Role :</p>
+                          <p class="h5 py-1">No. of Authors :</p>
+                          <p class="h5 py-1">Book Title :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">N.A</p>
+                          <p id="">N.A </p>
+                          <p id="">N.A</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Publisher :</p>
+                          <p class="h5 pb-1">Publication Year:</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">N.A</p>
+                          <p class="" id="">N.A</p>
+                          <p><i id="publication-certificate-display" class="fa-solid fa-ban text-danger publication-certificate-display"></i></p>
+
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                
+              </div>`          
         }
 
         resume += `</div>
@@ -1322,6 +1629,8 @@
               </div>
 
               <div id="research-appending-div">`
+        if(data.resume_research != null)
+        {
         for (let research of data.resume_research) {
           resume += ` <div class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
                   <div class="row">
@@ -1361,6 +1670,47 @@
                 </div>
 
 `
+        }}
+        else
+        {
+          resume += ` <div class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 py-1">Title :</p>
+                          <p class="h5 py-1">Volume year :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">N.A</p>
+                          <p id="">N.A</p>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Description :</p>
+                          <p class="h5 pb-1">Category :</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">N.A</p>
+                          <p class="" id="">N.A</p>
+                          <p><i id="research-certificate-display" class="fa-solid fa-ban text-danger research-certificate-display" ></i></p>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+`         
         }
 
 
@@ -1466,8 +1816,10 @@
                       <h6 class="pb-4">Name of Bank</h6>
                       <h6 class="pb-4">Branch</h6>
                       <h6 class="pb-4">IFSC Code</h6>
-                    </div>
-                    <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                    </div>`
+                    if(bank_details != null)
+                    {
+                    resume+=`<div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                       <p id="bank-name-value">\${bank_details.bank_name}</p>
                       <p id="branch-name-value" class="pt-2">\${bank_details.branch_name}</p>
                       <p id="ifsc-code-value" class="pt-2">\${bank_details.ifsc_code}</p>
@@ -1489,8 +1841,35 @@
                       <p id="account-type-value" class="pt-2">\${bank_details.account_type}</p>
                       <p id="cancelled-check-photo" class="pt-3">
                         <i id="cancelled-cheque-photo-preview" class="fa-solid fa-ban text-danger"></i>
-                      </p>
+                      </p>`
+                    }
+                    else
+                    {
+                      resume+=`<div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                      <p id="bank-name-value">N.A</p>
+                      <p id="branch-name-value" class="pt-2">N.A</p>
+                      <p id="ifsc-code-value" class="pt-2">N.A</p>
                     </div>
+                  </div>
+                </div>
+
+                <div id="right-side" class="col-12 col-md-6 col-lg-6 col-sm-12">
+                  <div class="row pt-lg-3">
+                    <div class="col-6 ps-lg-4 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                      <h6 class="pb-4">MICR Code</h6>
+                      <h6 class="pb-4">Account Number</h6>
+                      <h6 class="pb-4">Account Type</h6>
+                      <h6 class="pb-4">Cancalled Cheque Photo</h6>
+                    </div>
+                    <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                      <p id="micr-code-value">N.A</p>
+                      <p id="account-number-value" class="pt-2">N.A</p>
+                      <p id="account-type-value" class="pt-2">N.A</p>
+                      <p id="cancelled-check-photo" class="pt-3">
+                        <i id="cancelled-cheque-photo-preview" class="fa-solid fa-ban text-danger"></i>
+                      </p>`
+                    }
+                    resume+=`</div>
                   </div>
                 </div>
               </div>
@@ -1754,8 +2133,10 @@
                 console.log(response)
                 for (let i = 0; i < response.length; i++) {
                   qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`
-
                 }
+
+            if( resumeinfo.resume_qualification != null)
+            {
                 for (qualedit of resumeinfo.resume_qualification) {
 
                   let table = `
@@ -1844,8 +2225,8 @@
                     </div>`
 
                   document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
-                }
-                //document.getElementById('bachelors-degree-title-data').insertAdjacentHTML("beforeend", qualificationType)
+                }}
+                
               },
               error: function (error) {
                 console.log("Error::::::::::::", error);
@@ -1953,6 +2334,8 @@
 
       document.querySelector(".award-edit-box").addEventListener('click', function () {
 
+      if(resumeinfo.resume_achievement != null)
+      {
         for (awardedit of resumeinfo.resume_achievement) {
 
           let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
@@ -2023,7 +2406,7 @@
         </div> 
        `
           document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
-        }
+        }}
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.award-modal').classList.remove('d-none');
       });
@@ -2032,6 +2415,8 @@
 
       document.querySelector(".publication-edit-box").addEventListener('click', function () {
 
+      if(resumeinfo.resume_publication != null)
+      {
         for (pubedit of resumeinfo.resume_publication) {
           let table = ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
             <div class="container">
@@ -2099,7 +2484,7 @@
           </div>
         `
           document.getElementById('publication-modal-appending-div').insertAdjacentHTML("beforeend", table);
-        }
+        }}
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.publication-modal').classList.remove('d-none');
       });
@@ -2108,6 +2493,8 @@
 
       document.querySelector(".research-edit-box").addEventListener('click', function () {
 
+      if(resumeinfo.resume_research)
+      {
         for (researchedit of resumeinfo.resume_research) {
           let table = ` 
       <div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
@@ -2167,7 +2554,7 @@
 
           document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
 
-        }
+        }}
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.research-modal').classList.remove('d-none');
       });
