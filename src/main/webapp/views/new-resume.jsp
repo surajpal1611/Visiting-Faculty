@@ -261,10 +261,12 @@
                             </div>
                           </div>
                         </div>
-
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="addbtn d-flex my-2 justify-content-center align-items-center">
+                  <strong> Add More Rows</strong><button class="resume-qualification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
                 </div>
               </div>
 
@@ -497,7 +499,9 @@
 
                   </div>
                 </div>
-
+                  <div class="addbtn-award d-flex my-2 justify-content-center align-items-center">
+                    <strong> Add More Rows</strong><button class="resume-award-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                  </div>
               </div>
             </div>
           </div>
@@ -603,6 +607,9 @@
 
                   </div>
                 </div>
+                <div class="addbtn-publication d-flex my-2 justify-content-center align-items-center">
+                  <strong> Add More Rows</strong><button class="resume-publication-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                </div>
               </div>
             </div>
           </div>
@@ -705,7 +712,9 @@
 
                   </div>
                 </div>
-
+                <div class="addbtn-research d-flex my-2 justify-content-center align-items-center">
+                  <strong> Add More Rows</strong><button class="resume-research-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                </div>
               </div>
             </div>
           </div>
@@ -817,8 +826,10 @@
 
                   </div>
                 </div>
+                <div class="addbtn-certification d-flex my-2 justify-content-center align-items-center">
+                  <strong> Add More Rows</strong><button class="resume-certification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                </div>
               </div>
-
             </div>
           </div>
           <div class="d-none certification-edit-box d-flex justify-content-center align-items-center">
@@ -1720,7 +1731,407 @@
   <script src="/js/jquery.bootpag.min.js"></script>
   <script id="script-data"></script>
   <script>
-    // ******************************************Validation Functions End***************************************************
+// *************************************************************ADD Buttons Function's Start****************************************************
+
+
+//Resume Qualification Add Button
+function resumequailficationaddbtn(){
+
+document.querySelector('.qualification-data').innerHTML = "";
+document.querySelector('.qualification-modal').classList.remove('d-none');
+document.querySelector('#body').classList.add('d-none');
+let table = `
+<div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
+<div class="container">
+<div class="row qualification-row">
+<div class="col-12 col-md-12 col-lg-6 col-sm-12">
+ <div class="row p-3">
+   <div class="col-md-2 ">
+     <p class="h6">Title <span class="required">*</span></p>
+   </div>
+   <div class="col-md-10">
+    <select class="form-control qualification-title">
+      \${qualificationType}
+     </select>
+     </div>
+ </div>
+ <div class="row p-3">
+   <div class="col-md-2 ">
+     <p class="h6">Subject <span class="required">*</span></p>
+   </div>
+   <div class="col-md-10 "><input class="form-control qualification-subject"
+       id="bachelors-degree-major-subject" type="text"></div>
+ </div>
+ <div class="row p-3">
+   <div class="col-md-2 ">
+     <p class="h6">University<span class="required">*</span></p>
+   </div>
+   <div class="col-md-10 "><input class="form-control qualification-university"
+       id="bachelors-degree-university" type="text"></div>
+ </div>
+ <div class="row p-3">
+   <div class="col-md-2 ">
+     <p class="h6">Year of Passing <span class="required">*</span></p>
+   </div>
+   <div class="col-md-10 "><input class="form-control qualification-year"
+       id="bachelors-degree-year-of-passing" type="text"></div>
+ </div>
+
+</div>
+
+<div class="col-12 col-md-12 col-lg-6 col-sm-12">
+
+ <div class="row p-3 qualification-phd-wrapper d-none">
+   <div class="col-md-2 ">
+     <p class="h6">Status<span class="required">*</span></p>
+   </div>
+   <div class="col-md-10"><select class="form-control qualification-status"
+       id="qualification-status-data">
+       <option value="true">Awarded</option>
+       <option value="false">Persuing</option>
+     </select></div>
+ </div>
+ <div class="row p-3">
+   <div class="col-md-2">
+     <p class="h6">College <span class="required">*</span></p>
+   </div>
+   <div class="col-md-10 "><input class="form-control qualification-college"
+       id="bachelors-degree-college" type="text"></div>
+ </div>
+ <div class="row p-3">
+   <div class="col-md-2">
+     <p class="h6">Percentage<span class="required">*</span></p>
+   </div>
+   <div class="col-md-10"><input class="form-control qualification-percentile"
+       id="bachelors-degree-percentile" type="text"></div>
+ </div>
+ <div class="row p-3">
+   <div class="col-md-2 ">
+     <p class="h6">Certificate<span class="required">*</span></p>
+   </div>
+   <div class="col-md-10"><input class="form-control qualification-certificate"
+       onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])"
+       type="file">
+     <p hidden><img class="qualification-certificate-preview" type="hidden" alt="your image" width="100"
+         height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+   </div>
+   </div>
+   </div>
+   </div>
+   <hr style="height: 5px;">
+   </div>
+   <div id="delete_btn_qualification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_qualification_symbol">
+          <i class="fa-solid fa-trash text-danger fa-2x"></i>
+       </div>      
+</div>`
+
+document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
+
+};
+
+ //Resume Award Add Button
+function  resumeawardaddbtn(){
+
+document.querySelector('#publication-award-div').innerHTML = "";
+document.querySelector('.award-modal').classList.remove('d-none');
+document.querySelector('#body').classList.add('d-none');
+
+let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
+    <div class="container">   
+  <div id="publication-award-div" class="bg-white">
+      <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
+        <div class="row">
+
+          <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Award name<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10"><input class="form-control awardName" type="text" id="award-name"></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Organisation <span class="required">*</span></p>
+              </div>
+              <div class="col-md-10 "><input class="form-control awardOrganization" type="text" id="award-organization"></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Organisation type<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10 "><select class="form-control awardOrganizationType" id="award-organization-type">
+                <option value="0">-select-</option>
+                <option value="1">School</option>
+                <option value="2">University</option>
+                <option value="3">Industry</option>
+              </select></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+            <div class="row p-3">
+              <div class="col-md-2">
+                <p class="h6">Description<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2">
+                <p class="h6">Received date<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10"><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Certificate<span class="required">*</span></p>
+              </div>
+              <!--Rana Changes--!>
+              <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" 
+                 onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+                <p hidden><img class="award-certificate-preview" type="hidden" alt="your image" width="100"
+                height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div id="delete_btn_award_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_award_symbol">
+            <i class="fa-solid fa-trash text-danger fa-2x"></i>
+         </div>
+      </div>
+      <hr style="height: 5px;">
+    </div>
+    </div> 
+   `
+  document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
+};
+
+//Resume Publication Add Button
+function resumepublicationaddbtn(){
+
+document.querySelector('#publication-modal-appending-div').innerHTML = "";
+document.querySelector('.publication-modal').classList.remove('d-none');
+document.querySelector('#body').classList.add('d-none');
+
+let table = ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
+        <div class="container">
+      
+      <div class="publication-row px-3 px-sm-4 px-lg-4 mt-1"> 
+        <div class="row">
+
+          <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Role<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10"><select class="form-control role" id="role">
+                  <option >-Select-</option>
+                  <option >Edited</option>
+                  <option >Authored</option>
+                </select></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Number of Authors<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10 "><input  class="form-control number-of-authors" type="text"></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Book Title<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10 "><input class="form-control book-title" type="text"></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+            <div class="row p-3">
+              <div class="col-md-2">
+                <p class="h6">Publisher<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10 "><input class="form-control publisher" type="text"></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2">
+                <p class="h6">Year of Publication<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10"><input class="form-control year-of-publication" type="text"></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Certificate<span class="required">*</span></p>
+              </div>
+              <!--Rana Chanegs--!>
+              <div class="col-md-10"><input class="form-control publication-certification" type="file"
+                onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+                  <p hidden><img class="publication-certificate-preview" type="hidden" alt="your image" width="100"
+                   height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+              </div>
+            </div>
+          </div>
+        </div>
+         <div id="delete_btn_publication_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_publication_symbol">
+            <i class="fa-solid fa-trash text-danger fa-2x"></i>
+         </div>
+      </div>
+      <hr style="height: 5px;">
+  </div>
+      </div>
+    `
+  document.getElementById('publication-modal-appending-div').insertAdjacentHTML("beforeend", table);
+
+};
+
+ //Resume Research Add Button
+function resumeresearchaddbtn(){
+
+document.querySelector('#research-data').innerHTML = "";
+document.querySelector('.research-modal').classList.remove('d-none');
+document.querySelector('#body').classList.add('d-none'); 
+
+let table = ` 
+<div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
+<div  class="research-row px-3 px-sm-4 px-lg-4 mt-1 bg-white container">
+      <div class="row">
+
+        <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+          <div class="row p-3">
+            <div class="col-md-2 ">
+              <p class="h6">Title<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10 "><input name="journal_name" class="form-control research_Journal_name"
+                type="text"></div>
+          </div>
+          <div class="row p-3">
+            <div class="col-md-2 ">
+              <p class="h6">Volume Year<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10 "><input name="volume_year" class="form-control research_volume_year" type="text"></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+          <div class="row p-3">
+            <div class="col-md-2">
+              <p class="h6">Description<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10 "><input name="number" class="form-control research_description" type="text"></div>
+          </div>
+          <div class="row p-3">
+            <div class="col-md-2">
+              <p class="h6">Category<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10"><input name="category" class="form-control research_category" type="text"></div>
+          </div>
+          <div class="row p-3">
+            <div class="col-md-2 ">
+              <p class="h6">Certificate<span class="required">*</span></p>
+            </div>
+            <!--Rana Changes--!>
+            <div class="col-md-10"><input class="form-control research_photo" type="file"
+              onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+             <p hidden><img class="research-certificate-preview" type="hidden" alt="your image" width="100"
+                height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr style="height: 5px;"> 
+      </div>
+     <div id="delete_btn_research_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_research_symbol">
+          <i class="fa-solid fa-trash text-danger fa-2x"></i>
+       </div>
+  </div>`
+
+document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
+};
+
+//Resume Certification Add Button
+function resumecertificationaddbtn(){
+      document.querySelector('#certification-data').innerHTML = "";
+      document.querySelector('.certification-modal').classList.remove('d-none');
+      document.querySelector('#body').classList.add('d-none');
+      
+      let table = `  
+    <div class="position-relative certification_delete_btn d-flex" style="cursor: pointer;"> 
+        <div class="container">
+            <div class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
+                <div class="row">
+              <!-- px-lg-5 -->
+                    <div class="col-12 col-md-12 col-lg-12 col-sm-12 ">
+
+                        <div class="row p-3">
+                          <div class="col-md-2 ">
+                            <p class="h6">Certification Name: <span class="required">*</span></p>
+                          </div>
+                          <div class="col-md-10 "><input class="form-control certification-certificate" type="text"></div>
+                        </div>
+
+                        <div class="row p-3">
+                          <div class="col-md-2 ">
+                            <p class="h6">Institution: <span class="required">*</span></p>
+                          </div>
+                          <div class="col-md-10 "><input class="form-control certification-institution" type="text"></div>
+                        </div>
+
+                        <div class="row p-3">
+                          <div class="col-md-2 ">
+                            <p class="h6">Recieved Year: <span class="required">*</span></p>
+                          </div>
+                          <div class="col-md-10 "><input class="form-control certification-YOP" type="text"></div>
+                        </div>
+
+                        <div class="row p-3">
+                          <div class="col-md-2 ">
+                            <p class="h6">Certificate: <span class="required">*</span></p>
+                          </div>
+                          <div class="col-md-10 "><input class="form-control certificate-photo"
+
+                             onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])" type="file">
+                              <p hidden><img class="certificate-photo-preview" type="hidden" alt="your image" width="100"
+
+                             height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div id="delete_btn_certification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_certification_symbol">
+              <i class="fa-solid fa-trash text-danger fa-2x"></i>
+           </div>
+           <hr style="height: 5px;">
+        </div>
+      </div>
+   </div>      `
+
+      document.getElementById('certification-data').insertAdjacentHTML("beforeend", table);
+  };
+
+document.querySelector('#body').addEventListener('click',function(e){
+  console.log('e',e.target);
+  if(e.target.classList.contains('addbtn')|| findClosest(e.target,'addbtn'))
+  {
+    resumequailficationaddbtn();
+  }
+  if(e.target.classList.contains('addbtn-award') || findClosest(e.target,'addbtn-award'))
+  {
+    resumeawardaddbtn();
+  }
+  if(e.target.classList.contains('addbtn-publication')|| findClosest(e.target,'addbtn-publication'))
+  {
+    resumepublicationaddbtn();
+  }
+  if(e.target.classList.contains('addbtn-research')|| findClosest(e.target,'addbtn-research'))
+  {
+    resumeresearchaddbtn();
+  }
+  if(e.target.classList.contains('addbtn-certification')|| findClosest(e.target,'addbtn-certification'))
+  {
+    resumecertificationaddbtn();
+  }
+
+});
+
+
+// *************************************************************ADD Buttons Function's End******************************************************
 
     document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
       document.querySelector('.personal-details-edit-box').classList.remove('d-none');
