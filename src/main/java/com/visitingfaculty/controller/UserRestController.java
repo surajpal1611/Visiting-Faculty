@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.visitingfaculty.dao.UserDaoInterface;
 import com.visitingfaculty.dto.UserDto;
@@ -121,7 +123,7 @@ public class UserRestController {
 
     }
 
-    @PostMapping("/verify-login")
+    @GetMapping("/verify-login")
     public ResponseEntity<?> verifyUserLogin(@RequestBody UserDto userDto, HttpSession httpSession) {
 
         System.out.println(userDto);
@@ -138,9 +140,11 @@ public class UserRestController {
     }
 
     @PostMapping("/get-user-details")
-    public Object getUserResume() {
+    public Object getUserResume(int resume_lid) {
 
-        Object resume = userDaoInterface.getUserResume("1");
+System.out.println("RESUMELID>>>>>>>>>>" + resume_lid);
+
+        Object resume = userDaoInterface.getUserResume(resume_lid);
         return resume;
     }
 
@@ -172,6 +176,15 @@ public class UserRestController {
         int resume_lid = userDaoInterface.insertResume(resume);
 
         return resume_lid;
+    }
+
+    @PostMapping("/get-resume-by-user")
+    public Object getResumeByUser(@RequestParam("user_id") int user_lid) {
+        System.err.println(user_lid);
+
+        Object data = userDaoInterface.getResumeById(user_lid);
+
+        return data;
     }
 
     // @PostMapping("/verify-password")

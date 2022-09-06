@@ -3,7 +3,11 @@ package com.visitingfaculty.controller;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class UserController {
@@ -19,7 +23,10 @@ public class UserController {
     }
 
     @GetMapping("/resume")
-    public String getResume() {
+    public String getResume(@RequestParam("resume_lid") int resume_lid,Model model) {
+
+        System.out.print(resume_lid);
+        model.addAttribute(resume_lid);
         return "resume";
     }
 

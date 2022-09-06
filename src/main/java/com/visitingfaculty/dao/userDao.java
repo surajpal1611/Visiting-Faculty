@@ -208,7 +208,7 @@ public class userDao implements UserDaoInterface {
     }
 
     @Override
-    public Object getUserResume(String resume_lid) {
+    public Object getUserResume(int resume_lid) {
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
                 .withFunctionName("get_user_resume_details");
 
@@ -235,25 +235,35 @@ public class userDao implements UserDaoInterface {
 
     @Override
     public int insertResume(Resume resume) {
-        
-        String sql = "insert into resume(user_lid,name,description) values(?,?,?)";
-        // int resumeLid = jdbcTemplate.update(sql,resume.getUser_lid(),resume.getName(),resume.getDescription(),Integer.class);
-        KeyHolder holder = new GeneratedKeyHolder();
-		jdbcTemplate.update(new PreparedStatementCreator() {
-			@Override
-			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-				ps.setInt(1, resume.getUser_lid());
-				ps.setString(2, resume.getName());
-				ps.setString(3, resume.getDescription());
-				return ps;
-			}
-		}, holder);
 
-		Map<String, Object> id = holder.getKeys();
+        String sql = "insert into resume(user_lid,name,description) values(?,?,?)";
+        // int resumeLid =
+        // jdbcTemplate.update(sql,resume.getUser_lid(),resume.getName(),resume.getDescription(),Integer.class);
+        KeyHolder holder = new GeneratedKeyHolder();
+        jdbcTemplate.update(new PreparedStatementCreator() {
+            @Override
+            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+                PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+                ps.setInt(1, resume.getUser_lid());
+                ps.setString(2, resume.getName());
+                ps.setString(3, resume.getDescription());
+                return ps;
+            }
+        }, holder);
+
+        Map<String, Object> id = holder.getKeys();
         System.err.println(id.get("id"));
         int newResumeid = 1;
-		return newResumeid;
-	}
+        return newResumeid;
+    }
+
+    @Override
+    public Object getResumeById(int user_lid) {
+
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("resume_search");
+
+        return jdbcCall.executeFunction(Object.class, user_lid);
+    }
 
 }

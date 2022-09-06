@@ -806,11 +806,12 @@
   <script id="script-data"></script>
   <script>
     let qualificationType = `<option value disabled selected>--Select--</option>`
-
+    let resume_lid = '${resume_lid}';
+    console.log(resume_lid)
 
     let resumeinfo;
     $.ajax({
-      url: '/get-user-details',
+      url: '/get-user-details?resume_lid='+resume_lid,
       type: 'POST',
       success: function (response) {
         let data = JSON.parse(response.value)

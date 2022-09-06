@@ -21,6 +21,28 @@
 </head>
 
 <body>
+    <div class="modal fade" id="view-resume-modal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" style="border: none;" class="modal2-cancel-button" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal2-body">
+              
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary modal2-cancel-button"
+                    data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary modal-create-resume-button">Create Resume</button>
+            </div>
+        </div>
+    </div>
+</div>
     <jsp:include page="left-sidebar.jsp" />
 
     <main class="main">
@@ -105,7 +127,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+      
     </main>
 
     <script src="/js/jquery.min.js"></script>
@@ -158,12 +180,12 @@
                                 <tbody>`
                             for (let obj of data.resume_details) {
                                 tableToAppend += `
-                                    <tr data-userlid = "/${obj.user_lid}">
+                                    <tr data-userlid = "\${obj.user_lid}">
                                         <td>\${obj.f_name}</td>
-                                        <td>\${obj.user_id}</td>
+                                        <td class="user_id">\${obj.user_id}</td>
                                         <td>
-                                            <a href="" class="application-preview" style="border:none; outline:none" >
-                                            <i class="fa-solid fa-eye forwardIcon" data-toggle="tooltip" title="View Resume"></i></a>
+                                            <a class="application-preview" style="border:none; outline:none" >
+                                            <i class="fa-solid fa-eye view-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
                                             <a  class="" style="border:none; outline:none" >
                                          <i class="fa-solid fa-plus create-resume-button" data-toggle="tooltip" title="Create Resume"></i></a>
                                         </td>
@@ -220,8 +242,8 @@
                                             <td>\${obj.f_name}</td>
                                             <td class="user_id">\${obj.user_id}</td>
                                             <td>
-                                                <a href="" class="application-preview" style="border:none; outline:none" >
-                                                <i class="fa-solid fa-eye forwardIcon" data-toggle="tooltip" title="View Resume"></i></a>
+                                                <a class="application-preview" style="border:none; outline:none" >
+                                                <i class="fa-solid fa-eye view-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
                                                 <a  class="" style="border:none; outline:none" >
                                             <i class="fa-solid fa-plus create-resume-button" data-toggle="tooltip" title="Create Resume"></i></a>
                                             </td>
@@ -284,8 +306,12 @@
                 $("#create-resume-modal").modal("toggle");
             })
 
-            $('.modal-create-resume-button').on('click', function (e) {
+            $(document).on('click', '.modal2-cancel-button', function () {
+                $("#view-resume-modal").modal("toggle");
+            })
 
+            $('.modal-create-resume-button').on('click', function (e) {
+                console.log("clicked create resume")
                 e.preventDefault();
                 let myForm = document.getElementById('create-resume-form');
                 let formData = new FormData()
@@ -301,13 +327,90 @@
                     contentType: false,
                     processData: false,
                     success: function (response) {
-                        console.log(response);
+                      location.href = '/create-new-resume'
                     },
                     error: function (error) {
                         console.log('error', error)
                     }
                 })
             })
+
+            $(document).on('click','.view-resume-icon', function() {
+                
+                $("#view-resume-modal").modal("toggle");
+                let tr = $(this).closest('tr')
+                let id = tr.data('userlid') 
+                $.ajax({
+                    url : '/get-resume-by-user?user_id=' + id,
+                    type : 'POST' ,
+                    success : function(response) {
+                        let data = JSON.parse(response.value)
+
+                        console.log(data)
+                        
+
+                        if (data.resume_details != null) {
+
+
+                            let tableToAppend = `
+                                <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                    <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>Resume Name</th>
+                                        <th>Resume Description</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>`
+                            for (let obj of data.resume_details) {
+                                tableToAppend += `
+                                        <tr>
+                                            <td>\${obj.name}</td>
+                                            <td class="user_id">\${obj.description}</td>
+                                            <td>
+                                                <a href="/resume?resume_lid=\${obj.id}" class="application-preview" style="border:none; outline:none" >
+                                                <i class="fa-solid fa-eye get-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
+                                                <a  class="" style="border:none; outline:none" >
+                                            </td>
+                                        </tr>`
+                            }
+
+                            tableToAppend += `  </tbody>
+                                    </table>
+                                </div>
+                                                        `
+                                document.querySelector('.modal2-body').innerHTML = ""
+                            $('.modal2-body').html(tableToAppend)
+                        }
+                    },
+                    error : function(error) {
+
+                        console.log("error", error)
+                    }
+                })
+                
+            })
+
+        //  $(document).on('click','.get-resume-icon',function() {
+        //     let tr = $(this).closest('tr')
+
+        //     let resume_lid = tr.data('resumelid')
+            
+        //     $.ajax({
+        //         url : "/resume?resume_lid=" + resume_lid,
+        //         type : 'POST',
+        //         success : function(response) {
+
+        //             location.href = '/get-user-details'
+        //         },
+        //         error : function(response) {
+
+        //         }
+        //     })
+        //  })
         })
     </script>
 </body>

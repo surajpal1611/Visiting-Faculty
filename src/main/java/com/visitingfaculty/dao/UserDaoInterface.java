@@ -57,7 +57,7 @@ public interface UserDaoInterface {
 
     Integer getUserLid(String user_id);
 
-    Object getUserResume(String resume_lid);
+    Object getUserResume(int resume_lid);
 
     Object getFacultyApplication(String user_id);
 
@@ -65,4 +65,5 @@ public interface UserDaoInterface {
 
     int insertResume(Resume resume);
 
+    Object getResumeById(int user_lid);
 }
