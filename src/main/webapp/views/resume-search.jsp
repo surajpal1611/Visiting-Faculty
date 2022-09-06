@@ -69,7 +69,45 @@
                 </circle>
             </svg>
         </div>
+
+        <div class="modal fade" id="create-resume-modal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" style="border: none;" class="modal-cancel-button" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="user-id">Pancard No.</label>
+                            <input type="text" disabled id="user-id" class=" form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="user-id">Enter Resume name</label>
+                            <input minlength="3" type="text" id="resume-name" placeholder="Enter Resume Name"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="resume-description">Description</label>
+                            <input type="text" id="resume-description" placeholder="Enter Description"
+                                class="form-control">
+                            <input type="hidden" id="user-lid" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary modal-cancel-button"
+                            data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary modal-create-resume-button">Create Resume</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
@@ -78,7 +116,12 @@
     <script src="/js/SimpleAlert.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/leftsidebartoggle.js"></script>
-    <script src="/js/ajaxApi.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
     <script src="/js/jquery.bootpag.min.js"></script>
     <script>
@@ -115,22 +158,21 @@
                                 <tbody>`
                             for (let obj of data.resume_details) {
                                 tableToAppend += `
-                                    <tr>
+                                    <tr data-userlid = "/${obj.user_lid}">
                                         <td>\${obj.f_name}</td>
                                         <td>\${obj.user_id}</td>
                                         <td>
                                             <a href="" class="application-preview" style="border:none; outline:none" >
                                             <i class="fa-solid fa-eye forwardIcon" data-toggle="tooltip" title="View Resume"></i></a>
+                                            <a  class="" style="border:none; outline:none" >
+                                         <i class="fa-solid fa-plus create-resume-button" data-toggle="tooltip" title="Create Resume"></i></a>
                                         </td>
                                     </tr>`
                             }
 
                             tableToAppend += `  </tbody>
-                                </table>
-                            
-                        
-                        </div>
-                                                    `
+                                                     </table>
+                                                           </div> `
 
                             $('.table-appending-div').html(tableToAppend)
                         }
@@ -142,6 +184,7 @@
                 })
                 console.log(value);
             }
+
 
             function searchFunctionByName(value) {
                 $.ajax({
@@ -173,12 +216,14 @@
                                     <tbody>`
                             for (let obj of data.resume_details) {
                                 tableToAppend += `
-                                        <tr>
+                                        <tr data-userlid = "\${obj.user_lid}">
                                             <td>\${obj.f_name}</td>
-                                            <td>\${obj.user_id}</td>
+                                            <td class="user_id">\${obj.user_id}</td>
                                             <td>
                                                 <a href="" class="application-preview" style="border:none; outline:none" >
                                                 <i class="fa-solid fa-eye forwardIcon" data-toggle="tooltip" title="View Resume"></i></a>
+                                                <a  class="" style="border:none; outline:none" >
+                                            <i class="fa-solid fa-plus create-resume-button" data-toggle="tooltip" title="Create Resume"></i></a>
                                             </td>
                                         </tr>`
                             }
@@ -202,13 +247,21 @@
                 console.log(value);
             }
 
-            $('#search-by-id').on('keyup', function () {
 
-                clearTimeout(timeout)
-                const value = this.value
-                timeout = setTimeout(() => searchFunction(value), 2000)
+
+
+            $('#search-by-id').on('keyup', function () {
+                let searchByIdValue = document.getElementById('search-by-id').value
+                console.log(searchByIdValue)
+                if (searchByIdValue.length == 10) {
+
+                    clearTimeout(timeout)
+                    const value = this.value
+                    timeout = setTimeout(() => searchFunction(value), 2000)
+                }
 
             })
+
 
             $('#search-by-name').on('keyup', function () {
 
@@ -218,6 +271,43 @@
 
             })
 
+            $(document).on('click', '.create-resume-button', function () {
+
+                let tr = $(this).closest('tr')
+                $('#user-id').val(tr.find('.user_id').html())
+                $('#user-lid').val(tr.data('userlid'))
+                $("#create-resume-modal").modal("toggle");
+
+            })
+
+            $(document).on('click', '.modal-cancel-button', function () {
+                $("#create-resume-modal").modal("toggle");
+            })
+
+            $('.modal-create-resume-button').on('click', function (e) {
+
+                e.preventDefault();
+                let myForm = document.getElementById('create-resume-form');
+                let formData = new FormData()
+
+                formData.append("user_lid", document.getElementById('user-lid').value)
+                formData.append("name", document.getElementById('resume-name').value)
+                formData.append("description", document.getElementById('resume-description').value)
+
+                $.ajax({
+                    url: '/create-resume',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        console.log(response);
+                    },
+                    error: function (error) {
+                        console.log('error', error)
+                    }
+                })
+            })
         })
     </script>
 </body>

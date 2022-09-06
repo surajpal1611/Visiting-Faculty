@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.visitingfaculty.model.Resume;
 import com.visitingfaculty.model.User;
 import com.visitingfaculty.model.user_bank_details.UserBankAccountType;
 import com.visitingfaculty.model.user_qualification.UserQualificationType;
@@ -62,5 +63,6 @@ public interface UserDaoInterface {
 
     Object getFacultyResumeByName(String user_id);
 
-    int insertResume(String user_id);
+    int insertResume(Resume resume);
+
 }

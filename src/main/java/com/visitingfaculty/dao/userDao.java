@@ -1,11 +1,21 @@
 package com.visitingfaculty.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
+import com.visitingfaculty.model.Resume;
 import com.visitingfaculty.model.User;
 import com.visitingfaculty.model.user_bank_details.UserBankAccountType;
 import com.visitingfaculty.model.user_qualification.UserQualificationType;
@@ -224,11 +234,26 @@ public class userDao implements UserDaoInterface {
     }
 
     @Override
-    public int insertResume(String user_id) {
+    public int insertResume(Resume resume) {
         
-        String sql = "insert into resume values(?,?,?)";
+        String sql = "insert into resume(user_lid,name,description) values(?,?,?)";
+        // int resumeLid = jdbcTemplate.update(sql,resume.getUser_lid(),resume.getName(),resume.getDescription(),Integer.class);
+        KeyHolder holder = new GeneratedKeyHolder();
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			@Override
+			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+				PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+				ps.setInt(1, resume.getUser_lid());
+				ps.setString(2, resume.getName());
+				ps.setString(3, resume.getDescription());
+				return ps;
+			}
+		}, holder);
 
-        return 0;
-    }
+		Map<String, Object> id = holder.getKeys();
+        System.err.println(id.get("id"));
+        int newResumeid = 1;
+		return newResumeid;
+	}
 
 }
