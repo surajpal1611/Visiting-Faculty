@@ -327,7 +327,7 @@
                     contentType: false,
                     processData: false,
                     success: function (response) {
-                      location.href = '/create-new-resume'
+                      location.href = '/create-new-resume?user_lid='+formData.get('user_lid')+'&resume_lid='+response
                     },
                     error: function (error) {
                         console.log('error', error)

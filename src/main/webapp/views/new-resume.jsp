@@ -1,4 +1,5 @@
-6<!DOCTYPE html>
+6
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -124,10 +125,6 @@
                               class="fa-solid fa-ban text-danger"></i></p>
                         </div>
                       </div>
-
-                    </div>
-
-                    <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 ">
                       <div class="row py-1">
                         <div class="col-md-5 col-sm-3">
                           <h6>Contact No.</h6>
@@ -144,6 +141,11 @@
                           <p id="temp-contact-value"></p>
                         </div>
                       </div>
+
+                    </div>
+
+                    <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 ">
+                     
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
                           <h6>Email :</h6>
@@ -177,6 +179,22 @@
                           </p>
                         </div>
                       </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>City</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="city-value"></p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Pincode</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="pincode-value"></p>
+                        </div>
+                      </div>
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
                           <h6 class="country-heading">Country :</h6>
@@ -185,6 +203,7 @@
                           <p id="country-value"></p>
                         </div>
                       </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -564,7 +583,7 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                           <p><i id="publication-certificate-display"
-                            class="fa-solid fa-ban text-danger publication-certificate-display"></i></p>
+                              class="fa-solid fa-ban text-danger publication-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
@@ -666,12 +685,12 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                           <p><i id="research-certificate-display"
-                            class="fa-solid fa-ban text-danger research-certificate-display"></i></p>
+                              class="fa-solid fa-ban text-danger research-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
 
-<!--                     
+                    <!--                     
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
@@ -738,7 +757,7 @@
                             </div>
                             <div class="col-md-6 col-sm-6"></div>
                           </div>
-    
+
                           <div class="row">
                             <div class="col-md-6 col-sm-6">
                               <p class="h6 pb-1">Institution :</p>
@@ -746,7 +765,7 @@
                             <div class="col-md-6 col-sm-6"></div>
                           </div>
                         </div>
-    
+
                         <div class="col-md-6 col-sm-12">
                           <div class="row">
                             <div class="col-md-6 col-sm-6">
@@ -754,14 +773,14 @@
                             </div>
                             <div class="col-md-6 col-sm-6"></div>
                           </div>
-    
+
                           <div class="row">
                             <div class="col-md-6 col-sm-6">
                               <p class="h6 py-1">Certificate :</p>
                             </div>
                             <div class="col-md-6 col-sm-6">
                               <p><i id="professional-certificate-display"
-                                class="fa-solid fa-ban text-danger professional-certificate-display"></i></p>
+                                  class="fa-solid fa-ban text-danger professional-certificate-display"></i></p>
                             </div>
                           </div>
                         </div>
@@ -1847,7 +1866,7 @@
     })
 
 
-
+    console.log('${user_lid}', '${resume_lid}')
 
 
     document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
@@ -1946,18 +1965,20 @@
 
       setTimeout(function () {
 
-        user_contact.user_lid = 3
+        user_contact.user_lid = '${user_lid}'
+        user_contact.resume_lid = '${resume_lid}'
         user_contact.contact_number = result.contact_number
         user_contact.temp_contact_number = result.temp_contact_number
         personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
-        user_info.user_lid = 3
+        user_info.user_lid = '${user_lid}'
+        user_info.resume_lid = '${resume_lid}'
         user_info.f_name = result.f_name
         user_info.l_name = result.l_name
         user_info.email = result.email
         user_info.temp_email = result.temp_email
         user_info.gender_lid = Number.parseInt(result.gender)
         user_info.pancard_no = result.pan_number
-        user_info.pancard_url_path =  photoArray[2]
+        user_info.pancard_url_path = photoArray[2]
         user_info.aadhar_card_url_path = photoArray[1]
         user_info.profile_url_path = photoArray[0]
         user_info.aadhar_card_no = aadhar
@@ -1966,14 +1987,16 @@
         personalDetailsData.insert_user_personal_details.user_info[0] = user_info
 
         let addressObject = {}
-        addressObject.user_lid = 3
+        addressObject.user_lid = '${user_lid}'
+        addressObject.resume_lid = '${resume_lid}'
         addressObject.address = result.permanent_address
         addressObject.city = result.permanent_address_city
         addressObject.pin_code = result.permanent_address_pincode
         addressObject.address_type_lid = 1
 
         let addressObject2 = {}
-        addressObject2.user_lid = 3
+        addressObject2.user_lid = '${user_lid}'
+        addressObject2.resume_lid = '${resume_lid}'
         addressObject2.address = result.temporary_address
         addressObject2.address_type_lid = 2
 
@@ -2046,6 +2069,8 @@
         .innerText)
       editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
       editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
+      editPersonalDetailsForm.append('editCity', document.getElementById('city-value').innerText)
+      editPersonalDetailsForm.append('editPincode', document.getElementById('pincode-value').innerText)
       editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
         'temporary-address-value').innerText)
       editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
@@ -2059,8 +2084,9 @@
       document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
       document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
       document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
-      document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
-        'editTemporaryAddress')
+      document.getElementById('temporary-address').value = editPersonalDetailsForm.get('editTemporaryAddress')
+      document.getElementById('city').value = editPersonalDetailsForm.get('editCity')
+      document.getElementById('pincode').value = editPersonalDetailsForm.get('editPincode')
       document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
 
 
@@ -2156,6 +2182,7 @@
         let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
         // let qualificationCertificateImage = qualificationRow[i].querySelector('#qualification-certificate-preview').src;
 
+
         console.log(qualificationRow[i].querySelector('.qualification-certificate').src)
         let checkSubject = tabledatacheck(qualificationSubject);
         let checkUniversity = tabledatacheck(qualificationUniversity);
@@ -2163,7 +2190,6 @@
         let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
         let checkCertificate = qualificationDetailCertificateValidation(qualificationCertificate);
         let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
-        // let checkCancelledCheque = qualificationDetailCertificateValidation(qualificationCertificate);
 
         // console.log(qualificationCertificateImage)
         console.log(checkPercentile)
@@ -2192,7 +2218,6 @@
           return;
         }
 
-
         let qualificationTitle1 = ""
         let qualification_type = 0;
         if (qualificationTitle == "bachelor") {
@@ -2213,20 +2238,33 @@
           qualificationvalue = true
         }
 
-        object = {
-          resume_lid: 2,
-          resume_qualification_lid: 3,
-          qualification_type_lid: qualification_type,
-          topic_of_study: qualificationSubject,
-          university: qualificationUniversity,
-          institute: qualificationCollege,
-          status: qualificationvalue,
-          percentile: Number.parseFloat(qualificationPercentile),
-          year_of_passing: qualificationYear,
-          url_path: qualificationCertificate
-        }
+        let photoArray = []
 
-        div += ` 
+        let qualificationCertificateInput = qualificationRow[i].querySelector('.qualification-certificate').files[0]
+        if (qualificationCertificateInput) {
+          let filereader = new FileReader();
+          filereader.readAsDataURL(qualificationCertificateInput);
+          filereader.onload = function (evt) {
+            let qualificationPhotoBase64 = evt.target.result;
+            photoArray[i] = qualificationPhotoBase64
+          }
+        }
+        setTimeout(function () {
+
+
+          object = {
+            resume_lid: '${resume_lid}',
+            qualification_type_lid: qualification_type,
+            topic_of_study: qualificationSubject,
+            university: qualificationUniversity,
+            institute: qualificationCollege,
+            status: qualificationvalue,
+            percentile: Number.parseFloat(qualificationPercentile),
+            year_of_passing: qualificationYear,
+            url_path: photoArray[i]
+          }
+
+          div += ` 
           <div class="text-block right qualification-update" >
                   <div class="card-body">
                     <h2 id="year-of-passing">\${qualificationYear}\</h2>
@@ -2271,33 +2309,36 @@
 
 
 
-        qualificationTableArray.push(object)
+          qualificationTableArray.push(object)
+        }, 1000)
       }
-      let qualificationTableData = {
-        "qualificationDetails": qualificationTableArray
-      }
-      console.log(JSON.stringify(qualificationTableData))
+      setTimeout(function () {
 
-      let options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(qualificationTableData)
-      }
-      let fetchRes = fetch('/insert-qualification-details', options);
-      fetchRes.then(success => {
-        console.log('Status:', success);
-        if (success.status == 200) {
-          document.getElementById('qualification-appending-div').firstElementChild.remove()
-          document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.qualification-modal').classList.add('d-none');
-        } else {
-          alert('Check Qualification details');
+        let qualificationTableData = {
+          "qualificationDetails": qualificationTableArray
         }
-      })
+        console.log(JSON.stringify(qualificationTableData))
 
+        let options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(qualificationTableData)
+        }
+        let fetchRes = fetch('/insert-qualification-details', options);
+        fetchRes.then(success => {
+          console.log('Status:', success);
+          if (success.status == 200) {
+            document.getElementById('qualification-appending-div').firstElementChild.remove()
+            document.getElementById('qualification-appending-div').insertAdjacentHTML('beforeend', div)
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.qualification-modal').classList.add('d-none');
+          } else {
+            alert('Check Qualification details');
+          }
+        })
+      }, 1200)
     })
 
     document.getElementById('qualification-add-button').addEventListener('click', function (e) {
@@ -2406,9 +2447,6 @@
 
       }
     })
-
-
-
 
     document.addEventListener('mouseover', function () {
       let deleteButtonClick = document.querySelectorAll('.delete_btn_qualification_symbol')
@@ -2635,32 +2673,46 @@
           return;
         }
 
-        obj = {
-          resume_lid: "1",
-          achievement_type_lid: "2",
-          title: title,
-          resume_achievement_lid: 63,
-          organization_name: organization_name,
-          organization_type_lid: organization_type_lid,
-          achievement_date: achievement_date,
-          description: description,
-          url_path: url_path
+        let photoArray = []
+
+        let awardCertificateInput = vjstableelement[i].querySelector('.awardCertificationImage').files[0]
+        if (awardCertificateInput) {
+          let filereader = new FileReader();
+          filereader.readAsDataURL(awardCertificateInput);
+          filereader.onload = function (evt) {
+            let awardPhotoBase64 = evt.target.result;
+            photoArray[i] = awardPhotoBase64
+          }
         }
 
+        setTimeout(function () {
 
-        let organizationType = organization_type_lid
-        console.log(organizationType)
-        if (organizationType == 1) {
-          organizationType1 = "School"
-        } else if (organizationType == 2) {
-          organizationType1 = "University"
-        } else {
-          organizationType1 = "Industry"
-        }
+          obj = {
+            resume_lid: '${resume_lid}',
+            achievement_type_lid: "2",
+            title: title,
+            resume_achievement_lid: 63,
+            organization_name: organization_name,
+            organization_type_lid: organization_type_lid,
+            achievement_date: achievement_date,
+            description: description,
+            url_path: photoArray[i]
+          }
 
 
-        let recievedAwardDate = changeDateFormat(achievement_date)
-        div += `
+          let organizationType = organization_type_lid
+          console.log(organizationType)
+          if (organizationType == 1) {
+            organizationType1 = "School"
+          } else if (organizationType == 2) {
+            organizationType1 = "University"
+          } else {
+            organizationType1 = "Industry"
+          }
+
+
+          let recievedAwardDate = changeDateFormat(achievement_date)
+          div += `
         <div id="award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                     <div class="row">
 
@@ -2699,37 +2751,41 @@
                   </div>
                     `
 
-        resume_achievement.push(obj);
+          resume_achievement.push(obj);
+        }, 1000)
       }
 
       object = {
         "insert_award": resume_achievement
       }
 
-      //Fetch Method
-      function postdata() {
-        url = "/award_Table_Data";
-        params = {
-          method: "POST",
-          headers: {
-            contentType: 'application/json'
-          },
-          body: JSON.stringify(object),
-        }
-        fetch(url, params).then((data) => {
+      setTimeout(function () {
 
-          if (data.status == 200) {
-            document.getElementById('award-preview-div').firstElementChild.remove()
-            document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.award-modal').classList.add('d-none');
-          } else {
-            console.log("Error");
-            alert('Check Award Entries');
+        //Fetch Method
+        function postdata() {
+          url = "/award_Table_Data";
+          params = {
+            method: "POST",
+            headers: {
+              contentType: 'application/json'
+            },
+            body: JSON.stringify(object),
           }
-        })
-      }
-      postdata()
+          fetch(url, params).then((data) => {
+
+            if (data.status == 200) {
+              document.getElementById('award-preview-div').firstElementChild.remove()
+              document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
+              document.getElementById('body').classList.remove('d-none');
+              document.querySelector('.award-modal').classList.add('d-none');
+            } else {
+              console.log("Error");
+              alert('Check Award Entries');
+            }
+          })
+        }
+        postdata()
+      }, 1200)
     });
 
 
@@ -2802,35 +2858,34 @@
 
         // let publicationCertificate = publicationRow[i].querySelector('.certification').value;
 
+        let photoArray = []
 
-
-
-        // let publicationCertificate = document.querySelectorAll('.publication-certification')
-
-        // if (publicationCertificate[i].files[0]) {
-        //   let filereader = new FileReader();
-        //   filereader.readAsDataURL(publicationCertificate[i].files[0]);
-        //   filereader.onload = function (evt) {
-        //     publicationBase64 += evt.target.result;
-        //   }
-        // }
-        // console.log(publicationBase64)
-
-        object = {
-          resume_lid: "1",
-          achievement_type_lid: "1",
-          resume_achievement_lid: 81,
-          publication_role: publicationRole,
-          no_of_authors: publicationNumberOfAuthors,
-          title: publicationBookTitle,
-          publisher: publicationPublisher,
-          year_of_publication: publicationYearOfPublication,
-          publication_url_path: publicationBase64
+        let publicationCertificateInput = publicationRow[i].querySelector('.publication-certification').files[0]
+        if (publicationCertificateInput) {
+          let filereader = new FileReader();
+          filereader.readAsDataURL(publicationCertificateInput);
+          filereader.onload = function (evt) {
+            let publicationPhotoBase64 = evt.target.result;
+            photoArray[i] = publicationPhotoBase64
+          }
         }
-        publicationTableArray.push(object)
+        setTimeout(function () {
+
+          object = {
+            resume_lid: '${resume_lid}',
+            achievement_type_lid: "1",
+            resume_achievement_lid: 81,
+            publication_role: publicationRole,
+            no_of_authors: publicationNumberOfAuthors,
+            title: publicationBookTitle,
+            publisher: publicationPublisher,
+            year_of_publication: publicationYearOfPublication,
+            publication_url_path: photoArray[i]
+          }
+          publicationTableArray.push(object)
 
 
-        div += `   
+          div += `   
   <div class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
                  <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -2866,31 +2921,34 @@
                   </div>
                 </div>
                   `
-
+        }, 1000)
       }
 
       let publicationTableData = {
         "insert_publication": publicationTableArray
       }
+      setTimeout(function () {
 
-      let options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(publicationTableData)
-      }
-      let fetchRes = fetch("/insert-publication-details", options);
-      fetchRes.then(success => {
-        if (success.status == 200) {
-          document.getElementById('publication-appending-div').firstElementChild.remove()
-          document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.publication-modal').classList.add('d-none');
-        } else {
-          alert('Check');
+
+        let options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(publicationTableData)
         }
-      })
+        let fetchRes = fetch("/insert-publication-details", options);
+        fetchRes.then(success => {
+          if (success.status == 200) {
+            document.getElementById('publication-appending-div').firstElementChild.remove()
+            document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.publication-modal').classList.add('d-none');
+          } else {
+            alert('Check');
+          }
+        })
+      }, 1200)
     });
 
     document.getElementById('publication-add-button').addEventListener('click', function () {
@@ -3045,20 +3103,32 @@
           return;
         }
 
-        let researchCertificate = document.querySelectorAll('.research_photo')
-
-        obj = {
-          resume_lid: "1",
-          achievement_type_lid: "3",
-          resume_achievement_lid: 83,
-          title: Journal_name,
-          volume_year: volume_year,
-          description: description,
-          category: category,
-          research_url_path: "fake-path"
+        let photoArray = []
+        let researchCertificateInput = researchTableElem[j].querySelector('.research_photo').files[0]
+        if (researchCertificateInput) {
+          let filereader = new FileReader();
+          filereader.readAsDataURL(researchCertificateInput);
+          filereader.onload = function (evt) {
+            let researchPhotoBase64 = evt.target.result;
+            photoArray[j] = researchPhotoBase64
+          }
         }
 
-        div += `<div  class=" px-3 px-sm-4 px-lg-4 mt-1 ">
+        setTimeout(function () {
+
+
+          obj = {
+            resume_lid: '${resume_lid}',
+            achievement_type_lid: "3",
+            resume_achievement_lid: 83,
+            title: Journal_name,
+            volume_year: volume_year,
+            description: description,
+            category: category,
+            research_url_path: photoArray[j]
+          }
+
+          div += `<div  class=" px-3 px-sm-4 px-lg-4 mt-1 ">
                   <div class="row">
 
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -3092,7 +3162,8 @@
                   </div>
                 </div>                  
         `
-        resumeResearchTable.push(obj);
+          resumeResearchTable.push(obj);
+        }, 1000)
       }
 
       object = {
@@ -3100,22 +3171,29 @@
       }
       console.log('resrearch : ', JSON.stringify(object));
 
-      let options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(object),
-      }
-      let fetchRes = fetch("/research-table-data", options);
-      fetchRes.then(success => {
-        if (success.status == 200) {
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.research-modal').classList.add('d-none');
-        } else {
-          alert('Check');
+      setTimeout(function () {
+
+
+        let options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(object),
         }
-      })
+        let fetchRes = fetch("/research-table-data", options);
+        fetchRes.then(success => {
+          if (success.status == 200) {
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.research-modal').classList.add('d-none');
+
+            document.getElementById('research-appending-div').firstElementChild.remove()
+            document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
+          } else {
+            alert('Error');
+          }
+        })
+      }, 1200)
 
 
       // function postdata() {
@@ -3139,8 +3217,6 @@
       //   })
       // }
       // postdata()
-      document.getElementById('research-appending-div').firstElementChild.remove()
-      document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
 
     });
     // let awardData = {}
@@ -3303,17 +3379,31 @@
           return;
         }
 
-        object = {
-          resume_lid: 1,
-          resume_qualification_lid: 26,
-          qualification_type_lid: 4,
-          topic_of_study: professionalCertificateName,
-          institute: professionalInstitution,
-          year_of_passing: professionalYOP,
-          url_path: professionalCertification,
+        let photoArray = []
+
+        let professionalCertificateInput = certificationRow[i].querySelector('.certificate-photo').files[0]
+        if (professionalCertificateInput) {
+          let filereader = new FileReader();
+          filereader.readAsDataURL(professionalCertificateInput);
+          filereader.onload = function (evt) {
+            let professionalPhotoBase64 = evt.target.result;
+            photoArray[i] = professionalPhotoBase64
+          }
         }
 
-        div += `
+        setTimeout(function () {
+
+          object = {
+            resume_lid: '${resume_lid}',
+            resume_qualification_lid: 26,
+            qualification_type_lid: 4,
+            topic_of_study: professionalCertificateName,
+            institute: professionalInstitution,
+            year_of_passing: professionalYOP,
+            url_path: professionalCertification,
+          }
+
+          div += `
                   <div class="text-block right" id="preview-qualification-div">
                     <div class="card-body preview-certification-div">
 
@@ -3372,31 +3462,35 @@
 
                  `
 
-        certificationTableArray.push(object)
+          certificationTableArray.push(object)
+        }, 1000)
       }
       let certificationTableData = {
         "qualificationDetails": certificationTableArray
       }
       console.log(JSON.stringify(certificationTableData))
 
-      let options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(certificationTableData)
-      }
-      let fetchRes = fetch('/insert-qualification-details', options);
-      fetchRes.then(success => {
-        if (success.status == 200) {
-          document.getElementById('certification-appending-div').firstElementChild.remove()
-          document.getElementById('certification-appending-div').insertAdjacentHTML('beforeend', div)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.certification-modal').classList.add('d-none');
-        } else {
-          alert('Check Professional certificate details');
+      setTimeout(function () {
+
+        let options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(certificationTableData)
         }
-      })
+        let fetchRes = fetch('/insert-qualification-details', options);
+        fetchRes.then(success => {
+          if (success.status == 200) {
+            document.getElementById('certification-appending-div').firstElementChild.remove()
+            document.getElementById('certification-appending-div').insertAdjacentHTML('beforeend', div)
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.certification-modal').classList.add('d-none');
+          } else {
+            alert('Check Professional certificate details');
+          }
+        })
+      }, 1200)
     });
 
     document.querySelector('#certification-add-button').addEventListener('click', function () {
@@ -3575,7 +3669,7 @@
         "insert_bank_data": []
       }
       let bank_detail = {};
-      bank_detail.user_lid = 2,
+      bank_detail.user_lid = '${user_lid}',
         bank_detail.bank_name = document.querySelector('#bank-name').value;
       bank_detail.branch_name = document.querySelector('#bank-branch').value;
       bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code').value;
@@ -3724,7 +3818,7 @@
 
         let index = 21
         let obj = {}
-        obj.resume_lid = 1
+        obj.resume_lid = '${resume_lid}'
         obj.skill_lid = Number.parseInt(value)
         obj.skill_selected_lid = index++
         skillJson.skill_details[skillIndex] = obj
@@ -3742,7 +3836,7 @@
                               </div>`
         let index = 25
         let obj = {}
-        obj.resume_lid = 1
+        obj.resume_lid = '${resume_lid}'
         obj.skill_selected_lid = index++
         obj.skill_lid = Number.parseInt(value)
         skillJson.skill_details[skillIndex] = obj
@@ -4096,7 +4190,7 @@
           durationOfTeaching != "" || end_Date != "" || start_Date != "") {
           obj = {
             id: id,
-            resume_lid: "1",
+            resume_lid: '${resume_lid}',
             experience_type_lid: experienceTypeValue,
             employer_name: universityValue,
             designation: designation,

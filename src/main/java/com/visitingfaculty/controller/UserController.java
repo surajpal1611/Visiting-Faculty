@@ -1,13 +1,13 @@
 package com.visitingfaculty.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class UserController {
@@ -23,9 +23,8 @@ public class UserController {
     }
 
     @GetMapping("/resume")
-    public String getResume(@RequestParam("resume_lid") int resume_lid,Model model) {
+    public String getResume(@RequestParam(value = "resume_lid") int resume_lid,Model model) {
 
-        System.out.print(resume_lid);
         model.addAttribute(resume_lid);
         return "resume";
     }
@@ -58,7 +57,10 @@ public class UserController {
     }
 
     @GetMapping("/create-new-resume")
-    public String getNewResumePage() {
+    public String getNewResumePage(@RequestParam Map<String, String> urlObject,Model model) {
+
+        model.addAttribute("user_lid",urlObject.get("user_lid"));
+        model.addAttribute("resume_lid",urlObject.get("resume_lid"));
         return "new-resume";
     }
 

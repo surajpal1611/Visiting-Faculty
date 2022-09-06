@@ -58,6 +58,22 @@ public class UserRestController {
 
     }
 
+    @PostMapping(value = "/update-personal-details")
+    public ResponseEntity<?> updatePersonalDetails(@RequestBody String personalDetailsData) {
+
+        String json = jsonchk.UserJsonCheck(personalDetailsData);
+        if (json != null) {
+            Object updatePersonalDetails = userDaoInterface.updatePersonalDetails(json);
+            if (updatePersonalDetails == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            }
+            return ResponseEntity.ok("Inserted Successfully");
+        }
+        System.out.println("Error");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
+    }
+
     @PostMapping("/verify-registration")
     public ResponseEntity<?> verifyUserRegistration(@RequestBody UserDto userDto, HttpSession httpSession) {
 
@@ -142,7 +158,7 @@ public class UserRestController {
     @PostMapping("/get-user-details")
     public Object getUserResume(int resume_lid) {
 
-System.out.println("RESUMELID>>>>>>>>>>" + resume_lid);
+        System.out.println("RESUMELID>>>>>>>>>>" + resume_lid);
 
         Object resume = userDaoInterface.getUserResume(resume_lid);
         return resume;
@@ -170,8 +186,6 @@ System.out.println("RESUMELID>>>>>>>>>>" + resume_lid);
 
     @PostMapping("/create-resume")
     public int createResume(Resume resume) {
-        
-        System.out.println(resume);
 
         int resume_lid = userDaoInterface.insertResume(resume);
 
@@ -180,7 +194,6 @@ System.out.println("RESUMELID>>>>>>>>>>" + resume_lid);
 
     @PostMapping("/get-resume-by-user")
     public Object getResumeByUser(@RequestParam("user_id") int user_lid) {
-        System.err.println(user_lid);
 
         Object data = userDaoInterface.getResumeById(user_lid);
 
