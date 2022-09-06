@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+6<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -546,21 +546,21 @@
                     <div class="col-md-6 col-sm-12">
                       <div class="row">
                         <div class="col-md-6 col-sm-6">
-                          <p class="h5 pb-1">Publisher :</p>
+                          <p class="h6 pb-1">Publisher :</p>
                         </div>
                         <div class="col-md-6 col-sm-6"></div>
                       </div>
 
                       <div class="row">
                         <div class="col-md-6 col-sm-6">
-                          <p class="h5 pb-1">Publication Year:</p>
+                          <p class="h6 pb-1">Publication Year:</p>
                         </div>
                         <div class="col-md-6 col-sm-6"></div>
                       </div>
 
                       <div class="row">
                         <div class="col-md-6 col-sm-6">
-                          <p class="h5 py-1">Certificate :</p>
+                          <p class="h6 py-1">Certificate :</p>
                         </div>
                         <div class="col-md-6 col-sm-6">
                           <p><i id="publication-certificate-display"

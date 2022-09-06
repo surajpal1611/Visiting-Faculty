@@ -155,7 +155,6 @@
                         console.log(data)
 
 
-
                         if (data.resume_details != null) {
 
 

@@ -1,23 +1,17 @@
 package com.visitingfaculty.service.faculty_service;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Base64;
-import java.util.List;
 import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.visitingfaculty.dao.UserDaoInterface;
-import com.visitingfaculty.dto.UserDto;
 import com.visitingfaculty.model.User;
 import com.visitingfaculty.service.PasswordService;
 
@@ -61,12 +55,12 @@ public class UserService {
 
     public String uploadPhotos(String base64String) {
 
-        String filename = UUID.randomUUID().toString();
+        String filename = UUID.randomUUID().toString()+ ".jpg";
 
         String base64Image = base64String.split(",")[1];
         byte[] imageBytes = javax.xml.bind.DatatypeConverter.parseBase64Binary(base64Image);
 
-        Path destinationFile = Paths.get(uploadDirectory, filename + ".jpg");
+        Path destinationFile = Paths.get(uploadDirectory, filename);
 
         try {
             Files.write(destinationFile, imageBytes);
