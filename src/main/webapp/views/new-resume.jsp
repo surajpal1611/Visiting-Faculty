@@ -1997,6 +1997,8 @@
         let addressObject2 = {}
         addressObject2.user_lid = '${user_lid}'
         addressObject2.resume_lid = '${resume_lid}'
+        addressObject2.city = result.permanent_address_city
+        addressObject2.pin_code = result.permanent_address_pincode
         addressObject2.address = result.temporary_address
         addressObject2.address_type_lid = 2
 

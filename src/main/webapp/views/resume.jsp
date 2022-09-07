@@ -845,6 +845,7 @@
                     </div>
                     `
         if (personal_details != null) {
+
           resume += `  
                 <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
                       <div class="d-flex" style="color: #740E00;">
@@ -888,7 +889,7 @@
                           <h6>Pancard Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="pancard-photo"><i id="pancard-photo-preview" class="fa-solid fa-ban text-danger"></i></p>
+                          <p id="pancard-photo"><i id="pancard-photo-preview" data-image="../imagedata/\${personal_details.pancard_url_path}" class="fa-solid fa-ban text-danger"></i></p>
                           </p>
                         </div>
                       </div>
@@ -905,25 +906,7 @@
                           <h6>Aadhar card Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" class="fa-solid fa-ban text-danger"></i></p>
-                        </div>
-                      </div>
-
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>City :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-value">\${personal_details.city}</p>
-                        </div>
-                      </div>
-
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Pincode :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-value">\${personal_details.pin_code}</p>
+                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" data-image="../imagedata/\${personal_details.aadhar_card_url_path}" class="fa-solid fa-ban text-danger"></i></p>
                         </div>
                       </div>
                       <div class="row py-1">

@@ -252,8 +252,7 @@ public class userDao implements UserDaoInterface {
         }, holder);
 
         Map<String, Object> id = holder.getKeys();
-        System.err.println(id.get("id"));
-        int newResumeid = 1;
+        int newResumeid = (int) id.get("id");
         return newResumeid;
     }
 
