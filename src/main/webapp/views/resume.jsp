@@ -2978,7 +2978,8 @@
 
     });
 
-    document.querySelector('#personal-details-cancel-button').addEventListener('click', function () {
+    document.querySelector('#personal-details-cancel-button').addEventListener('click', function (e) {
+      e.preventDefault()
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.personal-details-modal').classList.add('d-none')
     });
