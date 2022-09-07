@@ -36,7 +36,7 @@ public class BankDetailsRestController {
         String check = jsoncheck.bankJsonCheck(bank_details);
         if (check != null) {
             System.out.println("Success");
-            Object bankUpdate = userDaoInterface.updateBankDetails(bank_details);
+            Object bankUpdate = userDaoInterface.updateBankDetails(check);
             System.out.println(bankUpdate);
             return ResponseEntity.status(HttpStatus.OK).build();
         }
@@ -46,8 +46,8 @@ public class BankDetailsRestController {
     @PostMapping(value = "/insert-bank-details")
     public ResponseEntity<?> insertBankDetails(@RequestBody String bank_details) {
 
-        System.out.println("Json Bank From Front End :" + bank_details);
         String check = jsoncheck.bankJsonCheck(bank_details);
+        System.out.println("Json Bank From Front End :" + check);
         if (check != null) {
             System.out.println("Success");
             Object bankInsert = userDaoInterface.insertBankDetails(check);

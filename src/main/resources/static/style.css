@@ -1059,3 +1059,35 @@ button {
   background-color: whitesmoke;
   box-shadow: 5px 2px 6px -1px;
 }
+
+.personalinsert{
+  padding: 15px;
+  margin: auto;
+  width: 70%;
+  background-color: whitesmoke;
+  box-shadow: 5px 2px 6px -1px;
+  margin-top: 6%;
+  border: 1px solid;
+}
+
+.resume-personal-addbtn{
+  border: none;
+  align-items: center;
+}
+
+.addbtn-bank{
+  padding: 15px;
+  margin: auto;
+  width: 70%;
+  background-color: whitesmoke;
+  box-shadow: 5px 2px 6px -1px;
+  margin-top: 6%;
+  border: 1px solid;
+}
+
+.resume-bank-addbtn{
+  border: none;
+  align-items: center;
+}
+
+
