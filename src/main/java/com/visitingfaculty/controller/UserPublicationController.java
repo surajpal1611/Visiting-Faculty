@@ -38,5 +38,11 @@ public class UserPublicationController {
         System.out.println("Error");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
-    }    
+    }
+    @PostMapping(value="/resume-publication-insert")
+    public ResponseEntity<String> insertPublication(@RequestBody String publicationTableData) 
+    {
+            System.out.println("Json String Publication :"+publicationTableData);
+            return ResponseEntity.status(HttpStatus.OK).build();
+    }   
 }

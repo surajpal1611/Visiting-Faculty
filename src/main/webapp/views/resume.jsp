@@ -915,7 +915,7 @@
   <script id="script-data"></script>
   <script>
     
-  let qualificationType = `<option value disabled selected>--Select--</option>`
+
 
 
     let resumeinfo;
@@ -1910,12 +1910,24 @@
 
 // ***********************************************************Qualification Section for Insert*************************************************
 
+let qualificationType=`<option value disabled selected>--Select--</option>`;
+
+
 //Resume Qualification Add Button
 function resumequailficationaddbtn(){
-
+   
 document.querySelector('.qualification-data-insert').innerHTML = "";
 document.querySelector('.qualification-modal-insert').classList.remove('d-none');
 document.querySelector('#body').classList.add('d-none');
+
+$.ajax({
+        url: '/get-qualification-type',
+        type: 'get',
+        success: function (response) {
+          for (let i = 0; i < response.length; i++) {
+            qualificationType+=`<option value="\${response[i].abbr}" >\${response[i].name}</option>`;
+          }
+
 let table = `
 <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
 <div class="container">
@@ -2001,8 +2013,11 @@ let table = `
        </div>      
 </div>`
 
+
 document.querySelector('.qualification-data-insert').insertAdjacentHTML("beforeend", table);
-};
+    }
+  });
+}
 
 // Qualification Section Add Button
 document.querySelector('.qualification-add-button').addEventListener('click', function (){
@@ -2213,7 +2228,7 @@ document.querySelector("#qualification-submit-insert").addEventListener('click',
            status: qualificationvalue,
            percentile: Number.parseFloat(qualificationPercentile),
            year_of_passing: qualificationYear,
-           url_path: photoArray[i]
+           url_path:photoArray[i]
 
          }
 
@@ -2281,11 +2296,9 @@ document.querySelector("#qualification-submit-insert").addEventListener('click',
          },
          body: JSON.stringify(qualificationTableData)
        }
-       let fetchRes = fetch('/insert-qualification-details', options);
+       let fetchRes = fetch('/resume-insert-qualification', options);
        fetchRes.then(success => {
          if (success.status == 200) {
-           document.getElementById('qualification-list').firstElementChild.remove()
-           document.getElementById('qualification-list').insertAdjacentHTML('beforeend', div)
            document.getElementById('body').classList.remove('d-none');
            document.querySelector('.qualification-modal').classList.add('d-none');
          } else {
@@ -2478,8 +2491,6 @@ for (let i = 0; i < noofrows; i++) {
   vjstableelement[i].querySelector('.awardCertificationImage').classList.remove('input-border');
   vjstableelement[i].querySelector('.awardOrganizationType').classList.remove('input-border');
 
-  let resume_achievement_lid1 = vjstableelement[i].dataset.awardlid;
-  console.log('resume_achievement_lid1', resume_achievement_lid1);
   let title = vjstableelement[i].querySelector('.awardName').value;
   let organization_name = vjstableelement[i].querySelector('.awardOrganization').value;
   let organization_type_lid = vjstableelement[i].querySelector('.awardOrganizationType').value;
@@ -2607,7 +2618,7 @@ object = {
 setTimeout(function () {
 
   function postdata() {
-    url = "/award_Table_Data";
+    url = "/award_insert";
     params = {
       method: "POST",
       headers: {
@@ -2618,8 +2629,6 @@ setTimeout(function () {
     fetch(url, params).then((data) => {
 
       if (data.status == 200) {
-        document.getElementById('award-preview-div').firstElementChild.remove()
-        document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
         document.getElementById('body').classList.remove('d-none');
         document.querySelector('.award-modal-insert').classList.add('d-none');
       } else {
@@ -2917,11 +2926,9 @@ setTimeout(function () {
     },
     body: JSON.stringify(publicationTableData)
   }
-  let fetchRes = fetch("/insert-publication-details", options);
+  let fetchRes = fetch("/resume-publication-insert", options);
   fetchRes.then(success => {
     if (success.status == 200) {
-      document.getElementById('publication-appending-div').firstElementChild.remove()
-      document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.publication-modal').classList.add('d-none');
     } else {
@@ -3197,11 +3204,9 @@ document.querySelector('#research-submit-insert').addEventListener('click', func
           },
           body: JSON.stringify(object),
         }
-        let fetchRes = fetch("/research-table-data", options);
+        let fetchRes = fetch("/resume-data-insert", options);
         fetchRes.then(success => {
           if (success.status == 200) {
-            document.getElementById('research-appending-div').firstElementChild.remove()
-            document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.research-modal').classList.add('d-none');
           } else {
@@ -3217,7 +3222,7 @@ document.querySelector('#research-submit-insert').addEventListener('click', func
     });
 
 
-// **********************************************************Research Section Insert End**************************************************
+// ********************************************************Research Section Insert End***************************************************
 
 // ******************************************************Certification Section Insert Start**********************************************
 
@@ -3495,11 +3500,9 @@ setTimeout(function () {
     },
     body: JSON.stringify(certificationTableData)
   }
-  let fetchRes = fetch('/insert-certification-details', options);
+  let fetchRes = fetch('/resume-certification-insert', options);
   fetchRes.then(success => {
     if (success.status == 200) {
-      document.getElementById('certification-appending-div').firstElementChild.remove()
-      document.getElementById('certification-appending-div').insertAdjacentHTML('beforeend', div)
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.certification-modal').classList.add('d-none');
     } else {

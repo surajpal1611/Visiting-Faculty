@@ -40,5 +40,12 @@ public class ResearchRestController {
             return new ResponseEntity<String>("Ressearch data inserted",HttpStatus.BAD_REQUEST);
         }
     }
+    
+    @PostMapping(value = "/resume-data-insert")
+    public ResponseEntity<String> insertResearch(@RequestBody String object)
+    {
+        System.out.println("Json String Research :"+ object);
+        return new ResponseEntity<String>("Ressearch data inserted",HttpStatus.OK);
+    }
 }
 

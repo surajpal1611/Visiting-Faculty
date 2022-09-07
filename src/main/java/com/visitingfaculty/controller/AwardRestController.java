@@ -42,4 +42,12 @@ public class AwardRestController
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
        
     }
+
+    @PostMapping(value="/award_insert")
+    @ResponseBody
+    public ResponseEntity<?> awardInsert(@RequestBody String resume_achievement)
+    {
+        System.out.println("Json String of Award Insert :"+resume_achievement);
+         return ResponseEntity.status(HttpStatus.OK).build();
+    }
 }

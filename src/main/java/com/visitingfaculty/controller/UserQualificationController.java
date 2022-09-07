@@ -95,6 +95,20 @@ public class UserQualificationController {
         
      }
 
+     @PostMapping(value="/resume-insert-qualification")
+     public ResponseEntity<?> resumwInsertQualificationDetail(@RequestBody String qualificationTableData,ModelMap modelMap)
+     {
+         System.out.println("jason for >>"+qualificationTableData);
+         return ResponseEntity.ok("Inserted Successfully");      
+     }
+
+     @PostMapping(value = "/resume-certification-insert")
+     public ResponseEntity<?> resumeInsertCertification(@RequestBody String CertificationData,ModelMap modelMap)
+     {
+         System.out.println("Json String Certification : "+CertificationData);
+         return ResponseEntity.ok("Inserted Successfully");    
+     }
+
 
 
 }
