@@ -1742,7 +1742,7 @@
           for (let qual of data.resume_qualification) {
             if (qual.qualification_type_lid === 4) {
 
-              resume += `<div class="professional-certificate-item d-flex position-relative"> 
+              resume += `<div class="professional-certificate-item d-flex position-relative" data-qualificationlid="\${qual.resume_qualification_lid}"> 
                 <div class="text-block right container" id="preview-qualification-div">
                   <div class="card-body preview-certification-div">
 
@@ -3365,7 +3365,6 @@
         certificationRow[i].querySelector('.certification-YOP').classList.remove('input-border');
         certificationRow[i].querySelector('.certificate-photo').classList.remove('input-border');
 
-
         let professionalCertificateName = certificationRow[i].querySelector('.certification-certificate').value;
         let professionalInstitution = certificationRow[i].querySelector('.certification-institution').value;
         let professionalYOP = certificationRow[i].querySelector('.certification-YOP').value;
@@ -3379,7 +3378,6 @@
         let checkInstitution = namecheck(professionalInstitution);
         let checkYOP = yearcheck(professionalYOP);
         let checkCertification = tabledatacheck(professionalCertification);
-
 
         console.log(checkCertificateName)
         console.log(checkInstitution)
@@ -3417,7 +3415,6 @@
 
           object = {
             resume_lid: resume_lid,
-            resume_qualification_lid: 26,
             qualification_type_lid: 4,
             topic_of_study: professionalCertificateName,
             institute: professionalInstitution,
@@ -5369,7 +5366,7 @@
         certificationRow[i].querySelector('.certification-institution').classList.remove('input-border');
         certificationRow[i].querySelector('.certification-YOP').classList.remove('input-border');
         certificationRow[i].querySelector('.certificate-photo').classList.remove('input-border');
-
+        let qualification_lid = certificationRow[i].dataset.qualificationlid
 
         let professionalCertificateName = certificationRow[i].querySelector('.certification-certificate').value;
         let professionalInstitution = certificationRow[i].querySelector('.certification-institution').value;
@@ -5422,7 +5419,7 @@
 
           object = {
             resume_lid: resume_lid,
-            resume_qualification_lid: 26,
+            resume_qualification_lid: qualification_lid,
             qualification_type_lid: 4,
             topic_of_study: professionalCertificateName,
             institute: professionalInstitution,
@@ -5548,9 +5545,9 @@
 
         if (cert.qualification_type_lid === 4) {
           let table = `  
-                    <div class="position-relative certification_delete_btn d-flex" style="cursor: pointer;"> 
+                    <div class="position-relative certification_delete_btn d-flex" style="cursor: pointer;" > 
                         <div class="container">
-                            <div class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
+                            <div class="certification-row px-3 px-sm-4 px-lg-4 mt-1" data-qualificationlid=\${cert.resume_qualification_lid}>
                                 <div class="row">
                               <!-- px-lg-5 -->
                                     <div class="col-12 col-md-12 col-lg-12 col-sm-12 ">

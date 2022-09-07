@@ -89,7 +89,7 @@ public class UserQualificationController {
      {
         String check = jsoncheck.certificationJson(CertificationData);
 
-
+        System.out.println("CERTIFICATION UPDATE" + check);
         if(check != null)
          {
        
