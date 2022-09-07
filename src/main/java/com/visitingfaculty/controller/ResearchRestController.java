@@ -26,25 +26,7 @@ public class ResearchRestController {
         if (check != null) {
             System.out.println("Success");
 
-            Object insertData = userDaoInterface.insertResearch(check);
-            // Object insertData = userDaoInterface.updateResearch(object);
-
-            System.out.println(insertData);
-            return new ResponseEntity<String>("Ressearch data inserted", HttpStatus.OK);
-        } else {
-            System.out.println("Error");
-            return new ResponseEntity<String>("Ressearch data inserted", HttpStatus.BAD_REQUEST);
-        }
-    }
-
-    @PostMapping(value = "/update-research-details")
-    public ResponseEntity<?> updateResearchMethod(@RequestBody String object) {
-        String check = jsoncheck.researchJsonCheck(object);
-        System.out.println("Research Data" + check);
-        if (check != null) {
-            System.out.println("Success");
-
-            Object updateData = userDaoInterface.updateResearch(object);
+            Object updateData = userDaoInterface.updateResearch(check);
 
             if (updateData != null) {
 
@@ -62,7 +44,18 @@ public class ResearchRestController {
     @PostMapping(value = "/resume-data-insert")
     public ResponseEntity<String> insertResearch(@RequestBody String object)
     {
-        System.out.println("Json String Research :"+ object);
-        return new ResponseEntity<String>("Ressearch data inserted",HttpStatus.OK);
+        String check = jsoncheck.researchJsonCheck(object);
+        System.out.println("Research Data" + check);
+        if (check != null) {
+            System.out.println("Success");
+
+            Object insertData = userDaoInterface.insertResearch(check);
+
+            System.out.println(insertData);
+            return new ResponseEntity<String>("Ressearch data inserted", HttpStatus.OK);
+        } else {
+            System.out.println("Error");
+            return new ResponseEntity<String>("Ressearch data inserted", HttpStatus.BAD_REQUEST);
+        }
     }
 }

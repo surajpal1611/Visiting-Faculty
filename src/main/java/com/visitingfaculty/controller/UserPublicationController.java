@@ -26,10 +26,10 @@ public class UserPublicationController {
 
         if(publicationcheck != null)
         {
-            Object insertData = userDaoInterface.insertPublications(publicationcheck);
+            Object updateData = userDaoInterface.updatePublications(publicationcheck);
 
-            if (insertData != null) {
-                System.out.println(insertData);;
+            if (updateData != null) {
+                System.out.println(updateData);;
                 System.out.println("Success");
                 return ResponseEntity.status(HttpStatus.OK).build();
             } 
@@ -43,7 +43,22 @@ public class UserPublicationController {
     @PostMapping(value="/resume-publication-insert")
     public ResponseEntity<String> insertPublication(@RequestBody String publicationTableData) 
     {
-            System.out.println("Json String Publication :"+publicationTableData);
-            return ResponseEntity.status(HttpStatus.OK).build();
+        String publicationcheck = jsoncheck.publicationJsonCheck(publicationTableData);
+
+        if(publicationcheck != null)
+        {
+            Object insertData = userDaoInterface.insertPublications(publicationcheck);
+
+            if (insertData != null) {
+                System.out.println(insertData);;
+                System.out.println("Success");
+                return ResponseEntity.status(HttpStatus.OK).build();
+            } 
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+         
+        }
+          
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
     }   
 }

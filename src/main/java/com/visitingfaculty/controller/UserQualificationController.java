@@ -93,10 +93,9 @@ public class UserQualificationController {
         if(check != null)
          {
        
-            Object insertCertificationDetails = userDaoInterface.insertQualificationDetails(check);
-            // Object updateCertificationDetails = userDaoInterface.updateQualificationDetails(qualificationTableData);
-            System.out.println(insertCertificationDetails);
-            if (insertCertificationDetails == null) {
+            Object updateCertificationDetails = userDaoInterface.updateQualificationDetails(check);
+            System.out.println(updateCertificationDetails);
+            if (updateCertificationDetails == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
             return ResponseEntity.ok("Inserted Successfully");
@@ -112,15 +111,48 @@ public class UserQualificationController {
      @PostMapping(value="/resume-insert-qualification")
      public ResponseEntity<?> resumwInsertQualificationDetail(@RequestBody String qualificationTableData,ModelMap modelMap)
      {
-         System.out.println("jason for >>"+qualificationTableData);
-         return ResponseEntity.ok("Inserted Successfully");      
+        String check = jsoncheck.certificationJson(qualificationTableData);
+
+
+        if(check != null)
+         {
+       
+            Object insertCertificationDetails = userDaoInterface.insertQualificationDetails(check);
+            System.out.println(insertCertificationDetails);
+            if (insertCertificationDetails == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            }
+            return ResponseEntity.ok("Inserted Successfully");
+        }
+        else
+        {
+            System.out.println("Error");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        
      }
 
      @PostMapping(value = "/resume-certification-insert")
      public ResponseEntity<?> resumeInsertCertification(@RequestBody String CertificationData,ModelMap modelMap)
      {
-         System.out.println("Json String Certification : "+CertificationData);
-         return ResponseEntity.ok("Inserted Successfully");    
+        String check = jsoncheck.certificationJson(CertificationData);
+
+
+        if(check != null)
+         {
+       
+            Object insertCertificationDetails = userDaoInterface.insertQualificationDetails(check);
+            System.out.println(insertCertificationDetails);
+            if (insertCertificationDetails == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            }
+            return ResponseEntity.ok("Inserted Successfully");
+        }
+        else
+        {
+            System.out.println("Error");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
      }
 
 

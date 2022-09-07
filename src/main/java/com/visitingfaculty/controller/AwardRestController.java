@@ -27,26 +27,6 @@ public class AwardRestController
         if(lastcheck != null)
         {
 
-            Object data = service.insertAwardData(lastcheck);
-
-            System.out.println(data);
-            return ResponseEntity.status(HttpStatus.OK).build();
-          
-        }
-          
-        System.out.println("Error");
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-       
-    }
-
-    @PostMapping(value="/update-award")
-    public ResponseEntity<?> updateAward(@RequestBody String resume_achievement)
-    {
-        String lastcheck = jsoncheck.JsonStringValues(resume_achievement);
-        
-        if(lastcheck != null)
-        {
-
             Object data = service.updateAward(lastcheck);
 
             System.out.println(data);
@@ -60,10 +40,22 @@ public class AwardRestController
     }
 
     @PostMapping(value="/award_insert")
-    @ResponseBody
     public ResponseEntity<?> awardInsert(@RequestBody String resume_achievement)
     {
-        System.out.println("Json String of Award Insert :"+resume_achievement);
-         return ResponseEntity.status(HttpStatus.OK).build();
+     
+        String lastcheck = jsoncheck.JsonStringValues(resume_achievement);
+        
+        if(lastcheck != null)
+        {
+
+            Object data = service.insertAwardData(lastcheck);
+
+            System.out.println(data);
+            return ResponseEntity.status(HttpStatus.OK).build();
+          
+        }
+          
+        System.out.println("Error");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 }
