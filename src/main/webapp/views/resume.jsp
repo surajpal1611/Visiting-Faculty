@@ -1467,8 +1467,8 @@
                   <div id="hard-skill-appending-div1" class="d-flex w-100 flex-wrap">`
         if (data.resume_skill_selected != null) {
           for (hardskill of data.resume_skill_selected) {
-            if (hardskill.skill_type_lid === 1)
-              resume += ` <div data-id="\${hardskill.skill_type_lid}" data-skill-type-lid=\${hardskill.skill_lid} class="skill-pill-div text-center">
+            if (hardskill.skill_type_lid === 2)
+              resume += ` <div data-id="\${hardskill.skill_lid}" class="skill-pill-div text-center">
                                     \${hardskill.skill_name}\
                                 </div>`
           }
@@ -1482,8 +1482,8 @@
                       <h4 class="title">Soft Skills</h4>
                       <div id="soft-skill-appending-div1" class="d-flex w-100 flex-wrap">`
           for (softskill of data.resume_skill_selected) {
-            if (softskill.skill_type_lid === 2) {
-              resume += `<div data-id="\${softskill.skill_type_lid}" data-skill-type-lid=\${softskill.skill_lid} class="skill-pill-div text-center">
+            if (softskill.skill_type_lid === 1) {
+              resume += `<div data-id="\${softskill.skill_lid}" class="skill-pill-div text-center">
                                     \${softskill.skill_name}\
                                 </div>`
             }
@@ -3989,16 +3989,10 @@
           url: '/get-all-skill',
           type: 'POST',
           success: function (response) {
-
             for (let i = 0; i < response.length; i++) {
 
               if (response[i].skill_type_lid === 1) {
 
-                // for (let j = 0; j < softSkills.children.length; j++) {
-                //   if (softSkills[j].firstElementChild.firstElementChild.value == response[i].id) {
-                //     console.log("Matched")
-                //   }
-                // }
                 softSkillUl.insertAdjacentHTML('beforeend',
                   `
                  <li class="soft-skill-list" data-id="\${response[i].id}">
@@ -4028,16 +4022,25 @@
               } else {
                 console.log("Error")
               }
-            }
 
+            }
+            document.getElementById('body').classList.add('d-none');
+            document.querySelector('.skills-modal').classList.remove('d-none');
+            for (let skill of document.querySelectorAll('.skill-pill-div')) {
+              let skillId = skill.getAttribute('data-id');
+              let skillPill = document.querySelector(`#pills-tabContent li[data-id='\${skillId}']`);
+             if(skillPill) {
+              skillPill.remove()
+             }
+
+            }
           },
           error: function (error) {
             console.log("Error::::::::::::", error);
           }
         });
 
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.skills-modal').classList.remove('d-none');
+
 
       });
 
@@ -5730,6 +5733,8 @@
       console.log('OK!')
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.skills-modal').classList.add('d-none');
+      document.querySelector("#add-custom-soft-skill").outerHTML="";
+      document.querySelector("#add-custom-hard-skill").outerHTML="";
     });
 
 
@@ -5803,7 +5808,8 @@
         })
       }
       postdata()
-
+      document.querySelector("#add-custom-soft-skill").outerHTML="";
+      document.querySelector("#add-custom-hard-skill").outerHTML="";
     })
 
     let softSkillSearchButton = document.getElementById('soft-skill-search')
@@ -5838,7 +5844,6 @@
           break;
         } else {
           document.getElementById('add-custom-soft-skill').classList.remove('d-none');
-
         }
       }
     })
@@ -5853,7 +5858,7 @@
       let element = event.target
       if (element.matches('i')) {
         let text = element.parentElement.parentElement.lastElementChild.lastElementChild.innerText;
-        let id = element.parentElement.parentElement.lastElementChild.firstElementChild.value
+        let id = element.parentElement.parentElement.parentElement.dataset.id
 
         let div = ` 
                     <li class="soft-skill-list-group" data-id="\${id}">
@@ -5909,7 +5914,7 @@
       let element = event.target
       if (element.matches('i')) {
         let text = element.parentElement.parentElement.lastElementChild.lastElementChild.innerText;
-        let id = element.parentElement.parentElement.lastElementChild.firstElementChild.value
+        let id = element.parentElement.parentElement.parentElement.dataset.id
 
         let div = ` 
                      <li class="hard-skill-list-group" data-id="\${id}">
