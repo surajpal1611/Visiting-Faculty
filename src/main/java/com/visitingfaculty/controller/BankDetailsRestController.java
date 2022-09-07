@@ -32,8 +32,8 @@ public class BankDetailsRestController {
     @PostMapping(value = "/update-bank-details")
     public ResponseEntity<?> updateBankDetails(@RequestBody String bank_details) {
 
-        System.out.println("Json Bank From Front End :" + bank_details);
         String check = jsoncheck.bankJsonCheck(bank_details);
+        System.out.println("Json Bank From Front End :" + check);
         if (check != null) {
             System.out.println("Success");
             Object bankUpdate = userDaoInterface.updateBankDetails(check);

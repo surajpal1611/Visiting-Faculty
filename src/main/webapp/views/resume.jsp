@@ -34,7 +34,7 @@
     <div class="personal-details-modal d-none">
       <div id="main-form-area">
 
-        <form id="myForm">
+        <form id="insert-form">
           <div class="d-flex justify-content-center align-items-center">
             <h1 class="p-5" style="color: #740E00;"><b> Personal Details</b></h1>
           </div>
@@ -256,7 +256,7 @@
     <div class="personal-details-modal-insert d-none">
       <div id="main-form-area">
 
-        <form id="myForm">
+        <form id="insert-form">
           <div class="d-flex justify-content-center align-items-center">
             <h1 class="p-5" style="color: #740E00;"><b> Personal Details</b></h1>
           </div>
@@ -268,7 +268,7 @@
                 <div class="form-group">
                   <label for="first-name" cl>First Name <span class="required">*</span></label>
                   <span id="first-name-message" style="color: red;" class="error"></span>
-                  <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
+                  <input type="text" class="form-control" name="f_name_insert" id="first-name" placeholder="First Name">
                 </div>
               </div>
 
@@ -277,14 +277,14 @@
                 <div class="form-group">
                   <label for="last-name">last Name <span class="required">*</span></label>
                   <span id="last-name-message" style="color: red;" class="error"></span>
-                  <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
+                  <input type="text" class="form-control" name="l_name_insert" id="last-name" placeholder="Last Name">
 
                 </div>
               </div>
 
               <div class="col-md-4 col-sm-12">
                 <div class="form-group">
-                  <img id="photo-preview" alt="your image" name="photo_preview" width="100" height="100"
+                  <img id="photo-preview_insert" alt="your image" name="photo_preview_insert" width="100" height="100"
                     style="border: 1px solid #ced4da; margin-left:100px;" />
                 </div>
               </div>
@@ -315,19 +315,19 @@
                 <div class="form-group">
                   <label for="date-of-birth">date of birth <span class="required">*</span></label>
                   <span id="date-of-birth-message" style="color: red;" class="error"></span>
-                  <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
+                  <input type="date" class="form-control" name="date_of_birth_insert" id="date-of-birth" />
                 </div>
               </div>
 
               <div id="gender-row" class="col-md-4 col-sm-12">
                 <div class="form-group">
                   <label for="date-of-birth">Gender<span class="required">*</span></label><br>
-                  <label class="radio-inline">Male<input type="radio" name="gender" class="gender ms-1" id="male"
+                  <label class="radio-inline">Male<input type="radio" name="gender_insert" class="gender ms-1" id="male"
                       value="1" /></label>
-                  <label class="radio-inline">Female<input type="radio" name="gender" class="gender ms-1" id="female"
-                      value="2" /></label>
-                  <label class="radio-inline">Other<input type="radio" name="gender" class="gender ms-1" id="other"
-                      value="3" /></label>
+                  <label class="radio-inline">Female<input type="radio" name="gender_insert" class="gender ms-1"
+                      id="female" value="2" /></label>
+                  <label class="radio-inline">Other<input type="radio" name="gender_insert" class="gender ms-1"
+                      id="other" value="3" /></label>
                 </div>
               </div>
 
@@ -351,8 +351,8 @@
               <div class="col-md-4 col-sm-12">
                 <label for="photo">passport Size Photo <span class="required">*</span></label>
                 <span id="photo-message" style="color: red;" class="error"></span>
-                <input type="file" class="form-control" id="photo" name="profile_photo"
-                  onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
+                <input type="file" class="form-control" id="photo_insert" name="profile_photo_insert"
+                  onchange="document.getElementById('photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
 
             </div>
@@ -363,22 +363,22 @@
               <div class="col-md-3 col-sm-12">
                 <label for="contact-number">Contact No. <span class="required">*</span></label>
                 <span id="contact-number-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="contact_number" id="contact-number" />
+                <input type="text" class="form-control" name="contact_number_insert" id="contact-number" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="temp_contact-number">Secondary Contact No.</label>
                 <span id="temporary-contact-number-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="temp_contact_number" id="temp_contact-number" />
+                <input type="text" class="form-control" name="temp_contact_number_insert" id="temp_contact-number" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="email">Email Id <span class="required">*</span></label>
                 <span id="email-message" style="color: red;" class="error"></span>
-                <input type="text" name="email" class="form-control" id="email">
+                <input type="text" name="email_insert" class="form-control" id="email">
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="temp_email">Secondary Email</label>
                 <span id="temp-email-message" style="color: red;" class="error"></span>
-                <input type="text" name="temp_email" class="form-control" id="temp_email">
+                <input type="text" name="temp_email_insert" class="form-control" id="temp_email">
               </div>
             </div>
           </div>
@@ -388,17 +388,17 @@
               <div class="col-md-6 col-sm-12">
                 <label for="address">Permanent Address <span class="required">*</span></label>
                 <span id="address-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="permanent_address" id="address" />
+                <input type="text" class="form-control" name="permanent_address_insert" id="address" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="city">City <span class="required">*</span></label>
                 <span id="city-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="permanent_address_city" id="city" />
+                <input type="text" class="form-control" name="permanent_address_city_insert" id="city" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="pincode">Pincode <span class="required">*</span></label>
                 <span id="pincode-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="permanent_address_pincode" id="pincode" />
+                <input type="text" class="form-control" name="permanent_address_pincode_insert" id="pincode" />
               </div>
             </div>
           </div>
@@ -408,12 +408,12 @@
               <div class="col-md-8 col-sm-12">
                 <label for="temporary-address">Temporary Address</label>
                 <span id="temporary-address-message" style="color: red;" class="error"></span>
-                <input type="text" name="temporary_address" class="form-control" id="temporary-address">
+                <input type="text" name="temporary_address_insert" class="form-control" id="temporary-address">
               </div>
               <div class="col-md-4 col-sm-12">
                 <label for="country">Country <span class="required">*</span></label>
                 <span id="country-message" style="color: red;" class="error"></span>
-                <input type="text" name="nationality" class="form-control" id="country">
+                <input type="text" name="nationality_insert" class="form-control" id="country">
               </div>
             </div>
           </div>
@@ -423,17 +423,17 @@
               <div class="col-md-4 col-sm-12">
                 <label for="pan-number">Pan Card Number <span class="required">*</span></label>
                 <span id="pan-number-message" style="color: red;" class="error"></span>
-                <input type="text" name="pan_number" class="form-control" id="pan-number" />
+                <input type="text" name="pan_number_insert" class="form-control" id="pan-number" />
               </div>
 
               <div class="col-md-4 col-sm-12">
                 <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
                 <span id="pan-photo-message" style="color: red;" class="error"></span>
                 <input type="file" class="form-control" id="pan-photo"
-                  onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
+                  onchange="document.getElementById('pan-photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
               <div class="col-md-4 col-sm-12">
-                <img id="pan-photo-preview" alt="your image" width="100" height="100"
+                <img id="pan-photo-preview_insert" alt="your image" width="100" height="100"
                   style="border: 1px solid #ced4da; margin-left:100px;" />
 
               </div>
@@ -445,17 +445,17 @@
               <div class="col-md-4 col-sm-12">
                 <label for="aadhar-number">Aadhar Card Number <span class="required">*</span></label>
                 <span id="aadhar-number-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
+                <input type="text" class="form-control" name="aadhar_number_insert" id="aadhar-number" />
               </div>
 
               <div class="col-md-4 col-sm-12">
                 <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
                 <span id="aadhar-photo-message" style="color: red;" class="error"></span>
                 <input type="file" class="form-control" id="aadhar-photo"
-                  onchange="document.getElementById('aadhar-photo-preview-1').src = window.URL.createObjectURL(this.files[0])">
+                  onchange="document.getElementById('aadhar-photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
               <div class="col-md-4 col-sm-12">
-                <img id="aadhar-photo-preview-1" alt="your image" width="100" height="100"
+                <img id="aadhar-photo-preview_insert" alt="your image" width="100" height="100"
                   style="border: 1px solid #ced4da; margin-left:100px;" />
 
               </div>
@@ -2096,9 +2096,11 @@
     });
 
     //Personal Details Submit
-    document.querySelector('#personal-details-submit-insert').addEventListener('click', function () {
+    document.querySelector('#personal-details-submit-insert').addEventListener('click', function (e) {
 
-      let myForm = document.getElementById('myForm')
+      console.log()
+      e.preventDefault()
+      let myForm = document.getElementById('insert-form')
       let formData = new FormData(myForm)
       let arrayresult = [];
       let result = {};
@@ -2106,44 +2108,44 @@
         result[entry[0]] = entry[1];
       }
 
-      clearError();
+      // clearError();
 
-      let firstName = personalDetailFirstNameValidation(result.f_name);
-      let lastName = personalDetailLastNameValidation(result.l_name);
-      let profilePhoto1 = personalDetailProfilePhotoValidation(document.getElementById("photo").value);
-      let DOB = personalDetailDateOfBirthValidation(result.date_of_birth);
-      let gender = personalDetailGenderValidation(result.gender);
-      let contactNumber = personalDetailContactNumberValidation(result.contact_number);
-      let temporaryContact = personalDetailTemporaryContactValidation(result.temp_contact_number);
-      let pancard = personalDetailPancardValidation(result.pan_number);
-      let pancardPhoto = personalDetailPancardPhotoValidation(document.getElementById("pan-photo").value);
-      let email = personalDetailEmailValidation(result.email);
-      let aadhar = personalDetailAadharValidation(result.aadhar_number);
-      let aadharPhoto1 = personalDetailAadharPhotoValidation(document.getElementById("aadhar-photo").value);
-      let address = personalDetailAddressValidation(result.permanent_address);
-      let country = personalDetailCountryValidation(result.nationality);
-      let tempContact = (result.temp_contact_number);
-      let tempemail = tempemailvalidation(result.temp_email);
+      // let firstName = personalDetailFirstNameValidation(result.f_name_insert);
+      // let lastName = personalDetailLastNameValidation(result.l_name_insert);
+      // let profilePhoto1 = personalDetailProfilePhotoValidation(document.getElementById("photo_insert").value);
+      // let DOB = personalDetailDateOfBirthValidation(result.date_of_birth_insert);
+      // let gender = personalDetailGenderValidation(result.gender_insert);
+      // let contactNumber = personalDetailContactNumberValidation(result.contact_number_insert);
+      // let temporaryContact = personalDetailTemporaryContactValidation(result.temp_contact_number_insert);
+      // let pancard = personalDetailPancardValidation(result.pan_number_insert);
+      // let pancardPhoto = personalDetailPancardPhotoValidation(document.getElementById("pan-photo_insert").value);
+      // let email = personalDetailEmailValidation(result.email_insert);
+      // let aadhar = personalDetailAadharValidation(result.aadhar_number_insert);
+      // let aadharPhoto1 = personalDetailAadharPhotoValidation(document.getElementById("aadhar-photo_insert").value);
+      // let address = personalDetailAddressValidation(result.permanent_address_insert);
+      // let country = personalDetailCountryValidation(result.nationality_insert);
+      // let tempContact = (result.temp_contact_number_insert);
+      // let tempemail = tempemailvalidation(result.temp_email_insert);
 
-      if (!firstName || !lastName || !profilePhoto1 || !gender || !contactNumber || !email || !pancard || !
-        pancardPhoto || !aadhar || !aadharPhoto1 || !address || !
-        country || !DOB || !tempemail) {
-        return;
-      }
+      // if (!firstName || !lastName || !profilePhoto1 || !gender || !contactNumber || !email || !pancard || !
+      //   pancardPhoto || !aadhar || !aadharPhoto1 || !address || !
+      //   country || !DOB || !tempemail) {
+      //   return;
+      // }
 
-      if (pancardPhoto.length != 0) {
-        document.getElementById('pancard-photo').firstElementChild.classList.remove('fa-ban')
-        document.getElementById('pancard-photo').firstElementChild.classList.remove('text-danger')
-        document.getElementById('pancard-photo').firstElementChild.classList.add('fa-image')
-        document.getElementById('pancard-photo').firstElementChild.classList.add('text-success')
-      }
+      // if (pancardPhoto.length != 0) {
+      //   document.getElementById('pancard-photo').firstElementChild.classList.remove('fa-ban')
+      //   document.getElementById('pancard-photo').firstElementChild.classList.remove('text-danger')
+      //   document.getElementById('pancard-photo').firstElementChild.classList.add('fa-image')
+      //   document.getElementById('pancard-photo').firstElementChild.classList.add('text-success')
+      // }
 
-      if (aadharPhoto1.length != 0) {
-        document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('fa-ban')
-        document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('text-danger')
-        document.getElementById('aadhar-card-photo').firstElementChild.classList.add('fa-image')
-        document.getElementById('aadhar-card-photo').firstElementChild.classList.add('text-success')
-      }
+      // if (aadharPhoto1.length != 0) {
+      //   document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('fa-ban')
+      //   document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('text-danger')
+      //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('fa-image')
+      //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('text-success')
+      // }
 
       let personalDetailsData = {
         "insert_user_personal_details": {
@@ -2190,41 +2192,41 @@
         console.log(photoArray)
         let user_info = {}
         let user_contact = {}
-
-        user_contact.user_lid = '${user_lid}'
+        console.log(JSON.stringify(result))
+        user_contact.user_lid = 10 //'${user_lid}'
         user_contact.resume_lid = resume_lid
-        user_contact.contact_number = result.contact_number
-        user_contact.temp_contact_number = result.temp_contact_number
+        user_contact.contact_number = result.contact_number_insert
+        user_contact.temp_contact_number = result.temp_contact_number_insert
         personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
-        user_info.user_lid = '${user_lid}'
+        user_info.user_lid = 10 //'${user_lid}'
         user_info.resume_lid = resume_lid
-        user_info.f_name = result.f_name
-        user_info.l_name = result.l_name
-        user_info.email = result.email
-        user_info.temp_email = result.temp_email
-        user_info.gender_lid = Number.parseInt(result.gender)
-        user_info.pancard_no = result.pan_number
+        user_info.f_name = result.f_name_insert
+        user_info.l_name = result.l_name_insert
+        user_info.email = result.email_insert
+        user_info.temp_email = result.temp_email_insert
+        user_info.gender_lid = Number.parseInt(result.gender_insert)
+        user_info.pancard_no = result.pan_number_insert
         user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
         user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
         user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
-        user_info.aadhar_card_no = aadhar
-        user_info.date_of_birth = result.date_of_birth
-        user_info.nationality = result.nationality
+        user_info.aadhar_card_no = result.aadhar_insert
+        user_info.date_of_birth = result.date_of_birth_insert
+        user_info.nationality = result.nationality_insert
         personalDetailsData.insert_user_personal_details.user_info[0] = user_info
 
         let addressObject = {}
 
-        addressObject.user_lid = '${user_lid}'
+        addressObject.user_lid = 10 //'${user_lid}'
         addressObject.resume_lid = resume_lid
-        addressObject.address = result.permanent_address
-        addressObject.city = result.permanent_address_city
-        addressObject.pin_code = result.permanent_address_pincode
+        addressObject.address = result.permanent_address_insert
+        addressObject.city = result.permanent_address_city_insert
+        addressObject.pin_code = result.permanent_address_pincode_insert
 
         addressObject.address_type_lid = 1
         let addressObject2 = {}
-        addressObject2.user_lid = '${user_lid}'
+        addressObject2.user_lid = 10 //'${user_lid}'
         addressObject2.resume_lid = resume_lid
-        addressObject2.address = result.temporary_address
+        addressObject2.address = result.temporary_address_insert
         addressObject2.address_type_lid = 2
 
         arrayresult[0] = addressObject
@@ -3959,7 +3961,7 @@
       // submitBankDetailsForm.append('cancelledCheckPhoto', document.getElementById('cancelled_cheque_Photo-insert').value)
 
       console.log(submitBankDetailsForm.get('bankName'))
-      
+
       let facultyBankName1 = bankDetailBankNameValidation(submitBankDetailsForm.get('bankName'))
       let facultyBankBranch1 = bankDetailBankBranchValidation(submitBankDetailsForm.get('branchName'))
       let facultyIfscCode1 = bankDetailIfscCodeValidation(submitBankDetailsForm.get('ifscCode'))
@@ -3967,7 +3969,7 @@
       let facultyAccountNumber1 = bankDetailAccountNumberValidation(submitBankDetailsForm.get('accountNumber'))
       // let facultyCancelledCheque = bankDetailCancelledChequeValidation(submitBankDetailsForm.get(
       //   'cancelledCheckPhoto'))
-console.log("Beforee Validations")
+      console.log("Beforee Validations")
       // if (!facultyBankName1 || !facultyBankBranch1 || !facultyIfscCode1 || !facultyMicrCode1 || !
       //   facultyAccountNumber1 || !facultyCancelledCheque) {
       //   return;
@@ -3998,14 +4000,14 @@ console.log("Beforee Validations")
         }
         console.log(bankDetailsJson)
         let bank_detail = {};
-        bank_detail.user_lid = 10//'${user_lid}',
+        bank_detail.user_lid = 10 //'${user_lid}',
         bank_detail.resume_lid = resume_lid,
-        bank_detail.bank_name = document.querySelector('#bank-name-insert').value;
+          bank_detail.bank_name = document.querySelector('#bank-name-insert').value;
         bank_detail.branch_name = document.querySelector('#bank-branch-insert').value;
         bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code-insert').value;
         bank_detail.micr_code = document.querySelector('#bank-micr-code-insert').value;
         bank_detail.account_number = document.querySelector('#bank-account-number-insert').value;
-        bank_detail.bank_account_type_lid = 1//document.querySelector('#bank-account-type-insert').value;
+        bank_detail.bank_account_type_lid = 1 //document.querySelector('#bank-account-type-insert').value;
         bank_detail.url_path = photoArray[0];
         bankDetailsJson.insert_bank_data[0] = bank_detail
         console.log(JSON.stringify(bankDetailsJson))
@@ -4570,9 +4572,9 @@ console.log("Beforee Validations")
             for (let skill of document.querySelectorAll('.skill-pill-div')) {
               let skillId = skill.getAttribute('data-id');
               let skillPill = document.querySelector(`#pills-tabContent li[data-id='\${skillId}']`);
-             if(skillPill) {
-              skillPill.remove()
-             }
+              if (skillPill) {
+                skillPill.remove()
+              }
 
             }
           },
@@ -6137,7 +6139,7 @@ console.log("Beforee Validations")
                           <hr style="height: 5px;">
                         </div>
                       </div>
-                  </div>      `
+                  </div>`
 
           document.getElementById('certification-data').insertAdjacentHTML("beforeend", table);
         }
@@ -6147,7 +6149,7 @@ console.log("Beforee Validations")
 
     //*************************************Bank-details-modal JS****************************************
 
-
+    console.log('${user_lid}')
 
     document.querySelector('#bank-details-cancel-button').addEventListener('click', function () {
       document.getElementById('body').classList.remove('d-none');
@@ -6222,14 +6224,14 @@ console.log("Beforee Validations")
           "insert_bank_data": []
         }
         let bank_detail = {};
-        bank_detail.user_lid =10 //'${user_lid}',
+        bank_detail.user_lid = 10 //'${user_lid}',
         bank_detail.resume_lid = resume_lid,
-        bank_detail.bank_name = document.querySelector('#bank-name').value;
+          bank_detail.bank_name = document.querySelector('#bank-name').value;
         bank_detail.branch_name = document.querySelector('#bank-branch').value;
         bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code').value;
         bank_detail.micr_code = document.querySelector('#bank-micr-code').value;
         bank_detail.account_number = document.querySelector('#bank-account-number').value;
-        bank_detail.bank_account_type_lid = 1//document.querySelector('#bank-account-type').value;
+        bank_detail.bank_account_type_lid = 1 //document.querySelector('#bank-account-type').value;
         bank_detail.url_path = photoArray[0];
         bankDetailsJson.insert_bank_data[0] = bank_detail
         console.log(JSON.stringify(bankDetailsJson))
@@ -6275,8 +6277,8 @@ console.log("Beforee Validations")
       console.log('OK!')
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.skills-modal').classList.add('d-none');
-      document.querySelector("#add-custom-soft-skill").outerHTML="";
-      document.querySelector("#add-custom-hard-skill").outerHTML="";
+      document.querySelector("#add-custom-soft-skill").outerHTML = "";
+      document.querySelector("#add-custom-hard-skill").outerHTML = "";
     });
 
 
@@ -6350,8 +6352,8 @@ console.log("Beforee Validations")
         })
       }
       postdata()
-      document.querySelector("#add-custom-soft-skill").outerHTML="";
-      document.querySelector("#add-custom-hard-skill").outerHTML="";
+      document.querySelector("#add-custom-soft-skill").outerHTML = "";
+      document.querySelector("#add-custom-hard-skill").outerHTML = "";
     })
 
     let softSkillSearchButton = document.getElementById('soft-skill-search')
