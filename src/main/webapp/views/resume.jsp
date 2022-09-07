@@ -807,7 +807,7 @@
   <script>
     let qualificationType = `<option value disabled selected>--Select--</option>`
     let resume_lid = '${resume_lid}';
-
+    console.log(resume_lid)
     let resumeinfo;
     $.ajax({
       url: '/get-user-details?resume_lid=' + resume_lid,
@@ -836,15 +836,16 @@
           <div class="position-relative personal-information-div-wrapper d-flex" style="cursor: pointer;">
             <div class="container p-0">
               <div class="personal-information-div">
-                <div class="cover-div p-3 px-sm-4 p-lg-4">`
-        if (personal_details != null) {
-          resume += `   <div class="row">
+                <div class="cover-div p-3 px-sm-4 p-lg-4"> <div class="row">
                     <div class="col-md-4 col-sm-12 col-lg-3">
                       <div class="avatar bg-white shadow-sm p-1">
-                        <img src="../imagedata\${personal_details.profile_url_path}" alt="Passport Size photo" id="profile-photo-value" width="200"
+                        <img src="/download (3).jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
                           height="200" />
                       </div>
                     </div>
+                    `
+        if (personal_details != null) {
+          resume += `  
                 <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
                       <div class="d-flex" style="color: #740E00;">
                         <h3><b id="first-name-value">\${personal_details.f_name}</b></h3> &nbsp &nbsp
@@ -1072,27 +1073,6 @@
 
                       <div class="row py-1">
                         <div class="col-md-5 col-sm-3">
-                          <h6>City :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-value">N.A</p>
-                        </div>
-                      </div>
-
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Pincode :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-value">N.A</p>
-                        </div>
-                      </div>
-
-                    </div>
-
-                    <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
                           <h6>Contact No.</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
@@ -1107,6 +1087,10 @@
                           <p id="temp-contact-value">N.A</p>
                         </div>
                       </div>
+                    </div>
+
+                    <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
+                    
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
                           <h6>Email :</h6>
@@ -1136,8 +1120,24 @@
                           <h6 class="temporary-address-heading">Temporary Address :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temporary-address-value">703-Satyam panvel
+                          <p id="temporary-address-value">N.A
                           </p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>City</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="city-value">N.A</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Pincode</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="pincode-value">N.A</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1159,7 +1159,6 @@
             <div class="d-none personal-details-edit-box d-flex justify-content-center align-items-center">
               <i class="fa-solid fa-pen fa-2x text-white "></i>
             </div>
-          </div>
         </div>
         <hr />
         <!------------------------------------------------ Qualification Section ------------------------------------------------>

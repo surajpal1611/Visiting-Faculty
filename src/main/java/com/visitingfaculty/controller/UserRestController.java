@@ -156,7 +156,7 @@ public class UserRestController {
     }
 
     @PostMapping("/get-user-details")
-    public Object getUserResume(int resume_lid) {
+    public Object getUserResume(@RequestParam(value = "resume_lid") int resume_lid) {
 
         System.out.println("RESUMELID>>>>>>>>>>" + resume_lid);
 

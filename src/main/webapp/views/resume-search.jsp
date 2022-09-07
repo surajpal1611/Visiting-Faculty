@@ -26,7 +26,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">View Resume</h5>
                 <button type="button" style="border: none;" class="modal2-cancel-button" data-dismiss="modal"
                     aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -38,7 +38,6 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary modal2-cancel-button"
                     data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary modal-create-resume-button">Create Resume</button>
             </div>
         </div>
     </div>
@@ -97,7 +96,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Create Resume</h5>
                         <button type="button" style="border: none;" class="modal-cancel-button" data-dismiss="modal"
                             aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -366,6 +365,7 @@
                                     </thead>
                                     <tbody>`
                             for (let obj of data.resume_details) {
+                                console.log(obj.id)
                                 tableToAppend += `
                                         <tr>
                                             <td>\${obj.name}</td>

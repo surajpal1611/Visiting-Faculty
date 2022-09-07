@@ -24,8 +24,7 @@ public class UserController {
 
     @GetMapping("/resume")
     public String getResume(@RequestParam(value = "resume_lid") int resume_lid,Model model) {
-
-        model.addAttribute(resume_lid);
+        model.addAttribute("resume_lid",resume_lid);
         return "resume";
     }
 
