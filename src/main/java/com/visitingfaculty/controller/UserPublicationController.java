@@ -26,16 +26,17 @@ public class UserPublicationController {
 
         if(publicationcheck != null)
         {
-            System.out.println("Publication Json : "+publicationTableData);
             Object insertData = userDaoInterface.insertPublications(publicationcheck);
-            // Object insertData = userDaoInterface.updatePublications(publicationcheck);
-            System.out.println(insertData);;
-            System.out.println("Success");
-            return ResponseEntity.status(HttpStatus.OK).build();
-          
+
+            if (insertData != null) {
+                System.out.println(insertData);;
+                System.out.println("Success");
+                return ResponseEntity.status(HttpStatus.OK).build();
+            } 
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+         
         }
           
-        System.out.println("Error");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
     }

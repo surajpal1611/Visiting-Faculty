@@ -16,8 +16,8 @@ public class UserSkillController {
 
     @Autowired
     UserDaoInterface userDaoInterface;
-    
-    @GetMapping(value="/get-soft-skill-options")
+
+    @GetMapping(value = "/get-soft-skill-options")
     @ResponseBody
     public ResponseEntity<String> recieveSoftSkill() {
 
@@ -29,8 +29,18 @@ public class UserSkillController {
 
         System.out.println(skills);
         Object insertSkills = userDaoInterface.insertAllSkills(skills);
-        // Object updateSkills = userDaoInterface.updateAllSkills(skills);
-        // System.out.println(updateSkills);
+        System.out.println(insertSkills);
+
+        return ResponseEntity.status(HttpStatus.OK).build();
+
+    }
+
+    @PostMapping("/update-all-skills")
+    public ResponseEntity<?> updateAll(@RequestBody String skills) {
+
+        System.out.println(skills);
+        Object updateSkills = userDaoInterface.updateAllSkills(skills);
+        System.out.println(updateSkills);
 
         return ResponseEntity.status(HttpStatus.OK).build();
 

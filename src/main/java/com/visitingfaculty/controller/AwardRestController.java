@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.visitingfaculty.dao.UserDaoInterface;
@@ -21,7 +20,6 @@ public class AwardRestController
     UserDaoInterface service;
 
     @PostMapping(value="/award_Table_Data")
-    @ResponseBody
     public ResponseEntity<?> awardTableData(@RequestBody String resume_achievement)
     {
         String lastcheck = jsoncheck.JsonStringValues(resume_achievement);
@@ -30,10 +28,28 @@ public class AwardRestController
         {
 
             Object data = service.insertAwardData(lastcheck);
-            // Object data = service.updateAward(resume_achievement);
 
             System.out.println(data);
-            System.out.println("Success");
+            return ResponseEntity.status(HttpStatus.OK).build();
+          
+        }
+          
+        System.out.println("Error");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+       
+    }
+
+    @PostMapping(value="/update-award")
+    public ResponseEntity<?> updateAward(@RequestBody String resume_achievement)
+    {
+        String lastcheck = jsoncheck.JsonStringValues(resume_achievement);
+        
+        if(lastcheck != null)
+        {
+
+            Object data = service.updateAward(lastcheck);
+
+            System.out.println(data);
             return ResponseEntity.status(HttpStatus.OK).build();
           
         }

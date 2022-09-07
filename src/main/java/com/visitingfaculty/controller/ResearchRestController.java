@@ -20,24 +20,42 @@ public class ResearchRestController {
     UserDaoInterface userDaoInterface;
 
     @PostMapping(value = "/research-table-data")
-    public ResponseEntity<String> postResearchMethod(@RequestBody String object)
-    {
+    public ResponseEntity<String> postResearchMethod(@RequestBody String object) {
         String check = jsoncheck.researchJsonCheck(object);
-        System.out.println("Research Data"+ check);
-        if(check != null)
-        {
+        System.out.println("Research Data" + check);
+        if (check != null) {
             System.out.println("Success");
 
             Object insertData = userDaoInterface.insertResearch(check);
             // Object insertData = userDaoInterface.updateResearch(object);
 
             System.out.println(insertData);
-            return new ResponseEntity<String>("Ressearch data inserted",HttpStatus.OK);
-        }
-        else
-        {
+            return new ResponseEntity<String>("Ressearch data inserted", HttpStatus.OK);
+        } else {
             System.out.println("Error");
-            return new ResponseEntity<String>("Ressearch data inserted",HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<String>("Ressearch data inserted", HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @PostMapping(value = "/update-research-details")
+    public ResponseEntity<?> updateResearchMethod(@RequestBody String object) {
+        String check = jsoncheck.researchJsonCheck(object);
+        System.out.println("Research Data" + check);
+        if (check != null) {
+            System.out.println("Success");
+
+            Object updateData = userDaoInterface.updateResearch(object);
+
+            if (updateData != null) {
+
+                return new ResponseEntity<String>("Ressearch data inserted", HttpStatus.OK);
+            }
+
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
+        } else {
+            System.out.println("Error");
+            return new ResponseEntity<String>("Ressearch data inserted", HttpStatus.BAD_REQUEST);
         }
     }
     
@@ -48,4 +66,3 @@ public class ResearchRestController {
         return new ResponseEntity<String>("Ressearch data inserted",HttpStatus.OK);
     }
 }
-

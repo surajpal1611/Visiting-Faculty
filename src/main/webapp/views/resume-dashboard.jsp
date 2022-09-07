@@ -32,16 +32,10 @@
 
         <div class="main-content">
 
-            <div id="create-resume-button" class="container d-flex justify-content-center align-items-center" style="height: 60vh">
-                <a class="card resumeCard" type="button" style="width: 18rem; height: 12rem">
-                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                        <i class="fa fa-plus-circle fa-4x " aria-hidden="true"></i>
-                        <h6 class="card-subtitle mb-2 mt-2 ">Create New Resume</h6>
+          
+      
+    </div>
 
-                    </div>
-                </a>
-            </div>
-        </div>
     </main>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
@@ -55,26 +49,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
     <script src="/js/jquery.bootpag.min.js"></script>
     <script>
+        $(document).ready(function () {
 
-        $(document).ready(function() {
+            // $('#create-resume-button').on('click', function () {
 
-            $('#create-resume-button').on('click', function() {
+            //     $.ajax({
+            //         type: 'POST',
+            //         url: '/create-resume',
+            //         success: function (response) {
 
-                $.ajax({
-                    type : 'POST',
-                    url : '/create-resume',
-                    success : function(response) {
+            //             // if(response.status == 200) {
+            //             window.location = '/create-new-resume'
+            //             // }
 
-                        // if(response.status == 200) {
-                            window.location = '/create-new-resume'
-                        // }
-                        
-                    },
-                    error : function(error) {
-                        console.log("ERROR", error);
-                    }
-                })
-            })
+            //         },
+            //         error: function (error) {
+            //             console.log("ERROR", error);
+            //         }
+            //     })
+            // })
 
         })
     </script>

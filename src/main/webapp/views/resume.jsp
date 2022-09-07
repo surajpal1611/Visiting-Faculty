@@ -914,13 +914,14 @@
   <script src="/js/jquery.bootpag.min.js"></script>
   <script id="script-data"></script>
   <script>
-    
 
-
+    let qualificationType = `<option value disabled selected>--Select--</option>`
+    let resume_lid = '${resume_lid}';
+    console.log(resume_lid)
 
     let resumeinfo;
     $.ajax({
-      url: '/get-user-details',
+      url: '/get-user-details?resume_lid=' + resume_lid,
       type: 'POST',
       success: function (response) {
         let data = JSON.parse(response.value)
@@ -946,17 +947,18 @@
           <div class="position-relative personal-information-div-wrapper d-flex" style="cursor: pointer;">
             <div class="container p-0">
               <div class="personal-information-div">
-                <div class="cover-div p-3 px-sm-4 p-lg-4">
-                  <div class="row">
+                <div class="cover-div p-3 px-sm-4 p-lg-4"> <div class="row">
                     <div class="col-md-4 col-sm-12 col-lg-3">
                       <div class="avatar bg-white shadow-sm p-1">
                         <img src="/download (3).jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
                           height="200" />
                       </div>
-                    </div>`
-                    if(personal_details != null)
-                    {
-                    resume+=`<div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
+                    </div>
+                    `
+        if (personal_details != null) {
+
+          resume += `  
+                <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
                       <div class="d-flex" style="color: #740E00;">
                         <h3><b id="first-name-value">\${personal_details.f_name}</b></h3> &nbsp &nbsp
                         <h3><b id="last-name-value">\${personal_details.l_name}</b></h3>
@@ -998,7 +1000,7 @@
                           <h6>Pancard Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="pancard-photo"><i id="pancard-photo-preview" class="fa-solid fa-ban text-danger"></i></p>
+                          <p id="pancard-photo"><i id="pancard-photo-preview" data-image="../imagedata/\${personal_details.pancard_url_path}" class="fa-solid fa-ban text-danger"></i></p>
                           </p>
                         </div>
                       </div>
@@ -1015,31 +1017,9 @@
                           <h6>Aadhar card Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" class="fa-solid fa-ban text-danger"></i></p>
+                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" data-image="../imagedata/\${personal_details.aadhar_card_url_path}" class="fa-solid fa-ban text-danger"></i></p>
                         </div>
                       </div>
-
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>City :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-value">\${personal_details.city}</p>
-                        </div>
-                      </div>
-
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Pincode :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-value">\${personal_details.pin_code}</p>
-                        </div>
-                      </div>
-
-                    </div>
-
-                    <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
                       <div class="row py-1">
                         <div class="col-md-5 col-sm-3">
                           <h6>Contact No.</h6>
@@ -1056,6 +1036,10 @@
                           <p id="temp-contact-value">\${personal_details.temp_contact_number}</p>
                         </div>
                       </div>
+                    </div>
+
+                    <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
+                    
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
                           <h6>Email :</h6>
@@ -1077,7 +1061,7 @@
                           <h6>Permanent Address :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="address-value">\${personal_details.temp_email}</p>
+                          <p id="address-value">\${personal_details.address}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1087,6 +1071,22 @@
                         <div class="col-md-7 col-sm-9">
                           <p id="temporary-address-value">703-Satyam panvel
                           </p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>City</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="city-value">\${personal_details.city}</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Pincode</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="pincode-value">\${personal_details.pin_code}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1101,10 +1101,8 @@
                   </div>
                 </div>
                 `
-              }
-              else
-              {
-                resume+=`<div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
+        } else {
+          resume += `<div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
                       <div class="d-flex" style="color: #740E00;">
                         <h3><b id="first-name-value">N.A</b></h3> &nbsp &nbsp
                         <h3><b id="last-name-value">N.A</b></h3>
@@ -1169,27 +1167,6 @@
 
                       <div class="row py-1">
                         <div class="col-md-5 col-sm-3">
-                          <h6>City :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-value">N.A</p>
-                        </div>
-                      </div>
-
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
-                          <h6>Pincode :</h6>
-                        </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-value">N.A</p>
-                        </div>
-                      </div>
-
-                    </div>
-
-                    <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
-                      <div class="row py-1">
-                        <div class="col-md-5 col-sm-3">
                           <h6>Contact No.</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
@@ -1204,6 +1181,10 @@
                           <p id="temp-contact-value">N.A</p>
                         </div>
                       </div>
+                    </div>
+
+                    <div id="personaldetails-right-side" class="col-12 col-md-6 col-lg-6 col-sm-12 pt-lg-5 text-center">
+                    
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
                           <h6>Email :</h6>
@@ -1233,8 +1214,24 @@
                           <h6 class="temporary-address-heading">Temporary Address :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temporary-address-value">703-Satyam panvel
+                          <p id="temporary-address-value">N.A
                           </p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>City</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="city-value">N.A</p>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-md-5 col-sm-3">
+                          <h6>Pincode</h6>
+                        </div>
+                        <div class="col-md-7 col-sm-9">
+                          <p id="pincode-value">N.A</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1248,15 +1245,14 @@
                     </div>
                   </div>
                 </div>
-                `               
-              }
+                `
+        }
 
-              resume+=`</div>
+        resume += `</div>
             </div>
             <div class="d-none personal-details-edit-box d-flex justify-content-center align-items-center">
               <i class="fa-solid fa-pen fa-2x text-white "></i>
             </div>
-          </div>
         </div>
         <hr />
         <!------------------------------------------------ Qualification Section ------------------------------------------------>
@@ -1270,11 +1266,10 @@
 
               <div id="qualification-list">`
 
-        if(data.resume_qualification != null)
-        {
-        for (let qual of data.resume_qualification) {
+        if (data.resume_qualification != null) {
+          for (let qual of data.resume_qualification) {
 
-          resume += `<div class="qualification-item d-flex position-relative"> 
+            resume += `<div class="qualification-item d-flex position-relative"> 
           <div class="text-block right container" >
                   <div class="card-body preview-qualification-div">
                     <h2 id="year-of-passing">2015</h2>
@@ -1308,8 +1303,8 @@
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">\${qual.institute}</p>
                               <p id="" class="">\${qual.institute}</p>
-                              <p id=""><i id="qualification-certificate-display"
-                                  class="fa-solid fa-ban text-danger qualification-certificate-display"></i></p>
+                              <p id=""><i id="qualification-certificate-display" data-image="../imagedata/\${qual.url_path}"
+                                  class="fa-solid fa-image text-success qualification-certificate-display"></i></p>
 
                             </div>
                           </div>
@@ -1326,8 +1321,10 @@
                           </div>
                         </div>
               `
+
         }}
  
+
         resume += `
             </div>
                 <div class="addbtn d-flex my-2 justify-content-center align-items-center">
@@ -1347,10 +1344,9 @@
                 <h3 style="color: #740E00;"><i class="fa-solid fa-briefcase"></i><b> Work Experience </b></h3>
               </div>
               <div id="workExperience-appending-div">`
-        if(data.resume_experience != null)
-        {
-        for (let exp of data.resume_experience) {
-          resume += ` <div class="text-block right">
+        if (data.resume_experience != null) {
+          for (let exp of data.resume_experience) {
+            resume += ` <div class="text-block right">
                   <div class="card-body">
                     <h2>2017</h2>
 
@@ -1392,9 +1388,8 @@
                     </div>
                   </div>
                 </div>`
-        }}
-        else
-        {
+          }
+        } else {
           resume += ` <div class="text-block right">
                   <div class="card-body">
                     <h2>2017</h2>
@@ -1466,16 +1461,15 @@
                       <h4 class="title">Hard Skills</h4>
 
                   <div id="hard-skill-appending-div1" class="d-flex w-100 flex-wrap">`
-        if(data.resume_skill_selected != null)
-        {
-        for (hardskill of data.resume_skill_selected) {
-          if (hardskill.skill_type_lid === 1)
-            resume += ` <div data-skill-id="\${hardskill.skill_type_lid}" data-skill-type-lid=\${hardskill.skill_lid} class="skill-pill-div text-center">
+        if (data.resume_skill_selected != null) {
+          for (hardskill of data.resume_skill_selected) {
+            if (hardskill.skill_type_lid === 1)
+              resume += ` <div data-id="\${hardskill.skill_type_lid}" data-skill-type-lid=\${hardskill.skill_lid} class="skill-pill-div text-center">
                                     \${hardskill.skill_name}\
                                 </div>`
-        }
+          }
 
-        resume += ` </div>
+          resume += ` </div>
                     </div> <!-- end card -->
                   </div>
 
@@ -1483,16 +1477,15 @@
                     <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
                       <h4 class="title">Soft Skills</h4>
                       <div id="soft-skill-appending-div1" class="d-flex w-100 flex-wrap">`
-        for (softskill of data.resume_skill_selected) {
-          if (softskill.skill_type_lid === 2) {
-            resume += `<div data-skill-id="\${softskill.skill_type_lid}" data-skill-type-lid=\${softskill.skill_lid} class="skill-pill-div text-center">
+          for (softskill of data.resume_skill_selected) {
+            if (softskill.skill_type_lid === 2) {
+              resume += `<div data-id="\${softskill.skill_type_lid}" data-skill-type-lid=\${softskill.skill_lid} class="skill-pill-div text-center">
                                     \${softskill.skill_name}\
                                 </div>`
+            }
           }
-        }}
-        else
-        {
-          resume+=`                      </div>
+        } else {
+          resume += `                      </div>
                     </div> <!-- end card -->
                   </div>
 
@@ -1526,10 +1519,9 @@
                 <h3 style="color: #740E00;"><i class="fa-solid fa-award"></i><b> Awards </b></h3>
               </div>
               <div id="award-preview-div">`
-        if(data.resume_achievement != null)
-        {
-        for (let award of data.resume_achievement) {
-          resume += `  <div class="award-item d-flex position-relative">             
+        if (data.resume_achievement != null) {
+          for (let award of data.resume_achievement) {
+            resume += `  <div class="award-item d-flex position-relative">             
             <div id="Award-display-div" class="px-3 px-sm-4 px-lg-4 mt-1 container">
                   <div class="row">
 
@@ -1559,7 +1551,7 @@
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${award.description}</p>
                           <p class="" id="">\${award.achievement_date}</p>
-                          <p ><i id="award-certificate-display" class="fa-solid fa-ban text-danger award-certificate-display"></i></p>
+                          <p ><i id="award-certificate-display" data-image="../imagedata/\${award.url_path}" class="fa-solid fa-image text-success award-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
@@ -1572,8 +1564,10 @@
                     </div>
                 <hr>
               `
+
         }}
        
+
 
         resume += `</div>
              <div class="addbtn-award d-flex my-2 justify-content-center align-items-center">
@@ -1594,10 +1588,9 @@
                 <h3 class="mb-4 h3" style="color: #740E00;"> <b> Publications </b></h3>
               </div>
               <div id="publication-appending-div" class="bg-white">`
-        if(data.resume_publication != null)
-        {
-        for (let public of data.resume_publication) {
-          resume += `<div class="publication-item d-flex position-relative"> 
+        if (data.resume_publication != null) {
+          for (let public of data.resume_publication) {
+            resume += `<div class="publication-item d-flex position-relative"> 
            <div class=" px-3 px-sm-4 px-lg-4 mt-1 container">
                   <div class="row">
 
@@ -1627,7 +1620,7 @@
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${public.publisher}</p>
                           <p class="" id="">\${public.year_of_publication}</p>
-                          <p><i id="publication-certificate-display" class="fa-solid fa-ban text-danger publication-certificate-display"></i></p>
+                          <p><i id="publication-certificate-display" data-image="../imagedata/\${public.url_path}" class="fa-solid fa-ban text-danger publication-certificate-display"></i></p>
 
                         </div>
                       </div>
@@ -1642,8 +1635,10 @@
           </div>
               
               `
+
         }}
        
+
         resume += `</div>
               <div class="addbtn-publication d-flex my-2 justify-content-center align-items-center">
                     <strong> Add More Rows</strong><button class="resume-publication-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
@@ -1668,10 +1663,9 @@
               </div>
 
               <div id="research-appending-div">`
-        if(data.resume_research != null)
-        {
-        for (let research of data.resume_research) {
-          resume += `<div class="research-item d-flex position-relative"> 
+        if (data.resume_research != null) {
+          for (let research of data.resume_research) {
+            resume += `<div class="research-item d-flex position-relative"> 
            <div class=" ps-3 ps-sm-4 ps-lg-4 mt-1 container">
                   <div class="row">
 
@@ -1713,12 +1707,14 @@
           </div>
           </div>
                 `
+
         }}
        
         resume += `</div>  
                <div class="addbtn-research d-flex my-2 justify-content-center align-items-center">
                      <strong> Add More Rows</strong><button class="resume-research-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
                </div>             
+
             </div>
           </div>
         
@@ -1735,12 +1731,10 @@
               </div>
 
               <div id="certification-appending-div">`
-                if(data.resume_qualification_lid != null)
-                {
-                if (data.resume_qualification_lid ==4 )
-                {
-                for (let qual of data.resume_qualification) {
-                  resume += `<div class="professional-certificate-item d-flex position-relative"> 
+        if (data.resume_qualification_lid != null) {
+          if (data.resume_qualification_lid == 4) {
+            for (let qual of data.resume_qualification) {
+              resume += `<div class="professional-certificate-item d-flex position-relative"> 
                 <div class="text-block right container" id="preview-qualification-div">
                   <div class="card-body preview-certification-div">
 
@@ -1801,6 +1795,7 @@
           </div>
           </div>
                 `
+
               }
             }}
                 resume += `
@@ -1833,9 +1828,8 @@
                       <h6 class="pb-4">Branch</h6>
                       <h6 class="pb-4">IFSC Code</h6>
                     </div>`
-                    if(bank_details != null)
-                    {
-                    resume+=`<div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+        if (bank_details != null) {
+          resume += `<div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                       <p id="bank-name-value">\${bank_details.bank_name}</p>
                       <p id="branch-name-value" class="pt-2">\${bank_details.branch_name}</p>
                       <p id="ifsc-code-value" class="pt-2">\${bank_details.ifsc_code}</p>
@@ -1858,10 +1852,8 @@
                       <p id="cancelled-check-photo" class="pt-3">
                         <i id="cancelled-cheque-photo-preview" class="fa-solid fa-ban text-danger"></i>
                       </p>`
-                    }
-                    else
-                    {
-                      resume+=`<div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+        } else {
+          resume += `<div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                       <p id="bank-name-value">N.A</p>
                       <p id="branch-name-value" class="pt-2">N.A</p>
                       <p id="ifsc-code-value" class="pt-2">N.A</p>
@@ -3546,18 +3538,18 @@ setTimeout(function () {
 
 
 
-function initResume() { 
+    function initResume() {
 
-      document.querySelector('#body').addEventListener('mouseleave', function() {
-        for(let box of this.querySelectorAll('.edit-show')) {
+      document.querySelector('#body').addEventListener('mouseleave', function () {
+        for (let box of this.querySelectorAll('.edit-show')) {
           box.classList.add('d-none');
           box.classList.remove('edit-show');
         }
       })
-  
+
       document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
-        
-        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+
+        for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
           box.classList.add('d-none');
           box.classList.remove('edit-show');
         }
@@ -3566,23 +3558,22 @@ function initResume() {
         document.querySelector('.personal-details-edit-box').classList.add('edit-show');
       });
 
-      
 
-      document.querySelector('#qualification-list').addEventListener('mouseover', function(e) {
 
-        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+      document.querySelector('#qualification-list').addEventListener('mouseover', function (e) {
+
+        for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
           box.classList.add('d-none');
           box.classList.remove('edit-show');
         }
 
-        if((e.target.classList.contains('qualification-item') || findClosest(e.target, 'qualification-item'))) {
-          let thisParent = e.target.classList.contains('qualification-item') ? e.target : findClosest(e.target, 'qualification-item');
+        if ((e.target.classList.contains('qualification-item') || findClosest(e.target, 'qualification-item'))) {
+          let thisParent = e.target.classList.contains('qualification-item') ? e.target : findClosest(e.target,
+            'qualification-item');
           thisParent.querySelector('.qualification-edit-box').classList.remove('d-none');
           thisParent.querySelector('.qualification-edit-box').classList.add('edit-show');
         }
 
-
-    
       })
 
 
@@ -3590,7 +3581,7 @@ function initResume() {
 
       document.querySelector('.work-experience-div-wrapper').addEventListener('mouseover', function () {
 
-        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+        for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
           box.classList.add('d-none');
           box.classList.remove('edit-show');
         }
@@ -3602,7 +3593,7 @@ function initResume() {
 
       document.querySelector('.skills-div-wrapper').addEventListener('mouseover', function () {
 
-        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+        for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
           box.classList.add('d-none');
           box.classList.remove('edit-show');
         }
@@ -3614,13 +3605,14 @@ function initResume() {
 
       document.querySelector('.award-list').addEventListener('mouseover', function (e) {
 
-        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+        for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
           box.classList.add('d-none');
           box.classList.remove('edit-show');
         }
 
-        if((e.target.classList.contains('award-item') || findClosest(e.target, 'award-item'))) {
-          let thisParent = e.target.classList.contains('award-item') ? e.target : findClosest(e.target, 'award-item');
+        if ((e.target.classList.contains('award-item') || findClosest(e.target, 'award-item'))) {
+          let thisParent = e.target.classList.contains('award-item') ? e.target : findClosest(e.target,
+            'award-item');
           thisParent.querySelector('.award-edit-box').classList.remove('d-none');
           thisParent.querySelector('.award-edit-box').classList.add('edit-show');
         }
@@ -3630,27 +3622,29 @@ function initResume() {
 
       document.querySelector('.publication-list').addEventListener('mouseover', function (e) {
 
-        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+        for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
           box.classList.add('d-none');
           box.classList.remove('edit-show');
         }
 
-        if((e.target.classList.contains('publication-item') || findClosest(e.target, 'publication-item'))) {
-          let thisParent = e.target.classList.contains('publication-item') ? e.target : findClosest(e.target, 'publication-item');
+        if ((e.target.classList.contains('publication-item') || findClosest(e.target, 'publication-item'))) {
+          let thisParent = e.target.classList.contains('publication-item') ? e.target : findClosest(e.target,
+            'publication-item');
           thisParent.querySelector('.publication-edit-box').classList.remove('d-none');
           thisParent.querySelector('.publication-edit-box').classList.add('edit-show');
         }
       });
 
       document.querySelector('.research-list').addEventListener('mouseover', function (e) {
-        
-        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+
+        for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
           box.classList.add('d-none');
           box.classList.remove('edit-show');
         }
 
-        if((e.target.classList.contains('research-item') || findClosest(e.target, 'research-item'))) {
-          let thisParent = e.target.classList.contains('research-item') ? e.target : findClosest(e.target, 'research-item');
+        if ((e.target.classList.contains('research-item') || findClosest(e.target, 'research-item'))) {
+          let thisParent = e.target.classList.contains('research-item') ? e.target : findClosest(e.target,
+            'research-item');
           thisParent.querySelector('.research-edit-box').classList.remove('d-none');
           thisParent.querySelector('.research-edit-box').classList.add('edit-show');
         }
@@ -3658,13 +3652,15 @@ function initResume() {
 
       document.querySelector('.certification-list').addEventListener('mouseover', function (e) {
 
-        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+        for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
           box.classList.add('d-none');
           box.classList.remove('edit-show');
         }
 
-        if((e.target.classList.contains('professional-certificate-item') || findClosest(e.target, 'professional-certificate-item'))) {
-          let thisParent = e.target.classList.contains('professional-certificate-item') ? e.target : findClosest(e.target, 'professional-certificate-item');
+        if ((e.target.classList.contains('professional-certificate-item') || findClosest(e.target,
+            'professional-certificate-item'))) {
+          let thisParent = e.target.classList.contains('professional-certificate-item') ? e.target : findClosest(e
+            .target, 'professional-certificate-item');
           thisParent.querySelector('.certification-edit-box').classList.remove('d-none');
           thisParent.querySelector('.certification-edit-box').classList.add('edit-show');
         }
@@ -3672,7 +3668,7 @@ function initResume() {
 
       document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
 
-        for(let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+        for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
           box.classList.add('d-none');
           box.classList.remove('edit-show');
         }
@@ -3681,7 +3677,6 @@ function initResume() {
         document.querySelector('.bank-details-edit-box').classList.add('edit-show');
 
       });
-
 
       document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
         document.getElementById('body').classList.add('d-none');
@@ -3745,7 +3740,7 @@ function initResume() {
 
     }
 
-   // });
+    // });
 
     //Rana Changes 
     document.querySelector('#body').addEventListener('click', function (e) {
@@ -3802,6 +3797,8 @@ function initResume() {
         editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
         editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
           'temporary-address-value').innerText)
+        editPersonalDetailsForm.append('editCity', document.getElementById('city-value').innerText)
+        editPersonalDetailsForm.append('editPincode', document.getElementById('pincode-value').innerText)
         editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
         editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
 
@@ -3813,8 +3810,9 @@ function initResume() {
         document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
         document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
         document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
-        document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
-          'editTemporaryAddress')
+        document.getElementById('city').value = editPersonalDetailsForm.get('editCity')
+        document.getElementById('pincode').value = editPersonalDetailsForm.get('editPincode')
+        document.getElementById('temporary-address').value = editPersonalDetailsForm.get('editTemporaryAddress')
         document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
 
         document.getElementById('body').classList.add('d-none');
@@ -3825,7 +3823,7 @@ function initResume() {
       //************************************Qualification Section Start*************************************************************** 
 
       //Qualidication Details Btn
-    function editQualificationDetail() {
+      function editQualificationDetail() {
         if (qualificationDataDB == 1) {
 
           $.ajax({
@@ -3837,11 +3835,10 @@ function initResume() {
                   qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`
                 }
 
-            if( resumeinfo.resume_qualification != null)
-            {
-                for (qualedit of resumeinfo.resume_qualification) {
+                if (resumeinfo.resume_qualification != null) {
+                  for (qualedit of resumeinfo.resume_qualification) {
 
-                  let table = `
+                    let table = `
                     <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
                       <div class="container">
                     <div class="row qualification-row"  data-lid = "\${qualedit.resume_qualification_lid}" >
@@ -3926,9 +3923,10 @@ function initResume() {
                             </div>      
                     </div>`
 
-                  document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
-                }}
-                
+                    document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
+                  }
+                }
+
               },
               error: function (error) {
                 console.log("Error::::::::::::", error);
@@ -3944,8 +3942,8 @@ function initResume() {
         document.querySelector('.qualification-modal').classList.remove('d-none');
       }
 
-      document.querySelector('#qualification-div').addEventListener('click', function(e) {
-        if (findClosest(e.target,'qualification-item').querySelector('.qualification-edit-box')) {
+      document.querySelector('#qualification-div').addEventListener('click', function (e) {
+        if (findClosest(e.target, 'qualification-item').querySelector('.qualification-edit-box')) {
           editQualificationDetail()
         }
       })
@@ -3999,12 +3997,12 @@ function initResume() {
                 // }
                 softSkillUl.insertAdjacentHTML('beforeend',
                   `
-                 <li class="soft-skill-list">
+                 <li class="soft-skill-list" data-id="\${response[i].id}">
                     <div class="row">
                       <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button">
                         <i class="fa-solid fa-circle-plus fa-2x"></i>
                       </div>
-                      <div class="col-md-10 col-sm-10 col-12"><input type="hidden" value=\${response[i].id}\ ><a href="#">\${response[i].skill_name}\</a></div>
+                      <div class="col-md-10 col-sm-10 col-12"><a>\${response[i].skill_name}\</a></div>
                     </div>
                   </li>
                 `
@@ -4014,12 +4012,12 @@ function initResume() {
 
                 hardSkillUl.insertAdjacentHTML('beforeend',
 
-                  `<li class="hard-skill-list">
+                  `<li class="hard-skill-list" data-id="\${response[i].id}">
                   <div class="row">
                     <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
                         class="fa-solid fa-circle-plus fa-2x"></i>
                     </div>
-                    <div class="col-md-10 col-sm-10 col-12"> <input type="hidden" value=\${response[i].id}\ ><a href="#">\${response[i].skill_name}\</a></div>
+                    <div class="col-md-10 col-sm-10 col-12"><a href="#">\${response[i].skill_name}\</a></div>
                   </div>
                 </li>`
                 )
@@ -4041,13 +4039,12 @@ function initResume() {
 
       //************************************Award Section Start******************************************************************
 
-     function editAwardDetail() {
+      function editAwardDetail() {
 
-      if(resumeinfo.resume_achievement != null)
-      {
-        for (awardedit of resumeinfo.resume_achievement) {
+        if (resumeinfo.resume_achievement != null) {
+          for (awardedit of resumeinfo.resume_achievement) {
 
-          let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
+            let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
         <div class="container">   
       <div id="publication-award-div" class="bg-white">
           <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1" data-awardlid = "\${awardedit.resume_achievement_lid}">
@@ -4114,14 +4111,15 @@ function initResume() {
         </div>
         </div> 
        `
-          document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
-        }}
+            document.getElementById('publication-award-div').insertAdjacentHTML("beforeend", table);
+          }
+        }
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.award-modal').classList.remove('d-none');
       }
 
-      document.querySelector('#award-div').addEventListener('click', function(e) {
-        if (findClosest(e.target,'award-item').querySelector('.award-edit-box')) {
+      document.querySelector('#award-div').addEventListener('click', function (e) {
+        if (findClosest(e.target, 'award-item').querySelector('.award-edit-box')) {
           editAwardDetail()
         }
       })
@@ -4131,10 +4129,9 @@ function initResume() {
 
       function editPublicationDetail() {
 
-      if(resumeinfo.resume_publication != null)
-      {
-        for (pubedit of resumeinfo.resume_publication) {
-          let table = ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
+        if (resumeinfo.resume_publication != null) {
+          for (pubedit of resumeinfo.resume_publication) {
+            let table = ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
             <div class="container">
           
           <div class="publication-row px-3 px-sm-4 px-lg-4 mt-1" data-publicationlid = "\${pubedit.resume_achievement_lid}">
@@ -4199,26 +4196,26 @@ function initResume() {
       </div>
           </div>
         `
-          document.getElementById('publication-modal-appending-div').insertAdjacentHTML("beforeend", table);
-        }}
+            document.getElementById('publication-modal-appending-div').insertAdjacentHTML("beforeend", table);
+          }
+        }
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.publication-modal').classList.remove('d-none');
       }
 
-      document.querySelector('#publication-div').addEventListener('click', function(e) {
-        if (findClosest(e.target,'publication-item').querySelector('.publication-edit-box')) {
+      document.querySelector('#publication-div').addEventListener('click', function (e) {
+        if (findClosest(e.target, 'publication-item').querySelector('.publication-edit-box')) {
           editPublicationDetail()
         }
       })
 
       //************************************Research Section Start************************************************************
 
-       function editResearchBox() {
+      function editResearchBox() {
 
-      if(resumeinfo.resume_research)
-      {
-        for (researchedit of resumeinfo.resume_research) {
-          let table = ` 
+        if (resumeinfo.resume_research) {
+          for (researchedit of resumeinfo.resume_research) {
+            let table = ` 
       <div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
       <div  class="research-row px-3 px-sm-4 px-lg-4 mt-1 bg-white container" data-researchlid="\${researchedit.resume_achievement_lid}">
             <div class="row">
@@ -4274,15 +4271,16 @@ function initResume() {
 
 
 
-          document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
+            document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
 
-        }}
+          }
+        }
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.research-modal').classList.remove('d-none');
       }
 
-      document.querySelector('#research-div').addEventListener('click', function(e) {
-        if (findClosest(e.target,'research-item').querySelector('.research-edit-box')) {
+      document.querySelector('#research-div').addEventListener('click', function (e) {
+        if (findClosest(e.target, 'research-item').querySelector('.research-edit-box')) {
           editResearchBox()
         }
       })
@@ -4443,95 +4441,100 @@ function initResume() {
         }
       }
 
-      setTimeout(function() {
+      setTimeout(function () {
 
-      console.log(photoArray)
-      let user_info = {}
-      let user_contact = {}
+        console.log(photoArray)
+        let user_info = {}
+        let user_contact = {}
 
-      user_contact.user_lid = '${user_lid}'
-      user_contact.contact_number = result.contact_number
-      user_contact.temp_contact_number = result.temp_contact_number
-      personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
-      user_info.user_lid = '${user_lid}'
-      user_info.f_name = result.f_name
-      user_info.l_name = result.l_name
-      user_info.email = result.email
-      user_info.temp_email = result.temp_email
-      user_info.gender_lid = Number.parseInt(result.gender)
-      user_info.pancard_no = result.pan_number
-      user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
-      user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
-      user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
-      user_info.aadhar_card_no = aadhar
-      user_info.date_of_birth = result.date_of_birth
-      user_info.nationality = result.nationality
-      personalDetailsData.insert_user_personal_details.user_info[0] = user_info
+        user_contact.user_lid = '${user_lid}'
+        user_contact.resume_lid = resume_lid
+        user_contact.contact_number = result.contact_number
+        user_contact.temp_contact_number = result.temp_contact_number
+        personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
+        user_info.user_lid = '${user_lid}'
+        user_info.resume_lid = resume_lid
+        user_info.f_name = result.f_name
+        user_info.l_name = result.l_name
+        user_info.email = result.email
+        user_info.temp_email = result.temp_email
+        user_info.gender_lid = Number.parseInt(result.gender)
+        user_info.pancard_no = result.pan_number
+        user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
+        user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
+        user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
+        user_info.aadhar_card_no = aadhar
+        user_info.date_of_birth = result.date_of_birth
+        user_info.nationality = result.nationality
+        personalDetailsData.insert_user_personal_details.user_info[0] = user_info
 
-      let addressObject = {}
+        let addressObject = {}
 
-      addressObject.user_lid = '${user_lid}'
-      addressObject.address = result.permanent_address
-      addressObject.city = result.permanent_address_city
-      addressObject.pin_code = result.permanent_address_pincode
+        addressObject.user_lid = '${user_lid}'
+        addressObject.resume_lid = resume_lid
+        addressObject.address = result.permanent_address
+        addressObject.city = result.permanent_address_city
+        addressObject.pin_code = result.permanent_address_pincode
 
-      addressObject.address_type_lid = 1
-      let addressObject2 = {}
-      addressObject2.user_lid = '${user_lid}'
-      addressObject2.address = result.temporary_address
-      addressObject2.address_type_lid = 2
+        addressObject.address_type_lid = 1
+        let addressObject2 = {}
+        addressObject2.user_lid = '${user_lid}'
+        addressObject2.resume_lid = resume_lid
+        addressObject2.address = result.temporary_address
+        addressObject2.address_type_lid = 2
 
-      arrayresult[0] = addressObject
-      arrayresult[1] = addressObject2
+        arrayresult[0] = addressObject
+        arrayresult[1] = addressObject2
 
 
-      console.log(JSON.stringify(personalDetailsData))
-      let genderValue = ""
-      if (Number.parseInt(result.gender) == 1) {
-        genderValue = "Male"
-      } else if (result.gender == 2) {
-        genderValue = "Female"
-      } else {
-        genderValue = "Other"
-      }
-      console.log(genderValue)
-      let options = {
+        console.log(JSON.stringify(personalDetailsData))
+        let genderValue = ""
+        if (Number.parseInt(result.gender) == 1) {
+          genderValue = "Male"
+        } else if (result.gender == 2) {
+          genderValue = "Female"
+        } else {
+          genderValue = "Other"
+        }
+        console.log(genderValue)
+        let options = {
 
-        method: 'POST',
-        headers: {
+          method: 'POST',
+          headers: {
 
-          'Content-Type': 'application/json;charset=utf-8'
+            'Content-Type': 'application/json;charset=utf-8'
 
-        },
-        body: JSON.stringify(personalDetailsData)
+          },
+          body: JSON.stringify(personalDetailsData)
 
-      }
-      let fetchRes = fetch('/insert-personal-details', options);
+        }
+        let fetchRes = fetch('/insert-personal-details', options);
 
-      fetchRes.then(success => {
+        fetchRes.then(success => {
 
-        // if (success.status == 200) {
-        console.log(success)
-        console.log(result.date_of_birth)
-        console.log(result.temp_contact_number)
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.personal-details-modal').classList.add('d-none')
-        document.getElementById('date-of-birth-value').innerText = changeDateFormat(result.date_of_birth);
-        document.getElementById('pancard-value').innerText = result.pan_number
-        document.getElementById('aadhar-card-value').innerText = result.aadhar_number
-        document.getElementById('contact-number-value').innerText = result.contact_number
-        document.getElementById('temp-contact-value').innerText = result.temp_contact_number
-        document.getElementById('email-value').innerText = result.email
-        document.getElementById('temp-email-value').innerText = result.temp_email
-        document.getElementById('address-value').innerText = result.permanent_address + "," + result
-          .permanent_address_city + "-" + result.permanent_address_pincode
-        document.getElementById('temporary-address').innerText = result.temporary_address
-        document.getElementById('country-value').innerText = result.nationality
-        document.getElementById('gender-value').innerText = genderValue
-        document.getElementById('first-name-value').innerText = result.f_name
-        document.getElementById('last-name-value').innerText = result.l_name
-      })
-    },1000)
+          // if (success.status == 200) {
+          console.log(success)
+          console.log(result.date_of_birth)
+          console.log(result.temp_contact_number)
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.personal-details-modal').classList.add('d-none')
+          document.getElementById('date-of-birth-value').innerText = changeDateFormat(result.date_of_birth);
+          document.getElementById('pancard-value').innerText = result.pan_number
+          document.getElementById('aadhar-card-value').innerText = result.aadhar_number
+          document.getElementById('contact-number-value').innerText = result.contact_number
+          document.getElementById('temp-contact-value').innerText = result.temp_contact_number
+          document.getElementById('email-value').innerText = result.email
+          document.getElementById('temp-email-value').innerText = result.temp_email
+          document.getElementById('address-value').innerText = result.permanent_address
+          document.getElementById('city-value').innerText = result.permanent_address_city
+          document.getElementById('pincode-value').innerText = result.permanent_address_pincode
+          document.getElementById('temporary-address').innerText = result.temporary_address
+          document.getElementById('country-value').innerText = result.nationality
+          document.getElementById('gender-value').innerText = genderValue
+          document.getElementById('first-name-value').innerText = result.f_name
+          document.getElementById('last-name-value').innerText = result.l_name
+        })
+      }, 1000)
 
     });
 
@@ -4659,7 +4662,7 @@ function initResume() {
         setTimeout(function () {
 
           object = {
-            resume_lid: 1,
+            resume_lid: resume_lid,
             resume_qualification_lid: resume_qualification_lid,
             qualification_type_lid: qualification_type,
             topic_of_study: qualificationSubject,
@@ -4747,7 +4750,7 @@ function initResume() {
             alert('Check Qualification details');
           }
         })
-      }, 1000)
+      }, 1200)
 
 
     })
@@ -4956,7 +4959,7 @@ function initResume() {
 
         setTimeout(function () {
           obj = {
-            resume_lid: "1",
+            resume_lid: resume_lid,
             achievement_type_lid: "2",
             title: title,
             resume_achievement_lid: resume_achievement_lid1,
@@ -5054,7 +5057,7 @@ function initResume() {
           })
         }
         postdata()
-      }, 1000)
+      }, 1200)
     });
 
 
@@ -5088,7 +5091,6 @@ function initResume() {
         let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
         let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
         let resume_publication_lid = publicationRow[i].dataset.publicationlid;
-        console.log("PUBLICATION LID>>>>>>>>", resume_publication_lid)
         let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
         let publicationCertificate1 = publicationRow[i].querySelector('.publication-certification').value;
         let publicationCertificateSRC = publicationRow[i].querySelector('.publication-certificate-preview').src;
@@ -5133,7 +5135,7 @@ function initResume() {
 
 
           object = {
-            resume_lid: "1",
+            resume_lid: resume_lid,
             achievement_type_lid: "1",
             resume_achievement_lid: resume_publication_lid,
             publication_role: publicationRole,
@@ -5208,7 +5210,7 @@ function initResume() {
             alert('Check');
           }
         })
-      }, 1000)
+      }, 1200)
     })
 
     
@@ -5314,7 +5316,7 @@ function initResume() {
 
 
           obj = {
-            resume_lid: "1",
+            resume_lid: resume_lid,
             achievement_type_lid: "3",
             resume_achievement_lid: research__lid,
             title: Journal_name,
@@ -5388,16 +5390,11 @@ function initResume() {
             alert('Check');
           }
         })
-      }, 1000)
-
-
-
-
+      }, 1200)
 
     });
 
 
-    
     document.addEventListener('mouseover', function () {
       let deleteButtonClick = document.querySelectorAll('.delete_btn_research_symbol')
       let deleteresearch = document.querySelectorAll('.research_delete_btn');
@@ -5489,7 +5486,7 @@ function initResume() {
         setTimeout(function () {
 
           object = {
-            resume_lid: 1,
+            resume_lid: resume_lid,
             resume_qualification_lid: 26,
             qualification_type_lid: 4,
             topic_of_study: professionalCertificateName,
@@ -5682,7 +5679,7 @@ function initResume() {
           "insert_bank_data": []
         }
         let bank_detail = {};
-        bank_detail.user_lid = 2,
+        bank_detail.user_lid = '${user_lid}',
           bank_detail.bank_name = document.querySelector('#bank-name').value;
         bank_detail.branch_name = document.querySelector('#bank-branch').value;
         bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code').value;
@@ -5740,33 +5737,31 @@ function initResume() {
 
     document.querySelector('#skills-modal-submit-button').addEventListener('click', function () {
 
-
-      // let value =  element.parentElement.parentElement.lastElementChild.lastElementChild.innerText
-
+      
       let skillJson = {
         "skill_details": []
       }
 
       let softSkillAppendingDiv1 = document.getElementById('soft-skill-appending-div1')
-      let softSkillAppendingDiv2 = document.getElementById('soft-skill-appending-div1')
+      softSkillAppendingDiv1.innerHTML = ""
       let hardSkillAppendingDiv1 = document.getElementById('hard-skill-appending-div1')
-      let hardSkillAppendingDiv2 = document.getElementById('hard-skill-appending-div1')
+      hardSkillAppendingDiv1.innerHTML = ""
       let softSkillListGroup = document.querySelectorAll('.soft-skill-list-group')
       let hardSkillListGroup = document.querySelectorAll('.hard-skill-list-group')
       let skillIndex = 0;
 
       for (let i = 0; i < softSkillListGroup.length; i++) {
 
-        let value = softSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
+        let value = softSkillListGroup[i].dataset.id
         let value2 = softSkillListGroup[i].firstElementChild.lastElementChild.lastElementChild.innerText
 
-        softSkillAppendingDiv1.innerHTML += `<div class="skill-pill-div text-center"> <input type="hidden" value=\${value}\ >
-                                \${value2}\
+        softSkillAppendingDiv1.innerHTML += `<div class="skill-pill-div text-center" data-id="\${value}">
+                                \${value2}
                               </div>`
 
         let index = 21
         let obj = {}
-        obj.resume_lid = 2
+        obj.resume_lid = resume_lid
         obj.skill_lid = Number.parseInt(value)
         obj.skill_selected_lid = index++
         skillJson.skill_details[skillIndex] = obj
@@ -5774,17 +5769,17 @@ function initResume() {
       }
 
       for (let i = 0; i < hardSkillListGroup.length; i++) {
-        let value = hardSkillListGroup[i].firstElementChild.lastElementChild.firstElementChild.value
+        let value = hardSkillListGroup[i].dataset.id
         let value2 = hardSkillListGroup[i].firstElementChild.lastElementChild.lastElementChild.innerText
         console.log(value2)
 
 
-        hardSkillAppendingDiv1.innerHTML += `<div class="skill-pill-div text-center"><input type="hidden" value=\${value}\ >
-                                \${value2}\
+        hardSkillAppendingDiv1.innerHTML += `<div class="skill-pill-div text-center" data-id="\${value}">
+                                \${value2}
                               </div>`
         let index = 25
         let obj = {}
-        obj.resume_lid = 2
+        obj.resume_lid = resume_lid
         obj.skill_selected_lid = index++
         obj.skill_lid = Number.parseInt(value)
         skillJson.skill_details[skillIndex] = obj
@@ -5809,10 +5804,6 @@ function initResume() {
         })
       }
       postdata()
-
-
-
-
 
     })
 
@@ -5866,10 +5857,10 @@ function initResume() {
         let id = element.parentElement.parentElement.lastElementChild.firstElementChild.value
 
         let div = ` 
-                    <li class="soft-skill-list-group">
+                    <li class="soft-skill-list-group" data-id="\${id}">
                         <div class="row">
                             <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
-                            <div class="col-md-10 col-sm-10 col-10"><input type="hidden" value=\${id}\ ><a class="ms-3" href="#">\${text}\</a></div>
+                            <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${text}\</a></div>
                         </div>
                     </li> `
 
@@ -5922,10 +5913,10 @@ function initResume() {
         let id = element.parentElement.parentElement.lastElementChild.firstElementChild.value
 
         let div = ` 
-                     <li class="hard-skill-list-group">
+                     <li class="hard-skill-list-group" data-id="\${id}">
                          <div class="row">
                              <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x hard-skill-delete-button" style="color:red;"></i></div>
-                             <div class="col-md-10 col-sm-10 col-10"> <input type="hidden" value=\${id}\ ><a class="ms-3" href="#">\${text}\ </a></div>
+                             <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${text}</a></div>
                          </div>
                      </li> `
 
@@ -5952,10 +5943,10 @@ function initResume() {
           console.log(response)
 
           softSkillDisplay.insertAdjacentHTML('beforeend',
-            ` <li class="soft-skill-list-group">
+            ` <li class="soft-skill-list-group" data-id="\${response.id}">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
-                                 <div class="col-md-10 col-sm-10 col-10"><input type="hidden" value=\${response.id}\ ><a class="ms-3"  href="#">\${response.skill_name}\ </a></div>
+                                 <div class="col-md-10 col-sm-10 col-10"><a class="ms-3">\${response.skill_name}</a></div>
                              </div>
                        </li> `
           )
@@ -5982,10 +5973,10 @@ function initResume() {
         success: function (response) {
 
           hardSkillDisplay.insertAdjacentHTML('beforeend',
-            `<li class="hard-skill-list-group">
+            `<li class="hard-skill-list-group" data-id="\${response.id}">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
-                                 <div class="col-md-10 col-sm-10 col-10"><input type="hidden" value=\${response.id}\ ><a class="ms-3" href="#">\${customHardSkillValue}\ </a></div>
+                                 <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${customHardSkillValue}</a></div>
                              </div>
                        </li> `
           )
@@ -6005,8 +5996,9 @@ function initResume() {
 
       if (element.matches('i')) {
         let text = element.parentElement.parentElement.lastElementChild.lastElementChild.innerText
+        let id = element.parentElement.parentElement.dataset.id
         let div = `
-                            <li class="soft-skill-list">
+                            <li class="soft-skill-list" data-id="\${id}">
                               <div class="row">
                                   <div class="col-md-2 col-sm-2 col-2 soft-skill-add-button"><i
                                         class="fa-solid fa-circle-plus fa-2x"></i></div>
@@ -6029,8 +6021,9 @@ function initResume() {
 
       if (element.matches('i')) {
         let text = element.parentElement.parentElement.lastElementChild.lastElementChild.innerText
+        let id = element.parentElement.parentElement.dataset.id
         let div = `
-                            <li class="hard-skill-list">
+                            <li class="hard-skill-list" data-id="\${id}">
                               <div class="row">
                                   <div class="col-md-2 col-sm-2 col-2 hard-skill-add-button"><i
                                         class="fa-solid fa-circle-plus fa-2x"></i></div>
@@ -6138,7 +6131,7 @@ function initResume() {
           durationOfTeaching != "" || end_Date != "" || start_Date != "") {
           obj = {
             id: id,
-            resume_lid: "1",
+            resume_lid: resume_lid,
             experience_type_lid: experienceTypeValue,
             employer_name: universityValue,
             designation: designation,

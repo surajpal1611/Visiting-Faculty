@@ -7,11 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.visitingfaculty.dao.UserDaoInterface;
 import com.visitingfaculty.dto.UserDto;
+import com.visitingfaculty.model.Resume;
 import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
 import com.visitingfaculty.service.PasswordService;
 import com.visitingfaculty.service.faculty_service.UserLoginService;
@@ -41,6 +44,7 @@ public class UserRestController {
     @PostMapping(value = "/insert-personal-details")
     public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) {
 
+        System.out.println(personalDetailsData);
         String json = jsonchk.UserJsonCheck(personalDetailsData);
         System.out.println(json);
         if (json != null) {
@@ -49,10 +53,26 @@ public class UserRestController {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
             return ResponseEntity.ok("Inserted Successfully");
-        } 
-            System.out.println("Error");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        
+        }
+        System.out.println("Error");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
+    }
+
+    @PostMapping(value = "/update-personal-details")
+    public ResponseEntity<?> updatePersonalDetails(@RequestBody String personalDetailsData) {
+
+        String json = jsonchk.UserJsonCheck(personalDetailsData);
+        if (json != null) {
+            Object updatePersonalDetails = userDaoInterface.updatePersonalDetails(json);
+            if (updatePersonalDetails == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            }
+            return ResponseEntity.ok("Inserted Successfully");
+        }
+        System.out.println("Error");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
     }
 
     @PostMapping("/verify-registration")
@@ -74,27 +94,26 @@ public class UserRestController {
 
             return ResponseEntity.status(HttpStatus.OK).build();
 
-        } 
+        }
 
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-      
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
     }
 
     @PostMapping("/verify-token")
-    public ResponseEntity<?> verifyToken(@RequestBody String token, HttpSession httpSession,Model m) {
+    public ResponseEntity<?> verifyToken(@RequestBody String token, HttpSession httpSession, Model m) {
 
         int tokenToVerify = Integer.parseInt(token);
         int tokenGenerated = (int) httpSession.getAttribute("tokenGenerated");
         String user_id = (String) httpSession.getAttribute("user_id");
         String passwordToVerify = password;
-        System.out.println("VERIFY TOKEN>>>>>" );
-        if (userService.validateToken(tokenToVerify, tokenGenerated, user_id,passwordToVerify)) {
-          
+        System.out.println("VERIFY TOKEN>>>>>");
+        if (userService.validateToken(tokenToVerify, tokenGenerated, user_id, passwordToVerify)) {
+
             return ResponseEntity.status(HttpStatus.OK).build();
-        } 
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
     }
 
     @PostMapping("/get-all-skill")
@@ -121,7 +140,7 @@ public class UserRestController {
 
     }
 
-    @PostMapping("/verify-login")
+    @GetMapping("/verify-login")
     public ResponseEntity<?> verifyUserLogin(@RequestBody UserDto userDto, HttpSession httpSession) {
 
         System.out.println(userDto);
@@ -138,18 +157,19 @@ public class UserRestController {
     }
 
     @PostMapping("/get-user-details")
-    public Object getUserResume() {
+    public Object getUserResume(@RequestParam(value = "resume_lid") int resume_lid) {
 
-       Object resume = userDaoInterface.getUserResume("1");
-       return resume;
+        System.out.println("RESUMELID>>>>>>>>>>" + resume_lid);
+
+        Object resume = userDaoInterface.getUserResume(resume_lid);
+        return resume;
     }
 
     @PostMapping("/get-faculty-application")
     public Object searchFacultyById(String user_id) {
 
-
         Object data = userDaoInterface.getFacultyApplication(user_id);
-        
+
         return data;
     }
 
@@ -161,14 +181,24 @@ public class UserRestController {
         Object data = userDaoInterface.getFacultyResumeByName(user_id);
 
         System.out.println(data);
-        
+
         return data;
     }
 
     @PostMapping("/create-resume")
-    public Object createResume() {
+    public int createResume(Resume resume) {
 
-        return null;
+        int resume_lid = userDaoInterface.insertResume(resume);
+
+        return resume_lid;
+    }
+
+    @PostMapping("/get-resume-by-user")
+    public Object getResumeByUser(@RequestParam("user_id") int user_lid) {
+
+        Object data = userDaoInterface.getResumeById(user_lid);
+
+        return data;
     }
 
     // @PostMapping("/verify-password")

@@ -1,6 +1,5 @@
 package com.visitingfaculty.validations;
 
-import java.util.UUID;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
