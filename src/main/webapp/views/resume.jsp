@@ -252,13 +252,12 @@
 
     <!-- ************************************************************************Qualification Modal Div******************************************************************************************** -->
 
-
+    <!-- Qualification Modal for Update -->
     <div class="qualification-modal d-none">
       <div class="full-screen container ">
         <div class="main-content">
           <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
-            <h3><b> Qualification</b></h3>
-            <i id="qualification-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+            <h3><b>Edit Qualification</b></h3>
           </div>
           <hr>
 
@@ -273,6 +272,28 @@
         </div>
       </div>
     </div>
+
+        <!-- Qualification Modal for Insert -->
+        <div class="qualification-modal-insert d-none">
+          <div class="full-screen container ">
+            <div class="main-content">
+              <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
+                <h3><b> Qualification</b></h3>
+                <i id="qualification-add-button" class="qualification-add-button fa-solid text-primary fa-circle-plus fa-2x"></i>
+              </div>
+              <hr>
+    
+              <div class="bg-white qualification-data-insert">
+              </div>
+    
+              <hr>
+              <div class="d-flex justify-content-center">
+                <button id="qualification-cancel-insert" class="btn btn-danger m-4">Cancel</button>
+                <button id="qualification-submit-insert" class="btn btn-success m-4">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
     <!-- ************************************************************************Work Experience Modal Div******************************************************************************************** -->
 
@@ -506,12 +527,12 @@
 
     <!-- ************************************************************************Achievement Modal Div******************************************************************************************** -->
 
+    <!-- Award Section For Update -->
     <div class="award-modal d-none">
       <div class="full-screen container">
         <div class="main-content">
           <div class="container d-flex justify-content-between mt-4">
-            <h3 class="h3 ps-1 py-4">Award</h3>
-            <i id="award-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+            <h3 class="h3 ps-1 py-4">Edit Award</h3>
           </div>
           <hr>
 
@@ -528,16 +549,39 @@
       </div>
     </div>
 
+    <!-- Award Section For Insert -->
+    <div class="award-modal-insert d-none">
+      <div class="full-screen container">
+        <div class="main-content">
+          <div class="container d-flex justify-content-between mt-4">
+            <h3 class="h3 ps-1 py-4">Award</h3>
+            <i id="award-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+          </div>
+          <hr>
+
+
+          <div id="publication-award-div-insert" class="bg-white">
+
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button id="award-cancel-insert" class="btn btn-danger m-4">Cancel</button>
+            <button id="award-submit-insert" class="btn btn-success m-4">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <!-- ************************************************************************Publication Modal Div******************************************************************************************** -->
 
+    <!-- Publication Update Model -->
     <div class="publication-modal d-none">
 
       <div class="full-screen container ">
         <div class="main-content">
           <div class="container d-flex justify-content-between mt-4">
-            <h3 class="h3 ps-1 py-4">Publication</h3>
-            <i id="publication-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+            <h3 class="h3 ps-1 py-4">Edit Publication</h3>
           </div>
           <hr>
 
@@ -554,14 +598,37 @@
       </div>
     </div>
 
-    <!-- ************************************************************************Research Modal Div******************************************************************************************** -->
+        <!-- Publication Insert Model -->
+        <div class="publication-modal-insert d-none">
 
+          <div class="full-screen container ">
+            <div class="main-content">
+              <div class="container d-flex justify-content-between mt-4">
+                <h3 class="h3 ps-1 py-4">Publication</h3>
+                <i id="publication-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+              </div>
+              <hr>
+    
+    
+              <div id="publication-modal-appending-div-insert" class="bg-white">
+    
+              </div>
+    
+              <div class="d-flex justify-content-center">
+                <button id="publication-cancel-insert" class="btn btn-danger m-4">Cancel</button>
+                <button id="publication-submit-insert" class="btn btn-success m-4">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <!-- ************************************************************************Research Modal Div******************************************************************************************** -->
+    <!-- Reserach Update Model -->
     <div class="research-modal d-none">
       <div class="full-screen container ">
         <div class="main-content">
           <div class="container d-flex justify-content-between mt-4">
-            <h3 class="h3 py-4">Research</h3>
-            <i id="research-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+            <h3 class="h3 py-4">Edit Research</h3>
           </div>
           <hr>
 
@@ -577,16 +644,37 @@
       </div>
     </div>
 
+      <!-- Reserach Insert Model -->
+      <div class="research-modal-insert d-none">
+        <div class="full-screen container ">
+          <div class="main-content">
+            <div class="container d-flex justify-content-between mt-4">
+              <h3 class="h3 py-4">Research</h3>
+              <i id="research-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+            </div>
+            <hr>
+
+            <div id="research-data-insert" class="bg-white">
+
+
+            </div>
+            <div class="d-flex justify-content-center ">
+              <button id="research-cancel-insert" class="btn btn-danger m-4">Cancel</button>
+              <button id="research-submit-insert" class="btn btn-success m-4">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     <!-- ************************************************************************Certification Modal Div******************************************************************************************** -->
 
-
+    <!-- Certification Update Model -->
     <div class="certification-modal d-none">
       <div class="full-screen container ">
         <div class="main-content">
           <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
-            <h3><b> Certification</b></h3>
-            <i id="certification-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+            <h3><b>Edit Certification</b></h3>
           </div>
           <hr>
 
@@ -600,6 +688,27 @@
         </div>
       </div>
     </div>
+
+        <!-- Certification Insert Model -->
+        <div class="certification-modal-insert d-none">
+          <div class="full-screen container ">
+            <div class="main-content">
+              <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
+                <h3><b> Certification</b></h3>
+                <i id="certification-add-button" class="fa-solid text-primary fa-circle-plus fa-2x"></i>
+              </div>
+              <hr>
+    
+              <div id="certification-data-insert" class="bg-white">
+    
+              </div>
+              <div class="d-flex justify-content-center">
+                <button id="certification-cancel-insert" class="btn btn-danger m-4">Cancel</button>
+                <button id="certification-submit-insert" class="btn btn-success m-4">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
     <!-- ************************************************************************Bank Details Modal Div******************************************************************************************** -->
     <div class="bank-details-modal d-none">
@@ -805,9 +914,11 @@
   <script src="/js/jquery.bootpag.min.js"></script>
   <script id="script-data"></script>
   <script>
+
     let qualificationType = `<option value disabled selected>--Select--</option>`
     let resume_lid = '${resume_lid}';
     console.log(resume_lid)
+
     let resumeinfo;
     $.ajax({
       url: '/get-user-details?resume_lid=' + resume_lid,
@@ -1210,23 +1321,17 @@
                           </div>
                         </div>
               `
-          }
-        } else {
-          resume += ` <div class="text-block right" id="preview-qualification-div">
-                        <div class="card-body preview-qualification-div">
-                          <button class="addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
-                        </div>
-                      </div>
-              `
-        }
+
+        }}
+ 
+
         resume += `
             </div>
+                <div class="addbtn d-flex my-2 justify-content-center align-items-center">
+                  <strong> Add More Rows</strong><button class="resume-qualification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                </div>
           </div>
-
           </div>
-         
-
-
         </div>
         <hr />
 
@@ -1459,49 +1564,15 @@
                     </div>
                 <hr>
               `
-          }
-        } else {
-          resume += `    <div id="Award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                  <div class="row">
 
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Award Name :</p>
-                          <p class="h5 py-1">organization :</p>
-                          <p class="h5 py-1">Organization Type :</p>
+        }}
+       
 
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p id="">N.A</p>
-                          <p id="">N.A </p>
-                          <p id="">N.A</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Place :</p>
-                          <p class="h5 pb-1">Recieved date :</p>
-                          <p class="h5 py-1">Certificate :</p>
-                        </div>
-                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                          <p class="" id="">N.A</p>
-                          <p class="" id="">N.A</p>
-                          <p ><i id="award-certificate-display" class="fa-solid fa-ban text-danger award-certificate-display"></i></p>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                <hr>
-              `
-        }
 
         resume += `</div>
+             <div class="addbtn-award d-flex my-2 justify-content-center align-items-center">
+                  <strong> Add More Rows</strong><button class="resume-award-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+             </div>
           </div>
           </div>
          
@@ -1564,49 +1635,14 @@
           </div>
               
               `
-          }
-        } else {
-          resume += `<div class=" px-3 px-sm-4 px-lg-4 mt-1">
-                  <div class="row">
 
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Role :</p>
-                          <p class="h5 py-1">No. of Authors :</p>
-                          <p class="h5 py-1">Book Title :</p>
-
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p id="">N.A</p>
-                          <p id="">N.A </p>
-                          <p id="">N.A</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Publisher :</p>
-                          <p class="h5 pb-1">Publication Year:</p>
-                          <p class="h5 py-1">Certificate :</p>
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p class="" id="">N.A</p>
-                          <p class="" id="">N.A</p>
-                          <p><i id="publication-certificate-display" class="fa-solid fa-ban text-danger publication-certificate-display"></i></p>
-
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                
-              </div>`
-        }
+        }}
+       
 
         resume += `</div>
+              <div class="addbtn-publication d-flex my-2 justify-content-center align-items-center">
+                    <strong> Add More Rows</strong><button class="resume-publication-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+              </div>
             </div>
           </div>
          
@@ -1670,52 +1706,15 @@
             <i class="fa-solid fa-pen fa-2x text-white "></i>
           </div>
           </div>
-
-
                 `
-          }
-        } else {
-          resume += ` <div class=" ps-3 ps-sm-4 ps-lg-4 mt-1">
-                  <div class="row">
 
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 py-1">Title :</p>
-                          <p class="h5 py-1">Volume year :</p>
+        }}
+       
+        resume += `</div>  
+               <div class="addbtn-research d-flex my-2 justify-content-center align-items-center">
+                     <strong> Add More Rows</strong><button class="resume-research-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+               </div>             
 
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                          <p id="">N.A</p>
-                          <p id="">N.A</p>
-                        </div>
-                      </div>
-                    </div>
-
-
-                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                      <div class="row pt-lg-3">
-                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Description :</p>
-                          <p class="h5 pb-1">Category :</p>
-                          <p class="h5 py-1">Certificate :</p>
-                        </div>
-                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                          <p class="" id="">N.A</p>
-                          <p class="" id="">N.A</p>
-                          <p><i id="research-certificate-display" class="fa-solid fa-ban text-danger research-certificate-display" ></i></p>
-
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-             `
-        }
-
-
-        resume += `</div>              
             </div>
           </div>
         
@@ -1796,69 +1795,14 @@
           </div>
           </div>
                 `
-            }
-          }
-        } else {
-          resume += `
-                <div class="text-block right" id="preview-qualification-div">
-                  <div class="card-body preview-certification-div">
 
-                    <div class=" px-3 px-sm-4 px-lg-4 mt-1">
-                      <div class="row">
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Certification name:</p>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">Teaching</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Institution :</p>
-                            </div>
-                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                              <p class="" id="">St. Wilfred's College</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Recieved Year:</p>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">2015</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Certificate:</p>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id=""><i class="fa-solid fa-ban text-danger"></i></p>
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-
-                  </div>
-                </div>`
-        }
-        resume += `
+              }
+            }}
+                resume += `
               </div>
-
+                  <div class="addbtn-certification d-flex my-2 justify-content-center align-items-center">
+                    <strong> Add More Rows</strong><button class="resume-certification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                  </div>
             </div>
           </div>
          
@@ -1932,8 +1876,8 @@
                       <p id="cancelled-check-photo" class="pt-3">
                         <i id="cancelled-cheque-photo-preview" class="fa-solid fa-ban text-danger"></i>
                       </p>`
-        }
-        resume += `</div>
+                    }
+                    resume+=`</div>
                   </div>
                 </div>
               </div>
@@ -1954,10 +1898,1643 @@
       }
     });
 
+// *************************************************************Functions For Insert Model****************************************************
 
-    // ******************************************Validation Functions End***************************************************
+// ***********************************************************Qualification Section for Insert*************************************************
 
-    //document.querySelector('#body').addEventListener('mouseover', function (e) {
+let qualificationType=`<option value disabled selected>--Select--</option>`;
+
+
+//Resume Qualification Add Button
+function resumequailficationaddbtn(){
+   
+document.querySelector('.qualification-data-insert').innerHTML = "";
+document.querySelector('.qualification-modal-insert').classList.remove('d-none');
+document.querySelector('#body').classList.add('d-none');
+
+$.ajax({
+        url: '/get-qualification-type',
+        type: 'get',
+        success: function (response) {
+          for (let i = 0; i < response.length; i++) {
+            qualificationType+=`<option value="\${response[i].abbr}" >\${response[i].name}</option>`;
+          }
+
+let table = `
+<div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
+<div class="container">
+<div class="row qualification-row">
+<div class="col-12 col-md-12 col-lg-6 col-sm-12">
+ <div class="row p-3">
+   <div class="col-md-2 ">
+     <p class="h6">Title <span class="required">*</span></p>
+   </div>
+   <div class="col-md-10">
+    <select class="form-control qualification-title">
+      \${qualificationType}
+     </select>
+     </div>
+ </div>
+ <div class="row p-3">
+   <div class="col-md-2 ">
+     <p class="h6">Subject <span class="required">*</span></p>
+   </div>
+   <div class="col-md-10 "><input class="form-control qualification-subject"
+       id="bachelors-degree-major-subject" type="text"></div>
+ </div>
+ <div class="row p-3">
+   <div class="col-md-2 ">
+     <p class="h6">University<span class="required">*</span></p>
+   </div>
+   <div class="col-md-10 "><input class="form-control qualification-university"
+       id="bachelors-degree-university" type="text"></div>
+ </div>
+ <div class="row p-3">
+   <div class="col-md-2 ">
+     <p class="h6">Year of Passing <span class="required">*</span></p>
+   </div>
+   <div class="col-md-10 "><input class="form-control qualification-year"
+       id="bachelors-degree-year-of-passing" type="text"></div>
+ </div>
+
+</div>
+
+<div class="col-12 col-md-12 col-lg-6 col-sm-12">
+
+ <div class="row p-3 qualification-phd-wrapper d-none">
+   <div class="col-md-2 ">
+     <p class="h6">Status<span class="required">*</span></p>
+   </div>
+   <div class="col-md-10"><select class="form-control qualification-status"
+       id="qualification-status-data">
+       <option value="true">Awarded</option>
+       <option value="false">Persuing</option>
+     </select></div>
+ </div>
+ <div class="row p-3">
+   <div class="col-md-2">
+     <p class="h6">College <span class="required">*</span></p>
+   </div>
+   <div class="col-md-10 "><input class="form-control qualification-college"
+       id="bachelors-degree-college" type="text"></div>
+ </div>
+ <div class="row p-3">
+   <div class="col-md-2">
+     <p class="h6">Percentage<span class="required">*</span></p>
+   </div>
+   <div class="col-md-10"><input class="form-control qualification-percentile"
+       id="bachelors-degree-percentile" type="text"></div>
+ </div>
+ <div class="row p-3">
+   <div class="col-md-2 ">
+     <p class="h6">Certificate<span class="required">*</span></p>
+   </div>
+   <div class="col-md-10"><input class="form-control qualification-certificate"
+       onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])"
+       type="file">
+     <p hidden><img class="qualification-certificate-preview" type="hidden" alt="your image" width="100"
+         height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+   </div>
+   </div>
+   </div>
+   </div>
+   <hr style="height: 5px;">
+   </div>
+   <div id="delete_btn_qualification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_qualification_symbol">
+          <i class="fa-solid fa-trash text-danger fa-2x"></i>
+       </div>      
+</div>`
+
+
+document.querySelector('.qualification-data-insert').insertAdjacentHTML("beforeend", table);
+    }
+  });
+}
+
+// Qualification Section Add Button
+document.querySelector('.qualification-add-button').addEventListener('click', function (){
+
+   let table = `
+   <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
+     <div class="container">
+   <div class="row qualification-row">
+    <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+      <div class="row p-3">
+        <div class="col-md-2 ">
+          <p class="h6">Title <span class="required">*</span></p>
+        </div>
+        <div class="col-md-10">
+         <select class="form-control qualification-title">
+           \${qualificationType}
+          </select>
+          </div>
+      </div>
+      <div class="row p-3">
+        <div class="col-md-2 ">
+          <p class="h6">Subject <span class="required">*</span></p>
+        </div>
+        <div class="col-md-10 "><input class="form-control qualification-subject"
+            id="bachelors-degree-major-subject" type="text"></div>
+      </div>
+      <div class="row p-3">
+        <div class="col-md-2 ">
+          <p class="h6">University<span class="required">*</span></p>
+        </div>
+        <div class="col-md-10 "><input class="form-control qualification-university"
+            id="bachelors-degree-university" type="text"></div>
+      </div>
+      <div class="row p-3">
+        <div class="col-md-2 ">
+          <p class="h6">Year of Passing <span class="required">*</span></p>
+        </div>
+        <div class="col-md-10 "><input class="form-control qualification-year"
+            id="bachelors-degree-year-of-passing" type="text"></div>
+      </div>
+    
+    </div>
+    
+    <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+    
+      <div class="row p-3 qualification-phd-wrapper d-none">
+        <div class="col-md-2 ">
+          <p class="h6">Status<span class="required">*</span></p>
+        </div>
+        <div class="col-md-10"><select class="form-control qualification-status"
+            id="qualification-status-data">
+            <option value="true">Awarded</option>
+            <option value="false">Persuing</option>
+          </select></div>
+      </div>
+      <div class="row p-3">
+        <div class="col-md-2">
+          <p class="h6">College <span class="required">*</span></p>
+        </div>
+        <div class="col-md-10 "><input class="form-control qualification-college"
+            id="bachelors-degree-college" type="text"></div>
+      </div>
+      <div class="row p-3">
+        <div class="col-md-2">
+          <p class="h6">Percentage<span class="required">*</span></p>
+        </div>
+        <div class="col-md-10"><input class="form-control qualification-percentile"
+            id="bachelors-degree-percentile" type="text"></div>
+      </div>
+      <div class="row p-3">
+        <div class="col-md-2 ">
+          <p class="h6">Certificate<span class="required">*</span></p>
+        </div>
+        <div class="col-md-10"><input class="form-control qualification-certificate"
+            onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])"
+            type="file">
+          <p hidden><img class="qualification-certificate-preview" type="hidden" alt="your image" width="100"
+              height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+        </div>
+        </div>
+        </div>
+        </div>
+        <hr style="height: 5px;">
+        </div>
+        <div id="delete_btn_qualification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_qualification_symbol">
+               <i class="fa-solid fa-trash text-danger fa-2x"></i>
+            </div>      
+    </div>`
+   
+   document.querySelector('.qualification-data-insert').insertAdjacentHTML("beforeend", table);
+   });
+  
+//Qualification Data Insert Close
+document.querySelector("#qualification-cancel-insert").addEventListener('click', function () {
+       document.getElementById('body').classList.remove('d-none');
+       document.querySelector('.qualification-modal-insert').classList.add('d-none');
+   });
+
+//Qualification Data Insert Submit
+document.querySelector("#qualification-submit-insert").addEventListener('click', function (e) {
+     e.preventDefault()
+
+     let qualificatonModal = ''
+     let div = ''
+     let qualificationTableArray = []
+     let qualificationRow = document.querySelectorAll('.qualification-row')
+     for (i = 0; i < qualificationRow.length; i++) {
+
+       //to remove the red border
+       qualificationRow[i].querySelector('.qualification-subject').classList.remove('input-border');
+       qualificationRow[i].querySelector('.qualification-university').classList.remove('input-border');
+       qualificationRow[i].querySelector('.qualification-college').classList.remove('input-border');
+       qualificationRow[i].querySelector('.qualification-percentile').classList.remove('input-border');
+       qualificationRow[i].querySelector('.qualification-year').classList.remove('input-border');
+       qualificationRow[i].querySelector('.qualification-certificate').classList.remove('input-border');
+
+       let resume_qualification_lid = qualificationRow[i].dataset.lid
+       let qualificationTitle = qualificationRow[i].querySelector('.qualification-title').value;
+       let qualificationSubject = qualificationRow[i].querySelector('.qualification-subject').value;
+       let qualificationUniversity = qualificationRow[i].querySelector('.qualification-university').value;
+       let qualificationCollege = qualificationRow[i].querySelector('.qualification-college').value;
+       let qualificationStatus = qualificationRow[i].querySelector('.qualification-status').value;
+       let qualificationPercentile = qualificationRow[i].querySelector('.qualification-percentile').value;
+       let qualificationYear = qualificationRow[i].querySelector('.qualification-year').value;
+       let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
+       // let qualificationCertificateImage = qualificationRow[i].querySelector('#qualification-certificate-preview').src;
+
+       let checkSubject = tabledatacheck(qualificationSubject);
+       let checkUniversity = tabledatacheck(qualificationUniversity);
+       let checkCollege = tabledatacheck(qualificationCollege);
+       let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
+       let checkCertificate = tabledatacheck(qualificationCertificate);
+       let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
+       // let checkCancelledCheque = qualificationDetailCertificateValidation(qualificationCertificate);
+
+       // console.log(qualificationCertificateImage)
+       console.log(checkPercentile)
+       // console.log(checkSubject)
+
+       let qualificationCertificateSRC = qualificationRow[i].querySelector('.qualification-certificate-preview')
+         .src
+       //  to add the red border according to validations
+       if (checkSubject == false) {
+         qualificationRow[i].querySelector('.qualification-subject').classList.add('input-border');
+         return;
+       } else if (checkUniversity == false) {
+         qualificationRow[i].querySelector('.qualification-university').classList.add('input-border');
+         return;
+       } else if (checkCollege == false) {
+         qualificationRow[i].querySelector('.qualification-college').classList.add('input-border');
+         return;
+       } else if (checkYearOfPassing == false) {
+         qualificationRow[i].querySelector('.qualification-year').classList.add('input-border');
+         return;
+       } else if (checkPercentile == false) {
+         qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
+         return;
+       } else if (checkCertificate == false) {
+         qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
+         return;
+       }
+
+
+
+       let qualificationTitle1 = ""
+       let qualification_type = 0;
+       if (qualificationTitle == "bachelor") {
+         qualificationTitle1 = "Bachelor's Degree"
+         qualification_type = 1
+       } else if (qualificationTitle == "master") {
+         qualificationTitle1 = "Master's Degree"
+         qualification_type = 2
+       } else if (qualificationTitle == "phd") {
+         qualificationTitle1 = "PHD"
+         qualification_type = 3
+       }
+       console.log(qualificationTitle)
+       console.log(qualification_type)
+
+       let qualificationvalue = false;
+       if (qualificationStatus == 'true') {
+         qualificationvalue = true
+       }
+
+
+       let photoArray = []
+
+       let qualificationCertificateInput = qualificationRow[i].querySelector('.qualification-certificate').files[0]
+       if (qualificationCertificateInput) {
+         let filereader = new FileReader();
+         filereader.readAsDataURL(qualificationCertificateInput);
+         filereader.onload = function (evt) {
+           let qualificationPhotoBase64 = evt.target.result;
+           photoArray[i] = qualificationPhotoBase64
+         }
+       }
+
+
+       setTimeout(function () {
+
+         object = {
+           resume_lid: 1,
+           resume_qualification_lid: resume_qualification_lid,
+           qualification_type_lid: qualification_type,
+           topic_of_study: qualificationSubject,
+           university: qualificationUniversity,
+           institute: qualificationCollege,
+           status: qualificationvalue,
+           percentile: Number.parseFloat(qualificationPercentile),
+           year_of_passing: qualificationYear,
+           url_path:photoArray[i]
+
+         }
+
+
+
+         div += ` 
+         <div class="text-block right qualification-update" >
+                 <div class="card-body">
+                   <h2 id="year-of-passing">\${qualificationYear}\</h2>
+
+                   <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+                     <div class="row">
+
+                       <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                         <div class="row pt-lg-3">
+                           <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                             <p class="h5 pb-1">Title :</p>
+                             <p class="h5 py-1">Major Subject :</p>
+                             <p class="h5 py-1">University :</p>
+                           </div>
+                           <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                             <p id="">\${qualificationTitle1}\</p>
+                             <p id="">\${qualificationSubject}\</p>
+                             <p id="">\${qualificationUniversity}\</p>
+                           </div>
+                         </div>
+                       </div>
+
+                       <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                         <div class="row pt-lg-3">
+                           <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                             <p class="h5 pb-1">College :</p>
+                             <p class="h5 py-1">percentage :</p>
+                             <p class="h5 py-1">Certificate :</p>
+                           </div>
+                           <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                             <p class="" id="">\${qualificationCollege}\</p>
+                             <p id="" class="">\${qualificationPercentile}\</p>
+                             <p ><i id="qualification-certificate-display" data-image = "\${qualificationCertificateSRC}" class="fa-solid fa-image text-success qualification-certificate-display"></i></p>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+                 `
+
+
+
+         qualificationTableArray.push(object)
+       }, 1000)
+     }
+     setTimeout(function () {
+
+       let qualificationTableData = {
+         "qualificationDetails": qualificationTableArray
+       }
+       console.log(JSON.stringify(qualificationTableData))
+
+       let options = {
+         method: 'POST',
+         headers: {
+           'Content-Type': 'application/json;charset=utf-8'
+         },
+         body: JSON.stringify(qualificationTableData)
+       }
+       let fetchRes = fetch('/resume-insert-qualification', options);
+       fetchRes.then(success => {
+         if (success.status == 200) {
+           document.getElementById('body').classList.remove('d-none');
+           document.querySelector('.qualification-modal').classList.add('d-none');
+         } else {
+           alert('Check Qualification details');
+         }
+       })
+     }, 1000)
+
+
+   });
+
+// **************************************************Qualification Section End*******************************************************
+
+//*******************************************************Award Insert Model Section Start*****************************************
+
+
+ //Resume Award Add Button
+function  resumeawardaddbtn(){
+
+document.querySelector('#publication-award-div-insert').innerHTML = "";
+document.querySelector('.award-modal-insert').classList.remove('d-none');
+document.querySelector('#body').classList.add('d-none');
+
+let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
+    <div class="container">   
+  <div id="publication-award-div" class="bg-white">
+      <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
+        <div class="row">
+
+          <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Award name<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10"><input class="form-control awardName" type="text" id="award-name"></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Organisation <span class="required">*</span></p>
+              </div>
+              <div class="col-md-10 "><input class="form-control awardOrganization" type="text" id="award-organization"></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Organisation type<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10 "><select class="form-control awardOrganizationType" id="award-organization-type">
+                <option value="0">-select-</option>
+                <option value="1">School</option>
+                <option value="2">University</option>
+                <option value="3">Industry</option>
+              </select></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+            <div class="row p-3">
+              <div class="col-md-2">
+                <p class="h6">Description<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2">
+                <p class="h6">Received date<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10"><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Certificate<span class="required">*</span></p>
+              </div>
+              <!--Rana Changes--!>
+              <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" 
+                 onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+                <p hidden><img class="award-certificate-preview" type="hidden" alt="your image" width="100"
+                height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div id="delete_btn_award_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_award_symbol">
+            <i class="fa-solid fa-trash text-danger fa-2x"></i>
+         </div>
+      </div>
+      <hr style="height: 5px;">
+    </div>
+    </div> 
+   `
+  document.getElementById('publication-award-div-insert').insertAdjacentHTML("beforeend", table);
+};
+
+//Award Insert Cancel Button
+document.querySelector("#award-cancel-insert").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.award-modal-insert').classList.add('d-none');
+});
+
+//Award Add Button
+document.getElementById('award-add-button').addEventListener('click', function () {
+      console.log("Award Add Button clicked");
+
+
+      let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
+        <div class="container">   
+      <div id="publication-award-div" class="bg-white">
+          <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Award name<span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardName" type="text" id="award-name"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Organisation <span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control awardOrganization" type="text" id="award-organization"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Organisation type<span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><select class="form-control awardOrganizationType" id="award-organization-type">
+                    <option value="0">-select-</option>
+                    <option value="1">School</option>
+                    <option value="2">University</option>
+                    <option value="3">Industry</option>
+                  </select></div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Description<span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10 "><input class="form-control awardPlace" type="text" id="award-place"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2">
+                    <p class="h6">Received date<span class="required">*</span></p>
+                  </div>
+                  <div class="col-md-10"><input class="form-control awardRecieveDate" type="date" id="award-receive-date"></div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-md-2 ">
+                    <p class="h6">Certificate<span class="required">*</span></p>
+                  </div>
+                  <!--Rana Changes--!>
+                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" 
+                     onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+                    <p hidden><img class="award-certificate-preview" type="hidden" alt="your image" width="100"
+                    height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div id="delete_btn_award_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_award_symbol">
+                <i class="fa-solid fa-trash text-danger fa-2x"></i>
+             </div>
+          </div>
+          <hr style="height: 5px;">
+        </div>
+        </div> 
+       `
+      document.getElementById('publication-award-div-insert').insertAdjacentHTML("beforeend", table);
+    });
+
+//Award Insert Submit Btn
+document.querySelector('#award-submit-insert').addEventListener('click', function () {
+
+let div = '';
+let vjstableelement = document.querySelectorAll('.award-rows');
+let noofrows = vjstableelement.length;
+let resume_achievement = [];
+let outerloopcheck = true;
+
+for (let i = 0; i < noofrows; i++) {
+  //to remove the red border
+  vjstableelement[i].querySelector('.awardName').classList.remove('input-border');
+  vjstableelement[i].querySelector('.awardOrganization').classList.remove('input-border');
+  vjstableelement[i].querySelector('.awardPlace').classList.remove('input-border');
+  vjstableelement[i].querySelector('.awardRecieveDate').classList.remove('input-border');
+  vjstableelement[i].querySelector('.awardCertificationImage').classList.remove('input-border');
+  vjstableelement[i].querySelector('.awardOrganizationType').classList.remove('input-border');
+
+  let title = vjstableelement[i].querySelector('.awardName').value;
+  let organization_name = vjstableelement[i].querySelector('.awardOrganization').value;
+  let organization_type_lid = vjstableelement[i].querySelector('.awardOrganizationType').value;
+  let description = vjstableelement[i].querySelector('.awardPlace').value;
+  let achievement_date = vjstableelement[i].querySelector('.awardRecieveDate').value;
+  let url_path = vjstableelement[i].querySelector('.awardCertificationImage').value;
+  let awardCertificateSRC = vjstableelement[i].querySelector('.award-certificate-preview').src;
+
+  let checktitle = tabledatacheck(title);
+  let checkorganization_name = namecheck(organization_name);
+  let checkdescription = tabledatacheck(description);
+  let checkachievement_date = checkdate(achievement_date);
+  let checkurl_path = tabledatacheck(url_path);
+  let checkorganization_type_lid = checknotnull(organization_type_lid)
+
+  //to add the red border according to validations
+  if (checktitle == false) {
+    vjstableelement[i].querySelector('.awardName').classList.add('input-border');
+    return;
+  } else if (checkorganization_name == false) {
+    vjstableelement[i].querySelector('.awardOrganization').classList.add('input-border');
+    return;
+  } else if (checkdescription == false) {
+    vjstableelement[i].querySelector('.awardPlace').classList.add('input-border');
+    return;
+  } else if (checkachievement_date == false) {
+    vjstableelement[i].querySelector('.awardRecieveDate').classList.add('input-border');
+    return;
+  } else if (checkorganization_type_lid == false) {
+    vjstableelement[i].querySelector('.awardOrganizationType').classList.add('input-border');
+    return;
+  } else if (checkurl_path == false) {
+    vjstableelement[i].querySelector('.awardCertificationImage').classList.add('input-border');
+    return;
+  }
+
+  let photoArray = []
+
+  let awardCertificateInput = vjstableelement[i].querySelector('.awardCertificationImage').files[0]
+  if (awardCertificateInput) {
+    let filereader = new FileReader();
+    filereader.readAsDataURL(awardCertificateInput);
+    filereader.onload = function (evt) {
+      let awardPhotoBase64 = evt.target.result;
+      photoArray[i] = awardPhotoBase64
+    }
+  }
+
+
+  setTimeout(function () {
+    obj = {
+      resume_lid: "1",
+      achievement_type_lid: "2",
+      title: title,
+      resume_achievement_lid: resume_achievement_lid1,
+      organization_name: organization_name,
+      organization_type_lid: organization_type_lid,
+      achievement_date: achievement_date,
+      description: description,
+      url_path: photoArray[i]
+    }
+
+
+    let organizationType = organization_type_lid
+    console.log(organizationType)
+    if (organizationType == 1) {
+      organizationType1 = "School"
+    } else if (organizationType == 2) {
+      organizationType1 = "University"
+    } else {
+      organizationType1 = "Industry"
+    }
+
+
+    let recievedAwardDate = changeDateFormat(achievement_date)
+    div += `
+  <div id="award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+              <div class="row">
+
+                <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                  <div class="row pt-lg-3">
+                    <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                      <p class="h5 pb-1">Award Name :</p>
+                      <p class="h5 py-1">organization :</p>
+                      <p class="h5 py-1">Organization Type :</p>
+
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                      <p id="">\${title}\</p>
+                      <p id="">\${organization_name}</p>
+                      <p id="">\${organizationType1}\</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                  <div class="row pt-lg-3">
+                    <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                      <p class="h5 pb-1">Description :</p>
+                      <p class="h5 pb-1">Recieved date :</p>
+                      <p class="h5 py-1">Certificate :</p>
+                    </div>
+                    <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                      <p class="" id="">\${description}\</p>
+                      <p class="" id="">\${recievedAwardDate}\</p>
+                      <p ><i id="award-certificate-display" data-image = "\${awardCertificateSRC}" class="fa-solid fa-image text-success award-certificate-display"></i></p>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+              `
+
+    resume_achievement.push(obj);
+  }, 1000)
+}
+
+object = {
+  "insert_award": resume_achievement
+}
+
+//Fetch Method
+setTimeout(function () {
+
+  function postdata() {
+    url = "/award_insert";
+    params = {
+      method: "POST",
+      headers: {
+        contentType: 'application/json'
+      },
+      body: JSON.stringify(object),
+    }
+    fetch(url, params).then((data) => {
+
+      if (data.status == 200) {
+        document.getElementById('body').classList.remove('d-none');
+        document.querySelector('.award-modal-insert').classList.add('d-none');
+      } else {
+        console.log("Error");
+        alert('Check Award Entries');
+      }
+    })
+  }
+  postdata()
+}, 1000)
+});
+
+
+// ***********************************************************Award Insert Model Section End*****************************************
+
+// ********************************************************Publication Section Start*************************************************
+
+//Resume Publication Add Button
+function resumepublicationaddbtn(){
+
+document.querySelector('#publication-modal-appending-div-insert').innerHTML = "";
+document.querySelector('.publication-modal-insert').classList.remove('d-none');
+document.querySelector('#body').classList.add('d-none');
+
+let table = ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
+        <div class="container">
+      
+      <div class="publication-row px-3 px-sm-4 px-lg-4 mt-1"> 
+        <div class="row">
+
+          <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Role<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10"><select class="form-control role" id="role">
+                  <option >-Select-</option>
+                  <option >Edited</option>
+                  <option >Authored</option>
+                </select></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Number of Authors<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10 "><input  class="form-control number-of-authors" type="text"></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Book Title<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10 "><input class="form-control book-title" type="text"></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+            <div class="row p-3">
+              <div class="col-md-2">
+                <p class="h6">Publisher<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10 "><input class="form-control publisher" type="text"></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2">
+                <p class="h6">Year of Publication<span class="required">*</span></p>
+              </div>
+              <div class="col-md-10"><input class="form-control year-of-publication" type="text"></div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-2 ">
+                <p class="h6">Certificate<span class="required">*</span></p>
+              </div>
+              <!--Rana Chanegs--!>
+              <div class="col-md-10"><input class="form-control publication-certification" type="file"
+                onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+                  <p hidden><img class="publication-certificate-preview" type="hidden" alt="your image" width="100"
+                   height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+              </div>
+            </div>
+          </div>
+        </div>
+         <div id="delete_btn_publication_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_publication_symbol">
+            <i class="fa-solid fa-trash text-danger fa-2x"></i>
+         </div>
+      </div>
+      <hr style="height: 5px;">
+  </div>
+      </div>
+    `
+  document.getElementById('publication-modal-appending-div-insert').insertAdjacentHTML("beforeend", table);
+};
+
+//Publication Insert cancel Btn]
+document.querySelector("#publication-cancel-insert").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.publication-modal-insert').classList.add('d-none');
+});
+
+//Publication Add btn
+document.querySelector('#publication-add-button').addEventListener('click', function () {
+
+let table = ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
+      <div class="container">
+    
+    <div class="publication-row px-3 px-sm-4 px-lg-4 mt-1"> 
+      <div class="row">
+
+        <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+          <div class="row p-3">
+            <div class="col-md-2 ">
+              <p class="h6">Role<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10"><select class="form-control role" id="role">
+                <option >-Select-</option>
+                <option >Edited</option>
+                <option >Authored</option>
+              </select></div>
+          </div>
+          <div class="row p-3">
+            <div class="col-md-2 ">
+              <p class="h6">Number of Authors<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10 "><input  class="form-control number-of-authors" type="text"></div>
+          </div>
+          <div class="row p-3">
+            <div class="col-md-2 ">
+              <p class="h6">Book Title<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10 "><input class="form-control book-title" type="text"></div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+          <div class="row p-3">
+            <div class="col-md-2">
+              <p class="h6">Publisher<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10 "><input class="form-control publisher" type="text"></div>
+          </div>
+          <div class="row p-3">
+            <div class="col-md-2">
+              <p class="h6">Year of Publication<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10"><input class="form-control year-of-publication" type="text"></div>
+          </div>
+          <div class="row p-3">
+            <div class="col-md-2 ">
+              <p class="h6">Certificate<span class="required">*</span></p>
+            </div>
+            <!--Rana Chanegs--!>
+            <div class="col-md-10"><input class="form-control publication-certification" type="file"
+              onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+                <p hidden><img class="publication-certificate-preview" type="hidden" alt="your image" width="100"
+                 height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+            </div>
+          </div>
+        </div>
+      </div>
+       <div id="delete_btn_publication_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_publication_symbol">
+          <i class="fa-solid fa-trash text-danger fa-2x"></i>
+       </div>
+    </div>
+    <hr style="height: 5px;">
+</div>
+    </div>
+  `
+document.getElementById('publication-modal-appending-div-insert').insertAdjacentHTML("beforeend", table);
+});
+
+//Insert Publication Submit Button
+document.querySelector("#publication-submit-insert").addEventListener('click', function (){
+
+let div = ''
+let publicationTableArray = []
+let publicationRow = document.querySelectorAll('.publication-row')
+for (i = 0; i < publicationRow.length; i++) {
+  //to remove the red border
+  publicationRow[i].querySelector('.publisher').classList.remove('input-border');
+  publicationRow[i].querySelector('.number-of-authors').classList.remove('input-border');
+  publicationRow[i].querySelector('.year-of-publication').classList.remove('input-border');
+  publicationRow[i].querySelector('.book-title').classList.remove('input-border');
+  publicationRow[i].querySelector('.publication-certification').classList.remove('input-border');
+
+  let publicationRole = publicationRow[i].querySelector('.role').value;
+  let publicationPublisher = publicationRow[i].querySelector('.publisher').value;
+  let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
+  let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
+  let resume_publication_lid = publicationRow[i].dataset.publicationlid;
+  console.log("PUBLICATION LID>>>>>>>>", resume_publication_lid)
+  let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
+  let publicationCertificate1 = publicationRow[i].querySelector('.publication-certification').value;
+  let publicationCertificateSRC = publicationRow[i].querySelector('.publication-certificate-preview').src;
+
+  let checkPublicationPublisher = tabledatacheck(publicationPublisher);
+  let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
+  let checkPublicationYearOfPublication = tabledatacheck(publicationYearOfPublication);
+  let checkPublicationBookTitle = tabledatacheck(publicationBookTitle);
+  let checkPublicationCertificate = tabledatacheck(publicationCertificate1);
+
+  // to add the red border according to validations
+  if (checkPublicationPublisher == false) {
+    publicationRow[i].querySelector('.publisher').classList.add('input-border');
+    return;
+  } else if (checkPublicationNumberOfAuthors == false) {
+    publicationRow[i].querySelector('.number-of-authors').classList.add('input-border');
+    return;
+  } else if (checkPublicationYearOfPublication == false) {
+    publicationRow[i].querySelector('.year-of-publication').classList.add('input-border');
+    return;
+  } else if (checkPublicationBookTitle == false) {
+    publicationRow[i].querySelector('.book-title').classList.add('input-border');
+    return;
+  } else if (checkPublicationCertificate == false) {
+    publicationRow[i].querySelector('.publication-certification').classList.add('input-border');
+    return;
+  }
+
+  let photoArray = []
+
+  let publicationCertificateInput = publicationRow[i].querySelector('.publication-certification').files[0]
+  if (publicationCertificateInput) {
+    let filereader = new FileReader();
+    filereader.readAsDataURL(publicationCertificateInput);
+    filereader.onload = function (evt) {
+      let publicationPhotoBase64 = evt.target.result;
+      photoArray[i] = publicationPhotoBase64
+    }
+  }
+
+  setTimeout(function () {
+
+
+    object = {
+      resume_lid: "1",
+      achievement_type_lid: "1",
+      resume_achievement_lid: resume_publication_lid,
+      publication_role: publicationRole,
+      no_of_authors: publicationNumberOfAuthors,
+      title: publicationBookTitle,
+      publisher: publicationPublisher,
+      year_of_publication: publicationYearOfPublication,
+      publication_url_path: photoArray[i]
+    }
+    publicationTableArray.push(object)
+
+
+    div += `   
+<div class=" px-3 px-sm-4 px-lg-4 mt-1">
+            <div class="row">
+           <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                <div class="row pt-lg-3">
+                  <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                    <p class="h5 pb-1">Role :</p>
+                    <p class="h5 py-1">No. of Authors :</p>
+                    <p class="h5 py-1">Book Title :</p>
+
+                  </div>
+                  <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                    <p id="">\${publicationRole}\</p>
+                    <p id="">\${publicationNumberOfAuthors}\ </p>
+                    <p id="">\${publicationBookTitle}\</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                <div class="row pt-lg-3">
+                  <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                    <p class="h5 pb-1">Publisher :</p>
+                    <p class="h5 pb-1">Publication Year:</p>
+                    <p class="h5 py-1">Certificate :</p>
+                  </div>
+                  <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                    <p class="" id="">\${publicationPublisher}\</p>
+                    <p class="" id="">\${publicationYearOfPublication}\</p>
+                    <p><i id="publication-certificate-display" data-image = "\${publicationCertificateSRC}" class="fa-solid fa-image text-success publication-certificate-display"></i></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            `
+  }, 1000)
+}
+
+let publicationTableData = {
+  "insert_publication": publicationTableArray
+}
+setTimeout(function () {
+
+  let options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: JSON.stringify(publicationTableData)
+  }
+  let fetchRes = fetch("/resume-publication-insert", options);
+  fetchRes.then(success => {
+    if (success.status == 200) {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.publication-modal').classList.add('d-none');
+    } else {
+      alert('Check');
+    }
+  })
+}, 1000)
+});
+
+// ********************************************************Publication Section End***************************************************
+
+// ***************************************************Research Section Insert Start***************************************************
+
+ //Resume Research Add Button
+function resumeresearchaddbtn(){
+
+document.querySelector('#research-data-insert').innerHTML = "";
+document.querySelector('.research-modal-insert').classList.remove('d-none');
+document.querySelector('#body').classList.add('d-none'); 
+
+let table = ` 
+<div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
+<div  class="research-row px-3 px-sm-4 px-lg-4 mt-1 bg-white container">
+      <div class="row">
+
+        <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+          <div class="row p-3">
+            <div class="col-md-2 ">
+              <p class="h6">Title<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10 "><input name="journal_name" class="form-control research_Journal_name"
+                type="text"></div>
+          </div>
+          <div class="row p-3">
+            <div class="col-md-2 ">
+              <p class="h6">Volume Year<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10 "><input name="volume_year" class="form-control research_volume_year" type="text"></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+          <div class="row p-3">
+            <div class="col-md-2">
+              <p class="h6">Description<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10 "><input name="number" class="form-control research_description" type="text"></div>
+          </div>
+          <div class="row p-3">
+            <div class="col-md-2">
+              <p class="h6">Category<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10"><input name="category" class="form-control research_category" type="text"></div>
+          </div>
+          <div class="row p-3">
+            <div class="col-md-2 ">
+              <p class="h6">Certificate<span class="required">*</span></p>
+            </div>
+            <!--Rana Changes--!>
+            <div class="col-md-10"><input class="form-control research_photo" type="file"
+              onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+             <p hidden><img class="research-certificate-preview" type="hidden" alt="your image" width="100"
+                height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr style="height: 5px;"> 
+      </div>
+     <div id="delete_btn_research_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_research_symbol">
+          <i class="fa-solid fa-trash text-danger fa-2x"></i>
+       </div>
+  </div>`
+
+document.getElementById('research-data-insert').insertAdjacentHTML("beforeend", table);
+};
+
+//Reserach Insert Cancel Button
+document.querySelector("#research-cancel-insert").addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.research-modal-insert').classList.add('d-none');
+});
+
+//Reserach Add Button
+document.getElementById('research-add-button').addEventListener('click', function () {
+
+let table = ` 
+<div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
+<div  class="research-row px-3 px-sm-4 px-lg-4 mt-1 bg-white container">
+      <div class="row">
+
+        <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+          <div class="row p-3">
+            <div class="col-md-2 ">
+              <p class="h6">Title<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10 "><input name="journal_name" class="form-control research_Journal_name"
+                type="text"></div>
+          </div>
+          <div class="row p-3">
+            <div class="col-md-2 ">
+              <p class="h6">Volume Year<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10 "><input name="volume_year" class="form-control research_volume_year" type="text"></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+          <div class="row p-3">
+            <div class="col-md-2">
+              <p class="h6">Description<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10 "><input name="number" class="form-control research_description" type="text"></div>
+          </div>
+          <div class="row p-3">
+            <div class="col-md-2">
+              <p class="h6">Category<span class="required">*</span></p>
+            </div>
+            <div class="col-md-10"><input name="category" class="form-control research_category" type="text"></div>
+          </div>
+          <div class="row p-3">
+            <div class="col-md-2 ">
+              <p class="h6">Certificate<span class="required">*</span></p>
+            </div>
+            <!--Rana Changes--!>
+            <div class="col-md-10"><input class="form-control research_photo" type="file"
+              onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
+             <p hidden><img class="research-certificate-preview" type="hidden" alt="your image" width="100"
+                height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr style="height: 5px;"> 
+      </div>
+     <div id="delete_btn_research_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_research_symbol">
+          <i class="fa-solid fa-trash text-danger fa-2x"></i>
+       </div>
+  </div>`
+
+document.getElementById('research-data-insert').insertAdjacentHTML("beforeend", table);
+
+});
+
+//Research Submit Button
+document.querySelector('#research-submit-insert').addEventListener('click', function () {
+      console.log("research button clicked");
+      let researchTableElem = document.querySelectorAll('.research-row');
+      let noofrows = researchTableElem.length;
+      console.log("no of rows", noofrows);
+      let resumeResearchTable = [];
+      let div = ''
+      for (let j = 0; j < noofrows; j++) {
+        researchTableElem[j].querySelector('.research_Journal_name').classList.remove('input-border');
+        researchTableElem[j].querySelector('.research_volume_year').classList.remove('input-border');
+        researchTableElem[j].querySelector('.research_description').classList.remove('input-border');
+        researchTableElem[j].querySelector('.research_category').classList.remove('input-border');
+        researchTableElem[j].querySelector('.research_photo').classList.remove('input-border');
+
+        let Journal_name = researchTableElem[j].querySelector('.research_Journal_name').value;
+        let volume_year = researchTableElem[j].querySelector('.research_volume_year').value;
+        let description = researchTableElem[j].querySelector('.research_description').value;
+        let category = researchTableElem[j].querySelector('.research_category').value;
+
+
+        let research__lid = researchTableElem[j].dataset.researchlid
+        console.log("RESEARCH>>>>>>>>", research__lid)
+        let researchCertificateSRC = researchTableElem[j].querySelector('.research-certificate-preview').src;
+
+
+        let check_journal_name = tabledatacheck(Journal_name);
+        let check_volume_year = yearcheck(volume_year);
+        let check_description = namecheck(description);
+        let check_category = namecheck(category);
+
+
+        if (check_journal_name == false) {
+          researchTableElem[j].querySelector('.research_Journal_name').classList.add('input-border');
+          return;
+        }
+
+        if (check_volume_year == false) {
+          researchTableElem[j].querySelector('.research_volume_year').classList.add('input-border');
+          return;
+        }
+
+        if (check_description == false) {
+          researchTableElem[j].querySelector('.research_description').classList.add('input-border');
+          return;
+        }
+
+        if (check_category == false) {
+          researchTableElem[j].querySelector('.research_category').classList.add('input-border');
+          return;
+        }
+
+
+
+        let photoArray = []
+        let researchCertificateInput = researchTableElem[j].querySelector('.research_photo').files[0]
+        if (researchCertificateInput) {
+          let filereader = new FileReader();
+          filereader.readAsDataURL(researchCertificateInput);
+          filereader.onload = function (evt) {
+            let researchPhotoBase64 = evt.target.result;
+            photoArray[j] = researchPhotoBase64
+          }
+        }
+        console.log(photoArray[j])
+
+        setTimeout(function () {
+
+
+          obj = {
+            resume_lid: "1",
+            achievement_type_lid: "3",
+            resume_achievement_lid: research__lid,
+            title: Journal_name,
+            volume_year: volume_year,
+            description: description,
+            category: category,
+            research_url_path: photoArray[j] //"c/fakepath://gghs" 
+          }
+
+          console.log(JSON.stringify(obj))
+          div += `<div  class=" px-3 px-sm-4 px-lg-4 mt-1 ">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 py-1">Title :</p>
+                          <p class="h5 py-1">Volume year :</p>
+
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">\${Journal_name}\</p>
+                          <p id="">\${volume_year}\</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Description :</p>
+                          <p class="h5 pb-1">Category :</p>
+                          <p class="h5 py-1">Certificate :</p>
+                        </div>
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">\${description}\</p>
+                          <p class="" id="">\${category}\</p>
+                          <p><i id="research-certificate-display" data-image = "\${researchCertificateSRC}" class="fa-solid fa-image text-success research-certificate-display"></i></p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>                  
+        `
+          resumeResearchTable.push(obj);
+        }, 1000)
+      }
+
+      object = {
+        "insert_research": resumeResearchTable
+      }
+      console.log('resrearch : ', JSON.stringify(object));
+      setTimeout(function () {
+
+        let options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(object),
+        }
+        let fetchRes = fetch("/resume-data-insert", options);
+        fetchRes.then(success => {
+          if (success.status == 200) {
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.research-modal').classList.add('d-none');
+          } else {
+            alert('Check');
+          }
+        })
+      }, 1000)
+
+
+
+
+
+    });
+
+
+// ********************************************************Research Section Insert End***************************************************
+
+// ******************************************************Certification Section Insert Start**********************************************
+
+//Resume Certification Add Button
+function resumecertificationaddbtn(){
+      document.querySelector('#certification-data-insert').innerHTML = "";
+      document.querySelector('.certification-modal-insert').classList.remove('d-none');
+      document.querySelector('#body').classList.add('d-none');
+      
+      let table = `  
+    <div class="position-relative certification_delete_btn d-flex" style="cursor: pointer;"> 
+        <div class="container">
+            <div class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
+                <div class="row">
+              <!-- px-lg-5 -->
+                    <div class="col-12 col-md-12 col-lg-12 col-sm-12 ">
+
+                        <div class="row p-3">
+                          <div class="col-md-2 ">
+                            <p class="h6">Certification Name: <span class="required">*</span></p>
+                          </div>
+                          <div class="col-md-10 "><input class="form-control certification-certificate" type="text"></div>
+                        </div>
+
+                        <div class="row p-3">
+                          <div class="col-md-2 ">
+                            <p class="h6">Institution: <span class="required">*</span></p>
+                          </div>
+                          <div class="col-md-10 "><input class="form-control certification-institution" type="text"></div>
+                        </div>
+
+                        <div class="row p-3">
+                          <div class="col-md-2 ">
+                            <p class="h6">Recieved Year: <span class="required">*</span></p>
+                          </div>
+                          <div class="col-md-10 "><input class="form-control certification-YOP" type="text"></div>
+                        </div>
+
+                        <div class="row p-3">
+                          <div class="col-md-2 ">
+                            <p class="h6">Certificate: <span class="required">*</span></p>
+                          </div>
+                          <div class="col-md-10 "><input class="form-control certificate-photo"
+
+                             onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])" type="file">
+                              <p hidden><img class="certificate-photo-preview" type="hidden" alt="your image" width="100"
+
+                             height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div id="delete_btn_certification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_certification_symbol">
+              <i class="fa-solid fa-trash text-danger fa-2x"></i>
+           </div>
+           <hr style="height: 5px;">
+        </div>
+      </div>
+   </div>      `
+
+      document.getElementById('certification-data-insert').insertAdjacentHTML("beforeend", table);
+  };
+
+//Certification Cancel Button
+document.querySelector('#certification-cancel-insert').addEventListener('click', function () {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.certification-modal-insert').classList.add('d-none');
+});
+
+//Certifiaction Add button
+document.querySelector('#certification-add-button').addEventListener('click', function () {
+      console.log("entered inside certification add button")
+
+      let table = `  
+    <div class="position-relative certification_delete_btn d-flex" style="cursor: pointer;"> 
+        <div class="container">
+            <div class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
+                <div class="row">
+              <!-- px-lg-5 -->
+                    <div class="col-12 col-md-12 col-lg-12 col-sm-12 ">
+
+                        <div class="row p-3">
+                          <div class="col-md-2 ">
+                            <p class="h6">Certification Name: <span class="required">*</span></p>
+                          </div>
+                          <div class="col-md-10 "><input class="form-control certification-certificate" type="text"></div>
+                        </div>
+
+                        <div class="row p-3">
+                          <div class="col-md-2 ">
+                            <p class="h6">Institution: <span class="required">*</span></p>
+                          </div>
+                          <div class="col-md-10 "><input class="form-control certification-institution" type="text"></div>
+                        </div>
+
+                        <div class="row p-3">
+                          <div class="col-md-2 ">
+                            <p class="h6">Recieved Year: <span class="required">*</span></p>
+                          </div>
+                          <div class="col-md-10 "><input class="form-control certification-YOP" type="text"></div>
+                        </div>
+
+                        <div class="row p-3">
+                          <div class="col-md-2 ">
+                            <p class="h6">Certificate: <span class="required">*</span></p>
+                          </div>
+                          <div class="col-md-10 "><input class="form-control certificate-photo"
+
+                             onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])" type="file">
+                              <p hidden><img class="certificate-photo-preview" type="hidden" alt="your image" width="100"
+
+                             height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div id="delete_btn_certification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_certification_symbol">
+              <i class="fa-solid fa-trash text-danger fa-2x"></i>
+           </div>
+           <hr style="height: 5px;">
+        </div>
+      </div>
+   </div>      `
+
+      document.getElementById('certification-data-insert').insertAdjacentHTML("beforeend", table);
+});
+
+// Certification Submit Insert Button
+document.querySelector('#certification-submit-insert').addEventListener('click', function (e) {
+
+e.preventDefault()
+let div = ''
+let certificationTableArray = []
+let certificationRow = document.querySelectorAll('.certification-row')
+for (i = 0; i < certificationRow.length; i++) {
+
+  //to remove the red border
+  certificationRow[i].querySelector('.certification-certificate').classList.remove('input-border');
+  certificationRow[i].querySelector('.certification-institution').classList.remove('input-border');
+  certificationRow[i].querySelector('.certification-YOP').classList.remove('input-border');
+  certificationRow[i].querySelector('.certificate-photo').classList.remove('input-border');
+
+
+  let professionalCertificateName = certificationRow[i].querySelector('.certification-certificate').value;
+  let professionalInstitution = certificationRow[i].querySelector('.certification-institution').value;
+  let professionalYOP = certificationRow[i].querySelector('.certification-YOP').value;
+  let professionalCertification = certificationRow[i].querySelector('.certificate-photo').value;
+
+  let professionalCertificationCertificateSRC = certificationRow[i].querySelector(
+    '.certificate-photo-preview').src;
+
+
+  let checkCertificateName = namecheck(professionalCertificateName);
+  let checkInstitution = namecheck(professionalInstitution);
+  let checkYOP = yearcheck(professionalYOP);
+  let checkCertification = tabledatacheck(professionalCertification);
+
+
+  console.log(checkCertificateName)
+  console.log(checkInstitution)
+  console.log(checkYOP)
+  // console.log(checkSubject)
+
+
+  //  to add the red border according to validations
+  if (checkCertificateName == false) {
+    certificationRow[i].querySelector('.certification-certificate').classList.add('input-border');
+    return;
+  } else if (checkInstitution == false) {
+    certificationRow[i].querySelector('.certification-institution').classList.add('input-border');
+    return;
+  } else if (checkYOP == false) {
+    certificationRow[i].querySelector('.certification-YOP').classList.add('input-border');
+    return;
+  } else if (checkCertification == false) {
+    certificationRow[i].querySelector('.certificate-photo').classList.add('input-border');
+    return;
+  }
+
+  let photoArray = []
+
+  let professionalCertificateInput = certificationRow[i].querySelector('.certificate-photo').files[0]
+  if (professionalCertificateInput) {
+    let filereader = new FileReader();
+    filereader.readAsDataURL(professionalCertificateInput);
+    filereader.onload = function (evt) {
+      let professionalPhotoBase64 = evt.target.result;
+      photoArray[i] = professionalPhotoBase64
+    }
+  }
+  setTimeout(function () {
+
+    object = {
+      resume_lid: 1,
+      resume_qualification_lid: 26,
+      qualification_type_lid: 4,
+      topic_of_study: professionalCertificateName,
+      institute: professionalInstitution,
+      year_of_passing: professionalYOP,
+      url_path: photoArray[i],
+    }
+
+    div += `
+            <div class="text-block right " id="preview-qualification-div">
+              <div class="card-body preview-certification-div">
+
+                <div  class=" px-3 px-sm-4 px-lg-4 mt-1">
+                  <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Certification name:</p>
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">\${professionalCertificateName}\</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Institution :</p>
+                        </div>
+                        <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
+                          <p class="" id="">\${professionalInstitution}\</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Recieved Year:</p>
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id="">\${professionalYOP}\</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+                      <div class="row pt-lg-3">
+                        <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
+                          <p class="h5 pb-1">Certificate:</p>
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                          <p id=""><i class="fa-solid fa-image text-success"></i></p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+           `
+
+    certificationTableArray.push(object)
+  }, 1000)
+}
+let certificationTableData = {
+  "qualificationDetails": certificationTableArray
+}
+console.log(JSON.stringify(certificationTableData))
+setTimeout(function () {
+
+  let options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: JSON.stringify(certificationTableData)
+  }
+  let fetchRes = fetch('/resume-certification-insert', options);
+  fetchRes.then(success => {
+    if (success.status == 200) {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.certification-modal').classList.add('d-none');
+    } else {
+      alert('Check Professional certificate details');
+    }
+  })
+}, 1000)
+})
+
+
+// ******************************************************Certification Section Insert Start**********************************************
+
+  document.querySelector('#body').addEventListener('click',function(e){
+  if(e.target.classList.contains('addbtn')|| findClosest(e.target,'addbtn'))
+  {
+    resumequailficationaddbtn();
+  }
+  if(e.target.classList.contains('addbtn-award') || findClosest(e.target,'addbtn-award'))
+  {
+    resumeawardaddbtn();
+  }
+  if(e.target.classList.contains('addbtn-publication')|| findClosest(e.target,'addbtn-publication'))
+  {
+    resumepublicationaddbtn();
+  }
+  if(e.target.classList.contains('addbtn-research')|| findClosest(e.target,'addbtn-research'))
+  {
+    resumeresearchaddbtn();
+  }
+  if(e.target.classList.contains('addbtn-certification')|| findClosest(e.target,'addbtn-certification'))
+  {
+    resumecertificationaddbtn();
+  }
+});
+
+
+
+
+// *************************************************************ADD Buttons Function's End******************************************************
+
 
 
 
@@ -3178,110 +4755,6 @@
 
     })
 
-    document.getElementById('qualification-add-button').addEventListener('click', function (e) {
-
-      let table = `
-      <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
-        <div class="container">
-      <div class="row qualification-row">
-       <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-         <div class="row p-3">
-           <div class="col-md-2 ">
-             <p class="h6">Title <span class="required">*</span></p>
-           </div>
-           <div class="col-md-10">
-            <select class="form-control qualification-title">
-              \${qualificationType}
-             </select>
-             </div>
-         </div>
-         <div class="row p-3">
-           <div class="col-md-2 ">
-             <p class="h6">Subject <span class="required">*</span></p>
-           </div>
-           <div class="col-md-10 "><input class="form-control qualification-subject"
-               id="bachelors-degree-major-subject" type="text"></div>
-         </div>
-         <div class="row p-3">
-           <div class="col-md-2 ">
-             <p class="h6">University<span class="required">*</span></p>
-           </div>
-           <div class="col-md-10 "><input class="form-control qualification-university"
-               id="bachelors-degree-university" type="text"></div>
-         </div>
-         <div class="row p-3">
-           <div class="col-md-2 ">
-             <p class="h6">Year of Passing <span class="required">*</span></p>
-           </div>
-           <div class="col-md-10 "><input class="form-control qualification-year"
-               id="bachelors-degree-year-of-passing" type="text"></div>
-         </div>
-       
-       </div>
-       
-       <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-       
-         <div class="row p-3 qualification-phd-wrapper d-none">
-           <div class="col-md-2 ">
-             <p class="h6">Status<span class="required">*</span></p>
-           </div>
-           <div class="col-md-10"><select class="form-control qualification-status"
-               id="qualification-status-data">
-               <option value="true">Awarded</option>
-               <option value="false">Persuing</option>
-             </select></div>
-         </div>
-         <div class="row p-3">
-           <div class="col-md-2">
-             <p class="h6">College <span class="required">*</span></p>
-           </div>
-           <div class="col-md-10 "><input class="form-control qualification-college"
-               id="bachelors-degree-college" type="text"></div>
-         </div>
-         <div class="row p-3">
-           <div class="col-md-2">
-             <p class="h6">Percentage<span class="required">*</span></p>
-           </div>
-           <div class="col-md-10"><input class="form-control qualification-percentile"
-               id="bachelors-degree-percentile" type="text"></div>
-         </div>
-         <div class="row p-3">
-           <div class="col-md-2 ">
-             <p class="h6">Certificate<span class="required">*</span></p>
-           </div>
-           <div class="col-md-10"><input class="form-control qualification-certificate"
-               onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])"
-               type="file">
-             <p hidden><img class="qualification-certificate-preview" type="hidden" alt="your image" width="100"
-                 height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
-           </div>
-           </div>
-           </div>
-           </div>
-           <hr style="height: 5px;">
-           </div>
-           <div id="delete_btn_qualification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_qualification_symbol">
-                  <i class="fa-solid fa-trash text-danger fa-2x"></i>
-               </div>      
-       </div>`
-
-      document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
-
-      // let appendingOptions = document.querySelectorAll('.qualification-title');
-      // let optionSelcted = document.querySelectorAll('.qualification-phd-wrapper');
-
-      // appendingOptions[appendingOptions.length - 1].addEventListener('change', function () {
-      //     if (appendingOptions[appendingOptions.length - 1].value == 3) {
-      //       optionSelcted[optionSelcted.length - 1].classList.remove('d-none');
-      //     } else {
-      //       optionSelcted[optionSelcted.length - 1].classList.add('d-none');
-      //     }
-      //   })
-      // console.log(appendingOptions[appendingOptions.length - 1])
-
-    })
-
-
     document.querySelector('.qualification-data').addEventListener('change', function (e) {
       let target = e.target;
       if (target.classList.contains('qualification-title')) {
@@ -3740,76 +5213,7 @@
       }, 1200)
     })
 
-    document.getElementById('publication-add-button').addEventListener('click', function () {
-
-
-      let table = ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
-            <div class="container">
-          
-          <div class="publication-row px-3 px-sm-4 px-lg-4 mt-1"> 
-            <div class="row">
-
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Role<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><select class="form-control role" id="role">
-                      <option >-Select-</option>
-                      <option >Edited</option>
-                      <option >Authored</option>
-                    </select></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Number of Authors<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input  class="form-control number-of-authors" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Book Title<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control book-title" type="text"></div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                <div class="row p-3">
-                  <div class="col-md-2">
-                    <p class="h6">Publisher<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input class="form-control publisher" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2">
-                    <p class="h6">Year of Publication<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><input class="form-control year-of-publication" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Certificate<span class="required">*</span></p>
-                  </div>
-                  <!--Rana Chanegs--!>
-                  <div class="col-md-10"><input class="form-control publication-certification" type="file"
-                    onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
-                      <p hidden><img class="publication-certificate-preview" type="hidden" alt="your image" width="100"
-                       height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-             <div id="delete_btn_publication_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_publication_symbol">
-                <i class="fa-solid fa-trash text-danger fa-2x"></i>
-             </div>
-          </div>
-          <hr style="height: 5px;">
-      </div>
-          </div>
-        `
-      document.getElementById('publication-modal-appending-div').insertAdjacentHTML("beforeend", table);
-    })
+    
 
     document.addEventListener('mouseover', function () {
       let deleteButtonClick = document.querySelectorAll('.delete_btn_publication_symbol')
@@ -3991,67 +5395,6 @@
     });
 
 
-    document.getElementById('research-add-button').addEventListener('click', function () {
-
-      console.log("Research add button clicked");
-
-
-      let table = ` 
-      <div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
-      <div  class="research-row px-3 px-sm-4 px-lg-4 mt-1 bg-white container">
-            <div class="row">
-
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Title<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input name="journal_name" class="form-control research_Journal_name"
-                      type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Volume Year<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input name="volume_year" class="form-control research_volume_year" type="text"></div>
-                </div>
-              </div>
-              <div class="col-12 col-md-12 col-lg-6 col-sm-12">
-                <div class="row p-3">
-                  <div class="col-md-2">
-                    <p class="h6">Description<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10 "><input name="number" class="form-control research_description" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2">
-                    <p class="h6">Category<span class="required">*</span></p>
-                  </div>
-                  <div class="col-md-10"><input name="category" class="form-control research_category" type="text"></div>
-                </div>
-                <div class="row p-3">
-                  <div class="col-md-2 ">
-                    <p class="h6">Certificate<span class="required">*</span></p>
-                  </div>
-                  <!--Rana Changes--!>
-                  <div class="col-md-10"><input class="form-control research_photo" type="file"
-                    onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
-                   <p hidden><img class="research-certificate-preview" type="hidden" alt="your image" width="100"
-                      height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr style="height: 5px;"> 
-            </div>
-           <div id="delete_btn_research_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_research_symbol">
-                <i class="fa-solid fa-trash text-danger fa-2x"></i>
-             </div>
-        </div>`
-
-      document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
-
-    });
     document.addEventListener('mouseover', function () {
       let deleteButtonClick = document.querySelectorAll('.delete_btn_research_symbol')
       let deleteresearch = document.querySelectorAll('.research_delete_btn');
@@ -4240,63 +5583,6 @@
         })
       }, 1000)
     })
-
-    document.querySelector('#certification-add-button').addEventListener('click', function () {
-      console.log("entered inside certification add button")
-
-      let table = `  
-    <div class="position-relative certification_delete_btn d-flex" style="cursor: pointer;"> 
-        <div class="container">
-            <div class="certification-row px-3 px-sm-4 px-lg-4 mt-1">
-                <div class="row">
-              <!-- px-lg-5 -->
-                    <div class="col-12 col-md-12 col-lg-12 col-sm-12 ">
-
-                        <div class="row p-3">
-                          <div class="col-md-2 ">
-                            <p class="h6">Certification Name: <span class="required">*</span></p>
-                          </div>
-                          <div class="col-md-10 "><input class="form-control certification-certificate" type="text"></div>
-                        </div>
-
-                        <div class="row p-3">
-                          <div class="col-md-2 ">
-                            <p class="h6">Institution: <span class="required">*</span></p>
-                          </div>
-                          <div class="col-md-10 "><input class="form-control certification-institution" type="text"></div>
-                        </div>
-
-                        <div class="row p-3">
-                          <div class="col-md-2 ">
-                            <p class="h6">Recieved Year: <span class="required">*</span></p>
-                          </div>
-                          <div class="col-md-10 "><input class="form-control certification-YOP" type="text"></div>
-                        </div>
-
-                        <div class="row p-3">
-                          <div class="col-md-2 ">
-                            <p class="h6">Certificate: <span class="required">*</span></p>
-                          </div>
-                          <div class="col-md-10 "><input class="form-control certificate-photo"
-
-                             onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])" type="file">
-                              <p hidden><img class="certificate-photo-preview" type="hidden" alt="your image" width="100"
-
-                             height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
-                         </div>
-                    </div>
-                </div>
-            </div>
-            <div id="delete_btn_certification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_certification_symbol">
-              <i class="fa-solid fa-trash text-danger fa-2x"></i>
-           </div>
-           <hr style="height: 5px;">
-        </div>
-      </div>
-   </div>      `
-
-      document.getElementById('certification-data').insertAdjacentHTML("beforeend", table);
-    });
 
     document.addEventListener('mouseover', function () {
       let deleteButtonClick = document.querySelectorAll('.delete_btn_certification_symbol')

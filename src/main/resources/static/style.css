@@ -995,9 +995,67 @@ button {
   left: 100%;
 }
 
+.resume-qualification-addbtn {
+  border: none;
+  align-items: center;
+}
+
 .addbtn{
   padding: 2px;
-  width: 96%;
+  margin: auto;
+  width: 70%;
+  background-color: whitesmoke;
+  box-shadow: 5px 2px 6px -1px;
+}
+
+.resume-award-addbtn {
+  border: none;
+  align-items: center;
+}
+
+.addbtn-award{
+  padding: 2px;
+  margin: auto;
+  width: 70%;
+  background-color: whitesmoke;
+  box-shadow: 5px 2px 6px -1px;
+}
+
+.addbtn-publication{
+  padding: 2px;
+  margin: auto;
+  width: 70%;
+  background-color: whitesmoke;
+  box-shadow: 5px 2px 6px -1px;
+}
+
+.resume-publication-addbtn{
+  border: none;
+  align-items: center;
+}
+
+.resume-research-addbtn{
+  border: none;
+  align-items: center;
+}
+
+.addbtn-research{
+  padding: 2px;
+  margin: auto;
+  width: 70%;
+  background-color: whitesmoke;
+  box-shadow: 5px 2px 6px -1px;
+}
+
+.resume-certification-addbtn{
+  border: none;
+  align-items: center;
+}
+
+.addbtn-certification{
+  padding: 2px;
+  margin: auto;
+  width: 70%;
   background-color: whitesmoke;
   box-shadow: 5px 2px 6px -1px;
 }
