@@ -326,7 +326,7 @@
                     contentType: false,
                     processData: false,
                     success: function (response) {
-                      location.href = '/create-new-resume?user_lid='+formData.get('user_lid')+'&resume_lid='+response
+                      location.href = '/resume?resume_lid='+response
                     },
                     error: function (error) {
                         console.log('error', error)
@@ -381,7 +381,7 @@
                             tableToAppend += `  </tbody>
                                     </table>
                                 </div>
-                                                        `
+                                       `
                                 document.querySelector('.modal2-body').innerHTML = ""
                             $('.modal2-body').html(tableToAppend)
                         }

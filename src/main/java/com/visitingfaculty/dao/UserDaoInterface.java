@@ -66,4 +66,6 @@ public interface UserDaoInterface {
     int insertResume(Resume resume);
 
     Object getResumeById(int user_lid);
+
+    User getUserByResume(int id);
 }

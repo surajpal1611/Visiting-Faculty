@@ -1248,6 +1248,91 @@
         <!--------------------------------------Personal Details Section ---------------------------------------->`
 
         if (personal_details != null) {
+
+          document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
+
+            for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+              box.classList.add('d-none');
+              box.classList.remove('edit-show');
+            }
+
+            document.querySelector('.personal-details-edit-box').classList.remove('d-none');
+            document.querySelector('.personal-details-edit-box').classList.add('edit-show');
+          });
+
+
+
+          document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
+            document.getElementById('body').classList.add('d-none');
+            document.querySelector('.pancard-photo-modal').classList.remove('d-none');
+          })
+
+          document.querySelector('#pancard-photo-cancel-button').addEventListener('click', function (e) {
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.pancard-photo-modal').classList.add('d-none');
+          })
+
+          document.querySelector('#aadhar-photo-preview').addEventListener('click', function (e) {
+            document.getElementById('body').classList.add('d-none');
+            document.querySelector('.aadhar-photo-modal').classList.remove('d-none');
+          })
+
+          document.querySelector('#aadhar-photo-cancel-button').addEventListener('click', function (e) {
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.aadhar-photo-modal').classList.add('d-none');
+          })
+
+
+
+          //************************************Personal Details Section Start***************************************************************
+
+          //Personal details Edit Btn
+          document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
+
+            let editPersonalDetailsForm = new FormData()
+
+            editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
+              .innerText)
+            editPersonalDetailsForm.append('editFirstName', document.getElementById('first-name-value')
+              .innerText)
+            editPersonalDetailsForm.append('editLastName', document.getElementById('last-name-value')
+              .innerText)
+            editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
+              .innerText)
+            editPersonalDetailsForm.append('editAadharCardNumber', document.getElementById(
+                'aadhar-card-value')
+              .innerText)
+            editPersonalDetailsForm.append('editContactNumber', document.getElementById(
+                'contact-number-value')
+              .innerText)
+            editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
+            editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
+            editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
+              'temporary-address-value').innerText)
+            editPersonalDetailsForm.append('editCity', document.getElementById('city-value').innerText)
+            editPersonalDetailsForm.append('editPincode', document.getElementById('pincode-value').innerText)
+            editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
+            editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
+
+            document.getElementById('first-name').value = editPersonalDetailsForm.get('editFirstName')
+            document.getElementById('last-name').value = editPersonalDetailsForm.get('editLastName')
+            document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
+            document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
+            document.getElementById('aadhar-number').value = editPersonalDetailsForm.get(
+              'editAadharCardNumber')
+            document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
+            document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
+            document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
+            document.getElementById('city').value = editPersonalDetailsForm.get('editCity')
+            document.getElementById('pincode').value = editPersonalDetailsForm.get('editPincode')
+            document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
+              'editTemporaryAddress')
+            document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
+
+            document.getElementById('body').classList.add('d-none');
+            document.querySelector('.personal-details-modal').classList.remove('d-none');
+
+          });
           resume += `<div class="edit-personal-details">
           <div class="position-relative personal-information-div-wrapper d-flex" style="cursor: pointer;">
             <div class="container p-0">
@@ -1460,7 +1545,7 @@
               resume += `<div class="qualification-item d-flex position-relative"> 
           <div class="text-block right container" >
                   <div class="card-body preview-qualification-div">
-                    <h2 id="year-of-passing">2015</h2>
+                    <h2 id="year-of-passing">\${qual.year_of_passing}</h2>
 
                     <div id="qualification-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                       <div class="row">
@@ -2008,6 +2093,8 @@
 
         <!------------------------------------------- Bank Details Section  ----------------------------------------->`
         if (bank_details != null) {
+
+
           resume += `<div class="bank-details-div-wrapper d-flex position-relative" style="cursor: pointer;">
           <div id="bank-details-div">
             <div class="px-3 px-sm-4 ps-lg-5">
@@ -2057,6 +2144,8 @@
           </div>
         </div>
       </div>`
+
+
         } else {
           resume += `
           <div id="bank-details-div">
@@ -2070,6 +2159,29 @@
         }
         document.querySelector('#body').insertAdjacentHTML('afterbegin', resume);
         initResume();
+
+        document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
+
+          for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+            box.classList.add('d-none');
+            box.classList.remove('edit-show');
+          }
+
+          document.querySelector('.bank-details-edit-box').classList.remove('d-none');
+          document.querySelector('.bank-details-edit-box').classList.add('edit-show');
+
+        });
+
+
+        document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
+          document.getElementById('body').classList.add('d-none');
+          document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
+        })
+
+        document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
+        })
 
       },
 
@@ -2193,12 +2305,12 @@
         let user_info = {}
         let user_contact = {}
         console.log(JSON.stringify(result))
-        user_contact.user_lid = 10 //'${user_lid}'
+        user_contact.user_lid = '${user_lid}'
         user_contact.resume_lid = resume_lid
         user_contact.contact_number = result.contact_number_insert
         user_contact.temp_contact_number = result.temp_contact_number_insert
         personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
-        user_info.user_lid = 10 //'${user_lid}'
+        user_info.user_lid = '${user_lid}'
         user_info.resume_lid = resume_lid
         user_info.f_name = result.f_name_insert
         user_info.l_name = result.l_name_insert
@@ -2216,7 +2328,7 @@
 
         let addressObject = {}
 
-        addressObject.user_lid = 10 //'${user_lid}'
+        addressObject.user_lid = '${user_lid}'
         addressObject.resume_lid = resume_lid
         addressObject.address = result.permanent_address_insert
         addressObject.city = result.permanent_address_city_insert
@@ -2224,7 +2336,7 @@
 
         addressObject.address_type_lid = 1
         let addressObject2 = {}
-        addressObject2.user_lid = 10 //'${user_lid}'
+        addressObject2.user_lid = '${user_lid}'
         addressObject2.resume_lid = resume_lid
         addressObject2.address = result.temporary_address_insert
         addressObject2.address_type_lid = 2
@@ -4000,8 +4112,8 @@
         }
         console.log(bankDetailsJson)
         let bank_detail = {};
-        bank_detail.user_lid = 10 //'${user_lid}',
-        bank_detail.resume_lid = resume_lid,
+        bank_detail.user_lid = '${user_lid}',
+          bank_detail.resume_lid = resume_lid,
           bank_detail.bank_name = document.querySelector('#bank-name-insert').value;
         bank_detail.branch_name = document.querySelector('#bank-branch-insert').value;
         bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code-insert').value;
@@ -4093,29 +4205,6 @@
           box.classList.remove('edit-show');
         }
       })
-
-      document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
-
-        for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
-          box.classList.add('d-none');
-          box.classList.remove('edit-show');
-        }
-
-        document.querySelector('.personal-details-edit-box').classList.remove('d-none');
-        document.querySelector('.personal-details-edit-box').classList.add('edit-show');
-      });
-
-      document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
-
-        for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
-          box.classList.add('d-none');
-          box.classList.remove('edit-show');
-        }
-
-        document.querySelector('.bank-details-edit-box').classList.remove('d-none');
-        document.querySelector('.bank-details-edit-box').classList.add('edit-show');
-
-      });
 
       document.querySelector('#qualification-list').addEventListener('mouseover', function (e) {
 
@@ -4224,67 +4313,6 @@
       });
 
 
-
-      document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.pancard-photo-modal').classList.remove('d-none');
-      })
-
-      document.querySelector('#pancard-photo-cancel-button').addEventListener('click', function (e) {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.pancard-photo-modal').classList.add('d-none');
-      })
-
-      document.querySelector('#aadhar-photo-preview').addEventListener('click', function (e) {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.aadhar-photo-modal').classList.remove('d-none');
-      })
-
-      document.querySelector('#aadhar-photo-cancel-button').addEventListener('click', function (e) {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.aadhar-photo-modal').classList.add('d-none');
-      })
-
-      document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
-      })
-
-      document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
-      })
-
-      document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.pancard-photo-modal').classList.remove('d-none');
-      })
-
-      document.querySelector('#pancard-photo-cancel-button').addEventListener('click', function (e) {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.pancard-photo-modal').classList.add('d-none');
-      })
-
-      document.querySelector('#aadhar-photo-preview').addEventListener('click', function (e) {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.aadhar-photo-modal').classList.remove('d-none');
-      })
-
-      document.querySelector('#aadhar-photo-cancel-button').addEventListener('click', function (e) {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.aadhar-photo-modal').classList.add('d-none');
-      })
-
-      document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
-      })
-
-      document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
-        document.getElementById('body').classList.remove('d-none');
-        document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
-      })
-
     }
 
     // });
@@ -4321,51 +4349,6 @@
     let bankAccountType = ""
     document.querySelector('#body').addEventListener('click', function (e) {
 
-      //************************************Personal Details Section Start***************************************************************
-
-      //Personal details Edit Btn
-      document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
-
-        let editPersonalDetailsForm = new FormData()
-
-        editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
-          .innerText)
-        editPersonalDetailsForm.append('editFirstName', document.getElementById('first-name-value')
-          .innerText)
-        editPersonalDetailsForm.append('editLastName', document.getElementById('last-name-value')
-          .innerText)
-        editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
-          .innerText)
-        editPersonalDetailsForm.append('editAadharCardNumber', document.getElementById('aadhar-card-value')
-          .innerText)
-        editPersonalDetailsForm.append('editContactNumber', document.getElementById('contact-number-value')
-          .innerText)
-        editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
-        editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
-        editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
-          'temporary-address-value').innerText)
-        editPersonalDetailsForm.append('editCity', document.getElementById('city-value').innerText)
-        editPersonalDetailsForm.append('editPincode', document.getElementById('pincode-value').innerText)
-        editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
-        editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
-
-        document.getElementById('first-name').value = editPersonalDetailsForm.get('editFirstName')
-        document.getElementById('last-name').value = editPersonalDetailsForm.get('editLastName')
-        document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
-        document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
-        document.getElementById('aadhar-number').value = editPersonalDetailsForm.get('editAadharCardNumber')
-        document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
-        document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
-        document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
-        document.getElementById('city').value = editPersonalDetailsForm.get('editCity')
-        document.getElementById('pincode').value = editPersonalDetailsForm.get('editPincode')
-        document.getElementById('temporary-address').value = editPersonalDetailsForm.get('editTemporaryAddress')
-        document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
-
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.personal-details-modal').classList.remove('d-none');
-
-      });
 
       //************************************Qualification Section Start*************************************************************** 
 
@@ -5070,21 +5053,22 @@
           console.log(result.temp_contact_number)
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.personal-details-modal').classList.add('d-none')
-          document.getElementById('date-of-birth-value').innerText = changeDateFormat(result.date_of_birth);
-          document.getElementById('pancard-value').innerText = result.pan_number
-          document.getElementById('aadhar-card-value').innerText = result.aadhar_number
-          document.getElementById('contact-number-value').innerText = result.contact_number
-          document.getElementById('temp-contact-value').innerText = result.temp_contact_number
-          document.getElementById('email-value').innerText = result.email
-          document.getElementById('temp-email-value').innerText = result.temp_email
-          document.getElementById('address-value').innerText = result.permanent_address
-          document.getElementById('city-value').innerText = result.permanent_address_city
-          document.getElementById('pincode-value').innerText = result.permanent_address_pincode
-          document.getElementById('temporary-address').innerText = result.temporary_address
-          document.getElementById('country-value').innerText = result.nationality
-          document.getElementById('gender-value').innerText = genderValue
-          document.getElementById('first-name-value').innerText = result.f_name
-          document.getElementById('last-name-value').innerText = result.l_name
+          // document.getElementById('date-of-birth-value').innerText = changeDateFormat(result.date_of_birth);
+          // document.getElementById('pancard-value').innerText = result.pan_number
+          // document.getElementById('aadhar-card-value').innerText = result.aadhar_number
+          // document.getElementById('contact-number-value').innerText = result.contact_number
+          // document.getElementById('temp-contact-value').innerText = result.temp_contact_number
+          // document.getElementById('email-value').innerText = result.email
+          // document.getElementById('temp-email-value').innerText = result.temp_email
+          // document.getElementById('address-value').innerText = result.permanent_address
+          // document.getElementById('city-value').innerText = result.permanent_address_city
+          // document.getElementById('pincode-value').innerText = result.permanent_address_pincode
+          // document.getElementById('temporary-address').innerText = result.temporary_address
+          // document.getElementById('country-value').innerText = result.nationality
+          // document.getElementById('gender-value').innerText = genderValue
+          // document.getElementById('first-name-value').innerText = result.f_name
+          // document.getElementById('last-name-value').innerText = result.l_name
+          document.location.reload();
         })
       }, 1000)
 
@@ -5298,6 +5282,7 @@
             document.getElementById('qualification-list').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.qualification-modal').classList.add('d-none');
+            document.location.reload();
           } else {
             alert('Check Qualification details');
           }
@@ -5528,6 +5513,7 @@
               document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.award-modal').classList.add('d-none');
+              document.location.reload();
             } else {
               console.log("Error");
               alert('Check Award Entries');
@@ -5684,6 +5670,7 @@
             document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.publication-modal').classList.add('d-none');
+            document.location.reload();
           } else {
             alert('Check');
           }
@@ -5864,6 +5851,7 @@
             document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.research-modal').classList.add('d-none');
+            document.location.reload();
           } else {
             alert('Check');
           }
@@ -5893,7 +5881,7 @@
 
     //*************************************Certification-modal JS****************************************
 
-
+    console.log("USERLID>>>>>>>", '${user_lid}')
     document.querySelector('#certification-cancel-button').addEventListener('click', function () {
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.certification-modal').classList.add('d-none');
@@ -6055,6 +6043,7 @@
             document.getElementById('certification-appending-div').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.certification-modal').classList.add('d-none');
+            document.location.reload();
           } else {
             alert('Check Professional certificate details');
           }
@@ -6149,7 +6138,7 @@
 
     //*************************************Bank-details-modal JS****************************************
 
-    console.log('${user_lid}')
+
 
     document.querySelector('#bank-details-cancel-button').addEventListener('click', function () {
       document.getElementById('body').classList.remove('d-none');
@@ -6224,8 +6213,8 @@
           "insert_bank_data": []
         }
         let bank_detail = {};
-        bank_detail.user_lid = 10 //'${user_lid}',
-        bank_detail.resume_lid = resume_lid,
+        bank_detail.user_lid = '${user_lid}',
+          bank_detail.resume_lid = resume_lid,
           bank_detail.bank_name = document.querySelector('#bank-name').value;
         bank_detail.branch_name = document.querySelector('#bank-branch').value;
         bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code').value;
@@ -6251,16 +6240,16 @@
 
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.bank-details-modal').classList.add('d-none');
-              document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
-              document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get(
-                'branchName')
-              document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
-              document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-              document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
-                'accountNumber')
-              document.getElementById('account-type-value').innerText = submitBankDetailsForm.get(
-                'accountType')
-
+              // document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
+              // document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get(
+              //   'branchName')
+              // document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
+              // document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
+              // document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
+              //   'accountNumber')
+              // document.getElementById('account-type-value').innerText = submitBankDetailsForm.get(
+              //   'accountType')
+              document.location.reload();
             }
           })
         }
@@ -6347,13 +6336,14 @@
 
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.skills-modal').classList.add('d-none');
-
+          document.querySelector("#add-custom-soft-skill").outerHTML = "";
+          document.querySelector("#add-custom-hard-skill").outerHTML = "";
+          document.location.reload();
           // }
         })
       }
       postdata()
-      document.querySelector("#add-custom-soft-skill").outerHTML = "";
-      document.querySelector("#add-custom-hard-skill").outerHTML = "";
+
     })
 
     let softSkillSearchButton = document.getElementById('soft-skill-search')

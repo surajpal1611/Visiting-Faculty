@@ -4,13 +4,21 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.visitingfaculty.dao.UserDaoInterface;
+import com.visitingfaculty.model.User;
+
 @Controller
 public class UserController {
+
+
+    @Autowired
+    UserDaoInterface userDaoInterface;
 
     @GetMapping("/login")
     public String getLoginPage() {
@@ -24,7 +32,12 @@ public class UserController {
 
     @GetMapping("/resume")
     public String getResume(@RequestParam(value = "resume_lid") int resume_lid,Model model) {
+
+        User user = userDaoInterface.getUserByResume(resume_lid);
+
         model.addAttribute("resume_lid",resume_lid);
+        model.addAttribute("user_lid", user.getId());
+        model.addAttribute("user_id", user.getUser_id());
         return "resume";
     }
 

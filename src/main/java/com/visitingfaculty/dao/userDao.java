@@ -265,4 +265,14 @@ public class userDao implements UserDaoInterface {
         return jdbcCall.executeFunction(Object.class, user_lid);
     }
 
+    @Override
+    public User getUserByResume(int id) {
+      
+        String sql = "SELECT u.id,u.user_id,u.password_hash FROM PUBLIC.user u INNER JOIN resume r ON r.user_lid = u.id WHERE r.id=?";
+        User user = jdbcTemplate.queryForObject(sql,(rs,rownum)-> {
+            return new User(rs.getInt("id"),rs.getString("user_id"),rs.getString("password_hash"));
+        },id);
+        return user;
+    }
+
 }

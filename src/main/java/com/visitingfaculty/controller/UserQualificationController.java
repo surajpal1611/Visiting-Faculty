@@ -41,33 +41,8 @@ public class UserQualificationController {
         if(newObject != null)
          {
 
-            Object insertQualificationDetails = userDaoInterface.insertQualificationDetails(newObject);
-            // Object updateQualificationDetails = userDaoInterface.updateQualificationDetails(qualificationTableData);
-            System.out.println(insertQualificationDetails);
-            if (insertQualificationDetails == null) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-            }
-
-            return ResponseEntity.ok("Inserted Successfully");
-        }
-        else
-        {
-            System.out.println("Error");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-        
-    }
-
-    @PostMapping(value="/update-qualification-details")
-    public ResponseEntity<?> updateQualificationDetails(@RequestBody String qualificationTableData,ModelMap modelMap)
-    {
-        String newObject = jsoncheck.qualificationCheck(qualificationTableData);
-
-
-        if(newObject != null)
-         {
-
-            Object updateQualificationDetails = userDaoInterface.updateQualificationDetails(qualificationTableData);
+            // Object insertQualificationDetails = userDaoInterface.insertQualificationDetails(newObject);
+            Object updateQualificationDetails = userDaoInterface.updateQualificationDetails(newObject);
             System.out.println(updateQualificationDetails);
             if (updateQualificationDetails == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -82,7 +57,7 @@ public class UserQualificationController {
         }
         
     }
-    
+
     //certification Controller Method
     @PostMapping(value = "/insert-certification-details")
      public ResponseEntity<?> insertCertification(@RequestBody String CertificationData,ModelMap modelMap)
