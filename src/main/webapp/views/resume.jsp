@@ -34,7 +34,7 @@
     <div class="personal-details-modal d-none">
       <div id="main-form-area">
 
-        <form id="insert-form">
+        <form id="myForm">
           <div class="d-flex justify-content-center align-items-center">
             <h1 class="p-5" style="color: #740E00;"><b> Personal Details</b></h1>
           </div>
@@ -166,9 +166,8 @@
               <div class="col-md-4 col-sm-12">
                 <label for="pan-number">Pan Card Number <span class="required">*</span></label>
                 <span id="pan-number-message" style="color: red;" class="error"></span>
-                <input type="text" name="pan_number" class="form-control" id="pan-number" />
+                <input type="text" name="pan_number" value="${user_id}" disabled class="form-control" id="pan-number" />
               </div>
-
               <div class="col-md-4 col-sm-12">
                 <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
                 <span id="pan-photo-message" style="color: red;" class="error"></span>
@@ -233,7 +232,8 @@
                 <div class="form-group">
                   <label for="first-name" cl>First Name <span class="required">*</span></label>
                   <span id="first-name-message" style="color: red;" class="error"></span>
-                  <input type="text" class="form-control" name="f_name_insert" id="first-name-insert" placeholder="First Name">
+                  <input type="text" class="form-control" name="f_name_insert" id="first-name-insert"
+                    placeholder="First Name">
                 </div>
               </div>
 
@@ -242,7 +242,8 @@
                 <div class="form-group">
                   <label for="last-name">last Name <span class="required">*</span></label>
                   <span id="last-name-message" style="color: red;" class="error"></span>
-                  <input type="text" class="form-control" name="l_name_insert" id="last-name-insert" placeholder="Last Name">
+                  <input type="text" class="form-control" name="l_name_insert" id="last-name-insert"
+                    placeholder="Last Name">
 
                 </div>
               </div>
@@ -282,7 +283,7 @@
               <div class="col-md-4 col-sm-12">
                 <label for="photo">passport Size Photo <span class="required">*</span></label>
                 <span id="photo-message" style="color: red;" class="error"></span>
-                <input type="file" class="form-control" id="photo_insert-insert" name="profile_photo_insert"
+                <input type="file" class="form-control" id="photo-insert" name="profile_photo_insert"
                   onchange="document.getElementById('photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
 
@@ -299,7 +300,8 @@
               <div class="col-md-3 col-sm-12">
                 <label for="temp_contact-number">Secondary Contact No.</label>
                 <span id="temporary-contact-number-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="temp_contact_number_insert" id="temp_contact-number-insert" />
+                <input type="text" class="form-control" name="temp_contact_number_insert"
+                  id="temp_contact-number-insert" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="email">Email Id <span class="required">*</span></label>
@@ -354,14 +356,15 @@
               <div class="col-md-4 col-sm-12">
                 <label for="pan-number">Pan Card Number <span class="required">*</span></label>
                 <span id="pan-number-message" style="color: red;" class="error"></span>
-                <input type="text" name="pan_number_insert" class="form-control" id="pan-number-insert" />
+                <input type="text" name="pan_number_insert" value="${user_id}" disabled class="form-control"
+                  id="pan-number-insert" />
               </div>
 
               <div class="col-md-4 col-sm-12">
                 <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
                 <span id="pan-photo-message" style="color: red;" class="error"></span>
                 <input type="file" class="form-control" id="pan-photo-insert"
-                  onchange="document.getElementById('pan-photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
+                  onchange="document.getElementById('pan-photo-preview-insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
               <div class="col-md-4 col-sm-12">
                 <img id="pan-photo-preview-insert" alt="your image" width="100" height="100"
@@ -1180,90 +1183,6 @@
 
         if (personal_details != null) {
 
-          document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
-
-            for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
-              box.classList.add('d-none');
-              box.classList.remove('edit-show');
-            }
-
-            document.querySelector('.personal-details-edit-box').classList.remove('d-none');
-            document.querySelector('.personal-details-edit-box').classList.add('edit-show');
-          });
-
-
-
-          document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
-            document.getElementById('body').classList.add('d-none');
-            document.querySelector('.pancard-photo-modal').classList.remove('d-none');
-          })
-
-          document.querySelector('#pancard-photo-cancel-button').addEventListener('click', function (e) {
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.pancard-photo-modal').classList.add('d-none');
-          })
-
-          document.querySelector('#aadhar-photo-preview').addEventListener('click', function (e) {
-            document.getElementById('body').classList.add('d-none');
-            document.querySelector('.aadhar-photo-modal').classList.remove('d-none');
-          })
-
-          document.querySelector('#aadhar-photo-cancel-button').addEventListener('click', function (e) {
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.aadhar-photo-modal').classList.add('d-none');
-          })
-
-
-
-          //************************************Personal Details Section Start***************************************************************
-
-          //Personal details Edit Btn
-          document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
-
-            let editPersonalDetailsForm = new FormData()
-
-            editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
-              .innerText)
-            editPersonalDetailsForm.append('editFirstName', document.getElementById('first-name-value')
-              .innerText)
-            editPersonalDetailsForm.append('editLastName', document.getElementById('last-name-value')
-              .innerText)
-            editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
-              .innerText)
-            editPersonalDetailsForm.append('editAadharCardNumber', document.getElementById(
-                'aadhar-card-value')
-              .innerText)
-            editPersonalDetailsForm.append('editContactNumber', document.getElementById(
-                'contact-number-value')
-              .innerText)
-            editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
-            editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
-            editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
-              'temporary-address-value').innerText)
-            editPersonalDetailsForm.append('editCity', document.getElementById('city-value').innerText)
-            editPersonalDetailsForm.append('editPincode', document.getElementById('pincode-value').innerText)
-            editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
-            editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
-
-            document.getElementById('first-name').value = editPersonalDetailsForm.get('editFirstName')
-            document.getElementById('last-name').value = editPersonalDetailsForm.get('editLastName')
-            document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
-            document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
-            document.getElementById('aadhar-number').value = editPersonalDetailsForm.get(
-              'editAadharCardNumber')
-            document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
-            document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
-            document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
-            document.getElementById('city').value = editPersonalDetailsForm.get('editCity')
-            document.getElementById('pincode').value = editPersonalDetailsForm.get('editPincode')
-            document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
-              'editTemporaryAddress')
-            document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
-
-            document.getElementById('body').classList.add('d-none');
-            document.querySelector('.personal-details-modal').classList.remove('d-none');
-
-          });
           resume += `<div class="edit-personal-details">
           <div class="position-relative personal-information-div-wrapper d-flex" style="cursor: pointer;">
             <div class="container p-0">
@@ -1271,14 +1190,14 @@
                 <div class="cover-div p-3 px-sm-4 p-lg-4"> <div class="row">
                     <div class="col-md-4 col-sm-12 col-lg-3">
                       <div class="avatar bg-white shadow-sm p-1">
-                        <img src="/download (3).jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
+                        <img src="../imagedata/\${personal_details[0].profile_url_path}" alt="Passport Size photo" id="profile-photo-value" width="200"
                           height="200" />
                       </div>
                     </div>
                 <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
                       <div class="d-flex" style="color: #740E00;">
-                        <h3><b id="first-name-value">\${personal_details.f_name}</b></h3> &nbsp &nbsp
-                        <h3><b id="last-name-value">\${personal_details.l_name}</b></h3>
+                        <h3><b id="first-name-value">\${personal_details[0].f_name}</b></h3> &nbsp &nbsp
+                        <h3><b id="last-name-value">\${personal_details[0].l_name}</b></h3>
                       </div>
                     </div>
                   </div>
@@ -1293,7 +1212,7 @@
                           <h6>Gender :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="gender-value">\${personal_details.name}</p> 
+                          <p id="gender-value">\${personal_details[0].name}</p> 
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1301,7 +1220,7 @@
                           <h6>Date of birth :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="date-of-birth-value">\${personal_details.date_of_birth}</p>
+                          <p id="date-of-birth-value">\${personal_details[0].date_of_birth}</p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1309,7 +1228,7 @@
                           <h6>Pancard :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="pancard-value">\${personal_details.pancard_no}</p>
+                          <p id="pancard-value">\${personal_details[0].pancard_no}</p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1317,7 +1236,7 @@
                           <h6>Pancard Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="pancard-photo"><i id="pancard-photo-preview" data-image="../imagedata/\${personal_details.pancard_url_path}" class="fa-solid fa-ban text-danger"></i></p>
+                          <p id="pancard-photo"><i id="pancard-photo-preview" data-image="../imagedata/\${personal_details[0].pancard_url_path}" class="fa-solid fa-ban text-danger"></i></p>
                           </p>
                         </div>
                       </div>
@@ -1326,7 +1245,7 @@
                           <h6>Aadhar card :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-value">\${personal_details.aadhar_card_no}</p>
+                          <p id="aadhar-card-value">\${personal_details[0].aadhar_card_no}</p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1334,7 +1253,7 @@
                           <h6>Aadhar card Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" data-image="../imagedata/\${personal_details.aadhar_card_url_path}" class="fa-solid fa-ban text-danger"></i></p>
+                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" data-image="../imagedata/\${personal_details[0].aadhar_card_url_path}" class="fa-solid fa-ban text-danger"></i></p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1342,7 +1261,7 @@
                           <h6>Contact No.</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="contact-number-value">\${personal_details.contact_number}</p>
+                          <p id="contact-number-value">\${personal_details[0].contact_number}</p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1350,7 +1269,7 @@
                           <h6>Secondary Contact No.</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temp-contact-value">\${personal_details.temp_contact_number}</p>
+                          <p id="temp-contact-value">\${personal_details[0].temp_contact_number}</p>
                         </div>
                       </div>
                     </div>
@@ -1362,7 +1281,7 @@
                           <h6>Email :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="email-value">\${personal_details.email}</p>
+                          <p id="email-value">\${personal_details[0].email}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1370,7 +1289,7 @@
                           <h6>Secondary Email :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temp-email-value">\${personal_details.temp_email}</p>
+                          <p id="temp-email-value">\${personal_details[0].temp_email}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1378,7 +1297,7 @@
                           <h6>Permanent Address :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="address-value">\${personal_details.address}</p>
+                          <p id="address-value">\${personal_details[0].address}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1386,7 +1305,7 @@
                           <h6 class="temporary-address-heading">Temporary Address :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temporary-address-value">703-Satyam panvel
+                          <p id="temporary-address-value">\${personal_details[1].address}
                           </p>
                         </div>
                       </div>
@@ -1395,7 +1314,7 @@
                           <h6>City</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="city-value">\${personal_details.city}</p>
+                          <p id="city-value">\${personal_details[0].city}</p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1403,7 +1322,7 @@
                           <h6>Pincode</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="pincode-value">\${personal_details.pin_code}</p>
+                          <p id="pincode-value">\${personal_details[0].pin_code}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1411,7 +1330,7 @@
                           <h6 class="country-heading">Country :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="country-value">\${personal_details.nationality}</p>
+                          <p id="country-value">\${personal_details[0].nationality}</p>
                         </div>
                       </div>
                     </div>
@@ -2025,28 +1944,6 @@
         <!------------------------------------------- Bank Details Section  ----------------------------------------->`
         if (bank_details != null) {
 
-          document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
-
-for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
-  box.classList.add('d-none');
-  box.classList.remove('edit-show');
-}
-
-document.querySelector('.bank-details-edit-box').classList.remove('d-none');
-document.querySelector('.bank-details-edit-box').classList.add('edit-show');
-
-});
-
-
-document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
-document.getElementById('body').classList.add('d-none');
-document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
-})
-
-document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
-document.getElementById('body').classList.remove('d-none');
-document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
-})
 
           resume += `<div class="bank-details-div-wrapper d-flex position-relative" style="cursor: pointer;">
           <div id="bank-details-div">
@@ -2113,8 +2010,121 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
         document.querySelector('#body').insertAdjacentHTML('afterbegin', resume);
         initResume();
 
- 
+        if (bank_details != null) {
+          document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
 
+            for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+              box.classList.add('d-none');
+              box.classList.remove('edit-show');
+            }
+
+            document.querySelector('.bank-details-edit-box').classList.remove('d-none');
+            document.querySelector('.bank-details-edit-box').classList.add('edit-show');
+
+          });
+
+
+          document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
+            document.getElementById('body').classList.add('d-none');
+            document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
+          })
+
+          document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
+          })
+        }
+        
+
+        if (resumeinfo.personal_details != null) {
+
+          document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
+
+            for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+              box.classList.add('d-none');
+              box.classList.remove('edit-show');
+            }
+
+            document.querySelector('.personal-details-edit-box').classList.remove('d-none');
+            document.querySelector('.personal-details-edit-box').classList.add('edit-show');
+          });
+
+
+
+          document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
+            document.getElementById('body').classList.add('d-none');
+            document.querySelector('.pancard-photo-modal').classList.remove('d-none');
+          })
+
+          document.querySelector('#pancard-photo-cancel-button').addEventListener('click', function (e) {
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.pancard-photo-modal').classList.add('d-none');
+          })
+
+          document.querySelector('#aadhar-photo-preview').addEventListener('click', function (e) {
+            document.getElementById('body').classList.add('d-none');
+            document.querySelector('.aadhar-photo-modal').classList.remove('d-none');
+          })
+
+          document.querySelector('#aadhar-photo-cancel-button').addEventListener('click', function (e) {
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.aadhar-photo-modal').classList.add('d-none');
+          })
+
+
+
+          //************************************Personal Details Section Start***************************************************************
+
+          //Personal details Edit Btn
+
+          document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
+
+            let editPersonalDetailsForm = new FormData()
+
+            editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
+              .innerText)
+            editPersonalDetailsForm.append('editFirstName', document.getElementById('first-name-value')
+              .innerText)
+            editPersonalDetailsForm.append('editLastName', document.getElementById('last-name-value')
+              .innerText)
+            editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
+              .innerText)
+            editPersonalDetailsForm.append('editAadharCardNumber', document.getElementById(
+                'aadhar-card-value')
+              .innerText)
+            editPersonalDetailsForm.append('editContactNumber', document.getElementById(
+                'contact-number-value')
+              .innerText)
+            editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
+            editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
+            editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
+              'temporary-address-value').innerText)
+            editPersonalDetailsForm.append('editCity', document.getElementById('city-value').innerText)
+            editPersonalDetailsForm.append('editPincode', document.getElementById('pincode-value').innerText)
+            editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
+            editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
+
+            document.getElementById('first-name').value = editPersonalDetailsForm.get('editFirstName')
+            document.getElementById('last-name').value = editPersonalDetailsForm.get('editLastName')
+            document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
+            document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
+            document.getElementById('aadhar-number').value = editPersonalDetailsForm.get(
+              'editAadharCardNumber')
+            document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
+            document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
+            document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
+            document.getElementById('city').value = editPersonalDetailsForm.get('editCity')
+            document.getElementById('pincode').value = editPersonalDetailsForm.get('editPincode')
+            document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
+              'editTemporaryAddress')
+            document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
+
+            document.getElementById('body').classList.add('d-none');
+            document.querySelector('.personal-details-modal').classList.remove('d-none');
+
+          });
+
+        }
       },
 
       error: function (error) {
@@ -2152,12 +2162,12 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
 
       result.firstName = document.querySelector('#first-name-insert').value;
       result.lastName = document.querySelector('#last-name-insert').value;
-      result.profilePhoto1 = document.querySelector('#photo-preview_insert').value;
+      result.profilePhoto1 = document.querySelector('#photo-insert').value;
       result.DOB = document.querySelector('#date-of-birth-insert').value;
-      // gender = document.querySelector('#').value;
+      result.gender = document.querySelector("#gender-row input[type='radio']:checked").value;
       result.contactNumber = document.querySelector('#contact-number-insert').value;
       result.temporaryContact = document.querySelector('#temp_contact-number-insert').value;
-      result.pancard = document.querySelector('#"pan-number-insert').value;
+      result.pancard = "${user_id}";
       result.pancardPhoto = document.querySelector('#pan-photo-insert').value;
       result.email = document.querySelector('#email-insert').value;
       result.aadhar = document.querySelector('#aadhar-number-insert').value;
@@ -2168,7 +2178,6 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
       result.tempemail = document.querySelector('#temp_email-insert').value;
       result.city = document.querySelector('#city-insert').value;
       result.pincode = document.querySelector('#pincode-insert').value;
-      console.log('result : ',result);
       // let firstName = personalDetailFirstNameValidation(result.f_name_insert);
       // let lastName = personalDetailLastNameValidation(result.l_name_insert);
       // let profilePhoto1 = personalDetailProfilePhotoValidation(document.getElementById("photo_insert").value);
@@ -2216,7 +2225,7 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
 
       let photoArray = []
 
-      let profilePhoto = document.getElementById("photo").files[0]
+      let profilePhoto = document.getElementById("photo-insert").files[0]
       if (profilePhoto) {
         let filereader = new FileReader();
         filereader.readAsDataURL(profilePhoto);
@@ -2226,7 +2235,7 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
         }
       }
 
-      let aadharPhoto = document.getElementById("aadhar-photo").files[0]
+      let aadharPhoto = document.getElementById("aadhar-photo-insert").files[0]
       if (aadharPhoto) {
         let filereader = new FileReader();
         filereader.readAsDataURL(aadharPhoto);
@@ -2236,7 +2245,7 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
         }
       }
 
-      let panPhoto = document.getElementById("pan-photo").files[0]
+      let panPhoto = document.getElementById("pan-photo-insert").files[0]
       if (panPhoto) {
         let filereader = new FileReader();
         filereader.readAsDataURL(panPhoto);
@@ -2254,39 +2263,41 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
         console.log(JSON.stringify(result))
         user_contact.user_lid = '${user_lid}'
         user_contact.resume_lid = resume_lid
-        user_contact.contact_number = result.contact_number_insert
-        user_contact.temp_contact_number = result.temp_contact_number_insert
+        user_contact.contact_number = result.contactNumber
+        user_contact.temp_contact_number = result.temporaryContact
         personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
         user_info.user_lid = '${user_lid}'
         user_info.resume_lid = resume_lid
-        user_info.f_name = result.f_name_insert
-        user_info.l_name = result.l_name_insert
-        user_info.email = result.email_insert
-        user_info.temp_email = result.temp_email_insert
-        user_info.gender_lid = Number.parseInt(result.gender_insert)
-        user_info.pancard_no = result.pan_number_insert
+        user_info.f_name = result.firstName
+        user_info.l_name = result.lastName
+        user_info.email = result.email
+        user_info.temp_email = result.tempemail
+        user_info.gender_lid = Number.parseInt(result.gender)
+        user_info.pancard_no = '${user_id}'
         user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
         user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
         user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
-        user_info.aadhar_card_no = result.aadhar_insert
-        user_info.date_of_birth = result.date_of_birth_insert
-        user_info.nationality = result.nationality_insert
+        user_info.aadhar_card_no = result.aadhar
+        user_info.date_of_birth = result.DOB
+        user_info.nationality = result.country
         personalDetailsData.insert_user_personal_details.user_info[0] = user_info
 
         let addressObject = {}
 
         addressObject.user_lid = '${user_lid}'
         addressObject.resume_lid = resume_lid
-        addressObject.address = result.permanent_address_insert
-        addressObject.city = result.permanent_address_city_insert
-        addressObject.pin_code = result.permanent_address_pincode_insert
-
+        addressObject.address = result.address
+        addressObject.city = result.city
+        addressObject.pin_code = result.pincode
         addressObject.address_type_lid = 1
+
         let addressObject2 = {}
         addressObject2.user_lid = '${user_lid}'
         addressObject2.resume_lid = resume_lid
-        addressObject2.address = result.temporary_address_insert
+        addressObject2.address = result.tempaddress
         addressObject2.address_type_lid = 2
+        addressObject2.city = result.city
+        addressObject2.pin_code = result.pincode
 
         arrayresult[0] = addressObject
         arrayresult[1] = addressObject2
@@ -2319,14 +2330,11 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
         fetchRes.then(success => {
 
           // if (success.status == 200) {
-          console.log(success)
-          console.log(result.date_of_birth)
-          console.log(result.temp_contact_number)
           document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.personal-details-modal').classList.add('d-none')
+          document.querySelector('.personal-details-modal-insert').classList.add('d-none')
         })
       }, 1000)
-    
+
     })
 
 
@@ -4046,13 +4054,13 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
         console.log(bankDetailsJson)
         let bank_detail = {};
         bank_detail.user_lid = '${user_lid}',
-          bank_detail.resume_lid = resume_lid,
-          bank_detail.bank_name = document.querySelector('#bank-name-insert').value;
+        bank_detail.resume_lid = resume_lid,
+        bank_detail.bank_name = document.querySelector('#bank-name-insert').value;
         bank_detail.branch_name = document.querySelector('#bank-branch-insert').value;
         bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code-insert').value;
         bank_detail.micr_code = document.querySelector('#bank-micr-code-insert').value;
         bank_detail.account_number = document.querySelector('#bank-account-number-insert').value;
-        bank_detail.bank_account_type_lid = 1 //document.querySelector('#bank-account-type-insert').value;
+        bank_detail.bank_account_type_lid = document.querySelector('#bank-account-type-insert').value;
         bank_detail.url_path = photoArray[0];
         bankDetailsJson.insert_bank_data[0] = bank_detail
         console.log(JSON.stringify(bankDetailsJson))
@@ -4109,14 +4117,14 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
       if (e.target.classList.contains('addbtn-certification') || findClosest(e.target, 'addbtn-certification')) {
         resumecertificationaddbtn();
       }
-      if (e.target.classList.contains('certification-edit-box')) {
+      if (e.target.classList.contains('certification-edit-box')|| findClosest(e.target, 'addbtn-certification')) {
         resumecertificationEditbtn();
       }
 
-      if (e.target.classList.contains('personalinsert')) {
+      if (e.target.classList.contains('personalinsert')|| findClosest(e.target, 'addbtn-certification')) {
         personalAddButton()
       }
-      if (e.target.classList.contains('addbtn-bank')) {
+      if (e.target.classList.contains('addbtn-bank')|| findClosest(e.target, 'addbtn-certification')) {
         bankdetailsadd();
       }
     });
@@ -4854,7 +4862,7 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
       let gender = personalDetailGenderValidation(result.gender);
       let contactNumber = personalDetailContactNumberValidation(result.contact_number);
       let temporaryContact = personalDetailTemporaryContactValidation(result.temp_contact_number);
-      let pancard = personalDetailPancardValidation(result.pan_number);
+      // let pancard = personalDetailPancardValidation(result.pan_number);
       let pancardPhoto = personalDetailPancardPhotoValidation(document.getElementById("pan-photo").value);
       let email = personalDetailEmailValidation(result.email);
       let aadhar = personalDetailAadharValidation(result.aadhar_number);
@@ -4864,7 +4872,7 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
       let tempContact = (result.temp_contact_number);
       let tempemail = tempemailvalidation(result.temp_email);
 
-      if (!firstName || !lastName || !profilePhoto1 || !gender || !contactNumber || !email || !pancard || !
+      if (!firstName || !lastName || !profilePhoto1 || !gender || !contactNumber || !email || !
         pancardPhoto || !aadhar || !aadharPhoto1 || !address || !
         country || !DOB || !tempemail) {
         return;
@@ -4942,7 +4950,7 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
         user_info.email = result.email
         user_info.temp_email = result.temp_email
         user_info.gender_lid = Number.parseInt(result.gender)
-        user_info.pancard_no = result.pan_number
+        user_info.pancard_no = '${user_id}'
         user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
         user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
         user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
@@ -4964,6 +4972,8 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
         addressObject2.user_lid = '${user_lid}'
         addressObject2.resume_lid = resume_lid
         addressObject2.address = result.temporary_address
+        addressObject2.city = result.permanent_address_city
+        addressObject2.pin_code = result.permanent_address_pincode
         addressObject2.address_type_lid = 2
 
         arrayresult[0] = addressObject
@@ -6153,7 +6163,7 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
         bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code').value;
         bank_detail.micr_code = document.querySelector('#bank-micr-code').value;
         bank_detail.account_number = document.querySelector('#bank-account-number').value;
-        bank_detail.bank_account_type_lid = 1 //document.querySelector('#bank-account-type').value;
+        bank_detail.bank_account_type_lid = document.querySelector('#bank-account-type').value;
         bank_detail.url_path = photoArray[0];
         bankDetailsJson.insert_bank_data[0] = bank_detail
         console.log(JSON.stringify(bankDetailsJson))
@@ -6235,11 +6245,11 @@ document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
         console.log(value2)
 
         if (status == 1) {
-        let obj = {}
-        obj.resume_lid = resume_lid
-        obj.skill_lid = Number.parseInt(value)
-        skillJson.skill_details[skillIndex] = obj
-        skillIndex++;
+          let obj = {}
+          obj.resume_lid = resume_lid
+          obj.skill_lid = Number.parseInt(value)
+          skillJson.skill_details[skillIndex] = obj
+          skillIndex++;
         }
       }
 
