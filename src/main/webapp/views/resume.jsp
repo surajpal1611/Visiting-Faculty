@@ -66,23 +66,6 @@
                     style="border: 1px solid #ced4da; margin-left:100px;" />
                 </div>
               </div>
-              <!-- <div class="col-md-4 col-sm-12">
-                <label for="first-name" cl>First Name <span class="required">*</span></label>
-                <span id="first-name-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
-              </div> -->
-
-              <!-- <div class="col-md-4 col-sm-12">
-                <label for="last-name">last Name <span class="required">*</span></label>
-                <span id="last-name-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
-              </div> -->
-
-              <!-- <div class="col-md-4 col-sm-12">
-                <img id="photo-preview" alt="your image" name="photo_preview" width="100" height="100"
-                  style="border: 1px solid #ced4da; margin-left:100px;" />
-              </div> -->
-
             </div>
           </div>
 
@@ -108,24 +91,6 @@
                       value="3" /></label>
                 </div>
               </div>
-
-              <!-- <div class="col-md-4 col-sm-12">
-                <label for="date-of-birth">date of birth <span class="required">*</span></label>
-                <span id="date-of-birth-message" style="color: red;" class="error"></span>
-                <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
-              </div> -->
-
-              <!-- <div id="gender-row" class="col-sm-12 col-md-4">
-                <label for="">Gender <span class="required">*</span></label><br>
-                <label for="male">Male</label>
-                <input style="height: auto ;" type="radio" name="gender" class="gender" id="male" value="1" />
-                <label for="female">Female</label>
-                <input style="height: auto ;" type="radio" name="gender" class="gender" id="female" value="2" />
-                <label for="other">other</label>
-                <input type="radio" name="gender" class="gender" id="other" value="3" />
-                <span id="gender-message" style="color: red;" class="error"></span>
-              </div> -->
-
               <div class="col-md-4 col-sm-12">
                 <label for="photo">passport Size Photo <span class="required">*</span></label>
                 <span id="photo-message" style="color: red;" class="error"></span>
@@ -288,23 +253,6 @@
                     style="border: 1px solid #ced4da; margin-left:100px;" />
                 </div>
               </div>
-              <!-- <div class="col-md-4 col-sm-12">
-                <label for="first-name" cl>First Name <span class="required">*</span></label>
-                <span id="first-name-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
-              </div> -->
-
-              <!-- <div class="col-md-4 col-sm-12">
-                <label for="last-name">last Name <span class="required">*</span></label>
-                <span id="last-name-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
-              </div> -->
-
-              <!-- <div class="col-md-4 col-sm-12">
-                <img id="photo-preview" alt="your image" name="photo_preview" width="100" height="100"
-                  style="border: 1px solid #ced4da; margin-left:100px;" />
-              </div> -->
-
             </div>
           </div>
 
@@ -330,23 +278,6 @@
                       id="other" value="3" /></label>
                 </div>
               </div>
-
-              <!-- <div class="col-md-4 col-sm-12">
-                <label for="date-of-birth">date of birth <span class="required">*</span></label>
-                <span id="date-of-birth-message" style="color: red;" class="error"></span>
-                <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
-              </div> -->
-
-              <!-- <div id="gender-row" class="col-sm-12 col-md-4">
-                <label for="">Gender <span class="required">*</span></label><br>
-                <label for="male">Male</label>
-                <input style="height: auto ;" type="radio" name="gender" class="gender" id="male" value="1" />
-                <label for="female">Female</label>
-                <input style="height: auto ;" type="radio" name="gender" class="gender" id="female" value="2" />
-                <label for="other">other</label>
-                <input type="radio" name="gender" class="gender" id="other" value="3" />
-                <span id="gender-message" style="color: red;" class="error"></span>
-              </div> -->
 
               <div class="col-md-4 col-sm-12">
                 <label for="photo">passport Size Photo <span class="required">*</span></label>
@@ -1739,7 +1670,7 @@
         if (data.resume_skill_selected != null) {
           for (hardskill of data.resume_skill_selected) {
             if (hardskill.skill_type_lid === 2)
-              resume += ` <div data-id="\${hardskill.skill_lid}" class="skill-pill-div text-center">
+              resume += ` <div data-id="\${hardskill.skill_lid}" data-skilltype="\${hardskill.skill_type_lid}" class="skill-pill-div text-center">
                                     \${hardskill.skill_name}\
                                 </div>`
           }
@@ -1754,7 +1685,7 @@
                       <div id="soft-skill-appending-div1" class="d-flex w-100 flex-wrap">`
           for (softskill of data.resume_skill_selected) {
             if (softskill.skill_type_lid === 1) {
-              resume += `<div data-id="\${softskill.skill_lid}" class="skill-pill-div text-center">
+              resume += `<div data-id="\${softskill.skill_lid}" data-skilltype="\${softskill.skill_type_lid}" class="skill-pill-div text-center">
                                     \${softskill.skill_name}\
                                 </div>`
             }
@@ -4161,7 +4092,6 @@
 
 
     document.querySelector('#body').addEventListener('click', function (e) {
-      console.log('target', e.target);
       if (e.target.classList.contains('addbtn') || findClosest(e.target, 'addbtn')) {
         resumequailficationaddbtn();
       }
@@ -4507,10 +4437,6 @@
         let softSkills = document.getElementById('soft-skill-appending-div1')
         let hardSkills = document.getElementById('hard-skill-appending-div1')
 
-        // softSkillDisplay.innerHTML = ''
-        // hardSkillDisplay.innerHTML = ''
-        // softSkillUl.innerHTML = ''
-        // hardSkillUl.innerHTML = ''
         $.ajax({
           url: '/get-all-skill',
           type: 'POST',
@@ -4558,6 +4484,28 @@
               if (skillPill) {
                 skillPill.remove()
               }
+            }
+
+
+            for (let skill of document.querySelectorAll('.skill-pill-div')) {
+
+
+              if (skill.dataset.skilltype == 1) {
+                document.getElementById('soft-skill-display').insertAdjacentHTML('beforeend', `<li class="soft-skill-list-group skill-list" data-status="0" data-skilltype="skill.skilltype" data-id="\${skill.id}">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
+                            <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${skill.innerText}\</a></div>
+                        </div>
+                    </li>`)
+              } else if (skill.dataset.skilltype == 2) {
+
+                document.getElementById('hard-skill-display').insertAdjacentHTML('beforeend', `<li class="soft-skill-list-group skill-list" data-status="0" data-skilltype="skill.skilltype" data-id="\${skill.id}">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
+                            <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${skill.innerText}\</a></div>
+                        </div>
+                    </li>`)
+              }
 
             }
           },
@@ -4565,8 +4513,6 @@
             console.log("Error::::::::::::", error);
           }
         });
-
-
 
       });
 
@@ -5053,21 +4999,6 @@
           console.log(result.temp_contact_number)
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.personal-details-modal').classList.add('d-none')
-          // document.getElementById('date-of-birth-value').innerText = changeDateFormat(result.date_of_birth);
-          // document.getElementById('pancard-value').innerText = result.pan_number
-          // document.getElementById('aadhar-card-value').innerText = result.aadhar_number
-          // document.getElementById('contact-number-value').innerText = result.contact_number
-          // document.getElementById('temp-contact-value').innerText = result.temp_contact_number
-          // document.getElementById('email-value').innerText = result.email
-          // document.getElementById('temp-email-value').innerText = result.temp_email
-          // document.getElementById('address-value').innerText = result.permanent_address
-          // document.getElementById('city-value').innerText = result.permanent_address_city
-          // document.getElementById('pincode-value').innerText = result.permanent_address_pincode
-          // document.getElementById('temporary-address').innerText = result.temporary_address
-          // document.getElementById('country-value').innerText = result.nationality
-          // document.getElementById('gender-value').innerText = genderValue
-          // document.getElementById('first-name-value').innerText = result.f_name
-          // document.getElementById('last-name-value').innerText = result.l_name
           document.location.reload();
         })
       }, 1000)
@@ -6240,15 +6171,6 @@
 
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.bank-details-modal').classList.add('d-none');
-              // document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
-              // document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get(
-              //   'branchName')
-              // document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
-              // document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-              // document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
-              //   'accountNumber')
-              // document.getElementById('account-type-value').innerText = submitBankDetailsForm.get(
-              //   'accountType')
               document.location.reload();
             }
           })
@@ -6290,37 +6212,33 @@
       for (let i = 0; i < softSkillListGroup.length; i++) {
 
         let value = softSkillListGroup[i].dataset.id
+        let status = softSkillListGroup[i].dataset.status
         let value2 = softSkillListGroup[i].firstElementChild.lastElementChild.lastElementChild.innerText
+        if (status == 1) {
 
-        softSkillAppendingDiv1.innerHTML += `<div class="skill-pill-div text-center" data-id="\${value}">
-                                \${value2}
-                              </div>`
 
-        let index = 21
-        let obj = {}
-        obj.resume_lid = resume_lid
-        obj.skill_lid = Number.parseInt(value)
-        obj.skill_selected_lid = index++
-        skillJson.skill_details[skillIndex] = obj
-        skillIndex++;
+          let obj = {}
+          obj.resume_lid = resume_lid
+          obj.skill_lid = Number.parseInt(value)
+          skillJson.skill_details[skillIndex] = obj
+          skillIndex++;
+        }
+
       }
 
       for (let i = 0; i < hardSkillListGroup.length; i++) {
         let value = hardSkillListGroup[i].dataset.id
+        let status = hardSkillListGroup[i].dataset.status
         let value2 = hardSkillListGroup[i].firstElementChild.lastElementChild.lastElementChild.innerText
         console.log(value2)
 
-
-        hardSkillAppendingDiv1.innerHTML += `<div class="skill-pill-div text-center" data-id="\${value}">
-                                \${value2}
-                              </div>`
-        let index = 25
+        if (status == 1) {
         let obj = {}
         obj.resume_lid = resume_lid
-        obj.skill_selected_lid = index++
         obj.skill_lid = Number.parseInt(value)
         skillJson.skill_details[skillIndex] = obj
         skillIndex++;
+        }
       }
 
       function postdata() {
@@ -6338,11 +6256,11 @@
           document.querySelector('.skills-modal').classList.add('d-none');
           document.querySelector("#add-custom-soft-skill").outerHTML = "";
           document.querySelector("#add-custom-hard-skill").outerHTML = "";
-          document.location.reload();
           // }
         })
       }
       postdata()
+      document.location.reload()
 
     })
 
@@ -6395,7 +6313,7 @@
         let id = element.parentElement.parentElement.parentElement.dataset.id
 
         let div = ` 
-                    <li class="soft-skill-list-group" data-id="\${id}">
+                    <li class="soft-skill-list-group" data-status="1" data-id="\${id}">
                         <div class="row">
                             <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
                             <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${text}\</a></div>
@@ -6451,7 +6369,7 @@
         let id = element.parentElement.parentElement.parentElement.dataset.id
 
         let div = ` 
-                     <li class="hard-skill-list-group" data-id="\${id}">
+                     <li class="hard-skill-list-group skill-list" data-status="1" data-id="\${id}">
                          <div class="row">
                              <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x hard-skill-delete-button" style="color:red;"></i></div>
                              <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${text}</a></div>
@@ -6481,7 +6399,7 @@
           console.log(response)
 
           softSkillDisplay.insertAdjacentHTML('beforeend',
-            ` <li class="soft-skill-list-group" data-id="\${response.id}">
+            ` <li class="soft-skill-list-group skill-list" data-status="1" data-id="\${response.id}">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
                                  <div class="col-md-10 col-sm-10 col-10"><a class="ms-3">\${response.skill_name}</a></div>
@@ -6511,7 +6429,7 @@
         success: function (response) {
 
           hardSkillDisplay.insertAdjacentHTML('beforeend',
-            `<li class="hard-skill-list-group" data-id="\${response.id}">
+            `<li class="hard-skill-list-group" data-status="1" data-id="\${response.id}">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
                                  <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${customHardSkillValue}</a></div>
@@ -6928,8 +6846,7 @@
           <i class="fa-solid fa-pen fa-2x text-dark "></i>
           </div>
           </div> 
-          <hr style="height: 5px; margin: 30px 0">
-`
+          <hr style="height: 5px; margin: 30px 0">`
 
       document.getElementById('workExperience-data').insertAdjacentHTML("beforeend", table);
       ++count1;
@@ -6953,81 +6870,6 @@
       endDateElement.setAttribute('max', endMaxDate);
       console.log("value is endDateelement" + endDateElement.getAttribute('max'));
     })
-    //suraj pal 22/08/2022
-    // document.addEventListener("DOMContentLoaded", function (event) {
-    //   let dtToday = new Date();
-    //   let month = dtToday.getMonth() + 1;
-    //   let day = dtToday.getDate();
-    //   let startDay = dtToday.getDate() - 1;
-    //   let year = dtToday.getFullYear();
-    //   if (month < 10) {
-    //     month = '0' + month.toString();
-    //   }
-    //   if (day < 10 || startDay < 10) {
-    //     startDay = '0' + startDay.toString();
-    //     day = '0' + day.toString();
-    //   }
-    //   let endMaxDate = year + '-' + month + '-' + day;
-    //   let startMaxDate = year + '-' + month + '-' + startDay;
-    //   let startDateElement = document.getElementById('startMaxDate');
-    //   let endDateElement = document.getElementById('endMaxDate');
-    //   startDateElement.setAttribute('max', startMaxDate);
-    //   endDateElement.setAttribute('max', endMaxDate);
-    //   //fetchDesignationValue();
-    // });
-    // $.ajax({
-    //   url: '/fetchDesignationValue',
-    //   type: 'POST',
-
-    //   success: function (response) {
-    //     let select = document.getElementById('designation');
-    //     console.log("select " + select);
-    //     for (let i = 0; i < response.length; i++) {
-    //       let option = `<option value="\${response[i].id}">\${response[i].name}</option>`
-    //       select.insertAdjacentHTML('afterbegin', option)
-
-    //     }
-
-    //   },
-
-    //   error: function (error) {
-    //     console.log("Error:::", error)
-    //   }
-    // })
-    // $.ajax({
-    //   url: '/fetchWorkExperienceValue',
-    //   type: 'POST',
-
-    //   success: function (response) {
-    //     let select = document.getElementById('experienceType');
-    //     console.log("select " + select);
-    //     for (let i = 0; i < response.length; i++) {
-    //       console.log("response id" + response[i].id);
-    //       console.log("response name" + response[i].name);
-    //       let option = `<option value="\${response[i].id}">\${response[i].name}</option>`
-
-    //       console.log("select " + select);
-    //       select.insertAdjacentHTML('afterbegin', option)
-    //       console.log("select " + select);
-    //     }
-
-    //   },
-
-    //   error: function (error) {
-    //     console.log("Error:::", error)
-    //   }
-    // })
-    /*function fetchDesignationValue() {
-      url = "/fetchDesignationValue";
-      params = {
-        method: 'post',
-      }
-      fetch(url, params).then((response) => response)
-        .then((data) => {
-          console.log("return values is", data[0].id);
-          
-        })
-    } */
   </script>
 </body>
 
