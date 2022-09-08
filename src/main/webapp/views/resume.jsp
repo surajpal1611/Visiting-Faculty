@@ -1453,7 +1453,7 @@
         resume += `
             </div>
                 <div class="addbtn d-flex my-2 justify-content-center align-items-center">
-                  <strong> Add More Rows</strong><button class="resume-qualification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                  <strong> Add Qualification</strong><button class="resume-qualification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
                 </div>
           </div>
           </div>
@@ -1697,7 +1697,7 @@
 
         resume += `</div>
              <div class="addbtn-award d-flex my-2 justify-content-center align-items-center">
-                  <strong> Add More Rows</strong><button class="resume-award-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                  <strong> Add Award</strong><button class="resume-award-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
              </div>
           </div>
           </div>
@@ -1768,7 +1768,7 @@
 
         resume += `</div>
               <div class="addbtn-publication d-flex my-2 justify-content-center align-items-center">
-                    <strong> Add More Rows</strong><button class="resume-publication-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                    <strong> Add Published Detail's</strong><button class="resume-publication-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
               </div>
             </div>
           </div>
@@ -1840,7 +1840,7 @@
 
         resume += `</div>  
                <div class="addbtn-research d-flex my-2 justify-content-center align-items-center">
-                     <strong> Add More Rows</strong><button class="resume-research-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                     <strong> Add Research Detail's</strong><button class="resume-research-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
                </div>             
 
             </div>
@@ -1931,7 +1931,7 @@
         resume += `
               </div>
                   <div class="addbtn-certification d-flex my-2 justify-content-center align-items-center">
-                    <strong> Add More Rows</strong><button class="resume-certification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                    <strong> Add Certification's</strong><button class="resume-certification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
                   </div>
             </div>
           </div>
@@ -2034,7 +2034,7 @@
             document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
           })
         }
-        
+
 
         if (resumeinfo.personal_details != null) {
 
@@ -4054,8 +4054,8 @@
         console.log(bankDetailsJson)
         let bank_detail = {};
         bank_detail.user_lid = '${user_lid}',
-        bank_detail.resume_lid = resume_lid,
-        bank_detail.bank_name = document.querySelector('#bank-name-insert').value;
+          bank_detail.resume_lid = resume_lid,
+          bank_detail.bank_name = document.querySelector('#bank-name-insert').value;
         bank_detail.branch_name = document.querySelector('#bank-branch-insert').value;
         bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code-insert').value;
         bank_detail.micr_code = document.querySelector('#bank-micr-code-insert').value;
@@ -4117,14 +4117,14 @@
       if (e.target.classList.contains('addbtn-certification') || findClosest(e.target, 'addbtn-certification')) {
         resumecertificationaddbtn();
       }
-      if (e.target.classList.contains('certification-edit-box')|| findClosest(e.target, 'addbtn-certification')) {
+      if (e.target.classList.contains('certification-edit-box') || findClosest(e.target, 'addbtn-certification')) {
         resumecertificationEditbtn();
       }
 
-      if (e.target.classList.contains('personalinsert')|| findClosest(e.target, 'addbtn-certification')) {
+      if (e.target.classList.contains('personalinsert') || findClosest(e.target, 'addbtn-certification')) {
         personalAddButton()
       }
-      if (e.target.classList.contains('addbtn-bank')|| findClosest(e.target, 'addbtn-certification')) {
+      if (e.target.classList.contains('addbtn-bank') || findClosest(e.target, 'addbtn-certification')) {
         bankdetailsadd();
       }
     });
@@ -4307,8 +4307,8 @@
 
                 if (resumeinfo.resume_qualification != null) {
                   for (qualedit of resumeinfo.resume_qualification) {
-
-                    let table = `
+                    if (qualedit.qualification_type_lid !== 4) {
+                      let table = `
                     <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
                       <div class="container">
                     <div class="row qualification-row"  data-lid = "\${qualedit.resume_qualification_lid}" >
@@ -4319,7 +4319,7 @@
                         </div>
                         <div class="col-md-10">
                           <select class="form-control qualification-title" value="\${qualedit.abbr}">
-                            \${qualificationType}\
+                            \${qualificationType}
                           </select>
                           </div>
                       </div>
@@ -4393,7 +4393,8 @@
                             </div>      
                     </div>`
 
-                    document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
+                      document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
+                    }
                   }
                 }
 
@@ -5054,7 +5055,7 @@
         qualificationRow[i].querySelector('.qualification-college').classList.remove('input-border');
         qualificationRow[i].querySelector('.qualification-percentile').classList.remove('input-border');
         qualificationRow[i].querySelector('.qualification-year').classList.remove('input-border');
-        qualificationRow[i].querySelector('.qualification-certificate').classList.remove('input-border');
+        // qualificationRow[i].querySelector('.qualification-certificate').classList.remove('input-border');
 
         let resume_qualification_lid = qualificationRow[i].dataset.lid
         let qualificationTitle = qualificationRow[i].querySelector('.qualification-title').value;
@@ -5064,16 +5065,15 @@
         let qualificationStatus = qualificationRow[i].querySelector('.qualification-status').value;
         let qualificationPercentile = qualificationRow[i].querySelector('.qualification-percentile').value;
         let qualificationYear = qualificationRow[i].querySelector('.qualification-year').value;
-        let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
+        // let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
         // let qualificationCertificateImage = qualificationRow[i].querySelector('#qualification-certificate-preview').src;
 
         let checkSubject = tabledatacheck(qualificationSubject);
         let checkUniversity = tabledatacheck(qualificationUniversity);
         let checkCollege = tabledatacheck(qualificationCollege);
         let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
-        let checkCertificate = tabledatacheck(qualificationCertificate);
+        // let checkCertificate = tabledatacheck(qualificationCertificate);
         let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
-        // let checkCancelledCheque = qualificationDetailCertificateValidation(qualificationCertificate);
 
         // console.log(qualificationCertificateImage)
         console.log(checkPercentile)
@@ -5097,11 +5097,11 @@
         } else if (checkPercentile == false) {
           qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
           return;
-        } else if (checkCertificate == false) {
-          qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
-          return;
         }
-
+        // else if (checkCertificate == false) {
+        //   qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
+        //   return;
+        // }
 
 
         let qualificationTitle1 = ""
@@ -5135,6 +5135,12 @@
             let qualificationPhotoBase64 = evt.target.result;
             photoArray[i] = qualificationPhotoBase64
           }
+        } else {
+          setTimeout(function(){
+
+            photoArray[i] = null
+
+          },1000)
         }
 
 
@@ -5153,8 +5159,6 @@
             url_path: photoArray[i]
 
           }
-
-
 
           div += ` 
           <div class="text-block right qualification-update" >
