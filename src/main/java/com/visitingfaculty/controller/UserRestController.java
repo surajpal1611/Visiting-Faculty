@@ -140,7 +140,7 @@ public class UserRestController {
 
     }
 
-    @GetMapping("/verify-login")
+    @PostMapping("/verify-login")
     public ResponseEntity<?> verifyUserLogin(@RequestBody UserDto userDto, HttpSession httpSession) {
 
         System.out.println(userDto);
