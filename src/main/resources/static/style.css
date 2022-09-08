@@ -239,7 +239,7 @@
 }
 
 .publication-edit-box {
-  width: 100px;
+  width: 50px;
   height: 100%;
   background-color: #FFFFFF;
   border-radius: 0 15px 15px 0;
@@ -250,7 +250,7 @@
 
 
 .delete_btn_award_symbol {
-  width: 100px;
+  width: 50px;
   height: 100%;
   background-color: #FFFFFF;
   border-radius: 0 15px 15px 0;
@@ -261,7 +261,7 @@
 }
 
 .delete_btn_research_symbol{
-  width: 100px;
+  width: 50px;
   height: 100%;
   background-color: #FFFFFF;
   border-radius: 0 15px 15px 0;
@@ -272,7 +272,18 @@
 }
 
 #delete_btn_qualification_symbol{
-  width: 100px;
+  width: 50px;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 100%;
+}
+
+#delete_btn_workexperience_symbol{
+  width: 50px;
   height: 100%;
   background-color: #FFFFFF;
   border-radius: 0 15px 15px 0;
@@ -283,7 +294,7 @@
 }
 
 #delete_btn_publication_symbol{
-  width: 100px;
+  width: 50px;
   height: 100%;
   background-color: #FFFFFF;
   border-radius: 0 15px 15px 0;
@@ -1000,7 +1011,19 @@ button {
   align-items: center;
 }
 
-.addbtn{
+.resume-workexperience-addbtn {
+  border: none;
+  align-items: center;
+}
+.addbtn-qualification{
+  padding: 2px;
+  margin: auto;
+  width: 70%;
+  background-color: whitesmoke;
+  box-shadow: 5px 2px 6px -1px;
+}
+
+.addbtn-workexperience{
   padding: 2px;
   margin: auto;
   width: 70%;

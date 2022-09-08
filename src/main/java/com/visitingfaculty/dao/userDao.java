@@ -20,6 +20,8 @@ import com.visitingfaculty.model.User;
 import com.visitingfaculty.model.user_bank_details.UserBankAccountType;
 import com.visitingfaculty.model.user_qualification.UserQualificationType;
 import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
+import com.visitingfaculty.model.user_workexperience_detail.UserWorkexperienceDesignation;
+import com.visitingfaculty.model.user_workexperience_detail.UserWorkexperienceType;
 
 @Repository
 public class userDao implements UserDaoInterface {
@@ -126,6 +128,22 @@ public class userDao implements UserDaoInterface {
         String sql = "select id, name, abbr from qualification_type where id < 4";
         return jdbcTemplate.query(sql, (rs, rownum) -> {
             return new UserQualificationType(rs.getInt("id"), rs.getString("name"), rs.getString("abbr"));
+        });
+    }
+
+    @Override
+    public List<UserWorkexperienceType> getWorkexperienceType() {
+        String sql = "select * from experience_type where parent_lid=2 and active= 'true'";
+        return jdbcTemplate.query(sql, (rs, rownum) -> {
+            return new UserWorkexperienceType(rs.getInt("id"), rs.getString("name"), rs.getString("abbr"));
+        });
+    }
+
+    @Override
+    public List<UserWorkexperienceDesignation> getWorkexperienceDesignation() {
+        String sql = "select id, name from designation";
+        return jdbcTemplate.query(sql, (rs, rownum) -> {
+            return new UserWorkexperienceDesignation(rs.getInt("id"), rs.getString("name"));
         });
     }
 
@@ -267,12 +285,20 @@ public class userDao implements UserDaoInterface {
 
     @Override
     public User getUserByResume(int id) {
-      
+
         String sql = "SELECT u.id,u.user_id,u.password_hash FROM PUBLIC.user u INNER JOIN resume r ON r.user_lid = u.id WHERE r.id=?";
-        User user = jdbcTemplate.queryForObject(sql,(rs,rownum)-> {
-            return new User(rs.getInt("id"),rs.getString("user_id"),rs.getString("password_hash"));
-        },id);
+        User user = jdbcTemplate.queryForObject(sql, (rs, rownum) -> {
+            return new User(rs.getInt("id"), rs.getString("user_id"), rs.getString("password_hash"));
+        }, id);
         return user;
+    }
+
+    @Override
+    public Object insertWorkExperienceDetails(String workexperienceTableData) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("insert_work_experience");
+
+        return jdbcCall.executeFunction(Object.class, workexperienceTableData);
     }
 
 }

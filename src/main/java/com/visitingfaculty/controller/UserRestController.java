@@ -44,6 +44,7 @@ public class UserRestController {
     @PostMapping(value = "/insert-personal-details")
     public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) {
 
+        System.out.println(personalDetailsData);
         String json = jsonchk.UserJsonCheck(personalDetailsData);
         System.out.println(json);
         if (json != null) {
@@ -108,6 +109,7 @@ public class UserRestController {
         String passwordToVerify = password;
         System.out.println("VERIFY TOKEN>>>>>");
         if (userService.validateToken(tokenToVerify, tokenGenerated, user_id, passwordToVerify)) {
+
             return ResponseEntity.status(HttpStatus.OK).build();
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -138,13 +140,13 @@ public class UserRestController {
 
     }
 
-    @PostMapping("/verify-login")
+    @GetMapping("/verify-login")
     public ResponseEntity<?> verifyUserLogin(@RequestBody UserDto userDto, HttpSession httpSession) {
 
         System.out.println(userDto);
 
         if (loginService.verifyPassword(userDto)) {
-            System.out.println("verified");
+
             Integer user_lid = userDaoInterface.getUserLid(userDto.getUser_id());
             httpSession.setAttribute("user_lid", user_lid);
             return ResponseEntity.ok(user_lid);
