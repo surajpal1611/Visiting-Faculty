@@ -6605,7 +6605,7 @@ console.log(workexperienceRow)
         }
 
           object = {
-            resume_lid: 1,
+            resume_lid: resume_lid,
             experience_type_lid: workexperience_type,
             employer_name: workexperienceUniversity,
             designation: workexperienceDesignationType,
