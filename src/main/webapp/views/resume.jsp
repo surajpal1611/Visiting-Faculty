@@ -268,7 +268,7 @@
                 <div class="form-group">
                   <label for="first-name" cl>First Name <span class="required">*</span></label>
                   <span id="first-name-message" style="color: red;" class="error"></span>
-                  <input type="text" class="form-control" name="f_name_insert" id="first-name" placeholder="First Name">
+                  <input type="text" class="form-control" name="f_name_insert" id="first-name-insert" placeholder="First Name">
                 </div>
               </div>
 
@@ -277,7 +277,7 @@
                 <div class="form-group">
                   <label for="last-name">last Name <span class="required">*</span></label>
                   <span id="last-name-message" style="color: red;" class="error"></span>
-                  <input type="text" class="form-control" name="l_name_insert" id="last-name" placeholder="Last Name">
+                  <input type="text" class="form-control" name="l_name_insert" id="last-name-insert" placeholder="Last Name">
 
                 </div>
               </div>
@@ -315,7 +315,7 @@
                 <div class="form-group">
                   <label for="date-of-birth">date of birth <span class="required">*</span></label>
                   <span id="date-of-birth-message" style="color: red;" class="error"></span>
-                  <input type="date" class="form-control" name="date_of_birth_insert" id="date-of-birth" />
+                  <input type="date" class="form-control" name="date_of_birth_insert" id="date-of-birth-insert" />
                 </div>
               </div>
 
@@ -351,7 +351,7 @@
               <div class="col-md-4 col-sm-12">
                 <label for="photo">passport Size Photo <span class="required">*</span></label>
                 <span id="photo-message" style="color: red;" class="error"></span>
-                <input type="file" class="form-control" id="photo_insert" name="profile_photo_insert"
+                <input type="file" class="form-control" id="photo_insert-insert" name="profile_photo_insert"
                   onchange="document.getElementById('photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
 
@@ -363,22 +363,22 @@
               <div class="col-md-3 col-sm-12">
                 <label for="contact-number">Contact No. <span class="required">*</span></label>
                 <span id="contact-number-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="contact_number_insert" id="contact-number" />
+                <input type="text" class="form-control" name="contact_number_insert" id="contact-number-insert" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="temp_contact-number">Secondary Contact No.</label>
                 <span id="temporary-contact-number-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="temp_contact_number_insert" id="temp_contact-number" />
+                <input type="text" class="form-control" name="temp_contact_number_insert" id="temp_contact-number-insert" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="email">Email Id <span class="required">*</span></label>
                 <span id="email-message" style="color: red;" class="error"></span>
-                <input type="text" name="email_insert" class="form-control" id="email">
+                <input type="text" name="email_insert" class="form-control" id="email-insert">
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="temp_email">Secondary Email</label>
                 <span id="temp-email-message" style="color: red;" class="error"></span>
-                <input type="text" name="temp_email_insert" class="form-control" id="temp_email">
+                <input type="text" name="temp_email_insert" class="form-control" id="temp_email-insert">
               </div>
             </div>
           </div>
@@ -388,17 +388,17 @@
               <div class="col-md-6 col-sm-12">
                 <label for="address">Permanent Address <span class="required">*</span></label>
                 <span id="address-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="permanent_address_insert" id="address" />
+                <input type="text" class="form-control" name="permanent_address_insert" id="address-insert" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="city">City <span class="required">*</span></label>
                 <span id="city-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="permanent_address_city_insert" id="city" />
+                <input type="text" class="form-control" name="permanent_address_city_insert" id="city-insert" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="pincode">Pincode <span class="required">*</span></label>
                 <span id="pincode-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="permanent_address_pincode_insert" id="pincode" />
+                <input type="text" class="form-control" name="permanent_address_pincode_insert" id="pincode-insert" />
               </div>
             </div>
           </div>
@@ -408,12 +408,12 @@
               <div class="col-md-8 col-sm-12">
                 <label for="temporary-address">Temporary Address</label>
                 <span id="temporary-address-message" style="color: red;" class="error"></span>
-                <input type="text" name="temporary_address_insert" class="form-control" id="temporary-address">
+                <input type="text" name="temporary_address_insert" class="form-control" id="temporary-address-insert">
               </div>
               <div class="col-md-4 col-sm-12">
                 <label for="country">Country <span class="required">*</span></label>
                 <span id="country-message" style="color: red;" class="error"></span>
-                <input type="text" name="nationality_insert" class="form-control" id="country">
+                <input type="text" name="nationality_insert" class="form-control" id="country-insert">
               </div>
             </div>
           </div>
@@ -423,17 +423,17 @@
               <div class="col-md-4 col-sm-12">
                 <label for="pan-number">Pan Card Number <span class="required">*</span></label>
                 <span id="pan-number-message" style="color: red;" class="error"></span>
-                <input type="text" name="pan_number_insert" class="form-control" id="pan-number" />
+                <input type="text" name="pan_number_insert" class="form-control" id="pan-number-insert" />
               </div>
 
               <div class="col-md-4 col-sm-12">
                 <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
                 <span id="pan-photo-message" style="color: red;" class="error"></span>
-                <input type="file" class="form-control" id="pan-photo"
+                <input type="file" class="form-control" id="pan-photo-insert"
                   onchange="document.getElementById('pan-photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
               <div class="col-md-4 col-sm-12">
-                <img id="pan-photo-preview_insert" alt="your image" width="100" height="100"
+                <img id="pan-photo-preview-insert" alt="your image" width="100" height="100"
                   style="border: 1px solid #ced4da; margin-left:100px;" />
 
               </div>
@@ -445,13 +445,13 @@
               <div class="col-md-4 col-sm-12">
                 <label for="aadhar-number">Aadhar Card Number <span class="required">*</span></label>
                 <span id="aadhar-number-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="aadhar_number_insert" id="aadhar-number" />
+                <input type="text" class="form-control" name="aadhar_number_insert" id="aadhar-number-insert" />
               </div>
 
               <div class="col-md-4 col-sm-12">
                 <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
                 <span id="aadhar-photo-message" style="color: red;" class="error"></span>
-                <input type="file" class="form-control" id="aadhar-photo"
+                <input type="file" class="form-control" id="aadhar-photo-insert"
                   onchange="document.getElementById('aadhar-photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
               <div class="col-md-4 col-sm-12">
@@ -2094,6 +2094,28 @@
         <!------------------------------------------- Bank Details Section  ----------------------------------------->`
         if (bank_details != null) {
 
+          document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
+
+for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+  box.classList.add('d-none');
+  box.classList.remove('edit-show');
+}
+
+document.querySelector('.bank-details-edit-box').classList.remove('d-none');
+document.querySelector('.bank-details-edit-box').classList.add('edit-show');
+
+});
+
+
+document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
+document.getElementById('body').classList.add('d-none');
+document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
+})
+
+document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
+document.getElementById('body').classList.remove('d-none');
+document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
+})
 
           resume += `<div class="bank-details-div-wrapper d-flex position-relative" style="cursor: pointer;">
           <div id="bank-details-div">
@@ -2160,28 +2182,7 @@
         document.querySelector('#body').insertAdjacentHTML('afterbegin', resume);
         initResume();
 
-        document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
-
-          for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
-            box.classList.add('d-none');
-            box.classList.remove('edit-show');
-          }
-
-          document.querySelector('.bank-details-edit-box').classList.remove('d-none');
-          document.querySelector('.bank-details-edit-box').classList.add('edit-show');
-
-        });
-
-
-        document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
-          document.getElementById('body').classList.add('d-none');
-          document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
-        })
-
-        document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
-        })
+ 
 
       },
 
@@ -2212,16 +2213,31 @@
 
       console.log()
       e.preventDefault()
-      let myForm = document.getElementById('insert-form')
-      let formData = new FormData(myForm)
+
       let arrayresult = [];
       let result = {};
-      for (let entry of formData.entries()) {
-        result[entry[0]] = entry[1];
-      }
 
       // clearError();
 
+      result.firstName = document.querySelector('#first-name-insert').value;
+      result.lastName = document.querySelector('#last-name-insert').value;
+      result.profilePhoto1 = document.querySelector('#photo-preview_insert').value;
+      result.DOB = document.querySelector('#date-of-birth-insert').value;
+      // gender = document.querySelector('#').value;
+      result.contactNumber = document.querySelector('#contact-number-insert').value;
+      result.temporaryContact = document.querySelector('#temp_contact-number-insert').value;
+      result.pancard = document.querySelector('#"pan-number-insert').value;
+      result.pancardPhoto = document.querySelector('#pan-photo-insert').value;
+      result.email = document.querySelector('#email-insert').value;
+      result.aadhar = document.querySelector('#aadhar-number-insert').value;
+      result.aadharPhoto1 = document.querySelector('#aadhar-photo-insert').value;
+      result.address = document.querySelector('#address-insert').value;
+      result.country = document.querySelector('#country-insert').value;
+      result.tempaddress = document.querySelector('#temporary-address-insert').value;
+      result.tempemail = document.querySelector('#temp_email-insert').value;
+      result.city = document.querySelector('#city-insert').value;
+      result.pincode = document.querySelector('#pincode-insert').value;
+      console.log('result : ',result);
       // let firstName = personalDetailFirstNameValidation(result.f_name_insert);
       // let lastName = personalDetailLastNameValidation(result.l_name_insert);
       // let profilePhoto1 = personalDetailProfilePhotoValidation(document.getElementById("photo_insert").value);
@@ -2377,25 +2393,11 @@
           console.log(result.temp_contact_number)
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.personal-details-modal').classList.add('d-none')
-          document.getElementById('date-of-birth-value').innerText = changeDateFormat(result.date_of_birth);
-          document.getElementById('pancard-value').innerText = result.pan_number
-          document.getElementById('aadhar-card-value').innerText = result.aadhar_number
-          document.getElementById('contact-number-value').innerText = result.contact_number
-          document.getElementById('temp-contact-value').innerText = result.temp_contact_number
-          document.getElementById('email-value').innerText = result.email
-          document.getElementById('temp-email-value').innerText = result.temp_email
-          document.getElementById('address-value').innerText = result.permanent_address
-          document.getElementById('city-value').innerText = result.permanent_address_city
-          document.getElementById('pincode-value').innerText = result.permanent_address_pincode
-          document.getElementById('temporary-address').innerText = result.temporary_address
-          document.getElementById('country-value').innerText = result.nationality
-          document.getElementById('gender-value').innerText = genderValue
-          document.getElementById('first-name-value').innerText = result.f_name
-          document.getElementById('last-name-value').innerText = result.l_name
         })
       }, 1000)
-
+    
     })
+
 
 
 
