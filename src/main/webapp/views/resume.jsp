@@ -125,130 +125,130 @@
                 <input type="radio" name="gender" class="gender" id="other" value="3" />
                 <span id="gender-message" style="color: red;" class="error"></span>
               </div> -->
-              </div> -->
+            </div> -->
 
-              <div class="col-md-4 col-sm-12">
-                <label for="photo">passport Size Photo <span class="required">*</span></label>
-                <span id="photo-message" style="color: red;" class="error"></span>
-                <input type="file" class="form-control" id="photo" name="profile_photo"
-                  onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
-              </div>
-
+            <div class="col-md-4 col-sm-12">
+              <label for="photo">passport Size Photo <span class="required">*</span></label>
+              <span id="photo-message" style="color: red;" class="error"></span>
+              <input type="file" class="form-control" id="photo" name="profile_photo"
+                onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
             </div>
+
           </div>
-
-          <div class="container">
-            <div id="left-third-row" class="row">
-              <div class="col-md-3 col-sm-12">
-                <label for="contact-number">Contact No. <span class="required">*</span></label>
-                <span id="contact-number-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="contact_number" id="contact-number" />
-              </div>
-              <div class="col-md-3 col-sm-12">
-                <label for="temp_contact-number">Secondary Contact No.</label>
-                <span id="temporary-contact-number-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="temp_contact_number" id="temp_contact-number" />
-              </div>
-              <div class="col-md-3 col-sm-12">
-                <label for="email">Email Id <span class="required">*</span></label>
-                <span id="email-message" style="color: red;" class="error"></span>
-                <input type="text" name="email" class="form-control" id="email">
-              </div>
-              <div class="col-md-3 col-sm-12">
-                <label for="temp_email">Secondary Email</label>
-                <span id="temp-email-message" style="color: red;" class="error"></span>
-                <input type="text" name="temp_email" class="form-control" id="temp_email">
-              </div>
-            </div>
-          </div>
-
-          <div class="container">
-            <div id="left-fourth-row" class="row">
-              <div class="col-md-6 col-sm-12">
-                <label for="address">Permanent Address <span class="required">*</span></label>
-                <span id="address-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="permanent_address" id="address" />
-              </div>
-              <div class="col-md-3 col-sm-12">
-                <label for="city">City <span class="required">*</span></label>
-                <span id="city-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="permanent_address_city" id="city" />
-              </div>
-              <div class="col-md-3 col-sm-12">
-                <label for="pincode">Pincode <span class="required">*</span></label>
-                <span id="pincode-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="permanent_address_pincode" id="pincode" />
-              </div>
-            </div>
-          </div>
-
-          <div class="container">
-            <div id="left-fourth-row" class="row">
-              <div class="col-md-8 col-sm-12">
-                <label for="temporary-address">Temporary Address</label>
-                <span id="temporary-address-message" style="color: red;" class="error"></span>
-                <input type="text" name="temporary_address" class="form-control" id="temporary-address">
-              </div>
-              <div class="col-md-4 col-sm-12">
-                <label for="country">Country <span class="required">*</span></label>
-                <span id="country-message" style="color: red;" class="error"></span>
-                <input type="text" name="nationality" class="form-control" id="country">
-              </div>
-            </div>
-          </div>
-
-          <div class="container">
-            <div id="left-fourth-row" class="row">
-              <div class="col-md-4 col-sm-12">
-                <label for="pan-number">Pan Card Number <span class="required">*</span></label>
-                <span id="pan-number-message" style="color: red;" class="error"></span>
-                <input type="text" name="pan_number" class="form-control" id="pan-number" />
-              </div>
-
-              <div class="col-md-4 col-sm-12">
-                <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
-                <span id="pan-photo-message" style="color: red;" class="error"></span>
-                <input type="file" class="form-control" id="pan-photo"
-                  onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
-              </div>
-              <div class="col-md-4 col-sm-12">
-                <img id="pan-photo-preview" alt="your image" width="100" height="100"
-                  style="border: 1px solid #ced4da; margin-left:100px;" />
-
-              </div>
-            </div>
-          </div>
-
-          <div class="container">
-            <div id="left-fourth-row" class="row">
-              <div class="col-md-4 col-sm-12">
-                <label for="aadhar-number">Aadhar Card Number <span class="required">*</span></label>
-                <span id="aadhar-number-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
-              </div>
-
-              <div class="col-md-4 col-sm-12">
-                <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
-                <span id="aadhar-photo-message" style="color: red;" class="error"></span>
-                <input type="file" class="form-control" id="aadhar-photo"
-                  onchange="document.getElementById('aadhar-photo-preview-1').src = window.URL.createObjectURL(this.files[0])">
-              </div>
-              <div class="col-md-4 col-sm-12">
-                <img id="aadhar-photo-preview-1" alt="your image" width="100" height="100"
-                  style="border: 1px solid #ced4da; margin-left:100px;" />
-
-              </div>
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center py-3">
-            <button id="personal-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
-            <button id="personal-details-submit-button" class="btn btn-success m-4">Submit</button>
-          </div>
-
-        </form>
-
       </div>
+
+      <div class="container">
+        <div id="left-third-row" class="row">
+          <div class="col-md-3 col-sm-12">
+            <label for="contact-number">Contact No. <span class="required">*</span></label>
+            <span id="contact-number-message" style="color: red;" class="error"></span>
+            <input type="text" class="form-control" name="contact_number" id="contact-number" />
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <label for="temp_contact-number">Secondary Contact No.</label>
+            <span id="temporary-contact-number-message" style="color: red;" class="error"></span>
+            <input type="text" class="form-control" name="temp_contact_number" id="temp_contact-number" />
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <label for="email">Email Id <span class="required">*</span></label>
+            <span id="email-message" style="color: red;" class="error"></span>
+            <input type="text" name="email" class="form-control" id="email">
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <label for="temp_email">Secondary Email</label>
+            <span id="temp-email-message" style="color: red;" class="error"></span>
+            <input type="text" name="temp_email" class="form-control" id="temp_email">
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="left-fourth-row" class="row">
+          <div class="col-md-6 col-sm-12">
+            <label for="address">Permanent Address <span class="required">*</span></label>
+            <span id="address-message" style="color: red;" class="error"></span>
+            <input type="text" class="form-control" name="permanent_address" id="address" />
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <label for="city">City <span class="required">*</span></label>
+            <span id="city-message" style="color: red;" class="error"></span>
+            <input type="text" class="form-control" name="permanent_address_city" id="city" />
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <label for="pincode">Pincode <span class="required">*</span></label>
+            <span id="pincode-message" style="color: red;" class="error"></span>
+            <input type="text" class="form-control" name="permanent_address_pincode" id="pincode" />
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="left-fourth-row" class="row">
+          <div class="col-md-8 col-sm-12">
+            <label for="temporary-address">Temporary Address</label>
+            <span id="temporary-address-message" style="color: red;" class="error"></span>
+            <input type="text" name="temporary_address" class="form-control" id="temporary-address">
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <label for="country">Country <span class="required">*</span></label>
+            <span id="country-message" style="color: red;" class="error"></span>
+            <input type="text" name="nationality" class="form-control" id="country">
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="left-fourth-row" class="row">
+          <div class="col-md-4 col-sm-12">
+            <label for="pan-number">Pan Card Number <span class="required">*</span></label>
+            <span id="pan-number-message" style="color: red;" class="error"></span>
+            <input type="text" name="pan_number" class="form-control" id="pan-number" />
+          </div>
+
+          <div class="col-md-4 col-sm-12">
+            <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
+            <span id="pan-photo-message" style="color: red;" class="error"></span>
+            <input type="file" class="form-control" id="pan-photo"
+              onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <img id="pan-photo-preview" alt="your image" width="100" height="100"
+              style="border: 1px solid #ced4da; margin-left:100px;" />
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="left-fourth-row" class="row">
+          <div class="col-md-4 col-sm-12">
+            <label for="aadhar-number">Aadhar Card Number <span class="required">*</span></label>
+            <span id="aadhar-number-message" style="color: red;" class="error"></span>
+            <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
+          </div>
+
+          <div class="col-md-4 col-sm-12">
+            <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
+            <span id="aadhar-photo-message" style="color: red;" class="error"></span>
+            <input type="file" class="form-control" id="aadhar-photo"
+              onchange="document.getElementById('aadhar-photo-preview-1').src = window.URL.createObjectURL(this.files[0])">
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <img id="aadhar-photo-preview-1" alt="your image" width="100" height="100"
+              style="border: 1px solid #ced4da; margin-left:100px;" />
+
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center py-3">
+        <button id="personal-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
+        <button id="personal-details-submit-button" class="btn btn-success m-4">Submit</button>
+      </div>
+
+      </form>
+
+    </div>
     </div>
     </div>
 
@@ -269,7 +269,8 @@
                 <div class="form-group">
                   <label for="first-name" cl>First Name <span class="required">*</span></label>
                   <span id="first-name-message" style="color: red;" class="error"></span>
-                  <input type="text" class="form-control" name="f_name_insert" id="first-name" placeholder="First Name">
+                  <input type="text" class="form-control" name="f_name_insert" id="first-name-insert"
+                    placeholder="First Name">
                 </div>
               </div>
 
@@ -278,7 +279,8 @@
                 <div class="form-group">
                   <label for="last-name">last Name <span class="required">*</span></label>
                   <span id="last-name-message" style="color: red;" class="error"></span>
-                  <input type="text" class="form-control" name="l_name_insert" id="last-name" placeholder="Last Name">
+                  <input type="text" class="form-control" name="l_name_insert" id="last-name-insert"
+                    placeholder="Last Name">
 
                 </div>
               </div>
@@ -289,23 +291,6 @@
                     style="border: 1px solid #ced4da; margin-left:100px;" />
                 </div>
               </div>
-              <!-- <div class="col-md-4 col-sm-12">
-                <label for="first-name" cl>First Name <span class="required">*</span></label>
-                <span id="first-name-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
-              </div> -->
-
-              <!-- <div class="col-md-4 col-sm-12">
-                <label for="last-name">last Name <span class="required">*</span></label>
-                <span id="last-name-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
-              </div> -->
-
-              <!-- <div class="col-md-4 col-sm-12">
-                <img id="photo-preview" alt="your image" name="photo_preview" width="100" height="100"
-                  style="border: 1px solid #ced4da; margin-left:100px;" />
-              </div> -->
-
             </div>
           </div>
 
@@ -316,7 +301,7 @@
                 <div class="form-group">
                   <label for="date-of-birth">date of birth <span class="required">*</span></label>
                   <span id="date-of-birth-message" style="color: red;" class="error"></span>
-                  <input type="date" class="form-control" name="date_of_birth_insert" id="date-of-birth" />
+                  <input type="date" class="form-control" name="date_of_birth_insert" id="date-of-birth-insert" />
                 </div>
               </div>
 
@@ -332,27 +317,10 @@
                 </div>
               </div>
 
-              <!-- <div class="col-md-4 col-sm-12">
-                <label for="date-of-birth">date of birth <span class="required">*</span></label>
-                <span id="date-of-birth-message" style="color: red;" class="error"></span>
-                <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
-              </div> -->
-
-              <!-- <div id="gender-row" class="col-sm-12 col-md-4">
-                <label for="">Gender <span class="required">*</span></label><br>
-                <label for="male">Male</label>
-                <input style="height: auto ;" type="radio" name="gender" class="gender" id="male" value="1" />
-                <label for="female">Female</label>
-                <input style="height: auto ;" type="radio" name="gender" class="gender" id="female" value="2" />
-                <label for="other">other</label>
-                <input type="radio" name="gender" class="gender" id="other" value="3" />
-                <span id="gender-message" style="color: red;" class="error"></span>
-              </div> -->
-
               <div class="col-md-4 col-sm-12">
                 <label for="photo">passport Size Photo <span class="required">*</span></label>
                 <span id="photo-message" style="color: red;" class="error"></span>
-                <input type="file" class="form-control" id="photo_insert" name="profile_photo_insert"
+                <input type="file" class="form-control" id="photo-insert" name="profile_photo_insert"
                   onchange="document.getElementById('photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
 
@@ -364,22 +332,23 @@
               <div class="col-md-3 col-sm-12">
                 <label for="contact-number">Contact No. <span class="required">*</span></label>
                 <span id="contact-number-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="contact_number_insert" id="contact-number" />
+                <input type="text" class="form-control" name="contact_number_insert" id="contact-number-insert" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="temp_contact-number">Secondary Contact No.</label>
                 <span id="temporary-contact-number-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="temp_contact_number_insert" id="temp_contact-number" />
+                <input type="text" class="form-control" name="temp_contact_number_insert"
+                  id="temp_contact-number-insert" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="email">Email Id <span class="required">*</span></label>
                 <span id="email-message" style="color: red;" class="error"></span>
-                <input type="text" name="email_insert" class="form-control" id="email">
+                <input type="text" name="email_insert" class="form-control" id="email-insert">
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="temp_email">Secondary Email</label>
                 <span id="temp-email-message" style="color: red;" class="error"></span>
-                <input type="text" name="temp_email_insert" class="form-control" id="temp_email">
+                <input type="text" name="temp_email_insert" class="form-control" id="temp_email-insert">
               </div>
             </div>
           </div>
@@ -389,17 +358,17 @@
               <div class="col-md-6 col-sm-12">
                 <label for="address">Permanent Address <span class="required">*</span></label>
                 <span id="address-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="permanent_address_insert" id="address" />
+                <input type="text" class="form-control" name="permanent_address_insert" id="address-insert" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="city">City <span class="required">*</span></label>
                 <span id="city-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="permanent_address_city_insert" id="city" />
+                <input type="text" class="form-control" name="permanent_address_city_insert" id="city-insert" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="pincode">Pincode <span class="required">*</span></label>
                 <span id="pincode-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="permanent_address_pincode_insert" id="pincode" />
+                <input type="text" class="form-control" name="permanent_address_pincode_insert" id="pincode-insert" />
               </div>
             </div>
           </div>
@@ -409,12 +378,12 @@
               <div class="col-md-8 col-sm-12">
                 <label for="temporary-address">Temporary Address</label>
                 <span id="temporary-address-message" style="color: red;" class="error"></span>
-                <input type="text" name="temporary_address_insert" class="form-control" id="temporary-address">
+                <input type="text" name="temporary_address_insert" class="form-control" id="temporary-address-insert">
               </div>
               <div class="col-md-4 col-sm-12">
                 <label for="country">Country <span class="required">*</span></label>
                 <span id="country-message" style="color: red;" class="error"></span>
-                <input type="text" name="nationality_insert" class="form-control" id="country">
+                <input type="text" name="nationality_insert" class="form-control" id="country-insert">
               </div>
             </div>
           </div>
@@ -424,17 +393,18 @@
               <div class="col-md-4 col-sm-12">
                 <label for="pan-number">Pan Card Number <span class="required">*</span></label>
                 <span id="pan-number-message" style="color: red;" class="error"></span>
-                <input type="text" name="pan_number_insert" class="form-control" id="pan-number" />
+                <input type="text" name="pan_number_insert" value="${user_id}" disabled class="form-control"
+                  id="pan-number-insert" />
               </div>
 
               <div class="col-md-4 col-sm-12">
                 <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
                 <span id="pan-photo-message" style="color: red;" class="error"></span>
-                <input type="file" class="form-control" id="pan-photo"
-                  onchange="document.getElementById('pan-photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
+                <input type="file" class="form-control" id="pan-photo-insert"
+                  onchange="document.getElementById('pan-photo-preview-insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
               <div class="col-md-4 col-sm-12">
-                <img id="pan-photo-preview_insert" alt="your image" width="100" height="100"
+                <img id="pan-photo-preview-insert" alt="your image" width="100" height="100"
                   style="border: 1px solid #ced4da; margin-left:100px;" />
 
               </div>
@@ -446,13 +416,13 @@
               <div class="col-md-4 col-sm-12">
                 <label for="aadhar-number">Aadhar Card Number <span class="required">*</span></label>
                 <span id="aadhar-number-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="aadhar_number_insert" id="aadhar-number" />
+                <input type="text" class="form-control" name="aadhar_number_insert" id="aadhar-number-insert" />
               </div>
 
               <div class="col-md-4 col-sm-12">
                 <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
                 <span id="aadhar-photo-message" style="color: red;" class="error"></span>
-                <input type="file" class="form-control" id="aadhar-photo"
+                <input type="file" class="form-control" id="aadhar-photo-insert"
                   onchange="document.getElementById('aadhar-photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
               <div class="col-md-4 col-sm-12">
@@ -522,49 +492,49 @@
 
     <!-- ************************************************************************Work Experience Modal Div******************************************************************************************** -->
 
- <!-- WorkExperience Modal for Update -->
- <div class="workexperience-modal d-none">
-  <div class="full-screen container ">
-    <div class="main-content">
-      <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
-        <h3><b>Edit Work Experience</b></h3>
-      </div>
-      <hr>
+    <!-- WorkExperience Modal for Update -->
+    <div class="workexperience-modal d-none">
+      <div class="full-screen container ">
+        <div class="main-content">
+          <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
+            <h3><b>Edit Work Experience</b></h3>
+          </div>
+          <hr>
 
-      <div class="bg-white workexperience-data">
-      </div>
+          <div class="bg-white workexperience-data">
+          </div>
 
-      <hr>
-      <div class="d-flex justify-content-center">
-        <button id="workexperience-cancel-button" class="btn btn-danger m-4">Cancel</button>
-        <button id="workexperience-submit-button" class="btn btn-success m-4">Submit</button>
+          <hr>
+          <div class="d-flex justify-content-center">
+            <button id="workexperience-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="workexperience-submit-button" class="btn btn-success m-4">Submit</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- WorkExperience Modal for Insert -->
-<div class="workexperience-modal-insert d-none">
-  <div class="full-screen container ">
-    <div class="main-content">
-      <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
-        <h3><b> Work Experience</b></h3>
-        <i id="workexperience-add-button"
-          class="workexperience-add-button fa-solid text-primary fa-circle-plus fa-2x"></i>
-      </div>
-      <hr>
+    <!-- WorkExperience Modal for Insert -->
+    <div class="workexperience-modal-insert d-none">
+      <div class="full-screen container ">
+        <div class="main-content">
+          <div class="container d-flex justify-content-between align-items-center text-dark pt-md-5">
+            <h3><b> Work Experience</b></h3>
+            <i id="workexperience-add-button"
+              class="workexperience-add-button fa-solid text-primary fa-circle-plus fa-2x"></i>
+          </div>
+          <hr>
 
-      <div class="bg-white workexperience-data-insert">
-      </div>
+          <div class="bg-white workexperience-data-insert">
+          </div>
 
-      <hr>
-      <div class="d-flex justify-content-center">
-        <button id="workexperience-cancel-insert" class="btn btn-danger m-4">Cancel</button>
-        <button id="workexperience-submit-insert" class="btn btn-success m-4">Submit</button>
+          <hr>
+          <div class="d-flex justify-content-center">
+            <button id="workexperience-cancel-insert" class="btn btn-danger m-4">Cancel</button>
+            <button id="workexperience-submit-insert" class="btn btn-success m-4">Submit</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
     <!-- ************************************************************************Skills Modal Div******************************************************************************************** -->
 
@@ -1162,91 +1132,6 @@
         <!--------------------------------------Personal Details Section ---------------------------------------->`
 
         if (personal_details != null) {
-
-          document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
-
-            for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
-              box.classList.add('d-none');
-              box.classList.remove('edit-show');
-            }
-
-            document.querySelector('.personal-details-edit-box').classList.remove('d-none');
-            document.querySelector('.personal-details-edit-box').classList.add('edit-show');
-          });
-
-
-
-          document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
-            document.getElementById('body').classList.add('d-none');
-            document.querySelector('.pancard-photo-modal').classList.remove('d-none');
-          })
-
-          document.querySelector('#pancard-photo-cancel-button').addEventListener('click', function (e) {
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.pancard-photo-modal').classList.add('d-none');
-          })
-
-          document.querySelector('#aadhar-photo-preview').addEventListener('click', function (e) {
-            document.getElementById('body').classList.add('d-none');
-            document.querySelector('.aadhar-photo-modal').classList.remove('d-none');
-          })
-
-          document.querySelector('#aadhar-photo-cancel-button').addEventListener('click', function (e) {
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.aadhar-photo-modal').classList.add('d-none');
-          })
-
-
-
-          //************************************Personal Details Section Start***************************************************************
-
-          //Personal details Edit Btn
-          document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
-
-            let editPersonalDetailsForm = new FormData()
-
-            editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
-              .innerText)
-            editPersonalDetailsForm.append('editFirstName', document.getElementById('first-name-value')
-              .innerText)
-            editPersonalDetailsForm.append('editLastName', document.getElementById('last-name-value')
-              .innerText)
-            editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
-              .innerText)
-            editPersonalDetailsForm.append('editAadharCardNumber', document.getElementById(
-                'aadhar-card-value')
-              .innerText)
-            editPersonalDetailsForm.append('editContactNumber', document.getElementById(
-                'contact-number-value')
-              .innerText)
-            editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
-            editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
-            editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
-              'temporary-address-value').innerText)
-            editPersonalDetailsForm.append('editCity', document.getElementById('city-value').innerText)
-            editPersonalDetailsForm.append('editPincode', document.getElementById('pincode-value').innerText)
-            editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
-            editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
-
-            document.getElementById('first-name').value = editPersonalDetailsForm.get('editFirstName')
-            document.getElementById('last-name').value = editPersonalDetailsForm.get('editLastName')
-            document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
-            document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
-            document.getElementById('aadhar-number').value = editPersonalDetailsForm.get(
-              'editAadharCardNumber')
-            document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
-            document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
-            document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
-            document.getElementById('city').value = editPersonalDetailsForm.get('editCity')
-            document.getElementById('pincode').value = editPersonalDetailsForm.get('editPincode')
-            document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
-              'editTemporaryAddress')
-            document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
-
-            document.getElementById('body').classList.add('d-none');
-            document.querySelector('.personal-details-modal').classList.remove('d-none');
-
-          });
           resume += `<div class="edit-personal-details">
           <div class="position-relative personal-information-div-wrapper d-flex" style="cursor: pointer;">
             <div class="container p-0">
@@ -1589,56 +1474,6 @@
                 </div>`
           }
         }
-        // } else {
-        //   resume += ` <div class="text-block right">
-        //           <div class="card-body">
-        //             <h3>Teaching Experience</h3>
-
-        //             <div id="workexperience-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-        //               <div class="row">
-
-        //                 <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-        //                   <div class="row pt-lg-3">
-        //                     <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-        //                       <p class="h5 pb-1">University :</p>
-        //                       <p class="h5 pb-1">Program :</p>
-        //                       <p class="h5 py-1">Subject Taught :</p>
-        //                       <p class="h5 py-1">Designation :</p>
-        //                       <p class="h5 py-1">Padagogy used :</p>
-        //                     </div>
-        //                     <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-        //                       <p id="">N.A</p>
-        //                       <p id="">N.A</p>
-        //                       <p id="">N.A</p>
-        //                       <p id="">N.A</p>
-        //                       <p id="">N.A</p>
-        //                     </div>
-        //                   </div>
-        //                 </div>
-
-        //                 <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-        //                   <div class="row pt-lg-3">
-        //                     <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-        //                       <p class="h5 py-1">Start Date :</p>
-        //                       <p class="h5 py-1">End date :</p>
-        //                       <p class="h5 py-1">Duration :</p>
-        //                       <p class="h5 py-1">Status :</p>
-        //                     </div>
-        //                     <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-        //                       <p class="" id="">N.A</p>
-        //                       <p id="" class="">N.A</p>
-        //                       <p id="" class="">N.A</p>
-        //                       <p id="" class="">N.A</p>
-        //                       <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
-        //                     </div>
-        //                   </div>
-        //                 </div>
-
-        //               </div>
-        //             </div>
-        //           </div>
-        //         </div>`
-        // }
 
         resume += `</div>
                 <div class="addbtn-workexperience d-flex my-2 justify-content-center align-items-center">
@@ -2110,13 +1945,13 @@
         })
 
 
-          document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
-          })
-        
+        document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
+          document.getElementById('body').classList.remove('d-none');
+          document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
+        })
 
 
+        personalDetails();
 
 
       },
@@ -2130,34 +1965,44 @@
 
     //**************************************************************Personal Details Section Start***************************************************** 
 
+
+
     //Personal Details Insert Add
     function personalAddButton() {
       document.querySelector('.personal-details-modal-insert').classList.remove('d-none');
       document.querySelector('#body').classList.add('d-none');
     };
-
     //Personal Details Cancel Insert
     document.querySelector('#personal-details-cancel-insert').addEventListener('click', function (e) {
       e.preventDefault()
       document.querySelector('.personal-details-modal-insert').classList.add('d-none');
       document.querySelector('#body').classList.remove('d-none');
     });
-
     //Personal Details Submit
     document.querySelector('#personal-details-submit-insert').addEventListener('click', function (e) {
-
       console.log()
       e.preventDefault()
-      let myForm = document.getElementById('insert-form')
-      let formData = new FormData(myForm)
       let arrayresult = [];
       let result = {};
-      for (let entry of formData.entries()) {
-        result[entry[0]] = entry[1];
-      }
-
       // clearError();
-
+      result.firstName = document.querySelector('#first-name-insert').value;
+      result.lastName = document.querySelector('#last-name-insert').value;
+      result.profilePhoto1 = document.querySelector('#photo-insert').value;
+      result.DOB = document.querySelector('#date-of-birth-insert').value;
+      result.gender = document.querySelector("#gender-row input[type='radio']:checked").value;
+      result.contactNumber = document.querySelector('#contact-number-insert').value;
+      result.temporaryContact = document.querySelector('#temp_contact-number-insert').value;
+      result.pancard = "${user_id}";
+      result.pancardPhoto = document.querySelector('#pan-photo-insert').value;
+      result.email = document.querySelector('#email-insert').value;
+      result.aadhar = document.querySelector('#aadhar-number-insert').value;
+      result.aadharPhoto1 = document.querySelector('#aadhar-photo-insert').value;
+      result.address = document.querySelector('#address-insert').value;
+      result.country = document.querySelector('#country-insert').value;
+      result.tempaddress = document.querySelector('#temporary-address-insert').value;
+      result.tempemail = document.querySelector('#temp_email-insert').value;
+      result.city = document.querySelector('#city-insert').value;
+      result.pincode = document.querySelector('#pincode-insert').value;
       // let firstName = personalDetailFirstNameValidation(result.f_name_insert);
       // let lastName = personalDetailLastNameValidation(result.l_name_insert);
       // let profilePhoto1 = personalDetailProfilePhotoValidation(document.getElementById("photo_insert").value);
@@ -2174,27 +2019,23 @@
       // let country = personalDetailCountryValidation(result.nationality_insert);
       // let tempContact = (result.temp_contact_number_insert);
       // let tempemail = tempemailvalidation(result.temp_email_insert);
-
       // if (!firstName || !lastName || !profilePhoto1 || !gender || !contactNumber || !email || !pancard || !
       //   pancardPhoto || !aadhar || !aadharPhoto1 || !address || !
       //   country || !DOB || !tempemail) {
       //   return;
       // }
-
       // if (pancardPhoto.length != 0) {
       //   document.getElementById('pancard-photo').firstElementChild.classList.remove('fa-ban')
       //   document.getElementById('pancard-photo').firstElementChild.classList.remove('text-danger')
       //   document.getElementById('pancard-photo').firstElementChild.classList.add('fa-image')
       //   document.getElementById('pancard-photo').firstElementChild.classList.add('text-success')
       // }
-
       // if (aadharPhoto1.length != 0) {
       //   document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('fa-ban')
       //   document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('text-danger')
       //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('fa-image')
       //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('text-success')
       // }
-
       let personalDetailsData = {
         "insert_user_personal_details": {
           "user_address": arrayresult,
@@ -2202,10 +2043,8 @@
           "user_info": []
         }
       }
-
       let photoArray = []
-
-      let profilePhoto = document.getElementById("photo").files[0]
+      let profilePhoto = document.getElementById("photo-insert").files[0]
       if (profilePhoto) {
         let filereader = new FileReader();
         filereader.readAsDataURL(profilePhoto);
@@ -2214,8 +2053,7 @@
           photoArray[0] = profilePhotoBase64
         }
       }
-
-      let aadharPhoto = document.getElementById("aadhar-photo").files[0]
+      let aadharPhoto = document.getElementById("aadhar-photo-insert").files[0]
       if (aadharPhoto) {
         let filereader = new FileReader();
         filereader.readAsDataURL(aadharPhoto);
@@ -2224,8 +2062,7 @@
           photoArray[1] = aadharPhotobase64
         }
       }
-
-      let panPhoto = document.getElementById("pan-photo").files[0]
+      let panPhoto = document.getElementById("pan-photo-insert").files[0]
       if (panPhoto) {
         let filereader = new FileReader();
         filereader.readAsDataURL(panPhoto);
@@ -2234,53 +2071,47 @@
           photoArray[2] = panphotobase64
         }
       }
-
       setTimeout(function () {
-
         console.log(photoArray)
         let user_info = {}
         let user_contact = {}
         console.log(JSON.stringify(result))
         user_contact.user_lid = '${user_lid}'
         user_contact.resume_lid = resume_lid
-        user_contact.contact_number = result.contact_number_insert
-        user_contact.temp_contact_number = result.temp_contact_number_insert
+        user_contact.contact_number = result.contactNumber
+        user_contact.temp_contact_number = result.temporaryContact
         personalDetailsData.insert_user_personal_details.user_contact[0] = user_contact
         user_info.user_lid = '${user_lid}'
         user_info.resume_lid = resume_lid
-        user_info.f_name = result.f_name_insert
-        user_info.l_name = result.l_name_insert
-        user_info.email = result.email_insert
-        user_info.temp_email = result.temp_email_insert
-        user_info.gender_lid = Number.parseInt(result.gender_insert)
-        user_info.pancard_no = result.pan_number_insert
+        user_info.f_name = result.firstName
+        user_info.l_name = result.lastName
+        user_info.email = result.email
+        user_info.temp_email = result.tempemail
+        user_info.gender_lid = Number.parseInt(result.gender)
+        user_info.pancard_no = '${user_id}'
         user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
         user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
         user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
-        user_info.aadhar_card_no = result.aadhar_insert
-        user_info.date_of_birth = result.date_of_birth_insert
-        user_info.nationality = result.nationality_insert
+        user_info.aadhar_card_no = result.aadhar
+        user_info.date_of_birth = result.DOB
+        user_info.nationality = result.country
         personalDetailsData.insert_user_personal_details.user_info[0] = user_info
-
         let addressObject = {}
-
         addressObject.user_lid = '${user_lid}'
         addressObject.resume_lid = resume_lid
-        addressObject.address = result.permanent_address_insert
-        addressObject.city = result.permanent_address_city_insert
-        addressObject.pin_code = result.permanent_address_pincode_insert
-
+        addressObject.address = result.address
+        addressObject.city = result.city
+        addressObject.pin_code = result.pincode
         addressObject.address_type_lid = 1
         let addressObject2 = {}
         addressObject2.user_lid = '${user_lid}'
         addressObject2.resume_lid = resume_lid
-        addressObject2.address = result.temporary_address_insert
+        addressObject2.address = result.tempaddress
         addressObject2.address_type_lid = 2
-
+        addressObject2.city = result.city
+        addressObject2.pin_code = result.pincode
         arrayresult[0] = addressObject
         arrayresult[1] = addressObject2
-
-
         console.log(JSON.stringify(personalDetailsData))
         let genderValue = ""
         if (Number.parseInt(result.gender) == 1) {
@@ -2292,47 +2123,20 @@
         }
         console.log(genderValue)
         let options = {
-
           method: 'POST',
           headers: {
-
             'Content-Type': 'application/json;charset=utf-8'
-
           },
           body: JSON.stringify(personalDetailsData)
-
         }
-
         let fetchRes = fetch('/insert-personal-details', options);
-
         fetchRes.then(success => {
-
           // if (success.status == 200) {
-          console.log(success)
-          console.log(result.date_of_birth)
-          console.log(result.temp_contact_number)
           document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.personal-details-modal').classList.add('d-none')
-          document.getElementById('date-of-birth-value').innerText = changeDateFormat(result.date_of_birth);
-          document.getElementById('pancard-value').innerText = result.pan_number
-          document.getElementById('aadhar-card-value').innerText = result.aadhar_number
-          document.getElementById('contact-number-value').innerText = result.contact_number
-          document.getElementById('temp-contact-value').innerText = result.temp_contact_number
-          document.getElementById('email-value').innerText = result.email
-          document.getElementById('temp-email-value').innerText = result.temp_email
-          document.getElementById('address-value').innerText = result.permanent_address
-          document.getElementById('city-value').innerText = result.permanent_address_city
-          document.getElementById('pincode-value').innerText = result.permanent_address_pincode
-          document.getElementById('temporary-address').innerText = result.temporary_address
-          document.getElementById('country-value').innerText = result.nationality
-          document.getElementById('gender-value').innerText = genderValue
-          document.getElementById('first-name-value').innerText = result.f_name
-          document.getElementById('last-name-value').innerText = result.l_name
+          document.querySelector('.personal-details-modal-insert').classList.add('d-none')
         })
       }, 1000)
-
     })
-
 
 
     //**************************************************************Personal Details Section End*****************************************************
@@ -2730,6 +2534,7 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.qualification-modal').classList.add('d-none');
+            document.location.reload();
           } else {
             alert('Check Qualification details');
           }
@@ -2741,8 +2546,8 @@
 
     // **************************************************Qualification Section End*******************************************************
 
-    
-    
+
+
     //*******************************************************Award Insert Model Section Start*****************************************
 
 
@@ -3061,6 +2866,7 @@
             if (data.status == 200) {
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.award-modal-insert').classList.add('d-none');
+              document.location.reload();
             } else {
               console.log("Error");
               alert('Check Award Entries');
@@ -3361,6 +3167,8 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.publication-modal').classList.add('d-none');
+            document.location.reload();
+
           } else {
             alert('Check');
           }
@@ -3639,6 +3447,8 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.research-modal').classList.add('d-none');
+            document.location.reload();
+
           } else {
             alert('Check');
           }
@@ -3932,6 +3742,8 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.certification-modal').classList.add('d-none');
+            document.location.reload();
+
           } else {
             alert('Check Professional certificate details');
           }
@@ -4077,15 +3889,7 @@
 
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.bank-details-modal-insert').classList.add('d-none');
-              document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
-              document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get(
-                'branchName')
-              document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
-              document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-              document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
-                'accountNumber')
-              document.getElementById('account-type-value').innerText = submitBankDetailsForm.get(
-                'accountType')
+              document.location.reload();
 
             }
           })
@@ -4988,21 +4792,7 @@
           console.log(result.temp_contact_number)
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.personal-details-modal').classList.add('d-none')
-          // document.getElementById('date-of-birth-value').innerText = changeDateFormat(result.date_of_birth);
-          // document.getElementById('pancard-value').innerText = result.pan_number
-          // document.getElementById('aadhar-card-value').innerText = result.aadhar_number
-          // document.getElementById('contact-number-value').innerText = result.contact_number
-          // document.getElementById('temp-contact-value').innerText = result.temp_contact_number
-          // document.getElementById('email-value').innerText = result.email
-          // document.getElementById('temp-email-value').innerText = result.temp_email
-          // document.getElementById('address-value').innerText = result.permanent_address
-          // document.getElementById('city-value').innerText = result.permanent_address_city
-          // document.getElementById('pincode-value').innerText = result.permanent_address_pincode
-          // document.getElementById('temporary-address').innerText = result.temporary_address
-          // document.getElementById('country-value').innerText = result.nationality
-          // document.getElementById('gender-value').innerText = genderValue
-          // document.getElementById('first-name-value').innerText = result.f_name
-          // document.getElementById('last-name-value').innerText = result.l_name
+
           document.location.reload();
         })
       }, 1000)
@@ -5117,11 +4907,11 @@
             photoArray[i] = qualificationPhotoBase64
           }
         } else {
-          setTimeout(function(){
+          setTimeout(function () {
 
             photoArray[i] = null
 
-          },1000)
+          }, 1000)
         }
 
 
@@ -6168,15 +5958,6 @@
 
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.bank-details-modal').classList.add('d-none');
-              // document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
-              // document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get(
-              //   'branchName')
-              // document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
-              // document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-              // document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
-              //   'accountNumber')
-              // document.getElementById('account-type-value').innerText = submitBankDetailsForm.get(
-              //   'accountType')
               document.location.reload();
             }
           })
@@ -6505,15 +6286,15 @@
     })
 
 
-// **************************************************Workexperience Section Start*******************************************************
-   
-   
-document.querySelector('#workexperience-submit-insert').addEventListener('click', function (e) {
+    // **************************************************Workexperience Section Start*******************************************************
+
+
+    document.querySelector('#workexperience-submit-insert').addEventListener('click', function (e) {
       let workExperienceModal = ''
       let div = ''
       let workexperienceTableArray = []
       let workexperienceRow = document.querySelectorAll('.workExperience-row')
-console.log(workexperienceRow)
+      console.log(workexperienceRow)
 
       for (i = 0; i < workexperienceRow.length; i++) {
 
@@ -6528,11 +6309,12 @@ console.log(workexperienceRow)
         workexperienceRow[i].querySelector('.other').classList.remove('input-border');
         workexperienceRow[i].querySelector('.start_Date').classList.remove('input-border');
         workexperienceRow[i].querySelector('.end_Date').classList.remove('input-border');
-      
+
         // let resume_workexperience_lid = workexperienceRow[i].dataset.lid
         let workexperienceType = workexperienceRow[i].querySelector('.work-experience-type').value;
         let workexperienceUniversity = workexperienceRow[i].querySelector('.employeeName').value;
-        let workexperienceDesignationTypeLID = workexperienceRow[i].querySelector(".designation-title").options.selectedIndex;
+        let workexperienceDesignationTypeLID = workexperienceRow[i].querySelector(".designation-title").options
+          .selectedIndex;
         let workexperienceDesignationType = workexperienceRow[i].querySelector('.designation-title').value;
         let workexperienceProgram = workexperienceRow[i].querySelector('.description').value;
         let workexperienceSubjectTaught = workexperienceRow[i].querySelector('.responsibility').value;
@@ -6541,7 +6323,7 @@ console.log(workexperienceRow)
         let workexperienceOther = workexperienceRow[i].querySelector('.other').value;
         let workexperienceStartDate = workexperienceRow[i].querySelector('.start_Date').value;
         let workexperienceEndDate = workexperienceRow[i].querySelector('.end_Date').value;
-        
+
 
         let checkWorkExp = tabledatacheck(workexperienceType);
         let checkUniversity = tabledatacheck(workexperienceUniversity);
@@ -6552,7 +6334,7 @@ console.log(workexperienceRow)
         let checkWorkExpOther = tabledatacheck(workexperienceOther);
         let checkWorkExpStart = tabledatacheck(workexperienceStartDate);
         let checkWorkExpEnd = tabledatacheck(workexperienceEndDate);
-        
+
         //  to add the red border according to validations
         if (checkWorkExp == false) {
           workexperienceRow[i].querySelector('.work-experience-type').classList.add('input-border');
@@ -6572,25 +6354,22 @@ console.log(workexperienceRow)
         } else if (checkWorkExpPedagogy == false) {
           workexperienceRow[i].querySelector('.padagogy').classList.add('input-border');
           return;
-        }
-        else if (checkWorkExpOther == false) {
+        } else if (checkWorkExpOther == false) {
           workexperienceRow[i].querySelector('.other').classList.add('input-border');
           return;
-        }
-        else if (checkWorkExpStart == false) {
+        } else if (checkWorkExpStart == false) {
           workexperienceRow[i].querySelector('.start_Date').classList.add('input-border');
           return;
-        }
-        else if (checkWorkExpEnd == false) {
+        } else if (checkWorkExpEnd == false) {
           workexperienceRow[i].querySelector('.end_Date').classList.add('input-border');
           return;
         }
 
-      
+
         let workexperience_type = 0;
         if (workexperienceType == "ind_exp") {
           workexperience_type = 4
-        } else{
+        } else {
           workexperience_type = 5
         }
 
@@ -6600,102 +6379,105 @@ console.log(workexperienceRow)
         let Status;
         if (workexperienceStatus == "current") {
           Status = true
-        } else{
+        } else {
           Status = false
         }
 
-          object = {
-            resume_lid: resume_lid,
-            experience_type_lid: workexperience_type,
-            employer_name: workexperienceUniversity,
-            designation: workexperienceDesignationType,
-            designation_lid: workexperienceDesignationTypeLID,
-            description: workexperienceProgram,
-            start_date: start_date,
-            end_date: end_date,
-            responsibilities: workexperienceSubjectTaught,
-            is_current: Status
-          }
-          workexperienceTableArray.push(object)
+        object = {
+          resume_lid: resume_lid,
+          experience_type_lid: workexperience_type,
+          employer_name: workexperienceUniversity,
+          designation: workexperienceDesignationType,
+          designation_lid: workexperienceDesignationTypeLID,
+          description: workexperienceProgram,
+          start_date: start_date,
+          end_date: end_date,
+          responsibilities: workexperienceSubjectTaught,
+          is_current: Status
+        }
+        workexperienceTableArray.push(object)
       }
 
       let workexperienceTableData = {
-          "work_Experience": workexperienceTableArray
-        }
-        
-        console.log(JSON.stringify(workexperienceTableData))
+        "work_Experience": workexperienceTableArray
+      }
 
-        let options = {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-          },
-          body: JSON.stringify(workexperienceTableData)
+      console.log(JSON.stringify(workexperienceTableData))
+
+      let options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(workexperienceTableData)
+      }
+      let fetchRes = fetch('/insert-workexperience-details', options);
+      fetchRes.then(success => {
+        if (success.status == 200) {
+          document.querySelector('.workexperience-modal-insert').classList.add('d-none');
+          document.querySelector('#body').classList.remove('d-none');
+          document.location.reload();
+        } else {
+          alert('Check workexperience details');
         }
-        let fetchRes = fetch('/insert-workexperience-details', options);
-        fetchRes.then(success => {
-          if (success.status == 200) {
-           document.querySelector('.workexperience-modal-insert').classList.add('d-none');
-           document.querySelector('#body').classList.remove('d-none');
-          } else {
-            alert('Check workexperience details');
-          }
-        })
-      
+      })
+
     })
 
-   document.querySelector('#workexperience-cancel-insert').addEventListener('click', function (e) {
+    document.querySelector('#workexperience-cancel-insert').addEventListener('click', function (e) {
 
-    document.querySelector('.workexperience-modal-insert').classList.add('d-none');
+      document.querySelector('.workexperience-modal-insert').classList.add('d-none');
       document.querySelector('#body').classList.remove('d-none');
-   })
+    })
 
 
-   let workexperienceDataDB = 1
+    let workexperienceDataDB = 1
     let workexperienceType = ` `
     let workexperienceDesignationType = ` `
     document.addEventListener('DOMContentLoaded', function () {
       if (workexperienceDataDB == 1) {
 
-$.ajax({
-    url: '/get-workexperience-type',
-    type: 'get',
-    success: function (response) {
-      for (let expType of response) {
-        workexperienceType += `<option value="\${expType.abbr}" data-id="\${expType.id}" >\${expType.name}</option>`
+        $.ajax({
+          url: '/get-workexperience-type',
+          type: 'get',
+          success: function (response) {
+            for (let expType of response) {
+              workexperienceType +=
+                `<option value="\${expType.abbr}" data-id="\${expType.id}" >\${expType.name}</option>`
+            }
+          },
+          error: function (error) {
+            console.log("Error::::::::::::", error);
+          }
+        })
+
+        $.ajax({
+            url: '/get-workexperience-designation-type',
+            type: 'get',
+            success: function (response) {
+              for (let desig of response) {
+                workexperienceDesignationType +=
+                  `<option value="\${desig.name}" data-id="\${desig.id}" >\${desig.name}</option>`
+              }
+            },
+            error: function (error) {
+              console.log("Error::::::::::::", error);
+            }
+          })
+
+          ++workexperienceDataDB;
       }
-    },
-    error: function (error) {
-      console.log("Error::::::::::::", error);
-    }
-  })
+    }, false);
 
-$.ajax({
-    url: '/get-workexperience-designation-type',
-    type: 'get',
-    success: function (response) {
-      for (let desig of response) {
-        workexperienceDesignationType += `<option value="\${desig.name}" data-id="\${desig.id}" >\${desig.name}</option>`
-      }
-    },
-    error: function (error) {
-      console.log("Error::::::::::::", error);
-    }
-  })
-
-  ++workexperienceDataDB;
-}
-}, false);
-
-   function resumeworkexperienceaddbtn() {
+    function resumeworkexperienceaddbtn() {
 
 
-     document.querySelector('.workexperience-data-insert').innerHTML = "";
+      document.querySelector('.workexperience-data-insert').innerHTML = "";
       document.querySelector('.workexperience-modal-insert').classList.remove('d-none');
       document.querySelector('#body').classList.add('d-none');
-      
+
       // let currentDate = getCurrentDate();
-let table = `<div class="position-relative workexperience_delete_btn d-flex" style="cursor: pointer;">
+      let table = `<div class="position-relative workexperience_delete_btn d-flex" style="cursor: pointer;">
 
  <div class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1 container ">
          <div class="row ">
@@ -6817,15 +6599,15 @@ let table = `<div class="position-relative workexperience_delete_btn d-flex" sty
        </div>
 
        `
- document.querySelector('.workexperience-data-insert').insertAdjacentHTML("beforeend", table);
+      document.querySelector('.workexperience-data-insert').insertAdjacentHTML("beforeend", table);
 
 
-   }
+    }
 
 
-   document.querySelector('.workexperience-add-button').addEventListener('click', function () {
+    document.querySelector('.workexperience-add-button').addEventListener('click', function () {
 
-let table = `
+      let table = `
 <div class="position-relative workexperience_delete_btn d-flex" style="cursor: pointer;">
 
 <div class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1 container ">
@@ -6947,10 +6729,10 @@ let table = `
        
       </div>`
 
-document.querySelector('.workexperience-data-insert').insertAdjacentHTML("beforeend", table);
-});
-   
-document.addEventListener('mouseover', function () {
+      document.querySelector('.workexperience-data-insert').insertAdjacentHTML("beforeend", table);
+    });
+
+    document.addEventListener('mouseover', function () {
       let deleteButtonClick = document.querySelectorAll('.delete_btn_workexperience_symbol')
       let deleteQualification = document.querySelectorAll('.workexperience_delete_btn');
       for (let i = 0; i < deleteQualification.length; i++) {
@@ -6965,54 +6747,54 @@ document.addEventListener('mouseover', function () {
         });
       }
     })
- 
-//     document.querySelector('.workExperience-row').addEventListener('change', function (e) {
-//       let target = e.target;
-//       if (target.classList.contains('workExperience-Type')) {
-//         let closestParent = findClosest(e.target, 'workExperience-row').querySelector('.padagogy');
-//         let universityOrOrg = findClosest(e.target, 'workExperience-row').querySelector('.universityOrOrg');
-//         let responseOrSubjetTaught =findClosest(e.target, 'workExperience-row').querySelector('.responseOrSubjetTaught');
-//         let closestParentProgram = findClosest(e.target, 'workExperience-row').querySelector('.program');
-//         if (target.value === 'teach_exp') {
-//           closestParent.classList.remove('d-none');
-//           closestParentProgram.classList.remove('d-none');
-//           universityOrOrg.innerHTML="University / Institute:<span class='required'>*</span>";
-//           responseOrSubjetTaught.innerHTML ="Subject Taught:<span class='required'>*</span>";
 
-//         } else {
-//           closestParent.classList.add('d-none');
-//           closestParentProgram.classList.add('d-none');
-//           universityOrOrg.innerHTML="Organization Name:<span class='required'>*</span>";
-//           responseOrSubjetTaught.innerHTML="keys And Responsibility:<span class='required'>*</span>";  
-//         }
+    //     document.querySelector('.workExperience-row').addEventListener('change', function (e) {
+    //       let target = e.target;
+    //       if (target.classList.contains('workExperience-Type')) {
+    //         let closestParent = findClosest(e.target, 'workExperience-row').querySelector('.padagogy');
+    //         let universityOrOrg = findClosest(e.target, 'workExperience-row').querySelector('.universityOrOrg');
+    //         let responseOrSubjetTaught =findClosest(e.target, 'workExperience-row').querySelector('.responseOrSubjetTaught');
+    //         let closestParentProgram = findClosest(e.target, 'workExperience-row').querySelector('.program');
+    //         if (target.value === 'teach_exp') {
+    //           closestParent.classList.remove('d-none');
+    //           closestParentProgram.classList.remove('d-none');
+    //           universityOrOrg.innerHTML="University / Institute:<span class='required'>*</span>";
+    //           responseOrSubjetTaught.innerHTML ="Subject Taught:<span class='required'>*</span>";
 
-//       }
-//       if (target.classList.contains('designation-title')) {
-//         let closestParent = findClosest(e.target, 'workExperience-row').querySelector('.other');
-//         if (target.value === 'Other') {
-//           closestParent.classList.remove('d-none');
-//         } else {
-//           closestParent.classList.add('d-none');
-//         }
+    //         } else {
+    //           closestParent.classList.add('d-none');
+    //           closestParentProgram.classList.add('d-none');
+    //           universityOrOrg.innerHTML="Organization Name:<span class='required'>*</span>";
+    //           responseOrSubjetTaught.innerHTML="keys And Responsibility:<span class='required'>*</span>";  
+    //         }
 
-//       }
-//       if (target.classList.contains('end_Date')) {
-//         let closestParent = findClosest(target, 'workExperience-row');
-//         let startValue = closestParent.querySelector('.start_Date').value;
-//         let endValue = closestParent.querySelector('.end_Date').value;
-//         let dateDifferenceCount = dateCount(startValue,endValue);
-    
-//         if(dateDifferenceCount>=0){
-//         let dateDifferenceStr = dateDifference(startValue, endValue);
-//         closestParent.querySelector('.durationOfTeaching').value=dateDifferenceStr;
-//         closestParent.querySelector('.startErrorMessage').classList.add('d-none');
-//         }
-//         else{
-//           closestParent.querySelector('.startErrorMessage').classList.remove('d-none');
-//         }
-//       }
-//     })
-   
+    //       }
+    //       if (target.classList.contains('designation-title')) {
+    //         let closestParent = findClosest(e.target, 'workExperience-row').querySelector('.other');
+    //         if (target.value === 'Other') {
+    //           closestParent.classList.remove('d-none');
+    //         } else {
+    //           closestParent.classList.add('d-none');
+    //         }
+
+    //       }
+    //       if (target.classList.contains('end_Date')) {
+    //         let closestParent = findClosest(target, 'workExperience-row');
+    //         let startValue = closestParent.querySelector('.start_Date').value;
+    //         let endValue = closestParent.querySelector('.end_Date').value;
+    //         let dateDifferenceCount = dateCount(startValue,endValue);
+
+    //         if(dateDifferenceCount>=0){
+    //         let dateDifferenceStr = dateDifference(startValue, endValue);
+    //         closestParent.querySelector('.durationOfTeaching').value=dateDifferenceStr;
+    //         closestParent.querySelector('.startErrorMessage').classList.add('d-none');
+    //         }
+    //         else{
+    //           closestParent.querySelector('.startErrorMessage').classList.remove('d-none');
+    //         }
+    //       }
+    //     })
+
     // **************************************************Workexperience Section end*******************************************************
   </script>
 </body>

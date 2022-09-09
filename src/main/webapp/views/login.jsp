@@ -197,6 +197,16 @@
 <body>
   <canvas class="background"></canvas>
 
+  <div class="login-success-alert alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center d-none">
+    <strong>Success!</strong>&nbsp &nbsp You Can Now Login
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+
+  <div class="login-error-alert alert alert-danger alert-dismissible fade show d-flex justify-content-center align-items-center d-none">
+    <strong>Error!</strong>&nbsp &nbsp Invalid Credentials
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+
   <section class="login-wrapper">
     <div class="inner-login-wrapper">
       <div class="row">
@@ -287,6 +297,13 @@
       });
     };
 
+    if(window.location.hash == '#success') {
+      document.querySelector('.login-success-alert').classList.remove('d-none')
+    }
+
+    if(window.location.hash == '#error') {
+      document.querySelector('.login-error-alert').classList.remove('d-none')
+    }
 
     //DYNAMIC CSS
     const cssRoot = document.querySelector(':root');
@@ -304,7 +321,9 @@
 
     let loginButton = document.querySelector('.login-btn')
     let status = 400;
+
     loginButton.addEventListener('click', function (e) {
+      
       document.getElementById('main-loader').classList.remove('d-none')
       e.preventDefault();
 
@@ -333,7 +352,7 @@
             console.log("success")
             location.href = 'http://localhost:8080/dashboard';
           } else {
-            location.href = 'http://localhost:8080/login';
+            location.href = 'http://localhost:8080/login#error';
           }
         })
         .catch(exception => console.log(exception));

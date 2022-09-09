@@ -1,103 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
-</head>
-
-<body>
-  <div class="container" style="width: 400px; margin-top: 200px;">
-    <div class="text-center">
-      <h3>Login Form</h3>
-    </div>
-    <form id="login-form">
-      <input type="text" class="form-control my-5" name="user_id" placeholder="Enter PanCard No.">
-      <input type="email" class="form-control my-5" name="email" placeholder="Enter Email">
-      <input type="password" class="form-control my-5" name="password" placeholder="Enter password">
-      <input type="number" class="form-control my-4 d-none" name="tokenToVerify" id="verify-token-input"
-        placeholder="Please Enter Your Code">
-      <div class="d-flex justify-content-center align-items-center">
-        <button id="login-button" class="btn btn-primary">Login</button>
-        <button id="verify-button" class="btn btn-primary d-none">Verify</button>
-      </div>
-    </form>
-  </div>
-  <script>
-    console.log("Entered")
-    let loginButton = document.getElementById('login-button')
-
-    loginButton.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      let myForm = document.getElementById('login-form')
-      let formData = new FormData(myForm)
-
-      let result = {};
-      for (let entry of formData.entries()) {
-        result[entry[0]] = entry[1];
-      }
-
-      console.log(result)
-
-      fetch('/verify-login', {
-          method: "POST",
-          body: JSON.stringify(result),
-          headers: {
-            "Content-Type": "application/json; charset=UTF-8",
-
-          }
-        })
-        .then(response => response.text())
-        .then(response => {
-          if (response == null) {
-            console.log("Email Not sent")
-          } else {
-            document.getElementById('verify-token-input').classList.remove('d-none')
-            document.getElementById('login-button').classList.add('d-none')
-            document.getElementById('verify-button').classList.remove('d-none')
-          }
-        })
-    })
-
-    let verifyButton = document.getElementById('verify-button')
-    verifyButton.addEventListener('click', function (e) {
-
-      e.preventDefault();
-
-      let tokenToVerify = document.getElementById('verify-token-input').value
-
-      console.log(tokenToVerify)
-
-      fetch('/verify-token', {
-          method: "POST",
-          body: tokenToVerify,
-          headers: {
-            "Content-Type": "application/json; charset=UTF-8",
-
-          }
-        })
-        .then(response => response.text())
-        .then(response => {
-          if (response == "verification success") {
-            console.log("success")
-            location.href = 'http://localhost:8080/dashboard'
-          } else {
-            console.log("Wrong otp")
-          }
-        })
-    })
-  </script>
-</body>
-
-</html> -->
-
-
 <!doctype html>
 <html lang="en">
 
@@ -297,6 +197,17 @@
 <body>
   <canvas class="background"></canvas>
 
+
+  <div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center d-none">
+    <strong>Success!</strong>&nbsp &nbsp An OTP has been Sent to your Email Address
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+
+  <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center align-items-center d-none">
+    <strong>Error!</strong>&nbsp &nbsp Invalid OTP
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+
   <section class="login-wrapper">
     <div class="inner-login-wrapper">
       <div class="row">
@@ -316,26 +227,26 @@
               <div class="cust-input-prepend">
                 <i class="fa-solid fa-user"></i>
               </div>
-              <input type="text" name="user_id" placeholder="Pan Card No." required>
+              <input type="text" id="pannumber" name="user_id" placeholder="Pan Card No." required>
             </div>
             <div class="cust-btn-group mt-3 mb-3">
               <div class="cust-input-prepend">
                 <i class="fas fa-envelope"></i>
               </div>
-              <input type="text" name="email" placeholder="Email id" required>
+              <input type="text" id="email" name="email" placeholder="Email id" required>
             </div>
             <div class="cust-btn-group mb-3">
               <div class="cust-input-prepend">
                 <i class="fas fa-key"></i>
               </div>
-              <input type="password" name="password" placeholder="Password" required>
+              <input type="password" id="password1" name="password" placeholder="Password" required>
               <input type="hidden" name="devicecheck" id="devicecheck">
             </div>
             <div class="cust-btn-group mb-3">
               <div class="cust-input-prepend">
                 <i class="fas fa-key"></i>
               </div>
-              <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+              <input type="password" id="password2" name="confirmPassword" placeholder="Confirm Password" required>
             </div>
             <div id="token-div" class="cust-btn-group mb-3 d-none">
               <div class="cust-input-prepend">
@@ -447,6 +358,7 @@
     let loginButton = document.querySelector('.register-btn')
     let status = 400;
     let result = {};
+    
     loginButton.addEventListener('click', function (e) {
 
       e.preventDefault();
@@ -479,10 +391,16 @@
               document.getElementById('main-loader').classList.add('d-none');
               document.getElementById('token-div').classList.remove('d-none');
               document.querySelector('.register-btn').classList.add('d-none');
+              document.querySelector('.alert-success').classList.remove('d-none');
+              document.querySelector('#pannumber').classList.add('d-none');
+              document.querySelector('#email').classList.add('d-none');
+              document.querySelector('#password1').classList.add('d-none');
+              document.querySelector('#password2').classList.add('d-none');
               document.querySelector('.verify-button').classList.remove('d-none');
             } else {
               document.getElementById('main-loader').classList.add('d-none');
-              alert("Error in sending Email, please check your email properly!")
+              document.querySelector('.alert-danger').classList.remove('d-none');
+             
             }
           })
           .catch(function () {
@@ -497,6 +415,7 @@
 
     let verifyButton = document.querySelector('.verify-button')
     verifyButton.addEventListener('click', function (e) {
+      document.getElementById('main-loader').classList.remove('d-none');
 
       e.preventDefault();
 
@@ -516,12 +435,14 @@
         .then(response => {
           if (status === 200) {
             console.log("success")
-            location.href = 'http://localhost:8080/login'
+            location.href = 'http://localhost:8080/login#success'
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert("Wrong OTP")
           }
         })
         .catch(function (error) {
+          document.getElementById('main-loader').classList.add('d-none');
           alert("error in fetch api")
         })
     })

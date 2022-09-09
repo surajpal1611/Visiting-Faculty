@@ -21,33 +21,44 @@
 </head>
 
 <body>
-    <div class="modal fade" id="view-resume-modal" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">View Resume</h5>
-                <button type="button" style="border: none;" class="modal2-cancel-button" data-dismiss="modal"
-                    aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal2-body">
-              
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary modal2-cancel-button"
-                    data-dismiss="modal">Close</button>
+
+    <div class="modal fade" id="view-resume-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">View Resume</h5>
+                    <button type="button" style="border: none;" class="modal2-cancel-button" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal2-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary modal2-cancel-button"
+                        data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
     <jsp:include page="left-sidebar.jsp" />
 
     <main class="main">
         <jsp:include page="header.jsp" />
 
         <div class="main-content">
+
+            <!-- Error Alert -->
+            <div class="validation-alert alert alert-danger alert-dismissible fade show d-none">
+                <strong>Error!</strong>Enter Valid Information
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            <div class="no-data-alert alert alert-danger alert-dismissible fade show d-none">
+                <strong>Error!</strong>Enter Valid Information
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
 
             <h3 class="text-center">Search Visiting Faculty</h3>
             <div class="row px-lg-5 mx-lg-5">
@@ -126,7 +137,7 @@
                     </div>
                 </div>
             </div>
-      
+
     </main>
 
     <script src="/js/jquery.min.js"></script>
@@ -160,6 +171,8 @@
                     success: function (response) {
                         let data = JSON.parse(response.value)
                         console.log(data)
+                        document.querySelector('.validation-alert').classList.remove('d-none')
+
 
                         if (data.resume_details != null) {
 
@@ -205,7 +218,6 @@
                 })
                 console.log(value);
             }
-
 
             function searchFunctionByName(value) {
                 $.ajax({
@@ -268,9 +280,6 @@
                 console.log(value);
             }
 
-
-
-
             $('#search-by-id').on('keyup', function () {
                 let searchByIdValue = document.getElementById('search-by-id').value
                 console.log(searchByIdValue)
@@ -279,6 +288,8 @@
                     clearTimeout(timeout)
                     const value = this.value
                     timeout = setTimeout(() => searchFunction(value), 2000)
+                } else if (searchByIdValue.length > 5 && searchByIdValue.length < 10) {
+                    document.querySelector('.validation-alert').classList.remove('d-none')
                 }
 
             })
@@ -326,7 +337,7 @@
                     contentType: false,
                     processData: false,
                     success: function (response) {
-                      location.href = '/resume?resume_lid='+response
+                        location.href = '/resume?resume_lid=' + response
                     },
                     error: function (error) {
                         console.log('error', error)
@@ -334,19 +345,19 @@
                 })
             })
 
-            $(document).on('click','.view-resume-icon', function() {
-                
+            $(document).on('click', '.view-resume-icon', function () {
+
                 $("#view-resume-modal").modal("toggle");
                 let tr = $(this).closest('tr')
-                let id = tr.data('userlid') 
+                let id = tr.data('userlid')
                 $.ajax({
-                    url : '/get-resume-by-user?user_id=' + id,
-                    type : 'POST' ,
-                    success : function(response) {
+                    url: '/get-resume-by-user?user_id=' + id,
+                    type: 'POST',
+                    success: function (response) {
                         let data = JSON.parse(response.value)
 
                         console.log(data)
-                        
+
 
                         if (data.resume_details != null) {
 
@@ -382,35 +393,35 @@
                                     </table>
                                 </div>
                                        `
-                                document.querySelector('.modal2-body').innerHTML = ""
+                            document.querySelector('.modal2-body').innerHTML = ""
                             $('.modal2-body').html(tableToAppend)
                         }
                     },
-                    error : function(error) {
+                    error: function (error) {
 
                         console.log("error", error)
                     }
                 })
-                
+
             })
 
-        //  $(document).on('click','.get-resume-icon',function() {
-        //     let tr = $(this).closest('tr')
+            //  $(document).on('click','.get-resume-icon',function() {
+            //     let tr = $(this).closest('tr')
 
-        //     let resume_lid = tr.data('resumelid')
-            
-        //     $.ajax({
-        //         url : "/resume?resume_lid=" + resume_lid,
-        //         type : 'POST',
-        //         success : function(response) {
+            //     let resume_lid = tr.data('resumelid')
 
-        //             location.href = '/get-user-details'
-        //         },
-        //         error : function(response) {
+            //     $.ajax({
+            //         url : "/resume?resume_lid=" + resume_lid,
+            //         type : 'POST',
+            //         success : function(response) {
 
-        //         }
-        //     })
-        //  })
+            //             location.href = '/get-user-details'
+            //         },
+            //         error : function(response) {
+
+            //         }
+            //     })
+            //  })
         })
     </script>
 </body>
