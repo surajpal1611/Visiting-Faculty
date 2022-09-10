@@ -4018,12 +4018,11 @@
       })
 
 
-<<<<<<< HEAD
+
 
 if(resumeinfo.resume_experience != null)
 {
-=======
->>>>>>> 7caeb0deceef4a30cbfc774cb962a18ca2d932f4
+
       document.querySelector('.workexperience-div-wrapper').addEventListener('mouseover', function () {
 
         for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
@@ -4736,24 +4735,20 @@ if(resumeinfo.resume_experience != null)
 
       let firstName = personalDetailFirstNameValidation(result.f_name);
       let lastName = personalDetailLastNameValidation(result.l_name);
-<<<<<<< HEAD
+
       //let profilePhoto1 = personalDetailProfilePhotoValidation(document.getElementById("photo").value);
-=======
->>>>>>> 7caeb0deceef4a30cbfc774cb962a18ca2d932f4
+
       let DOB = personalDetailDateOfBirthValidation(result.date_of_birth);
       let gender = personalDetailGenderValidation(result.gender);
       let contactNumber = personalDetailContactNumberValidation(result.contact_number);
       let temporaryContact = personalDetailTemporaryContactValidation(result.temp_contact_number);
-<<<<<<< HEAD
+
       //let pancard = personalDetailPancardValidation(result.pan_number);
       //let pancardPhoto = personalDetailPancardPhotoValidation(document.getElementById("pan-photo").value);
       let email = personalDetailEmailValidation(result.email);
       let aadhar = personalDetailAadharValidation(result.aadhar_number);
       //let aadharPhoto1 = personalDetailAadharPhotoValidation(document.getElementById("aadhar-photo").value);
-=======
-      let email = personalDetailEmailValidation(result.email);
-      let aadhar = personalDetailAadharValidation(result.aadhar_number);
->>>>>>> 7caeb0deceef4a30cbfc774cb962a18ca2d932f4
+
       let address = personalDetailAddressValidation(result.permanent_address);
       let country = personalDetailCountryValidation(result.nationality);
       let tempContact = (result.temp_contact_number);
