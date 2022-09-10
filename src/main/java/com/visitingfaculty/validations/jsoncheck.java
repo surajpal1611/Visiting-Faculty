@@ -16,43 +16,6 @@ public class jsoncheck {
     UserService userService;
 
     // **************************************************************************************************---->For
-    // Award Section//
-
-    public String JsonStringValues(String JsonString) {
-        Boolean check = false;
-        String replacedData = null;
-        JSONObject jsonString = new JSONObject(JsonString);
-        JSONArray award = jsonString.getJSONArray("insert_award");
-        for (int i = 0; i < award.length(); i++) {
-            String title = award.getJSONObject(i).getString("title");
-            String organization_name = award.getJSONObject(i).getString("organization_name");
-            String organization_type_lid = award.getJSONObject(i).getString("organization_type_lid");
-            String discription = award.getJSONObject(i).getString("description");
-            String achivement_date = award.getJSONObject(i).getString("achievement_date");
-            String url_path = award.getJSONObject(i).getString("url_path");
-            String replacedPhoto = userService.uploadPhotos(url_path);
-
-            System.out.println("REplacedPhoto>>>>>>>> " + replacedPhoto);
-            replacedData = JsonString.replace(url_path, replacedPhoto);
-
-            Boolean titlecheck = checkVal.CheckWithNoSpectailChar(title);
-            Boolean organizationcheck = checkVal.CheckWithNoSpectailChar(organization_name);
-            Boolean discriptioncheck = checkVal.checkLengthThree(discription);
-
-            if (titlecheck == true && organizationcheck == true && discriptioncheck == true) {
-                check = true;
-                JsonString = replacedData;
-            }
-        }
-        if (check == true) {
-            System.out.println("JSON STring Converted" + JsonString);
-            return JsonString;
-        } else {
-            return null;
-        }
-    }
-
-    // **************************************************************************************************---->For
     // Personal Details
     public String UserJsonCheck(String JsonString) {
         Boolean check = false;
@@ -140,8 +103,8 @@ public class jsoncheck {
 
     }
 
-    // **************************************************************************************************---->For
-    // Qualification Details
+    // **************************************************************************************---->For
+    // // Qualification Details
     public String qualificationCheck(String JsonString) {
         Boolean check = false;
         String replacedData = null;
@@ -189,7 +152,51 @@ public class jsoncheck {
 
     }
 
-    // *******************************************************************************---->For
+    // **************************************************************************************************---->For
+    // Award Section//
+
+    public String JsonStringValues(String JsonString) {
+        Boolean check = false;
+        String replacedData = null;
+        JSONObject jsonString = new JSONObject(JsonString);
+        JSONArray award = jsonString.getJSONArray("insert_award");
+        for (int i = 0; i < award.length(); i++) {
+            String title = award.getJSONObject(i).getString("title");
+            String organization_name = award.getJSONObject(i).getString("organization_name");
+            String organization_type_lid = award.getJSONObject(i).getString("organization_type_lid");
+            String discription = award.getJSONObject(i).getString("description");
+            String achivement_date = award.getJSONObject(i).getString("achievement_date");
+            String url_path = award.getJSONObject(i).isNull("url_path") ? "null"
+                    : award.getJSONObject(i).getString("url_path");
+            if (!url_path.equals("null")) {
+
+                String replacedPhoto = userService.uploadPhotos(url_path);
+
+                System.out.println("REplacedPhoto>>>>>>>> " + replacedPhoto);
+                replacedData = JsonString.replace(url_path, replacedPhoto);
+            }
+
+            Boolean titlecheck = checkVal.CheckWithNoSpectailChar(title);
+            Boolean organizationcheck = checkVal.CheckWithNoSpectailChar(organization_name);
+            Boolean discriptioncheck = checkVal.checkLengthThree(discription);
+
+            if (titlecheck == true && organizationcheck == true && discriptioncheck == true) {
+                check = true;
+                if (!url_path.equals("null")) {
+
+                    JsonString = replacedData;
+                }
+            }
+        }
+        if (check == true) {
+            System.out.println("JSON STring Converted" + JsonString);
+            return JsonString;
+        } else {
+            return null;
+        }
+    }
+
+    // *******************************************************************************---->For//
     // Research Details
     public String researchJsonCheck(String JsonString) {
         Boolean check = false;
@@ -201,10 +208,15 @@ public class jsoncheck {
             String volume_year = research.getJSONObject(i).getString("volume_year");
             String number = research.getJSONObject(i).getString("description");
             String category = research.getJSONObject(i).getString("category");
-            String url_path = research.getJSONObject(i).getString("research_url_path");
-            String replacedPhoto = userService.uploadPhotos(url_path);
+            String url_path = research.getJSONObject(i).isNull("research_url_path") ? "null"
+                    : research.getJSONObject(i).getString("research_url_path");
 
-            replacedData = JsonString.replace(url_path, replacedPhoto);
+            if (!url_path.equals("null")) {
+
+                String replacedPhoto = userService.uploadPhotos(url_path);
+
+                replacedData = JsonString.replace(url_path, replacedPhoto);
+            }
 
             Boolean journal_nameCheck = checkVal.checkLengthThree(journal_name);
             Boolean volume_yearCheck = checkVal.yearCheck(volume_year);
@@ -221,7 +233,10 @@ public class jsoncheck {
             if (journal_nameCheck == true && volume_yearCheck == true && numberCheck == true && categoryCheck == true
                     && url_pathCheck == true) {
                 check = true;
-                JsonString = replacedData;
+                if (!url_path.equals("null")) {
+
+                    JsonString = replacedData;
+                }
 
             } else {
                 check = false;
@@ -247,11 +262,16 @@ public class jsoncheck {
             String publicationrole = publication.getJSONObject(k).getString("publication_role");
             String title = publication.getJSONObject(k).getString("title");
             String publisher = publication.getJSONObject(k).getString("publisher");
-            String publication_url_path = publication.getJSONObject(k).getString("publication_url_path");
+            String publication_url_path = publication.getJSONObject(k).isNull("publication_url_path") ? "null"
+                    : publication.getJSONObject(k).getString("publication_url_path");
             String year_of_publication = publication.getJSONObject(k).getString("year_of_publication");
-            String replacedPhoto = userService.uploadPhotos(publication_url_path);
 
-            replacedData = jsonString.replace(publication_url_path, replacedPhoto);
+            if (!publication_url_path.equals("null")) {
+
+                String replacedPhoto = userService.uploadPhotos(publication_url_path);
+
+                replacedData = jsonString.replace(publication_url_path, replacedPhoto);
+            }
 
             Boolean publicationroleCheck = checkVal.checkLengthThree(publicationrole);
             Boolean titleCheck = checkVal.checkLengthThree(title);
@@ -263,7 +283,10 @@ public class jsoncheck {
                     && publication_url_pathCheck == true
                     && year_of_publicationCheck == true) {
                 check = true;
-                jsonString = replacedData;
+                if (!publication_url_path.equals("null")) {
+
+                    jsonString = replacedData;
+                }
 
             } else {
                 check = false;
@@ -287,18 +310,24 @@ public class jsoncheck {
             String topic_of_study = certificate.getJSONObject(i).getString("topic_of_study");
             String institute = certificate.getJSONObject(i).getString("institute");
             String year_of_passing = certificate.getJSONObject(i).getString("year_of_passing");
-            String url_path = certificate.getJSONObject(i).getString("url_path");
-            String replacedPhoto = userService.uploadPhotos(url_path);
+            String url_path = certificate.getJSONObject(i).isNull("url_path") ? "null"
+                    : certificate.getJSONObject(i).getString("url_path");
+            if (!url_path.equals("null")) {
 
-            replacedData = JsonString.replace(url_path, replacedPhoto);
+                String replacedPhoto = userService.uploadPhotos(url_path);
+
+                replacedData = JsonString.replace(url_path, replacedPhoto);
+            }
             Boolean topic_of_studyCheck = checkVal.checkLengthThree(topic_of_study);
             Boolean instituteCheck = checkVal.checkLengthThree(institute);
             Boolean year_of_passingCheck = checkVal.yearCheck(year_of_passing);
 
             if (topic_of_studyCheck == true && instituteCheck == true && year_of_passingCheck == true) {
                 check = true;
-                JsonString = replacedData;
-                System.out.println(JsonString);
+                if (!url_path.equals("null")) {
+
+                    JsonString = replacedData;
+                }
             }
 
         }

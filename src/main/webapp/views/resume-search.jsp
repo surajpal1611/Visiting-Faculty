@@ -55,8 +55,8 @@
                 <strong>Error!</strong>Enter Valid Information
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
-            <div class="no-data-alert alert alert-danger alert-dismissible fade show d-none">
-                <strong>Error!</strong>Enter Valid Information
+            <div class="no-data-alert alert alert-info alert-dismissible fade show d-none">
+                <strong>Error!</strong>No Data Available
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
 
@@ -171,8 +171,7 @@
                     success: function (response) {
                         let data = JSON.parse(response.value)
                         console.log(data)
-                        document.querySelector('.validation-alert').classList.remove('d-none')
-
+                        document.querySelector('.validation-alert').classList.add('d-none')
 
                         if (data.resume_details != null) {
 
@@ -213,7 +212,8 @@
 
                     },
                     error: function (error) {
-                        console.log("Error");
+                        document.querySelector('.validation-alert').classList.remove('d-none')
+
                     }
                 })
                 console.log(value);
@@ -229,6 +229,7 @@
                     success: function (response) {
                         let data = JSON.parse(response.value)
                         console.log(data)
+                        document.querySelector('.no-data-alert').classList.add('d-none')
 
 
                         if (data.resume_details != null) {
@@ -269,11 +270,15 @@
                                                         `
 
                             $('.table-appending-div').html(tableToAppend)
+                        } else {
+                        document.querySelector('.no-data-alert').classList.remove('d-none')
+                        $('.table-appending-div').html("")
                         }
 
 
                     },
                     error: function (error) {
+                        document.querySelector('.no-data-alert').classList.remove('d-none')
                         console.log("Error");
                     }
                 })
@@ -293,7 +298,6 @@
                 }
 
             })
-
 
             $('#search-by-name').on('keyup', function () {
 
@@ -357,7 +361,6 @@
                         let data = JSON.parse(response.value)
 
                         console.log(data)
-
 
                         if (data.resume_details != null) {
 

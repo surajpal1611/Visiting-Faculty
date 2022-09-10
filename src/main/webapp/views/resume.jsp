@@ -1353,7 +1353,7 @@
 
                   </div>
                 </div>
-                  <div class="d-none qualification-edit-box d-flex justify-content-center align-items-center" data-edit_lid = "\${qual.resume_qualification_lid}">
+                  <div class="d-none qualification-edit-box d-flex justify-content-center align-items-center" data-qualificationid = "\${qual.resume_qualification_lid}">
                            <i class="fa-solid fa-pen fa-2x text-white "></i>
                           </div>
                         </div>
@@ -1557,7 +1557,7 @@
 
                   </div>
                   </div>
-                  <div class="d-none award-edit-box d-flex justify-content-center align-items-center">
+                  <div class="d-none award-edit-box d-flex justify-content-center align-items-center" data-awardid="\${award.resume_achievement_lid}">
                   <i class="fa-solid fa-pen fa-2x text-white "></i>
                     </div>
                     </div>
@@ -1629,10 +1629,11 @@
                   </div>
                 
               </div>
-              <div class="d-none publication-edit-box d-flex justify-content-center align-items-center">
+              <div class="d-none publication-edit-box d-flex justify-content-center align-items-center" data-publicationid="\${public.resume_achievement_lid}">
             <i class="fa-solid fa-pen fa-2x text-white "></i>
           </div>
           </div>
+          <hr>
               
               `
 
@@ -1703,10 +1704,12 @@
 
                   </div>
                 </div>
-                <div class="d-none research-edit-box d-flex justify-content-center align-items-center">
+                <div class="d-none research-edit-box d-flex justify-content-center align-items-center" data-researchid="\${research.resume_achievement_lid}">
             <i class="fa-solid fa-pen fa-2x text-white "></i>
           </div>
           </div>
+          <hr>
+
                 `
 
           }
@@ -1793,10 +1796,12 @@
 
                   </div>
                 </div>
-                <div class="d-none certification-edit-box d-flex justify-content-center align-items-center">
+                <div class="d-none certification-edit-box d-flex justify-content-center align-items-center" data-certificationid="\${qual.resume_qualification_lid}">
             <i class="fa-solid fa-pen fa-2x text-white "></i>
           </div>
           </div>
+          <hr>
+
                 `
             }
 
@@ -1908,7 +1913,7 @@
             document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
           })
         }
-        
+
 
         if (resumeinfo.personal_details != null) {
 
@@ -2128,7 +2133,6 @@
           photoArray[2] = panphotobase64
         }
       }
-
       setTimeout(function () {
 
         console.log(photoArray)
@@ -2204,11 +2208,9 @@
         fetchRes.then(success => {
 
           if (success.status == 200) {
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.personal-details-modal-insert').classList.add('d-none')
-          }
-          else
-          {
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.personal-details-modal-insert').classList.add('d-none')
+          } else {
             alert('Check Data');
           }
         })
@@ -2526,7 +2528,6 @@
             photoArray[i] = qualificationPhotoBase64
           }
         }
-
 
         setTimeout(function () {
 
@@ -2878,7 +2879,7 @@
 
           let recievedAwardDate = changeDateFormat(achievement_date)
           div += `
-  <div id="award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
+           <div id="award-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
               <div class="row">
 
                 <div class="col-12 col-md-6 col-lg-6 col-sm-12">
@@ -3187,7 +3188,7 @@
 
 
           div += `   
-<div class=" px-3 px-sm-4 px-lg-4 mt-1">
+      <div class=" px-3 px-sm-4 px-lg-4 mt-1">
             <div class="row">
            <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                 <div class="row pt-lg-3">
@@ -3446,10 +3447,8 @@
             photoArray[j] = researchPhotoBase64
           }
         }
-        console.log(photoArray[j])
 
         setTimeout(function () {
-
 
           obj = {
             resume_lid: resume_lid,
@@ -3932,8 +3931,8 @@
         console.log(bankDetailsJson)
         let bank_detail = {};
         bank_detail.user_lid = '${user_lid}',
-        bank_detail.resume_lid = resume_lid,
-        bank_detail.bank_name = document.querySelector('#bank-name-insert').value;
+          bank_detail.resume_lid = resume_lid,
+          bank_detail.bank_name = document.querySelector('#bank-name-insert').value;
         bank_detail.branch_name = document.querySelector('#bank-branch-insert').value;
         bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code-insert').value;
         bank_detail.micr_code = document.querySelector('#bank-micr-code-insert').value;
@@ -3980,7 +3979,6 @@
 
 
     document.querySelector('#body').addEventListener('click', function (e) {
-      console.log('target', e.target);
       if (e.target.classList.contains('addbtn-qualification') || findClosest(e.target, 'addbtn-qualification')) {
         resumequailficationaddbtn();
       }
@@ -4000,7 +3998,7 @@
         resumecertificationaddbtn();
       }
       if (e.target.classList.contains('certification-edit-box') || findClosest(e.target, 'addbtn-certification')) {
-        resumecertificationEditbtn();
+        resumecertificationEditbtn(e.target.dataset.certificationid);
       }
       if (e.target.classList.contains('personalinsert') || findClosest(e.target, 'addbtn-certification')) {
         personalAddButton()
@@ -4041,8 +4039,6 @@
         }
 
       })
-
-
 
 
       document.querySelector('.workexperience-div-wrapper').addEventListener('mouseover', function () {
@@ -4187,9 +4183,8 @@
 
                 if (resumeinfo.resume_qualification != null) {
                   for (qualedit of resumeinfo.resume_qualification) {
-                    if(qualedit.qualification_type_lid != 4)
-                    {
-                    let table = `
+                    if (qualedit.qualification_type_lid != 4) {
+                      let table = `
                     <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
                       <div class="container">
                     <div class="row qualification-row"  data-lid = "\${qualedit.resume_qualification_lid}" >
@@ -4274,8 +4269,8 @@
                             </div>      
                     </div>`
 
-                    document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
-                  }
+                      document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
+                    }
                   }
                 }
 
@@ -4296,7 +4291,7 @@
 
       document.querySelector('#qualification-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'qualification-item').querySelector('.qualification-edit-box')) {
-          document.querySelector('.qualification-data').innerHTML= "";
+          document.querySelector('.qualification-data').innerHTML = "";
           editQualificationDetail()
         }
       })
@@ -4411,13 +4406,15 @@
 
       //************************************Award Section Start******************************************************************
 
-      function editAwardDetail() {
+      function editAwardDetail(id) {
 
         document.getElementById('publication-award-div-update').innerHTML = ""
         if (resumeinfo.resume_achievement != null) {
           for (awardedit of resumeinfo.resume_achievement) {
+            if (awardedit.resume_achievement_lid == id) {
 
-            let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
+
+              let table = `  <div class="position-relative award_delete_btn d-flex" style="cursor: pointer;">  
         <div class="container">   
       <div id="publication-award-div" class="bg-white">
           <div id="award-display-div" class="award-rows px-3 px-sm-4 px-lg-4 mt-1" data-awardlid = "\${awardedit.resume_achievement_lid}">
@@ -4484,7 +4481,9 @@
         </div>
         </div> 
        `
-            document.getElementById('publication-award-div-update').insertAdjacentHTML("beforeend", table);
+              document.getElementById('publication-award-div-update').insertAdjacentHTML("beforeend", table);
+            }
+
           }
         }
         document.getElementById('body').classList.add('d-none');
@@ -4493,19 +4492,21 @@
 
       document.querySelector('#award-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'award-item').querySelector('.award-edit-box')) {
-          document.querySelector('#publication-award-div-update').innerHTML= "";
-          editAwardDetail()
+          document.querySelector('#publication-award-div-update').innerHTML = "";
+          editAwardDetail(e.target.dataset.awardid)
         }
       })
 
 
       //************************************Publication Section Start************************************************************
 
-      function editPublicationDetail() {
+      function editPublicationDetail(id) {
 
         if (resumeinfo.resume_publication != null) {
           for (pubedit of resumeinfo.resume_publication) {
-            let table = ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
+            if (pubedit.resume_achievement_lid == id) {
+
+              let table = ` <div class="position-relative publication_delete_btn d-flex" style="cursor: pointer;">
             <div class="container">
           
           <div class="publication-row px-3 px-sm-4 px-lg-4 mt-1" data-publicationlid = "\${pubedit.resume_achievement_lid}">
@@ -4570,7 +4571,9 @@
       </div>
           </div>
         `
-            document.getElementById('publication-modal-appending-div').insertAdjacentHTML("beforeend", table);
+              document.getElementById('publication-modal-appending-div').insertAdjacentHTML("beforeend", table);
+            }
+
           }
         }
         document.getElementById('body').classList.add('d-none');
@@ -4580,19 +4583,21 @@
       document.querySelector('#publication-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'publication-item').querySelector('.publication-edit-box')) {
           document.querySelector('#publication-modal-appending-div').innerHTML = "";
-          editPublicationDetail()
+          editPublicationDetail(e.target.dataset.publicationid)
         }
       })
 
       //************************************Research Section Start************************************************************
 
-      function editResearchBox() {
+      function editResearchBox(id) {
 
         if (resumeinfo.resume_research) {
           for (researchedit of resumeinfo.resume_research) {
-            let table = ` 
-      <div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
-      <div  class="research-row px-3 px-sm-4 px-lg-4 mt-1 bg-white container" data-researchlid="\${researchedit.resume_achievement_lid}">
+            if (researchedit.resume_achievement_lid == id) {
+
+              let table = ` 
+          <div class="position-relative research_delete_btn d-flex" style="cursor: pointer;"> 
+          <div  class="research-row px-3 px-sm-4 px-lg-4 mt-1 bg-white container" data-researchlid="\${researchedit.resume_achievement_lid}">
             <div class="row">
 
               <div class="col-12 col-md-12 col-lg-6 col-sm-12">
@@ -4643,10 +4648,9 @@
              </div>
         </div>`
 
+              document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
+            }
 
-
-
-            document.getElementById('research-data').insertAdjacentHTML("beforeend", table);
 
           }
         }
@@ -4656,8 +4660,8 @@
 
       document.querySelector('#research-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'research-item').querySelector('.research-edit-box')) {
-          document.querySelector('#research-data').innerHTML= "";
-          editResearchBox()
+          document.querySelector('#research-data').innerHTML = "";
+          editResearchBox(e.target.dataset.researchid)
         }
       })
 
@@ -4742,40 +4746,23 @@
 
       let firstName = personalDetailFirstNameValidation(result.f_name);
       let lastName = personalDetailLastNameValidation(result.l_name);
-      let profilePhoto1 = personalDetailProfilePhotoValidation(document.getElementById("photo").value);
       let DOB = personalDetailDateOfBirthValidation(result.date_of_birth);
       let gender = personalDetailGenderValidation(result.gender);
       let contactNumber = personalDetailContactNumberValidation(result.contact_number);
       let temporaryContact = personalDetailTemporaryContactValidation(result.temp_contact_number);
-      // let pancard = personalDetailPancardValidation(result.pan_number);
-      let pancardPhoto = personalDetailPancardPhotoValidation(document.getElementById("pan-photo").value);
       let email = personalDetailEmailValidation(result.email);
       let aadhar = personalDetailAadharValidation(result.aadhar_number);
-      let aadharPhoto1 = personalDetailAadharPhotoValidation(document.getElementById("aadhar-photo").value);
       let address = personalDetailAddressValidation(result.permanent_address);
       let country = personalDetailCountryValidation(result.nationality);
       let tempContact = (result.temp_contact_number);
       let tempemail = tempemailvalidation(result.temp_email);
 
-      if (!firstName || !lastName || !profilePhoto1 || !gender || !contactNumber || !email || !
-        pancardPhoto || !aadhar || !aadharPhoto1 || !address || !
+      if (!firstName || !lastName || !gender || !contactNumber || !email || !aadhar || !address || !
         country || !DOB || !tempemail) {
         return;
       }
 
-      if (pancardPhoto.length != 0) {
-        document.getElementById('pancard-photo').firstElementChild.classList.remove('fa-ban')
-        document.getElementById('pancard-photo').firstElementChild.classList.remove('text-danger')
-        document.getElementById('pancard-photo').firstElementChild.classList.add('fa-image')
-        document.getElementById('pancard-photo').firstElementChild.classList.add('text-success')
-      }
 
-      if (aadharPhoto1.length != 0) {
-        document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('fa-ban')
-        document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('text-danger')
-        document.getElementById('aadhar-card-photo').firstElementChild.classList.add('fa-image')
-        document.getElementById('aadhar-card-photo').firstElementChild.classList.add('text-success')
-      }
 
       let personalDetailsData = {
         "insert_user_personal_details": {
@@ -4795,6 +4782,10 @@
           let profilePhotoBase64 = evt.target.result;
           photoArray[0] = profilePhotoBase64
         }
+      } else {
+        setTimeout(function () {
+          photoArray[0] = null
+        }, 1000)
       }
 
       let aadharPhoto = document.getElementById("aadhar-photo").files[0]
@@ -4805,6 +4796,10 @@
           let aadharPhotobase64 = evt.target.result;
           photoArray[1] = aadharPhotobase64
         }
+      } else {
+        setTimeout(function () {
+          photoArray[1] = null
+        }, 1000)
       }
 
       let panPhoto = document.getElementById("pan-photo").files[0]
@@ -4815,6 +4810,10 @@
           let panphotobase64 = evt.target.result;
           photoArray[2] = panphotobase64
         }
+      } else {
+        setTimeout(function () {
+          photoArray[2] = null
+        }, 1000)
       }
 
       setTimeout(function () {
@@ -4975,10 +4974,11 @@
         } else if (checkPercentile == false) {
           qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
           return;
-        } else if (checkCertificate == false) {
-          qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
-          return;
         }
+        //  else if (checkCertificate == false) {
+        //   qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
+        //   return;
+        // }
 
 
 
@@ -5013,6 +5013,10 @@
             let qualificationPhotoBase64 = evt.target.result;
             photoArray[i] = qualificationPhotoBase64
           }
+        } else {
+          setTimeout(function () {
+            photoArray[i] = null
+          }, 1000)
         }
 
 
@@ -5145,8 +5149,6 @@
 
     //*************************************Award-modal JS****************************************
 
-
-
     document.querySelector("#award-cancel-button").addEventListener('click', function () {
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.award-modal').classList.add('d-none');
@@ -5223,10 +5225,11 @@
         } else if (checkorganization_type_lid == false) {
           vjstableelement[i].querySelector('.awardOrganizationType').classList.add('input-border');
           return;
-        } else if (checkurl_path == false) {
-          vjstableelement[i].querySelector('.awardCertificationImage').classList.add('input-border');
-          return;
         }
+        //  else if (checkurl_path == false) {
+        //   vjstableelement[i].querySelector('.awardCertificationImage').classList.add('input-border');
+        //   return;
+        // }
 
         let photoArray = []
 
@@ -5238,6 +5241,10 @@
             let awardPhotoBase64 = evt.target.result;
             photoArray[i] = awardPhotoBase64
           }
+        } else {
+          setTimeout(function () {
+            photoArray[i] = null
+          }, 1000)
         }
 
 
@@ -5399,10 +5406,11 @@
         } else if (checkPublicationBookTitle == false) {
           publicationRow[i].querySelector('.book-title').classList.add('input-border');
           return;
-        } else if (checkPublicationCertificate == false) {
-          publicationRow[i].querySelector('.publication-certification').classList.add('input-border');
-          return;
         }
+        // else if (checkPublicationCertificate == false) {
+        //   publicationRow[i].querySelector('.publication-certification').classList.add('input-border');
+        //   return;
+        // }
 
         let photoArray = []
 
@@ -5414,6 +5422,10 @@
             let publicationPhotoBase64 = evt.target.result;
             photoArray[i] = publicationPhotoBase64
           }
+        } else {
+          setTimeout(function () {
+            photoArray[i] = null
+          }, 1000)
         }
 
         setTimeout(function () {
@@ -5434,7 +5446,7 @@
 
 
           div += `   
-  <div class=" px-3 px-sm-4 px-lg-4 mt-1">
+         <div class=" px-3 px-sm-4 px-lg-4 mt-1">
                   <div class="row">
                  <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
@@ -5500,7 +5512,6 @@
     })
 
 
-
     document.addEventListener('mouseover', function () {
       let deleteButtonClick = document.querySelectorAll('.delete_btn_publication_symbol')
       let deletepublication = document.querySelectorAll('.publication_delete_btn');
@@ -5554,7 +5565,6 @@
 
 
         let research__lid = researchTableElem[j].dataset.researchlid
-        console.log("RESEARCH>>>>>>>>", research__lid)
         let researchCertificateSRC = researchTableElem[j].querySelector('.research-certificate-preview').src;
 
 
@@ -5595,6 +5605,10 @@
             let researchPhotoBase64 = evt.target.result;
             photoArray[j] = researchPhotoBase64
           }
+        } else {
+          setTimeout(function () {
+            photoArray[j] = null
+          }, 1000)
         }
         console.log(photoArray[j])
 
@@ -5754,10 +5768,11 @@
         } else if (checkYOP == false) {
           certificationRow[i].querySelector('.certification-YOP').classList.add('input-border');
           return;
-        } else if (checkCertification == false) {
-          certificationRow[i].querySelector('.certificate-photo').classList.add('input-border');
-          return;
         }
+        // else if (checkCertification == false) {
+        //   certificationRow[i].querySelector('.certificate-photo').classList.add('input-border');
+        //   return;
+        // }
 
         let photoArray = []
 
@@ -5769,6 +5784,10 @@
             let professionalPhotoBase64 = evt.target.result;
             photoArray[i] = professionalPhotoBase64
           }
+        } else {
+          setTimeout(function () {
+            photoArray[i] = null;
+          }, 1000)
         }
         setTimeout(function () {
 
@@ -5838,7 +5857,6 @@
 
                     </div>
                   </div>
-
                  `
 
           certificationTableArray.push(object)
@@ -5890,7 +5908,7 @@
       }
     })
 
-    function resumecertificationEditbtn() {
+    function resumecertificationEditbtn(id) {
       document.querySelector('#certification-data').innerHTML = "";
       document.querySelector('.certification-modal').classList.remove('d-none');
       document.querySelector('#body').classList.add('d-none');
@@ -5900,7 +5918,10 @@
       for (cert of resumeinfo.resume_qualification) {
 
         if (cert.qualification_type_lid === 4) {
-          let table = `  
+          if (cert.resume_qualification_lid == id) {
+
+
+            let table = `  
                     <div class="position-relative certification_delete_btn d-flex" style="cursor: pointer;" > 
                         <div class="container">
                             <div class="certification-row px-3 px-sm-4 px-lg-4 mt-1" data-qualificationlid=\${cert.resume_qualification_lid}>
@@ -5951,7 +5972,8 @@
                       </div>
                   </div>`
 
-          document.getElementById('certification-data').insertAdjacentHTML("beforeend", table);
+            document.getElementById('certification-data').insertAdjacentHTML("beforeend", table);
+          }
         }
       }
 
@@ -6006,14 +6028,8 @@
         'cancelledCheckPhoto'))
 
       if (!facultyBankName1 || !facultyBankBranch1 || !facultyIfscCode1 || !facultyMicrCode1 || !
-        facultyAccountNumber1 || !facultyCancelledCheque) {
+        facultyAccountNumber1) {
         return;
-      }
-      if (facultyCancelledCheque.length != 0) {
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('text-danger')
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('fa-image')
-        document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
       }
 
       let photoArray = []
@@ -6026,6 +6042,10 @@
           let bankPhotoBase64 = evt.target.result;
           photoArray[0] = bankPhotoBase64
         }
+      } else {
+        setTimeout(function () {
+          photoArray[i] = null;
+        })
       }
 
       setTimeout(function () {
@@ -6071,7 +6091,6 @@
     });
 
     // ****************************************************JS for skills Modal****************************************************************
-
 
 
     document.querySelector('#skills-modal-cancel-button').addEventListener('click', function () {
