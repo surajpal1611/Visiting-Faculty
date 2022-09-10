@@ -351,7 +351,7 @@ function personalDetailPancardPhotoValidation(res) {
 
 function personalDetailAadharValidation(res) {
   if (res.length != 12) {
-    document.getElementById('aadhar-number-message').innerHTML = "*Invalid Adhar Number";
+    document.getElementById('aadhar-number-message').innerHTML = "Invalid Adhar Number";
     condition = false;
   } else {
     for (let i = 0; i < res.length; i++) {
@@ -849,6 +849,7 @@ function checkboxfunction(checkbox, input)
         }
       });
 }
+
 
 //*****************************************************Dynamic Validation's**************************************************************** 
 
