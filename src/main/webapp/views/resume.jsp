@@ -91,10 +91,12 @@
                       value="3" /></label>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12">
-                <label for="photo">passport Size Photo <span class="required">*</span></label>
+ 
+              <div class="col-md-4 col-sm-12">    
                 <span id="photo-message" style="color: red;" class="error"></span>
-                <input type="file" class="form-control" id="photo" name="profile_photo"
+                <input type="checkbox" class="profil-check-box" id="profil-check-box">
+                <label for="photo"><small>Update passport Size Photo?</small> <span class="required"></span></label>
+                <input type="file" class="form-control d-none profile_photo" id="photo" name="profile_photo"
                   onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
               </div>
 
@@ -171,7 +173,8 @@
               <div class="col-md-4 col-sm-12">
                 <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
                 <span id="pan-photo-message" style="color: red;" class="error"></span>
-                <input type="file" class="form-control" id="pan-photo"
+                <input type="checkbox" class="pan-check-box" id="pan-check-box">
+                <input type="file" class="form-control d-none " id="pan-photo"
                   onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
               </div>
               <div class="col-md-4 col-sm-12">
@@ -4728,6 +4731,9 @@
     //   document.getElementById('body').classList.remove('d-none');
     //   document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
     // })
+
+
+checkboxfunction('profil-check-box', 'profile_photo');
 
 
     document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {

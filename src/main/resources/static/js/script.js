@@ -834,3 +834,18 @@ function personalDetails() {
   });
 
 }
+
+function checkboxfunction(checkbox, input)
+{
+    $("."+checkbox).on("click", function () 
+    {
+        if ($(this).is(":checked")) 
+        {
+          document.querySelector('.'+input).classList.remove('d-none');
+        } 
+        else 
+        {
+          document.querySelector('.'+input).classList.add('d-none');
+        }
+      });
+}
