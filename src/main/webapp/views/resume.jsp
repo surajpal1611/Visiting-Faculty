@@ -91,8 +91,8 @@
                       value="3" /></label>
                 </div>
               </div>
- 
-              <div class="col-md-4 col-sm-12">    
+
+              <div class="col-md-4 col-sm-12">
                 <span id="photo-message" style="color: red;" class="error"></span>
                 <input type="checkbox" class="profil-check-box" id="profil-check-box">
                 <label for="photo"><small>Update passport Size Photo?</small> <span class="required"></span></label>
@@ -174,7 +174,7 @@
                 <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
                 <span id="pan-photo-message" style="color: red;" class="error"></span>
                 <input type="checkbox" class="pan-check-box" id="pan-check-box">
-                <input type="file" class="form-control d-none " id="pan-photo"
+                <input type="file" class="form-control " id="pan-photo"
                   onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
               </div>
               <div class="col-md-4 col-sm-12">
@@ -273,7 +273,8 @@
 
               <div id="gender-row-insert" class="col-md-4 col-sm-12">
                 <div class="form-group">
-                  <label for="date-of-birth">Gender<span id="gender-message-insert" class="required">*</span></label><br>
+                  <label for="date-of-birth">Gender<span id="gender-message-insert"
+                      class="required">*</span></label><br>
                   <label class="radio-inline">Male<input type="radio" name="gender_insert" class="gender ms-1" id="male"
                       value="1" /></label>
                   <label class="radio-inline">Female<input type="radio" name="gender_insert" class="gender ms-1"
@@ -1153,7 +1154,7 @@
                           <h6>Pancard Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="pancard-photo"><i id="pancard-photo-preview" data-image="../imagedata/\${personal_details[0].pancard_url_path}" class="fa-solid fa-ban text-danger"></i></p>
+                          <p id="pancard-photo"><i id="pancard-photo-preview" data-image="../imagedata/\${personal_details[0].pancard_url_path}" class="fa-solid fa-ban text-danger pancard-photo-preview"></i></p>
                           </p>
                         </div>
                       </div>
@@ -1170,7 +1171,7 @@
                           <h6>Aadhar card Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" data-image="../imagedata/\${personal_details[0].aadhar_card_url_path}" class="fa-solid fa-ban text-danger"></i></p>
+                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" data-image="../imagedata/\${personal_details[0].aadhar_card_url_path}" class="fa-solid fa-ban text-danger aadhar-photo-preview"></i></p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1789,7 +1790,7 @@
                               <p class="h5 pb-1">Certificate:</p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p data-image="../imagedata/\${qual.url_path}"><i class="fa-solid fa-image text-success"></i></p>
+                              <p ><i id="professional-certificate-display" data-image="../imagedata/\${qual.url_path}" class="fa-solid fa-image text-success professional-certificate-display"></i></p>
                             </div>
                           </div>
                         </div>
@@ -1933,26 +1934,7 @@
 
 
 
-          document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
-            document.getElementById('body').classList.add('d-none');
-            document.querySelector('.pancard-photo-modal').classList.remove('d-none');
-          })
-
-          document.querySelector('#pancard-photo-cancel-button').addEventListener('click', function (e) {
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.pancard-photo-modal').classList.add('d-none');
-          })
-
-          document.querySelector('#aadhar-photo-preview').addEventListener('click', function (e) {
-            document.getElementById('body').classList.add('d-none');
-            document.querySelector('.aadhar-photo-modal').classList.remove('d-none');
-          })
-
-          document.querySelector('#aadhar-photo-cancel-button').addEventListener('click', function (e) {
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.aadhar-photo-modal').classList.add('d-none');
-          })
-
+         
 
 
           //************************************Personal Details Section Start***************************************************************
@@ -2047,17 +2029,14 @@
       result.profilePhoto1 = document.querySelector('#photo-insert').value;
       result.DOB = document.querySelector('#date-of-birth-insert').value;
       //result.gender = document.querySelector("#gender-row-insert input[type='radio']:checked").value;
-      let is = document.querySelector("#gender-row-insert input[type='radio']:checked"); 
-        if(is != null)
-        {
-          document.getElementById('gender-message-insert').innerHTML = '';
-          result.gender = document.querySelector("#gender-row-insert input[type='radio']").value;
-        } 
-        else
-        {
-          document.getElementById('gender-message-insert').innerHTML = 'Select';
-          return;
-        }
+      let is = document.querySelector("#gender-row-insert input[type='radio']:checked");
+      if (is != null) {
+        document.getElementById('gender-message-insert').innerHTML = '';
+        result.gender = document.querySelector("#gender-row-insert input[type='radio']").value;
+      } else {
+        document.getElementById('gender-message-insert').innerHTML = 'Select';
+        return;
+      }
       result.contactNumber = document.querySelector('#contact-number-insert').value;
       result.temporaryContact = document.querySelector('#temp_contact-number-insert').value;
       result.pancard = "${user_id}";
@@ -2074,17 +2053,18 @@
 
       let firstnamevalid = dynamiCheckSpecialChar(result.firstName, 'first-name-message-insert');
       let lastnamevalid = dynamiCheckSpecialChar(result.lastName, 'last-name-message-insert');
-      let addressvalid = dynamicLengthCheck(result.address , 'address-message-insert');
+      let addressvalid = dynamicLengthCheck(result.address, 'address-message-insert');
       let emailvalid = dynamicEmailCheck(result.email, 'email-message-insert');
       let cityvalid = dynamicLengthCheck(result.city, 'city-message-insert');
       let countryvalid = dynamicLengthCheck(result.country, 'country-message-insert');
       let contactvalid = dynamicContactCheck(result.contactNumber, 'contact-number-message-insert');
       let adharnumbervalid = dynamicAdharNumberCheck(result.aadhar, 'aadhar-number-message-insert');
-      let tempContactNumberValid = dynamicTempContactNumber(result.temporaryContact, 'temporary-contact-number-message-insert');
+      let tempContactNumberValid = dynamicTempContactNumber(result.temporaryContact,
+        'temporary-contact-number-message-insert');
       let tempemailvalid = dynamicTempEmail(result.tempemail, 'temp-email-message-insert');
 
-      if(!firstnamevalid || !lastnamevalid || !addressvalid || !emailvalid || !cityvalid || !countryvalid || !contactvalid || !adharnumbervalid ||!tempContactNumber|| !tempemailvalid)
-      {
+      if (!firstnamevalid || !lastnamevalid || !addressvalid || !emailvalid || !cityvalid || !countryvalid || !
+        contactvalid || !adharnumbervalid || !tempContactNumber || !tempemailvalid) {
         return;
       }
 
@@ -3821,7 +3801,7 @@
             type: 'get',
             success: function (response) {
               for (let i = 0; i < response.length; i++) {
-                bankAccountType +=`<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`;
+                bankAccountType += `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`;
               }
               document.getElementById('bank-account-type').insertAdjacentHTML("beforeend", bankAccountType)
             },
@@ -3879,13 +3859,16 @@
       submitBankDetailsForm.append('accountType', accountType1)
       // submitBankDetailsForm.append('cancelledCheckPhoto', document.getElementById('cancelled_cheque_Photo-insert').value)
 
-      let facultyBankNameValid = dynamicLengthCheck(submitBankDetailsForm.get('bankName'), 'bank-name-message-insert');
-      let facultyBankBranchValid = dynamicLengthCheck(submitBankDetailsForm.get('branchName'), 'bank-branch-message-insert');
-      let facultyIfscCodevalid = dynamicIFSCCheck(submitBankDetailsForm.get('ifscCode'), 'bank-ifsc-code-message-insert');
-      let facultyAccountNumberValid = dynamicBankAcountNumber(submitBankDetailsForm.get('accountNumber'), 'bank-account-number-message-insert');
+      let facultyBankNameValid = dynamicLengthCheck(submitBankDetailsForm.get('bankName'),
+        'bank-name-message-insert');
+      let facultyBankBranchValid = dynamicLengthCheck(submitBankDetailsForm.get('branchName'),
+        'bank-branch-message-insert');
+      let facultyIfscCodevalid = dynamicIFSCCheck(submitBankDetailsForm.get('ifscCode'),
+        'bank-ifsc-code-message-insert');
+      let facultyAccountNumberValid = dynamicBankAcountNumber(submitBankDetailsForm.get('accountNumber'),
+        'bank-account-number-message-insert');
 
-      if(!facultyBankNameValid || !facultyBankBranchValid || !facultyIfscCodevalid || !facultyAccountNumberValid)
-      {
+      if (!facultyBankNameValid || !facultyBankBranchValid || !facultyIfscCodevalid || !facultyAccountNumberValid) {
         return;
       }
 
@@ -3962,28 +3945,79 @@
       if (e.target.classList.contains('addbtn-qualification') || findClosest(e.target, 'addbtn-qualification')) {
         resumequailficationaddbtn();
       }
+      // if (e.target.classList.contains('qualification-edit-box') || findClosest(e.target, 'qualification-edit-box')) {
+      //   let id = null;
+      //     if (!e.target.classList.contains('qualification-edit-box')) {
+      //       id = findClosest(e.target, 'qualification-edit-box').dataset.qualificationid
+      //     } else {
+      //       id = e.target.dataset.qualificationid
+      //     }
+      //     editQualificationDetail(id)
+      // }
       if (e.target.classList.contains('addbtn-workexperience') || findClosest(e.target, 'addbtn-workexperience')) {
         resumeworkexperienceaddbtn();
       }
+      // if (e.target.classList.contains('workexperience-edit-box') || findClosest(e.target, 'workexperience-edit-box')) {
+      //   let id = null;
+      //     if (!e.target.classList.contains('workexperience-edit-box')) {
+      //       id = findClosest(e.target, 'workexperience-edit-box').dataset.experienceid
+      //     } else {
+      //       id = e.target.dataset.experienceid
+      //     }
+      //     editWorkExperienceDetail(id)
+      // }
       if (e.target.classList.contains('addbtn-award') || findClosest(e.target, 'addbtn-award')) {
         resumeawardaddbtn();
       }
+      // if (e.target.classList.contains('award-edit-box') || findClosest(e.target, 'award-edit-box')) {
+      //   let id = null;
+      //     if (!e.target.classList.contains('award-edit-box')) {
+      //       id = findClosest(e.target, 'award-edit-box').dataset.awardid
+      //     } else {
+      //       id = e.target.dataset.awardid
+      //     }
+      //     editAwardDetail(id)
+      // }
       if (e.target.classList.contains('addbtn-publication') || findClosest(e.target, 'addbtn-publication')) {
         resumepublicationaddbtn();
       }
+      // if (e.target.classList.contains('publication-edit-box') || findClosest(e.target, 'publication-edit-box')) {
+      //   let id = null;
+      //     if (!e.target.classList.contains('publication-edit-box')) {
+      //       id = findClosest(e.target, 'publication-edit-box').dataset.publicationid
+      //     } else {
+      //       id = e.target.dataset.publicationid
+      //     }
+      //     editPublicationDetail(id)
+      // }
       if (e.target.classList.contains('addbtn-research') || findClosest(e.target, 'addbtn-research')) {
         resumeresearchaddbtn();
       }
+      // if (e.target.classList.contains('research-edit-box') || findClosest(e.target, 'research-edit-box')) {
+      //   let id = null;
+      //     if (!e.target.classList.contains('research-edit-box')) {
+      //       id = findClosest(e.target, 'research-edit-box').dataset.researchid
+      //     } else {
+      //       id = e.target.dataset.researchid
+      //     }
+      //     editResearchBox(id)
+      // }
       if (e.target.classList.contains('addbtn-certification') || findClosest(e.target, 'addbtn-certification')) {
         resumecertificationaddbtn();
       }
-      if (e.target.classList.contains('certification-edit-box') || findClosest(e.target, 'addbtn-certification')) {
-        resumecertificationEditbtn(e.target.dataset.certificationid);
+      if (e.target.classList.contains('certification-edit-box') || findClosest(e.target, 'certification-edit-box')) {
+        let id = null;
+          if (!e.target.classList.contains('certification-edit-box')) {
+            id = findClosest(e.target, 'certification-edit-box').dataset.certificationid
+          } else {
+            id = e.target.dataset.certificationid
+          }
+        resumecertificationEditbtn(id);
       }
-      if (e.target.classList.contains('personalinsert') || findClosest(e.target, 'addbtn-certification')) {
+      if (e.target.classList.contains('personalinsert') || findClosest(e.target, 'personalinsert')) {
         personalAddButton()
       }
-      if (e.target.classList.contains('addbtn-bank') || findClosest(e.target, 'addbtn-certification')) {
+      if (e.target.classList.contains('addbtn-bank') || findClosest(e.target, 'addbtn-bank')) {
         bankdetailsadd();
       }
     });
@@ -4005,7 +4039,6 @@
       })
 
       document.querySelector('#qualification-list').addEventListener('mouseover', function (e) {
-
         for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
           box.classList.add('d-none');
           box.classList.remove('edit-show');
@@ -4023,24 +4056,24 @@
 
 
 
-if(resumeinfo.resume_experience != null)
-{
+      if (resumeinfo.resume_experience != null) {
 
-      document.querySelector('.workexperience-div-wrapper').addEventListener('mouseover', function (e) {
+        document.querySelector('.workexperience-div-wrapper').addEventListener('mouseover', function (e) {
 
-        for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
-          box.classList.add('d-none');
-          box.classList.remove('edit-show');
-        }
+          for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+            box.classList.add('d-none');
+            box.classList.remove('edit-show');
+          }
 
-        if ((e.target.classList.contains('workexperience-item') || findClosest(e.target, 'workexperience-item'))) {
-          let thisParent = e.target.classList.contains('workexperience-item') ? e.target : findClosest(e.target,
-            'workexperience-item');
+          if ((e.target.classList.contains('workexperience-item') || findClosest(e.target,
+              'workexperience-item'))) {
+            let thisParent = e.target.classList.contains('workexperience-item') ? e.target : findClosest(e.target,
+              'workexperience-item');
             thisParent.querySelector('.workexperience-edit-box').classList.add('edit-show');
             thisParent.querySelector('.workexperience-edit-box').classList.remove('d-none');
-         }
-      });
-}
+          }
+        });
+      }
 
 
       document.querySelector('.skills-div-wrapper').addEventListener('mouseover', function () {
@@ -4120,7 +4153,7 @@ if(resumeinfo.resume_experience != null)
 
 
     }
-
+   
     // });
 
     //Rana Changes 
@@ -4128,7 +4161,7 @@ if(resumeinfo.resume_experience != null)
       if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains(
           'award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target
         .classList.contains('research-certificate-display') || e.target.classList.contains(
-          'professional-certificate-display')) {
+          'professional-certificate-display')|| e.target.classList.contains('aadhar-photo-preview') || e.target.classList.contains('pancard-photo-preview') ) {
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.image-preview-modal').classList.remove('d-none');
         document.querySelector(".image-uploaded").src = e.target.dataset.image;
@@ -4159,7 +4192,7 @@ if(resumeinfo.resume_experience != null)
       //************************************Qualification Section Start*************************************************************** 
 
       //Qualidication Details Btn
-      function editQualificationDetail() {
+      function editQualificationDetail(id) {
         if (qualificationDataDB == 1) {
 
           $.ajax({
@@ -4174,7 +4207,11 @@ if(resumeinfo.resume_experience != null)
                 if (resumeinfo.resume_qualification != null) {
                   for (qualedit of resumeinfo.resume_qualification) {
                     if (qualedit.qualification_type_lid != 4) {
-                      let table = `
+                      console.log(id)
+                      if (qualedit.resume_qualification_lid == id) {
+
+
+                        let table = `
                     <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
                       <div class="container">
                     <div class="row qualification-row"  data-lid = "\${qualedit.resume_qualification_lid}" >
@@ -4259,7 +4296,8 @@ if(resumeinfo.resume_experience != null)
                             </div>      
                     </div>`
 
-                      document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
+                        document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
+                      }
                     }
                   }
                 }
@@ -4281,8 +4319,15 @@ if(resumeinfo.resume_experience != null)
 
       document.querySelector('#qualification-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'qualification-item').querySelector('.qualification-edit-box')) {
-          document.querySelector('.qualification-data').innerHTML = "";
-          editQualificationDetail()
+          let id = null;
+          if (!e.target.classList.contains('qualification-edit-box')) {
+            id = findClosest(e.target, 'qualification-edit-box').dataset.qualificationid
+          } else {
+            id = e.target.dataset.qualificationid
+          }
+
+          // document.querySelector('.qualification-data').innerHTML = "";
+          editQualificationDetail(id)
         }
       })
 
@@ -4297,26 +4342,25 @@ if(resumeinfo.resume_experience != null)
 
       //************************************Work Experience Section Start***********************************************************
       // document.querySelector(".workexperience-edit-box").addEventListener('click', function () {
-   
-        
+
+
       // })
 
-      document.querySelector('#workexperience-div').addEventListener('click', function (e) {
-    
-let id = null;
-          if (findClosest(e.target, 'workexperience-item').querySelector('.workexperience-edit-box')) {
-            document.getElementById('body').classList.add('d-none');
-        document.querySelector('.workexperience-modal').classList.remove('d-none');
-          document.querySelector('.workexperience-data').innerHTML= "";
-          if(!e.target.classList.contains('workexperience-edit-box')){
-           id =findClosest(e.target, 'workexperience-edit-box').dataset.experienceid
-        } else{
-          id =  e.target.dataset.experienceid
+      document.querySelector('#workexperience-list').addEventListener('click', function (e) {
+
+        let id = null;
+        if (findClosest(e.target, 'workexperience-item').querySelector('.workexperience-edit-box')|| e.target.contains('workexperience-edit-box')) {
+         
+          document.querySelector('.workexperience-data').innerHTML = "";
+          if (!e.target.classList.contains('workexperience-edit-box')) {
+            id = findClosest(e.target, 'workexperience-edit-box').dataset.experienceid
+          } else {
+            id = e.target.dataset.experienceid
+          }
+          console.log(id)
+          editWorkExperienceDetail(id)
         }
-        console.log(id)
-        editWorkExperienceDetail(id)
-         }
- 
+
       })
 
 
@@ -4500,8 +4544,15 @@ let id = null;
 
       document.querySelector('#award-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'award-item').querySelector('.award-edit-box')) {
-          document.querySelector('#publication-award-div-update').innerHTML = "";
-          editAwardDetail(e.target.dataset.awardid)
+          // document.querySelector('#publication-award-div-update').innerHTML = "";
+
+          let id = null;
+          if (!e.target.classList.contains('award-edit-box')) {
+            id = findClosest(e.target, 'award-edit-box').dataset.awardid
+          } else {
+            id = e.target.dataset.awardid
+          }
+          editAwardDetail(id)
         }
       })
 
@@ -4591,7 +4642,14 @@ let id = null;
       document.querySelector('#publication-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'publication-item').querySelector('.publication-edit-box')) {
           document.querySelector('#publication-modal-appending-div').innerHTML = "";
-          editPublicationDetail(e.target.dataset.publicationid)
+
+         let id = null;
+          if (!e.target.classList.contains('publication-edit-box')) {
+            id = findClosest(e.target, 'publication-edit-box').dataset.publicationid
+          } else {
+            id = e.target.dataset.publicationid
+          }
+          editPublicationDetail(id)
         }
       })
 
@@ -4668,8 +4726,16 @@ let id = null;
 
       document.querySelector('#research-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'research-item').querySelector('.research-edit-box')) {
-          document.querySelector('#research-data').innerHTML = "";
-          editResearchBox(e.target.dataset.researchid)
+          // document.querySelector('#research-data').innerHTML = "";
+
+
+          let id = null;
+          if (!e.target.classList.contains('research-edit-box')) {
+            id = findClosest(e.target, 'research-edit-box').dataset.researchid
+          } else {
+            id = e.target.dataset.researchid
+          }
+          editResearchBox(id)
         }
       })
 
@@ -4683,52 +4749,51 @@ let id = null;
       //************************************Bank Details Section Start***********************************************
 
 
-      if(resumeinfo.bank_details != null)
-      {
-      document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
-        if (bankDataDB == 1) {
-          $.ajax({
-              url: '/get-bank-account-type',
-              type: 'get',
-              success: function (response) {
-                console.log(response)
-                for (let i = 0; i < response.length; i++) {
-                  console.log(bankAccountType)
-                  bankAccountType +=
-                    `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`
+      if (resumeinfo.bank_details != null) {
+        document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
+          if (bankDataDB == 1) {
+            $.ajax({
+                url: '/get-bank-account-type',
+                type: 'get',
+                success: function (response) {
+                  console.log(response)
+                  for (let i = 0; i < response.length; i++) {
+                    console.log(bankAccountType)
+                    bankAccountType +=
+                      `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`
+                  }
+                  document.getElementById('bank-account-type').insertAdjacentHTML("beforeend",
+                    bankAccountType)
+                },
+                error: function (error) {
+                  console.log("Error::::::::::::", error);
                 }
-                document.getElementById('bank-account-type').insertAdjacentHTML("beforeend",
-                  bankAccountType)
-              },
-              error: function (error) {
-                console.log("Error::::::::::::", error);
-              }
-            })
-            ++bankDataDB;
-        }
+              })
+              ++bankDataDB;
+          }
 
-        let editBankDetailsForm = new FormData()
+          let editBankDetailsForm = new FormData()
 
-        editBankDetailsForm.append('editBankName', document.getElementById('bank-name-value').innerText)
-        editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
-        editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
-        editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
-        editBankDetailsForm.append('editAccountNumber', document.getElementById('account-number-value')
-          .innerText)
-        editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value'.innerText))
+          editBankDetailsForm.append('editBankName', document.getElementById('bank-name-value').innerText)
+          editBankDetailsForm.append('editBranchName', document.getElementById('branch-name-value').innerText)
+          editBankDetailsForm.append('editIfscCode', document.getElementById('ifsc-code-value').innerText)
+          editBankDetailsForm.append('editMicrCode', document.getElementById('micr-code-value').innerText)
+          editBankDetailsForm.append('editAccountNumber', document.getElementById('account-number-value')
+            .innerText)
+          editBankDetailsForm.append('editAccountType', document.getElementById('account-type-value'.innerText))
 
 
-        document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
-        document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
-        document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
-        document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
-        document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccountNumber')
-        document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
+          document.getElementById('bank-name').value = editBankDetailsForm.get('editBankName')
+          document.getElementById('bank-branch').value = editBankDetailsForm.get('editBranchName')
+          document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
+          document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
+          document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccountNumber')
+          document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
 
 
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.bank-details-modal').classList.remove('d-none');
-      });
+          document.getElementById('body').classList.add('d-none');
+          document.querySelector('.bank-details-modal').classList.remove('d-none');
+        });
       }
 
     });
@@ -4741,7 +4806,7 @@ let id = null;
     // })
 
 
-checkboxfunction('profil-check-box', 'profile_photo');
+    checkboxfunction('profil-check-box', 'profile_photo');
 
 
     document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
@@ -4860,7 +4925,7 @@ checkboxfunction('profil-check-box', 'profile_photo');
         user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
         user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
         user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
-        user_info.aadhar_card_no = aadhar
+        user_info.aadhar_card_no = result.aadhar_number
         user_info.date_of_birth = result.date_of_birth
         user_info.nationality = result.nationality
         personalDetailsData.insert_user_personal_details.user_info[0] = user_info
@@ -6566,7 +6631,7 @@ checkboxfunction('profil-check-box', 'profile_photo');
       document.querySelector('.workexperience-modal-insert').classList.add('d-none');
       document.querySelector('#body').classList.remove('d-none');
     })
-    document.querySelector('#workexperience-submit-button').addEventListener('click',function(e){
+    document.querySelector('#workexperience-submit-button').addEventListener('click', function (e) {
 
       let workExperienceModal = ''
       let div = ''
@@ -6663,7 +6728,7 @@ checkboxfunction('profil-check-box', 'profile_photo');
         }
 
         object = {
-          resume_experience_lid:resume_experience_lid,
+          resume_experience_lid: resume_experience_lid,
           resume_lid: resume_lid,
           experience_type_lid: workexperience_type,
           employer_name: workexperienceUniversity,
@@ -6697,7 +6762,7 @@ checkboxfunction('profil-check-box', 'profile_photo');
       fetchRes.then(success => {
         if (success.status == 200) {
           document.querySelector('.workexperience-modal').classList.add('d-none');
-         document.querySelector('#body').classList.remove('d-none');
+          document.querySelector('#body').classList.remove('d-none');
           // document.location.reload();
         } else {
           alert('Check workexperience details');
@@ -6708,13 +6773,13 @@ checkboxfunction('profil-check-box', 'profile_photo');
 
 
 
-    
-  
-    document.querySelector('#workexperience-cancel-button').addEventListener('click',function(e){
+
+
+    document.querySelector('#workexperience-cancel-button').addEventListener('click', function (e) {
       document.querySelector('.workexperience-modal').classList.add('d-none');
       document.querySelector('#body').classList.remove('d-none');
 
-})   
+    })
 
     let workexperienceDataDB = 1
     let workexperienceType = ` `
@@ -6755,17 +6820,17 @@ checkboxfunction('profil-check-box', 'profile_photo');
     }, false);
 
 
-    
- 
 
-       //workexperience Details Btn
-       function editWorkExperienceDetail(id) {
-       
 
-                if (resumeinfo.resume_experience != null) {
-                  for (expedit of resumeinfo.resume_experience) {
-                    if(expedit.resume_experience_lid == id){
-                    let table = `
+
+    //workexperience Details Btn
+    function editWorkExperienceDetail(id) {
+
+
+      if (resumeinfo.resume_experience != null) {
+        for (expedit of resumeinfo.resume_experience) {
+          if (expedit.resume_experience_lid == id) {
+            let table = `
                     <div class="position-relative workexperience_delete_btn d-flex" style="cursor: pointer;">
 <div class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1 container " data-lid = "\${expedit.resume_experience_lid}">
         <div class="row ">
@@ -6886,15 +6951,15 @@ checkboxfunction('profil-check-box', 'profile_photo');
        
       </div>`
 
-                    document.querySelector('.workexperience-data').insertAdjacentHTML("beforeend", table);
-                  
-                  }
-                }
-                }
+            document.querySelector('.workexperience-data').insertAdjacentHTML("beforeend", table);
 
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.workexperience-modal').classList.remove('d-none');
+          }
+        }
       }
+
+      document.getElementById('body').classList.add('d-none');
+      document.querySelector('.workexperience-modal').classList.remove('d-none');
+    }
 
     function resumeworkexperienceaddbtn() {
 
