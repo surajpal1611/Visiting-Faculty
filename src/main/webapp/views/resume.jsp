@@ -2329,9 +2329,14 @@
 
         fetchRes.then(success => {
 
-          // if (success.status == 200) {
+          if (success.status == 200) {
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.personal-details-modal-insert').classList.add('d-none')
+          }
+          else
+          {
+            alert('Check Data');
+          }
         })
       }, 1000)
 
@@ -2361,7 +2366,6 @@
           for (let i = 0; i < response.length; i++) {
             qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`;
           }
-
           let table = `
                       <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
                       <div class="container">
@@ -4117,14 +4121,15 @@
       if (e.target.classList.contains('addbtn-certification') || findClosest(e.target, 'addbtn-certification')) {
         resumecertificationaddbtn();
       }
-      if (e.target.classList.contains('certification-edit-box')|| findClosest(e.target, 'addbtn-certification')) {
+      if (e.target.classList.contains('certification-edit-box')|| findClosest(e.target, 'certification-edit-box')) {
+        document.querySelector('#certification-data').innerHTML="";
         resumecertificationEditbtn();
       }
 
-      if (e.target.classList.contains('personalinsert')|| findClosest(e.target, 'addbtn-certification')) {
+      if (e.target.classList.contains('personalinsert')|| findClosest(e.target, 'personalinsert')) {
         personalAddButton()
       }
-      if (e.target.classList.contains('addbtn-bank')|| findClosest(e.target, 'addbtn-certification')) {
+      if (e.target.classList.contains('addbtn-bank')|| findClosest(e.target, 'addbtn-bank')) {
         bankdetailsadd();
       }
     });
@@ -4307,7 +4312,8 @@
 
                 if (resumeinfo.resume_qualification != null) {
                   for (qualedit of resumeinfo.resume_qualification) {
-
+                    if(qualedit.qualification_type_lid != 4)
+                    {
                     let table = `
                     <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
                       <div class="container">
@@ -4395,6 +4401,7 @@
 
                     document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
                   }
+                  }
                 }
 
               },
@@ -4414,6 +4421,7 @@
 
       document.querySelector('#qualification-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'qualification-item').querySelector('.qualification-edit-box')) {
+          document.querySelector('.qualification-data').innerHTML= "";
           editQualificationDetail()
         }
       })
@@ -4610,7 +4618,7 @@
 
       document.querySelector('#award-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'award-item').querySelector('.award-edit-box')) {
-          document.querySelector('.a')
+          document.querySelector('#publication-award-div-update').innerHTML= "";
           editAwardDetail()
         }
       })
@@ -4696,6 +4704,7 @@
 
       document.querySelector('#publication-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'publication-item').querySelector('.publication-edit-box')) {
+          document.querySelector('#publication-modal-appending-div').innerHTML = "";
           editPublicationDetail()
         }
       })
@@ -4772,6 +4781,7 @@
 
       document.querySelector('#research-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'research-item').querySelector('.research-edit-box')) {
+          document.querySelector('#research-data').innerHTML= "";
           editResearchBox()
         }
       })
