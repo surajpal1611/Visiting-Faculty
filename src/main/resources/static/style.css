@@ -190,17 +190,18 @@
   color: #b12828 !important;
 }
 
-.work-experience-edit-box {
+.workexperience-edit-box {
   width: 100px;
   height: 100%;
   background-color: #FFFFFF;
   border-radius: 0 15px 15px 0;
   position: absolute;
   right: 0;
+  top:0;
   left: 100%;
 }
 
-.work-experience-edit-box i {
+.workexperience-edit-box i {
   color: #b12828 !important;
 }
 
@@ -1112,5 +1113,4 @@ button {
   border: none;
   align-items: center;
 }
-
 
