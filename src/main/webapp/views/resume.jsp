@@ -1385,7 +1385,7 @@
               <div id="workexperience-list">`
         if (data.resume_experience != null) {
           for (let exp of data.resume_experience) {
-            resume += ` <div class="text-block right">
+            resume += ` <div class="text-block right workexperience-item">
                   <div class="card-body">
                     <h2>\${exp.experience_type_lid}</h2>
                     <div id="workexperience-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
@@ -1424,14 +1424,14 @@
                               <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
                             </div>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  </div>
-                  <div class="d-none workexperience-edit-box d-flex justify-content-center align-items-center" >
-                     <i class="fa-solid fa-pen fa-2x text-white "></i>
-                  </div>`
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          <div class="d-none workexperience-edit-box d-flex justify-content-center align-items-center" data-experienceid="\${exp.resume_experience_lid}">
+                             <i class="fa-solid fa-pen fa-2x text-white "></i>
+                          </div>
+                </div>`
           }
         }
         resume += `</div>
@@ -4041,15 +4041,23 @@
       })
 
 
-      document.querySelector('.workexperience-div-wrapper').addEventListener('mouseover', function () {
+
+      
+
+      document.querySelector('.workexperience-div-wrapper').addEventListener('mouseover', function (e) {
+
 
         for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
           box.classList.add('d-none');
           box.classList.remove('edit-show');
         }
 
-        document.querySelector('.workexperience-edit-box').classList.add('edit-show');
-        document.querySelector('.workexperience-edit-box').classList.remove('d-none');
+        if ((e.target.classList.contains('workexperience-item') || findClosest(e.target, 'workexperience-item'))) {
+          let thisParent = e.target.classList.contains('workexperience-item') ? e.target : findClosest(e.target,
+            'workexperience-item');
+            thisParent.querySelector('.workexperience-edit-box').classList.add('edit-show');
+            thisParent.querySelector('.workexperience-edit-box').classList.remove('d-none');
+         }
       });
 
 
@@ -4306,11 +4314,29 @@
 
 
       //************************************Work Experience Section Start***********************************************************
+      // document.querySelector(".workexperience-edit-box").addEventListener('click', function () {
+   
+        
+      // })
 
-      document.querySelector(".workexperience-edit-box").addEventListener('click', function () {
-        document.getElementById('body').classList.add('d-none');
+      document.querySelector('#workexperience-div').addEventListener('click', function (e) {
+    
+let id = null;
+          if (findClosest(e.target, 'workexperience-item').querySelector('.workexperience-edit-box')) {
+            document.getElementById('body').classList.add('d-none');
         document.querySelector('.workexperience-modal').classList.remove('d-none');
-      });
+          document.querySelector('.workexperience-data').innerHTML= "";
+          if(!e.target.classList.contains('workexperience-edit-box')){
+           id =findClosest(e.target, 'workexperience-edit-box').dataset.experienceid
+        } else{
+          id =  e.target.dataset.experienceid
+        }
+        console.log(id)
+        editWorkExperienceDetail(id)
+         }
+ 
+      })
+
 
       //************************************Skills Section Start******************************************************************
 
@@ -6433,10 +6459,11 @@
         let workexperienceDesignationTypeLID = workexperienceRow[i].querySelector(".designation-title").options
           .selectedIndex;
         let workexperienceDesignationType = workexperienceRow[i].querySelector('.designation-title').value;
+        let workexperienceDuration = workexperienceRow[i].querySelector('.durationOfTeaching').value;
         let workexperienceProgram = workexperienceRow[i].querySelector('.description').value;
         let workexperienceSubjectTaught = workexperienceRow[i].querySelector('.responsibility').value;
         let workexperienceStatus = workexperienceRow[i].querySelector('.status').value;
-        let workexperiencePedagogy = workexperienceRow[i].querySelector('.padagogy').value;
+        let workexperiencePadagogy = workexperienceRow[i].querySelector('.padagogy').value;
         let workexperienceOther = workexperienceRow[i].querySelector('.other').value;
         let workexperienceStartDate = workexperienceRow[i].querySelector('.start_Date').value;
         let workexperienceEndDate = workexperienceRow[i].querySelector('.end_Date').value;
@@ -6447,7 +6474,7 @@
         let checkProgram = tabledatacheck(workexperienceProgram);
         let checkSubjetTaught = tabledatacheck(workexperienceSubjectTaught);
         let checkWorkExpStatus = tabledatacheck(workexperienceStatus);
-        let checkWorkExpPedagogy = tabledatacheck(workexperiencePedagogy);
+        let checkWorkExpPadagogy = tabledatacheck(workexperiencePadagogy);
         let checkWorkExpOther = tabledatacheck(workexperienceOther);
         let checkWorkExpStart = tabledatacheck(workexperienceStartDate);
         let checkWorkExpEnd = tabledatacheck(workexperienceEndDate);
@@ -6468,7 +6495,7 @@
         } else if (checkWorkExpStatus == false) {
           workexperienceRow[i].querySelector('.status').classList.add('input-border');
           return;
-        } else if (checkWorkExpPedagogy == false) {
+        } else if (checkWorkExpPadagogy == false) {
           workexperienceRow[i].querySelector('.padagogy').classList.add('input-border');
           return;
         } else if (checkWorkExpOther == false) {
@@ -6510,7 +6537,9 @@
           start_date: start_date,
           end_date: end_date,
           responsibilities: workexperienceSubjectTaught,
-          is_current: Status
+          is_current: Status,
+          padagogy: workexperiencePadagogy,
+          duration: workexperienceDuration
         }
         workexperienceTableArray.push(object)
       }
@@ -6546,7 +6575,155 @@
       document.querySelector('.workexperience-modal-insert').classList.add('d-none');
       document.querySelector('#body').classList.remove('d-none');
     })
+    document.querySelector('#workexperience-submit-button').addEventListener('click',function(e){
 
+      let workExperienceModal = ''
+      let div = ''
+      let workexperienceTableArray = []
+      let workexperienceRow = document.querySelectorAll('.workExperience-row')
+      console.log(workexperienceRow)
+
+      for (i = 0; i < workexperienceRow.length; i++) {
+
+        //to remove the red border
+        workexperienceRow[i].querySelector('.work-experience-type').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.employeeName').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.description').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.responsibility').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.status').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.padagogy').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.designation-title').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.other').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.start_Date').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.end_Date').classList.remove('input-border');
+
+        // let resume_workexperience_lid = workexperienceRow[i].dataset.lid
+        let resume_experience_lid = workexperienceRow[i].dataset.lid
+        let workexperienceType = workexperienceRow[i].querySelector('.work-experience-type').value;
+        let workexperienceUniversity = workexperienceRow[i].querySelector('.employeeName').value;
+        let workexperienceDesignationTypeLID = workexperienceRow[i].querySelector(".designation-title").options
+          .selectedIndex;
+        let workexperienceDesignationType = workexperienceRow[i].querySelector('.designation-title').value;
+        let workexperienceDuration = workexperienceRow[i].querySelector('.durationOfTeaching').value;
+        let workexperienceProgram = workexperienceRow[i].querySelector('.description').value;
+        let workexperienceSubjectTaught = workexperienceRow[i].querySelector('.responsibility').value;
+        let workexperienceStatus = workexperienceRow[i].querySelector('.status').value;
+        let workexperiencePadagogy = workexperienceRow[i].querySelector('.padagogy').value;
+        let workexperienceOther = workexperienceRow[i].querySelector('.other').value;
+        let workexperienceStartDate = workexperienceRow[i].querySelector('.start_Date').value;
+        let workexperienceEndDate = workexperienceRow[i].querySelector('.end_Date').value;
+
+        let checkWorkExp = tabledatacheck(workexperienceType);
+        let checkUniversity = tabledatacheck(workexperienceUniversity);
+        let checkProgram = tabledatacheck(workexperienceProgram);
+        let checkSubjetTaught = tabledatacheck(workexperienceSubjectTaught);
+        let checkWorkExpStatus = tabledatacheck(workexperienceStatus);
+        let checkWorkExpPadagogy = tabledatacheck(workexperiencePadagogy);
+        let checkWorkExpOther = tabledatacheck(workexperienceOther);
+        let checkWorkExpStart = tabledatacheck(workexperienceStartDate);
+        let checkWorkExpEnd = tabledatacheck(workexperienceEndDate);
+
+        //  to add the red border according to validations
+        if (checkWorkExp == false) {
+          workexperienceRow[i].querySelector('.work-experience-type').classList.add('input-border');
+          return;
+        } else if (checkUniversity == false) {
+          workexperienceRow[i].querySelector('.employeeName').classList.add('input-border');
+          return;
+        } else if (checkProgram == false) {
+          workexperienceRow[i].querySelector('.description').classList.add('input-border');
+          return;
+        } else if (checkSubjetTaught == false) {
+          workexperienceRow[i].querySelector('.responsibility').classList.add('input-border');
+          return;
+        } else if (checkWorkExpStatus == false) {
+          workexperienceRow[i].querySelector('.status').classList.add('input-border');
+          return;
+        } else if (checkWorkExpPadagogy == false) {
+          workexperienceRow[i].querySelector('.padagogy').classList.add('input-border');
+          return;
+        } else if (checkWorkExpOther == false) {
+          workexperienceRow[i].querySelector('.other').classList.add('input-border');
+          return;
+        } else if (checkWorkExpStart == false) {
+          workexperienceRow[i].querySelector('.start_Date').classList.add('input-border');
+          return;
+        } else if (checkWorkExpEnd == false) {
+          workexperienceRow[i].querySelector('.end_Date').classList.add('input-border');
+          return;
+        }
+
+
+        let workexperience_type = 0;
+        if (workexperienceType == "ind_exp") {
+          workexperience_type = 4
+        } else {
+          workexperience_type = 5
+        }
+
+        let start_date = changeDateFormat(workexperienceStartDate)
+        let end_date = changeDateFormat(workexperienceEndDate)
+
+        let Status;
+        if (workexperienceStatus == "current") {
+          Status = true
+        } else {
+          Status = false
+        }
+
+        object = {
+          resume_experience_lid:resume_experience_lid,
+          resume_lid: resume_lid,
+          experience_type_lid: workexperience_type,
+          employer_name: workexperienceUniversity,
+          designation: workexperienceDesignationType,
+          designation_lid: workexperienceDesignationTypeLID,
+          description: workexperienceProgram,
+          start_date: start_date,
+          end_date: end_date,
+          responsibilities: workexperienceSubjectTaught,
+          is_current: Status,
+          padagogy: workexperiencePadagogy,
+          duration: workexperienceDuration
+        }
+        workexperienceTableArray.push(object)
+      }
+
+      let workexperienceTableData = {
+        "work_Experience_update": workexperienceTableArray
+      }
+
+      console.log(JSON.stringify(workexperienceTableData))
+
+      let options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(workexperienceTableData)
+      }
+      let fetchRes = fetch('/update-workexperience-details', options);
+      fetchRes.then(success => {
+        if (success.status == 200) {
+          document.querySelector('.workexperience-modal').classList.add('d-none');
+         document.querySelector('#body').classList.remove('d-none');
+          // document.location.reload();
+        } else {
+          alert('Check workexperience details');
+        }
+      })
+
+    })
+
+
+
+    
+  
+    document.querySelector('#workexperience-cancel-button').addEventListener('click',function(e){
+      document.querySelector('.workexperience-modal').classList.add('d-none');
+      document.querySelector('#body').classList.remove('d-none');
+
+})   
 
     let workexperienceDataDB = 1
     let workexperienceType = ` `
@@ -6585,6 +6762,148 @@
           ++workexperienceDataDB;
       }
     }, false);
+
+
+    
+ 
+
+       //workexperience Details Btn
+       function editWorkExperienceDetail(id) {
+       
+
+                if (resumeinfo.resume_experience != null) {
+                  for (expedit of resumeinfo.resume_experience) {
+                    if(expedit.resume_experience_lid == id){
+                    let table = `
+                    <div class="position-relative workexperience_delete_btn d-flex" style="cursor: pointer;">
+<div class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1 container " data-lid = "\${expedit.resume_experience_lid}">
+        <div class="row ">
+
+          <div class="col-12 col-md-12 col-lg-6 col-sm-12 pt-3">
+            <div class="row p-2">
+              <div class="col-md-3 ">
+                <p class="h6">Experience Type: <span class="required">*</span></p>
+              </div>
+              <div class="col-md-9">
+                <select class="work-experience-type form-control" value="\${expedit.abbr}" >
+                 <option value disabled selected>--Select--</option>
+                 \${workexperienceType}
+                </select>
+              </div>
+            </div>
+            
+            <div class="row p-2">
+              <div class="col-md-3 ">
+                <p class="h6"> University / Institute:<span class="required">*</span></p>
+              </div>
+              <div class="col-md-9 ">
+                <input class="form-control employeeName" value=\${expedit.employer_name}  type="text"/>
+              </div>
+            </div>
+            
+            <div class="row p-2">
+              <div class="col-md-3 ">
+                <p class="h6"> Program:<span class="required">*</span></p>
+              </div>
+              <div class="col-md-9 ">
+                <input class="form-control description" value="\${expedit.description}" type="text"/>
+              </div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-3 ">
+                <p class="h6">Subject Taught:<span class="required">*</span></p>
+              </div>
+              <div class="col-md-9 ">
+                <input class="form-control responsibility" value="\${expedit.responsibilities}" type="text"/>
+              </div>
+            </div>
+
+            <div class="row p-2">
+              <div class="col-md-3 ">
+                <p class="h6">Status : <span class="required">*</span></p>
+              </div>
+              <div class="col-md-9">
+                <select class="status form-control" >
+                 <option value="Current">Current</option>
+                 <option value="Past">Past</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row p-3 ">
+              <div class="col-md-3 ">
+                <p class="h6">Padagogy:</p>
+              </div>
+              <div class="col-md-9 ">
+                <input class="form-control padagogy" value="\${expedit.padagogy}" type="text"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+            <div class="row p-3">
+              <div class="col-md-3">
+                <p class="h6">Designation:<span class="required">*</span></p>
+              </div>
+              <div class="col-md-9 ">
+                <select class="form-control designation-title" id="designation" value="\${expedit.designation_lid}">
+                 <option value="0" disabled selected>--Select--</option>
+                 \${workexperienceDesignationType}
+                </select>
+              </div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-3">
+                <p class="h6">Other:  <span class="required">*</span></p>
+              </div>
+              <div class="col-md-9">
+                <input class="form-control other"  value="\${expedit.other}" type="text"/>
+              </div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-3">
+                <p class="h6">Start Date:  <span class="required">*</span></p>
+              </div>
+              <div class="col-md-9">
+                <input class="form-control start_Date" value="\${expedit.start_date}" type="date"/>
+              </div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-3 ">
+                <p class="h6">End Date:  <span class="required">*</span></p>
+              </div>
+              <div class="col-md-9">
+                <input class="form-control end_Date"  value="\${expedit.end_date}" type="date"/>
+              </div>
+            </div>
+            <div class="row p-3">
+              <div class="col-md-3 ">
+                <p class="h6">Teaching Duration: </p>
+              </div>
+              <div class="col-md-9">
+                <input class="form-control durationOfTeaching" value="\${expedit.duration}" type="text"/>
+              </div>
+            </div>
+   
+        </div>
+      
+        </div>
+        <hr style="height: 5px;">
+      <div id="delete_btn_workexperience_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_workexperience_symbol">
+       <i class="fa-solid fa-trash text-danger fa-2x"></i>
+       </div>
+       
+      </div>`
+
+                    document.querySelector('.workexperience-data').insertAdjacentHTML("beforeend", table);
+                  
+                  }
+                }
+                }
+
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.workexperience-modal').classList.remove('d-none');
+      }
 
     function resumeworkexperienceaddbtn() {
 
@@ -6727,7 +7046,7 @@
       let table = `
 <div class="position-relative workexperience_delete_btn d-flex" style="cursor: pointer;">
 
-<div class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1 container ">
+<div class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1 container " >
         <div class="row ">
 
           <div class="col-12 col-md-12 col-lg-6 col-sm-12 pt-3">
@@ -6736,7 +7055,7 @@
                 <p class="h6">Experience Type: <span class="required">*</span></p>
               </div>
               <div class="col-md-9">
-                <select class="work-experience-type form-control exp" data-key="workExperienceType">
+                <select class="work-experience-type form-control exp"  data-key="workExperienceType">
                  <option value disabled selected>--Select--</option>
                  \${workexperienceType}
                 </select>

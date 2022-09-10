@@ -301,4 +301,12 @@ public class userDao implements UserDaoInterface {
         return jdbcCall.executeFunction(Object.class, workexperienceTableData);
     }
 
+    @Override
+    public Object updateWorkExperienceDetails(String workexperienceTableData) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("update_work_experience");
+
+        return jdbcCall.executeFunction(Object.class, workexperienceTableData);
+    }
+
 }
