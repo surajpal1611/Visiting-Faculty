@@ -3110,7 +3110,6 @@
       for (i = 0; i < publicationRow.length; i++) {
         //to remove the red border
         publicationRow[i].querySelector('.publisher').classList.remove('input-border');
-        publicationRow[i].querySelector('.number-of-authors').classList.remove('input-border');
         publicationRow[i].querySelector('.year-of-publication').classList.remove('input-border');
         publicationRow[i].querySelector('.book-title').classList.remove('input-border');
         publicationRow[i].querySelector('.publication-certification').classList.remove('input-border');
@@ -3120,13 +3119,12 @@
         let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
         let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
         let resume_publication_lid = publicationRow[i].dataset.publicationlid;
-        console.log("PUBLICATION LID>>>>>>>>", resume_publication_lid)
         let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
         let publicationCertificate1 = publicationRow[i].querySelector('.publication-certification').value;
         let publicationCertificateSRC = publicationRow[i].querySelector('.publication-certificate-preview').src;
 
         let checkPublicationPublisher = tabledatacheck(publicationPublisher);
-        let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
+        //let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
         let checkPublicationYearOfPublication = tabledatacheck(publicationYearOfPublication);
         let checkPublicationBookTitle = tabledatacheck(publicationBookTitle);
         let checkPublicationCertificate = tabledatacheck(publicationCertificate1);
@@ -3134,9 +3132,6 @@
         // to add the red border according to validations
         if (checkPublicationPublisher == false) {
           publicationRow[i].querySelector('.publisher').classList.add('input-border');
-          return;
-        } else if (checkPublicationNumberOfAuthors == false) {
-          publicationRow[i].querySelector('.number-of-authors').classList.add('input-border');
           return;
         } else if (checkPublicationYearOfPublication == false) {
           publicationRow[i].querySelector('.year-of-publication').classList.add('input-border');
@@ -5355,7 +5350,6 @@ if(resumeinfo.resume_experience != null)
       for (i = 0; i < publicationRow.length; i++) {
         //to remove the red border
         publicationRow[i].querySelector('.publisher').classList.remove('input-border');
-        publicationRow[i].querySelector('.number-of-authors').classList.remove('input-border');
         publicationRow[i].querySelector('.year-of-publication').classList.remove('input-border');
         publicationRow[i].querySelector('.book-title').classList.remove('input-border');
         publicationRow[i].querySelector('.publication-certification').classList.remove('input-border');
@@ -5370,7 +5364,7 @@ if(resumeinfo.resume_experience != null)
         let publicationCertificateSRC = publicationRow[i].querySelector('.publication-certificate-preview').src;
 
         let checkPublicationPublisher = tabledatacheck(publicationPublisher);
-        let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
+        //let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
         let checkPublicationYearOfPublication = tabledatacheck(publicationYearOfPublication);
         let checkPublicationBookTitle = tabledatacheck(publicationBookTitle);
         let checkPublicationCertificate = tabledatacheck(publicationCertificate1);
@@ -5378,9 +5372,6 @@ if(resumeinfo.resume_experience != null)
         // to add the red border according to validations
         if (checkPublicationPublisher == false) {
           publicationRow[i].querySelector('.publisher').classList.add('input-border');
-          return;
-        } else if (checkPublicationNumberOfAuthors == false) {
-          publicationRow[i].querySelector('.number-of-authors').classList.add('input-border');
           return;
         } else if (checkPublicationYearOfPublication == false) {
           publicationRow[i].querySelector('.year-of-publication').classList.add('input-border');
