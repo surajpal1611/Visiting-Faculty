@@ -4026,7 +4026,7 @@
 if(resumeinfo.resume_experience != null)
 {
 
-      document.querySelector('.workexperience-div-wrapper').addEventListener('mouseover', function () {
+      document.querySelector('.workexperience-div-wrapper').addEventListener('mouseover', function (e) {
 
         for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
           box.classList.add('d-none');
