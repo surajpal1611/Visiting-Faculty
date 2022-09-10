@@ -53,7 +53,7 @@
 
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="last-name">last Name <span class="required">*</span></label>
+                  <label for="last-name">Last Name <span class="required">*</span></label>
                   <span id="last-name-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
 
@@ -74,7 +74,7 @@
 
               <div class="col-md-4 col-sm-12">
                 <div class="form-group">
-                  <label for="date-of-birth">date of birth <span class="required">*</span></label>
+                  <label for="date-of-birth">Date of Birth <span class="required">*</span></label>
                   <span id="date-of-birth-message" style="color: red;" class="error"></span>
                   <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
                 </div>
@@ -171,10 +171,12 @@
                 <input type="text" name="pan_number" value="${user_id}" disabled class="form-control" id="pan-number" />
               </div>
               <div class="col-md-4 col-sm-12">
-                <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
                 <span id="pan-photo-message" style="color: red;" class="error"></span>
                 <input type="checkbox" class="pan-check-box" id="pan-check-box">
-                <input type="file" class="form-control " id="pan-photo"
+
+                <label for="pan-photo">Update Pan Card Photo? <span class="required">*</span></label>
+                <input type="file" class="form-control d-none pan-photo" id="pan-photo"
+
                   onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
               </div>
               <div class="col-md-4 col-sm-12">
@@ -193,10 +195,11 @@
                 <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
               </div>
 
-              <div class="col-md-4 col-sm-12">
-                <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
+              <div class="col-md-4 col-sm-12">           
+                <input type="checkbox" class="adhar-check-box" id="pan-check-box">
                 <span id="aadhar-photo-message" style="color: red;" class="error"></span>
-                <input type="file" class="form-control" id="aadhar-photo"
+                <label for="aadhar-photo">Update Aadhar Card Photo? <span class="required">*</span></label>
+                <input type="file" class="form-control d-none aadhar-photo" id="aadhar-photo"
                   onchange="document.getElementById('aadhar-photo-preview-1').src = window.URL.createObjectURL(this.files[0])">
               </div>
               <div class="col-md-4 col-sm-12">
@@ -844,10 +847,11 @@
           <div class="row">
             <div class="col-md-6 col-sm-12">
               <div>
+                <input type="checkbox" class="cancelled-check-box" id="cancelled-check-box">
                 <label for="cancelled_cheque_Photo" class="py-md-2">Cancelled Cheque Photo<span
                     class="required">*</span></label>
                 <span id="cancelled_cheque_Photo-message" style="color: red;" class="error"></span>
-                <input type="file" name="cancelled_cheque_Photo" id="cancelled_cheque_Photo" class="form-control"
+                <input type="file" name="cancelled_cheque_Photo" id="cancelled_cheque_Photo" class="form-control d-none cancelled_cheque_Photo"
                   onchange="document.getElementById('check-preview').src = window.URL.createObjectURL(this.files[0])">
               </div>
             </div>
@@ -1371,7 +1375,7 @@
         resume += `
             </div>
                 <div class="addbtn-qualification d-flex my-2 justify-content-center align-items-center">
-                  <strong> Add More Rows</strong><button class="resume-qualification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                  <strong> Add Qualification</strong><button class="resume-qualification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
                 </div>
           </div>
           </div>
@@ -1449,7 +1453,7 @@ experiencetype = "Teaching Experience"
         }
         resume += `</div>
                 <div class="addbtn-workexperience d-flex my-2 justify-content-center align-items-center">
-                  <strong> Add More Rows</strong><button class="resume-workexperience-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                  <strong> Add Work Experience</strong><button class="resume-workexperience-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
                 </div>
           </div>
           </div>
@@ -1584,7 +1588,7 @@ experiencetype = "Teaching Experience"
 
         resume += `</div>
              <div class="addbtn-award d-flex my-2 justify-content-center align-items-center">
-                  <strong> Add More Rows</strong><button class="resume-award-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                  <strong> Add Award Detail's</strong><button class="resume-award-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
              </div>
           </div>
           </div>
@@ -1656,7 +1660,7 @@ experiencetype = "Teaching Experience"
 
         resume += `</div>
               <div class="addbtn-publication d-flex my-2 justify-content-center align-items-center">
-                    <strong> Add More Rows</strong><button class="resume-publication-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                    <strong> Add Publication Detail's</strong><button class="resume-publication-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
               </div>
             </div>
           </div>
@@ -1730,7 +1734,7 @@ experiencetype = "Teaching Experience"
 
         resume += `</div>  
                <div class="addbtn-research d-flex my-2 justify-content-center align-items-center">
-                     <strong> Add More Rows</strong><button class="resume-research-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                     <strong> Add Research Details's</strong><button class="resume-research-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
                </div>             
 
             </div>
@@ -1823,7 +1827,7 @@ experiencetype = "Teaching Experience"
         resume += `
               </div>
                   <div class="addbtn-certification d-flex my-2 justify-content-center align-items-center">
-                    <strong> Add More Rows</strong><button class="resume-certification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                    <strong> Add Certification</strong><button class="resume-certification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
                   </div>
             </div>
           </div>
@@ -2970,7 +2974,7 @@ experiencetype = "Teaching Experience"
               <div class="col-md-2 ">
                 <p class="h6">Number of Authors<span class="required">*</span></p>
               </div>
-              <div class="col-md-10 "><input  class="form-control number-of-authors" type="text"></div>
+              <div class="col-md-10 "><input  class="form-control number-of-authors" type="number"></div>
             </div>
             <div class="row p-3">
               <div class="col-md-2 ">
@@ -3047,7 +3051,7 @@ experiencetype = "Teaching Experience"
             <div class="col-md-2 ">
               <p class="h6">Number of Authors<span class="required">*</span></p>
             </div>
-            <div class="col-md-10 "><input  class="form-control number-of-authors" type="text"></div>
+            <div class="col-md-10 "><input  class="form-control number-of-authors" type="number"></div>
           </div>
           <div class="row p-3">
             <div class="col-md-2 ">
@@ -3951,6 +3955,7 @@ experiencetype = "Teaching Experience"
 
 
     document.querySelector('#body').addEventListener('click', function (e) {
+      console.log(e.target);
       if (e.target.classList.contains('addbtn-qualification') || findClosest(e.target, 'addbtn-qualification')) {
         resumequailficationaddbtn();
       }
@@ -4030,7 +4035,6 @@ experiencetype = "Teaching Experience"
         bankdetailsadd();
       }
     });
-
 
 
     // *************************************************************ADD Buttons Function's End******************************************************
@@ -4200,6 +4204,7 @@ experiencetype = "Teaching Experience"
 
       //************************************Qualification Section Start*************************************************************** 
 
+
       //Qualidication Details Btn
       function editQualificationDetail(id) {
         if (qualificationDataDB == 1) {
@@ -4289,7 +4294,7 @@ experiencetype = "Teaching Experience"
                         <div class="col-md-2 ">
                           <p class="h6">Certificate<span class="required">*</span></p>
                         </div>
-                        <div class="col-md-10"><input value="\${qualedit.url_path}" class="form-control qualification-certificate"
+                        <div class="col-md-10"><input type="checkbox" class="qualification-check-box" id="qualification-check-box"><input value="\${qualedit.url_path}" class="d-none form-control qualification-certificate"
                             onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])"
                             type="file">
                           <p hidden><img class="qualification-certificate-preview" type="hidden" alt="your image" width="100"
@@ -4595,7 +4600,7 @@ experiencetype = "Teaching Experience"
                   <div class="col-md-2 ">
                     <p class="h6">Number of Authors<span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10 "><input value="\${pubedit.no_of_authors}"  class="form-control number-of-authors" type="text"></div>
+                  <div class="col-md-10 "><input value="\${pubedit.no_of_authors}"  class="form-control number-of-authors" type="number"></div>
                 </div>
                 <div class="row p-3">
                   <div class="col-md-2 ">
@@ -4815,7 +4820,11 @@ experiencetype = "Teaching Experience"
     // })
 
 
-    checkboxfunction('profil-check-box', 'profile_photo');
+//*************************************************************************Check Box Functions*********************************************
+checkboxfunction('profil-check-box', 'profile_photo');
+checkboxfunction('pan-check-box','pan-photo');
+checkboxfunction('adhar-check-box','aadhar-photo');
+
 
 
     document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
@@ -5008,6 +5017,7 @@ experiencetype = "Teaching Experience"
 
 
     //*************************************Qualification-modal JS****************************************
+
 
     let qualificationID = 0;
     let qualificationModalID = 0;
@@ -6079,6 +6089,8 @@ experiencetype = "Teaching Experience"
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.bank-details-modal').classList.add('d-none');
     });
+
+    checkboxfunction('cancelled-check-box','cancelled_cheque_Photo');
 
     let accountType1;
     document.querySelector('#bank-details-submit-button').addEventListener('click', function (e) {
