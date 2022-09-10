@@ -173,12 +173,10 @@
               <div class="col-md-4 col-sm-12">
                 <span id="pan-photo-message" style="color: red;" class="error"></span>
                 <input type="checkbox" class="pan-check-box" id="pan-check-box">
-<<<<<<< HEAD
+
                 <label for="pan-photo">Update Pan Card Photo? <span class="required">*</span></label>
                 <input type="file" class="form-control d-none pan-photo" id="pan-photo"
-=======
-                <input type="file" class="form-control " id="pan-photo"
->>>>>>> 75829c401801b952db89c520b2b1ab04d98f879a
+
                   onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
               </div>
               <div class="col-md-4 col-sm-12">
@@ -4812,15 +4810,12 @@
     //   document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
     // })
 
-<<<<<<< HEAD
+
 //*************************************************************************Check Box Functions*********************************************
 checkboxfunction('profil-check-box', 'profile_photo');
 checkboxfunction('pan-check-box','pan-photo');
 checkboxfunction('adhar-check-box','aadhar-photo');
-=======
 
-    checkboxfunction('profil-check-box', 'profile_photo');
->>>>>>> 75829c401801b952db89c520b2b1ab04d98f879a
 
 
     document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
