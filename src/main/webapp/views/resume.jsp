@@ -234,7 +234,7 @@
               <div class="col-md-4 col-sm-12">
                 <div class="form-group">
                   <label for="first-name" cl>First Name <span class="required">*</span></label>
-                  <span id="first-name-message" style="color: red;" class="error"></span>
+                  <span id="first-name-message-insert" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="f_name_insert" id="first-name-insert"
                     placeholder="First Name">
                 </div>
@@ -244,7 +244,7 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="last-name">last Name <span class="required">*</span></label>
-                  <span id="last-name-message" style="color: red;" class="error"></span>
+                  <span id="last-name-message-insert" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="l_name_insert" id="last-name-insert"
                     placeholder="Last Name">
 
@@ -266,14 +266,14 @@
               <div class="col-md-4 col-sm-12">
                 <div class="form-group">
                   <label for="date-of-birth">date of birth <span class="required">*</span></label>
-                  <span id="date-of-birth-message" style="color: red;" class="error"></span>
+                  <span id="date-of-birth-message-insert" style="color: red;" class="error"></span>
                   <input type="date" class="form-control" name="date_of_birth_insert" id="date-of-birth-insert" />
                 </div>
               </div>
 
-              <div id="gender-row" class="col-md-4 col-sm-12">
+              <div id="gender-row-insert" class="col-md-4 col-sm-12">
                 <div class="form-group">
-                  <label for="date-of-birth">Gender<span class="required">*</span></label><br>
+                  <label for="date-of-birth">Gender<span id="gender-message-insert" class="required">*</span></label><br>
                   <label class="radio-inline">Male<input type="radio" name="gender_insert" class="gender ms-1" id="male"
                       value="1" /></label>
                   <label class="radio-inline">Female<input type="radio" name="gender_insert" class="gender ms-1"
@@ -285,7 +285,7 @@
 
               <div class="col-md-4 col-sm-12">
                 <label for="photo">passport Size Photo <span class="required">*</span></label>
-                <span id="photo-message" style="color: red;" class="error"></span>
+                <span id="photo-message-insert" style="color: red;" class="error"></span>
                 <input type="file" class="form-control" id="photo-insert" name="profile_photo_insert"
                   onchange="document.getElementById('photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
@@ -297,23 +297,23 @@
             <div id="left-third-row" class="row">
               <div class="col-md-3 col-sm-12">
                 <label for="contact-number">Contact No. <span class="required">*</span></label>
-                <span id="contact-number-message" style="color: red;" class="error"></span>
+                <span id="contact-number-message-insert" style="color: red;" class="error"></span>
                 <input type="text" class="form-control" name="contact_number_insert" id="contact-number-insert" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="temp_contact-number">Secondary Contact No.</label>
-                <span id="temporary-contact-number-message" style="color: red;" class="error"></span>
+                <span id="temporary-contact-number-message-insert" style="color: red;" class="error"></span>
                 <input type="text" class="form-control" name="temp_contact_number_insert"
                   id="temp_contact-number-insert" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="email">Email Id <span class="required">*</span></label>
-                <span id="email-message" style="color: red;" class="error"></span>
+                <span id="email-message-insert" style="color: red;" class="error"></span>
                 <input type="text" name="email_insert" class="form-control" id="email-insert">
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="temp_email">Secondary Email</label>
-                <span id="temp-email-message" style="color: red;" class="error"></span>
+                <span id="temp-email-message-insert" style="color: red;" class="error"></span>
                 <input type="text" name="temp_email_insert" class="form-control" id="temp_email-insert">
               </div>
             </div>
@@ -323,17 +323,17 @@
             <div id="left-fourth-row" class="row">
               <div class="col-md-6 col-sm-12">
                 <label for="address">Permanent Address <span class="required">*</span></label>
-                <span id="address-message" style="color: red;" class="error"></span>
+                <span id="address-message-insert" style="color: red;" class="error"></span>
                 <input type="text" class="form-control" name="permanent_address_insert" id="address-insert" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="city">City <span class="required">*</span></label>
-                <span id="city-message" style="color: red;" class="error"></span>
+                <span id="city-message-insert" style="color: red;" class="error"></span>
                 <input type="text" class="form-control" name="permanent_address_city_insert" id="city-insert" />
               </div>
               <div class="col-md-3 col-sm-12">
                 <label for="pincode">Pincode <span class="required">*</span></label>
-                <span id="pincode-message" style="color: red;" class="error"></span>
+                <span id="pincode-message-insert" style="color: red;" class="error"></span>
                 <input type="text" class="form-control" name="permanent_address_pincode_insert" id="pincode-insert" />
               </div>
             </div>
@@ -343,12 +343,12 @@
             <div id="left-fourth-row" class="row">
               <div class="col-md-8 col-sm-12">
                 <label for="temporary-address">Temporary Address</label>
-                <span id="temporary-address-message" style="color: red;" class="error"></span>
+                <span id="temporary-address-message-insert" style="color: red;" class="error"></span>
                 <input type="text" name="temporary_address_insert" class="form-control" id="temporary-address-insert">
               </div>
               <div class="col-md-4 col-sm-12">
                 <label for="country">Country <span class="required">*</span></label>
-                <span id="country-message" style="color: red;" class="error"></span>
+                <span id="country-message-insert" style="color: red;" class="error"></span>
                 <input type="text" name="nationality_insert" class="form-control" id="country-insert">
               </div>
             </div>
@@ -358,14 +358,14 @@
             <div id="left-fourth-row" class="row">
               <div class="col-md-4 col-sm-12">
                 <label for="pan-number">Pan Card Number <span class="required">*</span></label>
-                <span id="pan-number-message" style="color: red;" class="error"></span>
+                <span id="pan-number-message-insert" style="color: red;" class="error"></span>
                 <input type="text" name="pan_number_insert" value="${user_id}" disabled class="form-control"
                   id="pan-number-insert" />
               </div>
 
               <div class="col-md-4 col-sm-12">
                 <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
-                <span id="pan-photo-message" style="color: red;" class="error"></span>
+                <span id="pan-photo-message-insert" style="color: red;" class="error"></span>
                 <input type="file" class="form-control" id="pan-photo-insert"
                   onchange="document.getElementById('pan-photo-preview-insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
@@ -381,13 +381,13 @@
             <div id="left-fourth-row" class="row">
               <div class="col-md-4 col-sm-12">
                 <label for="aadhar-number">Aadhar Card Number <span class="required">*</span></label>
-                <span id="aadhar-number-message" style="color: red;" class="error"></span>
+                <span id="aadhar-number-message-insert" style="color: red;" class="error"></span>
                 <input type="text" class="form-control" name="aadhar_number_insert" id="aadhar-number-insert" />
               </div>
 
               <div class="col-md-4 col-sm-12">
                 <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
-                <span id="aadhar-photo-message" style="color: red;" class="error"></span>
+                <span id="aadhar-photo-message-insert" style="color: red;" class="error"></span>
                 <input type="file" class="form-control" id="aadhar-photo-insert"
                   onchange="document.getElementById('aadhar-photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
@@ -879,13 +879,13 @@
           <div class="row">
             <div class="col-md-6 col-sm-12">
               <label for="bank-name" class="py-md-2">Name of the Bank<span class="required">*</span></label>
-              <span id="bank-name-message" style="color: red;" class="error"></span>
+              <span id="bank-name-message-insert" style="color: red;" class="error"></span>
               <input type="text" class="form-control" id="bank-name-insert">
 
             </div>
             <div class="col-md-6 col-sm-12">
               <label for="bank-branch" class="py-md-2">Branch<span class="required">*</span></label>
-              <span id="bank-branch-message" style="color: red;" class="error"></span>
+              <span id="bank-branch-message-insert" style="color: red;" class="error"></span>
               <input type="text" class="form-control" id="bank-branch-insert">
 
             </div>
@@ -894,13 +894,13 @@
           <div class="row">
             <div class="col-md-6 col-sm-12">
               <label for="bank-ifsc-code" class="py-md-2">IFSC Code<span class="required">*</span></label>
-              <span id="bank-ifsc-code-message" style="color: red;" class="error"></span>
+              <span id="bank-ifsc-code-message-insert" style="color: red;" class="error"></span>
               <input type="text" class="form-control" id="bank-ifsc-code-insert">
 
             </div>
             <div class="col-md-6 col-sm-12">
-              <label for="bank-micr-code" class="py-md-2">MICR code<span class="required">*</span></label>
-              <span id="bank-micr-code-message" style="color: red;" class="error"></span>
+              <label for="bank-micr-code" class="py-md-2">MICR code<span class="required"></span></label>
+              <span id="bank-micr-code-message-insert" style="color: red;" class="error"></span>
               <input type="text" class="form-control" id="bank-micr-code-insert">
 
             </div>
@@ -909,13 +909,13 @@
           <div class="row">
             <div class="col-md-6 col-sm-12">
               <label for="bank-account-number" class="py-md-2">Account Number<span class="required">*</span></label>
-              <span id="bank-account-number-message" style="color: red;" class="error"></span>
+              <span id="bank-account-number-message-insert" style="color: red;" class="error"></span>
               <input type="text" class="form-control" id="bank-account-number-insert">
 
             </div>
             <div class="col-md-6 col-sm-12">
               <label for="bank-account-type" class="py-md-2">Account Type<span class="required">*</span></label>
-              <span id="bank-account-type-message" style="color: red;" class="error"></span>
+              <span id="bank-account-type-message-insert" style="color: red;" class="error"></span>
               <select class="form-control" id="bank-account-type-insert">
               </select>
             </div>
@@ -2046,7 +2046,18 @@
       result.lastName = document.querySelector('#last-name-insert').value;
       result.profilePhoto1 = document.querySelector('#photo-insert').value;
       result.DOB = document.querySelector('#date-of-birth-insert').value;
-      result.gender = document.querySelector("#gender-row input[type='radio']:checked").value;
+      //result.gender = document.querySelector("#gender-row-insert input[type='radio']:checked").value;
+      let is = document.querySelector("#gender-row-insert input[type='radio']:checked"); 
+        if(is != null)
+        {
+          document.getElementById('gender-message-insert').innerHTML = '';
+          result.gender = document.querySelector("#gender-row-insert input[type='radio']").value;
+        } 
+        else
+        {
+          document.getElementById('gender-message-insert').innerHTML = 'Select';
+          return;
+        }
       result.contactNumber = document.querySelector('#contact-number-insert').value;
       result.temporaryContact = document.querySelector('#temp_contact-number-insert').value;
       result.pancard = "${user_id}";
@@ -2060,42 +2071,23 @@
       result.tempemail = document.querySelector('#temp_email-insert').value;
       result.city = document.querySelector('#city-insert').value;
       result.pincode = document.querySelector('#pincode-insert').value;
-      // let firstName = personalDetailFirstNameValidation(result.f_name_insert);
-      // let lastName = personalDetailLastNameValidation(result.l_name_insert);
-      // let profilePhoto1 = personalDetailProfilePhotoValidation(document.getElementById("photo_insert").value);
-      // let DOB = personalDetailDateOfBirthValidation(result.date_of_birth_insert);
-      // let gender = personalDetailGenderValidation(result.gender_insert);
-      // let contactNumber = personalDetailContactNumberValidation(result.contact_number_insert);
-      // let temporaryContact = personalDetailTemporaryContactValidation(result.temp_contact_number_insert);
-      // let pancard = personalDetailPancardValidation(result.pan_number_insert);
-      // let pancardPhoto = personalDetailPancardPhotoValidation(document.getElementById("pan-photo_insert").value);
-      // let email = personalDetailEmailValidation(result.email_insert);
-      // let aadhar = personalDetailAadharValidation(result.aadhar_number_insert);
-      // let aadharPhoto1 = personalDetailAadharPhotoValidation(document.getElementById("aadhar-photo_insert").value);
-      // let address = personalDetailAddressValidation(result.permanent_address_insert);
-      // let country = personalDetailCountryValidation(result.nationality_insert);
-      // let tempContact = (result.temp_contact_number_insert);
-      // let tempemail = tempemailvalidation(result.temp_email_insert);
 
-      // if (!firstName || !lastName || !profilePhoto1 || !gender || !contactNumber || !email || !pancard || !
-      //   pancardPhoto || !aadhar || !aadharPhoto1 || !address || !
-      //   country || !DOB || !tempemail) {
-      //   return;
-      // }
+      let firstnamevalid = dynamiCheckSpecialChar(result.firstName, 'first-name-message-insert');
+      let lastnamevalid = dynamiCheckSpecialChar(result.lastName, 'last-name-message-insert');
+      let addressvalid = dynamicLengthCheck(result.address , 'address-message-insert');
+      let emailvalid = dynamicEmailCheck(result.email, 'email-message-insert');
+      let cityvalid = dynamicLengthCheck(result.city, 'city-message-insert');
+      let countryvalid = dynamicLengthCheck(result.country, 'country-message-insert');
+      let contactvalid = dynamicContactCheck(result.contactNumber, 'contact-number-message-insert');
+      let adharnumbervalid = dynamicAdharNumberCheck(result.aadhar, 'aadhar-number-message-insert');
+      let tempContactNumberValid = dynamicTempContactNumber(result.temporaryContact, 'temporary-contact-number-message-insert');
+      let tempemailvalid = dynamicTempEmail(result.tempemail, 'temp-email-message-insert');
 
-      // if (pancardPhoto.length != 0) {
-      //   document.getElementById('pancard-photo').firstElementChild.classList.remove('fa-ban')
-      //   document.getElementById('pancard-photo').firstElementChild.classList.remove('text-danger')
-      //   document.getElementById('pancard-photo').firstElementChild.classList.add('fa-image')
-      //   document.getElementById('pancard-photo').firstElementChild.classList.add('text-success')
-      // }
+      if(!firstnamevalid || !lastnamevalid || !addressvalid || !emailvalid || !cityvalid || !countryvalid || !contactvalid || !adharnumbervalid ||!tempContactNumber|| !tempemailvalid)
+      {
+        return;
+      }
 
-      // if (aadharPhoto1.length != 0) {
-      //   document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('fa-ban')
-      //   document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('text-danger')
-      //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('fa-image')
-      //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('text-success')
-      // }
 
       let personalDetailsData = {
         "insert_user_personal_details": {
@@ -3122,7 +3114,6 @@
       for (i = 0; i < publicationRow.length; i++) {
         //to remove the red border
         publicationRow[i].querySelector('.publisher').classList.remove('input-border');
-        publicationRow[i].querySelector('.number-of-authors').classList.remove('input-border');
         publicationRow[i].querySelector('.year-of-publication').classList.remove('input-border');
         publicationRow[i].querySelector('.book-title').classList.remove('input-border');
         publicationRow[i].querySelector('.publication-certification').classList.remove('input-border');
@@ -3132,13 +3123,12 @@
         let publicationNumberOfAuthors = publicationRow[i].querySelector('.number-of-authors').value;
         let publicationYearOfPublication = publicationRow[i].querySelector('.year-of-publication').value;
         let resume_publication_lid = publicationRow[i].dataset.publicationlid;
-        console.log("PUBLICATION LID>>>>>>>>", resume_publication_lid)
         let publicationBookTitle = publicationRow[i].querySelector('.book-title').value;
         let publicationCertificate1 = publicationRow[i].querySelector('.publication-certification').value;
         let publicationCertificateSRC = publicationRow[i].querySelector('.publication-certificate-preview').src;
 
         let checkPublicationPublisher = tabledatacheck(publicationPublisher);
-        let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
+        //let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
         let checkPublicationYearOfPublication = tabledatacheck(publicationYearOfPublication);
         let checkPublicationBookTitle = tabledatacheck(publicationBookTitle);
         let checkPublicationCertificate = tabledatacheck(publicationCertificate1);
@@ -3146,9 +3136,6 @@
         // to add the red border according to validations
         if (checkPublicationPublisher == false) {
           publicationRow[i].querySelector('.publisher').classList.add('input-border');
-          return;
-        } else if (checkPublicationNumberOfAuthors == false) {
-          publicationRow[i].querySelector('.number-of-authors').classList.add('input-border');
           return;
         } else if (checkPublicationYearOfPublication == false) {
           publicationRow[i].querySelector('.year-of-publication').classList.add('input-border');
@@ -3834,8 +3821,7 @@
             type: 'get',
             success: function (response) {
               for (let i = 0; i < response.length; i++) {
-                bankAccountType +=
-                  `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`
+                bankAccountType +=`<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`;
               }
               document.getElementById('bank-account-type').insertAdjacentHTML("beforeend", bankAccountType)
             },
@@ -3893,26 +3879,17 @@
       submitBankDetailsForm.append('accountType', accountType1)
       // submitBankDetailsForm.append('cancelledCheckPhoto', document.getElementById('cancelled_cheque_Photo-insert').value)
 
-      console.log(submitBankDetailsForm.get('bankName'))
+      let facultyBankNameValid = dynamicLengthCheck(submitBankDetailsForm.get('bankName'), 'bank-name-message-insert');
+      let facultyBankBranchValid = dynamicLengthCheck(submitBankDetailsForm.get('branchName'), 'bank-branch-message-insert');
+      let facultyIfscCodevalid = dynamicIFSCCheck(submitBankDetailsForm.get('ifscCode'), 'bank-ifsc-code-message-insert');
+      let facultyAccountNumberValid = dynamicBankAcountNumber(submitBankDetailsForm.get('accountNumber'), 'bank-account-number-message-insert');
 
-      let facultyBankName1 = bankDetailBankNameValidation(submitBankDetailsForm.get('bankName'))
-      let facultyBankBranch1 = bankDetailBankBranchValidation(submitBankDetailsForm.get('branchName'))
-      let facultyIfscCode1 = bankDetailIfscCodeValidation(submitBankDetailsForm.get('ifscCode'))
-      let facultyMicrCode1 = bankDetailMicrCodeValidation(submitBankDetailsForm.get('micrCode'))
-      let facultyAccountNumber1 = bankDetailAccountNumberValidation(submitBankDetailsForm.get('accountNumber'))
-      // let facultyCancelledCheque = bankDetailCancelledChequeValidation(submitBankDetailsForm.get(
-      //   'cancelledCheckPhoto'))
-      console.log("Beforee Validations")
-      // if (!facultyBankName1 || !facultyBankBranch1 || !facultyIfscCode1 || !facultyMicrCode1 || !
-      //   facultyAccountNumber1 || !facultyCancelledCheque) {
-      //   return;
-      // }
-      // if (facultyCancelledCheque.length != 0) {
-      //   document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('fa-ban')
-      //   document.getElementById('cancelled-check-photo').firstElementChild.classList.remove('text-danger')
-      //   document.getElementById('cancelled-check-photo').firstElementChild.classList.add('fa-image')
-      //   document.getElementById('cancelled-check-photo').firstElementChild.classList.add('text-success')
-      // }
+      if(!facultyBankNameValid || !facultyBankBranchValid || !facultyIfscCodevalid || !facultyAccountNumberValid)
+      {
+        return;
+      }
+
+
 
       let photoArray = []
 
@@ -4045,10 +4022,11 @@
 
 
 
-      
 
-      document.querySelector('.workexperience-div-wrapper').addEventListener('mouseover', function (e) {
+if(resumeinfo.resume_experience != null)
+{
 
+      document.querySelector('.workexperience-div-wrapper').addEventListener('mouseover', function () {
 
         for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
           box.classList.add('d-none');
@@ -4062,6 +4040,7 @@
             thisParent.querySelector('.workexperience-edit-box').classList.remove('d-none');
          }
       });
+}
 
 
       document.querySelector('.skills-div-wrapper').addEventListener('mouseover', function () {
@@ -4704,6 +4683,8 @@ let id = null;
       //************************************Bank Details Section Start***********************************************
 
 
+      if(resumeinfo.bank_details != null)
+      {
       document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
         if (bankDataDB == 1) {
           $.ajax({
@@ -4748,6 +4729,7 @@ let id = null;
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.bank-details-modal').classList.remove('d-none');
       });
+      }
 
     });
 
@@ -4778,12 +4760,20 @@ checkboxfunction('profil-check-box', 'profile_photo');
 
       let firstName = personalDetailFirstNameValidation(result.f_name);
       let lastName = personalDetailLastNameValidation(result.l_name);
+
+      //let profilePhoto1 = personalDetailProfilePhotoValidation(document.getElementById("photo").value);
+
       let DOB = personalDetailDateOfBirthValidation(result.date_of_birth);
       let gender = personalDetailGenderValidation(result.gender);
       let contactNumber = personalDetailContactNumberValidation(result.contact_number);
       let temporaryContact = personalDetailTemporaryContactValidation(result.temp_contact_number);
+
+      //let pancard = personalDetailPancardValidation(result.pan_number);
+      //let pancardPhoto = personalDetailPancardPhotoValidation(document.getElementById("pan-photo").value);
       let email = personalDetailEmailValidation(result.email);
       let aadhar = personalDetailAadharValidation(result.aadhar_number);
+      //let aadharPhoto1 = personalDetailAadharPhotoValidation(document.getElementById("aadhar-photo").value);
+
       let address = personalDetailAddressValidation(result.permanent_address);
       let country = personalDetailCountryValidation(result.nationality);
       let tempContact = (result.temp_contact_number);
@@ -5405,7 +5395,6 @@ checkboxfunction('profil-check-box', 'profile_photo');
       for (i = 0; i < publicationRow.length; i++) {
         //to remove the red border
         publicationRow[i].querySelector('.publisher').classList.remove('input-border');
-        publicationRow[i].querySelector('.number-of-authors').classList.remove('input-border');
         publicationRow[i].querySelector('.year-of-publication').classList.remove('input-border');
         publicationRow[i].querySelector('.book-title').classList.remove('input-border');
         publicationRow[i].querySelector('.publication-certification').classList.remove('input-border');
@@ -5420,7 +5409,7 @@ checkboxfunction('profil-check-box', 'profile_photo');
         let publicationCertificateSRC = publicationRow[i].querySelector('.publication-certificate-preview').src;
 
         let checkPublicationPublisher = tabledatacheck(publicationPublisher);
-        let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
+        //let checkPublicationNumberOfAuthors = tabledatacheck(publicationNumberOfAuthors);
         let checkPublicationYearOfPublication = tabledatacheck(publicationYearOfPublication);
         let checkPublicationBookTitle = tabledatacheck(publicationBookTitle);
         let checkPublicationCertificate = tabledatacheck(publicationCertificate1);
@@ -5428,9 +5417,6 @@ checkboxfunction('profil-check-box', 'profile_photo');
         // to add the red border according to validations
         if (checkPublicationPublisher == false) {
           publicationRow[i].querySelector('.publisher').classList.add('input-border');
-          return;
-        } else if (checkPublicationNumberOfAuthors == false) {
-          publicationRow[i].querySelector('.number-of-authors').classList.add('input-border');
           return;
         } else if (checkPublicationYearOfPublication == false) {
           publicationRow[i].querySelector('.year-of-publication').classList.add('input-border');
@@ -6056,8 +6042,7 @@ checkboxfunction('profil-check-box', 'profile_photo');
       let facultyIfscCode1 = bankDetailIfscCodeValidation(submitBankDetailsForm.get('ifscCode'))
       let facultyMicrCode1 = bankDetailMicrCodeValidation(submitBankDetailsForm.get('micrCode'))
       let facultyAccountNumber1 = bankDetailAccountNumberValidation(submitBankDetailsForm.get('accountNumber'))
-      let facultyCancelledCheque = bankDetailCancelledChequeValidation(submitBankDetailsForm.get(
-        'cancelledCheckPhoto'))
+      //let facultyCancelledCheque = bankDetailCancelledChequeValidation(submitBankDetailsForm.get('cancelledCheckPhoto'))
 
       if (!facultyBankName1 || !facultyBankBranch1 || !facultyIfscCode1 || !facultyMicrCode1 || !
         facultyAccountNumber1) {
