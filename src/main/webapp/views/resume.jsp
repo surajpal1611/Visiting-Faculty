@@ -6997,7 +6997,7 @@ checkboxfunction('profil-check-box', 'profile_photo');
                  </select>
                </div>
              </div>
-             <div class="row p-3">
+             <div class="row p-3 d-none">
                <div class="col-md-3">
                  <p class="h6">Other:  <span class="required">*</span></p>
                </div>
@@ -7128,7 +7128,7 @@ checkboxfunction('profil-check-box', 'profile_photo');
                 </select>
               </div>
             </div>
-            <div class="row p-3  ">
+            <div class="row p-3 d-none ">
               <div class="col-md-3">
                 <p class="h6">Other:  <span class="required">*</span></p>
               </div>
