@@ -34,7 +34,7 @@
     <div class="personal-details-modal d-none">
       <div id="main-form-area">
 
-        <form id="insert-form">
+        <form id="myForm">
           <div class="d-flex justify-content-center align-items-center">
             <h1 class="p-5" style="color: #740E00;"><b> Personal Details</b></h1>
           </div>
@@ -66,23 +66,6 @@
                     style="border: 1px solid #ced4da; margin-left:100px;" />
                 </div>
               </div>
-              <!-- <div class="col-md-4 col-sm-12">
-                <label for="first-name" cl>First Name <span class="required">*</span></label>
-                <span id="first-name-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="f_name" id="first-name" placeholder="First Name">
-              </div> -->
-
-              <!-- <div class="col-md-4 col-sm-12">
-                <label for="last-name">last Name <span class="required">*</span></label>
-                <span id="last-name-message" style="color: red;" class="error"></span>
-                <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
-              </div> -->
-
-              <!-- <div class="col-md-4 col-sm-12">
-                <img id="photo-preview" alt="your image" name="photo_preview" width="100" height="100"
-                  style="border: 1px solid #ced4da; margin-left:100px;" />
-              </div> -->
-
             </div>
           </div>
 
@@ -108,147 +91,127 @@
                       value="3" /></label>
                 </div>
               </div>
+              <div class="col-md-4 col-sm-12">
+                <label for="photo">passport Size Photo <span class="required">*</span></label>
+                <span id="photo-message" style="color: red;" class="error"></span>
+                <input type="file" class="form-control" id="photo" name="profile_photo"
+                  onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
+              </div>
 
-              <!-- <div class="col-md-4 col-sm-12">
-                <label for="date-of-birth">date of birth <span class="required">*</span></label>
-                <span id="date-of-birth-message" style="color: red;" class="error"></span>
-                <input type="date" class="form-control" name="date_of_birth" id="date-of-birth" />
-              </div> -->
-
-              <!-- <div id="gender-row" class="col-sm-12 col-md-4">
-                <label for="">Gender <span class="required">*</span></label><br>
-                <label for="male">Male</label>
-                <input style="height: auto ;" type="radio" name="gender" class="gender" id="male" value="1" />
-                <label for="female">Female</label>
-                <input style="height: auto ;" type="radio" name="gender" class="gender" id="female" value="2" />
-                <label for="other">other</label>
-                <input type="radio" name="gender" class="gender" id="other" value="3" />
-                <span id="gender-message" style="color: red;" class="error"></span>
-              </div> -->
-            </div> -->
-
-            <div class="col-md-4 col-sm-12">
-              <label for="photo">passport Size Photo <span class="required">*</span></label>
-              <span id="photo-message" style="color: red;" class="error"></span>
-              <input type="file" class="form-control" id="photo" name="profile_photo"
-                onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
             </div>
-
           </div>
+
+          <div class="container">
+            <div id="left-third-row" class="row">
+              <div class="col-md-3 col-sm-12">
+                <label for="contact-number">Contact No. <span class="required">*</span></label>
+                <span id="contact-number-message" style="color: red;" class="error"></span>
+                <input type="text" class="form-control" name="contact_number" id="contact-number" />
+              </div>
+              <div class="col-md-3 col-sm-12">
+                <label for="temp_contact-number">Secondary Contact No.</label>
+                <span id="temporary-contact-number-message" style="color: red;" class="error"></span>
+                <input type="text" class="form-control" name="temp_contact_number" id="temp_contact-number" />
+              </div>
+              <div class="col-md-3 col-sm-12">
+                <label for="email">Email Id <span class="required">*</span></label>
+                <span id="email-message" style="color: red;" class="error"></span>
+                <input type="text" name="email" class="form-control" id="email">
+              </div>
+              <div class="col-md-3 col-sm-12">
+                <label for="temp_email">Secondary Email</label>
+                <span id="temp-email-message" style="color: red;" class="error"></span>
+                <input type="text" name="temp_email" class="form-control" id="temp_email">
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="left-fourth-row" class="row">
+              <div class="col-md-6 col-sm-12">
+                <label for="address">Permanent Address <span class="required">*</span></label>
+                <span id="address-message" style="color: red;" class="error"></span>
+                <input type="text" class="form-control" name="permanent_address" id="address" />
+              </div>
+              <div class="col-md-3 col-sm-12">
+                <label for="city">City <span class="required">*</span></label>
+                <span id="city-message" style="color: red;" class="error"></span>
+                <input type="text" class="form-control" name="permanent_address_city" id="city" />
+              </div>
+              <div class="col-md-3 col-sm-12">
+                <label for="pincode">Pincode <span class="required">*</span></label>
+                <span id="pincode-message" style="color: red;" class="error"></span>
+                <input type="text" class="form-control" name="permanent_address_pincode" id="pincode" />
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="left-fourth-row" class="row">
+              <div class="col-md-8 col-sm-12">
+                <label for="temporary-address">Temporary Address</label>
+                <span id="temporary-address-message" style="color: red;" class="error"></span>
+                <input type="text" name="temporary_address" class="form-control" id="temporary-address">
+              </div>
+              <div class="col-md-4 col-sm-12">
+                <label for="country">Country <span class="required">*</span></label>
+                <span id="country-message" style="color: red;" class="error"></span>
+                <input type="text" name="nationality" class="form-control" id="country">
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="left-fourth-row" class="row">
+              <div class="col-md-4 col-sm-12">
+                <label for="pan-number">Pan Card Number <span class="required">*</span></label>
+                <span id="pan-number-message" style="color: red;" class="error"></span>
+                <input type="text" name="pan_number" value="${user_id}" disabled class="form-control" id="pan-number" />
+              </div>
+              <div class="col-md-4 col-sm-12">
+                <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
+                <span id="pan-photo-message" style="color: red;" class="error"></span>
+                <input type="file" class="form-control" id="pan-photo"
+                  onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
+              </div>
+              <div class="col-md-4 col-sm-12">
+                <img id="pan-photo-preview" alt="your image" width="100" height="100"
+                  style="border: 1px solid #ced4da; margin-left:100px;" />
+
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="left-fourth-row" class="row">
+              <div class="col-md-4 col-sm-12">
+                <label for="aadhar-number">Aadhar Card Number <span class="required">*</span></label>
+                <span id="aadhar-number-message" style="color: red;" class="error"></span>
+                <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
+              </div>
+
+              <div class="col-md-4 col-sm-12">
+                <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
+                <span id="aadhar-photo-message" style="color: red;" class="error"></span>
+                <input type="file" class="form-control" id="aadhar-photo"
+                  onchange="document.getElementById('aadhar-photo-preview-1').src = window.URL.createObjectURL(this.files[0])">
+              </div>
+              <div class="col-md-4 col-sm-12">
+                <img id="aadhar-photo-preview-1" alt="your image" width="100" height="100"
+                  style="border: 1px solid #ced4da; margin-left:100px;" />
+
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center py-3">
+            <button id="personal-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="personal-details-submit-button" class="btn btn-success m-4">Submit</button>
+          </div>
+
+        </form>
+
       </div>
-
-      <div class="container">
-        <div id="left-third-row" class="row">
-          <div class="col-md-3 col-sm-12">
-            <label for="contact-number">Contact No. <span class="required">*</span></label>
-            <span id="contact-number-message" style="color: red;" class="error"></span>
-            <input type="text" class="form-control" name="contact_number" id="contact-number" />
-          </div>
-          <div class="col-md-3 col-sm-12">
-            <label for="temp_contact-number">Secondary Contact No.</label>
-            <span id="temporary-contact-number-message" style="color: red;" class="error"></span>
-            <input type="text" class="form-control" name="temp_contact_number" id="temp_contact-number" />
-          </div>
-          <div class="col-md-3 col-sm-12">
-            <label for="email">Email Id <span class="required">*</span></label>
-            <span id="email-message" style="color: red;" class="error"></span>
-            <input type="text" name="email" class="form-control" id="email">
-          </div>
-          <div class="col-md-3 col-sm-12">
-            <label for="temp_email">Secondary Email</label>
-            <span id="temp-email-message" style="color: red;" class="error"></span>
-            <input type="text" name="temp_email" class="form-control" id="temp_email">
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div id="left-fourth-row" class="row">
-          <div class="col-md-6 col-sm-12">
-            <label for="address">Permanent Address <span class="required">*</span></label>
-            <span id="address-message" style="color: red;" class="error"></span>
-            <input type="text" class="form-control" name="permanent_address" id="address" />
-          </div>
-          <div class="col-md-3 col-sm-12">
-            <label for="city">City <span class="required">*</span></label>
-            <span id="city-message" style="color: red;" class="error"></span>
-            <input type="text" class="form-control" name="permanent_address_city" id="city" />
-          </div>
-          <div class="col-md-3 col-sm-12">
-            <label for="pincode">Pincode <span class="required">*</span></label>
-            <span id="pincode-message" style="color: red;" class="error"></span>
-            <input type="text" class="form-control" name="permanent_address_pincode" id="pincode" />
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div id="left-fourth-row" class="row">
-          <div class="col-md-8 col-sm-12">
-            <label for="temporary-address">Temporary Address</label>
-            <span id="temporary-address-message" style="color: red;" class="error"></span>
-            <input type="text" name="temporary_address" class="form-control" id="temporary-address">
-          </div>
-          <div class="col-md-4 col-sm-12">
-            <label for="country">Country <span class="required">*</span></label>
-            <span id="country-message" style="color: red;" class="error"></span>
-            <input type="text" name="nationality" class="form-control" id="country">
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div id="left-fourth-row" class="row">
-          <div class="col-md-4 col-sm-12">
-            <label for="pan-number">Pan Card Number <span class="required">*</span></label>
-            <span id="pan-number-message" style="color: red;" class="error"></span>
-            <input type="text" name="pan_number" class="form-control" id="pan-number" />
-          </div>
-
-          <div class="col-md-4 col-sm-12">
-            <label for="pan-photo">Pan Card Photo <span class="required">*</span></label>
-            <span id="pan-photo-message" style="color: red;" class="error"></span>
-            <input type="file" class="form-control" id="pan-photo"
-              onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
-          </div>
-          <div class="col-md-4 col-sm-12">
-            <img id="pan-photo-preview" alt="your image" width="100" height="100"
-              style="border: 1px solid #ced4da; margin-left:100px;" />
-
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div id="left-fourth-row" class="row">
-          <div class="col-md-4 col-sm-12">
-            <label for="aadhar-number">Aadhar Card Number <span class="required">*</span></label>
-            <span id="aadhar-number-message" style="color: red;" class="error"></span>
-            <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
-          </div>
-
-          <div class="col-md-4 col-sm-12">
-            <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
-            <span id="aadhar-photo-message" style="color: red;" class="error"></span>
-            <input type="file" class="form-control" id="aadhar-photo"
-              onchange="document.getElementById('aadhar-photo-preview-1').src = window.URL.createObjectURL(this.files[0])">
-          </div>
-          <div class="col-md-4 col-sm-12">
-            <img id="aadhar-photo-preview-1" alt="your image" width="100" height="100"
-              style="border: 1px solid #ced4da; margin-left:100px;" />
-
-          </div>
-        </div>
-      </div>
-
-      <div class="d-flex justify-content-center py-3">
-        <button id="personal-details-cancel-button" class="btn btn-danger m-4">Cancel</button>
-        <button id="personal-details-submit-button" class="btn btn-success m-4">Submit</button>
-      </div>
-
-      </form>
-
-    </div>
     </div>
     </div>
 
@@ -535,6 +498,7 @@
         </div>
       </div>
     </div>
+
 
     <!-- ************************************************************************Skills Modal Div******************************************************************************************** -->
 
@@ -1132,6 +1096,7 @@
         <!--------------------------------------Personal Details Section ---------------------------------------->`
 
         if (personal_details != null) {
+
           resume += `<div class="edit-personal-details">
           <div class="position-relative personal-information-div-wrapper d-flex" style="cursor: pointer;">
             <div class="container p-0">
@@ -1139,14 +1104,14 @@
                 <div class="cover-div p-3 px-sm-4 p-lg-4"> <div class="row">
                     <div class="col-md-4 col-sm-12 col-lg-3">
                       <div class="avatar bg-white shadow-sm p-1">
-                        <img src="/download (3).jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
+                        <img src="../imagedata/\${personal_details[0].profile_url_path}" alt="Passport Size photo" id="profile-photo-value" width="200"
                           height="200" />
                       </div>
                     </div>
                 <div id="right-cover" class="col-md-8 col-sm-12 col-lg-9 p-5">
                       <div class="d-flex" style="color: #740E00;">
-                        <h3><b id="first-name-value">\${personal_details.f_name}</b></h3> &nbsp &nbsp
-                        <h3><b id="last-name-value">\${personal_details.l_name}</b></h3>
+                        <h3><b id="first-name-value">\${personal_details[0].f_name}</b></h3> &nbsp &nbsp
+                        <h3><b id="last-name-value">\${personal_details[0].l_name}</b></h3>
                       </div>
                     </div>
                   </div>
@@ -1161,7 +1126,7 @@
                           <h6>Gender :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="gender-value">\${personal_details.name}</p> 
+                          <p id="gender-value">\${personal_details[0].name}</p> 
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1169,7 +1134,7 @@
                           <h6>Date of birth :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="date-of-birth-value">\${personal_details.date_of_birth}</p>
+                          <p id="date-of-birth-value">\${personal_details[0].date_of_birth}</p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1177,7 +1142,7 @@
                           <h6>Pancard :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="pancard-value">\${personal_details.pancard_no}</p>
+                          <p id="pancard-value">\${personal_details[0].pancard_no}</p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1185,7 +1150,7 @@
                           <h6>Pancard Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="pancard-photo"><i id="pancard-photo-preview" data-image="../imagedata/\${personal_details.pancard_url_path}" class="fa-solid fa-ban text-danger"></i></p>
+                          <p id="pancard-photo"><i id="pancard-photo-preview" data-image="../imagedata/\${personal_details[0].pancard_url_path}" class="fa-solid fa-ban text-danger"></i></p>
                           </p>
                         </div>
                       </div>
@@ -1194,7 +1159,7 @@
                           <h6>Aadhar card :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-value">\${personal_details.aadhar_card_no}</p>
+                          <p id="aadhar-card-value">\${personal_details[0].aadhar_card_no}</p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1202,7 +1167,7 @@
                           <h6>Aadhar card Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" data-image="../imagedata/\${personal_details.aadhar_card_url_path}" class="fa-solid fa-ban text-danger"></i></p>
+                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" data-image="../imagedata/\${personal_details[0].aadhar_card_url_path}" class="fa-solid fa-ban text-danger"></i></p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1210,7 +1175,7 @@
                           <h6>Contact No.</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="contact-number-value">\${personal_details.contact_number}</p>
+                          <p id="contact-number-value">\${personal_details[0].contact_number}</p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1218,7 +1183,7 @@
                           <h6>Secondary Contact No.</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temp-contact-value">\${personal_details.temp_contact_number}</p>
+                          <p id="temp-contact-value">\${personal_details[0].temp_contact_number}</p>
                         </div>
                       </div>
                     </div>
@@ -1230,7 +1195,7 @@
                           <h6>Email :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="email-value">\${personal_details.email}</p>
+                          <p id="email-value">\${personal_details[0].email}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1238,7 +1203,7 @@
                           <h6>Secondary Email :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temp-email-value">\${personal_details.temp_email}</p>
+                          <p id="temp-email-value">\${personal_details[0].temp_email}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1246,7 +1211,7 @@
                           <h6>Permanent Address :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="address-value">\${personal_details.address}</p>
+                          <p id="address-value">\${personal_details[0].address}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1254,7 +1219,7 @@
                           <h6 class="temporary-address-heading">Temporary Address :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temporary-address-value">703-Satyam panvel
+                          <p id="temporary-address-value">\${personal_details[1].address}
                           </p>
                         </div>
                       </div>
@@ -1263,7 +1228,7 @@
                           <h6>City</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="city-value">\${personal_details.city}</p>
+                          <p id="city-value">\${personal_details[0].city}</p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1271,7 +1236,7 @@
                           <h6>Pincode</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="pincode-value">\${personal_details.pin_code}</p>
+                          <p id="pincode-value">\${personal_details[0].pin_code}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1279,7 +1244,7 @@
                           <h6 class="country-heading">Country :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="country-value">\${personal_details.nationality}</p>
+                          <p id="country-value">\${personal_details[0].nationality}</p>
                         </div>
                       </div>
                     </div>
@@ -1401,33 +1366,30 @@
 
         resume += `
             </div>
-                <div class="addbtn d-flex my-2 justify-content-center align-items-center">
-                  <strong> Add Qualification</strong><button class="resume-qualification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                <div class="addbtn-qualification d-flex my-2 justify-content-center align-items-center">
+                  <strong> Add More Rows</strong><button class="resume-qualification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
                 </div>
           </div>
           </div>
         </div>
         <hr />
 
-        <!------------------------------------------------ Work Experience Section ------------------------------------------------>
 
+        <!------------------------------------------------ Work Experience Section ------------------------------------------------>
         <div class="position-relative workexperience-div-wrapper d-flex" style="cursor: pointer;">
           <div class="container">
             <div id="workexperience-div">
               <div class="d-flex justify-content-center align-items-center" style="color: #740E00;">
                 <h3><b> <i class="fa-solid fa-graduation-cap"></i>Work Experience</b></h3>
               </div>
-
               <div id="workexperience-list">`
         if (data.resume_experience != null) {
           for (let exp of data.resume_experience) {
             resume += ` <div class="text-block right">
                   <div class="card-body">
                     <h2>\${exp.experience_type_lid}</h2>
-
                     <div id="workexperience-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                       <div class="row">
-
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
@@ -1446,7 +1408,6 @@
                             </div>
                           </div>
                         </div>
-
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
@@ -1464,17 +1425,15 @@
                             </div>
                           </div>
                         </div>
-
                       </div>
                     </div>
                   </div>
+                  </div>
                   <div class="d-none workexperience-edit-box d-flex justify-content-center align-items-center" >
                      <i class="fa-solid fa-pen fa-2x text-white "></i>
-                  </div>
-                </div>`
+                  </div>`
           }
         }
-
         resume += `</div>
                 <div class="addbtn-workexperience d-flex my-2 justify-content-center align-items-center">
                   <strong> Add More Rows</strong><button class="resume-workexperience-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
@@ -1483,7 +1442,6 @@
           </div>
         </div>
         <hr />
-
         <!-------------------------------------------------- Skills Section----------------------------------------------->
 
         <div class="skills-div-wrapper position-relative d-flex" style="cursor: pointer;">
@@ -1505,7 +1463,7 @@
         if (data.resume_skill_selected != null) {
           for (hardskill of data.resume_skill_selected) {
             if (hardskill.skill_type_lid === 2)
-              resume += ` <div data-id="\${hardskill.skill_lid}" class="skill-pill-div text-center">
+              resume += ` <div data-id="\${hardskill.skill_lid}" data-skilltype="\${hardskill.skill_type_lid}" class="skill-pill-div text-center">
                                     \${hardskill.skill_name}\
                                 </div>`
           }
@@ -1520,7 +1478,7 @@
                       <div id="soft-skill-appending-div1" class="d-flex w-100 flex-wrap">`
           for (softskill of data.resume_skill_selected) {
             if (softskill.skill_type_lid === 1) {
-              resume += `<div data-id="\${softskill.skill_lid}" class="skill-pill-div text-center">
+              resume += `<div data-id="\${softskill.skill_lid}" data-skilltype="\${softskill.skill_type_lid}" class="skill-pill-div text-center">
                                     \${softskill.skill_name}\
                                 </div>`
             }
@@ -1613,7 +1571,7 @@
 
         resume += `</div>
              <div class="addbtn-award d-flex my-2 justify-content-center align-items-center">
-                  <strong> Add Award</strong><button class="resume-award-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                  <strong> Add More Rows</strong><button class="resume-award-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
              </div>
           </div>
           </div>
@@ -1684,7 +1642,7 @@
 
         resume += `</div>
               <div class="addbtn-publication d-flex my-2 justify-content-center align-items-center">
-                    <strong> Add Published Detail's</strong><button class="resume-publication-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                    <strong> Add More Rows</strong><button class="resume-publication-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
               </div>
             </div>
           </div>
@@ -1756,7 +1714,7 @@
 
         resume += `</div>  
                <div class="addbtn-research d-flex my-2 justify-content-center align-items-center">
-                     <strong> Add Research Detail's</strong><button class="resume-research-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                     <strong> Add More Rows</strong><button class="resume-research-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
                </div>             
 
             </div>
@@ -1847,7 +1805,7 @@
         resume += `
               </div>
                   <div class="addbtn-certification d-flex my-2 justify-content-center align-items-center">
-                    <strong> Add Certification's</strong><button class="resume-certification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
+                    <strong> Add More Rows</strong><button class="resume-certification-addbtn"><h2><i class='fa fa-plus-circle' style='color:#0aae9a'></i></h2></button>
                   </div>
             </div>
           </div>
@@ -1926,34 +1884,121 @@
         document.querySelector('#body').insertAdjacentHTML('afterbegin', resume);
         initResume();
 
-        document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
+        if (bank_details != null) {
+          document.querySelector('.bank-details-div-wrapper').addEventListener('mouseover', function () {
 
-          for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
-            box.classList.add('d-none');
-            box.classList.remove('edit-show');
-          }
+            for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+              box.classList.add('d-none');
+              box.classList.remove('edit-show');
+            }
 
-          document.querySelector('.bank-details-edit-box').classList.remove('d-none');
-          document.querySelector('.bank-details-edit-box').classList.add('edit-show');
+            document.querySelector('.bank-details-edit-box').classList.remove('d-none');
+            document.querySelector('.bank-details-edit-box').classList.add('edit-show');
 
-        });
-
-
-        document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
-          document.getElementById('body').classList.add('d-none');
-          document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
-        })
+          });
 
 
-        document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
-        })
+          document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
+            document.getElementById('body').classList.add('d-none');
+            document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
+          })
+
+          document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
+          })
+        }
+        
+
+        if (resumeinfo.personal_details != null) {
+
+          document.querySelector('.personal-information-div-wrapper').addEventListener('mouseover', function () {
+
+            for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+              box.classList.add('d-none');
+              box.classList.remove('edit-show');
+            }
+
+            document.querySelector('.personal-details-edit-box').classList.remove('d-none');
+            document.querySelector('.personal-details-edit-box').classList.add('edit-show');
+          });
 
 
-        personalDetails();
+
+          document.querySelector('#pancard-photo-preview').addEventListener('click', function (e) {
+            document.getElementById('body').classList.add('d-none');
+            document.querySelector('.pancard-photo-modal').classList.remove('d-none');
+          })
+
+          document.querySelector('#pancard-photo-cancel-button').addEventListener('click', function (e) {
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.pancard-photo-modal').classList.add('d-none');
+          })
+
+          document.querySelector('#aadhar-photo-preview').addEventListener('click', function (e) {
+            document.getElementById('body').classList.add('d-none');
+            document.querySelector('.aadhar-photo-modal').classList.remove('d-none');
+          })
+
+          document.querySelector('#aadhar-photo-cancel-button').addEventListener('click', function (e) {
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.aadhar-photo-modal').classList.add('d-none');
+          })
 
 
+
+          //************************************Personal Details Section Start***************************************************************
+
+          //Personal details Edit Btn
+
+          document.querySelector('.personal-details-edit-box').addEventListener('click', function () {
+
+            let editPersonalDetailsForm = new FormData()
+
+            editPersonalDetailsForm.append('editDateOfBirth', document.getElementById('date-of-birth-value')
+              .innerText)
+            editPersonalDetailsForm.append('editFirstName', document.getElementById('first-name-value')
+              .innerText)
+            editPersonalDetailsForm.append('editLastName', document.getElementById('last-name-value')
+              .innerText)
+            editPersonalDetailsForm.append('editPancardNumber', document.getElementById('pancard-value')
+              .innerText)
+            editPersonalDetailsForm.append('editAadharCardNumber', document.getElementById(
+                'aadhar-card-value')
+              .innerText)
+            editPersonalDetailsForm.append('editContactNumber', document.getElementById(
+                'contact-number-value')
+              .innerText)
+            editPersonalDetailsForm.append('editEmail', document.getElementById('email-value').innerText)
+            editPersonalDetailsForm.append('editAddress', document.getElementById('address-value').innerText)
+            editPersonalDetailsForm.append('editTemporaryAddress', document.getElementById(
+              'temporary-address-value').innerText)
+            editPersonalDetailsForm.append('editCity', document.getElementById('city-value').innerText)
+            editPersonalDetailsForm.append('editPincode', document.getElementById('pincode-value').innerText)
+            editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
+            editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
+
+            document.getElementById('first-name').value = editPersonalDetailsForm.get('editFirstName')
+            document.getElementById('last-name').value = editPersonalDetailsForm.get('editLastName')
+            document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')
+            document.getElementById('pan-number').value = editPersonalDetailsForm.get('editPancardNumber')
+            document.getElementById('aadhar-number').value = editPersonalDetailsForm.get(
+              'editAadharCardNumber')
+            document.getElementById('contact-number').value = editPersonalDetailsForm.get('editContactNumber')
+            document.getElementById('email').value = editPersonalDetailsForm.get('editEmail')
+            document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
+            document.getElementById('city').value = editPersonalDetailsForm.get('editCity')
+            document.getElementById('pincode').value = editPersonalDetailsForm.get('editPincode')
+            document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
+              'editTemporaryAddress')
+            document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
+
+            document.getElementById('body').classList.add('d-none');
+            document.querySelector('.personal-details-modal').classList.remove('d-none');
+
+          });
+
+        }
       },
 
       error: function (error) {
@@ -1965,26 +2010,30 @@
 
     //**************************************************************Personal Details Section Start***************************************************** 
 
-
-
     //Personal Details Insert Add
     function personalAddButton() {
       document.querySelector('.personal-details-modal-insert').classList.remove('d-none');
       document.querySelector('#body').classList.add('d-none');
     };
+
     //Personal Details Cancel Insert
     document.querySelector('#personal-details-cancel-insert').addEventListener('click', function (e) {
       e.preventDefault()
       document.querySelector('.personal-details-modal-insert').classList.add('d-none');
       document.querySelector('#body').classList.remove('d-none');
     });
+
     //Personal Details Submit
     document.querySelector('#personal-details-submit-insert').addEventListener('click', function (e) {
+
       console.log()
       e.preventDefault()
+
       let arrayresult = [];
       let result = {};
+
       // clearError();
+
       result.firstName = document.querySelector('#first-name-insert').value;
       result.lastName = document.querySelector('#last-name-insert').value;
       result.profilePhoto1 = document.querySelector('#photo-insert').value;
@@ -2019,23 +2068,27 @@
       // let country = personalDetailCountryValidation(result.nationality_insert);
       // let tempContact = (result.temp_contact_number_insert);
       // let tempemail = tempemailvalidation(result.temp_email_insert);
+
       // if (!firstName || !lastName || !profilePhoto1 || !gender || !contactNumber || !email || !pancard || !
       //   pancardPhoto || !aadhar || !aadharPhoto1 || !address || !
       //   country || !DOB || !tempemail) {
       //   return;
       // }
+
       // if (pancardPhoto.length != 0) {
       //   document.getElementById('pancard-photo').firstElementChild.classList.remove('fa-ban')
       //   document.getElementById('pancard-photo').firstElementChild.classList.remove('text-danger')
       //   document.getElementById('pancard-photo').firstElementChild.classList.add('fa-image')
       //   document.getElementById('pancard-photo').firstElementChild.classList.add('text-success')
       // }
+
       // if (aadharPhoto1.length != 0) {
       //   document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('fa-ban')
       //   document.getElementById('aadhar-card-photo').firstElementChild.classList.remove('text-danger')
       //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('fa-image')
       //   document.getElementById('aadhar-card-photo').firstElementChild.classList.add('text-success')
       // }
+
       let personalDetailsData = {
         "insert_user_personal_details": {
           "user_address": arrayresult,
@@ -2043,7 +2096,9 @@
           "user_info": []
         }
       }
+
       let photoArray = []
+
       let profilePhoto = document.getElementById("photo-insert").files[0]
       if (profilePhoto) {
         let filereader = new FileReader();
@@ -2053,6 +2108,7 @@
           photoArray[0] = profilePhotoBase64
         }
       }
+
       let aadharPhoto = document.getElementById("aadhar-photo-insert").files[0]
       if (aadharPhoto) {
         let filereader = new FileReader();
@@ -2062,6 +2118,7 @@
           photoArray[1] = aadharPhotobase64
         }
       }
+
       let panPhoto = document.getElementById("pan-photo-insert").files[0]
       if (panPhoto) {
         let filereader = new FileReader();
@@ -2071,7 +2128,9 @@
           photoArray[2] = panphotobase64
         }
       }
+
       setTimeout(function () {
+
         console.log(photoArray)
         let user_info = {}
         let user_contact = {}
@@ -2096,13 +2155,16 @@
         user_info.date_of_birth = result.DOB
         user_info.nationality = result.country
         personalDetailsData.insert_user_personal_details.user_info[0] = user_info
+
         let addressObject = {}
+
         addressObject.user_lid = '${user_lid}'
         addressObject.resume_lid = resume_lid
         addressObject.address = result.address
         addressObject.city = result.city
         addressObject.pin_code = result.pincode
         addressObject.address_type_lid = 1
+
         let addressObject2 = {}
         addressObject2.user_lid = '${user_lid}'
         addressObject2.resume_lid = resume_lid
@@ -2110,8 +2172,11 @@
         addressObject2.address_type_lid = 2
         addressObject2.city = result.city
         addressObject2.pin_code = result.pincode
+
         arrayresult[0] = addressObject
         arrayresult[1] = addressObject2
+
+
         console.log(JSON.stringify(personalDetailsData))
         let genderValue = ""
         if (Number.parseInt(result.gender) == 1) {
@@ -2123,20 +2188,35 @@
         }
         console.log(genderValue)
         let options = {
+
           method: 'POST',
           headers: {
+
             'Content-Type': 'application/json;charset=utf-8'
+
           },
           body: JSON.stringify(personalDetailsData)
+
         }
+
         let fetchRes = fetch('/insert-personal-details', options);
+
         fetchRes.then(success => {
-          // if (success.status == 200) {
+
+          if (success.status == 200) {
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.personal-details-modal-insert').classList.add('d-none')
+          }
+          else
+          {
+            alert('Check Data');
+          }
         })
       }, 1000)
+
     })
+
+
 
 
     //**************************************************************Personal Details Section End*****************************************************
@@ -2160,7 +2240,6 @@
           for (let i = 0; i < response.length; i++) {
             qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`;
           }
-
           let table = `
                       <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
                       <div class="container">
@@ -2534,7 +2613,6 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.qualification-modal').classList.add('d-none');
-            document.location.reload();
           } else {
             alert('Check Qualification details');
           }
@@ -2545,8 +2623,6 @@
     });
 
     // **************************************************Qualification Section End*******************************************************
-
-
 
     //*******************************************************Award Insert Model Section Start*****************************************
 
@@ -2866,7 +2942,6 @@
             if (data.status == 200) {
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.award-modal-insert').classList.add('d-none');
-              document.location.reload();
             } else {
               console.log("Error");
               alert('Check Award Entries');
@@ -3167,8 +3242,6 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.publication-modal').classList.add('d-none');
-            document.location.reload();
-
           } else {
             alert('Check');
           }
@@ -3447,8 +3520,6 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.research-modal').classList.add('d-none');
-            document.location.reload();
-
           } else {
             alert('Check');
           }
@@ -3742,8 +3813,6 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.certification-modal').classList.add('d-none');
-            document.location.reload();
-
           } else {
             alert('Check Professional certificate details');
           }
@@ -3863,13 +3932,13 @@
         console.log(bankDetailsJson)
         let bank_detail = {};
         bank_detail.user_lid = '${user_lid}',
-          bank_detail.resume_lid = resume_lid,
-          bank_detail.bank_name = document.querySelector('#bank-name-insert').value;
+        bank_detail.resume_lid = resume_lid,
+        bank_detail.bank_name = document.querySelector('#bank-name-insert').value;
         bank_detail.branch_name = document.querySelector('#bank-branch-insert').value;
         bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code-insert').value;
         bank_detail.micr_code = document.querySelector('#bank-micr-code-insert').value;
         bank_detail.account_number = document.querySelector('#bank-account-number-insert').value;
-        bank_detail.bank_account_type_lid = 1 //document.querySelector('#bank-account-type-insert').value;
+        bank_detail.bank_account_type_lid = document.querySelector('#bank-account-type-insert').value;
         bank_detail.url_path = photoArray[0];
         bankDetailsJson.insert_bank_data[0] = bank_detail
         console.log(JSON.stringify(bankDetailsJson))
@@ -3889,7 +3958,15 @@
 
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.bank-details-modal-insert').classList.add('d-none');
-              document.location.reload();
+              document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
+              document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get(
+                'branchName')
+              document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
+              document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
+              document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
+                'accountNumber')
+              document.getElementById('account-type-value').innerText = submitBankDetailsForm.get(
+                'accountType')
 
             }
           })
@@ -3925,7 +4002,6 @@
       if (e.target.classList.contains('certification-edit-box') || findClosest(e.target, 'addbtn-certification')) {
         resumecertificationEditbtn();
       }
-
       if (e.target.classList.contains('personalinsert') || findClosest(e.target, 'addbtn-certification')) {
         personalAddButton()
       }
@@ -3933,7 +4009,6 @@
         bankdetailsadd();
       }
     });
-
 
 
 
@@ -3970,16 +4045,16 @@
 
 
 
-      // document.querySelector('.workexperience-div-wrapper').addEventListener('mouseover', function () {
+      document.querySelector('.workexperience-div-wrapper').addEventListener('mouseover', function () {
 
-      //   for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
-      //     box.classList.add('d-none');
-      //     box.classList.remove('edit-show');
-      //   }
+        for (let box of document.querySelector('#body').querySelectorAll('.edit-show')) {
+          box.classList.add('d-none');
+          box.classList.remove('edit-show');
+        }
 
-      //   document.querySelector('.workexperience-edit-box').classList.add('edit-show');
-      //   document.querySelector('.workexperience-edit-box').classList.remove('d-none');
-      // });
+        document.querySelector('.workexperience-edit-box').classList.add('edit-show');
+        document.querySelector('.workexperience-edit-box').classList.remove('d-none');
+      });
 
 
       document.querySelector('.skills-div-wrapper').addEventListener('mouseover', function () {
@@ -4112,8 +4187,9 @@
 
                 if (resumeinfo.resume_qualification != null) {
                   for (qualedit of resumeinfo.resume_qualification) {
-                    if (qualedit.qualification_type_lid !== 4) {
-                      let table = `
+                    if(qualedit.qualification_type_lid != 4)
+                    {
+                    let table = `
                     <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
                       <div class="container">
                     <div class="row qualification-row"  data-lid = "\${qualedit.resume_qualification_lid}" >
@@ -4124,7 +4200,7 @@
                         </div>
                         <div class="col-md-10">
                           <select class="form-control qualification-title" value="\${qualedit.abbr}">
-                            \${qualificationType}
+                            \${qualificationType}\
                           </select>
                           </div>
                       </div>
@@ -4198,8 +4274,8 @@
                             </div>      
                     </div>`
 
-                      document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
-                    }
+                    document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
+                  }
                   }
                 }
 
@@ -4220,6 +4296,7 @@
 
       document.querySelector('#qualification-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'qualification-item').querySelector('.qualification-edit-box')) {
+          document.querySelector('.qualification-data').innerHTML= "";
           editQualificationDetail()
         }
       })
@@ -4232,6 +4309,13 @@
 
 
 
+
+      //************************************Work Experience Section Start***********************************************************
+
+      document.querySelector(".workexperience-edit-box").addEventListener('click', function () {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.workexperience-modal').classList.remove('d-none');
+      });
 
       //************************************Skills Section Start******************************************************************
 
@@ -4246,10 +4330,6 @@
         let softSkills = document.getElementById('soft-skill-appending-div1')
         let hardSkills = document.getElementById('hard-skill-appending-div1')
 
-        // softSkillDisplay.innerHTML = ''
-        // hardSkillDisplay.innerHTML = ''
-        // softSkillUl.innerHTML = ''
-        // hardSkillUl.innerHTML = ''
         $.ajax({
           url: '/get-all-skill',
           type: 'POST',
@@ -4297,6 +4377,28 @@
               if (skillPill) {
                 skillPill.remove()
               }
+            }
+
+
+            for (let skill of document.querySelectorAll('.skill-pill-div')) {
+
+
+              if (skill.dataset.skilltype == 1) {
+                document.getElementById('soft-skill-display').insertAdjacentHTML('beforeend', `<li class="soft-skill-list-group skill-list" data-status="0" data-skilltype="skill.skilltype" data-id="\${skill.id}">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
+                            <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${skill.innerText}\</a></div>
+                        </div>
+                    </li>`)
+              } else if (skill.dataset.skilltype == 2) {
+
+                document.getElementById('hard-skill-display').insertAdjacentHTML('beforeend', `<li class="soft-skill-list-group skill-list" data-status="0" data-skilltype="skill.skilltype" data-id="\${skill.id}">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
+                            <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${skill.innerText}\</a></div>
+                        </div>
+                    </li>`)
+              }
 
             }
           },
@@ -4304,8 +4406,6 @@
             console.log("Error::::::::::::", error);
           }
         });
-
-
 
       });
 
@@ -4393,7 +4493,7 @@
 
       document.querySelector('#award-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'award-item').querySelector('.award-edit-box')) {
-          document.querySelector('.a')
+          document.querySelector('#publication-award-div-update').innerHTML= "";
           editAwardDetail()
         }
       })
@@ -4479,6 +4579,7 @@
 
       document.querySelector('#publication-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'publication-item').querySelector('.publication-edit-box')) {
+          document.querySelector('#publication-modal-appending-div').innerHTML = "";
           editPublicationDetail()
         }
       })
@@ -4555,6 +4656,7 @@
 
       document.querySelector('#research-div').addEventListener('click', function (e) {
         if (findClosest(e.target, 'research-item').querySelector('.research-edit-box')) {
+          document.querySelector('#research-data').innerHTML= "";
           editResearchBox()
         }
       })
@@ -4645,7 +4747,7 @@
       let gender = personalDetailGenderValidation(result.gender);
       let contactNumber = personalDetailContactNumberValidation(result.contact_number);
       let temporaryContact = personalDetailTemporaryContactValidation(result.temp_contact_number);
-      let pancard = personalDetailPancardValidation(result.pan_number);
+      // let pancard = personalDetailPancardValidation(result.pan_number);
       let pancardPhoto = personalDetailPancardPhotoValidation(document.getElementById("pan-photo").value);
       let email = personalDetailEmailValidation(result.email);
       let aadhar = personalDetailAadharValidation(result.aadhar_number);
@@ -4655,7 +4757,7 @@
       let tempContact = (result.temp_contact_number);
       let tempemail = tempemailvalidation(result.temp_email);
 
-      if (!firstName || !lastName || !profilePhoto1 || !gender || !contactNumber || !email || !pancard || !
+      if (!firstName || !lastName || !profilePhoto1 || !gender || !contactNumber || !email || !
         pancardPhoto || !aadhar || !aadharPhoto1 || !address || !
         country || !DOB || !tempemail) {
         return;
@@ -4733,7 +4835,7 @@
         user_info.email = result.email
         user_info.temp_email = result.temp_email
         user_info.gender_lid = Number.parseInt(result.gender)
-        user_info.pancard_no = result.pan_number
+        user_info.pancard_no = '${user_id}'
         user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
         user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
         user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
@@ -4755,6 +4857,8 @@
         addressObject2.user_lid = '${user_lid}'
         addressObject2.resume_lid = resume_lid
         addressObject2.address = result.temporary_address
+        addressObject2.city = result.permanent_address_city
+        addressObject2.pin_code = result.permanent_address_pincode
         addressObject2.address_type_lid = 2
 
         arrayresult[0] = addressObject
@@ -4792,7 +4896,6 @@
           console.log(result.temp_contact_number)
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.personal-details-modal').classList.add('d-none')
-
           document.location.reload();
         })
       }, 1000)
@@ -4804,6 +4907,9 @@
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.personal-details-modal').classList.add('d-none')
     });
+
+
+
 
 
     //*************************************Qualification-modal JS****************************************
@@ -4826,7 +4932,7 @@
         qualificationRow[i].querySelector('.qualification-college').classList.remove('input-border');
         qualificationRow[i].querySelector('.qualification-percentile').classList.remove('input-border');
         qualificationRow[i].querySelector('.qualification-year').classList.remove('input-border');
-        // qualificationRow[i].querySelector('.qualification-certificate').classList.remove('input-border');
+        qualificationRow[i].querySelector('.qualification-certificate').classList.remove('input-border');
 
         let resume_qualification_lid = qualificationRow[i].dataset.lid
         let qualificationTitle = qualificationRow[i].querySelector('.qualification-title').value;
@@ -4836,15 +4942,16 @@
         let qualificationStatus = qualificationRow[i].querySelector('.qualification-status').value;
         let qualificationPercentile = qualificationRow[i].querySelector('.qualification-percentile').value;
         let qualificationYear = qualificationRow[i].querySelector('.qualification-year').value;
-        // let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
+        let qualificationCertificate = qualificationRow[i].querySelector('.qualification-certificate').value;
         // let qualificationCertificateImage = qualificationRow[i].querySelector('#qualification-certificate-preview').src;
 
         let checkSubject = tabledatacheck(qualificationSubject);
         let checkUniversity = tabledatacheck(qualificationUniversity);
         let checkCollege = tabledatacheck(qualificationCollege);
         let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
-        // let checkCertificate = tabledatacheck(qualificationCertificate);
+        let checkCertificate = tabledatacheck(qualificationCertificate);
         let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
+        // let checkCancelledCheque = qualificationDetailCertificateValidation(qualificationCertificate);
 
         // console.log(qualificationCertificateImage)
         console.log(checkPercentile)
@@ -4868,11 +4975,11 @@
         } else if (checkPercentile == false) {
           qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
           return;
+        } else if (checkCertificate == false) {
+          qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
+          return;
         }
-        // else if (checkCertificate == false) {
-        //   qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
-        //   return;
-        // }
+
 
 
         let qualificationTitle1 = ""
@@ -4906,12 +5013,6 @@
             let qualificationPhotoBase64 = evt.target.result;
             photoArray[i] = qualificationPhotoBase64
           }
-        } else {
-          setTimeout(function () {
-
-            photoArray[i] = null
-
-          }, 1000)
         }
 
 
@@ -4930,6 +5031,8 @@
             url_path: photoArray[i]
 
           }
+
+
 
           div += ` 
           <div class="text-block right qualification-update" >
@@ -5938,7 +6041,7 @@
         bank_detail.ifsc_code = document.querySelector('#bank-ifsc-code').value;
         bank_detail.micr_code = document.querySelector('#bank-micr-code').value;
         bank_detail.account_number = document.querySelector('#bank-account-number').value;
-        bank_detail.bank_account_type_lid = 1 //document.querySelector('#bank-account-type').value;
+        bank_detail.bank_account_type_lid = document.querySelector('#bank-account-type').value;
         bank_detail.url_path = photoArray[0];
         bankDetailsJson.insert_bank_data[0] = bank_detail
         console.log(JSON.stringify(bankDetailsJson))
@@ -5999,37 +6102,33 @@
       for (let i = 0; i < softSkillListGroup.length; i++) {
 
         let value = softSkillListGroup[i].dataset.id
+        let status = softSkillListGroup[i].dataset.status
         let value2 = softSkillListGroup[i].firstElementChild.lastElementChild.lastElementChild.innerText
+        if (status == 1) {
 
-        softSkillAppendingDiv1.innerHTML += `<div class="skill-pill-div text-center" data-id="\${value}">
-                                \${value2}
-                              </div>`
 
-        let index = 21
-        let obj = {}
-        obj.resume_lid = resume_lid
-        obj.skill_lid = Number.parseInt(value)
-        obj.skill_selected_lid = index++
-        skillJson.skill_details[skillIndex] = obj
-        skillIndex++;
+          let obj = {}
+          obj.resume_lid = resume_lid
+          obj.skill_lid = Number.parseInt(value)
+          skillJson.skill_details[skillIndex] = obj
+          skillIndex++;
+        }
+
       }
 
       for (let i = 0; i < hardSkillListGroup.length; i++) {
         let value = hardSkillListGroup[i].dataset.id
+        let status = hardSkillListGroup[i].dataset.status
         let value2 = hardSkillListGroup[i].firstElementChild.lastElementChild.lastElementChild.innerText
         console.log(value2)
 
-
-        hardSkillAppendingDiv1.innerHTML += `<div class="skill-pill-div text-center" data-id="\${value}">
-                                \${value2}
-                              </div>`
-        let index = 25
-        let obj = {}
-        obj.resume_lid = resume_lid
-        obj.skill_selected_lid = index++
-        obj.skill_lid = Number.parseInt(value)
-        skillJson.skill_details[skillIndex] = obj
-        skillIndex++;
+        if (status == 1) {
+          let obj = {}
+          obj.resume_lid = resume_lid
+          obj.skill_lid = Number.parseInt(value)
+          skillJson.skill_details[skillIndex] = obj
+          skillIndex++;
+        }
       }
 
       function postdata() {
@@ -6047,11 +6146,11 @@
           document.querySelector('.skills-modal').classList.add('d-none');
           document.querySelector("#add-custom-soft-skill").outerHTML = "";
           document.querySelector("#add-custom-hard-skill").outerHTML = "";
-          document.location.reload();
           // }
         })
       }
       postdata()
+      document.location.reload()
 
     })
 
@@ -6104,7 +6203,7 @@
         let id = element.parentElement.parentElement.parentElement.dataset.id
 
         let div = ` 
-                    <li class="soft-skill-list-group" data-id="\${id}">
+                    <li class="soft-skill-list-group" data-status="1" data-id="\${id}">
                         <div class="row">
                             <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
                             <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${text}\</a></div>
@@ -6160,7 +6259,7 @@
         let id = element.parentElement.parentElement.parentElement.dataset.id
 
         let div = ` 
-                     <li class="hard-skill-list-group" data-id="\${id}">
+                     <li class="hard-skill-list-group skill-list" data-status="1" data-id="\${id}">
                          <div class="row">
                              <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x hard-skill-delete-button" style="color:red;"></i></div>
                              <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${text}</a></div>
@@ -6190,7 +6289,7 @@
           console.log(response)
 
           softSkillDisplay.insertAdjacentHTML('beforeend',
-            ` <li class="soft-skill-list-group" data-id="\${response.id}">
+            ` <li class="soft-skill-list-group skill-list" data-status="1" data-id="\${response.id}">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
                                  <div class="col-md-10 col-sm-10 col-10"><a class="ms-3">\${response.skill_name}</a></div>
@@ -6220,7 +6319,7 @@
         success: function (response) {
 
           hardSkillDisplay.insertAdjacentHTML('beforeend',
-            `<li class="hard-skill-list-group" data-id="\${response.id}">
+            `<li class="hard-skill-list-group" data-status="1" data-id="\${response.id}">
                              <div class="row">
                                  <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
                                  <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${customHardSkillValue}</a></div>
@@ -6284,7 +6383,6 @@
       }
 
     })
-
 
     // **************************************************Workexperience Section Start*******************************************************
 
