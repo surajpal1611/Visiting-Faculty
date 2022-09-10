@@ -31,6 +31,8 @@ public interface UserDaoInterface {
 
     Object insertWorkExperienceDetails(String workexperienceTableData);
 
+    Object updateWorkExperienceDetails(String workexperienceTableData);
+
     List<UserSkillsFromDB> getAllSkills();
 
     int insertCustomSkill(UserSkillsFromDB userSkillsFromDB);

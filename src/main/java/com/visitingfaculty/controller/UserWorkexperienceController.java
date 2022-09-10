@@ -62,4 +62,30 @@ public class UserWorkexperienceController {
         // }
 
     }
+
+    @PostMapping(value = "/update-workexperience-details")
+    public ResponseEntity<?> updateWorkExperienceDetails(@RequestBody String workexperienceTableData) {
+        Object updateWorkExperiencedetail = userDaoInterface.updateWorkExperienceDetails(workexperienceTableData);
+        System.out.println(updateWorkExperiencedetail);
+        return ResponseEntity.ok("Inserted Successfully");
+        // String newObject = jsoncheck.qualificationCheck(qualificationTableData);
+
+        // if(newObject != null)
+        // {
+
+        // Object updateQualificationDetails =
+        // userDaoInterface.updateQualificationDetails(newObject);
+        // System.out.println(updateQualificationDetails);
+        // if (updateQualificationDetails == null) {
+        // return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        // }
+
+        // }
+        // else
+        // {
+        // System.out.println("Error");
+        // return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        // }
+
+    }
 }
