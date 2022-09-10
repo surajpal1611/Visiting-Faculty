@@ -834,3 +834,281 @@ function personalDetails() {
   });
 
 }
+
+//*****************************************************Dynamic Validation's**************************************************************** 
+
+function dynamiCheckSpecialChar(value, message)
+{
+  document.getElementById(message).innerHTML='';
+      let check = false;
+      if (value.length > 1) {
+        for (let i = 0; i < value.length; i++) {
+          if (value[i] >= '!' && value[i] <= '@') {
+            document.getElementById(message).innerHTML='Not Allowed';
+            check = false;
+            break;
+          } else {
+            check = true;
+          }
+        }
+      } else {
+        document.getElementById(message).innerHTML='Provide Input';
+        check = false;
+      }
+      return check;
+}
+
+function dynamicLengthCheck(value, message)
+{
+  document.getElementById(message).innerHTML='';
+  let check = false;
+  if(value.length > 3)
+  {
+    check = true;
+  }
+  else
+  {
+    document.getElementById(message).innerHTML='Invalid';
+    check = false;
+  }
+return check;
+}
+
+function dynamicEmailCheck(value, message)
+{
+  document.getElementById(message).innerHTML='';
+  let condition = false;
+  let atposition = value.indexOf('@');
+  let dotposition = value.lastIndexOf('.');
+    if (atposition < 1 || (value.length - 2) == dotposition) 
+    {
+      document.getElementById(message).innerHTML='Invalid';
+      condition = false;
+    } 
+    else if (atposition < dotposition) 
+    {
+      condition = true;
+    }
+    else 
+    {
+      document.getElementById(message).innerHTML='Invalid';
+      condition = false;
+    }
+  return condition;
+}
+
+function dynamicContactCheck(value, message)
+{
+  document.getElementById(message).innerHTML='';
+  let condition = false;
+  if (value.length != 10) 
+  {
+    document.getElementById(message).innerHTML='Invalid';
+    condition = false;
+  } 
+  else 
+  {
+    if (isNaN(value)) 
+    {
+      document.getElementById(message).innerHTML='Invalid';
+      condition = false;
+    } 
+    else 
+    {
+      if ((value.charAt(0) != 9) && (value.charAt(0) != 8) && (value.charAt(0) != 7) && (value.charAt(0) != 6)) 
+      {
+        document.getElementById(message).innerHTML='Invalid';
+        condition = false;
+      } 
+      else 
+      {
+        condition = true;
+      }
+    }
+  }
+return condition;
+}
+
+function dynamicAdharNumberCheck(value, message)
+{
+  document.getElementById(message).innerHTML='';
+  let condition = false;
+  if (value.length != 12) 
+  {
+    document.getElementById(message).innerHTML='Invalid';
+    condition = false;
+  } 
+  else 
+  {
+    for (let i = 0; i < value.length; i++) 
+    {
+      if (value[i] < '0' || value[i] > '9') 
+      {
+        document.getElementById(message).innerHTML='Invalid';
+        condition = false;
+        break;
+      } 
+      else 
+      {
+        condition = true;
+      }
+    }
+  }
+  return condition;
+}
+
+function dynamicIFSCCheck(value ,message)
+{
+  document.getElementById(message).innerHTML='';
+  let condition = false;
+  if (value.length != 11) 
+  {
+    condition = false;
+    document.getElementById(message).innerHTML='Invalid';
+  } 
+  else 
+  {
+    let firstfour = value.substring(0, 4);
+    let lastseven = value.substring(4, 11);
+    for (let i = 0; i < firstfour.length; i++) 
+    {
+      if (firstfour[i] < 'A' || firstfour[i] > 'Z') 
+      {
+        document.getElementById(message).innerHTML='Invalid';
+        condition = false;
+        break;
+      } 
+      else 
+      {
+        for (let j = 0; j < lastseven.length; j++) 
+        {
+          if (lastseven[j] >= '0' && lastseven[j] <= '9') 
+          {
+            condition = true;
+          } 
+          else 
+          {
+            document.getElementById(message).innerHTML='Invalid';
+            condition = false;
+            break;
+          }
+        }
+      }
+    }
+  }
+return condition;
+}
+
+function dynamicBankAcountNumber(value, message)
+{
+  document.getElementById(message).innerHTML='';
+  if ((checkLength(value) <= 10) || (checkLength(value) > 16)) 
+  {
+    document.getElementById(message).innerHTML='Invalid';
+    condition = false;
+  } 
+  else 
+  {
+    if(isNaN(res)) 
+    {
+      document.getElementById(message).innerHTML='Invalid';
+      condition = false;
+    } 
+    else 
+    {
+      condition = true;
+    }
+  }
+  return condition;
+}
+
+function dynamicPinNumber(value, message)
+{
+  document.getElementById(message).innerHTML='';
+  check = false;
+  if(value.length == 6)
+  {
+    if(isNaN(value))
+    {
+      check = false;
+      document.getElementById(message).innerHTML='Invalid';
+    }
+    else
+    {
+      check = true;
+    }
+  }
+  else
+  {
+    check = false;
+    document.getElementById(message).innerHTML='Invalid';
+  }
+return check;
+}
+
+function dynamicTempContactNumber(value ,message)
+{
+  document.getElementById(message).innerHTML='';
+  let condition = false; 
+  if (value.length < 1) 
+  {
+    condition = true;
+  } 
+  else 
+  {
+    if (value.length != 10) 
+    {
+      condition = false;
+      document.getElementById(message).innerHTML = 'Invalid';
+    } 
+    else 
+    {
+      if (isNaN(value)) 
+      {
+        condition = false;
+      } 
+      else 
+      {
+        if ((value.charAt(0) != 9) && (value.charAt(0) != 8) && (value.charAt(0) != 7) && (value.charAt(0) != 6)) 
+        {
+          condition = false;
+          document.getElementById(message).innerHTML = 'Invalid';
+        } 
+        else 
+        {
+          condition = true;
+        }
+      }
+    }
+  }
+return condition;
+}
+
+function dynamicTempEmail(value, message)
+{
+  document.getElementById(message).innerHTML='';
+  let checkit = false;
+  if (value.length > 0) 
+  {
+    var atposition = value.indexOf('@');
+    var dotposition = value.lastIndexOf('.');
+    if (atposition < 1 || (value.length - 2) == dotposition) 
+    {
+      document.getElementById(message).innerHTML='Invalid';
+      checkit = false;
+    } 
+    else if (atposition < dotposition) 
+    {
+      checkit = true;
+    } 
+    else 
+    {
+      document.getElementById(message).innerHTML='Invalid';
+      checkit = false;
+    }
+  } else 
+  {
+    checkit = true;
+  }
+  return checkit;
+}
