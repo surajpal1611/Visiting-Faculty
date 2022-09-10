@@ -176,7 +176,6 @@
 
                 <label for="pan-photo">Update Pan Card Photo? <span class="required">*</span></label>
                 <input type="file" class="form-control d-none pan-photo" id="pan-photo"
-
                   onchange="document.getElementById('pan-photo-preview').src = window.URL.createObjectURL(this.files[0])">
               </div>
               <div class="col-md-4 col-sm-12">
@@ -195,7 +194,7 @@
                 <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
               </div>
 
-              <div class="col-md-4 col-sm-12">           
+              <div class="col-md-4 col-sm-12">
                 <input type="checkbox" class="adhar-check-box" id="pan-check-box">
                 <span id="aadhar-photo-message" style="color: red;" class="error"></span>
                 <label for="aadhar-photo">Update Aadhar Card Photo? <span class="required">*</span></label>
@@ -851,7 +850,8 @@
                 <label for="cancelled_cheque_Photo" class="py-md-2">Cancelled Cheque Photo<span
                     class="required">*</span></label>
                 <span id="cancelled_cheque_Photo-message" style="color: red;" class="error"></span>
-                <input type="file" name="cancelled_cheque_Photo" id="cancelled_cheque_Photo" class="form-control d-none cancelled_cheque_Photo"
+                <input type="file" name="cancelled_cheque_Photo" id="cancelled_cheque_Photo"
+                  class="form-control d-none cancelled_cheque_Photo"
                   onchange="document.getElementById('check-preview').src = window.URL.createObjectURL(this.files[0])">
               </div>
             </div>
@@ -1395,10 +1395,10 @@
 
         if (data.resume_experience != null) {
           for (let exp of data.resume_experience) {
-let experiencetype="";
-            if(exp.experience_type_lid== 4){
-experiencetype = "Teaching Experience"
-            }else{
+            let experiencetype = "";
+            if (exp.experience_type_lid == 4) {
+              experiencetype = "Teaching Experience"
+            } else {
               experiencetype = "Industrial Experience"
 
             }
@@ -1947,7 +1947,7 @@ experiencetype = "Teaching Experience"
 
 
 
-         
+
 
 
           //************************************Personal Details Section Start***************************************************************
@@ -4019,13 +4019,14 @@ experiencetype = "Teaching Experience"
       if (e.target.classList.contains('addbtn-certification') || findClosest(e.target, 'addbtn-certification')) {
         resumecertificationaddbtn();
       }
-      if (e.target.classList.contains('certification-edit-box') || findClosest(e.target, 'certification-edit-box')) {
+      if (e.target.classList.contains('certification-edit-box') || findClosest(e.target,
+        'certification-edit-box')) {
         let id = null;
-          if (!e.target.classList.contains('certification-edit-box')) {
-            id = findClosest(e.target, 'certification-edit-box').dataset.certificationid
-          } else {
-            id = e.target.dataset.certificationid
-          }
+        if (!e.target.classList.contains('certification-edit-box')) {
+          id = findClosest(e.target, 'certification-edit-box').dataset.certificationid
+        } else {
+          id = e.target.dataset.certificationid
+        }
         resumecertificationEditbtn(id);
       }
       if (e.target.classList.contains('personalinsert') || findClosest(e.target, 'personalinsert')) {
@@ -4166,7 +4167,7 @@ experiencetype = "Teaching Experience"
 
 
     }
-   
+
     // });
 
     //Rana Changes 
@@ -4174,7 +4175,8 @@ experiencetype = "Teaching Experience"
       if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains(
           'award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target
         .classList.contains('research-certificate-display') || e.target.classList.contains(
-          'professional-certificate-display')|| e.target.classList.contains('aadhar-photo-preview') || e.target.classList.contains('pancard-photo-preview') ) {
+          'professional-certificate-display') || e.target.classList.contains('aadhar-photo-preview') || e.target
+        .classList.contains('pancard-photo-preview')) {
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.image-preview-modal').classList.remove('d-none');
         document.querySelector(".image-uploaded").src = e.target.dataset.image;
@@ -4363,8 +4365,9 @@ experiencetype = "Teaching Experience"
       document.querySelector('#workexperience-list').addEventListener('click', function (e) {
 
         let id = null;
-        if (findClosest(e.target, 'workexperience-item').querySelector('.workexperience-edit-box')|| e.target.contains('workexperience-edit-box')) {
-         
+        if (findClosest(e.target, 'workexperience-item').querySelector('.workexperience-edit-box') || e.target
+          .contains('workexperience-edit-box')) {
+
           document.querySelector('.workexperience-data').innerHTML = "";
           if (!e.target.classList.contains('workexperience-edit-box')) {
             id = findClosest(e.target, 'workexperience-edit-box').dataset.experienceid
@@ -4657,7 +4660,7 @@ experiencetype = "Teaching Experience"
         if (findClosest(e.target, 'publication-item').querySelector('.publication-edit-box')) {
           document.querySelector('#publication-modal-appending-div').innerHTML = "";
 
-         let id = null;
+          let id = null;
           if (!e.target.classList.contains('publication-edit-box')) {
             id = findClosest(e.target, 'publication-edit-box').dataset.publicationid
           } else {
@@ -4820,10 +4823,10 @@ experiencetype = "Teaching Experience"
     // })
 
 
-//*************************************************************************Check Box Functions*********************************************
-checkboxfunction('profil-check-box', 'profile_photo');
-checkboxfunction('pan-check-box','pan-photo');
-checkboxfunction('adhar-check-box','aadhar-photo');
+    //*************************************************************************Check Box Functions*********************************************
+    checkboxfunction('profil-check-box', 'profile_photo');
+    checkboxfunction('pan-check-box', 'pan-photo');
+    checkboxfunction('adhar-check-box', 'aadhar-photo');
 
 
 
@@ -6090,7 +6093,7 @@ checkboxfunction('adhar-check-box','aadhar-photo');
       document.querySelector('.bank-details-modal').classList.add('d-none');
     });
 
-    checkboxfunction('cancelled-check-box','cancelled_cheque_Photo');
+    checkboxfunction('cancelled-check-box', 'cancelled_cheque_Photo');
 
     let accountType1;
     document.querySelector('#bank-details-submit-button').addEventListener('click', function (e) {
