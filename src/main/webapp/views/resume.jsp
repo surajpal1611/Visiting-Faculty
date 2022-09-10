@@ -1387,11 +1387,20 @@
                 <h3><b> <i class="fa-solid fa-graduation-cap"></i>Work Experience</b></h3>
               </div>
               <div id="workexperience-list">`
+
+
         if (data.resume_experience != null) {
           for (let exp of data.resume_experience) {
+let experiencetype="";
+            if(exp.experience_type_lid== 4){
+experiencetype = "Teaching Experience"
+            }else{
+              experiencetype = "Industrial Experience"
+
+            }
             resume += ` <div class="text-block right workexperience-item">
                   <div class="card-body">
-                    <h2>\${exp.experience_type_lid}</h2>
+                    <h2>\${experiencetype}</h2>
                     <div id="workexperience-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                       <div class="row">
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
