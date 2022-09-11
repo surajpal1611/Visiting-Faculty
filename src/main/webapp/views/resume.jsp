@@ -362,7 +362,7 @@
               <div class="col-md-4 col-sm-12">
                 <label for="pan-number">Pan Card Number <span class="required">*</span></label>
                 <span id="pan-number-message-insert" style="color: red;" class="error"></span>
-                <input type="text" name="pan_number_insert" value="${user_id}" disabled class="form-control"
+                <input type="text" name="pan_number_insert" value='${user_id}' disabled class="form-control"
                   id="pan-number-insert" />
               </div>
 
@@ -1077,7 +1077,6 @@
   <script id="script-data"></script>
   <script>
     let resume_lid = '${resume_lid}';
-    console.log(resume_lid)
 
     let resumeinfo;
     $.ajax({
@@ -2012,7 +2011,6 @@
     // *************************************************************Functions For Insert Model****************************************************
 
     //**************************************************************Personal Details Section Start***************************************************** 
-
     //Personal Details Insert Add
     function personalAddButton() {
       document.querySelector('.personal-details-modal-insert').classList.remove('d-none');
@@ -2055,7 +2053,9 @@
       result.pancard = "${user_id}";
       result.pancardPhoto = document.querySelector('#pan-photo-insert').value;
       result.email = document.querySelector('#email-insert').value;
+
       result.aadhar = document.querySelector('#aadhar-number-insert').value;
+      result.pan = document.getElementById('pan-number-insert').value;
       result.aadharPhoto1 = document.querySelector('#aadhar-photo-insert').value;
       result.address = document.querySelector('#address-insert').value;
       result.country = document.querySelector('#country-insert').value;
@@ -2077,10 +2077,9 @@
       let tempemailvalid = dynamicTempEmail(result.tempemail, 'temp-email-message-insert');
 
       if (!firstnamevalid || !lastnamevalid || !addressvalid || !emailvalid || !cityvalid || !countryvalid || !
-        contactvalid || !adharnumbervalid || !tempContactNumber || !tempemailvalid) {
+        contactvalid || !adharnumbervalid || !tempContactNumberValid || !tempemailvalid) {
         return;
       }
-
 
       let personalDetailsData = {
         "insert_user_personal_details": {
@@ -2139,7 +2138,7 @@
         user_info.email = result.email
         user_info.temp_email = result.tempemail
         user_info.gender_lid = Number.parseInt(result.gender)
-        user_info.pancard_no = '${user_id}'
+        user_info.pancard_no = result.pan
         user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
         user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
         user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
@@ -4020,7 +4019,7 @@
         resumecertificationaddbtn();
       }
       if (e.target.classList.contains('certification-edit-box') || findClosest(e.target,
-        'certification-edit-box')) {
+          'certification-edit-box')) {
         let id = null;
         if (!e.target.classList.contains('certification-edit-box')) {
           id = findClosest(e.target, 'certification-edit-box').dataset.certificationid

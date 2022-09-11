@@ -44,7 +44,6 @@ public class UserRestController {
     @PostMapping(value = "/insert-personal-details")
     public ResponseEntity<?> insertPersonalDetails(@RequestBody String personalDetailsData) {
 
-        System.out.println(personalDetailsData);
         String json = jsonchk.UserJsonCheck(personalDetailsData);
         System.out.println(json);
         if (json != null) {
