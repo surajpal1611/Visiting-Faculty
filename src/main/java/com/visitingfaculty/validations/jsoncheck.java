@@ -31,17 +31,49 @@ public class jsoncheck {
             String f_name = user_info.getJSONObject(i).getString("f_name");
             String l_name = user_info.getJSONObject(i).getString("l_name");
             String email = user_info.getJSONObject(i).getString("email");
-            String profilePhoto = user_info.getJSONObject(i).getString("profile_url_path");
-            String pancardPhoto = user_info.getJSONObject(i).getString("pancard_url_path");
-            String aadharPhoto = user_info.getJSONObject(i).getString("aadhar_card_url_path");
+            String profilePhoto = user_info.getJSONObject(i).isNull("profile_url_path") ? "null"
+                    : user_info.getJSONObject(i).getString("profile_url_path");
+            String pancardPhoto = user_info.getJSONObject(i).isNull("pancard_url_path") ? "null"
+                    : user_info.getJSONObject(i).getString("pancard_url_path");
+            String aadharPhoto = user_info.getJSONObject(i).isNull("aadhar_card_url_path") ? "null"
+                    : user_info.getJSONObject(i).getString("aadhar_card_url_path");
 
-            String replacedProfilePhoto = userService.uploadPhotos(profilePhoto);
-            String replacedPancardPhoto = userService.uploadPhotos(pancardPhoto);
-            String replacedAadharPhoto = userService.uploadPhotos(aadharPhoto);
+            if (!profilePhoto.equals("null")) {
+                String replacedProfilePhoto = userService.uploadPhotos(profilePhoto);
+                replacedData1 = JsonString.replace(profilePhoto, replacedProfilePhoto);
 
-            replacedData1 = JsonString.replace(profilePhoto, replacedProfilePhoto);
-            replacedData = replacedData1.replace(pancardPhoto, replacedPancardPhoto);
-            replacedData2 = replacedData.replace(aadharPhoto, replacedAadharPhoto);
+            } else {
+                replacedData1 = JsonString;
+            }
+
+            if (!pancardPhoto.equals("null") && !profilePhoto.equals("null")) {
+
+                String replacedPancardPhoto = userService.uploadPhotos(pancardPhoto);
+                replacedData = replacedData1.replace(pancardPhoto, replacedPancardPhoto);
+
+            } else if (!pancardPhoto.equals("null")) {
+                String replacedPancardPhoto = userService.uploadPhotos(pancardPhoto);
+                replacedData = JsonString.replace(pancardPhoto, replacedPancardPhoto);
+            } else {
+                replacedData = JsonString;
+            }
+
+            if (!aadharPhoto.equals("null") && !pancardPhoto.equals("null") && !profilePhoto.equals("null")) {
+
+                String replacedAadharPhoto = userService.uploadPhotos(aadharPhoto);
+
+                replacedData2 = replacedData.replace(aadharPhoto, replacedAadharPhoto);
+            } else if(!aadharPhoto.equals("null") && !pancardPhoto.equals("null")) {
+                String replacedAadharPhoto = userService.uploadPhotos(aadharPhoto);
+
+                replacedData2 = replacedData.replace(aadharPhoto, replacedAadharPhoto);
+            } else if(!aadharPhoto.equals("null")) {
+                String replacedAadharPhoto = userService.uploadPhotos(aadharPhoto);
+
+                replacedData2 = replacedData.replace(aadharPhoto, replacedAadharPhoto);
+            } else {
+                replacedData2 = JsonString;
+            }
 
             Boolean l_namecheck = checkVal.CheckWithNoSpectailChar(l_name);
             Boolean f_namecheck = checkVal.CheckWithNoSpectailChar(f_name);
@@ -56,10 +88,10 @@ public class jsoncheck {
                 break;
             } else {
                 check = true;
+
             }
         }
         if (check == true) {
-            System.out.println(jsonString);
             return replacedData2;
         } else {
             return null;
@@ -82,10 +114,15 @@ public class jsoncheck {
         String name = jsonStringArray.getJSONObject(0).getString("bank_name");
         String branch = jsonStringArray.getJSONObject(0).getString("branch_name");
         String ifsc_code = jsonStringArray.getJSONObject(0).getString("ifsc_code");
-        String chequePhoto = jsonStringArray.getJSONObject(0).getString("url_path");
-        String replacedchequePhoto = userService.uploadPhotos(chequePhoto);
+        String chequePhoto = jsonStringArray.getJSONObject(0).isNull("url_path") ? "null"
+                : jsonStringArray.getJSONObject(0).getString("url_path");
 
-        replacedData = JsonString.replace(chequePhoto, replacedchequePhoto);
+        if (!chequePhoto.equals("null")) {
+
+            String replacedchequePhoto = userService.uploadPhotos(chequePhoto);
+
+            replacedData = JsonString.replace(chequePhoto, replacedchequePhoto);
+        }
 
         Boolean account_numberCheck = checkVal.accountNumberCheck(account_number);
         Boolean nameCheck = checkVal.checkLengthThree(name);
@@ -94,9 +131,12 @@ public class jsoncheck {
 
         if (account_numberCheck == true && nameCheck == true && branchCheck == true && ifsc_codeCheck == true) {
             check = true;
+            if (!chequePhoto.equals("null")) {
+                JsonString = replacedData;
+            }
         }
         if (check == true) {
-            return replacedData;
+            return JsonString;
         } else {
             return null;
         }
