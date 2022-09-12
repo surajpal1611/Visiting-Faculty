@@ -1128,3 +1128,39 @@ function dynamicTempEmail(value, message)
   }
   return checkit;
 }
+
+
+
+function RegistrationPanValidation(res) {
+
+  if (res.length != 10) {
+    document.getElementById('pan-number-message').innerHTML = "*Invalid length of Pancard Number";
+    condition = false;
+  } else {
+    let firstfive = res.substring(0, 5);
+    let nextfour = res.substring(5, 9);
+    for (let i = 0; i < firstfive.length; i++) {
+      if (firstfive[i] >= 'A' && firstfive[i] <= 'Z') {
+        for (let k = 0; k < nextfour.length; k++) {
+          if (nextfour[k] >= '0' && nextfour[k] <= '9') {
+            if (res[9] >= 'A' && res[9] <= 'Z') {
+              condition = true;
+            } else {
+              document.getElementById('pan-number-message').innerHTML = "*Invalid Last Digit";
+              condition = false;
+            }
+          } else {
+            document.getElementById('pan-number-message').innerHTML = "*Error Inbetween Numbers";
+            condition = false;
+            break;
+          }
+        }
+      } else {
+        document.getElementById('pan-number-message').innerHTML = "Error Inbetween First Five Characters";
+        condition = false;
+        break;
+      }
+    }
+  }
+  return condition;
+}

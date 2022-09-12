@@ -188,7 +188,9 @@
         height: 100%;
         width: 100%;
       }
-
+      .error {
+        color: red;
+      }
 
     }
   </style>
@@ -223,30 +225,43 @@
           <form method="POST" class="text-center" id="login-form">
             <h3><span>Reg</span>ister</h3>
             <span class="bottom-line mx-auto"></span>
-            <div class="cust-btn-group mt-3 mb-3">
-              <div class="cust-input-prepend">
-                <i class="fa-solid fa-user"></i>
+            <div class="mt-3 mb-3">
+              <div class="cust-btn-group">
+                <div class="cust-input-prepend">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <input type="text" id="pannumber" name="user_id" placeholder="Pan Card No." required>
               </div>
-              <input type="text" id="pannumber" name="user_id" placeholder="Pan Card No." required>
+              <small class="pancard-error-message error d-none">Enter Valid Pancard No.</small>
             </div>
-            <div class="cust-btn-group mt-3 mb-3">
-              <div class="cust-input-prepend">
-                <i class="fas fa-envelope"></i>
+            <div class="mt-3 mb-3">
+              <div class="cust-btn-group">
+                <div class="cust-input-prepend">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <input type="text" id="email" name="email" placeholder="Email id" required>
               </div>
-              <input type="text" id="email" name="email" placeholder="Email id" required>
+              <small class="email-error-message error d-none">Enter Valid Email</small>
             </div>
-            <div class="cust-btn-group mb-3">
-              <div class="cust-input-prepend">
-                <i class="fas fa-key"></i>
+
+            <div class="mb-3">
+              <div class="cust-btn-group">
+                <div class="cust-input-prepend">
+                  <i class="fas fa-key"></i>
+                </div>
+                <input type="password" id="password1" name="password" placeholder="Password" required>
+                <input type="hidden" name="devicecheck" id="devicecheck">
               </div>
-              <input type="password" id="password1" name="password" placeholder="Password" required>
-              <input type="hidden" name="devicecheck" id="devicecheck">
+              <small class="password-error-message error d-none">Enter Valid Password</small>
             </div>
-            <div class="cust-btn-group mb-3">
-              <div class="cust-input-prepend">
-                <i class="fas fa-key"></i>
+            <div class="div mb-3">
+              <div class="cust-btn-group">
+                <div class="cust-input-prepend">
+                  <i class="fas fa-key"></i>
+                </div>
+                <input type="password" id="password2" name="confirmPassword" placeholder="Confirm Password" required>
               </div>
-              <input type="password" id="password2" name="confirmPassword" placeholder="Confirm Password" required>
+              <small class="password-2-error-message error d-none">Enter Valid Password</small>
             </div>
             <div id="token-div" class="cust-btn-group mb-3 d-none">
               <div class="cust-input-prepend">
@@ -358,7 +373,7 @@
     let loginButton = document.querySelector('.register-btn')
     let status = 400;
     let result = {};
-    
+
     loginButton.addEventListener('click', function (e) {
 
       e.preventDefault();
@@ -400,7 +415,7 @@
             } else {
               document.getElementById('main-loader').classList.add('d-none');
               document.querySelector('.alert-danger').classList.remove('d-none');
-             
+
             }
           })
           .catch(function () {
