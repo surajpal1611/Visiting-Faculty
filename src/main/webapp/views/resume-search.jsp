@@ -190,7 +190,20 @@
                                 </thead>
                                 <tbody>`
                             for (let obj of data.resume_details) {
-                                tableToAppend += `
+                                if(obj.f_name == null) {
+                                    tableToAppend += `
+                                    <tr data-userlid = "\${obj.user_lid}">
+                                        <td>----</td>
+                                        <td class="user_id">\${obj.user_id}</td>
+                                        <td>
+                                            <a class="application-preview" style="border:none; outline:none" >
+                                            <i class="fa-solid fa-eye view-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
+                                            <a  class="" style="border:none; outline:none" >
+                                         <i class="fa-solid fa-plus create-resume-button" data-toggle="tooltip" title="Create Resume"></i></a>
+                                        </td>
+                                    </tr>`
+                                } else {
+                                    tableToAppend += `
                                     <tr data-userlid = "\${obj.user_lid}">
                                         <td>\${obj.f_name}</td>
                                         <td class="user_id">\${obj.user_id}</td>
@@ -201,6 +214,8 @@
                                          <i class="fa-solid fa-plus create-resume-button" data-toggle="tooltip" title="Create Resume"></i></a>
                                         </td>
                                     </tr>`
+                                }
+                               
                             }
 
                             tableToAppend += `  </tbody>

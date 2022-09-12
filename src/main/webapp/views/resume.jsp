@@ -245,7 +245,7 @@
 
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="last-name">last Name <span class="required">*</span></label>
+                  <label for="last-name">Last Name <span class="required">*</span></label>
                   <span id="last-name-message-insert" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="l_name_insert" id="last-name-insert"
                     placeholder="Last Name">
@@ -267,7 +267,7 @@
 
               <div class="col-md-4 col-sm-12">
                 <div class="form-group">
-                  <label for="date-of-birth">date of birth <span class="required">*</span></label>
+                  <label for="date-of-birth">Date of birth <span class="required">*</span></label>
                   <span id="date-of-birth-message-insert" style="color: red;" class="error"></span>
                   <input type="date" class="form-control" name="date_of_birth_insert" id="date-of-birth-insert" />
                 </div>
@@ -287,7 +287,7 @@
               </div>
 
               <div class="col-md-4 col-sm-12">
-                <label for="photo">passport Size Photo <span class="required">*</span></label>
+                <label for="photo">Passport Size Photo <span class="required">*</span></label>
                 <span id="photo-message-insert" style="color: red;" class="error"></span>
                 <input type="file" class="form-control" id="photo-insert" name="profile_photo_insert"
                   onchange="document.getElementById('photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
@@ -1083,6 +1083,22 @@
         <!--------------------------------------Personal Details Section ---------------------------------------->`
 
         if (personal_details != null) {
+          let tempCont = " ";
+          let tempAdd = "";
+          let tempEmail = "";
+
+          if ((personal_details[0].temp_contact_number).length == 0) {
+            console.log("LOOP-1")
+            tempCont = "N.A"
+          }
+          if ((personal_details[0].address).length == 0) {
+            console.log("LOOP-2")
+            tempAdd = "N.A"
+          }
+          if ((personal_details[0].temp_email).length == 0) {
+            console.log("LOOP-3")
+            tempEmail = "N.A"
+          }
 
           resume += `<div class="edit-personal-details">
           <div class="position-relative personal-information-div-wrapper d-flex" style="cursor: pointer;">
@@ -1170,7 +1186,7 @@
                           <h6>Secondary Contact No.</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temp-contact-value">\${personal_details[0].temp_contact_number}</p>
+                          <p id="temp-contact-value">\${personal_details[0].temp_contact_number}\${tempCont}</p>
                         </div>
                       </div>
                     </div>
@@ -1190,7 +1206,7 @@
                           <h6>Secondary Email :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temp-email-value">\${personal_details[0].temp_email}</p>
+                          <p id="temp-email-value">\${personal_details[0].temp_email}\${tempEmail}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1206,7 +1222,7 @@
                           <h6 class="temporary-address-heading">Temporary Address :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temporary-address-value">\${personal_details[1].address}
+                          <p id="temporary-address-value">\${personal_details[1].address}\${tempAdd}
                           </p>
                         </div>
                       </div>
@@ -6132,7 +6148,7 @@
 
       e.preventDefault()
       document.getElementById('main-loader').classList.remove('d-none')
-      
+
 
       let flag3 = document.getElementById('bank-account-type').value
       console.log(flag3)
