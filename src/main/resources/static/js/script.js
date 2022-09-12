@@ -835,137 +835,103 @@ function personalDetails() {
 
 }
 
-function checkboxfunction(checkbox, input)
-{
-    $("."+checkbox).on("click", function () 
-    {
-        if ($(this).is(":checked")) 
-        {
-          document.querySelector('.'+input).classList.remove('d-none');
-        } 
-        else 
-        {
-          document.querySelector('.'+input).classList.add('d-none');
-        }
-      });
+function checkboxfunction(checkbox, input) {
+  $("." + checkbox).on("click", function () {
+    if ($(this).is(":checked")) {
+      document.querySelector('.' + input).classList.remove('d-none');
+    } else {
+      document.querySelector('.' + input).classList.add('d-none');
+    }
+  });
 }
 
 
 //*****************************************************Dynamic Validation's**************************************************************** 
 
-function dynamiCheckSpecialChar(value, message)
-{
-  document.getElementById(message).innerHTML='';
-      let check = false;
-      if (value.length > 1) {
-        for (let i = 0; i < value.length; i++) {
-          if (value[i] >= '!' && value[i] <= '@') {
-            document.getElementById(message).innerHTML='Not Allowed';
-            check = false;
-            break;
-          } else {
-            check = true;
-          }
-        }
-      } else {
-        document.getElementById(message).innerHTML='Provide Input';
-        check = false;
-      }
-      return check;
-}
-
-function dynamicLengthCheck(value, message)
-{
-  document.getElementById(message).innerHTML='';
+function dynamiCheckSpecialChar(value, message) {
+  document.getElementById(message).innerHTML = '';
   let check = false;
-  if(value.length > 3)
-  {
-    check = true;
-  }
-  else
-  {
-    document.getElementById(message).innerHTML='Invalid';
+  if (value.length > 1) {
+    for (let i = 0; i < value.length; i++) {
+      if (value[i] >= '!' && value[i] <= '@') {
+        document.getElementById(message).innerHTML = 'Not Allowed';
+        check = false;
+        break;
+      } else {
+        check = true;
+      }
+    }
+  } else {
+    document.getElementById(message).innerHTML = 'Provide Input';
     check = false;
   }
-return check;
+  return check;
 }
 
-function dynamicEmailCheck(value, message)
-{
-  document.getElementById(message).innerHTML='';
+function dynamicLengthCheck(value, message) {
+  document.getElementById(message).innerHTML = '';
+  let check = false;
+  if (value.length > 3) {
+    check = true;
+  } else {
+    document.getElementById(message).innerHTML = 'Invalid';
+    check = false;
+  }
+  return check;
+}
+
+function dynamicEmailCheck(value, message) {
+  document.getElementById(message).innerHTML = '';
   let condition = false;
   let atposition = value.indexOf('@');
   let dotposition = value.lastIndexOf('.');
-    if (atposition < 1 || (value.length - 2) == dotposition) 
-    {
-      document.getElementById(message).innerHTML='Invalid';
-      condition = false;
-    } 
-    else if (atposition < dotposition) 
-    {
-      condition = true;
-    }
-    else 
-    {
-      document.getElementById(message).innerHTML='Invalid';
-      condition = false;
-    }
+  if (atposition < 1 || (value.length - 2) == dotposition) {
+    document.getElementById(message).innerHTML = 'Invalid';
+    condition = false;
+  } else if (atposition < dotposition) {
+    condition = true;
+  } else {
+    document.getElementById(message).innerHTML = 'Invalid';
+    condition = false;
+  }
   return condition;
 }
 
-function dynamicContactCheck(value, message)
-{
-  document.getElementById(message).innerHTML='';
+function dynamicContactCheck(value, message) {
+  document.getElementById(message).innerHTML = '';
   let condition = false;
-  if (value.length != 10) 
-  {
-    document.getElementById(message).innerHTML='Invalid';
+  if (value.length != 10) {
+    document.getElementById(message).innerHTML = 'Invalid';
     condition = false;
-  } 
-  else 
-  {
-    if (isNaN(value)) 
-    {
-      document.getElementById(message).innerHTML='Invalid';
+  } else {
+    if (isNaN(value)) {
+      document.getElementById(message).innerHTML = 'Invalid';
       condition = false;
-    } 
-    else 
-    {
-      if ((value.charAt(0) != 9) && (value.charAt(0) != 8) && (value.charAt(0) != 7) && (value.charAt(0) != 6)) 
-      {
-        document.getElementById(message).innerHTML='Invalid';
+    } else {
+      if ((value.charAt(0) != 9) && (value.charAt(0) != 8) && (value.charAt(0) != 7) && (value.charAt(0) != 6)) {
+        document.getElementById(message).innerHTML = 'Invalid';
         condition = false;
-      } 
-      else 
-      {
+      } else {
         condition = true;
       }
     }
   }
-return condition;
+  return condition;
 }
 
-function dynamicAdharNumberCheck(value, message)
-{
-  document.getElementById(message).innerHTML='';
+function dynamicAdharNumberCheck(value, message) {
+  document.getElementById(message).innerHTML = '';
   let condition = false;
-  if (value.length != 12) 
-  {
-    document.getElementById(message).innerHTML='Invalid';
+  if (value.length != 12) {
+    document.getElementById(message).innerHTML = 'Invalid';
     condition = false;
-  } 
-  else 
-  {
-    for (let i = 0; i < value.length; i++) 
-    {
-      if (value[i] < '0' || value[i] > '9') 
-      {
-        document.getElementById(message).innerHTML='Invalid';
+  } else {
+    for (let i = 0; i < value.length; i++) {
+      if (value[i] < '0' || value[i] > '9') {
+        document.getElementById(message).innerHTML = 'Invalid';
         condition = false;
         break;
-      } 
-      else 
-      {
+      } else {
         condition = true;
       }
     }
@@ -973,38 +939,26 @@ function dynamicAdharNumberCheck(value, message)
   return condition;
 }
 
-function dynamicIFSCCheck(value ,message)
-{
-  document.getElementById(message).innerHTML='';
+function dynamicIFSCCheck(value, message) {
+  document.getElementById(message).innerHTML = '';
   let condition = false;
-  if (value.length != 11) 
-  {
+  if (value.length != 11) {
     condition = false;
-    document.getElementById(message).innerHTML='Invalid';
-  } 
-  else 
-  {
+    document.getElementById(message).innerHTML = 'Invalid';
+  } else {
     let firstfour = value.substring(0, 4);
     let lastseven = value.substring(4, 11);
-    for (let i = 0; i < firstfour.length; i++) 
-    {
-      if (firstfour[i] < 'A' || firstfour[i] > 'Z') 
-      {
-        document.getElementById(message).innerHTML='Invalid';
+    for (let i = 0; i < firstfour.length; i++) {
+      if (firstfour[i] < 'A' || firstfour[i] > 'Z') {
+        document.getElementById(message).innerHTML = 'Invalid';
         condition = false;
         break;
-      } 
-      else 
-      {
-        for (let j = 0; j < lastseven.length; j++) 
-        {
-          if (lastseven[j] >= '0' && lastseven[j] <= '9') 
-          {
+      } else {
+        for (let j = 0; j < lastseven.length; j++) {
+          if (lastseven[j] >= '0' && lastseven[j] <= '9') {
             condition = true;
-          } 
-          else 
-          {
-            document.getElementById(message).innerHTML='Invalid';
+          } else {
+            document.getElementById(message).innerHTML = 'Invalid';
             condition = false;
             break;
           }
@@ -1012,118 +966,83 @@ function dynamicIFSCCheck(value ,message)
       }
     }
   }
-return condition;
+  return condition;
 }
 
-function dynamicBankAcountNumber(value, message)
-{
-  document.getElementById(message).innerHTML='';
-  if ((checkLength(value) <= 10) || (checkLength(value) > 16)) 
-  {
-    document.getElementById(message).innerHTML='Invalid';
+function dynamicBankAcountNumber(value, message) {
+  document.getElementById(message).innerHTML = '';
+  if ((checkLength(value) <= 10) || (checkLength(value) > 16)) {
+    document.getElementById(message).innerHTML = 'Invalid';
     condition = false;
-  } 
-  else 
-  {
-    if(isNaN(res)) 
-    {
-      document.getElementById(message).innerHTML='Invalid';
+  } else {
+    if (isNaN(res)) {
+      document.getElementById(message).innerHTML = 'Invalid';
       condition = false;
-    } 
-    else 
-    {
+    } else {
       condition = true;
     }
   }
   return condition;
 }
 
-function dynamicPinNumber(value, message)
-{
-  document.getElementById(message).innerHTML='';
+function dynamicPinNumber(value, message) {
+  document.getElementById(message).innerHTML = '';
   check = false;
-  if(value.length == 6)
-  {
-    if(isNaN(value))
-    {
+  if (value.length == 6) {
+    if (isNaN(value)) {
       check = false;
-      document.getElementById(message).innerHTML='Invalid';
-    }
-    else
-    {
+      document.getElementById(message).innerHTML = 'Invalid';
+    } else {
       check = true;
     }
-  }
-  else
-  {
+  } else {
     check = false;
-    document.getElementById(message).innerHTML='Invalid';
+    document.getElementById(message).innerHTML = 'Invalid';
   }
-return check;
+  return check;
 }
 
-function dynamicTempContactNumber(value ,message)
-{
-  document.getElementById(message).innerHTML='';
-  let condition = false; 
-  if (value.length < 1) 
-  {
+function dynamicTempContactNumber(value, message) {
+  document.getElementById(message).innerHTML = '';
+  let condition = false;
+  if (value.length < 1) {
     condition = true;
-  } 
-  else 
-  {
-    if (value.length != 10) 
-    {
+  } else {
+    if (value.length != 10) {
       condition = false;
       document.getElementById(message).innerHTML = 'Invalid';
-    } 
-    else 
-    {
-      if (isNaN(value)) 
-      {
+    } else {
+      if (isNaN(value)) {
         condition = false;
-      } 
-      else 
-      {
-        if ((value.charAt(0) != 9) && (value.charAt(0) != 8) && (value.charAt(0) != 7) && (value.charAt(0) != 6)) 
-        {
+      } else {
+        if ((value.charAt(0) != 9) && (value.charAt(0) != 8) && (value.charAt(0) != 7) && (value.charAt(0) != 6)) {
           condition = false;
           document.getElementById(message).innerHTML = 'Invalid';
-        } 
-        else 
-        {
+        } else {
           condition = true;
         }
       }
     }
   }
-return condition;
+  return condition;
 }
 
-function dynamicTempEmail(value, message)
-{
-  document.getElementById(message).innerHTML='';
+function dynamicTempEmail(value, message) {
+  document.getElementById(message).innerHTML = '';
   let checkit = false;
-  if (value.length > 0) 
-  {
+  if (value.length > 0) {
     var atposition = value.indexOf('@');
     var dotposition = value.lastIndexOf('.');
-    if (atposition < 1 || (value.length - 2) == dotposition) 
-    {
-      document.getElementById(message).innerHTML='Invalid';
+    if (atposition < 1 || (value.length - 2) == dotposition) {
+      document.getElementById(message).innerHTML = 'Invalid';
       checkit = false;
-    } 
-    else if (atposition < dotposition) 
-    {
+    } else if (atposition < dotposition) {
       checkit = true;
-    } 
-    else 
-    {
-      document.getElementById(message).innerHTML='Invalid';
+    } else {
+      document.getElementById(message).innerHTML = 'Invalid';
       checkit = false;
     }
-  } else 
-  {
+  } else {
     checkit = true;
   }
   return checkit;
@@ -1134,7 +1053,7 @@ function dynamicTempEmail(value, message)
 function RegistrationPanValidation(res) {
 
   if (res.length != 10) {
-    document.getElementById('pan-number-message').innerHTML = "*Invalid length of Pancard Number";
+    document.querySelector('.pancard-error-message').classList.remove('d-none')
     condition = false;
   } else {
     let firstfive = res.substring(0, 5);
@@ -1144,23 +1063,53 @@ function RegistrationPanValidation(res) {
         for (let k = 0; k < nextfour.length; k++) {
           if (nextfour[k] >= '0' && nextfour[k] <= '9') {
             if (res[9] >= 'A' && res[9] <= 'Z') {
-              condition = true;
+              return true;
             } else {
-              document.getElementById('pan-number-message').innerHTML = "*Invalid Last Digit";
-              condition = false;
+              document.querySelector('.pancard-error-message').classList.remove('d-none')
+              return false;
             }
           } else {
-            document.getElementById('pan-number-message').innerHTML = "*Error Inbetween Numbers";
-            condition = false;
-            break;
+            document.querySelector('.pancard-error-message').classList.remove('d-none')
+            return false;
           }
         }
       } else {
-        document.getElementById('pan-number-message').innerHTML = "Error Inbetween First Five Characters";
-        condition = false;
-        break;
+        document.querySelector('.pancard-error-message').classList.remove('d-none')
+        return false
       }
     }
   }
-  return condition;
+  return false;
+}
+
+function RegistrationEmailValidation(res) {
+  var atposition = res.indexOf('@');
+  var dotposition = res.lastIndexOf('.');
+
+  if (atposition < 1 || (res.length - 2) == dotposition) {
+    document.querySelector('.email-error-message').classList.remove('d-none')
+    return false;
+  } else if (atposition < dotposition) {
+    return true;
+  } else {
+    document.querySelector('.email-error-message').classList.remove('d-none')
+    return false;
+  }
+}
+
+function RegistrationPasswordValidation(res,className) {
+  if (checkLength(res) > 3) {
+   return true;
+  } else {
+    document.querySelector('.'+className).classList.remove('d-none')
+    return false;
+  }
+}
+
+function ClearRegistrationError() {
+  document.querySelector('.pancard-error-message').classList.add('d-none')
+  document.querySelector('.email-error-message').classList.add('d-none')
+  document.querySelector('.password-error-message').classList.add('d-none')
+  document.querySelector('.password-2-error-message').classList.add('d-none')
+
 }

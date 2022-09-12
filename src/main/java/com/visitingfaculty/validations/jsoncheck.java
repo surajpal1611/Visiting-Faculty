@@ -40,40 +40,23 @@ public class jsoncheck {
 
             if (!profilePhoto.equals("null")) {
                 String replacedProfilePhoto = userService.uploadPhotos(profilePhoto);
-                replacedData1 = JsonString.replace(profilePhoto, replacedProfilePhoto);
+                JsonString = JsonString.replace(profilePhoto, replacedProfilePhoto);
 
-            } else {
-                replacedData1 = JsonString;
             }
 
-            if (!pancardPhoto.equals("null") && !profilePhoto.equals("null")) {
+            if (!pancardPhoto.equals("null")) {
 
                 String replacedPancardPhoto = userService.uploadPhotos(pancardPhoto);
-                replacedData = replacedData1.replace(pancardPhoto, replacedPancardPhoto);
+                JsonString = JsonString.replace(pancardPhoto, replacedPancardPhoto);
 
-            } else if (!pancardPhoto.equals("null")) {
-                String replacedPancardPhoto = userService.uploadPhotos(pancardPhoto);
-                replacedData = JsonString.replace(pancardPhoto, replacedPancardPhoto);
-            } else {
-                replacedData = JsonString;
-            }
+            } 
 
-            if (!aadharPhoto.equals("null") && !pancardPhoto.equals("null") && !profilePhoto.equals("null")) {
+            if (!aadharPhoto.equals("null")) {
 
                 String replacedAadharPhoto = userService.uploadPhotos(aadharPhoto);
 
-                replacedData2 = replacedData.replace(aadharPhoto, replacedAadharPhoto);
-            } else if(!aadharPhoto.equals("null") && !pancardPhoto.equals("null")) {
-                String replacedAadharPhoto = userService.uploadPhotos(aadharPhoto);
-
-                replacedData2 = replacedData.replace(aadharPhoto, replacedAadharPhoto);
-            } else if(!aadharPhoto.equals("null")) {
-                String replacedAadharPhoto = userService.uploadPhotos(aadharPhoto);
-
-                replacedData2 = replacedData.replace(aadharPhoto, replacedAadharPhoto);
-            } else {
-                replacedData2 = JsonString;
-            }
+                JsonString = JsonString.replace(aadharPhoto, replacedAadharPhoto);
+            } 
 
             Boolean l_namecheck = checkVal.CheckWithNoSpectailChar(l_name);
             Boolean f_namecheck = checkVal.CheckWithNoSpectailChar(f_name);
@@ -92,7 +75,8 @@ public class jsoncheck {
             }
         }
         if (check == true) {
-            return replacedData2;
+            System.out.println(JsonString);
+            return JsonString;
         } else {
             return null;
         }

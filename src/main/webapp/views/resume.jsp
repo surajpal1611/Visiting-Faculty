@@ -1979,7 +1979,6 @@
             editPersonalDetailsForm.append('editPincode', document.getElementById('pincode-value').innerText)
             editPersonalDetailsForm.append('editCountry', document.getElementById('country-value').innerText)
             editPersonalDetailsForm.append('editGender', document.getElementById('gender-value').innerText)
-
             document.getElementById('first-name').value = editPersonalDetailsForm.get('editFirstName')
             document.getElementById('last-name').value = editPersonalDetailsForm.get('editLastName')
             document.getElementById('date-of-birth').value = editPersonalDetailsForm.get('editDateOfBirth')

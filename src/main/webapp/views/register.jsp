@@ -188,8 +188,9 @@
         height: 100%;
         width: 100%;
       }
+
       .error {
-        color: red;
+        color: red !important;
       }
 
     }
@@ -232,7 +233,7 @@
                 </div>
                 <input type="text" id="pannumber" name="user_id" placeholder="Pan Card No." required>
               </div>
-              <small class="pancard-error-message error d-none">Enter Valid Pancard No.</small>
+              <small class="pancard-error-message d-none text-danger">Enter Valid Pancard No.</small>
             </div>
             <div class="mt-3 mb-3">
               <div class="cust-btn-group">
@@ -241,7 +242,7 @@
                 </div>
                 <input type="text" id="email" name="email" placeholder="Email id" required>
               </div>
-              <small class="email-error-message error d-none">Enter Valid Email</small>
+              <small class="email-error-message text-danger d-none">Enter Valid Email</small>
             </div>
 
             <div class="mb-3">
@@ -252,7 +253,7 @@
                 <input type="password" id="password1" name="password" placeholder="Password" required>
                 <input type="hidden" name="devicecheck" id="devicecheck">
               </div>
-              <small class="password-error-message error d-none">Enter Valid Password</small>
+              <small class="password-error-message text-danger d-none">Enter Valid Password</small>
             </div>
             <div class="div mb-3">
               <div class="cust-btn-group">
@@ -261,7 +262,7 @@
                 </div>
                 <input type="password" id="password2" name="confirmPassword" placeholder="Confirm Password" required>
               </div>
-              <small class="password-2-error-message error d-none">Enter Valid Password</small>
+              <small class="password-2-error-message text-danger d-none">Enter Valid Password</small>
             </div>
             <div id="token-div" class="cust-btn-group mb-3 d-none">
               <div class="cust-input-prepend">
@@ -377,6 +378,8 @@
     loginButton.addEventListener('click', function (e) {
 
       e.preventDefault();
+      ClearRegistrationError();
+
 
       let myForm = document.getElementById('login-form')
       let formData = new FormData(myForm)
@@ -385,6 +388,14 @@
         result[entry[0]] = entry[1];
       }
 
+      let panValidation = RegistrationPanValidation(result.user_id)
+      let emailValidation = RegistrationEmailValidation(result.email)
+      let passwordvalidation = RegistrationPasswordValidation(result.password, 'password-error-message')
+      let ConfirmPasswordvalidation = RegistrationPasswordValidation(result.confirmPassword,
+        'password-2-error-message')
+      if (!panValidation || !emailValidation || !passwordvalidation || !ConfirmPasswordvalidation) {
+        return;
+      }
       // pancardValidation(result.user_id)
       // emailValidation(result.email)
 
