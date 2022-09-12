@@ -2192,6 +2192,8 @@
     //Resume Qualification Add Button
     function resumequailficationaddbtn() {
 
+     let qualificationType = 'let qualificationType = `<option value disabled selected>--Select--</option>`;';
+
       document.querySelector('.qualification-data-insert').innerHTML = "";
       document.querySelector('.qualification-modal-insert').classList.remove('d-none');
       document.querySelector('#body').classList.add('d-none');
@@ -3206,10 +3208,9 @@
         let fetchRes = fetch("/resume-publication-insert", options);
         fetchRes.then(success => {
           if (success.status == 200) {
+            document.getElementById('main-loader').classList.add('d-none')
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.publication-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
-
             document.location.reload();
           } else {
             alert('Check');
@@ -4486,6 +4487,19 @@
 
       //************************************Award Section Start******************************************************************
 
+      document.querySelector('#publication-award-div-update').addEventListener('click',function(e) {
+        if(e.target.classList.contains('award-check-box')) {
+
+          if ($(e.target).is(':checked')) {
+          this.querySelector('.awardCertificationImage').classList.remove('d-none')
+            
+          } else {
+          this.querySelector('.awardCertificationImage').classList.add('d-none')
+            
+          }
+        }
+      })
+
       function editAwardDetail(id) {
 
         document.getElementById('publication-award-div-update').innerHTML = ""
@@ -4543,8 +4557,7 @@
                   <div class="col-md-2 ">
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
-                  <!--Rana Changes--!>
-                  <div class="col-md-10"><input class="form-control awardCertificationImage" type="file" 
+                  <div class="col-md-10"><input type='checkbox' class='award-check-box'><input class="d-none form-control awardCertificationImage" type="file" 
                      onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
                     <p hidden><img class="award-certificate-preview" type="hidden" alt="your image" width="100"
                     height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
@@ -4586,6 +4599,20 @@
 
 
       //************************************Publication Section Start************************************************************
+
+      document.querySelector('#publication-modal-appending-div').addEventListener('click',function(e) {
+        if(e.target.classList.contains('publication-check-box')) {
+
+          if ($(e.target).is(':checked')) {
+          this.querySelector('.publication-certification').classList.remove('d-none')
+            
+          } else {
+          this.querySelector('.publication-certification').classList.add('d-none')
+            
+          }
+        }
+      })
+
 
       function editPublicationDetail(id) {
 
@@ -4642,7 +4669,7 @@
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
                   <!--Rana Chanegs--!>
-                  <div class="col-md-10"><input class="form-control publication-certification" type="file"
+                  <div class="col-md-10"><input type='checkbox' class='publication-check-box'><input class="d-none form-control publication-certification" type="file"
                     onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
                       <p hidden><img class="publication-certificate-preview" type="hidden" alt="your image" width="100"
                        height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
@@ -4682,6 +4709,19 @@
       })
 
       //************************************Research Section Start************************************************************
+
+      document.querySelector('#research-data').addEventListener('click',function(e) {
+        if(e.target.classList.contains('reserach-check-box')) {
+
+          if ($(e.target).is(':checked')) {
+          this.querySelector('.research_photo').classList.remove('d-none')
+            
+          } else {
+          this.querySelector('.research_photo').classList.add('d-none')
+            
+          }
+        }
+      })
 
       function editResearchBox(id) {
 
@@ -4727,8 +4767,7 @@
                   <div class="col-md-2 ">
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
-                  <!--Rana Changes--!>
-                  <div class="col-md-10"><input class="form-control research_photo" type="file"
+                  <div class="col-md-10"><input type='checkbox' class='reserach-check-box'><input class="d-none form-control research_photo" type="file"
                     onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
                    <p hidden><img class="research-certificate-preview" type="hidden" alt="your image" width="100"
                       height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
@@ -5240,7 +5279,7 @@
       }, 1200)
 
 
-    })
+    });
 
     document.querySelector('.qualification-data').addEventListener('change', function (e) {
       let target = e.target;
@@ -5254,6 +5293,18 @@
 
       }
     })
+    document.querySelector('.qualification-data-insert').addEventListener('change', function (e) {
+      let target = e.target;
+      if (target.classList.contains('qualification-title')) {
+        let closestParent = findClosest(e.target, 'qualification-row').querySelector('.qualification-phd-wrapper');
+        if (target.value === 'phd') {
+          closestParent.classList.remove('d-none');
+        } else {
+          closestParent.classList.add('d-none');
+        }
+
+      }
+    });
 
 
     document.addEventListener('mouseover', function () {
@@ -6045,6 +6096,19 @@
       }
     })
 
+    document.querySelector('#certification-data').addEventListener('click',function(e) {
+        if(e.target.classList.contains('certification-check-box')) {
+
+          if ($(e.target).is(':checked')) {
+          this.querySelector('.certificate-photo').classList.remove('d-none')
+            
+          } else {
+          this.querySelector('.certificate-photo').classList.add('d-none')
+            
+          }
+        }
+      })
+
     function resumecertificationEditbtn(id) {
       document.querySelector('#certification-data').innerHTML = "";
       document.querySelector('.certification-modal').classList.remove('d-none');
@@ -6091,7 +6155,7 @@
                                           <div class="col-md-2 ">
                                             <p class="h6">Certificate: <span class="required">*</span></p>
                                           </div>
-                                          <div class="col-md-10 "><input class="form-control certificate-photo"
+                                          <div class="col-md-10 "><input type='checkbox' class='certification-check-box'><input class="d-none form-control certificate-photo"
 
                                             onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])" type="file">
                                               <p hidden><img class="certificate-photo-preview" type="hidden" alt="your image" width="100"
