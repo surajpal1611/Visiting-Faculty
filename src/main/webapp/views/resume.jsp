@@ -922,7 +922,7 @@
               <label for="bank-account-type" class="py-md-2">Account Type<span class="required">*</span></label>
               <span id="bank-account-type-message-insert" style="color: red;" class="error"></span>
               <select class="form-control" id="bank-account-type-insert">
-     
+
               </select>
             </div>
           </div>
@@ -999,7 +999,7 @@
       </div>
     </div>
 
- 
+
     <!-- Rana Changes -->
     <!-- ************************************************************************Qualification photo Modal Div******************************************************************************************** -->
     <div class="image-preview-modal d-none">
@@ -1899,7 +1899,7 @@
           });
 
 
-     
+
         }
 
 
@@ -1997,6 +1997,7 @@
 
     //Personal Details Submit
     document.querySelector('#personal-details-submit-insert').addEventListener('click', function (e) {
+      document.getElementById('main-loader').classList.remove('d-none')
 
       console.log()
       e.preventDefault()
@@ -2168,6 +2169,7 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.personal-details-modal-insert').classList.add('d-none');
+            document.getElementById('main-loader').classList.add('d-none')
             document.location.reload();
           } else {
             alert('Check Data');
@@ -2391,6 +2393,8 @@
 
     //Qualification Data Insert Submit
     document.querySelector("#qualification-submit-insert").addEventListener('click', function (e) {
+      document.getElementById('main-loader').classList.remove('d-none')
+
       e.preventDefault()
 
       let qualificatonModal = ''
@@ -2573,6 +2577,8 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.qualification-modal').classList.add('d-none');
+            document.getElementById('main-loader').classList.add('d-none')
+
             document.location.reload();
           } else {
             alert('Check Qualification details');
@@ -2748,6 +2754,7 @@
 
     //Award Insert Submit Btn
     document.querySelector('#award-submit-insert').addEventListener('click', function () {
+      document.getElementById('main-loader').classList.remove('d-none')
 
       let div = '';
       let vjstableelement = document.querySelectorAll('.award-rows');
@@ -2903,6 +2910,7 @@
             if (data.status == 200) {
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.award-modal-insert').classList.add('d-none');
+              document.getElementById('main-loader').classList.add('d-none')
               document.location.reload();
             } else {
               console.log("Error");
@@ -3073,6 +3081,7 @@
 
     //Insert Publication Submit Button
     document.querySelector("#publication-submit-insert").addEventListener('click', function () {
+      document.getElementById('main-loader').classList.remove('d-none')
 
       let div = ''
       let publicationTableArray = []
@@ -3199,6 +3208,8 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.publication-modal').classList.add('d-none');
+            document.getElementById('main-loader').classList.add('d-none')
+
             document.location.reload();
           } else {
             alert('Check');
@@ -3342,6 +3353,8 @@
 
     //Research Submit Button
     document.querySelector('#research-submit-insert').addEventListener('click', function () {
+      document.getElementById('main-loader').classList.remove('d-none')
+
       console.log("research button clicked");
       let researchTableElem = document.querySelectorAll('.research-row');
       let noofrows = researchTableElem.length;
@@ -3476,6 +3489,8 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.research-modal').classList.add('d-none');
+            document.getElementById('main-loader').classList.add('d-none')
+
             document.location.reload();
           } else {
             alert('Check');
@@ -3620,6 +3635,8 @@
 
     // Certification Submit Insert Button
     document.querySelector('#certification-submit-insert').addEventListener('click', function (e) {
+      document.getElementById('main-loader').classList.remove('d-none')
+
 
       e.preventDefault()
       let div = ''
@@ -3770,6 +3787,8 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.certification-modal').classList.add('d-none');
+            document.getElementById('main-loader').classList.add('d-none')
+
             document.location.reload();
           } else {
             alert('Check Professional certificate details');
@@ -3824,6 +3843,8 @@
 
     //resume Bank details Submit Button
     document.querySelector('#bank-details-submit-insert').addEventListener('click', function () {
+      document.getElementById('main-loader').classList.remove('d-none')
+
 
       let flag3 = document.getElementById('bank-account-type').value
       if (flag3 == 1) {
@@ -3906,19 +3927,8 @@
           fetch(url, params).then((data) => {
             if (data.status == 200) {
               console.log(data);
-
-              document.getElementById('body').classList.remove('d-none');
-              document.querySelector('.bank-details-modal-insert').classList.add('d-none');
-              document.getElementById('bank-name-value').innerText = submitBankDetailsForm.get('bankName')
-              document.getElementById('branch-name-value').innerText = submitBankDetailsForm.get(
-                'branchName')
-              document.getElementById('ifsc-code-value').innerText = submitBankDetailsForm.get('ifscCode')
-              document.getElementById('micr-code-value').innerText = submitBankDetailsForm.get('micrCode')
-              document.getElementById('account-number-value').innerText = submitBankDetailsForm.get(
-                'accountNumber')
-              document.getElementById('account-type-value').innerText = submitBankDetailsForm.get(
-                'accountType')
-
+              document.getElementById('main-loader').classList.add('d-none')
+              document.location.reload()
             }
           })
         }
@@ -3937,7 +3947,8 @@
           'award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target
         .classList.contains('research-certificate-display') || e.target.classList.contains(
           'professional-certificate-display') || e.target.classList.contains('aadhar-photo-preview') || e.target
-        .classList.contains('pancard-photo-preview') || e.target.classList.contains('cancelled-cheque-photo-preview')) {
+        .classList.contains('pancard-photo-preview') || e.target.classList.contains(
+          'cancelled-cheque-photo-preview')) {
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.image-preview-modal').classList.remove('d-none');
         document.querySelector(".image-uploaded").src = e.target.dataset.image;
@@ -4155,10 +4166,10 @@
     }
 
     // });
-   
+
     //Rana Changes 
     // document.querySelector('#body').addEventListener('click', function (e) {
-  
+
     // });
 
     //Rana Changes 
@@ -4184,10 +4195,31 @@
 
       //************************************Qualification Section Start*************************************************************** 
 
+      // let thisParent = e.target.classList.contains('workexperience-item') ? e.target : findClosest(e.target,
+      //         'workexperience-item');
+      //       thisParent.querySelector('.workexperience-edit-box').classList.add('edit-show');
+      //       thisParent.querySelector('.workexperience-edit-box').classList.remove('d-none');
+      //     }
+      document.querySelector('.qualification-data').addEventListener('click', function (e) {
+        if (e.target.classList.contains('qualification-check-box')) {
+
+          if ($(e.target).is(':checked')) {
+            this.querySelector('.qualification-certificate').classList.remove('d-none')
+
+          } else {
+            this.querySelector('.qualification-certificate').classList.add('d-none')
+
+          }
+        }
+      })
 
       //Qualidication Details Btn
       function editQualificationDetail(id) {
+        //checkboxfunction('qualification-check-box', 'qualification-certificate');
+
         if (qualificationDataDB == 1) {
+
+
 
           $.ajax({
               url: '/get-qualification-type',
@@ -4274,7 +4306,7 @@
                         <div class="col-md-2 ">
                           <p class="h6">Certificate<span class="required">*</span></p>
                         </div>
-                        <div class="col-md-10"><input type="checkbox" class="qualification-check-box d-none" id="qualification-check-box"><input value="\${qualedit.url_path}" class=" form-control qualification-certificate"
+                        <div class="col-md-10"><input type="checkbox" class="qualification-check-box me-1" id="qualification-check-box">Update Certificate?<input value="\${qualedit.url_path}" class="d-none form-control qualification-certificate"
                             onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])"
                             type="file">
                           <p hidden><img class="qualification-certificate-preview" type="hidden" alt="your image" width="100"
@@ -4324,6 +4356,7 @@
           editQualificationDetail(id)
         }
       })
+
 
 
       document.querySelector("#qualification-cancel-button").addEventListener('click', function () {
@@ -4796,7 +4829,7 @@
 
 
 
- 
+
 
     //*************************************************************************Check Box Functions*********************************************
     checkboxfunction('profil-check-box', 'profile_photo');
@@ -4808,6 +4841,8 @@
     document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
 
       e.preventDefault()
+      document.getElementById('main-loader').classList.remove('d-none')
+
 
       let myForm = document.getElementById('myForm')
       let formData = new FormData(myForm)
@@ -4978,6 +5013,8 @@
           console.log(result.temp_contact_number)
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.personal-details-modal').classList.add('d-none')
+          document.getElementById('main-loader').classList.add('d-none')
+
           document.location.reload();
         })
       }, 1000)
@@ -5002,6 +5039,8 @@
 
     document.querySelector("#qualification-submit-button").addEventListener('click', function (e) {
       e.preventDefault()
+      document.getElementById('main-loader').classList.remove('d-none')
+
 
       let qualificatonModal = ''
       let div = ''
@@ -5191,6 +5230,8 @@
             document.getElementById('qualification-list').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.qualification-modal').classList.add('d-none');
+            document.getElementById('main-loader').classList.add('d-none')
+
             document.location.reload();
           } else {
             alert('Check Qualification details');
@@ -5260,6 +5301,8 @@
 
 
     document.querySelector('#award-submit-button').addEventListener('click', function () {
+      document.getElementById('main-loader').classList.remove('d-none')
+
 
       let div = '';
       let vjstableelement = document.querySelectorAll('.award-rows');
@@ -5425,6 +5468,8 @@
               document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.award-modal').classList.add('d-none');
+              document.getElementById('main-loader').classList.remove('d-none')
+
               document.location.reload();
             } else {
               console.log("Error");
@@ -5450,6 +5495,8 @@
     document.querySelector("#publication-submit-button").addEventListener('click', function (e) {
 
       e.preventDefault()
+      document.getElementById('main-loader').classList.remove('d-none')
+
 
       let div = ''
       let publicationTableArray = []
@@ -5583,6 +5630,8 @@
             document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.publication-modal').classList.add('d-none');
+            document.getElementById('main-loader').classList.add('d-none')
+
             document.location.reload();
           } else {
             alert('Check');
@@ -5625,6 +5674,8 @@
     let newBase64 = ''
 
     document.querySelector('#research-submit-button').addEventListener('click', function () {
+      document.getElementById('main-loader').classList.remove('d-none')
+
       console.log("research button clicked");
       let researchTableElem = document.querySelectorAll('.research-row');
       let noofrows = researchTableElem.length;
@@ -5766,6 +5817,8 @@
             document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.research-modal').classList.add('d-none');
+            document.getElementById('main-loader').classList.add('d-none')
+
             document.location.reload();
           } else {
             alert('Check');
@@ -5805,6 +5858,8 @@
     document.querySelector('#certification-submit-button').addEventListener('click', function (e) {
 
       e.preventDefault()
+      document.getElementById('main-loader').classList.remove('d-none')
+
       let div = ''
       let certificationTableArray = []
       let certificationRow = document.querySelectorAll('.certification-row')
@@ -5962,6 +6017,8 @@
             document.getElementById('certification-appending-div').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.certification-modal').classList.add('d-none');
+            document.getElementById('main-loader').classList.add('d-none')
+
             document.location.reload();
           } else {
             alert('Check Professional certificate details');
@@ -6074,6 +6131,8 @@
     document.querySelector('#bank-details-submit-button').addEventListener('click', function (e) {
 
       e.preventDefault()
+      document.getElementById('main-loader').classList.remove('d-none')
+      
 
       let flag3 = document.getElementById('bank-account-type').value
       console.log(flag3)
@@ -6162,6 +6221,8 @@
 
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.bank-details-modal').classList.add('d-none');
+              document.getElementById('main-loader').classList.add('d-none')
+
               document.location.reload();
             }
           })
@@ -6186,6 +6247,7 @@
 
     document.querySelector('#skills-modal-submit-button').addEventListener('click', function () {
 
+      document.getElementById('main-loader').classList.remove('d-none')
 
       let skillJson = {
         "skill_details": []
@@ -6246,11 +6308,14 @@
           document.querySelector('.skills-modal').classList.add('d-none');
           document.querySelector("#add-custom-soft-skill").outerHTML = "";
           document.querySelector("#add-custom-hard-skill").outerHTML = "";
+          document.getElementById('main-loader').classList.add('d-none')
+          document.location.reload()
+
+
           // }
         })
       }
       postdata()
-      document.location.reload()
 
     })
 
@@ -6488,6 +6553,8 @@
 
 
     document.querySelector('#workexperience-submit-insert').addEventListener('click', function (e) {
+      document.getElementById('main-loader').classList.remove('d-none')
+
       let workExperienceModal = ''
       let div = ''
       let workexperienceTableArray = []
@@ -6617,6 +6684,7 @@
         if (success.status == 200) {
           document.querySelector('.workexperience-modal-insert').classList.add('d-none');
           document.querySelector('#body').classList.remove('d-none');
+          document.getElementById('main-loader').classList.add('d-none')
           document.location.reload();
         } else {
           alert('Check workexperience details');
@@ -6631,6 +6699,8 @@
       document.querySelector('#body').classList.remove('d-none');
     })
     document.querySelector('#workexperience-submit-button').addEventListener('click', function (e) {
+      document.getElementById('main-loader').classList.remove('d-none')
+
 
       let workExperienceModal = ''
       let div = ''
@@ -6762,16 +6832,14 @@
         if (success.status == 200) {
           document.querySelector('.workexperience-modal').classList.add('d-none');
           document.querySelector('#body').classList.remove('d-none');
-          // document.location.reload();
+          document.getElementById('main-loader').classList.add('d-none')
+          document.location.reload();
         } else {
           alert('Check workexperience details');
         }
       })
 
     })
-
-
-
 
 
     document.querySelector('#workexperience-cancel-button').addEventListener('click', function (e) {
