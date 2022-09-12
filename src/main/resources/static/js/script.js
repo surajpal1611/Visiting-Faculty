@@ -634,7 +634,7 @@ function bankDetailCancelledChequeValidation(res) {
 // ******************************************Validation Functions Start****************************************************
 function tabledatacheck(value) {
   let checkit = false;
-  if (value.length > 3) {
+  if (value.length > 0) {
     checkit = true;
   } else {
     checkit = false;
@@ -975,7 +975,7 @@ function dynamicBankAcountNumber(value, message) {
     document.getElementById(message).innerHTML = 'Invalid';
     condition = false;
   } else {
-    if (isNaN(res)) {
+    if (isNaN(value)) {
       document.getElementById(message).innerHTML = 'Invalid';
       condition = false;
     } else {
