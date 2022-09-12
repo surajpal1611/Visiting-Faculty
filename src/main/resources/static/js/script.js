@@ -376,7 +376,6 @@ function personalDetailAadharPhotoValidation(res) {
         var reader = new FileReader();
         reader.onload = function (e) {
           $('#aadhar-photo').attr('src', e.target.result);
-          document.getElementById("aadhar-photo-uploaded").src = e.target.result
           condition = true;
         }
         reader.readAsDataURL(fuData.files[0]);
@@ -844,6 +843,7 @@ function checkboxfunction(checkbox, input) {
     }
   });
 }
+
 
 
 //*****************************************************Dynamic Validation's**************************************************************** 
