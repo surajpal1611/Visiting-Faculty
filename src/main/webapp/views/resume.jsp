@@ -922,6 +922,7 @@
               <label for="bank-account-type" class="py-md-2">Account Type<span class="required">*</span></label>
               <span id="bank-account-type-message-insert" style="color: red;" class="error"></span>
               <select class="form-control" id="bank-account-type-insert">
+     
               </select>
             </div>
           </div>
@@ -933,12 +934,12 @@
                     class="required">*</span></label>
                 <span id="cancelled_cheque_Photo-message" style="color: red;" class="error"></span>
                 <input type="file" name="cancelled_cheque_Photo" id="cancelled_cheque_Photo-insert" class="form-control"
-                  onchange="document.getElementById('check-preview').src = window.URL.createObjectURL(this.files[0])">
+                  onchange="document.getElementById('check-preview-insert').src = window.URL.createObjectURL(this.files[0])">
               </div>
             </div>
             <div class="col-md-6 col-sm-12 py-md-2">
               <div>
-                <img id="check-preview" alt="Cancelled Cheque photo" width="150" />
+                <img id="check-preview-insert" alt="Cancelled Cheque photo" width="150" />
               </div>
             </div>
           </div>
@@ -998,28 +999,7 @@
       </div>
     </div>
 
-    <!-- ************************************************************************Cancelled cheque Modal Div******************************************************************************************** -->
-    <div class="cancelled-cheque-photo-modal d-none">
-      <div id="bank-form-area">
-        <div class="container">
-          <div class="d-flex justify-content-center align-items-center my-4">
-            <h2>Preview Cancelled Cheque Photo</h2>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="/download (3).jpg" alt="cancelled-cheque-photo-uploaded" id="cancelled-cheque-photo-uploaded"
-                style="width:450px;height:300px;">
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center">
-            <button id="cancelled-cheque-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
+ 
     <!-- Rana Changes -->
     <!-- ************************************************************************Qualification photo Modal Div******************************************************************************************** -->
     <div class="image-preview-modal d-none">
@@ -1157,7 +1137,7 @@
                           <h6>Pancard Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="pancard-photo"><i id="pancard-photo-preview" data-image="../imagedata/\${personal_details[0].pancard_url_path}" class="fa-solid fa-ban text-danger pancard-photo-preview"></i></p>
+                          <p id="pancard-photo"><i id="pancard-photo-preview" data-image="../imagedata/\${personal_details[0].pancard_url_path}" class="fa-solid fa-image text-success pancard-photo-preview"></i></p>
                           </p>
                         </div>
                       </div>
@@ -1174,7 +1154,7 @@
                           <h6>Aadhar card Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" data-image="../imagedata/\${personal_details[0].aadhar_card_url_path}" class="fa-solid fa-ban text-danger aadhar-photo-preview"></i></p>
+                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" data-image="../imagedata/\${personal_details[0].aadhar_card_url_path}" class="fa-solid fa-image text-success aadhar-photo-preview"></i></p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1346,7 +1326,7 @@
                             </div>
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">\${qual.institute}</p>
-                              <p id="" class="">\${qual.institute}</p>
+                              <p id="" class="">\${qual.percentile}</p>
                               <p id=""><i id="qualification-certificate-display" data-image="../imagedata/\${qual.url_path}"
                                   class="fa-solid fa-image text-success qualification-certificate-display"></i></p>
 
@@ -1636,7 +1616,7 @@
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${public.publisher}</p>
                           <p class="" id="">\${public.year_of_publication}</p>
-                          <p><i id="publication-certificate-display" data-image="../imagedata/\${public.url_path}" class="fa-solid fa-ban text-danger publication-certificate-display"></i></p>
+                          <p><i id="publication-certificate-display" data-image="../imagedata/\${public.url_path}" class="fa-solid fa-image text-success publication-certificate-display"></i></p>
 
                         </div>
                       </div>
@@ -1712,7 +1692,7 @@
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${research.description}</p>
                           <p class="" id="">\${research.category}</p>
-                          <p><i id="research-certificate-display" class="fa-solid fa-ban text-danger research-certificate-display" ></i></p>
+                          <p><i id="research-certificate-display" data-image="../imagedata/\${research.research_url_path}" class="fa-solid fa-image text-success research-certificate-display" ></i></p>
 
                         </div>
                       </div>
@@ -1876,7 +1856,7 @@
                       <p id="account-number-value" class="pt-2">\${bank_details.account_number}</p>
                       <p id="account-type-value" class="pt-2">\${bank_details.account_type}</p>
                       <p id="cancelled-check-photo" class="pt-3">
-                        <i id="cancelled-cheque-photo-preview" class="fa-solid fa-ban text-danger"></i>
+                        <i id="cancelled-cheque-photo-preview" data-image="../imagedata/\${bank_details.url_path}" class="fa-solid fa-image text-success cancelled-cheque-photo-preview"></i>
                       </p>
                     </div>
                   </div>
@@ -1919,15 +1899,7 @@
           });
 
 
-          document.querySelector('#cancelled-cheque-photo-preview').addEventListener('click', function (e) {
-            document.getElementById('body').classList.add('d-none');
-            document.querySelector('.cancelled-cheque-photo-modal').classList.remove('d-none');
-          })
-
-          document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
-            document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
-          })
+     
         }
 
 
@@ -2195,7 +2167,8 @@
 
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
-            document.querySelector('.personal-details-modal-insert').classList.add('d-none')
+            document.querySelector('.personal-details-modal-insert').classList.add('d-none');
+            document.location.reload();
           } else {
             alert('Check Data');
           }
@@ -2600,6 +2573,7 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.qualification-modal').classList.add('d-none');
+            document.location.reload();
           } else {
             alert('Check Qualification details');
           }
@@ -2929,6 +2903,7 @@
             if (data.status == 200) {
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.award-modal-insert').classList.add('d-none');
+              document.location.reload();
             } else {
               console.log("Error");
               alert('Check Award Entries');
@@ -3224,6 +3199,7 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.publication-modal').classList.add('d-none');
+            document.location.reload();
           } else {
             alert('Check');
           }
@@ -3500,6 +3476,7 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.research-modal').classList.add('d-none');
+            document.location.reload();
           } else {
             alert('Check');
           }
@@ -3793,6 +3770,7 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.certification-modal').classList.add('d-none');
+            document.location.reload();
           } else {
             alert('Check Professional certificate details');
           }
@@ -3814,7 +3792,7 @@
               for (let i = 0; i < response.length; i++) {
                 bankAccountType += `<option value=\${response[i].id}\ >\${response[i].account_type}\</option>`;
               }
-              document.getElementById('bank-account-type').insertAdjacentHTML("beforeend", bankAccountType)
+              document.getElementById('bank-account-type-insert').insertAdjacentHTML("beforeend", bankAccountType)
             },
             error: function (error) {
               console.log("Error::::::::::::", error);
@@ -3954,6 +3932,16 @@
 
     document.querySelector('#body').addEventListener('click', function (e) {
       console.log(e.target);
+
+      if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains(
+          'award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target
+        .classList.contains('research-certificate-display') || e.target.classList.contains(
+          'professional-certificate-display') || e.target.classList.contains('aadhar-photo-preview') || e.target
+        .classList.contains('pancard-photo-preview') || e.target.classList.contains('cancelled-cheque-photo-preview')) {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.image-preview-modal').classList.remove('d-none');
+        document.querySelector(".image-uploaded").src = e.target.dataset.image;
+      }
       if (e.target.classList.contains('addbtn-qualification') || findClosest(e.target, 'addbtn-qualification')) {
         resumequailficationaddbtn();
       }
@@ -4167,19 +4155,11 @@
     }
 
     // });
-
+   
     //Rana Changes 
-    document.querySelector('#body').addEventListener('click', function (e) {
-      if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains(
-          'award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target
-        .classList.contains('research-certificate-display') || e.target.classList.contains(
-          'professional-certificate-display') || e.target.classList.contains('aadhar-photo-preview') || e.target
-        .classList.contains('pancard-photo-preview')) {
-        document.getElementById('body').classList.add('d-none');
-        document.querySelector('.image-preview-modal').classList.remove('d-none');
-        document.querySelector(".image-uploaded").src = e.target.dataset.image;
-      }
-    });
+    // document.querySelector('#body').addEventListener('click', function (e) {
+  
+    // });
 
     //Rana Changes 
     document.querySelector('.qualification-modal').addEventListener('click', function (e) {
@@ -4294,7 +4274,7 @@
                         <div class="col-md-2 ">
                           <p class="h6">Certificate<span class="required">*</span></p>
                         </div>
-                        <div class="col-md-10"><input type="checkbox" class="qualification-check-box" id="qualification-check-box"><input value="\${qualedit.url_path}" class="d-none form-control qualification-certificate"
+                        <div class="col-md-10"><input type="checkbox" class="qualification-check-box d-none" id="qualification-check-box"><input value="\${qualedit.url_path}" class=" form-control qualification-certificate"
                             onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])"
                             type="file">
                           <p hidden><img class="qualification-certificate-preview" type="hidden" alt="your image" width="100"
@@ -4672,6 +4652,7 @@
 
       function editResearchBox(id) {
 
+        document.querySelector('#research-data').innerHTML = "";
         if (resumeinfo.resume_research) {
           for (researchedit of resumeinfo.resume_research) {
             if (researchedit.resume_achievement_lid == id) {
@@ -4815,11 +4796,7 @@
 
 
 
-    // document.querySelector('#cancelled-cheque-photo-cancel-button').addEventListener('click', function (e) {
-    //   document.getElementById('body').classList.remove('d-none');
-    //   document.querySelector('.cancelled-cheque-photo-modal').classList.add('d-none');
-    // })
-
+ 
 
     //*************************************************************************Check Box Functions*********************************************
     checkboxfunction('profil-check-box', 'profile_photo');
@@ -7069,7 +7046,7 @@
                  </select>
                </div>
              </div>
-             <div class="row p-3 d-none">
+             <div class="row p-3 ">
                <div class="col-md-3">
                  <p class="h6">Other:  <span class="required">*</span></p>
                </div>
