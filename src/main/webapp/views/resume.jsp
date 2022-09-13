@@ -83,7 +83,8 @@
               <div id="gender-row" class="col-md-4 col-sm-12">
 
                 <div class="form-group">
-                  <label for="date-of-birth">Gender<span class="required">*</span><span class="text-danger ps-2" id="gender-message"></span></label><br>
+                  <label for="date-of-birth">Gender<span class="required">*</span><span class="text-danger ps-2"
+                      id="gender-message"></span></label><br>
                   <label class="radio-inline">Male<input type="radio" name="gender" class="gender ms-1" id="male"
                       value="1" /></label>
                   <label class="radio-inline">Female<input type="radio" name="gender" class="gender ms-1" id="female"
@@ -1336,23 +1337,22 @@
                             <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                               <p class="h5 pb-1">College :</p>
                               <p class="h5 py-1">percentage :</p>`
-                              if(qual.abbr == 'phd') {
-                                resume += `<p class="h5 py-1">Status </p>`
-                              }
-                           resume+= `<p class="h5 py-1">Certificate</p>
+              if (qual.abbr == 'phd') {
+                resume += `<p class="h5 py-1">Status </p>`
+              }
+              resume += `<p class="h5 py-1">Certificate</p>
                             </div>
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">\${qual.institute}</p>
                               <p id="" class="">\${qual.percentile}</p>`
-                              if(qual.abbr == 'phd') {
-                                if(qual.is_completed == true)
-                                {
-                                resume += `<p id="" class="">Awarded</p>`
-                                } else {
-                                resume += `<p id="" class="">Persuing</p>`
-                                }
-                              }
-                              resume+=`<p id=""><i id="qualification-certificate-display" data-image="../imagedata/\${qual.url_path}"
+              if (qual.abbr == 'phd') {
+                if (qual.is_completed == true) {
+                  resume += `<p id="" class="">Awarded</p>`
+                } else {
+                  resume += `<p id="" class="">Persuing</p>`
+                }
+              }
+              resume += `<p id=""><i id="qualification-certificate-display" data-image="../imagedata/\${qual.url_path}"
                                   class="fa-solid fa-image text-success qualification-certificate-display"></i></p>
 
                             </div>
@@ -1907,8 +1907,7 @@
         </div>`
         }
         document.querySelector('#body').insertAdjacentHTML('afterbegin', resume);
-        if(bank_details != null)
-        {
+        if (bank_details != null) {
           document.querySelector('#bank-account-type').value = bank_details.account_type;
         }
 
@@ -1995,19 +1994,15 @@
               'editTemporaryAddress')
             document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
 
-            if(resumeinfo.personal_details[0].gender_lid == 1)
-            {
+            if (resumeinfo.personal_details[0].gender_lid == 1) {
               document.querySelector('#male').checked = true;
-            }
-            else if(resumeinfo.personal_details[0].gender_lid == 2)
-            {
+            } else if (resumeinfo.personal_details[0].gender_lid == 2) {
               document.querySelector('#female').checked = true;
-            }
-            else 
-            {
+            } else {
               document.querySelector('#other').checked = true;
             }
-            document.getElementById('temp_contact-number').value = resumeinfo.personal_details[0].temp_contact_number
+            document.getElementById('temp_contact-number').value = resumeinfo.personal_details[0]
+              .temp_contact_number
             document.getElementById('body').classList.add('d-none');
             document.querySelector('.personal-details-modal').classList.remove('d-none');
 
@@ -2235,8 +2230,8 @@
 
     //Resume Qualification Add Button
     function resumequailficationaddbtn() {
-      
-      qualificationType='';
+
+      qualificationType = '';
       document.querySelector('.qualification-data-insert').innerHTML = "";
       document.querySelector('.qualification-modal-insert').classList.remove('d-none');
       document.querySelector('#body').classList.add('d-none');
@@ -2438,7 +2433,7 @@
 
     //Qualification Data Insert Submit
     document.querySelector("#qualification-submit-insert").addEventListener('click', function (e) {
-      
+
 
       e.preventDefault()
 
@@ -2501,7 +2496,6 @@
           qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
           return;
         }
-        document.getElementById('main-loader').classList.remove('d-none');
 
 
 
@@ -2605,6 +2599,7 @@
         }, 1000)
       }
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let qualificationTableData = {
           "qualificationDetails": qualificationTableArray
@@ -3983,9 +3978,7 @@
               console.log(data);
               document.getElementById('main-loader').classList.add('d-none');
               document.location.reload()
-            }
-            else
-            {
+            } else {
               alert('Check Bank-Details Input');
               document.getElementById('main-loader').classList.add('d-none');
             }
@@ -4381,7 +4374,7 @@
 
                         document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
                         document.querySelector('.qualification-title').value = qualedit.abbr
-                        if(qualedit.abbr == 'phd') {
+                        if (qualedit.abbr == 'phd') {
                           document.querySelector('.qualification-phd-wrapper').classList.remove('d-none')
                         }
                       }
@@ -4745,11 +4738,11 @@
           </div>
         `
 
-              
 
 
-              
-              
+
+
+
               //           document.querySelector('.qualification-title').value = qualedit.abbr
 
               document.getElementById('publication-modal-appending-div').insertAdjacentHTML("beforeend", table);
@@ -5062,9 +5055,9 @@
         user_info.temp_email = result.temp_email
         user_info.gender_lid = Number.parseInt(result.gender)
         user_info.pancard_no = '${user_id}'
-        user_info.pancard_url_path = photoArray[2] 
-        user_info.aadhar_card_url_path = photoArray[1] 
-        user_info.profile_url_path = photoArray[0]  
+        user_info.pancard_url_path = photoArray[2]
+        user_info.aadhar_card_url_path = photoArray[1]
+        user_info.profile_url_path = photoArray[0]
         user_info.aadhar_card_no = result.aadhar_number
         user_info.date_of_birth = result.date_of_birth
         user_info.nationality = result.nationality
@@ -5117,13 +5110,11 @@
         fetchRes.then(success => {
 
           if (success.status == 200) {
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.personal-details-modal').classList.add('d-none')
-          document.getElementById('main-loader').classList.add('d-none');
-          document.location.reload();
-          }
-          else
-          {
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.personal-details-modal').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
+            document.location.reload();
+          } else {
             document.getElementById('main-loader').classList.add('d-none');
             alert('Check Inserted Data')
           }
@@ -5195,19 +5186,30 @@
           .src
         //  to add the red border according to validations
         if (checkSubject == false) {
+
           qualificationRow[i].querySelector('.qualification-subject').classList.add('input-border');
+          document.getElementById('main-loader').classList.add('d-none');
+
           return;
         } else if (checkUniversity == false) {
           qualificationRow[i].querySelector('.qualification-university').classList.add('input-border');
+          document.getElementById('main-loader').classList.add('d-none');
+
           return;
         } else if (checkCollege == false) {
           qualificationRow[i].querySelector('.qualification-college').classList.add('input-border');
+          document.getElementById('main-loader').classList.add('d-none');
+
           return;
         } else if (checkYearOfPassing == false) {
           qualificationRow[i].querySelector('.qualification-year').classList.add('input-border');
+          document.getElementById('main-loader').classList.add('d-none');
+
           return;
         } else if (checkPercentile == false) {
           qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
+          document.getElementById('main-loader').classList.add('d-none');
+
           return;
         }
         //  else if (checkCertificate == false) {
@@ -5215,7 +5217,6 @@
         //   return;
         // }
 
-        document.getElementById('main-loader').classList.remove('d-none');
 
 
 
@@ -5398,31 +5399,28 @@
         let status = 400;
         deleteButtonClick[i].addEventListener('click', function () {
           let id = this.dataset.deleteid
-          if(id != null)
-          {
+          if (id != null) {
             fetch('/delete-qualification', {
-              method: "POST",
-              body: id,
-              headers: {
+                method: "POST",
+                body: id,
+                headers: {
 
-                "Content-Type": "application/json; charset=UTF-8",
-              }
-            })
-            .then(response => status = response.status)
-            .then(response => {
-              if (status === 200) {
+                  "Content-Type": "application/json; charset=UTF-8",
+                }
+              })
+              .then(response => status = response.status)
+              .then(response => {
+                if (status === 200) {
 
-                this.parentElement.remove()
-                document.location.reload()
+                  this.parentElement.remove()
+                  document.location.reload()
 
-              } else {
-                console.log("Error")
-              }
-            })
-            .catch(exception => console.log(exception));
-          }
-          else
-          {
+                } else {
+                  console.log("Error")
+                }
+              })
+              .catch(exception => console.log(exception));
+          } else {
             this.parentElement.remove();
           }
 
@@ -5456,30 +5454,27 @@
         deleteButtonClick[i].addEventListener('click', function () {
 
           let id = this.dataset.awarddeleteid;
-          if(id != null)
-          {
+          if (id != null) {
             fetch('/delete-award', {
-              method: "POST",
-              body: id,
-              headers: {
-                "Content-Type": "application/json; charset=UTF-8",
-              }
-            })
-            .then(response => status = response.status)
-            .then(response => {
-              if (status === 200) {
+                method: "POST",
+                body: id,
+                headers: {
+                  "Content-Type": "application/json; charset=UTF-8",
+                }
+              })
+              .then(response => status = response.status)
+              .then(response => {
+                if (status === 200) {
 
-                this.parentElement.parentElement.parentElement.remove();
-                document.location.reload()
+                  this.parentElement.parentElement.parentElement.remove();
+                  document.location.reload()
 
-              } else {
-                console.log("Error")
-              }
-            })
-            .catch(exception => console.log(exception));
-          }
-          else
-          {
+                } else {
+                  console.log("Error")
+                }
+              })
+              .catch(exception => console.log(exception));
+          } else {
             this.parentElement.parentElement.parentElement.remove();
           }
 
@@ -5728,7 +5723,6 @@
         //   publicationRow[i].querySelector('.publication-certification').classList.add('input-border');
         //   return;
         // }
-        document.getElementById('main-loader').classList.remove('d-none');
 
         let photoArray = []
 
@@ -5806,6 +5800,7 @@
         "insert_publication": publicationTableArray
       }
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let options = {
           method: 'POST',
@@ -5849,29 +5844,26 @@
         deleteButtonClick[i].addEventListener('click', function () {
 
           let id = this.dataset.publicationdeleteid
-          if(id != null)
-          {
+          if (id != null) {
             fetch('/delete-publication', {
-              method: "POST",
-              body: id,
-              headers: {
-                "Content-Type": "application/json; charset=UTF-8",
-              }
-            })
-            .then(response => status = response.status)
-            .then(response => {
-              if (status === 200) {
-                this.parentElement.parentElement.parentElement.remove();
-                document.location.reload()
+                method: "POST",
+                body: id,
+                headers: {
+                  "Content-Type": "application/json; charset=UTF-8",
+                }
+              })
+              .then(response => status = response.status)
+              .then(response => {
+                if (status === 200) {
+                  this.parentElement.parentElement.parentElement.remove();
+                  document.location.reload()
 
-              } else {
-                console.log("Error")
-              }
-            })
-            .catch(exception => console.log(exception));
-          }
-          else
-          {
+                } else {
+                  console.log("Error")
+                }
+              })
+              .catch(exception => console.log(exception));
+          } else {
             this.parentElement.parentElement.parentElement.remove();
           }
 
@@ -5944,7 +5936,6 @@
           researchTableElem[j].querySelector('.research_category').classList.add('input-border');
           return;
         }
-        document.getElementById('main-loader').classList.remove('d-none');
 
 
 
@@ -6023,6 +6014,7 @@
       }
       console.log('resrearch : ', JSON.stringify(object));
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let options = {
           method: 'POST',
@@ -6062,33 +6054,30 @@
           deleteresearch[i].querySelector('.delete_btn_research_symbol').classList.add('d-none');
         });
         let status = 400;
-        deleteButtonClick[i].addEventListener('click', function () { 
+        deleteButtonClick[i].addEventListener('click', function () {
           let id = this.dataset.researchdeleteid;
-          if(id != null)
-          {
+          if (id != null) {
             fetch('/delete-research', {
-              method: "POST",
-              body: id,
-              headers: {
+                method: "POST",
+                body: id,
+                headers: {
 
-                "Content-Type": "application/json; charset=UTF-8",
-              }
-            })
-            .then(response => status = response.status)
-            .then(response => {
-              if (status === 200) {
+                  "Content-Type": "application/json; charset=UTF-8",
+                }
+              })
+              .then(response => status = response.status)
+              .then(response => {
+                if (status === 200) {
 
-                this.parentElement.remove()
-                document.location.reload()
+                  this.parentElement.remove()
+                  document.location.reload()
 
-              } else {
-                console.log("Error")
-              }
-            })
-            .catch(exception => console.log(exception));
-          }
-          else
-          {
+                } else {
+                  console.log("Error")
+                }
+              })
+              .catch(exception => console.log(exception));
+          } else {
             this.parentElement.remove();
           }
 
@@ -6297,31 +6286,28 @@
         let status = 400;
         deleteButtonClick[i].addEventListener('click', function () {
           let id = this.dataset.certificatedeleteid;
-          if(id != null)
-          {
+          if (id != null) {
             fetch('/delete-certification', {
-              method: "POST",
-              body: id,
-              headers: {
+                method: "POST",
+                body: id,
+                headers: {
 
-                "Content-Type": "application/json; charset=UTF-8",
-              }
-            })
-            .then(response => status = response.status)
-            .then(response => {
-              if (status === 200) {
+                  "Content-Type": "application/json; charset=UTF-8",
+                }
+              })
+              .then(response => status = response.status)
+              .then(response => {
+                if (status === 200) {
 
-                this.parentElement.parentElement.parentElement.remove()
-                document.location.reload()
+                  this.parentElement.parentElement.parentElement.remove()
+                  document.location.reload()
 
-              } else {
-                console.log("Error")
-              }
-            })
-            .catch(exception => console.log(exception));
-          }
-          else
-          {
+                } else {
+                  console.log("Error")
+                }
+              })
+              .catch(exception => console.log(exception));
+          } else {
             this.parentElement.parentElement.parentElement.remove();
           }
 
@@ -6520,9 +6506,7 @@
               document.querySelector('.bank-details-modal').classList.add('d-none');
               document.getElementById('main-loader').classList.add('d-none')
               document.location.reload();
-            }
-            else
-            {
+            } else {
               alert('Check Bank-Detail Inpur');
               document.getElementById('main-loader').classList.add('d-none');
             }
@@ -6822,22 +6806,22 @@
         let status = 400;
         let softid = element.closest('li').dataset.skillid;
         fetch('/delete-softskills', {
-              method: "POST",
-              body: softid,
-              headers: {
-                "Content-Type": "application/json; charset=UTF-8",
-              }
-            })
-            .then(response => status = response.status)
-            .then(response => {
-              if (status === 200) {
-                skillList.insertAdjacentHTML('afterbegin', div);
-                element.closest('li').remove();
-              } else {
-                console.log("Error")
-              }
-            })
-            .catch(exception => console.log(exception));
+            method: "POST",
+            body: softid,
+            headers: {
+              "Content-Type": "application/json; charset=UTF-8",
+            }
+          })
+          .then(response => status = response.status)
+          .then(response => {
+            if (status === 200) {
+              skillList.insertAdjacentHTML('afterbegin', div);
+              element.closest('li').remove();
+            } else {
+              console.log("Error")
+            }
+          })
+          .catch(exception => console.log(exception));
       }
     })
 
@@ -6858,26 +6842,26 @@
                                  <div class="col-md-10 col-sm-10 col-10"><a href="#">\${text}\</a></div>
                               </div>
                             </li>
-                            `       
+                            `
         let status = 400;
         let softid = element.closest('li').dataset.skillid;
         fetch('/delete-softskills', {
-              method: "POST",
-              body: softid,
-              headers: {
-                "Content-Type": "application/json; charset=UTF-8",
-              }
-            })
-            .then(response => status = response.status)
-            .then(response => {
-              if (status === 200) {
-                skillList.insertAdjacentHTML('afterbegin', div)
-                element.closest('li').remove();
-              } else {
-                console.log("Error")
-              }
-            })
-            .catch(exception => console.log(exception));
+            method: "POST",
+            body: softid,
+            headers: {
+              "Content-Type": "application/json; charset=UTF-8",
+            }
+          })
+          .then(response => status = response.status)
+          .then(response => {
+            if (status === 200) {
+              skillList.insertAdjacentHTML('afterbegin', div)
+              element.closest('li').remove();
+            } else {
+              console.log("Error")
+            }
+          })
+          .catch(exception => console.log(exception));
       }
 
     })
@@ -7389,17 +7373,17 @@
         let padagogy1 = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-padagogy-div');
 
         if (target.value == 'teach_exp') {
-          orgTitle.innerHTML='University / Institute <span class="required">*</span>'
+          orgTitle.innerHTML = 'University / Institute <span class="required">*</span>'
           program1.classList.remove('d-none')
-          resTitle.innerHTML='Subject Taught <span class="required">*</span>'
+          resTitle.innerHTML = 'Subject Taught <span class="required">*</span>'
           padagogy1.classList.remove('d-none')
-        } else  {
-          orgTitle.innerHTML='Organization <span class="required">*</span>'
+        } else {
+          orgTitle.innerHTML = 'Organization <span class="required">*</span>'
           program1.classList.add('d-none')
-          resTitle.innerHTML='Responsibility <span class="required">*</span>'
+          resTitle.innerHTML = 'Responsibility <span class="required">*</span>'
           padagogy1.classList.add('d-none')
         }
-      } 
+      }
 
       if ((startDateInput.value).length != 0 && (endDateInput.value).length != 0) {
         console.log(diffDays)
@@ -7554,7 +7538,8 @@
       let startDateInput = findClosest(e.target, 'workexperience-row').querySelector('.start-date');
       let endDateInput = findClosest(e.target, 'workexperience-row').querySelector('.end-date');
       let durationValue = findClosest(e.target, 'workexperience-row').querySelector('.duration-of-teaching');
-      let durationMessage = findClosest(e.target, 'workexperience-row').querySelector('.duration-of-teaching-message');
+      let durationMessage = findClosest(e.target, 'workexperience-row').querySelector(
+        '.duration-of-teaching-message');
       let difference = Math.abs((new Date(dateFormatCalculation(endDateInput.value))) - (new Date(
         dateFormatCalculation(startDateInput.value))))
       let diffDays = Math.ceil(difference / (1000 * 60 * 60 * 24));
@@ -7592,14 +7577,14 @@
         let padagogy1 = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-padagogy-div');
 
         if (target.value == 'teach_exp') {
-          orgTitle.innerHTML='University / Institute <span class="required">*</span>'
+          orgTitle.innerHTML = 'University / Institute <span class="required">*</span>'
           program1.classList.remove('d-none')
-          resTitle.innerHTML='Subject Taught <span class="required">*</span>'
+          resTitle.innerHTML = 'Subject Taught <span class="required">*</span>'
           padagogy1.classList.remove('d-none')
-        } else  {
-          orgTitle.innerHTML='Organization <span class="required">*</span>'
+        } else {
+          orgTitle.innerHTML = 'Organization <span class="required">*</span>'
           program1.classList.add('d-none')
-          resTitle.innerHTML='Responsibility <span class="required">*</span>'
+          resTitle.innerHTML = 'Responsibility <span class="required">*</span>'
           padagogy1.classList.add('d-none')
         }
       }
@@ -7752,33 +7737,31 @@
         deleteQualification[i].addEventListener('mouseleave', function () {
           deleteQualification[i].querySelector('.delete_btn_workexperience_symbol').classList.add('d-none');
         });
-        let status=400;
+        let status = 400;
         deleteButtonClick[i].addEventListener('click', function () {
           let id = this.dataset.experiencedeleteid;
-          if(id != null)
-          {
-          fetch('/delete-experience', {
-              method: "POST",
-              body: id,
-              headers: {
+          if (id != null) {
+            fetch('/delete-experience', {
+                method: "POST",
+                body: id,
+                headers: {
 
-                "Content-Type": "application/json; charset=UTF-8",
-              }
-            })
-            .then(response => status = response.status)
-            .then(response => {
-              if (status === 200) {
+                  "Content-Type": "application/json; charset=UTF-8",
+                }
+              })
+              .then(response => status = response.status)
+              .then(response => {
+                if (status === 200) {
 
-                this.parentElement.parentElement.remove()
-                document.location.reload()
+                  this.parentElement.parentElement.remove()
+                  document.location.reload()
 
-              } else {
-                console.log("Error")
-              }
-            })
-            .catch(exception => console.log(exception));
-          }
-          else{
+                } else {
+                  console.log("Error")
+                }
+              })
+              .catch(exception => console.log(exception));
+          } else {
             this.parentElement.parentElement.remove();
           }
         });
