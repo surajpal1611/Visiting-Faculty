@@ -6763,9 +6763,7 @@
         //to remove the red border
         workexperienceRow[i].querySelector('.work-experience-type').classList.remove('input-border');
         workexperienceRow[i].querySelector('.employeer-name').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.description').classList.remove('input-border');
         workexperienceRow[i].querySelector('.responsibility').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.padagogy').classList.remove('input-border');
         workexperienceRow[i].querySelector('.designation-title').classList.remove('input-border');
         workexperienceRow[i].querySelector('.start-date').classList.remove('input-border');
         workexperienceRow[i].querySelector('.end-date').classList.remove('input-border');
@@ -6787,9 +6785,7 @@
 
         let checkWorkExp = tabledatacheck(workexperienceType);
         let checkUniversity = tabledatacheck(workexperienceUniversity);
-        let checkProgram = tabledatacheck(workexperienceProgram);
         let checkSubjetTaught = tabledatacheck(workexperienceSubjectTaught);
-        let checkWorkExpPadagogy = tabledatacheck(workexperiencePadagogy);
         let checkWorkExpStart = tabledatacheck(workexperienceStartDate);
         let checkWorkExpEnd = tabledatacheck(workexperienceEndDate);
 
@@ -6800,14 +6796,8 @@
         } else if (checkUniversity == false) {
           workexperienceRow[i].querySelector('.employeer-name').classList.add('input-border');
           return;
-        } else if (checkProgram == false) {
-          workexperienceRow[i].querySelector('.description').classList.add('input-border');
-          return;
         } else if (checkSubjetTaught == false) {
           workexperienceRow[i].querySelector('.responsibility').classList.add('input-border');
-          return;
-        } else if (checkWorkExpPadagogy == false) {
-          workexperienceRow[i].querySelector('.padagogy').classList.add('input-border');
           return;
         } else if (checkWorkExpStart == false) {
           workexperienceRow[i].querySelector('.start-date').classList.add('input-border');
@@ -6898,9 +6888,7 @@
         //to remove the red border
         workexperienceRow[i].querySelector('.work-experience-type').classList.remove('input-border');
         workexperienceRow[i].querySelector('.employeer-name').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.description').classList.remove('input-border');
         workexperienceRow[i].querySelector('.responsibility').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.padagogy').classList.remove('input-border');
         workexperienceRow[i].querySelector('.designation-title').classList.remove('input-border');
         workexperienceRow[i].querySelector('.start-date').classList.remove('input-border');
         workexperienceRow[i].querySelector('.end-date').classList.remove('input-border');
@@ -6922,9 +6910,7 @@
 
         let checkWorkExp = tabledatacheck(workexperienceType);
         let checkUniversity = tabledatacheck(workexperienceUniversity);
-        let checkProgram = tabledatacheck(workexperienceProgram);
         let checkSubjetTaught = tabledatacheck(workexperienceSubjectTaught);
-        let checkWorkExpPadagogy = tabledatacheck(workexperiencePadagogy);
         let checkWorkExpStart = tabledatacheck(workexperienceStartDate);
         let checkWorkExpEnd = tabledatacheck(workexperienceEndDate);
 
@@ -6935,14 +6921,8 @@
         } else if (checkUniversity == false) {
           workexperienceRow[i].querySelector('.employeer-name').classList.add('input-border');
           return;
-        } else if (checkProgram == false) {
-          workexperienceRow[i].querySelector('.description').classList.add('input-border');
-          return;
-        } else if (checkSubjetTaught == false) {
+        }  else if (checkSubjetTaught == false) {
           workexperienceRow[i].querySelector('.responsibility').classList.add('input-border');
-          return;
-        } else if (checkWorkExpPadagogy == false) {
-          workexperienceRow[i].querySelector('.padagogy').classList.add('input-border');
           return;
         } else if (checkWorkExpStart == false) {
           workexperienceRow[i].querySelector('.start-date').classList.add('input-border');
