@@ -1896,6 +1896,11 @@
         </div>`
         }
         document.querySelector('#body').insertAdjacentHTML('afterbegin', resume);
+        if(bank_details != null)
+        {
+          document.querySelector('#bank-account-type').value = bank_details.account_type;
+        }
+
         initResume();
 
         if (bank_details != null) {
@@ -2010,7 +2015,6 @@
 
     //Personal Details Submit
     document.querySelector('#personal-details-submit-insert').addEventListener('click', function (e) {
-      document.getElementById('main-loader').classList.remove('d-none')
 
       console.log()
       e.preventDefault()
@@ -2065,6 +2069,8 @@
         contactvalid || !adharnumbervalid || !tempContactNumberValid || !tempemailvalid) {
         return;
       }
+      document.getElementById('main-loader').classList.remove('d-none')
+
 
       let personalDetailsData = {
         "insert_user_personal_details": {
@@ -2182,9 +2188,10 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.personal-details-modal-insert').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check Data');
           }
         })
@@ -2408,7 +2415,7 @@
 
     //Qualification Data Insert Submit
     document.querySelector("#qualification-submit-insert").addEventListener('click', function (e) {
-      document.getElementById('main-loader').classList.remove('d-none')
+      
 
       e.preventDefault()
 
@@ -2471,6 +2478,7 @@
           qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
           return;
         }
+        document.getElementById('main-loader').classList.remove('d-none');
 
 
 
@@ -2592,10 +2600,11 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.qualification-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
 
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check Qualification details');
           }
         })
@@ -2769,7 +2778,7 @@
 
     //Award Insert Submit Btn
     document.querySelector('#award-submit-insert').addEventListener('click', function () {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
       let div = '';
       let vjstableelement = document.querySelectorAll('.award-rows');
@@ -2795,7 +2804,7 @@
         let awardCertificateSRC = vjstableelement[i].querySelector('.award-certificate-preview').src;
 
         let checktitle = tabledatacheck(title);
-        let checkorganization_name = namecheck(organization_name);
+        let checkorganization_name = tabledatacheck(organization_name);
         let checkdescription = tabledatacheck(description);
         let checkachievement_date = checkdate(achievement_date);
         let checkurl_path = tabledatacheck(url_path);
@@ -2821,6 +2830,7 @@
           vjstableelement[i].querySelector('.awardCertificationImage').classList.add('input-border');
           return;
         }
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let photoArray = []
 
@@ -2928,7 +2938,7 @@
               document.getElementById('main-loader').classList.add('d-none')
               document.location.reload();
             } else {
-              console.log("Error");
+              document.getElementById('main-loader').classList.add('d-none');
               alert('Check Award Entries');
             }
           })
@@ -3096,7 +3106,7 @@
 
     //Insert Publication Submit Button
     document.querySelector("#publication-submit-insert").addEventListener('click', function () {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
       let div = ''
       let publicationTableArray = []
@@ -3137,6 +3147,7 @@
           publicationRow[i].querySelector('.publication-certification').classList.add('input-border');
           return;
         }
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let photoArray = []
 
@@ -3221,11 +3232,12 @@
         let fetchRes = fetch("/resume-publication-insert", options);
         fetchRes.then(success => {
           if (success.status == 200) {
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.publication-modal').classList.add('d-none');
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check');
           }
         })
@@ -3367,7 +3379,7 @@
 
     //Research Submit Button
     document.querySelector('#research-submit-insert').addEventListener('click', function () {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
       console.log("research button clicked");
       let researchTableElem = document.querySelectorAll('.research-row');
@@ -3418,6 +3430,7 @@
           researchTableElem[j].querySelector('.research_category').classList.add('input-border');
           return;
         }
+        document.getElementById('main-loader').classList.remove('d-none');
 
 
 
@@ -3503,10 +3516,11 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.research-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
 
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check');
           }
         })
@@ -3649,7 +3663,7 @@
 
     // Certification Submit Insert Button
     document.querySelector('#certification-submit-insert').addEventListener('click', function (e) {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       e.preventDefault()
@@ -3698,6 +3712,7 @@
           certificationRow[i].querySelector('.certificate-photo').classList.add('input-border');
           return;
         }
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let photoArray = []
 
@@ -3801,10 +3816,11 @@
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.certification-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
 
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check Professional certificate details');
           }
         })
@@ -3857,7 +3873,7 @@
 
     //resume Bank details Submit Button
     document.querySelector('#bank-details-submit-insert').addEventListener('click', function () {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       let flag3 = document.getElementById('bank-account-type').value
@@ -3895,6 +3911,7 @@
       if (!facultyBankNameValid || !facultyBankBranchValid || !facultyIfscCodevalid || !facultyAccountNumberValid) {
         return;
       }
+      document.getElementById('main-loader').classList.remove('d-none');
 
 
 
@@ -3941,8 +3958,13 @@
           fetch(url, params).then((data) => {
             if (data.status == 200) {
               console.log(data);
-              document.getElementById('main-loader').classList.add('d-none')
+              document.getElementById('main-loader').classList.add('d-none');
               document.location.reload()
+            }
+            else
+            {
+              alert('Check Bank-Details Input');
+              document.getElementById('main-loader').classList.add('d-none');
             }
           })
         }
@@ -4337,6 +4359,7 @@
                     </div>`
 
                         document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
+                        document.querySelector('.qualification-title').value = qualedit.abbr
                       }
                     }
                   }
@@ -4587,6 +4610,7 @@
         </div> 
        `
               document.getElementById('publication-award-div-update').insertAdjacentHTML("beforeend", table);
+              document.querySelector('.awardOrganizationType').value = awardedit.organization_type_lid;
             }
 
           }
@@ -4643,10 +4667,10 @@
                   <div class="col-md-2 ">
                     <p class="h6">Role<span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10"><select class="form-control role" id="role">
+                  <div class="col-md-10"><select class="form-control role" id="role" value="\${pubedit.publication_role}">
                       <option >-Select-</option>
-                      <option >Edited</option>
-                      <option >Authored</option>
+                      <option value="Edited" >Edited</option>
+                      <option value="Authored">Authored</option>
                     </select></div>
                 </div>
                 <div class="row p-3">
@@ -4697,7 +4721,17 @@
       </div>
           </div>
         `
+
+              
+
+
+              
+              
+              //           document.querySelector('.qualification-title').value = qualedit.abbr
+
               document.getElementById('publication-modal-appending-div').insertAdjacentHTML("beforeend", table);
+              document.querySelector('#role').value = pubedit.publication_role;
+
             }
 
           }
@@ -5005,9 +5039,9 @@
         user_info.temp_email = result.temp_email
         user_info.gender_lid = Number.parseInt(result.gender)
         user_info.pancard_no = '${user_id}'
-        user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
-        user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
-        user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
+        user_info.pancard_url_path = photoArray[2] 
+        user_info.aadhar_card_url_path = photoArray[1] 
+        user_info.profile_url_path = photoArray[0]  
         user_info.aadhar_card_no = result.aadhar_number
         user_info.date_of_birth = result.date_of_birth
         user_info.nationality = result.nationality
@@ -5059,15 +5093,18 @@
 
         fetchRes.then(success => {
 
-          // if (success.status == 200) {
-          console.log(success)
-          console.log(result.date_of_birth)
-          console.log(result.temp_contact_number)
+          if (success.status == 200) {
           document.getElementById('body').classList.remove('d-none');
           document.querySelector('.personal-details-modal').classList.add('d-none')
-          document.getElementById('main-loader').classList.add('d-none')
-
+          document.getElementById('main-loader').classList.add('d-none');
           document.location.reload();
+          }
+          else
+          {
+            document.getElementById('main-loader').classList.add('d-none');
+            alert('Check Inserted Data')
+          }
+
         })
       }, 1000)
 
@@ -5091,7 +5128,7 @@
 
     document.querySelector("#qualification-submit-button").addEventListener('click', function (e) {
       e.preventDefault()
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       let qualificatonModal = ''
@@ -5154,6 +5191,8 @@
         //   qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
         //   return;
         // }
+
+        document.getElementById('main-loader').classList.remove('d-none');
 
 
 
@@ -5282,10 +5321,11 @@
             document.getElementById('qualification-list').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.qualification-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
 
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check Qualification details');
           }
         })
@@ -5335,11 +5375,9 @@
         let status = 400;
         deleteButtonClick[i].addEventListener('click', function () {
           let id = this.dataset.deleteid
-          // let thisdata = this
-
-          console.log(id);
-
-          fetch('/delete-qualification', {
+          if(id != null)
+          {
+            fetch('/delete-qualification', {
               method: "POST",
               body: id,
               headers: {
@@ -5359,6 +5397,12 @@
               }
             })
             .catch(exception => console.log(exception));
+          }
+          else
+          {
+            this.parentElement.remove();
+          }
+
         });
       }
     })
@@ -5386,11 +5430,11 @@
           deleteAward[i].querySelector('.delete_btn_award_symbol').classList.add('d-none');
         });
         let status = 400;
-        deleteButtonClick[i].addEventListener('click', function () {
-          
+        deleteButtonClick[i].addEventListener('click', function () {       
           let id = this.dataset.awarddeleteid;
-          console.log(id);
-          fetch('/delete-award', {
+          if(id != null)
+          {
+            fetch('/delete-award', {
               method: "POST",
               body: id,
               headers: {
@@ -5401,7 +5445,7 @@
             .then(response => {
               if (status === 200) {
 
-                this.parentElement.parentElement.parentElement.remove()
+                this.parentElement.parentElement.parentElement.remove();
                 document.location.reload()
 
               } else {
@@ -5409,13 +5453,20 @@
               }
             })
             .catch(exception => console.log(exception));
+          }
+          else
+          {
+            this.parentElement.parentElement.parentElement.remove();
+          }
+
+
         });
       }
     })
 
 
     document.querySelector('#award-submit-button').addEventListener('click', function () {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       let div = '';
@@ -5444,7 +5495,7 @@
         let awardCertificateSRC = vjstableelement[i].querySelector('.award-certificate-preview').src;
 
         let checktitle = tabledatacheck(title);
-        let checkorganization_name = namecheck(organization_name);
+        let checkorganization_name = tabledatacheck(organization_name);
         let checkdescription = tabledatacheck(description);
         let checkachievement_date = checkdate(achievement_date);
         let checkurl_path = tabledatacheck(url_path);
@@ -5471,6 +5522,7 @@
         //   vjstableelement[i].querySelector('.awardCertificationImage').classList.add('input-border');
         //   return;
         // }
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let photoArray = []
 
@@ -5582,11 +5634,11 @@
               document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.award-modal').classList.add('d-none');
-              document.getElementById('main-loader').classList.remove('d-none')
+              document.getElementById('main-loader').classList.remove('d-none');
 
               document.location.reload();
             } else {
-              console.log("Error");
+              document.getElementById('main-loader').classList.remove('d-none');
               alert('Check Award Entries');
             }
           })
@@ -5609,7 +5661,7 @@
     document.querySelector("#publication-submit-button").addEventListener('click', function (e) {
 
       e.preventDefault()
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       let div = ''
@@ -5652,6 +5704,7 @@
         //   publicationRow[i].querySelector('.publication-certification').classList.add('input-border');
         //   return;
         // }
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let photoArray = []
 
@@ -5744,10 +5797,11 @@
             document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.publication-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
 
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check');
           }
         })
@@ -5768,10 +5822,11 @@
         });
 
         let status = 400;
-        deleteButtonClick[i].addEventListener('click', function () {
-          
+        deleteButtonClick[i].addEventListener('click', function () {         
           let id = this.dataset.publicationdeleteid
-          fetch('/delete-publication', {
+          if(id != null)
+          {
+            fetch('/delete-publication', {
               method: "POST",
               body: id,
               headers: {
@@ -5789,6 +5844,12 @@
               }
             })
             .catch(exception => console.log(exception));
+          }
+          else
+          {
+            this.parentElement.parentElement.parentElement.remove();
+          }
+
         });
       }
 
@@ -5808,7 +5869,7 @@
     let newBase64 = ''
 
     document.querySelector('#research-submit-button').addEventListener('click', function () {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
       console.log("research button clicked");
       let researchTableElem = document.querySelectorAll('.research-row');
@@ -5858,6 +5919,7 @@
           researchTableElem[j].querySelector('.research_category').classList.add('input-border');
           return;
         }
+        document.getElementById('main-loader').classList.remove('d-none');
 
 
 
@@ -5951,10 +6013,11 @@
             document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.research-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
 
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check');
           }
         })
@@ -5974,14 +6037,11 @@
           deleteresearch[i].querySelector('.delete_btn_research_symbol').classList.add('d-none');
         });
         let status = 400;
-        deleteButtonClick[i].addEventListener('click', function () {
-    
-          let id = this.dataset.researchdeleteid
-
-
-          console.log(id);
-
-          fetch('/delete-research', {
+        deleteButtonClick[i].addEventListener('click', function () { 
+          let id = this.dataset.researchdeleteid;
+          if(id != null)
+          {
+            fetch('/delete-research', {
               method: "POST",
               body: id,
               headers: {
@@ -6001,6 +6061,13 @@
               }
             })
             .catch(exception => console.log(exception));
+          }
+          else
+          {
+            this.parentElement.remove();
+          }
+
+
         });
       }
     })
@@ -6018,7 +6085,7 @@
     document.querySelector('#certification-submit-button').addEventListener('click', function (e) {
 
       e.preventDefault()
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
       let div = ''
       let certificationTableArray = []
@@ -6068,6 +6135,8 @@
         //   certificationRow[i].querySelector('.certificate-photo').classList.add('input-border');
         //   return;
         // }
+
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let photoArray = []
 
@@ -6177,10 +6246,11 @@
             document.getElementById('certification-appending-div').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.certification-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
 
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check Professional certificate details');
           }
         })
@@ -6201,13 +6271,10 @@
 
         let status = 400;
         deleteButtonClick[i].addEventListener('click', function () {
-
-          let id = this.dataset.certificatedeleteid
-
-
-          console.log(id);
-
-          fetch('/delete-certification', {
+          let id = this.dataset.certificatedeleteid;
+          if(id != null)
+          {
+            fetch('/delete-certification', {
               method: "POST",
               body: id,
               headers: {
@@ -6227,6 +6294,12 @@
               }
             })
             .catch(exception => console.log(exception));
+          }
+          else
+          {
+            this.parentElement.parentElement.parentElement.remove();
+          }
+
         });
       }
     })
@@ -6330,7 +6403,7 @@
     document.querySelector('#bank-details-submit-button').addEventListener('click', function (e) {
 
       e.preventDefault()
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       let flag3 = document.getElementById('bank-account-type').value
@@ -6370,6 +6443,8 @@
         facultyAccountNumber1) {
         return;
       }
+
+      document.getElementById('main-loader').classList.remove('d-none');
 
       let photoArray = []
 
@@ -6416,13 +6491,15 @@
           }
           fetch(url, params).then((data) => {
             if (data.status == 200) {
-              console.log(data);
-
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.bank-details-modal').classList.add('d-none');
               document.getElementById('main-loader').classList.add('d-none')
-
               document.location.reload();
+            }
+            else
+            {
+              alert('Check Bank-Detail Inpur');
+              document.getElementById('main-loader').classList.add('d-none');
             }
           })
         }
@@ -6446,7 +6523,7 @@
 
     document.querySelector('#skills-modal-submit-button').addEventListener('click', function () {
 
-      document.getElementById('main-loader').classList.remove('d-none')
+      document.getElementById('main-loader').classList.remove('d-none');
 
       let skillJson = {
         "skill_details": []
@@ -6752,7 +6829,7 @@
 
 
     document.querySelector('#workexperience-submit-insert').addEventListener('click', function (e) {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
       let workExperienceModal = ''
       let div = ''
@@ -6830,6 +6907,8 @@
           return;
         }
 
+        document.getElementById('main-loader').classList.remove('d-none');
+
 
         let workexperience_type = 0;
         if (workexperienceType == "ind_exp") {
@@ -6883,9 +6962,10 @@
         if (success.status == 200) {
           document.querySelector('.workexperience-modal-insert').classList.add('d-none');
           document.querySelector('#body').classList.remove('d-none');
-          document.getElementById('main-loader').classList.add('d-none')
+          document.getElementById('main-loader').classList.add('d-none');
           document.location.reload();
         } else {
+          document.getElementById('main-loader').classList.add('d-none');
           alert('Check workexperience details');
         }
       })
@@ -6898,7 +6978,7 @@
       document.querySelector('#body').classList.remove('d-none');
     })
     document.querySelector('#workexperience-submit-button').addEventListener('click', function (e) {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       let workExperienceModal = ''
@@ -6977,6 +7057,8 @@
           return;
         }
 
+        document.getElementById('main-loader').classList.remove('d-none');
+
 
         let workexperience_type = 0;
         if (workexperienceType == "ind_exp") {
@@ -7031,9 +7113,10 @@
         if (success.status == 200) {
           document.querySelector('.workexperience-modal').classList.add('d-none');
           document.querySelector('#body').classList.remove('d-none');
-          document.getElementById('main-loader').classList.add('d-none')
+          document.getElementById('main-loader').classList.add('d-none');
           document.location.reload();
         } else {
+          document.getElementById('main-loader').classList.add('d-none');
           alert('Check workexperience details');
         }
       })
@@ -7211,13 +7294,15 @@
       
         </div>
         <hr style="height: 5px;">
-      <div id="delete_btn_workexperience_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_workexperience_symbol">
+      <div id="delete_btn_workexperience_symbol" data-experiencedeleteid="\${id}"  class="d-none d-flex justify-content-center align-items-center delete_btn_workexperience_symbol">
        <i class="fa-solid fa-trash text-danger fa-2x"></i>
        </div>
        
       </div>`
 
             document.querySelector('.workexperience-data').insertAdjacentHTML("beforeend", table);
+            document.querySelector('.work-experience-type').value = expedit.abbr;
+            //document.querySelector('.designation-title').value = expedit.designation_lid;
 
           }
         }
@@ -7500,8 +7585,35 @@
         deleteQualification[i].addEventListener('mouseleave', function () {
           deleteQualification[i].querySelector('.delete_btn_workexperience_symbol').classList.add('d-none');
         });
+        let status=400;
         deleteButtonClick[i].addEventListener('click', function () {
-          this.parentElement.parentElement.remove()
+          let id = this.dataset.experiencedeleteid;
+          if(id != null)
+          {
+          fetch('/delete-experience', {
+              method: "POST",
+              body: id,
+              headers: {
+
+                "Content-Type": "application/json; charset=UTF-8",
+              }
+            })
+            .then(response => status = response.status)
+            .then(response => {
+              if (status === 200) {
+
+                this.parentElement.parentElement.remove()
+                document.location.reload()
+
+              } else {
+                console.log("Error")
+              }
+            })
+            .catch(exception => console.log(exception));
+          }
+          else{
+            this.parentElement.parentElement.remove();
+          }
         });
       }
     })

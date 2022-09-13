@@ -339,4 +339,10 @@ public class userDao implements UserDaoInterface {
         return jdbcTemplate.update(sql,id);
     }
 
+    @Override
+    public int deleteExperience(int id) {
+        String sql = "DELETE FROM resume_experience WHERE resume_experience_lid = ?";
+        return jdbcTemplate.update(sql,id);
+    }
+
 }
