@@ -95,7 +95,7 @@
               <div class="col-md-4 col-sm-12">
                 <span id="photo-message" style="color: red;" class="error"></span>
                 <input type="checkbox" class="profil-check-box" id="profil-check-box">
-                <label for="photo"><small>Update passport Size Photo?</small> <span class="required"></span></label>
+                <label for="photo"><small>Update Passport Size Photo?</small> <span class="required"></span></label>
                 <input type="file" class="form-control d-none profile_photo" id="photo" name="profile_photo"
                   onchange="document.getElementById('photo-preview').src = window.URL.createObjectURL(this.files[0])">
               </div>
@@ -245,7 +245,7 @@
 
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="last-name">last Name <span class="required">*</span></label>
+                  <label for="last-name">Last Name <span class="required">*</span></label>
                   <span id="last-name-message-insert" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="l_name_insert" id="last-name-insert"
                     placeholder="Last Name">
@@ -267,7 +267,7 @@
 
               <div class="col-md-4 col-sm-12">
                 <div class="form-group">
-                  <label for="date-of-birth">date of birth <span class="required">*</span></label>
+                  <label for="date-of-birth">Date of Birth <span class="required">*</span></label>
                   <span id="date-of-birth-message-insert" style="color: red;" class="error"></span>
                   <input type="date" class="form-control" name="date_of_birth_insert" id="date-of-birth-insert" />
                 </div>
@@ -287,7 +287,7 @@
               </div>
 
               <div class="col-md-4 col-sm-12">
-                <label for="photo">passport Size Photo <span class="required">*</span></label>
+                <label for="photo">Passport Size Photo <span class="required">*</span></label>
                 <span id="photo-message-insert" style="color: red;" class="error"></span>
                 <input type="file" class="form-control" id="photo-insert" name="profile_photo_insert"
                   onchange="document.getElementById('photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
@@ -2192,7 +2192,7 @@
     //Resume Qualification Add Button
     function resumequailficationaddbtn() {
 
-     let qualificationType = 'let qualificationType = `<option value disabled selected>--Select--</option>`;';
+      let qualificationType = 'let qualificationType = `<option value disabled selected>--Select--</option>`;';
 
       document.querySelector('.qualification-data-insert').innerHTML = "";
       document.querySelector('.qualification-modal-insert').classList.remove('d-none');
@@ -4318,9 +4318,9 @@
                         </div>
                         <hr style="height: 5px;">
                         </div>
-                        <div id="delete_btn_qualification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_qualification_symbol">
+                        <div id="delete_btn_qualification_symbol" data-deleteid="\${id}" class="d-none d-flex justify-content-center align-items-center delete_btn_qualification_symbol">
                                 <i class="fa-solid fa-trash text-danger fa-2x"></i>
-                            </div>      
+                        </div>      
                     </div>`
 
                         document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
@@ -4353,7 +4353,6 @@
             id = e.target.dataset.qualificationid
           }
 
-          // document.querySelector('.qualification-data').innerHTML = "";
           editQualificationDetail(id)
         }
       })
@@ -4487,15 +4486,15 @@
 
       //************************************Award Section Start******************************************************************
 
-      document.querySelector('#publication-award-div-update').addEventListener('click',function(e) {
-        if(e.target.classList.contains('award-check-box')) {
+      document.querySelector('#publication-award-div-update').addEventListener('click', function (e) {
+        if (e.target.classList.contains('award-check-box')) {
 
           if ($(e.target).is(':checked')) {
-          this.querySelector('.awardCertificationImage').classList.remove('d-none')
-            
+            this.querySelector('.awardCertificationImage').classList.remove('d-none')
+
           } else {
-          this.querySelector('.awardCertificationImage').classList.add('d-none')
-            
+            this.querySelector('.awardCertificationImage').classList.add('d-none')
+
           }
         }
       })
@@ -4566,7 +4565,7 @@
               </div>
             </div>
           </div>
-            <div id="delete_btn_award_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_award_symbol">
+            <div id="delete_btn_award_symbol"  data-awarddeleteid="\${id}" class="d-none d-flex justify-content-center align-items-center delete_btn_award_symbol">
                 <i class="fa-solid fa-trash text-danger fa-2x"></i>
              </div>
           </div>
@@ -4600,15 +4599,15 @@
 
       //************************************Publication Section Start************************************************************
 
-      document.querySelector('#publication-modal-appending-div').addEventListener('click',function(e) {
-        if(e.target.classList.contains('publication-check-box')) {
+      document.querySelector('#publication-modal-appending-div').addEventListener('click', function (e) {
+        if (e.target.classList.contains('publication-check-box')) {
 
           if ($(e.target).is(':checked')) {
-          this.querySelector('.publication-certification').classList.remove('d-none')
-            
+            this.querySelector('.publication-certification').classList.remove('d-none')
+
           } else {
-          this.querySelector('.publication-certification').classList.add('d-none')
-            
+            this.querySelector('.publication-certification').classList.add('d-none')
+
           }
         }
       })
@@ -4677,7 +4676,7 @@
                 </div>
               </div>
             </div>
-             <div id="delete_btn_publication_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_publication_symbol">
+             <div id="delete_btn_publication_symbol" data-publicationdeleteid="\${id}"  class="d-none d-flex justify-content-center align-items-center delete_btn_publication_symbol">
                 <i class="fa-solid fa-trash text-danger fa-2x"></i>
              </div>
           </div>
@@ -4710,15 +4709,15 @@
 
       //************************************Research Section Start************************************************************
 
-      document.querySelector('#research-data').addEventListener('click',function(e) {
-        if(e.target.classList.contains('reserach-check-box')) {
+      document.querySelector('#research-data').addEventListener('click', function (e) {
+        if (e.target.classList.contains('reserach-check-box')) {
 
           if ($(e.target).is(':checked')) {
-          this.querySelector('.research_photo').classList.remove('d-none')
-            
+            this.querySelector('.research_photo').classList.remove('d-none')
+
           } else {
-          this.querySelector('.research_photo').classList.add('d-none')
-            
+            this.querySelector('.research_photo').classList.add('d-none')
+
           }
         }
       })
@@ -4777,7 +4776,8 @@
             </div>
             <hr style="height: 5px;"> 
             </div>
-           <div id="delete_btn_research_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_research_symbol">
+           <div id="delete_btn_research_symbol" data-researchdeleteid="\${id}"  class="d-none d-flex justify-content-center align-items-center delete_btn_research_symbol">
+
                 <i class="fa-solid fa-trash text-danger fa-2x"></i>
              </div>
         </div>`
@@ -5307,7 +5307,9 @@
     });
 
 
-    document.addEventListener('mouseover', function () {
+    document.addEventListener('mouseover', function (e) {
+
+
       let deleteButtonClick = document.querySelectorAll('.delete_btn_qualification_symbol')
       let deleteQualification = document.querySelectorAll('.qualification_delete_btn');
       for (let i = 0; i < deleteQualification.length; i++) {
@@ -5317,11 +5319,37 @@
         deleteQualification[i].addEventListener('mouseleave', function () {
           deleteQualification[i].querySelector('.delete_btn_qualification_symbol').classList.add('d-none');
         });
+        let status = 400;
         deleteButtonClick[i].addEventListener('click', function () {
-          this.parentElement.remove()
+          let id = this.dataset.deleteid
+          // let thisdata = this
+
+          console.log(id);
+
+          fetch('/delete-qualification', {
+              method: "POST",
+              body: id,
+              headers: {
+
+                "Content-Type": "application/json; charset=UTF-8",
+              }
+            })
+            .then(response => status = response.status)
+            .then(response => {
+              if (status === 200) {
+
+                this.parentElement.remove()
+                document.location.reload()
+
+              } else {
+                console.log("Error")
+              }
+            })
+            .catch(exception => console.log(exception));
         });
       }
     })
+
 
     //*************************************Award-modal JS****************************************
 
@@ -5344,8 +5372,30 @@
         deleteAward[i].addEventListener('mouseleave', function () {
           deleteAward[i].querySelector('.delete_btn_award_symbol').classList.add('d-none');
         });
+        let status = 400;
         deleteButtonClick[i].addEventListener('click', function () {
-          this.parentElement.parentElement.parentElement.remove()
+          
+          let id = this.dataset.awarddeleteid;
+          console.log(id);
+          fetch('/delete-award', {
+              method: "POST",
+              body: id,
+              headers: {
+                "Content-Type": "application/json; charset=UTF-8",
+              }
+            })
+            .then(response => status = response.status)
+            .then(response => {
+              if (status === 200) {
+
+                this.parentElement.parentElement.parentElement.remove()
+                document.location.reload()
+
+              } else {
+                console.log("Error")
+              }
+            })
+            .catch(exception => console.log(exception));
         });
       }
     })
@@ -5704,8 +5754,28 @@
           deletepublication[i].querySelector('.delete_btn_publication_symbol').classList.add('d-none');
         });
 
+        let status = 400;
         deleteButtonClick[i].addEventListener('click', function () {
-          this.parentElement.parentElement.parentElement.remove()
+          
+          let id = this.dataset.publicationdeleteid
+          fetch('/delete-publication', {
+              method: "POST",
+              body: id,
+              headers: {
+                "Content-Type": "application/json; charset=UTF-8",
+              }
+            })
+            .then(response => status = response.status)
+            .then(response => {
+              if (status === 200) {
+                this.parentElement.parentElement.parentElement.remove();
+                document.location.reload()
+
+              } else {
+                console.log("Error")
+              }
+            })
+            .catch(exception => console.log(exception));
         });
       }
 
@@ -5890,8 +5960,34 @@
         deleteresearch[i].addEventListener('mouseleave', function () {
           deleteresearch[i].querySelector('.delete_btn_research_symbol').classList.add('d-none');
         });
+        let status = 400;
         deleteButtonClick[i].addEventListener('click', function () {
-          this.parentElement.remove()
+    
+          let id = this.dataset.researchdeleteid
+
+
+          console.log(id);
+
+          fetch('/delete-research', {
+              method: "POST",
+              body: id,
+              headers: {
+
+                "Content-Type": "application/json; charset=UTF-8",
+              }
+            })
+            .then(response => status = response.status)
+            .then(response => {
+              if (status === 200) {
+
+                this.parentElement.remove()
+                document.location.reload()
+
+              } else {
+                console.log("Error")
+              }
+            })
+            .catch(exception => console.log(exception));
         });
       }
     })
@@ -6090,24 +6186,50 @@
           deleteCertification[i].querySelector('.delete_btn_certification_symbol').classList.add('d-none');
         });
 
+        let status = 400;
         deleteButtonClick[i].addEventListener('click', function () {
-          this.parentElement.parentElement.parentElement.remove()
+
+          let id = this.dataset.certificatedeleteid
+
+
+          console.log(id);
+
+          fetch('/delete-certification', {
+              method: "POST",
+              body: id,
+              headers: {
+
+                "Content-Type": "application/json; charset=UTF-8",
+              }
+            })
+            .then(response => status = response.status)
+            .then(response => {
+              if (status === 200) {
+
+                this.parentElement.parentElement.parentElement.remove()
+                document.location.reload()
+
+              } else {
+                console.log("Error")
+              }
+            })
+            .catch(exception => console.log(exception));
         });
       }
     })
 
-    document.querySelector('#certification-data').addEventListener('click',function(e) {
-        if(e.target.classList.contains('certification-check-box')) {
+    document.querySelector('#certification-data').addEventListener('click', function (e) {
+      if (e.target.classList.contains('certification-check-box')) {
 
-          if ($(e.target).is(':checked')) {
+        if ($(e.target).is(':checked')) {
           this.querySelector('.certificate-photo').classList.remove('d-none')
-            
-          } else {
+
+        } else {
           this.querySelector('.certificate-photo').classList.add('d-none')
-            
-          }
+
         }
-      })
+      }
+    })
 
     function resumecertificationEditbtn(id) {
       document.querySelector('#certification-data').innerHTML = "";
@@ -6165,7 +6287,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="delete_btn_certification_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_certification_symbol">
+                            <div id="delete_btn_certification_symbol" data-certificatedeleteid="\${id}"  class="d-none d-flex justify-content-center align-items-center delete_btn_certification_symbol">
                               <i class="fa-solid fa-trash text-danger fa-2x"></i>
                           </div>
                           <hr style="height: 5px;">
@@ -6196,7 +6318,7 @@
 
       e.preventDefault()
       document.getElementById('main-loader').classList.remove('d-none')
-      
+
 
       let flag3 = document.getElementById('bank-account-type').value
       console.log(flag3)
