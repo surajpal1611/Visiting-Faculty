@@ -1414,15 +1414,13 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">University </p>
-                              <p class="h5 pb-1">Program </p>
-                              <p class="h5 py-1">Subject Taught </p>
-                              <p class="h5 py-1">Designation </p>
-                              <p class="h5 py-1">Padagogy used </p>
+                              <p class="h5 pb-1">Employeer :</p>
+                              <p class="h5 py-1">Key role :</p>
+                              <p class="h5 py-1">Designation :</p>
+                              <p class="h5 py-1">Padagogy used :</p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id="">\${exp.employer_name}</p>
-                              <p id="">\${exp.description}</p>
                               <p id="">\${exp.responsibilities}</p>
                               <p class="" id="">\${exp.designation}</p>
                               <p class="" id="">\${exp.padagogy}</p>
@@ -6883,9 +6881,7 @@
         //to remove the red border
         workexperienceRow[i].querySelector('.work-experience-type').classList.remove('input-border');
         workexperienceRow[i].querySelector('.employeer-name').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.description').classList.remove('input-border');
         workexperienceRow[i].querySelector('.responsibility').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.padagogy').classList.remove('input-border');
         workexperienceRow[i].querySelector('.designation-title').classList.remove('input-border');
         workexperienceRow[i].querySelector('.start-date').classList.remove('input-border');
         workexperienceRow[i].querySelector('.end-date').classList.remove('input-border');
@@ -6907,9 +6903,7 @@
 
         let checkWorkExp = tabledatacheck(workexperienceType);
         let checkUniversity = tabledatacheck(workexperienceUniversity);
-        let checkProgram = tabledatacheck(workexperienceProgram);
         let checkSubjetTaught = tabledatacheck(workexperienceSubjectTaught);
-        let checkWorkExpPadagogy = tabledatacheck(workexperiencePadagogy);
         let checkWorkExpStart = tabledatacheck(workexperienceStartDate);
         let checkWorkExpEnd = tabledatacheck(workexperienceEndDate);
 
@@ -6920,14 +6914,8 @@
         } else if (checkUniversity == false) {
           workexperienceRow[i].querySelector('.employeer-name').classList.add('input-border');
           return;
-        } else if (checkProgram == false) {
-          workexperienceRow[i].querySelector('.description').classList.add('input-border');
-          return;
         } else if (checkSubjetTaught == false) {
           workexperienceRow[i].querySelector('.responsibility').classList.add('input-border');
-          return;
-        } else if (checkWorkExpPadagogy == false) {
-          workexperienceRow[i].querySelector('.padagogy').classList.add('input-border');
           return;
         } else if (checkWorkExpStart == false) {
           workexperienceRow[i].querySelector('.start-date').classList.add('input-border');
@@ -7021,9 +7009,7 @@
         //to remove the red border
         workexperienceRow[i].querySelector('.work-experience-type').classList.remove('input-border');
         workexperienceRow[i].querySelector('.employeer-name').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.description').classList.remove('input-border');
         workexperienceRow[i].querySelector('.responsibility').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.padagogy').classList.remove('input-border');
         workexperienceRow[i].querySelector('.designation-title').classList.remove('input-border');
         workexperienceRow[i].querySelector('.start-date').classList.remove('input-border');
         workexperienceRow[i].querySelector('.end-date').classList.remove('input-border');
@@ -7045,9 +7031,7 @@
 
         let checkWorkExp = tabledatacheck(workexperienceType);
         let checkUniversity = tabledatacheck(workexperienceUniversity);
-        let checkProgram = tabledatacheck(workexperienceProgram);
         let checkSubjetTaught = tabledatacheck(workexperienceSubjectTaught);
-        let checkWorkExpPadagogy = tabledatacheck(workexperiencePadagogy);
         let checkWorkExpStart = tabledatacheck(workexperienceStartDate);
         let checkWorkExpEnd = tabledatacheck(workexperienceEndDate);
 
@@ -7058,14 +7042,8 @@
         } else if (checkUniversity == false) {
           workexperienceRow[i].querySelector('.employeer-name').classList.add('input-border');
           return;
-        } else if (checkProgram == false) {
-          workexperienceRow[i].querySelector('.description').classList.add('input-border');
-          return;
-        } else if (checkSubjetTaught == false) {
+        }  else if (checkSubjetTaught == false) {
           workexperienceRow[i].querySelector('.responsibility').classList.add('input-border');
-          return;
-        } else if (checkWorkExpPadagogy == false) {
-          workexperienceRow[i].querySelector('.padagogy').classList.add('input-border');
           return;
         } else if (checkWorkExpStart == false) {
           workexperienceRow[i].querySelector('.start-date').classList.add('input-border');
