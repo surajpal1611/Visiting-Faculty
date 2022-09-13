@@ -200,13 +200,17 @@
 <body>
   <canvas class="background"></canvas>
 
-
   <div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center d-none">
     <strong>Success!</strong>&nbsp &nbsp An OTP has been Sent to your Email Address
     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
   </div>
 
   <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center align-items-center d-none">
+    <strong>Error!</strong>&nbsp &nbsp Invalid OTP
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+  
+  <div class="alert alert-danger-2 alert-dismissible fade show d-flex justify-content-center align-items-center d-none">
     <strong>Error!</strong>&nbsp &nbsp Invalid OTP
     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
   </div>
@@ -368,11 +372,11 @@
         }
       });
     }
+    let status = 400;
 
     $("#devicecheck").val(localStorage.getItem('devicecheck'))
 
     let loginButton = document.querySelector('.register-btn')
-    let status = 400;
     let result = {};
 
     loginButton.addEventListener('click', function (e) {
@@ -423,8 +427,7 @@
               document.querySelector('.verify-button').classList.remove('d-none');
             } else {
               document.getElementById('main-loader').classList.add('d-none');
-              document.querySelector('.alert-danger').classList.remove('d-none');
-
+              document.querySelector('.alert-danger-2').classList.remove('d-none');
             }
           })
           .catch(function () {

@@ -208,7 +208,7 @@ function personalDetailGenderValidation(gender) {
   if (gender == 1 || gender == 2 || gender == 3) {
     condition = true;
   } else {
-    document.getElementById("gender-message").innerHTML = "*Mandatory";
+    document.getElementById("gender-message").innerHTML = "Mandatory";
     condition = false;
   }
   return condition;
@@ -224,7 +224,7 @@ function personalDetailContactNumberValidation(res) {
       condition = false;
     } else {
       if ((res.charAt(0) != 9) && (res.charAt(0) != 8) && (res.charAt(0) != 7) && (res.charAt(0) != 6)) {
-        document.getElementById('contact-number-message').innerHTML = "*Invalid phone number";
+        document.getElementById('contact-number-message').innerHTML = "Invalid phone number";
         condition = false;
       } else {
         condition = true;
@@ -238,12 +238,12 @@ function personalDetailEmailValidation(res) {
   var atposition = res.indexOf('@');
   var dotposition = res.lastIndexOf('.');
   if (atposition < 1 || (res.length - 2) == dotposition) {
-    (document).getElementById('email-message').innerHTML = "*Invalid email address";
+    (document).getElementById('email-message').innerHTML = "Invalid email address";
     condition = false;
   } else if (atposition < dotposition) {
     condition = true;
   } else {
-    (document).getElementById('email-message').innerHTML = "*Invalid email address";
+    (document).getElementById('email-message').innerHTML = "Invalid email address";
     condition = false;
   }
   return condition;
@@ -265,7 +265,7 @@ function emailValidation(res) {
 function personalDetailPancardValidation(res) {
 
   if (res.length != 10) {
-    document.getElementById('pan-number-message').innerHTML = "*Invalid length of Pancard Number";
+    document.getElementById('pan-number-message').innerHTML = "Invalid length of Pancard Number";
     condition = false;
   } else {
     let firstfive = res.substring(0, 5);
@@ -277,11 +277,11 @@ function personalDetailPancardValidation(res) {
             if (res[9] >= 'A' && res[9] <= 'Z') {
               condition = true;
             } else {
-              document.getElementById('pan-number-message').innerHTML = "*Invalid Last Digit";
+              document.getElementById('pan-number-message').innerHTML = "Invalid Last Digit";
               condition = false;
             }
           } else {
-            document.getElementById('pan-number-message').innerHTML = "*Error Inbetween Numbers";
+            document.getElementById('pan-number-message').innerHTML = "Error Inbetween Numbers";
             condition = false;
             break;
           }
@@ -395,7 +395,7 @@ function personalDetailAddressValidation(res) {
   if (checkLength(res) > 5) {
     condition = true;
   } else {
-    document.getElementById("address-message").innerHTML = "*Invalid length";
+    document.getElementById("address-message").innerHTML = "Invalid length";
     condition = false;
   }
   return condition;
@@ -406,11 +406,11 @@ function personalDetailCityValidation(res) {
     if (!isCharNumber(res)) {
       condition = true;
     } else {
-      document.getElementById("city-message").innerHTML = "*Only characters are allowed";
+      document.getElementById("city-message").innerHTML = "Only characters are allowed";
       condition = false;
     }
   } else {
-    document.getElementById("city-message").innerHTML = "*Invalid length";
+    document.getElementById("city-message").innerHTML = "Invalid length";
     condition = false;
   }
   return condition;
@@ -421,11 +421,11 @@ function personalDetailPincodeValidation(res) {
     if (isCharNumber(res)) {
       condition = true;
     } else {
-      document.getElementById("pincode-message").innerHTML = "*Only Numbers are allowed";
+      document.getElementById("pincode-message").innerHTML = "Only Numbers are allowed";
       condition = false;
     }
   } else {
-    document.getElementById("pincode-message").innerHTML = "*Invalid length";
+    document.getElementById("pincode-message").innerHTML = "Invalid length";
     condition = false;
   }
   return condition;
@@ -444,7 +444,7 @@ function personalDetailTemporaryContactValidation(res) {
         condition = false;
       } else {
         if ((res.charAt(0) != 9) && (res.charAt(0) != 8) && (res.charAt(0) != 7) && (res.charAt(0) != 6)) {
-          document.getElementById('temporary-contact-number-message').innerHTML = "*Invalid phone number";
+          document.getElementById('temporary-contact-number-message').innerHTML = "Invalid phone number";
           condition = false;
         } else {
           condition = true;
@@ -459,7 +459,7 @@ function personalDetailCountryValidation(res) {
   if (checkLength(res) > 2) {
     condition = true;
   } else {
-    document.getElementById("country-message").innerHTML = "*Invalid length";
+    document.getElementById("country-message").innerHTML = "Invalid length";
     condition = false;
   }
   return condition;
@@ -525,7 +525,7 @@ function bankDetailBankNameValidation(res) {
   if (checkLength(res) > 3) {
     condition = true;
   } else {
-    document.getElementById("bank-name-message").innerHTML = "*Invalid length";
+    document.getElementById("bank-name-message").innerHTML = "Invalid length";
     condition = false;
   }
   return condition;
@@ -535,7 +535,7 @@ function bankDetailBankBranchValidation(res) {
   if (checkLength(res) > 3) {
     condition = true;
   } else {
-    document.getElementById("bank-branch-message").innerHTML = "*Invalid length";
+    document.getElementById("bank-branch-message").innerHTML = "Invalid length";
     condition = false;
   }
   return condition;
@@ -545,14 +545,14 @@ function bankDetailBankBranchValidation(res) {
 function bankDetailIfscCodeValidation(res) {
   if (res.length != 11) {
     condition = false;
-    document.getElementById('bank-ifsc-code-message').innerHTML = "*Invalid length";
+    document.getElementById('bank-ifsc-code-message').innerHTML = "Invalid length";
   } else {
     let firstfour = res.substring(0, 4);
     let lastseven = res.substring(4, 11);
     for (let i = 0; i < firstfour.length; i++) {
       if (firstfour[i] < 'A' || firstfour[i] > 'Z') {
         condition = false;
-        document.getElementById('bank-ifsc-code-message').innerHTML = "*Invalid ifsc character";
+        document.getElementById('bank-ifsc-code-message').innerHTML = "Invalid ifsc character";
         break;
       } else {
         for (let j = 0; j < lastseven.length; j++) {
@@ -561,7 +561,7 @@ function bankDetailIfscCodeValidation(res) {
           } else {
             console.log('in loop' + lastseven[j]);
             condition = false;
-            document.getElementById('bank-ifsc-code-message').innerHTML = "*Invalid last seven number";
+            document.getElementById('bank-ifsc-code-message').innerHTML = "Invalid last seven number";
             break;
           }
         }
@@ -574,11 +574,11 @@ function bankDetailIfscCodeValidation(res) {
 
 function bankDetailMicrCodeValidation(res) {
   if (res.length < 3) {
-    document.getElementById('bank-micr-code-message').innerHTML = "*Invalid length";
+    document.getElementById('bank-micr-code-message').innerHTML = "Invalid length";
     condition = false;
   } else {
     if (isNaN(res)) {
-      document.getElementById('bank-micr-code-message').innerHTML = "*Character not allowed";
+      document.getElementById('bank-micr-code-message').innerHTML = "Character not allowed";
       condition = false;
     } else {
       condition = true;
@@ -589,11 +589,11 @@ function bankDetailMicrCodeValidation(res) {
 
 function bankDetailAccountNumberValidation(res) {
   if ((checkLength(res) <= 10) || (checkLength(res) > 16)) {
-    document.getElementById('bank-account-number-message').innerHTML = "*Invalid length"
+    document.getElementById('bank-account-number-message').innerHTML = "Invalid length"
     condition = false;
   } else {
     if (isNaN(res)) {
-      document.getElementById('bank-account-number-message').innerHTML = "*Charaters not allowed";
+      document.getElementById('bank-account-number-message').innerHTML = "Charaters not allowed";
       condition = false;
     } else {
       condition = true;

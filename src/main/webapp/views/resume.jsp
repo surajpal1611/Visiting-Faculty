@@ -81,8 +81,9 @@
               </div>
 
               <div id="gender-row" class="col-md-4 col-sm-12">
+
                 <div class="form-group">
-                  <label for="date-of-birth">Gender<span class="required">*</span></label><br>
+                  <label for="date-of-birth">Gender<span class="required">*</span><span class="text-danger ps-2" id="gender-message"></span></label><br>
                   <label class="radio-inline">Male<input type="radio" name="gender" class="gender ms-1" id="male"
                       value="1" /></label>
                   <label class="radio-inline">Female<input type="radio" name="gender" class="gender ms-1" id="female"
@@ -847,7 +848,7 @@
             <div class="col-md-6 col-sm-12">
               <div>
                 <input type="checkbox" class="cancelled-check-box" id="cancelled-check-box">
-                <label for="cancelled_cheque_Photo" class="py-md-2">Cancelled Cheque Photo<span
+                <label for="cancelled_cheque_Photo" class="py-md-2">Update Cancelled Cheque Photo?<span
                     class="required">*</span></label>
                 <span id="cancelled_cheque_Photo-message" style="color: red;" class="error"></span>
                 <input type="file" name="cancelled_cheque_Photo" id="cancelled_cheque_Photo"
@@ -1131,7 +1132,7 @@
                       </div>
                       <div class="row py-1">
                         <div class="col-md-5 col-sm-3">
-                          <h6>Date of birth :</h6>
+                          <h6>Date of birth </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="date-of-birth-value">\${personal_details[0].date_of_birth}</p>
@@ -1139,7 +1140,7 @@
                       </div>
                       <div class="row py-1">
                         <div class="col-md-5 col-sm-3">
-                          <h6>Pancard :</h6>
+                          <h6>Pancard </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="pancard-value">\${personal_details[0].pancard_no}</p>
@@ -1156,7 +1157,7 @@
                       </div>
                       <div class="row py-1">
                         <div class="col-md-5 col-sm-3">
-                          <h6>Aadhar card :</h6>
+                          <h6>Aadhar card </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="aadhar-card-value">\${personal_details[0].aadhar_card_no}</p>
@@ -1192,7 +1193,7 @@
                     
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
-                          <h6>Email :</h6>
+                          <h6>Email </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="email-value">\${personal_details[0].email}</p>
@@ -1200,7 +1201,7 @@
                       </div>
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
-                          <h6>Secondary Email :</h6>
+                          <h6>Secondary Email </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="temp-email-value">\${personal_details[0].temp_email}\${tempEmail}</p>
@@ -1208,7 +1209,7 @@
                       </div>
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
-                          <h6>Permanent Address :</h6>
+                          <h6>Permanent Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="address-value">\${personal_details[0].address}</p>
@@ -1216,7 +1217,7 @@
                       </div>
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
-                          <h6 class="temporary-address-heading">Temporary Address :</h6>
+                          <h6 class="temporary-address-heading">Temporary Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="temporary-address-value">\${personal_details[1].address}\${tempAdd}
@@ -1241,7 +1242,7 @@
                       </div>
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
-                          <h6 class="country-heading">Country :</h6>
+                          <h6 class="country-heading">Country </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="country-value">\${personal_details[0].nationality}</p>
@@ -1317,13 +1318,13 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Title :</p>
-                              <p class="h5 py-1">Major Subject :</p>
-                              <p class="h5 py-1">University :</p>
+                              <p class="h5 pb-1">Title </p>
+                              <p class="h5 py-1">Major Subject </p>
+                              <p class="h5 py-1">University </p>
 
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">\${qual.qualification_type_lid}</p>
+                              <p id="">\${qual.name}</p>
                               <p id="">\${qual.topic_of_study}</p>
                               <p id="">\${qual.university}</p>
                             </div>
@@ -1334,13 +1335,24 @@
                           <div class="row pt-lg-3">
                             <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                               <p class="h5 pb-1">College :</p>
-                              <p class="h5 py-1">percentage :</p>
-                              <p class="h5 py-1">Certificate :</p>
+                              <p class="h5 py-1">percentage :</p>`
+                              if(qual.abbr == 'phd') {
+                                resume += `<p class="h5 py-1">Status </p>`
+                              }
+                           resume+= `<p class="h5 py-1">Certificate</p>
                             </div>
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">\${qual.institute}</p>
-                              <p id="" class="">\${qual.percentile}</p>
-                              <p id=""><i id="qualification-certificate-display" data-image="../imagedata/\${qual.url_path}"
+                              <p id="" class="">\${qual.percentile}</p>`
+                              if(qual.abbr == 'phd') {
+                                if(qual.is_completed == true)
+                                {
+                                resume += `<p id="" class="">Awarded</p>`
+                                } else {
+                                resume += `<p id="" class="">Persuing</p>`
+                                }
+                              }
+                              resume+=`<p id=""><i id="qualification-certificate-display" data-image="../imagedata/\${qual.url_path}"
                                   class="fa-solid fa-image text-success qualification-certificate-display"></i></p>
 
                             </div>
@@ -1402,11 +1414,11 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">University :</p>
-                              <p class="h5 pb-1">Program :</p>
-                              <p class="h5 py-1">Subject Taught :</p>
-                              <p class="h5 py-1">Designation :</p>
-                              <p class="h5 py-1">Padagogy used :</p>
+                              <p class="h5 pb-1">University </p>
+                              <p class="h5 pb-1">Program </p>
+                              <p class="h5 py-1">Subject Taught </p>
+                              <p class="h5 py-1">Designation </p>
+                              <p class="h5 py-1">Padagogy used </p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id="">\${exp.employer_name}</p>
@@ -1420,10 +1432,10 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 py-1">Start Date :</p>
-                              <p class="h5 py-1">End date :</p>
-                              <p class="h5 py-1">Teaching Duration :</p>
-                              <p class="h5 py-1">Status :</p>
+                              <p class="h5 py-1">Start Date </p>
+                              <p class="h5 py-1">End date</p>
+                              <p class="h5 py-1">Teaching Duration </p>
+                              <p class="h5 py-1">Status </p>
                             </div>
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p id="" class="">\${exp.start_date}</p>
@@ -1472,7 +1484,7 @@
         if (data.resume_skill_selected != null) {
           for (hardskill of data.resume_skill_selected) {
             if (hardskill.skill_type_lid === 2)
-              resume += ` <div data-id="\${hardskill.skill_lid}" data-skilltype="\${hardskill.skill_type_lid}" class="skill-pill-div text-center">
+              resume += ` <div data-id="\${hardskill.skill_lid}" data-skillid = \${hardskill.resume_skill_selected_lid} data-skilltype="\${hardskill.skill_type_lid}" class="skill-pill-div text-center">
                                     \${hardskill.skill_name}\
                                 </div>`
           }
@@ -1487,7 +1499,7 @@
                       <div id="soft-skill-appending-div1" class="d-flex w-100 flex-wrap">`
           for (softskill of data.resume_skill_selected) {
             if (softskill.skill_type_lid === 1) {
-              resume += `<div data-id="\${softskill.skill_lid}" data-skilltype="\${softskill.skill_type_lid}" class="skill-pill-div text-center">
+              resume += `<div data-id="\${softskill.skill_lid}" data-skillid = \${softskill.resume_skill_selected_lid} data-skilltype="\${softskill.skill_type_lid}" class="skill-pill-div text-center">
                                     \${softskill.skill_name}\
                                 </div>`
             }
@@ -1536,9 +1548,9 @@
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Award Name :</p>
-                          <p class="h5 py-1">organization :</p>
-                          <p class="h5 py-1">Organization Type :</p>
+                          <p class="h5 pb-1">Award Name </p>
+                          <p class="h5 py-1">organization </p>
+                          <p class="h5 py-1">Organization Type </p>
 
                         </div>
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
@@ -1552,9 +1564,9 @@
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Place :</p>
-                          <p class="h5 pb-1">Recieved date :</p>
-                          <p class="h5 py-1">Certificate :</p>
+                          <p class="h5 pb-1">Place </p>
+                          <p class="h5 pb-1">Recieved date </p>
+                          <p class="h5 py-1">Certificate </p>
                         </div>
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${award.description}</p>
@@ -1606,9 +1618,9 @@
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Role :</p>
-                          <p class="h5 py-1">No. of Authors :</p>
-                          <p class="h5 py-1">Book Title :</p>
+                          <p class="h5 pb-1">Role </p>
+                          <p class="h5 py-1">No. of Authors </p>
+                          <p class="h5 py-1">Book Title </p>
 
                         </div>
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
@@ -1622,9 +1634,9 @@
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Publisher :</p>
-                          <p class="h5 pb-1">Publication Year:</p>
-                          <p class="h5 py-1">Certificate :</p>
+                          <p class="h5 pb-1">Publisher </p>
+                          <p class="h5 pb-1">Publication Year</p>
+                          <p class="h5 py-1">Certificate </p>
                         </div>
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${public.publisher}</p>
@@ -1683,8 +1695,8 @@
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 py-1">Title :</p>
-                          <p class="h5 py-1">Volume year :</p>
+                          <p class="h5 py-1">Title </p>
+                          <p class="h5 py-1">Volume year </p>
 
                         </div>
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
@@ -1698,9 +1710,9 @@
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Description :</p>
-                          <p class="h5 pb-1">Category :</p>
-                          <p class="h5 py-1">Certificate :</p>
+                          <p class="h5 pb-1">Description </p>
+                          <p class="h5 pb-1">Category </p>
+                          <p class="h5 py-1">Certificate </p>
                         </div>
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${research.description}</p>
@@ -1759,7 +1771,7 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Certification name:</p>
+                              <p class="h5 pb-1">Certification name</p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id="">\${qual.topic_of_study}</p>
@@ -1770,7 +1782,7 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Institution :</p>
+                              <p class="h5 pb-1">Institution</p>
                             </div>
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">\${qual.institute}</p>
@@ -1781,7 +1793,7 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Recieved Year:</p>
+                              <p class="h5 pb-1">Recieved Year</p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id="">\${qual.year_of_passing}</p>
@@ -1792,7 +1804,7 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Certificate:</p>
+                              <p class="h5 pb-1">Certificate</p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p ><i id="professional-certificate-display" data-image="../imagedata/\${qual.url_path}" class="fa-solid fa-image text-success professional-certificate-display"></i></p>
@@ -1984,6 +1996,19 @@
               'editTemporaryAddress')
             document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
 
+            if(resumeinfo.personal_details[0].gender_lid == 1)
+            {
+              document.querySelector('#male').checked = true;
+            }
+            else if(resumeinfo.personal_details[0].gender_lid == 2)
+            {
+              document.querySelector('#female').checked = true;
+            }
+            else 
+            {
+              document.querySelector('#other').checked = true;
+            }
+            document.getElementById('temp_contact-number').value = resumeinfo.personal_details[0].temp_contact_number
             document.getElementById('body').classList.add('d-none');
             document.querySelector('.personal-details-modal').classList.remove('d-none');
 
@@ -2211,9 +2236,8 @@
 
     //Resume Qualification Add Button
     function resumequailficationaddbtn() {
-
-      let qualificationType = 'let qualificationType = `<option value disabled selected>--Select--</option>`;';
-
+      
+      qualificationType='';
       document.querySelector('.qualification-data-insert').innerHTML = "";
       document.querySelector('.qualification-modal-insert').classList.remove('d-none');
       document.querySelector('#body').classList.add('d-none');
@@ -3407,8 +3431,8 @@
 
         let check_journal_name = tabledatacheck(Journal_name);
         let check_volume_year = yearcheck(volume_year);
-        let check_description = namecheck(description);
-        let check_category = namecheck(category);
+        let check_description = tabledatacheck(description);
+        let check_category = tabledatacheck(category);
 
 
         if (check_journal_name == false) {
@@ -4255,8 +4279,6 @@
 
         if (qualificationDataDB == 1) {
 
-
-
           $.ajax({
               url: '/get-qualification-type',
               type: 'get',
@@ -4360,6 +4382,9 @@
 
                         document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
                         document.querySelector('.qualification-title').value = qualedit.abbr
+                        if(qualedit.abbr == 'phd') {
+                          document.querySelector('.qualification-phd-wrapper').classList.remove('d-none')
+                        }
                       }
                     }
                   }
@@ -4493,9 +4518,8 @@
 
             for (let skill of document.querySelectorAll('.skill-pill-div')) {
 
-
               if (skill.dataset.skilltype == 1) {
-                document.getElementById('soft-skill-display').insertAdjacentHTML('beforeend', `<li class="soft-skill-list-group skill-list" data-status="0" data-skilltype="skill.skilltype" data-id="\${skill.id}">
+                document.getElementById('soft-skill-display').insertAdjacentHTML('beforeend', `<li class="soft-skill-list-group skill-list" data-status="0" data-skillid=\${skill.dataset.skillid} data-skilltype="\${skill.dataset.skilltype}" data-id="\${skill.dataset.id}">
                         <div class="row">
                             <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
                             <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${skill.innerText}\</a></div>
@@ -4503,7 +4527,7 @@
                     </li>`)
               } else if (skill.dataset.skilltype == 2) {
 
-                document.getElementById('hard-skill-display').insertAdjacentHTML('beforeend', `<li class="soft-skill-list-group skill-list" data-status="0" data-skilltype="skill.skilltype" data-id="\${skill.id}">
+                document.getElementById('hard-skill-display').insertAdjacentHTML('beforeend', `<li class="soft-skill-list-group skill-list" data-status="0" data-skillid=\${skill.dataset.skillid} data-skilltype="\${skill.dataset.skilltype}" data-id="\${skill.dataset.id}">
                         <div class="row">
                             <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
                             <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${skill.innerText}\</a></div>
@@ -4592,7 +4616,7 @@
                   <div class="col-md-2 ">
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10"><input type='checkbox' class='award-check-box'><input class="d-none form-control awardCertificationImage" type="file" 
+                  <div class="col-md-10"><input type='checkbox' class='award-check-box'>Update Photo?<input class="d-none form-control awardCertificationImage" type="file" 
                      onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
                     <p hidden><img class="award-certificate-preview" type="hidden" alt="your image" width="100"
                     height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
@@ -4705,7 +4729,7 @@
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
                   <!--Rana Chanegs--!>
-                  <div class="col-md-10"><input type='checkbox' class='publication-check-box'><input class="d-none form-control publication-certification" type="file"
+                  <div class="col-md-10"><input type='checkbox' class='publication-check-box'>Update Photo?<input class="d-none form-control publication-certification" type="file"
                     onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
                       <p hidden><img class="publication-certificate-preview" type="hidden" alt="your image" width="100"
                        height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
@@ -4813,7 +4837,7 @@
                   <div class="col-md-2 ">
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10"><input type='checkbox' class='reserach-check-box'><input class="d-none form-control research_photo" type="file"
+                  <div class="col-md-10"><input type='checkbox' class='reserach-check-box'>Update Photo?<input class="d-none form-control research_photo" type="file"
                     onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
                    <p hidden><img class="research-certificate-preview" type="hidden" alt="your image" width="100"
                       height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
@@ -4927,7 +4951,7 @@
     document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
 
       e.preventDefault()
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       let myForm = document.getElementById('myForm')
@@ -4961,12 +4985,12 @@
       let tempContact = (result.temp_contact_number);
       let tempemail = tempemailvalidation(result.temp_email);
 
-      if (!firstName || !lastName || !gender || !contactNumber || !email || !aadhar || !address || !
-        country || !DOB || !tempemail) {
+      if (!firstName || !lastName || !contactNumber || !email || !aadhar || !address || !
+        country || !DOB || !tempemail || !gender) {
         return;
       }
 
-
+      document.getElementById('main-loader').classList.remove('d-none');
 
       let personalDetailsData = {
         "insert_user_personal_details": {
@@ -5896,8 +5920,8 @@
 
         let check_journal_name = tabledatacheck(Journal_name);
         let check_volume_year = yearcheck(volume_year);
-        let check_description = namecheck(description);
-        let check_category = namecheck(category);
+        let check_description = tabledatacheck(description);
+        let check_category = tabledatacheck(category);
 
 
         if (check_journal_name == false) {
@@ -6363,7 +6387,7 @@
                                           <div class="col-md-2 ">
                                             <p class="h6">Certificate: <span class="required">*</span></p>
                                           </div>
-                                          <div class="col-md-10 "><input type='checkbox' class='certification-check-box'><input class="d-none form-control certificate-photo"
+                                          <div class="col-md-10 "><input type='checkbox' class='certification-check-box'>Update Certificate?<input class="d-none form-control certificate-photo"
 
                                             onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])" type="file">
                                               <p hidden><img class="certificate-photo-preview" type="hidden" alt="your image" width="100"
@@ -6794,10 +6818,26 @@
                             </li>
                             `
 
-        skillList.insertAdjacentHTML('afterbegin', div)
-        element.closest('li').remove()
+        let status = 400;
+        let softid = element.closest('li').dataset.skillid;
+        fetch('/delete-softskills', {
+              method: "POST",
+              body: softid,
+              headers: {
+                "Content-Type": "application/json; charset=UTF-8",
+              }
+            })
+            .then(response => status = response.status)
+            .then(response => {
+              if (status === 200) {
+                skillList.insertAdjacentHTML('afterbegin', div);
+                element.closest('li').remove();
+              } else {
+                console.log("Error")
+              }
+            })
+            .catch(exception => console.log(exception));
       }
-
     })
 
     document.getElementById('hard-skill-review-box').addEventListener('click', function (event) {
@@ -6817,10 +6857,26 @@
                                  <div class="col-md-10 col-sm-10 col-10"><a href="#">\${text}\</a></div>
                               </div>
                             </li>
-                            `
-
-        skillList.insertAdjacentHTML('afterbegin', div)
-        element.closest('li').remove()
+                            `       
+        let status = 400;
+        let softid = element.closest('li').dataset.skillid;
+        fetch('/delete-softskills', {
+              method: "POST",
+              body: softid,
+              headers: {
+                "Content-Type": "application/json; charset=UTF-8",
+              }
+            })
+            .then(response => status = response.status)
+            .then(response => {
+              if (status === 200) {
+                skillList.insertAdjacentHTML('afterbegin', div)
+                element.closest('li').remove();
+              } else {
+                console.log("Error")
+              }
+            })
+            .catch(exception => console.log(exception));
       }
 
     })
