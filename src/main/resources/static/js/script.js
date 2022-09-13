@@ -67,6 +67,11 @@ function changeDateFormat(date) {
   return `${dateArr[2]}/${dateArr[1]}/${dateArr[0]}`;
 }
 
+function dateFormatCalculation(date) {
+  let dateArr = date.split('-');
+  return `${dateArr[1]}/${dateArr[2]}/${dateArr[0]}`;
+}
+
 function findClosest(elem, className) {
   let closestParent = elem.parentElement;
   while (closestParent && !closestParent.classList.contains(className)) {
@@ -631,15 +636,7 @@ function bankDetailCancelledChequeValidation(res) {
 }
 
 // ******************************************Validation Functions Start****************************************************
-function tabledatacheck(value) {
-  let checkit = false;
-  if (value.length > 0) {
-    checkit = true;
-  } else {
-    checkit = false;
-  }
-  return checkit;
-}
+
 
 function namecheck(value) {
   let check = false;
@@ -696,7 +693,7 @@ function tempemailvalidation(value) {
 // ******************************************Validation Functions Start****************************************************
 function tabledatacheck(value) {
   let checkit = false;
-  if (value.length > 3) {
+  if (value.length > 0) {
     checkit = true;
   } else {
     checkit = false;
@@ -843,6 +840,16 @@ function checkboxfunction(checkbox, input) {
     }
   });
 }
+
+// function workexperienceCheckBoxfunction(checkbox, input) {
+//   $("." + checkbox).on("click", function () {
+//     if ($(this).is(":checked")) {
+//       document.querySelector('.' + input).classList.add('d-none');
+//     } else {
+//       document.querySelector('.' + input).classList.remove('d-none');
+//     }
+//   });
+// }
 
 
 
