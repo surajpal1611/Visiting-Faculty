@@ -1069,9 +1069,6 @@
         let bank_details = data.bank_details;
         console.log('Resume info :', resumeinfo);
 
-
-
-
         let resume = `
       <div class="d-flex justify-content-end">
 
