@@ -1402,15 +1402,13 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">University :</p>
-                              <p class="h5 pb-1">Program :</p>
-                              <p class="h5 py-1">Subject Taught :</p>
+                              <p class="h5 pb-1">Employeer :</p>
+                              <p class="h5 py-1">Key role :</p>
                               <p class="h5 py-1">Designation :</p>
                               <p class="h5 py-1">Padagogy used :</p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id="">\${exp.employer_name}</p>
-                              <p id="">\${exp.description}</p>
                               <p id="">\${exp.responsibilities}</p>
                               <p class="" id="">\${exp.designation}</p>
                               <p class="" id="">\${exp.padagogy}</p>
