@@ -1417,13 +1417,11 @@
                               <p class="h5 pb-1">Employeer :</p>
                               <p class="h5 py-1">Key role :</p>
                               <p class="h5 py-1">Designation :</p>
-                              <p class="h5 py-1">Padagogy used :</p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id="">\${exp.employer_name}</p>
                               <p id="">\${exp.responsibilities}</p>
                               <p class="" id="">\${exp.designation}</p>
-                              <p class="" id="">\${exp.padagogy}</p>
                             </div>
                           </div>
                         </div>
@@ -1432,8 +1430,7 @@
                             <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                               <p class="h5 py-1">Start Date </p>
                               <p class="h5 py-1">End date</p>
-                              <p class="h5 py-1">Teaching Duration </p>
-                              <p class="h5 py-1">Status </p>
+                              <p class="h5 py-1">Duration </p>
                             </div>
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p id="" class="">\${exp.start_date}</p>
@@ -2086,8 +2083,6 @@
         contactvalid || !adharnumbervalid || !tempContactNumberValid || !tempemailvalid) {
         return;
       }
-      document.getElementById('main-loader').classList.remove('d-none')
-
 
       let personalDetailsData = {
         "insert_user_personal_details": {
@@ -2199,6 +2194,7 @@
         }
 
         let fetchRes = fetch('/insert-personal-details', options);
+        document.getElementById('main-loader').classList.remove('d-none')
 
         fetchRes.then(success => {
 
@@ -2846,7 +2842,6 @@
           vjstableelement[i].querySelector('.awardCertificationImage').classList.add('input-border');
           return;
         }
-        document.getElementById('main-loader').classList.remove('d-none');
 
         let photoArray = []
 
@@ -2936,6 +2931,7 @@
 
       //Fetch Method
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         function postdata() {
           url = "/award_insert";
@@ -3123,7 +3119,6 @@
     //Insert Publication Submit Button
     document.querySelector("#publication-submit-insert").addEventListener('click', function () {
 
-
       let div = ''
       let publicationTableArray = []
       let publicationRow = document.querySelectorAll('.publication-row')
@@ -3163,7 +3158,6 @@
           publicationRow[i].querySelector('.publication-certification').classList.add('input-border');
           return;
         }
-        document.getElementById('main-loader').classList.remove('d-none');
 
         let photoArray = []
 
@@ -3237,6 +3231,7 @@
         "insert_publication": publicationTableArray
       }
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let options = {
           method: 'POST',
@@ -3446,8 +3441,6 @@
           researchTableElem[j].querySelector('.research_category').classList.add('input-border');
           return;
         }
-        document.getElementById('main-loader').classList.remove('d-none');
-
 
 
         let photoArray = []
@@ -3519,6 +3512,7 @@
       }
       console.log('resrearch : ', JSON.stringify(object));
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let options = {
           method: 'POST',
@@ -3728,7 +3722,6 @@
           certificationRow[i].querySelector('.certificate-photo').classList.add('input-border');
           return;
         }
-        document.getElementById('main-loader').classList.remove('d-none');
 
         let photoArray = []
 
@@ -3819,6 +3812,7 @@
       }
       console.log(JSON.stringify(certificationTableData))
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let options = {
           method: 'POST',
@@ -3927,8 +3921,6 @@
       if (!facultyBankNameValid || !facultyBankBranchValid || !facultyIfscCodevalid || !facultyAccountNumberValid) {
         return;
       }
-      document.getElementById('main-loader').classList.remove('d-none');
-
 
 
       let photoArray = []
@@ -3944,6 +3936,7 @@
       }
 
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let bankDetailsJson = {
           "insert_bank_data": []
@@ -4980,7 +4973,6 @@
         return;
       }
 
-      document.getElementById('main-loader').classList.remove('d-none');
 
       let personalDetailsData = {
         "insert_user_personal_details": {
@@ -5092,6 +5084,8 @@
           genderValue = "Other"
         }
         console.log(genderValue)
+      document.getElementById('main-loader').classList.remove('d-none');
+
         let options = {
 
           method: 'POST',
@@ -5323,6 +5317,7 @@
         }, 1000)
       }
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let qualificationTableData = {
           "qualificationDetails": qualificationTableArray
@@ -5539,7 +5534,6 @@
         //   vjstableelement[i].querySelector('.awardCertificationImage').classList.add('input-border');
         //   return;
         // }
-        document.getElementById('main-loader').classList.remove('d-none');
 
         let photoArray = []
 
@@ -5634,6 +5628,7 @@
 
       //Fetch Method
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         function postdata() {
           url = "/award_Table_Data";
@@ -5651,11 +5646,11 @@
               document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.award-modal').classList.add('d-none');
-              document.getElementById('main-loader').classList.remove('d-none');
+              document.getElementById('main-loader').classList.add('d-none');
 
               document.location.reload();
             } else {
-              document.getElementById('main-loader').classList.remove('d-none');
+              document.getElementById('main-loader').classList.add('d-none');
               alert('Check Award Entries');
             }
           })
@@ -6148,7 +6143,6 @@
         //   return;
         // }
 
-        document.getElementById('main-loader').classList.remove('d-none');
 
         let photoArray = []
 
@@ -6243,6 +6237,7 @@
       }
       console.log(JSON.stringify(certificationTableData))
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let options = {
           method: 'POST',
@@ -6453,7 +6448,6 @@
         return;
       }
 
-      document.getElementById('main-loader').classList.remove('d-none');
 
       let photoArray = []
 
@@ -6472,6 +6466,7 @@
       }
 
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let bankDetailsJson = {
           "insert_bank_data": []
@@ -6925,7 +6920,6 @@
           return;
         }
 
-        document.getElementById('main-loader').classList.remove('d-none');
 
 
         let workexperience_type = 0;
@@ -6967,6 +6961,7 @@
       }
 
       console.log(JSON.stringify(workexperienceTableData))
+      document.getElementById('main-loader').classList.remove('d-none');
 
       let options = {
         method: 'POST',
@@ -7014,7 +7009,7 @@
         workexperienceRow[i].querySelector('.start-date').classList.remove('input-border');
         workexperienceRow[i].querySelector('.end-date').classList.remove('input-border');
 
-        // let resume_workexperience_lid = workexperienceRow[i].dataset.lid
+        let resume_workexperience_lid = workexperienceRow[i].dataset.lid
         let workexperienceType = workexperienceRow[i].querySelector('.work-experience-type').value;
         let workexperienceUniversity = workexperienceRow[i].querySelector('.employeer-name').value;
         let workexperienceDesignationTypeLID = workexperienceRow[i].querySelector(".designation-title").options
@@ -7027,7 +7022,7 @@
         let workexperienceOther = workexperienceRow[i].querySelector('.other').value;
         let workexperienceStartDate = workexperienceRow[i].querySelector('.start-date').value;
         let workexperienceEndDate = workexperienceRow[i].querySelector('.end-date').value;
-
+console.log(resume_workexperience_lid)
 
         let checkWorkExp = tabledatacheck(workexperienceType);
         let checkUniversity = tabledatacheck(workexperienceUniversity);
@@ -7053,7 +7048,6 @@
           return;
         }
 
-        document.getElementById('main-loader').classList.remove('d-none');
 
 
         let workexperience_type = 0;
@@ -7075,6 +7069,7 @@
 
         object = {
           resume_lid: resume_lid,
+          resume_experience_lid:resume_workexperience_lid,
           experience_type_lid: workexperience_type,
           employer_name: workexperienceUniversity,
           designation: workexperienceDesignationType,
@@ -7171,6 +7166,7 @@
     function editWorkExperienceDetail(id) {
 
 
+
       if (resumeinfo.resume_experience != null) {
         for (expedit of resumeinfo.resume_experience) {
           if (expedit.resume_experience_lid == id) {
@@ -7244,7 +7240,7 @@
                 <p class="h6">Designation:<span class="required">*</span></p>
               </div>
               <div class="col-md-9 ">
-                <select class="form-control designation-title" value="\${expedit.designation_lid}"  id="designation">
+                <select class="form-control designation-title" id="designation">
                  <option value disabled selected>--Select--</option>
                  \${workexperienceDesignationType}
                 </select>
@@ -7297,7 +7293,7 @@
 
             document.querySelector('.workexperience-data').insertAdjacentHTML("beforeend", table);
             document.querySelector('.work-experience-type').value = expedit.abbr;
-            //document.querySelector('.designation-title').value = expedit.designation_lid;
+            document.querySelector('.designation-title').value = expedit.designation;
 
           }
         }
