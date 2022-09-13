@@ -413,7 +413,7 @@
           .then(response => status = response.status)
           .then(response => {
             console.log(status)
-            if (status === 200) {
+            if (status == 200) {
               document.getElementById('main-loader').classList.add('d-none');
               document.getElementById('token-div').classList.remove('d-none');
               document.querySelector('.register-btn').classList.add('d-none');
