@@ -309,4 +309,34 @@ public class userDao implements UserDaoInterface {
         return jdbcCall.executeFunction(Object.class, workexperienceTableData);
     }
 
+    @Override
+    public int deleteQualification(int id) {
+      String sql = "DELETE FROM resume_qualification WHERE resume_qualification_lid = ?";
+      return jdbcTemplate.update(sql,id);
+    }
+
+    @Override
+    public int deleteaward(int id) {
+        String sql = "DELETE FROM resume_achievement WHERE resume_achievement_lid = ?";
+        return jdbcTemplate.update(sql,id);
+    }
+
+    @Override
+    public int deletepublication(int id) {
+        String sql = "DELETE FROM resume_publication WHERE resume_achievement_lid = ?";
+        return jdbcTemplate.update(sql,id);
+    }
+
+    @Override
+    public int deleteresearch(int id) {
+        String sql = "DELETE FROM resume_research WHERE resume_achievement_lid = ?";
+        return jdbcTemplate.update(sql,id);
+    }
+
+    @Override
+    public int deleteCertificate(int id) {
+        String sql = "DELETE FROM resume_qualification WHERE resume_qualification_lid = ?";
+        return jdbcTemplate.update(sql,id);
+    }
+
 }

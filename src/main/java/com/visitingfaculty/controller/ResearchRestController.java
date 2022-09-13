@@ -58,4 +58,15 @@ public class ResearchRestController {
             return new ResponseEntity<String>("Ressearch data inserted", HttpStatus.BAD_REQUEST);
         }
     }
+
+    @PostMapping("/delete-research")
+    public ResponseEntity<?> deleteResearch(@RequestBody String id) {
+        System.out.println(id);
+
+        int deletedRows = userDaoInterface.deleteresearch(Integer.parseInt(id));
+        if (deletedRows == 1) {
+            return ResponseEntity.status(HttpStatus.OK).build();
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
 }

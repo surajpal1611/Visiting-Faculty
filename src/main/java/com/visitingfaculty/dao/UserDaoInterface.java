@@ -78,4 +78,14 @@ public interface UserDaoInterface {
     Object getResumeById(int user_lid);
 
     User getUserByResume(int id);
+
+    int deleteQualification(int id);
+
+    int deleteaward(int id);
+
+    int deletepublication(int id);
+
+    int deleteresearch(int id);
+
+    int deleteCertificate(int id);
 }

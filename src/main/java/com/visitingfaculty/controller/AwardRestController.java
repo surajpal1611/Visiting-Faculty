@@ -58,4 +58,15 @@ public class AwardRestController
         System.out.println("Error");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
+
+    @PostMapping("/delete-award")
+    public ResponseEntity<?> deleteAward(@RequestBody String id) {
+
+        int deletedRows = service.deleteaward(Integer.parseInt(id));
+        System.out.println("DELETED Rows>>>   " + deletedRows);
+        if (deletedRows == 1) {
+            return ResponseEntity.status(HttpStatus.OK).build();
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
 }
