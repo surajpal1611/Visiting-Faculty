@@ -296,13 +296,17 @@
         color: '#ffffff'
       });
     };
-
     if(window.location.hash == '#success') {
       document.querySelector('.login-success-alert').classList.remove('d-none')
-    }
+    } else {
+      document.querySelector('.login-success-alert').classList.add('d-none')
 
+    }
+    
     if(window.location.hash == '#error') {
       document.querySelector('.login-error-alert').classList.remove('d-none')
+    } else {
+      document.querySelector('.login-error-alert').classList.add('d-none')
     }
 
     //DYNAMIC CSS
@@ -350,9 +354,12 @@
           if (status === 200) {
             document.getElementById('main-loader').classList.add('d-none')
             console.log("success")
-            location.href = 'http://localhost:8080/dashboard';
+            window.location.href = 'http://localhost:8080/dashboard';
           } else {
-            location.href = 'http://localhost:8080/login#error';
+            document.getElementById('main-loader').classList.add('d-none')
+            window.location.href = 'http://localhost:8080/login#error';
+            window.location.reload()
+
           }
         })
         .catch(exception => console.log(exception));

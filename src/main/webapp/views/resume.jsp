@@ -1083,6 +1083,22 @@
         <!--------------------------------------Personal Details Section ---------------------------------------->`
 
         if (personal_details != null) {
+          let tempCont = " ";
+          let tempAdd = "";
+          let tempEmail = "";
+
+          if ((personal_details[0].temp_contact_number).length == 0) {
+            console.log("LOOP-1")
+            tempCont = "N.A"
+          }
+          if ((personal_details[0].address).length == 0) {
+            console.log("LOOP-2")
+            tempAdd = "N.A"
+          }
+          if ((personal_details[0].temp_email).length == 0) {
+            console.log("LOOP-3")
+            tempEmail = "N.A"
+          }
 
           resume += `<div class="edit-personal-details">
           <div class="position-relative personal-information-div-wrapper d-flex" style="cursor: pointer;">
@@ -1170,7 +1186,7 @@
                           <h6>Secondary Contact No.</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temp-contact-value">\${personal_details[0].temp_contact_number}</p>
+                          <p id="temp-contact-value">\${personal_details[0].temp_contact_number}\${tempCont}</p>
                         </div>
                       </div>
                     </div>
@@ -1190,7 +1206,7 @@
                           <h6>Secondary Email :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temp-email-value">\${personal_details[0].temp_email}</p>
+                          <p id="temp-email-value">\${personal_details[0].temp_email}\${tempEmail}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1206,7 +1222,7 @@
                           <h6 class="temporary-address-heading">Temporary Address :</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="temporary-address-value">\${personal_details[1].address}
+                          <p id="temporary-address-value">\${personal_details[1].address}\${tempAdd}
                           </p>
                         </div>
                       </div>

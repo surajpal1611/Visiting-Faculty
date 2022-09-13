@@ -226,26 +226,27 @@
           <form method="POST" class="text-center" id="login-form">
             <h3><span>Reg</span>ister</h3>
             <span class="bottom-line mx-auto"></span>
-            <div class="mt-3 mb-3">
+            <div class="mt-3 mb-3 removing-input">
+              <small class="pancard-error-message d-none text-danger">Enter Valid Pancard No.</small>
               <div class="cust-btn-group">
                 <div class="cust-input-prepend">
                   <i class="fa-solid fa-user"></i>
                 </div>
                 <input type="text" id="pannumber" name="user_id" placeholder="Pan Card No." required>
               </div>
-              <small class="pancard-error-message d-none text-danger">Enter Valid Pancard No.</small>
             </div>
-            <div class="mt-3 mb-3">
+            <div class="mt-3 mb-3 removing-input">
+              <small class="email-error-message text-danger d-none">Enter Valid Email</small>
               <div class="cust-btn-group">
                 <div class="cust-input-prepend">
                   <i class="fas fa-envelope"></i>
                 </div>
                 <input type="text" id="email" name="email" placeholder="Email id" required>
               </div>
-              <small class="email-error-message text-danger d-none">Enter Valid Email</small>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 removing-input">
+              <small class="password-error-message text-danger d-none">Enter Valid Password</small>
               <div class="cust-btn-group">
                 <div class="cust-input-prepend">
                   <i class="fas fa-key"></i>
@@ -253,16 +254,15 @@
                 <input type="password" id="password1" name="password" placeholder="Password" required>
                 <input type="hidden" name="devicecheck" id="devicecheck">
               </div>
-              <small class="password-error-message text-danger d-none">Enter Valid Password</small>
             </div>
-            <div class="div mb-3">
+            <div class="div mb-3 removing-input">
+              <small class="password-2-error-message text-danger d-none">Enter Valid Password</small>
               <div class="cust-btn-group">
                 <div class="cust-input-prepend">
                   <i class="fas fa-key"></i>
                 </div>
                 <input type="password" id="password2" name="confirmPassword" placeholder="Confirm Password" required>
               </div>
-              <small class="password-2-error-message text-danger d-none">Enter Valid Password</small>
             </div>
             <div id="token-div" class="cust-btn-group mb-3 d-none">
               <div class="cust-input-prepend">
@@ -418,10 +418,8 @@
               document.getElementById('token-div').classList.remove('d-none');
               document.querySelector('.register-btn').classList.add('d-none');
               document.querySelector('.alert-success').classList.remove('d-none');
-              document.querySelector('#pannumber').classList.add('d-none');
-              document.querySelector('#email').classList.add('d-none');
-              document.querySelector('#password1').classList.add('d-none');
-              document.querySelector('#password2').classList.add('d-none');
+              let div = document.querySelectorAll('.removing-input')
+              div.forEach(div => div.classList.add('d-none'))
               document.querySelector('.verify-button').classList.remove('d-none');
             } else {
               document.getElementById('main-loader').classList.add('d-none');
