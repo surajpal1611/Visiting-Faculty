@@ -1118,3 +1118,24 @@ button {
   border: none;
   align-items: center;
 }
+
+/* ==============================================Custom css for custom select tag made by  Rana and Akash================================ */
+
+.designation-title {
+  position: absolute;
+  max-height: 100px;
+  overflow-y: scroll;
+}
+
+.custom-select-div {
+  z-index: 5000;
+  position: relative;
+  width: 100%;
+}
+
+.designation-title li
+{
+  border: 2px solid whitesmoke;
+  padding: 3px 8px;
+}
+
