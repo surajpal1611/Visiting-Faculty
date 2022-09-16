@@ -92,4 +92,6 @@ public interface UserDaoInterface {
     int deleteExperience (int id);
 
     int deleteSoftSkills(int id);
+
+    Object createJobApplication(String object);
 }

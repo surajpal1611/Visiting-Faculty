@@ -5,8 +5,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
+
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -56,7 +60,7 @@ public class UserService {
 
     public String uploadPhotos(String base64String) {
 
-        String filename = UUID.randomUUID().toString()+ ".jpg";
+        String filename = UUID.randomUUID().toString() + ".jpg";
 
         String base64Image = base64String.split(",")[1];
         byte[] imageBytes = javax.xml.bind.DatatypeConverter.parseBase64Binary(base64Image);
