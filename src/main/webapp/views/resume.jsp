@@ -10,12 +10,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="stylesheet" href="./login.css" />
-  <link rel="stylesheet" href="./simpleAlert.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/style.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/login.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/simpleAlert.css">
 
   <title>Resume</title>
-  <link rel="icon" type="image/x-icon" href="/images.jpg">
+  <link rel="icon" type="image/x-icon" href="images.jpg">
 </head>
 
 <body>
@@ -966,7 +966,7 @@
 
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="/download (3).jpg" alt="Pancard-photo-uploaded" id="Pancard-photo-uploaded"
+              <img src="download (3).jpg" alt="Pancard-photo-uploaded" id="Pancard-photo-uploaded"
                 style="width:450px;height:300px;">
             </div>
           </div>
@@ -989,7 +989,7 @@
 
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="/download (3).jpg" alt="aadhar-photo-uploaded" id="aadhar-photo-uploaded"
+              <img src="download (3).jpg" alt="aadhar-photo-uploaded" id="aadhar-photo-uploaded"
                 style="width:450px;height:300px;">
             </div>
           </div>
@@ -1013,7 +1013,7 @@
 
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="/download (3).jpg" alt="image-uploaded" id="image-uploaded" class="image-uploaded"
+              <img src="download (3).jpg" alt="image-uploaded" id="image-uploaded" class="image-uploaded"
                 style="width:450px;height:300px;">
             </div>
           </div>
@@ -1049,20 +1049,20 @@
 
 
   <!-- INCLUDE JS -->
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.bundle.min.js"></script>
-  <script src="/js/SimpleAlert.js"></script>
-  <script src="/js/script.js"></script>
-  <script src="/js/leftsidebartoggle.js"></script>
+  <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
+  <script src="${pageContext.request.contextPath}/js/SimpleAlert.js"></script>
+  <script src="${pageContext.request.contextPath}/js/script.js"></script>
+  <script src="${pageContext.request.contextPath}/js/leftsidebartoggle.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
-  <script src="/js/jquery.bootpag.min.js"></script>
+  <script src="${pageContext.request.contextPath}/js/jquery.bootpag.min.js"></script>
   <script id="script-data"></script>
   <script>
     let resume_lid = '${resume_lid}';
 
     let resumeinfo;
     $.ajax({
-      url: '/get-user-details?resume_lid=' + resume_lid,
+      url: '${pageContext.request.contextPath}/get-user-details?resume_lid=' + resume_lid,
       type: 'POST',
       success: function (response) {
         let data = JSON.parse(response.value)
@@ -1106,7 +1106,7 @@
                 <div class="cover-div p-3 px-sm-4 p-lg-4"> <div class="row">
                     <div class="col-md-4 col-sm-12 col-lg-3">
                       <div class="avatar bg-white shadow-sm p-1">
-                        <img src="../imagedata/\${personal_details[0].profile_url_path}" alt="Passport Size photo" id="profile-photo-value" width="200"
+                        <img src="imagedata/\${personal_details[0].profile_url_path}" alt="Passport Size photo" id="profile-photo-value" width="200"
                           height="200" />
                       </div>
                     </div>
@@ -1152,7 +1152,7 @@
                           <h6>Pancard Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="pancard-photo"><i id="pancard-photo-preview" data-image="../imagedata/\${personal_details[0].pancard_url_path}" class="fa-solid fa-image text-success pancard-photo-preview"></i></p>
+                          <p id="pancard-photo"><i id="pancard-photo-preview" data-image="imagedata/\${personal_details[0].pancard_url_path}" class="fa-solid fa-image text-success pancard-photo-preview"></i></p>
                           </p>
                         </div>
                       </div>
@@ -1169,7 +1169,7 @@
                           <h6>Aadhar card Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" data-image="../imagedata/\${personal_details[0].aadhar_card_url_path}" class="fa-solid fa-image text-success aadhar-photo-preview"></i></p>
+                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" data-image="imagedata/\${personal_details[0].aadhar_card_url_path}" class="fa-solid fa-image text-success aadhar-photo-preview"></i></p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1267,7 +1267,7 @@
                 <div class="cover-div p-3 px-sm-4 p-lg-4"> <div class="row">
                     <div class="col-md-4 col-sm-12 col-lg-3">
                       <div class="avatar bg-white shadow-sm p-1">
-                        <img src="/profile.jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
+                        <img src="profile.jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
                           height="200" />
                       </div>
                     </div>
@@ -1352,7 +1352,7 @@
                   resume += `<p id="" class="">Persuing</p>`
                 }
               }
-              resume += `<p id=""><i id="qualification-certificate-display" data-image="../imagedata/\${qual.url_path}"
+              resume += `<p id=""><i id="qualification-certificate-display" data-image="imagedata/\${qual.url_path}"
                                   class="fa-solid fa-image text-success qualification-certificate-display"></i></p>
 
                             </div>
@@ -1464,7 +1464,7 @@
             <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
               <div class="d-flex justify-content-center align-items-center">
                 <h3 class="mb-4 h3" style="color: #740E00;">
-                  <img src="/icons/skills.png" alt="" height="40px"><b> Skills</b>
+                  <img src="icons/skills.png" alt="" height="40px"><b> Skills</b>
                 </h3>
               </div>
               <div class="container bootstrap snippets bootdeys">
@@ -1565,7 +1565,7 @@
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${award.description}</p>
                           <p class="" id="">\${award.achievement_date}</p>
-                          <p ><i id="award-certificate-display" data-image="../imagedata/\${award.url_path}" class="fa-solid fa-image text-success award-certificate-display"></i></p>
+                          <p ><i id="award-certificate-display" data-image="imagedata/\${award.url_path}" class="fa-solid fa-image text-success award-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
@@ -1635,7 +1635,7 @@
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${public.publisher}</p>
                           <p class="" id="">\${public.year_of_publication}</p>
-                          <p><i id="publication-certificate-display" data-image="../imagedata/\${public.url_path}" class="fa-solid fa-image text-success publication-certificate-display"></i></p>
+                          <p><i id="publication-certificate-display" data-image="imagedata/\${public.url_path}" class="fa-solid fa-image text-success publication-certificate-display"></i></p>
 
                         </div>
                       </div>
@@ -1711,7 +1711,7 @@
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${research.description}</p>
                           <p class="" id="">\${research.category}</p>
-                          <p><i id="research-certificate-display" data-image="../imagedata/\${research.research_url_path}" class="fa-solid fa-image text-success research-certificate-display" ></i></p>
+                          <p><i id="research-certificate-display" data-image="imagedata/\${research.research_url_path}" class="fa-solid fa-image text-success research-certificate-display" ></i></p>
 
                         </div>
                       </div>
@@ -1801,7 +1801,7 @@
                               <p class="h5 pb-1">Certificate</p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p ><i id="professional-certificate-display" data-image="../imagedata/\${qual.url_path}" class="fa-solid fa-image text-success professional-certificate-display"></i></p>
+                              <p ><i id="professional-certificate-display" data-image="imagedata/\${qual.url_path}" class="fa-solid fa-image text-success professional-certificate-display"></i></p>
                             </div>
                           </div>
                         </div>
@@ -1870,12 +1870,18 @@
                       <h6 class="pb-4">Account Type</h6>
                       <h6 class="pb-4">Cancalled Cheque Photo</h6>
                     </div>
-                    <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                      <p id="micr-code-value">\${bank_details.micr_code}</p>
-                      <p id="account-number-value" class="pt-2">\${bank_details.account_number}</p>
+                    <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">`
+          if (bank_details.micr_code != null) {
+
+            resume += ` <p id="micr-code-value">\${bank_details.micr_code}</p>`
+          } else {
+            resume += ` <p id="micr-code-value">N.A</p>`
+
+          }
+          resume += ` <p id="account-number-value" class="pt-2">\${bank_details.account_number}</p>
                       <p id="account-type-value" class="pt-2">\${bank_details.account_type}</p>
                       <p id="cancelled-check-photo" class="pt-3">
-                        <i id="cancelled-cheque-photo-preview" data-image="../imagedata/\${bank_details.url_path}" class="fa-solid fa-image text-success cancelled-cheque-photo-preview"></i>
+                        <i id="cancelled-cheque-photo-preview" data-image="imagedata/\${bank_details.url_path}" class="fa-solid fa-image text-success cancelled-cheque-photo-preview"></i>
                       </p>
                     </div>
                   </div>
@@ -2193,7 +2199,7 @@
 
         }
 
-        let fetchRes = fetch('/insert-personal-details', options);
+        let fetchRes = fetch('${pageContext.request.contextPath}/insert-personal-details', options);
         document.getElementById('main-loader').classList.remove('d-none')
 
         fetchRes.then(success => {
@@ -2231,7 +2237,7 @@
       document.querySelector('#body').classList.add('d-none');
 
       $.ajax({
-        url: '/get-qualification-type',
+        url: '${pageContext.request.contextPath}/get-qualification-type',
         type: 'get',
         success: function (response) {
           for (let i = 0; i < response.length; i++) {
@@ -2607,7 +2613,7 @@
           },
           body: JSON.stringify(qualificationTableData)
         }
-        let fetchRes = fetch('/resume-insert-qualification', options);
+        let fetchRes = fetch('${pageContext.request.contextPath}/resume-insert-qualification', options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
@@ -2934,7 +2940,7 @@
         document.getElementById('main-loader').classList.remove('d-none');
 
         function postdata() {
-          url = "/award_insert";
+          url = "${pageContext.request.contextPath}/award_insert";
           params = {
             method: "POST",
             headers: {
@@ -3240,7 +3246,7 @@
           },
           body: JSON.stringify(publicationTableData)
         }
-        let fetchRes = fetch("/resume-publication-insert", options);
+        let fetchRes = fetch("${pageContext.request.contextPath}/resume-publication-insert", options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('main-loader').classList.add('d-none');
@@ -3521,7 +3527,7 @@
           },
           body: JSON.stringify(object),
         }
-        let fetchRes = fetch("/resume-data-insert", options);
+        let fetchRes = fetch("${pageContext.request.contextPath}/resume-data-insert", options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
@@ -3821,7 +3827,7 @@
           },
           body: JSON.stringify(certificationTableData)
         }
-        let fetchRes = fetch('/resume-certification-insert', options);
+        let fetchRes = fetch('${pageContext.request.contextPath}/resume-certification-insert', options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
@@ -3845,7 +3851,7 @@
     function bankdetailsadd() {
       if (bankDataDB == 1) {
         $.ajax({
-            url: '/get-bank-account-type',
+            url: '${pageContext.request.contextPath}/get-bank-account-type',
             type: 'get',
             success: function (response) {
               for (let i = 0; i < response.length; i++) {
@@ -3956,7 +3962,7 @@
         console.log(JSON.stringify(bankDetailsJson))
 
         function postdata() {
-          url = "/insert-bank-details";
+          url = "${pageContext.request.contextPath}/insert-bank-details";
           params = {
             method: 'post',
             headers: {
@@ -4263,7 +4269,7 @@
         if (qualificationDataDB == 1) {
 
           $.ajax({
-              url: '/get-qualification-type',
+              url: '${pageContext.request.contextPath}/get-qualification-type',
               type: 'get',
               success: function (response) {
                 console.log(response)
@@ -4450,7 +4456,7 @@
         let hardSkills = document.getElementById('hard-skill-appending-div1')
 
         $.ajax({
-          url: '/get-all-skill',
+          url: '${pageContext.request.contextPath}/get-all-skill',
           type: 'POST',
           success: function (response) {
             for (let i = 0; i < response.length; i++) {
@@ -4875,7 +4881,7 @@
         document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
           if (bankDataDB == 1) {
             $.ajax({
-                url: '/get-bank-account-type',
+                url: '${pageContext.request.contextPath}/get-bank-account-type',
                 type: 'get',
                 success: function (response) {
                   console.log(response)
@@ -4910,11 +4916,13 @@
           document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
           document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
           document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccountNumber')
-          document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
+          document.getElementById('bank-account-type').value = resumeinfo.bank_details.bank_account_type_lid
 
 
           document.getElementById('body').classList.add('d-none');
           document.querySelector('.bank-details-modal').classList.remove('d-none');
+
+
         });
       }
 
@@ -5084,7 +5092,7 @@
           genderValue = "Other"
         }
         console.log(genderValue)
-      document.getElementById('main-loader').classList.remove('d-none');
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let options = {
 
@@ -5097,7 +5105,7 @@
           body: JSON.stringify(personalDetailsData)
 
         }
-        let fetchRes = fetch('/update-personal-details', options);
+        let fetchRes = fetch('${pageContext.request.contextPath}/update-personal-details', options);
 
         fetchRes.then(success => {
 
@@ -5331,7 +5339,7 @@
           },
           body: JSON.stringify(qualificationTableData)
         }
-        let fetchRes = fetch('/insert-qualification-details', options);
+        let fetchRes = fetch('${pageContext.request.contextPath}/insert-qualification-details', options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('qualification-list').firstElementChild.remove()
@@ -5393,7 +5401,7 @@
         deleteButtonClick[i].addEventListener('click', function () {
           let id = this.dataset.deleteid
           if (id != null) {
-            fetch('/delete-qualification', {
+            fetch('${pageContext.request.contextPath}/delete-qualification', {
                 method: "POST",
                 body: id,
                 headers: {
@@ -5448,7 +5456,7 @@
 
           let id = this.dataset.awarddeleteid;
           if (id != null) {
-            fetch('/delete-award', {
+            fetch('${pageContext.request.contextPath}/delete-award', {
                 method: "POST",
                 body: id,
                 headers: {
@@ -5631,7 +5639,7 @@
         document.getElementById('main-loader').classList.remove('d-none');
 
         function postdata() {
-          url = "/award_Table_Data";
+          url = "${pageContext.request.contextPath}/award_Table_Data";
           params = {
             method: "POST",
             headers: {
@@ -5802,7 +5810,7 @@
           },
           body: JSON.stringify(publicationTableData)
         }
-        let fetchRes = fetch("/insert-publication-details", options);
+        let fetchRes = fetch("${pageContext.request.contextPath}/insert-publication-details", options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('publication-appending-div').firstElementChild.remove()
@@ -5838,7 +5846,7 @@
 
           let id = this.dataset.publicationdeleteid
           if (id != null) {
-            fetch('/delete-publication', {
+            fetch('${pageContext.request.contextPath}/delete-publication', {
                 method: "POST",
                 body: id,
                 headers: {
@@ -6016,7 +6024,7 @@
           },
           body: JSON.stringify(object),
         }
-        let fetchRes = fetch("/research-table-data", options);
+        let fetchRes = fetch("${pageContext.request.contextPath}/research-table-data", options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('research-appending-div').firstElementChild.remove()
@@ -6050,7 +6058,7 @@
         deleteButtonClick[i].addEventListener('click', function () {
           let id = this.dataset.researchdeleteid;
           if (id != null) {
-            fetch('/delete-research', {
+            fetch('${pageContext.request.contextPath}/delete-research', {
                 method: "POST",
                 body: id,
                 headers: {
@@ -6246,7 +6254,7 @@
           },
           body: JSON.stringify(certificationTableData)
         }
-        let fetchRes = fetch('/insert-certification-details', options);
+        let fetchRes = fetch('${pageContext.request.contextPath}/insert-certification-details', options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('certification-appending-div').firstElementChild.remove()
@@ -6280,7 +6288,7 @@
         deleteButtonClick[i].addEventListener('click', function () {
           let id = this.dataset.certificatedeleteid;
           if (id != null) {
-            fetch('/delete-certification', {
+            fetch('${pageContext.request.contextPath}/delete-certification', {
                 method: "POST",
                 body: id,
                 headers: {
@@ -6448,7 +6456,6 @@
         return;
       }
 
-
       let photoArray = []
 
       let bankPhoto = document.getElementById("cancelled_cheque_Photo").files[0]
@@ -6461,7 +6468,7 @@
         }
       } else {
         setTimeout(function () {
-          photoArray[i] = null;
+          photoArray[0] = null;
         })
       }
 
@@ -6485,7 +6492,7 @@
         console.log(JSON.stringify(bankDetailsJson))
 
         function postdata() {
-          url = "/update-bank-details";
+          url = "${pageContext.request.contextPath}/update-bank-details";
           params = {
             method: 'post',
             headers: {
@@ -6572,7 +6579,7 @@
       }
 
       function postdata() {
-        url = "/insert-all-skills";
+        url = "${pageContext.request.contextPath}/insert-all-skills";
         params = {
           method: 'post',
           headers: {
@@ -6720,7 +6727,7 @@
       let customSoftSkillValue = document.getElementById('custom-soft-skill-value').innerText
 
       $.ajax({
-        url: '/insert-custom-skill',
+        url: '${pageContext.request.contextPath}/insert-custom-skill',
         type: 'POST',
         data: {
           skill_type_lid: 1,
@@ -6753,7 +6760,7 @@
       let customHardSkillValue = document.getElementById('custom-hard-skill-value').innerText
 
       $.ajax({
-        url: '/insert-custom-skill',
+        url: '${pageContext.request.contextPath}/insert-custom-skill',
         type: 'POST',
         data: {
           skill_type_lid: 2,
@@ -6798,7 +6805,7 @@
 
         let status = 400;
         let softid = element.closest('li').dataset.skillid;
-        fetch('/delete-softskills', {
+        fetch('${pageContext.request.contextPath}/delete-softskills', {
             method: "POST",
             body: softid,
             headers: {
@@ -6838,7 +6845,7 @@
                             `
         let status = 400;
         let softid = element.closest('li').dataset.skillid;
-        fetch('/delete-softskills', {
+        fetch('${pageContext.request.contextPath}/delete-softskills', {
             method: "POST",
             body: softid,
             headers: {
@@ -6970,7 +6977,7 @@
         },
         body: JSON.stringify(workexperienceTableData)
       }
-      let fetchRes = fetch('/insert-workexperience-details', options);
+      let fetchRes = fetch('${pageContext.request.contextPath}/insert-workexperience-details', options);
       fetchRes.then(success => {
         if (success.status == 200) {
           document.querySelector('.workexperience-modal-insert').classList.add('d-none');
@@ -7022,7 +7029,7 @@
         let workexperienceOther = workexperienceRow[i].querySelector('.other').value;
         let workexperienceStartDate = workexperienceRow[i].querySelector('.start-date').value;
         let workexperienceEndDate = workexperienceRow[i].querySelector('.end-date').value;
-console.log(resume_workexperience_lid)
+        console.log(resume_workexperience_lid)
 
         let checkWorkExp = tabledatacheck(workexperienceType);
         let checkUniversity = tabledatacheck(workexperienceUniversity);
@@ -7037,7 +7044,7 @@ console.log(resume_workexperience_lid)
         } else if (checkUniversity == false) {
           workexperienceRow[i].querySelector('.employeer-name').classList.add('input-border');
           return;
-        }  else if (checkSubjetTaught == false) {
+        } else if (checkSubjetTaught == false) {
           workexperienceRow[i].querySelector('.responsibility').classList.add('input-border');
           return;
         } else if (checkWorkExpStart == false) {
@@ -7069,7 +7076,7 @@ console.log(resume_workexperience_lid)
 
         object = {
           resume_lid: resume_lid,
-          resume_experience_lid:resume_workexperience_lid,
+          resume_experience_lid: resume_workexperience_lid,
           experience_type_lid: workexperience_type,
           employer_name: workexperienceUniversity,
           designation: workexperienceDesignationType,
@@ -7098,7 +7105,7 @@ console.log(resume_workexperience_lid)
         },
         body: JSON.stringify(workexperienceTableData)
       }
-      let fetchRes = fetch('/update-workexperience-details', options);
+      let fetchRes = fetch('${pageContext.request.contextPath}/update-workexperience-details', options);
       fetchRes.then(success => {
         if (success.status == 200) {
           document.querySelector('.workexperience-modal').classList.add('d-none');
@@ -7127,7 +7134,7 @@ console.log(resume_workexperience_lid)
       if (workexperienceDataDB == 1) {
 
         $.ajax({
-          url: '/get-workexperience-type',
+          url: '${pageContext.request.contextPath}/get-workexperience-type',
           type: 'get',
           success: function (response) {
             for (let expType of response) {
@@ -7141,7 +7148,7 @@ console.log(resume_workexperience_lid)
         })
 
         $.ajax({
-            url: '/get-workexperience-designation-type',
+            url: '${pageContext.request.contextPath}/get-workexperience-designation-type',
             type: 'get',
             success: function (response) {
               for (let desig of response) {
@@ -7715,7 +7722,7 @@ console.log(resume_workexperience_lid)
         deleteButtonClick[i].addEventListener('click', function () {
           let id = this.dataset.experiencedeleteid;
           if (id != null) {
-            fetch('/delete-experience', {
+            fetch('${pageContext.request.contextPath}/delete-experience', {
                 method: "POST",
                 body: id,
                 headers: {

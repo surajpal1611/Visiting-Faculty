@@ -11,12 +11,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="stylesheet" href="./login.css" />
-  <link rel="stylesheet" href="./simpleAlert.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/style.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/login.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/simpleAlert.css">
 
   <title>Resume</title>
-  <link rel="icon" type="image/x-icon" href="/images.jpg">
+  <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/images.jpg">
 </head>
 
 <body>
@@ -415,7 +415,7 @@
             <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
               <div class="d-flex justify-content-center align-items-center">
                 <h3 class="mb-4 h3" style="color: #740E00;">
-                  <img src="/icons/skill-2.png" alt="" height="40px"><b> Skills</b>
+                  <img src="${pageContext.request.contextPath}/icons/skill-2.png" alt="" height="40px"><b> Skills</b>
                 </h3>
               </div>
               <div class="container bootstrap snippets bootdeys">
@@ -1639,7 +1639,7 @@
 
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="/download (3).jpg" alt="Pancard-photo-uploaded" id="Pancard-photo-uploaded"
+              <img src="${pageContext.request.contextPath}/download (3).jpg" alt="Pancard-photo-uploaded" id="Pancard-photo-uploaded"
                 style="width:450px;height:300px;">
             </div>
           </div>
@@ -2540,7 +2540,7 @@ document.querySelector('#body').addEventListener('click',function(e){
       if (qualificationDataDB == 1) {
 
         $.ajax({
-            url: '/get-qualification-type',
+            url: '${pageContext.request.contextPath}/get-qualification-type',
             type: 'get',
             success: function (response) {
               console.log(response)
@@ -3986,7 +3986,7 @@ document.querySelector('#body').addEventListener('click',function(e){
     document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
       if (bankDataDB == 1) {
         $.ajax({
-            url: '/get-bank-account-type',
+            url: '${pageContext.request.contextPath}/get-bank-account-type',
             type: 'get',
             success: function (response) {
               console.log(response)
@@ -4140,7 +4140,7 @@ document.querySelector('#body').addEventListener('click',function(e){
       // softSkillUl.innerHTML = ''
       // hardSkillUl.innerHTML = ''
       $.ajax({
-        url: '/get-all-skill',
+        url: '${pageContext.request.contextPath}/get-all-skill',
         type: 'POST',
         success: function (response) {
 
@@ -4405,7 +4405,7 @@ document.querySelector('#body').addEventListener('click',function(e){
       let customSoftSkillValue = document.getElementById('custom-soft-skill-value').innerText
 
       $.ajax({
-        url: '/insert-custom-skill',
+        url: '${pageContext.request.contextPath}/insert-custom-skill',
         type: 'POST',
         data: {
           skill_type_lid: 1,
@@ -4438,7 +4438,7 @@ document.querySelector('#body').addEventListener('click',function(e){
       let customHardSkillValue = document.getElementById('custom-hard-skill-value').innerText
 
       $.ajax({
-        url: '/insert-custom-skill',
+        url: '${pageContext.request.contextPath}/insert-custom-skill',
         type: 'POST',
         data: {
           skill_type_lid: 2,
@@ -4514,7 +4514,7 @@ document.querySelector('#body').addEventListener('click',function(e){
     document.querySelector('#work-experience-submit-button').addEventListener('click', function (e) {
       e.preventDefault()
       $.ajax({
-        url: '/fetchDesignationValue',
+        url: '${pageContext.request.contextPath}/fetchDesignationValue',
         type: 'POST',
         success: function (response) {
           let select = document.querySelectorAll('.designation');
@@ -4537,7 +4537,7 @@ document.querySelector('#body').addEventListener('click',function(e){
         }
       })
       $.ajax({
-        url: '/fetchWorkExperienceValue',
+        url: '${pageContext.request.contextPath}/fetchWorkExperienceValue',
         type: 'POST',
 
         success: function (response) {
@@ -4728,7 +4728,7 @@ document.querySelector('#body').addEventListener('click',function(e){
                     <select class="experienceType form-control down" id="experienceType"> `
 
       $.ajax({
-        url: '/fetchDesignationValue',
+        url: '${pageContext.request.contextPath}/fetchDesignationValue',
         type: 'POST',
         success: function (response) {
           console.log("RESPONSE", response)
@@ -4791,7 +4791,7 @@ document.querySelector('#body').addEventListener('click',function(e){
               <select class="form-control designation" id="designation1">`
 
       $.ajax({
-        url: '/fetchWorkExperienceValue',
+        url: '${pageContext.request.contextPath}/fetchWorkExperienceValue',
         type: 'POST',
 
         success: function (response) {

@@ -9,8 +9,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
-  <link rel="stylesheet" href="/login.css">
-  <link rel="stylesheet" href="/simpleAlert.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/login.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/simpleAlert.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
 
   <title>Register</title>
@@ -220,10 +220,10 @@
       <div class="row">
         <div class="col-md-6" id="login-right">
           <div class="logo">
-            <img src="/image/logo-nmims.png" />
+            <img src="${pageContext.request.contextPath}/image/logo-nmims.png" />
           </div>
           <object type="image/svg+xml" data="/image/login-animate-nmims.svg">
-            <img src="/image/login-animate-nmims.svg" />
+            <img src="${pageContext.request.contextPath}/image/login-animate-nmims.svg" />
           </object>
         </div>
         <div class="col-md-6" id="login-left">
@@ -276,7 +276,7 @@
             </div>
             <button class="btn btn-dark register-btn pb-2"><i class="fas fa-sign-in-alt"></i> Sign Up</button>
             <button class="btn btn-dark d-none verify-button"><i class="fas fa-sign-in-alt"></i> Verify Email</button>
-            <div class="py-2">Already a user?<a style="text-decoration: none;" href="/login"> Sign In</a> </div>
+            <div class="py-2">Already a user?<a style="text-decoration: none;" href="${pageContext.request.contextPath}/login"> Sign In</a> </div>
           </form>
         </div>
       </div>
@@ -303,18 +303,18 @@
   </div>
 
   <!-- Optional JavaScript -->
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
-  <script src="/js/session-timeout.js"></script>
-  <script src="/js/SimpleAlert.js"></script>
-  <script src="/js/script.js"></script>
-  <script src="/js/leftsidebartoggle.js"></script>
+  <script src="${pageContext.request.contextPath}/js/session-timeout.js"></script>
+  <script src="${pageContext.request.contextPath}/js/SimpleAlert.js"></script>
+  <script src="${pageContext.request.contextPath}/js/script.js"></script>
+  <script src="${pageContext.request.contextPath}/js/leftsidebartoggle.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
-  <script src="/js/jquery.bootpag.min.js"></script>
+  <script src="${pageContext.request.contextPath}/js/jquery.bootpag.min.js"></script>
 
-  <script src="/js/particlejs.min.js"></script>
+  <script src="${pageContext.request.contextPath}/js/particlejs.min.js"></script>
 
 
   <!-- Page Level JavaScript Libaries End -->
@@ -406,7 +406,7 @@
       if (result.password == result.confirmPassword) {
 
         document.getElementById('main-loader').classList.remove('d-none');
-        fetch('/verify-registration', {
+        fetch('${pageContext.request.contextPath}/verify-registration', {
             method: "POST",
             body: JSON.stringify(result),
             headers: {
@@ -450,7 +450,7 @@
 
       console.log(tokenToVerify)
 
-      fetch('/verify-token', {
+      fetch('${pageContext.request.contextPath}/verify-token', {
           method: "POST",
           body: tokenToVerify,
           headers: {
@@ -462,7 +462,7 @@
         .then(response => {
           if (status === 200) {
             console.log("success")
-            location.href = 'http://localhost:8080/login#success'
+            location.href = '${pageContext.request.contextPath}/login#success'
           } else {
             document.getElementById('main-loader').classList.add('d-none');
             alert("Wrong OTP")
