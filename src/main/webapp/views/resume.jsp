@@ -26,8 +26,17 @@
 
     <div id="body" class="container">
 
-
+      <div class="py-5 d-flex justify-content-center align-items-center">
+        <a class="back-button px-2" href="/visiting-faculty-applications">
+          <a class="py-2 btn-danger">Create Job Application</a>
+        </a>
+        <div class="create-button px-2">
+          <button class="create-job-application btn py-2 btn-danger">Create Job Application</button>
+        </div>
+      </div>
     </div>
+
+
 
     <!-- ************************************************************************Personal Details Modal Div******************************************************************************************** -->
     <!-- Personal details Model for Update -->
@@ -7797,6 +7806,52 @@
     //     })
 
     // **************************************************Workexperience Section end*******************************************************
+
+
+    // **************************************************Job Application Start*******************************************************
+
+    document.querySelector('.create-job-application').addEventListener('click', function () {
+
+      if (resumeinfo.bank_details === null || resumeinfo.personal_details === null || resumeinfo
+        .resume_achievement === null || resumeinfo.resume_experience === null || resumeinfo.resume_publication ===
+        null || resumeinfo.resume_qualification === null || resumeinfo.resume_researchresume_research === null ||
+        resumeinfo.resume_skill_selected === null) {
+        alert("please Fill Complete Details")
+      } else {
+        let status = 400;
+        let data = {
+          "create_job_application": []
+        }
+        let object = {}
+        object.resume_lid = resume_lid
+        object.organization_lid = 2
+        data.create_job_application.push(object)
+
+        console.log(JSON.stringify(data))
+        fetch('/create-job-application', {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+              "Content-Type": "application/json; charset=UTF-8",
+            }
+          })
+          .then(response => status = response.status)
+          .then(response => {
+            if (status === 200) {
+              console.log("success")
+
+            } else {
+              // document.getElementById('main-loader').classList.add('d-none');
+              alert("Wrong OTP")
+            }
+          })
+          .catch(function (error) {
+            // document.getElementById('main-loader').classList.add('d-none');
+            alert("error in fetch api")
+          })
+
+      }
+    })
   </script>
 </body>
 

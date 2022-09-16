@@ -3,11 +3,11 @@ package com.visitingfaculty.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -158,8 +158,6 @@ public class UserRestController {
     @PostMapping("/get-user-details")
     public Object getUserResume(@RequestParam(value = "resume_lid") int resume_lid) {
 
-        System.out.println("RESUMELID>>>>>>>>>>" + resume_lid);
-
         Object resume = userDaoInterface.getUserResume(resume_lid);
         return resume;
     }
@@ -198,6 +196,29 @@ public class UserRestController {
         Object data = userDaoInterface.getResumeById(user_lid);
 
         return data;
+    }
+
+    @PostMapping("/create-job-application")
+    public ResponseEntity<?> createJobApplication(@RequestBody String data) {
+
+        System.out.println(data);
+        Object dataFromDb = userDaoInterface.createJobApplication(data);
+
+        if (dataFromDb == null) {
+
+            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+
+        }
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @PostMapping("get-job-application")
+    public ResponseEntity<?> getJobApplication(@RequestBody String data) {
+
+
+        
+
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     // @PostMapping("/verify-password")

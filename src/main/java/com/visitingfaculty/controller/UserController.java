@@ -76,4 +76,9 @@ public class UserController {
         return "new-resume";
     }
 
+    @GetMapping("/performa")
+    public String getPerforma() {
+        return "performa-page";
+    }
+
 }
