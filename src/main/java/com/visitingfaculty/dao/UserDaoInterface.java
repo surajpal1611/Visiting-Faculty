@@ -88,4 +88,6 @@ public interface UserDaoInterface {
     int deleteresearch(int id);
 
     int deleteCertificate(int id);
+
+    Object createJobApplication(String object);
 }

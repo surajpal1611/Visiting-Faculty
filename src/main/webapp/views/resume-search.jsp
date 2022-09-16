@@ -79,6 +79,7 @@
             </div>
             <hr>
 
+
             <div class="table-appending-div">
 
             </div>
@@ -190,7 +191,7 @@
                                 </thead>
                                 <tbody>`
                             for (let obj of data.resume_details) {
-                                if(obj.f_name == null) {
+                                if (obj.f_name == null) {
                                     tableToAppend += `
                                     <tr data-userlid = "\${obj.user_lid}">
                                         <td>----</td>
@@ -200,6 +201,8 @@
                                             <i class="fa-solid fa-eye view-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
                                             <a  class="" style="border:none; outline:none" >
                                          <i class="fa-solid fa-plus create-resume-button" data-toggle="tooltip" title="Create Resume"></i></a>
+                                         <a  class="view-job-application" style="border:none; outline:none" >
+                                             <i class="fa-solid fa-clipboard text-danger" data-toggle="tooltip" title="View Job Application"></i></a>
                                         </td>
                                     </tr>`
                                 } else {
@@ -208,14 +211,16 @@
                                         <td>\${obj.f_name}</td>
                                         <td class="user_id">\${obj.user_id}</td>
                                         <td>
-                                            <a class="application-preview" style="border:none; outline:none" >
-                                            <i class="fa-solid fa-eye view-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
-                                            <a  class="" style="border:none; outline:none" >
-                                         <i class="fa-solid fa-plus create-resume-button" data-toggle="tooltip" title="Create Resume"></i></a>
-                                        </td>
+                                                <a class="application-preview" style="border:none; outline:none" >
+                                                <i class="fa-solid fa-eye view-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
+                                                <a  class="" style="border:none; outline:none" >
+                                            <i class="fa-solid fa-plus create-resume-button" data-toggle="tooltip" title="Create Resume"></i></a>
+                                            <a  class="view-job-application" style="border:none; outline:none" >
+                                             <i class="fa-solid fa-clipboard text-danger" data-toggle="tooltip" title="View Job Application"></i></a>
+                                            </td>
                                     </tr>`
                                 }
-                               
+
                             }
 
                             tableToAppend += `  </tbody>
@@ -264,8 +269,8 @@
                                     </thead>
                                     <tbody>`
                             for (let obj of data.resume_details) {
-                                tableToAppend += `
-                                        <tr data-userlid = "\${obj.user_lid}">
+                                tableToAppend +=
+                                    ` <tr data-userlid = "\${obj.user_lid}">
                                             <td>\${obj.f_name}</td>
                                             <td class="user_id">\${obj.user_id}</td>
                                             <td>
@@ -273,6 +278,8 @@
                                                 <i class="fa-solid fa-eye view-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
                                                 <a  class="" style="border:none; outline:none" >
                                             <i class="fa-solid fa-plus create-resume-button" data-toggle="tooltip" title="Create Resume"></i></a>
+                                            <a  class="create-job-application" style="border:none; outline:none" >
+                                             <i class="fa-solid fa-clipboard text-danger" data-toggle="tooltip" title="Create Job Application"></i></a>
                                             </td>
                                         </tr>`
                             }
@@ -286,8 +293,8 @@
 
                             $('.table-appending-div').html(tableToAppend)
                         } else {
-                        document.querySelector('.no-data-alert').classList.remove('d-none')
-                        $('.table-appending-div').html("")
+                            document.querySelector('.no-data-alert').classList.remove('d-none')
+                            $('.table-appending-div').html("")
                         }
 
 
@@ -303,14 +310,10 @@
             $('#search-by-id').on('keyup', function () {
                 let searchByIdValue = document.getElementById('search-by-id').value
                 console.log(searchByIdValue)
-                if (searchByIdValue.length == 10) {
 
                     clearTimeout(timeout)
                     const value = this.value
                     timeout = setTimeout(() => searchFunction(value), 2000)
-                } else if (searchByIdValue.length > 5 && searchByIdValue.length < 10) {
-                    document.querySelector('.validation-alert').classList.remove('d-none')
-                }
 
             })
 
@@ -413,6 +416,8 @@
                                        `
                             document.querySelector('.modal2-body').innerHTML = ""
                             $('.modal2-body').html(tableToAppend)
+                        } else {
+                            alert("Data Not Found!!")
                         }
                     },
                     error: function (error) {
@@ -423,23 +428,15 @@
 
             })
 
-            //  $(document).on('click','.get-resume-icon',function() {
-            //     let tr = $(this).closest('tr')
+            $(document).on('click', '.view-job-application', function () {
 
-            //     let resume_lid = tr.data('resumelid')
-
-            //     $.ajax({
-            //         url : "/resume?resume_lid=" + resume_lid,
-            //         type : 'POST',
-            //         success : function(response) {
-
-            //             location.href = '/get-user-details'
-            //         },
-            //         error : function(response) {
-
-            //         }
-            //     })
-            //  })
+                $("#view-resume-modal").modal("toggle");
+                let tr = $(this).closest('tr')
+                let id = tr.data('userlid')
+                $.ajax({
+                   url : ''
+                })
+            })
         })
     </script>
 </body>
