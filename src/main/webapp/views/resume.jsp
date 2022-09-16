@@ -7028,9 +7028,8 @@
         let resume_workexperience_lid = workexperienceRow[i].dataset.lid
         let workexperienceType = workexperienceRow[i].querySelector('.work-experience-type').value;
         let workexperienceUniversity = workexperienceRow[i].querySelector('.employeer-name').value;
-        let workexperienceDesignationTypeLID = workexperienceRow[i].querySelector(".designation-title").options
-          .selectedIndex;
-        let workexperienceDesignationType = workexperienceRow[i].querySelector('.designation-title').value;
+        let workexperienceDesignationTypeLID = workexperienceRow[i].querySelector(".designation-input").dataset.id;
+        let workexperienceDesignationType = workexperienceRow[i].querySelector('.designation-input').value;
         let workexperienceDuration = workexperienceRow[i].querySelector('.duration-of-teaching').value;
         let workexperienceProgram = workexperienceRow[i].querySelector('.description').value;
         let workexperienceSubjectTaught = workexperienceRow[i].querySelector('.responsibility').value;
@@ -7162,7 +7161,9 @@
             success: function (response) {
               for (let desig of response) {
                 workexperienceDesignationType +=
-                  `<option value="\${desig.name}" data-id="\${desig.id}" >\${desig.name}</option>`
+                `<li>     
+                      <div class="workexperience-li col-md-10 col-sm-10 col-12" data-name="\${desig.name}" data-id="\${desig.id}" >\${desig.name}</div>
+                  </li>`
               }
             },
             error: function (error) {
@@ -7458,10 +7459,12 @@
                  <p class="h6">Designation:<span class="required">*</span></p>
                </div>
                <div class="col-md-9 ">
-                 <select class="form-control designation-title" id="designation">
-                  <option value disabled selected>--Select--</option>
+                <div class="custom-select-div col-md-9">
+                <input class="form-control designation-input" data-id="7" data-name="" type="text"/>
+                 <ul class="form-control designation-title d-none">
                   \${workexperienceDesignationType}
-                 </select>
+                  </ul>
+               </div>
                </div>
              </div>
 
@@ -7551,15 +7554,6 @@
         }
       }
 
-      if (target.classList.contains('designation-title')) {
-        let closestParent = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-other-div');
-        if (target.value == 'Other') {
-          closestParent.classList.remove('d-none');
-        } else {
-          closestParent.classList.add('d-none');
-        }
-      }
-
       if (target.classList.contains('work-experience-type')) {
         let orgTitle = findClosest(e.target, 'workexperience-row').querySelector('.org-title');
         let program1 = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-program-div');
@@ -7585,6 +7579,32 @@
       }
 
     });
+
+    document.querySelector('.workexperience-data-insert').addEventListener('click', function (e) {
+      let target = e.target;
+      let designationType = findClosest(e.target, 'workexperience-row').querySelector('.designation-title');
+      let designationInput = findClosest(e.target, 'workexperience-row').querySelector('.designation-input');
+      let designationli = findClosest('e.target','workexperience-li')
+
+      if(target.classList.contains("designation-input")) {
+        designationType.classList.remove("d-none");
+      } else {
+        designationType.classList.add("d-none");
+      }
+
+      if(target.classList.contains("workexperience-li")) {
+        console.log('target',target)
+        let id = target.dataset.id;
+        let name = target.dataset.name;
+        designationInput.value = name;
+        designationInput.dataset.id = id;
+        designationInput.dataset.name = name;
+        console.log('value',name+id);
+        designationType.classList.add("d-none");
+      }
+
+    })
+
 
     document.querySelector('.workexperience-add-button').addEventListener('click', function () {
 
