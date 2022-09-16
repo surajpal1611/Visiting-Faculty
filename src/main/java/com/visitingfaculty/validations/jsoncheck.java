@@ -20,9 +20,6 @@ public class jsoncheck {
     public String UserJsonCheck(String JsonString) {
         Boolean check = false;
         JSONObject jsonString = new JSONObject(JsonString);
-        String replacedData = null;
-        String replacedData1 = null;
-        String replacedData2 = null;
         // for userinfo
         JSONObject insert_user_personal_details = jsonString.getJSONObject("insert_user_personal_details");
         JSONArray user_info = insert_user_personal_details.getJSONArray("user_info");
@@ -187,9 +184,7 @@ public class jsoncheck {
         for (int i = 0; i < award.length(); i++) {
             String title = award.getJSONObject(i).getString("title");
             String organization_name = award.getJSONObject(i).getString("organization_name");
-            String organization_type_lid = award.getJSONObject(i).getString("organization_type_lid");
             String discription = award.getJSONObject(i).getString("description");
-            String achivement_date = award.getJSONObject(i).getString("achievement_date");
             String url_path = award.getJSONObject(i).isNull("url_path") ? "null"
                     : award.getJSONObject(i).getString("url_path");
             if (!url_path.equals("null")) {
