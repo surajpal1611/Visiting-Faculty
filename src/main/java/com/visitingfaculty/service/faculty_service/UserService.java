@@ -18,7 +18,7 @@ import com.visitingfaculty.service.PasswordService;
 @Service
 public class UserService {
 
-    public static String uploadDirectory = System.getProperty("user.dir") + "/imagedata";
+    public static String uploadDirectory = "/data/tomcat/webapps/vf/imagedata";
     //"/src/main/webapp/imagedata";
 
     @Autowired
