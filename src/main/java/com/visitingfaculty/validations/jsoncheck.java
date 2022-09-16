@@ -152,8 +152,8 @@ public class jsoncheck {
             }
 
             Boolean topic_of_studyCheck = checkVal.checkLengthThree(topic_of_study);
-            Boolean universityCheck = checkVal.CheckWithNoSpectailChar(university);
-            Boolean instituteCheck = checkVal.CheckWithNoSpectailChar(institute);
+            Boolean universityCheck = checkVal.checkLengthThree(university);
+            Boolean instituteCheck = checkVal.checkLengthThree(institute);
             // Boolean url_pathCheck = checkVal.checkLengthThree(url_path);
             Boolean year_of_passingCheck = checkVal.yearCheck(year_of_passing);
             Boolean percentileCheck = checkVal.percentageCheck(percentile + "");
@@ -200,8 +200,8 @@ public class jsoncheck {
                 replacedData = JsonString.replace(url_path, replacedPhoto);
             }
 
-            Boolean titlecheck = checkVal.CheckWithNoSpectailChar(title);
-            Boolean organizationcheck = checkVal.CheckWithNoSpectailChar(organization_name);
+            Boolean titlecheck = checkVal.checkLengthThree(title);
+            Boolean organizationcheck = checkVal.checkLengthThree(organization_name);
             Boolean discriptioncheck = checkVal.checkLengthThree(discription);
 
             if (titlecheck == true && organizationcheck == true && discriptioncheck == true) {

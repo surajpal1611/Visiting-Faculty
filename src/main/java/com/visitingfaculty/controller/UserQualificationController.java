@@ -133,4 +133,6 @@ public class UserQualificationController {
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
+
+
 }

@@ -15,6 +15,7 @@ import com.visitingfaculty.model.User;
 
 @Controller
 public class UserController {
+    public static String uploadDirectory = System.getProperty("user.dir");
 
 
     @Autowired
@@ -46,6 +47,7 @@ public class UserController {
         // String user_id = (String) httpSession.getAttribute("user_id");
         // System.out.println(user_id);
         // if (user_id != null) {
+            System.out.println(uploadDirectory);
         return "dashboard";
         // }
         // return "redirect:/login";

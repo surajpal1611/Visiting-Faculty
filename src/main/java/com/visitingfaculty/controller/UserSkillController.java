@@ -46,4 +46,16 @@ public class UserSkillController {
 
     }
 
+    @PostMapping("/delete-softskills")
+    public ResponseEntity<?> deleteSoftSkills(@RequestBody String id) {
+
+        System.out.println("ID :"+id);
+        int deletedRows = userDaoInterface.deleteSoftSkills(Integer.parseInt(id));
+        System.out.println("DELETED Rows>>>   " + deletedRows);
+        if (deletedRows == 1) {
+            return ResponseEntity.status(HttpStatus.OK).build();
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
 }

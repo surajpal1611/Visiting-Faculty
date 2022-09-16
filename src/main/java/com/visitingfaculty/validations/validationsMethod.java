@@ -12,7 +12,7 @@ public class validationsMethod
     public Boolean checkLengthThree(String value)
     {
         Boolean check = false;
-        if(value.length() > 3)
+        if(value.length() > 2)
         {
             check = true;
             return check;
