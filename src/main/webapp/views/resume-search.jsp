@@ -12,12 +12,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/login.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./simpleAlert.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/simpleAlert.css">
 
     <title>Dashboard</title>
-    <link rel="icon" type="image/x-icon" href="/images.jpg">
+    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/images.jpg">
 </head>
 
 <body>
@@ -52,7 +52,7 @@
 
             <!-- Error Alert -->
             <div class="validation-alert alert alert-danger alert-dismissible fade show d-none">
-                <strong>Error!</strong>Enter Valid Information
+                <strong>Error!</strong>&nbsp Not Available
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
             <div class="no-data-alert alert alert-info alert-dismissible fade show d-none">
@@ -141,14 +141,14 @@
 
     </main>
 
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
     <!-- <script src="/js/session-timeout.js"></script> -->
-    <script src="/js/SimpleAlert.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="/js/leftsidebartoggle.js"></script>
+    <script src="${pageContext.request.contextPath}/js/SimpleAlert.js"></script>
+    <script src="${pageContext.request.contextPath}/js/script.js"></script>
+    <script src="${pageContext.request.contextPath}/js/leftsidebartoggle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
     </script>
@@ -156,7 +156,7 @@
         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
-    <script src="/js/jquery.bootpag.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.bootpag.min.js"></script>
     <script>
         $(document).ready(function () {
 
@@ -165,7 +165,7 @@
             function searchFunction(value) {
                 $.ajax({
                     type: 'POST',
-                    url: '/get-faculty-application',
+                    url: '${pageContext.request.contextPath}/get-faculty-application',
                     data: {
                         user_id: value
                     },
@@ -179,7 +179,7 @@
 
                             let tableToAppend = `
                             <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                        
                                 <table class="table table-bordered">
                                 <thead>
@@ -228,6 +228,9 @@
                                                            </div> `
 
                             $('.table-appending-div').html(tableToAppend)
+                        } else {
+                        document.querySelector('.validation-alert').classList.remove('d-none')
+
                         }
 
                     },
@@ -242,7 +245,7 @@
             function searchFunctionByName(value) {
                 $.ajax({
                     type: 'POST',
-                    url: '/get-faculty-by-name',
+                    url: '${pageContext.request.contextPath}/get-faculty-by-name',
                     data: {
                         user_id: value
                     },
@@ -353,13 +356,15 @@
                 formData.append("description", document.getElementById('resume-description').value)
 
                 $.ajax({
-                    url: '/create-resume',
+                    url: '${pageContext.request.contextPath}/create-resume',
                     type: 'POST',
                     data: formData,
                     contentType: false,
                     processData: false,
                     success: function (response) {
-                        location.href = '/resume?resume_lid=' + response
+                        location.href =
+                            '${pageContext.request.contextPath}/resume?resume_lid=' +
+                            response
                     },
                     error: function (error) {
                         console.log('error', error)
@@ -373,7 +378,7 @@
                 let tr = $(this).closest('tr')
                 let id = tr.data('userlid')
                 $.ajax({
-                    url: '/get-resume-by-user?user_id=' + id,
+                    url: '${pageContext.request.contextPath}/get-resume-by-user?user_id=' + id,
                     type: 'POST',
                     success: function (response) {
                         let data = JSON.parse(response.value)
@@ -403,7 +408,7 @@
                                             <td>\${obj.name}</td>
                                             <td class="user_id">\${obj.description}</td>
                                             <td>
-                                                <a href="/resume?resume_lid=\${obj.id}" class="application-preview" style="border:none; outline:none" >
+                                                <a href="${pageContext.request.contextPath}/resume?resume_lid=\${obj.id}" class="application-preview" style="border:none; outline:none" >
                                                 <i class="fa-solid fa-eye get-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
                                                 <a  class="" style="border:none; outline:none" >
                                             </td>

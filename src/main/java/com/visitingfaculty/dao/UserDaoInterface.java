@@ -89,5 +89,9 @@ public interface UserDaoInterface {
 
     int deleteCertificate(int id);
 
+    int deleteExperience (int id);
+
+    int deleteSoftSkills(int id);
+
     Object createJobApplication(String object);
 }

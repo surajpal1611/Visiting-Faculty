@@ -22,10 +22,8 @@ import com.visitingfaculty.service.PasswordService;
 @Service
 public class UserService {
 
-    @Autowired
-    UserDaoInterface userDaoInterface;
-
-    public static String uploadDirectory = System.getProperty("user.dir") + "/src/main/webapp/imagedata";
+    public static String uploadDirectory = "/data/tomcat/webapps/vf/imagedata";
+    //"/src/main/webapp/imagedata";
 
     @Autowired
     private JavaMailSender javaMailSender;

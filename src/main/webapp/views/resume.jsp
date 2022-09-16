@@ -10,12 +10,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="stylesheet" href="./login.css" />
-  <link rel="stylesheet" href="./simpleAlert.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/style.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/login.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/simpleAlert.css">
 
   <title>Resume</title>
-  <link rel="icon" type="image/x-icon" href="/images.jpg">
+  <link rel="icon" type="image/x-icon" href="images.jpg">
 </head>
 
 <body>
@@ -90,8 +90,10 @@
               </div>
 
               <div id="gender-row" class="col-md-4 col-sm-12">
+
                 <div class="form-group">
-                  <label for="date-of-birth">Gender<span class="required">*</span></label><br>
+                  <label for="date-of-birth">Gender<span class="required">*</span><span class="text-danger ps-2"
+                      id="gender-message"></span></label><br>
                   <label class="radio-inline">Male<input type="radio" name="gender" class="gender ms-1" id="male"
                       value="1" /></label>
                   <label class="radio-inline">Female<input type="radio" name="gender" class="gender ms-1" id="female"
@@ -189,7 +191,8 @@
               </div>
               <div class="col-md-4 col-sm-12">
                 <img id="pan-photo-preview" alt="your image" width="100" height="100"
-                  style="border: 1px solid #ced4da; margin-left:100px;" />
+                  style="border: 1px solid #d9dace; margin-left:100px;" />
+
               </div>
             </div>
           </div>
@@ -809,7 +812,7 @@
           <div class="row">
             <div class="col-md-6 col-sm-12">
               <label for="bank-name" class="py-md-2">Name of the Bank<span class="required">*</span></label>
-              <span id="bank-name-message" style="color: red;" class="error"></span>
+              <span id="bank-name-message" style="color: rgb(159, 214, 55);" class="error"></span>
               <input type="text" class="form-control" id="bank-name">
 
             </div>
@@ -855,7 +858,7 @@
             <div class="col-md-6 col-sm-12">
               <div>
                 <input type="checkbox" class="cancelled-check-box" id="cancelled-check-box">
-                <label for="cancelled_cheque_Photo" class="py-md-2">Cancelled Cheque Photo<span
+                <label for="cancelled_cheque_Photo" class="py-md-2">Update Cancelled Cheque Photo?<span
                     class="required">*</span></label>
                 <span id="cancelled_cheque_Photo-message" style="color: red;" class="error"></span>
                 <input type="file" name="cancelled_cheque_Photo" id="cancelled_cheque_Photo"
@@ -972,7 +975,7 @@
 
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="/download (3).jpg" alt="Pancard-photo-uploaded" id="Pancard-photo-uploaded"
+              <img src="download (3).jpg" alt="Pancard-photo-uploaded" id="Pancard-photo-uploaded"
                 style="width:450px;height:300px;">
             </div>
           </div>
@@ -995,7 +998,7 @@
 
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="/download (3).jpg" alt="aadhar-photo-uploaded" id="aadhar-photo-uploaded"
+              <img src="download (3).jpg" alt="aadhar-photo-uploaded" id="aadhar-photo-uploaded"
                 style="width:450px;height:300px;">
             </div>
           </div>
@@ -1019,7 +1022,7 @@
 
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="/download (3).jpg" alt="image-uploaded" id="image-uploaded" class="image-uploaded"
+              <img src="download (3).jpg" alt="image-uploaded" id="image-uploaded" class="image-uploaded"
                 style="width:450px;height:300px;">
             </div>
           </div>
@@ -1055,20 +1058,20 @@
 
 
   <!-- INCLUDE JS -->
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.bundle.min.js"></script>
-  <script src="/js/SimpleAlert.js"></script>
-  <script src="/js/script.js"></script>
-  <script src="/js/leftsidebartoggle.js"></script>
+  <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
+  <script src="${pageContext.request.contextPath}/js/SimpleAlert.js"></script>
+  <script src="${pageContext.request.contextPath}/js/script.js"></script>
+  <script src="${pageContext.request.contextPath}/js/leftsidebartoggle.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
-  <script src="/js/jquery.bootpag.min.js"></script>
+  <script src="${pageContext.request.contextPath}/js/jquery.bootpag.min.js"></script>
   <script id="script-data"></script>
   <script>
     let resume_lid = '${resume_lid}';
 
     let resumeinfo;
     $.ajax({
-      url: '/get-user-details?resume_lid=' + resume_lid,
+      url: '${pageContext.request.contextPath}/get-user-details?resume_lid=' + resume_lid,
       type: 'POST',
       success: function (response) {
         let data = JSON.parse(response.value)
@@ -1112,7 +1115,7 @@
                 <div class="cover-div p-3 px-sm-4 p-lg-4"> <div class="row">
                     <div class="col-md-4 col-sm-12 col-lg-3">
                       <div class="avatar bg-white shadow-sm p-1">
-                        <img src="../imagedata/\${personal_details[0].profile_url_path}" alt="Passport Size photo" id="profile-photo-value" width="200"
+                        <img src="imagedata/\${personal_details[0].profile_url_path}" alt="Passport Size photo" id="profile-photo-value" width="200"
                           height="200" />
                       </div>
                     </div>
@@ -1139,7 +1142,7 @@
                       </div>
                       <div class="row py-1">
                         <div class="col-md-5 col-sm-3">
-                          <h6>Date of birth :</h6>
+                          <h6>Date of birth </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="date-of-birth-value">\${personal_details[0].date_of_birth}</p>
@@ -1147,7 +1150,7 @@
                       </div>
                       <div class="row py-1">
                         <div class="col-md-5 col-sm-3">
-                          <h6>Pancard :</h6>
+                          <h6>Pancard </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="pancard-value">\${personal_details[0].pancard_no}</p>
@@ -1158,13 +1161,13 @@
                           <h6>Pancard Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="pancard-photo"><i id="pancard-photo-preview" data-image="../imagedata/\${personal_details[0].pancard_url_path}" class="fa-solid fa-image text-success pancard-photo-preview"></i></p>
+                          <p id="pancard-photo"><i id="pancard-photo-preview" data-image="imagedata/\${personal_details[0].pancard_url_path}" class="fa-solid fa-image text-success pancard-photo-preview"></i></p>
                           </p>
                         </div>
                       </div>
                       <div class="row py-1">
                         <div class="col-md-5 col-sm-3">
-                          <h6>Aadhar card :</h6>
+                          <h6>Aadhar card </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="aadhar-card-value">\${personal_details[0].aadhar_card_no}</p>
@@ -1175,7 +1178,7 @@
                           <h6>Aadhar card Photo</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" data-image="../imagedata/\${personal_details[0].aadhar_card_url_path}" class="fa-solid fa-image text-success aadhar-photo-preview"></i></p>
+                          <p id="aadhar-card-photo"><i id="aadhar-photo-preview" data-image="imagedata/\${personal_details[0].aadhar_card_url_path}" class="fa-solid fa-image text-success aadhar-photo-preview"></i></p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1200,7 +1203,7 @@
                     
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
-                          <h6>Email :</h6>
+                          <h6>Email </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="email-value">\${personal_details[0].email}</p>
@@ -1208,7 +1211,7 @@
                       </div>
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
-                          <h6>Secondary Email :</h6>
+                          <h6>Secondary Email </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="temp-email-value">\${personal_details[0].temp_email}\${tempEmail}</p>
@@ -1216,7 +1219,7 @@
                       </div>
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
-                          <h6>Permanent Address :</h6>
+                          <h6>Permanent Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="address-value">\${personal_details[0].address}</p>
@@ -1224,7 +1227,7 @@
                       </div>
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
-                          <h6 class="temporary-address-heading">Temporary Address :</h6>
+                          <h6 class="temporary-address-heading">Temporary Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="temporary-address-value">\${personal_details[1].address}\${tempAdd}
@@ -1249,7 +1252,7 @@
                       </div>
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
-                          <h6 class="country-heading">Country :</h6>
+                          <h6 class="country-heading">Country </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
                           <p id="country-value">\${personal_details[0].nationality}</p>
@@ -1273,7 +1276,7 @@
                 <div class="cover-div p-3 px-sm-4 p-lg-4"> <div class="row">
                     <div class="col-md-4 col-sm-12 col-lg-3">
                       <div class="avatar bg-white shadow-sm p-1">
-                        <img src="/profile.jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
+                        <img src="profile.jpg" alt="Passport Size photo" id="profile-photo-value" width="200"
                           height="200" />
                       </div>
                     </div>
@@ -1325,13 +1328,13 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Title :</p>
-                              <p class="h5 py-1">Major Subject :</p>
-                              <p class="h5 py-1">University :</p>
+                              <p class="h5 pb-1">Title </p>
+                              <p class="h5 py-1">Major Subject </p>
+                              <p class="h5 py-1">University </p>
 
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">\${qual.qualification_type_lid}</p>
+                              <p id="">\${qual.name}</p>
                               <p id="">\${qual.topic_of_study}</p>
                               <p id="">\${qual.university}</p>
                             </div>
@@ -1342,13 +1345,23 @@
                           <div class="row pt-lg-3">
                             <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
                               <p class="h5 pb-1">College :</p>
-                              <p class="h5 py-1">percentage :</p>
-                              <p class="h5 py-1">Certificate :</p>
+                              <p class="h5 py-1">percentage :</p>`
+              if (qual.abbr == 'phd') {
+                resume += `<p class="h5 py-1">Status </p>`
+              }
+              resume += `<p class="h5 py-1">Certificate</p>
                             </div>
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">\${qual.institute}</p>
-                              <p id="" class="">\${qual.percentile}</p>
-                              <p id=""><i id="qualification-certificate-display" data-image="../imagedata/\${qual.url_path}"
+                              <p id="" class="">\${qual.percentile}</p>`
+              if (qual.abbr == 'phd') {
+                if (qual.is_completed == true) {
+                  resume += `<p id="" class="">Awarded</p>`
+                } else {
+                  resume += `<p id="" class="">Persuing</p>`
+                }
+              }
+              resume += `<p id=""><i id="qualification-certificate-display" data-image="imagedata/\${qual.url_path}"
                                   class="fa-solid fa-image text-success qualification-certificate-display"></i></p>
 
                             </div>
@@ -1396,7 +1409,7 @@
         if (data.resume_experience != null) {
           for (let exp of data.resume_experience) {
             let experiencetype = "";
-            if (exp.experience_type_lid == 4) {
+            if (exp.experience_type_lid == 5) {
               experiencetype = "Teaching Experience"
             } else {
               experiencetype = "Industrial Experience"
@@ -1410,34 +1423,28 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">University :</p>
-                              <p class="h5 pb-1">Program :</p>
-                              <p class="h5 py-1">Subject Taught :</p>
+                              <p class="h5 pb-1">Employeer :</p>
+                              <p class="h5 py-1">Key role :</p>
                               <p class="h5 py-1">Designation :</p>
-                              <p class="h5 py-1">Padagogy used :</p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id="">\${exp.employer_name}</p>
-                              <p id="">\${exp.description}</p>
                               <p id="">\${exp.responsibilities}</p>
                               <p class="" id="">\${exp.designation}</p>
-                              <p class="" id="">\${exp.padagogy}</p>
                             </div>
                           </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 py-1">Start Date :</p>
-                              <p class="h5 py-1">End date :</p>
-                              <p class="h5 py-1">Teaching Duration :</p>
-                              <p class="h5 py-1">Status :</p>
+                              <p class="h5 py-1">Start Date </p>
+                              <p class="h5 py-1">End date</p>
+                              <p class="h5 py-1">Duration </p>
                             </div>
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p id="" class="">\${exp.start_date}</p>
                               <p id="" class="">\${exp.end_date}</p>
                               <p id="" class="">\${exp.duration}</p>
-                              <p id="" class="">\${exp.is_current}</p>
                               <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
                             </div>
                           </div>
@@ -1466,7 +1473,7 @@
             <div id="skills-div" class="px-3 px-sm-4 px-lg-4">
               <div class="d-flex justify-content-center align-items-center">
                 <h3 class="mb-4 h3" style="color: #740E00;">
-                  <img src="/icons/skills.png" alt="" height="40px"><b> Skills</b>
+                  <img src="icons/skills.png" alt="" height="40px"><b> Skills</b>
                 </h3>
               </div>
               <div class="container bootstrap snippets bootdeys">
@@ -1480,7 +1487,7 @@
         if (data.resume_skill_selected != null) {
           for (hardskill of data.resume_skill_selected) {
             if (hardskill.skill_type_lid === 2)
-              resume += ` <div data-id="\${hardskill.skill_lid}" data-skilltype="\${hardskill.skill_type_lid}" class="skill-pill-div text-center">
+              resume += ` <div data-id="\${hardskill.skill_lid}" data-skillid = \${hardskill.resume_skill_selected_lid} data-skilltype="\${hardskill.skill_type_lid}" class="skill-pill-div text-center">
                                     \${hardskill.skill_name}\
                                 </div>`
           }
@@ -1495,7 +1502,7 @@
                       <div id="soft-skill-appending-div1" class="d-flex w-100 flex-wrap">`
           for (softskill of data.resume_skill_selected) {
             if (softskill.skill_type_lid === 1) {
-              resume += `<div data-id="\${softskill.skill_lid}" data-skilltype="\${softskill.skill_type_lid}" class="skill-pill-div text-center">
+              resume += `<div data-id="\${softskill.skill_lid}" data-skillid = \${softskill.resume_skill_selected_lid} data-skilltype="\${softskill.skill_type_lid}" class="skill-pill-div text-center">
                                     \${softskill.skill_name}\
                                 </div>`
             }
@@ -1544,9 +1551,9 @@
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Award Name :</p>
-                          <p class="h5 py-1">organization :</p>
-                          <p class="h5 py-1">Organization Type :</p>
+                          <p class="h5 pb-1">Award Name </p>
+                          <p class="h5 py-1">organization </p>
+                          <p class="h5 py-1">Organization Type </p>
 
                         </div>
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
@@ -1560,14 +1567,14 @@
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Place :</p>
-                          <p class="h5 pb-1">Recieved date :</p>
-                          <p class="h5 py-1">Certificate :</p>
+                          <p class="h5 pb-1">Place </p>
+                          <p class="h5 pb-1">Recieved date </p>
+                          <p class="h5 py-1">Certificate </p>
                         </div>
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${award.description}</p>
                           <p class="" id="">\${award.achievement_date}</p>
-                          <p ><i id="award-certificate-display" data-image="../imagedata/\${award.url_path}" class="fa-solid fa-image text-success award-certificate-display"></i></p>
+                          <p ><i id="award-certificate-display" data-image="imagedata/\${award.url_path}" class="fa-solid fa-image text-success award-certificate-display"></i></p>
                         </div>
                       </div>
                     </div>
@@ -1614,9 +1621,9 @@
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Role :</p>
-                          <p class="h5 py-1">No. of Authors :</p>
-                          <p class="h5 py-1">Book Title :</p>
+                          <p class="h5 pb-1">Role </p>
+                          <p class="h5 py-1">No. of Authors </p>
+                          <p class="h5 py-1">Book Title </p>
 
                         </div>
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
@@ -1630,14 +1637,14 @@
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Publisher :</p>
-                          <p class="h5 pb-1">Publication Year:</p>
-                          <p class="h5 py-1">Certificate :</p>
+                          <p class="h5 pb-1">Publisher </p>
+                          <p class="h5 pb-1">Publication Year</p>
+                          <p class="h5 py-1">Certificate </p>
                         </div>
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${public.publisher}</p>
                           <p class="" id="">\${public.year_of_publication}</p>
-                          <p><i id="publication-certificate-display" data-image="../imagedata/\${public.url_path}" class="fa-solid fa-image text-success publication-certificate-display"></i></p>
+                          <p><i id="publication-certificate-display" data-image="imagedata/\${public.url_path}" class="fa-solid fa-image text-success publication-certificate-display"></i></p>
 
                         </div>
                       </div>
@@ -1691,8 +1698,8 @@
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 py-1">Title :</p>
-                          <p class="h5 py-1">Volume year :</p>
+                          <p class="h5 py-1">Title </p>
+                          <p class="h5 py-1">Volume year </p>
 
                         </div>
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
@@ -1706,14 +1713,14 @@
                     <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                       <div class="row pt-lg-3">
                         <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                          <p class="h5 pb-1">Description :</p>
-                          <p class="h5 pb-1">Category :</p>
-                          <p class="h5 py-1">Certificate :</p>
+                          <p class="h5 pb-1">Description </p>
+                          <p class="h5 pb-1">Category </p>
+                          <p class="h5 py-1">Certificate </p>
                         </div>
                         <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${research.description}</p>
                           <p class="" id="">\${research.category}</p>
-                          <p><i id="research-certificate-display" data-image="../imagedata/\${research.research_url_path}" class="fa-solid fa-image text-success research-certificate-display" ></i></p>
+                          <p><i id="research-certificate-display" data-image="imagedata/\${research.research_url_path}" class="fa-solid fa-image text-success research-certificate-display" ></i></p>
 
                         </div>
                       </div>
@@ -1767,7 +1774,7 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Certification name:</p>
+                              <p class="h5 pb-1">Certification name</p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id="">\${qual.topic_of_study}</p>
@@ -1778,7 +1785,7 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6 ps-lg-6 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Institution :</p>
+                              <p class="h5 pb-1">Institution</p>
                             </div>
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">\${qual.institute}</p>
@@ -1789,7 +1796,7 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Recieved Year:</p>
+                              <p class="h5 pb-1">Recieved Year</p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id="">\${qual.year_of_passing}</p>
@@ -1800,10 +1807,10 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Certificate:</p>
+                              <p class="h5 pb-1">Certificate</p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p ><i id="professional-certificate-display" data-image="../imagedata/\${qual.url_path}" class="fa-solid fa-image text-success professional-certificate-display"></i></p>
+                              <p ><i id="professional-certificate-display" data-image="imagedata/\${qual.url_path}" class="fa-solid fa-image text-success professional-certificate-display"></i></p>
                             </div>
                           </div>
                         </div>
@@ -1872,12 +1879,18 @@
                       <h6 class="pb-4">Account Type</h6>
                       <h6 class="pb-4">Cancalled Cheque Photo</h6>
                     </div>
-                    <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                      <p id="micr-code-value">\${bank_details.micr_code}</p>
-                      <p id="account-number-value" class="pt-2">\${bank_details.account_number}</p>
+                    <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">`
+          if (bank_details.micr_code != null) {
+
+            resume += ` <p id="micr-code-value">\${bank_details.micr_code}</p>`
+          } else {
+            resume += ` <p id="micr-code-value">N.A</p>`
+
+          }
+          resume += ` <p id="account-number-value" class="pt-2">\${bank_details.account_number}</p>
                       <p id="account-type-value" class="pt-2">\${bank_details.account_type}</p>
                       <p id="cancelled-check-photo" class="pt-3">
-                        <i id="cancelled-cheque-photo-preview" data-image="../imagedata/\${bank_details.url_path}" class="fa-solid fa-image text-success cancelled-cheque-photo-preview"></i>
+                        <i id="cancelled-cheque-photo-preview" data-image="imagedata/\${bank_details.url_path}" class="fa-solid fa-image text-success cancelled-cheque-photo-preview"></i>
                       </p>
                     </div>
                   </div>
@@ -1904,6 +1917,10 @@
         </div>`
         }
         document.querySelector('#body').insertAdjacentHTML('afterbegin', resume);
+        if (bank_details != null) {
+          document.querySelector('#bank-account-type').value = bank_details.account_type;
+        }
+
         initResume();
 
         if (bank_details != null) {
@@ -1987,6 +2004,15 @@
               'editTemporaryAddress')
             document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
 
+            if (resumeinfo.personal_details[0].gender_lid == 1) {
+              document.querySelector('#male').checked = true;
+            } else if (resumeinfo.personal_details[0].gender_lid == 2) {
+              document.querySelector('#female').checked = true;
+            } else {
+              document.querySelector('#other').checked = true;
+            }
+            document.getElementById('temp_contact-number').value = resumeinfo.personal_details[0]
+              .temp_contact_number
             document.getElementById('body').classList.add('d-none');
             document.querySelector('.personal-details-modal').classList.remove('d-none');
 
@@ -2018,7 +2044,6 @@
 
     //Personal Details Submit
     document.querySelector('#personal-details-submit-insert').addEventListener('click', function (e) {
-      document.getElementById('main-loader').classList.remove('d-none')
 
       console.log()
       e.preventDefault()
@@ -2183,16 +2208,18 @@
 
         }
 
-        let fetchRes = fetch('/insert-personal-details', options);
+        let fetchRes = fetch('${pageContext.request.contextPath}/insert-personal-details', options);
+        document.getElementById('main-loader').classList.remove('d-none')
 
         fetchRes.then(success => {
 
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.personal-details-modal-insert').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check Data');
           }
         })
@@ -2213,14 +2240,13 @@
     //Resume Qualification Add Button
     function resumequailficationaddbtn() {
 
-      let qualificationType = 'let qualificationType = `<option value disabled selected>--Select--</option>`;';
-
+      qualificationType = '';
       document.querySelector('.qualification-data-insert').innerHTML = "";
       document.querySelector('.qualification-modal-insert').classList.remove('d-none');
       document.querySelector('#body').classList.add('d-none');
 
       $.ajax({
-        url: '/get-qualification-type',
+        url: '${pageContext.request.contextPath}/get-qualification-type',
         type: 'get',
         success: function (response) {
           for (let i = 0; i < response.length; i++) {
@@ -2416,7 +2442,7 @@
 
     //Qualification Data Insert Submit
     document.querySelector("#qualification-submit-insert").addEventListener('click', function (e) {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
       e.preventDefault()
 
@@ -2582,6 +2608,7 @@
         }, 1000)
       }
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let qualificationTableData = {
           "qualificationDetails": qualificationTableArray
@@ -2595,15 +2622,16 @@
           },
           body: JSON.stringify(qualificationTableData)
         }
-        let fetchRes = fetch('/resume-insert-qualification', options);
+        let fetchRes = fetch('${pageContext.request.contextPath}/resume-insert-qualification', options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.qualification-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
 
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check Qualification details');
           }
         })
@@ -2777,7 +2805,7 @@
 
     //Award Insert Submit Btn
     document.querySelector('#award-submit-insert').addEventListener('click', function () {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
       let div = '';
       let vjstableelement = document.querySelectorAll('.award-rows');
@@ -2803,7 +2831,7 @@
         let awardCertificateSRC = vjstableelement[i].querySelector('.award-certificate-preview').src;
 
         let checktitle = tabledatacheck(title);
-        let checkorganization_name = namecheck(organization_name);
+        let checkorganization_name = tabledatacheck(organization_name);
         let checkdescription = tabledatacheck(description);
         let checkachievement_date = checkdate(achievement_date);
         let checkurl_path = tabledatacheck(url_path);
@@ -2918,9 +2946,10 @@
 
       //Fetch Method
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         function postdata() {
-          url = "/award_insert";
+          url = "${pageContext.request.contextPath}/award_insert";
           params = {
             method: "POST",
             headers: {
@@ -2936,7 +2965,7 @@
               document.getElementById('main-loader').classList.add('d-none')
               document.location.reload();
             } else {
-              console.log("Error");
+              document.getElementById('main-loader').classList.add('d-none');
               alert('Check Award Entries');
             }
           })
@@ -3104,7 +3133,6 @@
 
     //Insert Publication Submit Button
     document.querySelector("#publication-submit-insert").addEventListener('click', function () {
-      document.getElementById('main-loader').classList.remove('d-none')
 
       let div = ''
       let publicationTableArray = []
@@ -3218,6 +3246,7 @@
         "insert_publication": publicationTableArray
       }
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let options = {
           method: 'POST',
@@ -3226,14 +3255,15 @@
           },
           body: JSON.stringify(publicationTableData)
         }
-        let fetchRes = fetch("/resume-publication-insert", options);
+        let fetchRes = fetch("${pageContext.request.contextPath}/resume-publication-insert", options);
         fetchRes.then(success => {
           if (success.status == 200) {
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.publication-modal').classList.add('d-none');
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check');
           }
         })
@@ -3375,7 +3405,7 @@
 
     //Research Submit Button
     document.querySelector('#research-submit-insert').addEventListener('click', function () {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
       console.log("research button clicked");
       let researchTableElem = document.querySelectorAll('.research-row');
@@ -3403,8 +3433,8 @@
 
         let check_journal_name = tabledatacheck(Journal_name);
         let check_volume_year = yearcheck(volume_year);
-        let check_description = namecheck(description);
-        let check_category = namecheck(category);
+        let check_description = tabledatacheck(description);
+        let check_category = tabledatacheck(category);
 
 
         if (check_journal_name == false) {
@@ -3426,7 +3456,6 @@
           researchTableElem[j].querySelector('.research_category').classList.add('input-border');
           return;
         }
-
 
 
         let photoArray = []
@@ -3498,6 +3527,7 @@
       }
       console.log('resrearch : ', JSON.stringify(object));
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let options = {
           method: 'POST',
@@ -3506,15 +3536,16 @@
           },
           body: JSON.stringify(object),
         }
-        let fetchRes = fetch("/resume-data-insert", options);
+        let fetchRes = fetch("${pageContext.request.contextPath}/resume-data-insert", options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.research-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
 
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check');
           }
         })
@@ -3657,7 +3688,7 @@
 
     // Certification Submit Insert Button
     document.querySelector('#certification-submit-insert').addEventListener('click', function (e) {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       e.preventDefault()
@@ -3796,6 +3827,7 @@
       }
       console.log(JSON.stringify(certificationTableData))
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let options = {
           method: 'POST',
@@ -3804,15 +3836,16 @@
           },
           body: JSON.stringify(certificationTableData)
         }
-        let fetchRes = fetch('/resume-certification-insert', options);
+        let fetchRes = fetch('${pageContext.request.contextPath}/resume-certification-insert', options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.certification-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
 
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check Professional certificate details');
           }
         })
@@ -3827,7 +3860,7 @@
     function bankdetailsadd() {
       if (bankDataDB == 1) {
         $.ajax({
-            url: '/get-bank-account-type',
+            url: '${pageContext.request.contextPath}/get-bank-account-type',
             type: 'get',
             success: function (response) {
               for (let i = 0; i < response.length; i++) {
@@ -3865,7 +3898,7 @@
 
     //resume Bank details Submit Button
     document.querySelector('#bank-details-submit-insert').addEventListener('click', function () {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       let flag3 = document.getElementById('bank-account-type').value
@@ -3905,7 +3938,6 @@
       }
 
 
-
       let photoArray = []
 
       let bankPhoto = document.getElementById("cancelled_cheque_Photo-insert").files[0]
@@ -3919,6 +3951,7 @@
       }
 
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let bankDetailsJson = {
           "insert_bank_data": []
@@ -3938,7 +3971,7 @@
         console.log(JSON.stringify(bankDetailsJson))
 
         function postdata() {
-          url = "/insert-bank-details";
+          url = "${pageContext.request.contextPath}/insert-bank-details";
           params = {
             method: 'post',
             headers: {
@@ -3949,8 +3982,11 @@
           fetch(url, params).then((data) => {
             if (data.status == 200) {
               console.log(data);
-              document.getElementById('main-loader').classList.add('d-none')
+              document.getElementById('main-loader').classList.add('d-none');
               document.location.reload()
+            } else {
+              alert('Check Bank-Details Input');
+              document.getElementById('main-loader').classList.add('d-none');
             }
           })
         }
@@ -4241,10 +4277,8 @@
 
         if (qualificationDataDB == 1) {
 
-
-
           $.ajax({
-              url: '/get-qualification-type',
+              url: '${pageContext.request.contextPath}/get-qualification-type',
               type: 'get',
               success: function (response) {
                 console.log(response)
@@ -4345,6 +4379,10 @@
                     </div>`
 
                         document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
+                        document.querySelector('.qualification-title').value = qualedit.abbr
+                        if (qualedit.abbr == 'phd') {
+                          document.querySelector('.qualification-phd-wrapper').classList.remove('d-none')
+                        }
                       }
                     }
                   }
@@ -4427,7 +4465,7 @@
         let hardSkills = document.getElementById('hard-skill-appending-div1')
 
         $.ajax({
-          url: '/get-all-skill',
+          url: '${pageContext.request.contextPath}/get-all-skill',
           type: 'POST',
           success: function (response) {
             for (let i = 0; i < response.length; i++) {
@@ -4478,9 +4516,8 @@
 
             for (let skill of document.querySelectorAll('.skill-pill-div')) {
 
-
               if (skill.dataset.skilltype == 1) {
-                document.getElementById('soft-skill-display').insertAdjacentHTML('beforeend', `<li class="soft-skill-list-group skill-list" data-status="0" data-skilltype="skill.skilltype" data-id="\${skill.id}">
+                document.getElementById('soft-skill-display').insertAdjacentHTML('beforeend', `<li class="soft-skill-list-group skill-list" data-status="0" data-skillid=\${skill.dataset.skillid} data-skilltype="\${skill.dataset.skilltype}" data-id="\${skill.dataset.id}">
                         <div class="row">
                             <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
                             <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${skill.innerText}\</a></div>
@@ -4488,7 +4525,7 @@
                     </li>`)
               } else if (skill.dataset.skilltype == 2) {
 
-                document.getElementById('hard-skill-display').insertAdjacentHTML('beforeend', `<li class="soft-skill-list-group skill-list" data-status="0" data-skilltype="skill.skilltype" data-id="\${skill.id}">
+                document.getElementById('hard-skill-display').insertAdjacentHTML('beforeend', `<li class="soft-skill-list-group skill-list" data-status="0" data-skillid=\${skill.dataset.skillid} data-skilltype="\${skill.dataset.skilltype}" data-id="\${skill.dataset.id}">
                         <div class="row">
                             <div class="col-md-2 col-sm-2 col-2"><i class="fa-solid fa-trash-can fa-2x soft-skill-delete-button" style="color:red;"></i></div>
                             <div class="col-md-10 col-sm-10 col-10"><a class="ms-3" href="#">\${skill.innerText}\</a></div>
@@ -4577,7 +4614,7 @@
                   <div class="col-md-2 ">
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10"><input type='checkbox' class='award-check-box'><input class="d-none form-control awardCertificationImage" type="file" 
+                  <div class="col-md-10"><input type='checkbox' class='award-check-box'>Update Photo?<input class="d-none form-control awardCertificationImage" type="file" 
                      onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
                     <p hidden><img class="award-certificate-preview" type="hidden" alt="your image" width="100"
                     height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
@@ -4595,6 +4632,7 @@
         </div> 
        `
               document.getElementById('publication-award-div-update').insertAdjacentHTML("beforeend", table);
+              document.querySelector('.awardOrganizationType').value = awardedit.organization_type_lid;
             }
 
           }
@@ -4651,10 +4689,10 @@
                   <div class="col-md-2 ">
                     <p class="h6">Role<span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10"><select class="form-control role" id="role">
+                  <div class="col-md-10"><select class="form-control role" id="role" value="\${pubedit.publication_role}">
                       <option >-Select-</option>
-                      <option >Edited</option>
-                      <option >Authored</option>
+                      <option value="Edited" >Edited</option>
+                      <option value="Authored">Authored</option>
                     </select></div>
                 </div>
                 <div class="row p-3">
@@ -4689,7 +4727,7 @@
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
                   <!--Rana Chanegs--!>
-                  <div class="col-md-10"><input type='checkbox' class='publication-check-box'><input class="d-none form-control publication-certification" type="file"
+                  <div class="col-md-10"><input type='checkbox' class='publication-check-box'>Update Photo?<input class="d-none form-control publication-certification" type="file"
                     onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
                       <p hidden><img class="publication-certificate-preview" type="hidden" alt="your image" width="100"
                        height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
@@ -4705,7 +4743,17 @@
       </div>
           </div>
         `
+
+
+
+
+
+
+              //           document.querySelector('.qualification-title').value = qualedit.abbr
+
               document.getElementById('publication-modal-appending-div').insertAdjacentHTML("beforeend", table);
+              document.querySelector('#role').value = pubedit.publication_role;
+
             }
 
           }
@@ -4787,7 +4835,7 @@
                   <div class="col-md-2 ">
                     <p class="h6">Certificate<span class="required">*</span></p>
                   </div>
-                  <div class="col-md-10"><input type='checkbox' class='reserach-check-box'><input class="d-none form-control research_photo" type="file"
+                  <div class="col-md-10"><input type='checkbox' class='reserach-check-box'>Update Photo?<input class="d-none form-control research_photo" type="file"
                     onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])">
                    <p hidden><img class="research-certificate-preview" type="hidden" alt="your image" width="100"
                       height="100" style="border: 1px solid #ced4da; margin-left:100px;" /></p>
@@ -4842,7 +4890,7 @@
         document.querySelector('.bank-details-edit-box').addEventListener('click', function () {
           if (bankDataDB == 1) {
             $.ajax({
-                url: '/get-bank-account-type',
+                url: '${pageContext.request.contextPath}/get-bank-account-type',
                 type: 'get',
                 success: function (response) {
                   console.log(response)
@@ -4877,11 +4925,13 @@
           document.getElementById('bank-ifsc-code').value = editBankDetailsForm.get('editIfscCode')
           document.getElementById('bank-micr-code').value = editBankDetailsForm.get('editMicrCode')
           document.getElementById('bank-account-number').value = editBankDetailsForm.get('editAccountNumber')
-          document.getElementById('bank-account-type').value = editBankDetailsForm.get('editAccountType')
+          document.getElementById('bank-account-type').value = resumeinfo.bank_details.bank_account_type_lid
 
 
           document.getElementById('body').classList.add('d-none');
           document.querySelector('.bank-details-modal').classList.remove('d-none');
+
+
         });
       }
 
@@ -4901,7 +4951,7 @@
     document.querySelector('#personal-details-submit-button').addEventListener('click', function (e) {
 
       e.preventDefault()
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       let myForm = document.getElementById('myForm')
@@ -4935,11 +4985,10 @@
       let tempContact = (result.temp_contact_number);
       let tempemail = tempemailvalidation(result.temp_email);
 
-      if (!firstName || !lastName || !gender || !contactNumber || !email || !aadhar || !address || !
-        country || !DOB || !tempemail) {
+      if (!firstName || !lastName || !contactNumber || !email || !aadhar || !address || !
+        country || !DOB || !tempemail || !gender) {
         return;
       }
-
 
 
       let personalDetailsData = {
@@ -5013,9 +5062,9 @@
         user_info.temp_email = result.temp_email
         user_info.gender_lid = Number.parseInt(result.gender)
         user_info.pancard_no = '${user_id}'
-        user_info.pancard_url_path = photoArray[2] //"C://Fakepath://pancardphoto"
-        user_info.aadhar_card_url_path = photoArray[1] //"C://Fakepath://aadharphoto"
-        user_info.profile_url_path = photoArray[0] //"C://Fakepath://profilephoto" 
+        user_info.pancard_url_path = photoArray[2]
+        user_info.aadhar_card_url_path = photoArray[1]
+        user_info.profile_url_path = photoArray[0]
         user_info.aadhar_card_no = result.aadhar_number
         user_info.date_of_birth = result.date_of_birth
         user_info.nationality = result.nationality
@@ -5052,6 +5101,8 @@
           genderValue = "Other"
         }
         console.log(genderValue)
+        document.getElementById('main-loader').classList.remove('d-none');
+
         let options = {
 
           method: 'POST',
@@ -5063,19 +5114,20 @@
           body: JSON.stringify(personalDetailsData)
 
         }
-        let fetchRes = fetch('/update-personal-details', options);
+        let fetchRes = fetch('${pageContext.request.contextPath}/update-personal-details', options);
 
         fetchRes.then(success => {
 
-          // if (success.status == 200) {
-          console.log(success)
-          console.log(result.date_of_birth)
-          console.log(result.temp_contact_number)
-          document.getElementById('body').classList.remove('d-none');
-          document.querySelector('.personal-details-modal').classList.add('d-none')
-          document.getElementById('main-loader').classList.add('d-none')
+          if (success.status == 200) {
+            document.getElementById('body').classList.remove('d-none');
+            document.querySelector('.personal-details-modal').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
+            document.location.reload();
+          } else {
+            document.getElementById('main-loader').classList.add('d-none');
+            alert('Check Inserted Data')
+          }
 
-          document.location.reload();
         })
       }, 1000)
 
@@ -5099,7 +5151,7 @@
 
     document.querySelector("#qualification-submit-button").addEventListener('click', function (e) {
       e.preventDefault()
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       let qualificatonModal = ''
@@ -5143,25 +5195,37 @@
           .src
         //  to add the red border according to validations
         if (checkSubject == false) {
+
           qualificationRow[i].querySelector('.qualification-subject').classList.add('input-border');
+          document.getElementById('main-loader').classList.add('d-none');
+
           return;
         } else if (checkUniversity == false) {
           qualificationRow[i].querySelector('.qualification-university').classList.add('input-border');
+          document.getElementById('main-loader').classList.add('d-none');
+
           return;
         } else if (checkCollege == false) {
           qualificationRow[i].querySelector('.qualification-college').classList.add('input-border');
+          document.getElementById('main-loader').classList.add('d-none');
+
           return;
         } else if (checkYearOfPassing == false) {
           qualificationRow[i].querySelector('.qualification-year').classList.add('input-border');
+          document.getElementById('main-loader').classList.add('d-none');
+
           return;
         } else if (checkPercentile == false) {
           qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
+          document.getElementById('main-loader').classList.add('d-none');
+
           return;
         }
         //  else if (checkCertificate == false) {
         //   qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
         //   return;
         // }
+
 
 
 
@@ -5270,6 +5334,7 @@
         }, 1000)
       }
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let qualificationTableData = {
           "qualificationDetails": qualificationTableArray
@@ -5283,17 +5348,18 @@
           },
           body: JSON.stringify(qualificationTableData)
         }
-        let fetchRes = fetch('/insert-qualification-details', options);
+        let fetchRes = fetch('${pageContext.request.contextPath}/insert-qualification-details', options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('qualification-list').firstElementChild.remove()
             document.getElementById('qualification-list').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.qualification-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
 
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check Qualification details');
           }
         })
@@ -5343,30 +5409,31 @@
         let status = 400;
         deleteButtonClick[i].addEventListener('click', function () {
           let id = this.dataset.deleteid
-          // let thisdata = this
+          if (id != null) {
+            fetch('${pageContext.request.contextPath}/delete-qualification', {
+                method: "POST",
+                body: id,
+                headers: {
 
-          console.log(id);
+                  "Content-Type": "application/json; charset=UTF-8",
+                }
+              })
+              .then(response => status = response.status)
+              .then(response => {
+                if (status === 200) {
 
-          fetch('/delete-qualification', {
-              method: "POST",
-              body: id,
-              headers: {
+                  this.parentElement.remove()
+                  document.location.reload()
 
-                "Content-Type": "application/json; charset=UTF-8",
-              }
-            })
-            .then(response => status = response.status)
-            .then(response => {
-              if (status === 200) {
+                } else {
+                  console.log("Error")
+                }
+              })
+              .catch(exception => console.log(exception));
+          } else {
+            this.parentElement.remove();
+          }
 
-                this.parentElement.remove()
-                document.location.reload()
-
-              } else {
-                console.log("Error")
-              }
-            })
-            .catch(exception => console.log(exception));
         });
       }
     })
@@ -5397,33 +5464,38 @@
         deleteButtonClick[i].addEventListener('click', function () {
 
           let id = this.dataset.awarddeleteid;
-          console.log(id);
-          fetch('/delete-award', {
-              method: "POST",
-              body: id,
-              headers: {
-                "Content-Type": "application/json; charset=UTF-8",
-              }
-            })
-            .then(response => status = response.status)
-            .then(response => {
-              if (status === 200) {
+          if (id != null) {
+            fetch('${pageContext.request.contextPath}/delete-award', {
+                method: "POST",
+                body: id,
+                headers: {
+                  "Content-Type": "application/json; charset=UTF-8",
+                }
+              })
+              .then(response => status = response.status)
+              .then(response => {
+                if (status === 200) {
 
-                this.parentElement.parentElement.parentElement.remove()
-                document.location.reload()
+                  this.parentElement.parentElement.parentElement.remove();
+                  document.location.reload()
 
-              } else {
-                console.log("Error")
-              }
-            })
-            .catch(exception => console.log(exception));
+                } else {
+                  console.log("Error")
+                }
+              })
+              .catch(exception => console.log(exception));
+          } else {
+            this.parentElement.parentElement.parentElement.remove();
+          }
+
+
         });
       }
     })
 
 
     document.querySelector('#award-submit-button').addEventListener('click', function () {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       let div = '';
@@ -5452,7 +5524,7 @@
         let awardCertificateSRC = vjstableelement[i].querySelector('.award-certificate-preview').src;
 
         let checktitle = tabledatacheck(title);
-        let checkorganization_name = namecheck(organization_name);
+        let checkorganization_name = tabledatacheck(organization_name);
         let checkdescription = tabledatacheck(description);
         let checkachievement_date = checkdate(achievement_date);
         let checkurl_path = tabledatacheck(url_path);
@@ -5573,9 +5645,10 @@
 
       //Fetch Method
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         function postdata() {
-          url = "/award_Table_Data";
+          url = "${pageContext.request.contextPath}/award_Table_Data";
           params = {
             method: "POST",
             headers: {
@@ -5590,11 +5663,11 @@
               document.getElementById('award-preview-div').insertAdjacentHTML('beforeend', div)
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.award-modal').classList.add('d-none');
-              document.getElementById('main-loader').classList.remove('d-none')
+              document.getElementById('main-loader').classList.add('d-none');
 
               document.location.reload();
             } else {
-              console.log("Error");
+              document.getElementById('main-loader').classList.add('d-none');
               alert('Check Award Entries');
             }
           })
@@ -5617,7 +5690,7 @@
     document.querySelector("#publication-submit-button").addEventListener('click', function (e) {
 
       e.preventDefault()
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       let div = ''
@@ -5737,6 +5810,7 @@
         "insert_publication": publicationTableArray
       }
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let options = {
           method: 'POST',
@@ -5745,17 +5819,18 @@
           },
           body: JSON.stringify(publicationTableData)
         }
-        let fetchRes = fetch("/insert-publication-details", options);
+        let fetchRes = fetch("${pageContext.request.contextPath}/insert-publication-details", options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('publication-appending-div').firstElementChild.remove()
             document.getElementById('publication-appending-div').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.publication-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
 
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check');
           }
         })
@@ -5779,24 +5854,29 @@
         deleteButtonClick[i].addEventListener('click', function () {
 
           let id = this.dataset.publicationdeleteid
-          fetch('/delete-publication', {
-              method: "POST",
-              body: id,
-              headers: {
-                "Content-Type": "application/json; charset=UTF-8",
-              }
-            })
-            .then(response => status = response.status)
-            .then(response => {
-              if (status === 200) {
-                this.parentElement.parentElement.parentElement.remove();
-                document.location.reload()
+          if (id != null) {
+            fetch('${pageContext.request.contextPath}/delete-publication', {
+                method: "POST",
+                body: id,
+                headers: {
+                  "Content-Type": "application/json; charset=UTF-8",
+                }
+              })
+              .then(response => status = response.status)
+              .then(response => {
+                if (status === 200) {
+                  this.parentElement.parentElement.parentElement.remove();
+                  document.location.reload()
 
-              } else {
-                console.log("Error")
-              }
-            })
-            .catch(exception => console.log(exception));
+                } else {
+                  console.log("Error")
+                }
+              })
+              .catch(exception => console.log(exception));
+          } else {
+            this.parentElement.parentElement.parentElement.remove();
+          }
+
         });
       }
 
@@ -5816,7 +5896,7 @@
     let newBase64 = ''
 
     document.querySelector('#research-submit-button').addEventListener('click', function () {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
       console.log("research button clicked");
       let researchTableElem = document.querySelectorAll('.research-row');
@@ -5843,8 +5923,8 @@
 
         let check_journal_name = tabledatacheck(Journal_name);
         let check_volume_year = yearcheck(volume_year);
-        let check_description = namecheck(description);
-        let check_category = namecheck(category);
+        let check_description = tabledatacheck(description);
+        let check_category = tabledatacheck(category);
 
 
         if (check_journal_name == false) {
@@ -5944,6 +6024,7 @@
       }
       console.log('resrearch : ', JSON.stringify(object));
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let options = {
           method: 'POST',
@@ -5952,17 +6033,18 @@
           },
           body: JSON.stringify(object),
         }
-        let fetchRes = fetch("/research-table-data", options);
+        let fetchRes = fetch("${pageContext.request.contextPath}/research-table-data", options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('research-appending-div').firstElementChild.remove()
             document.getElementById('research-appending-div').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.research-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
 
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check');
           }
         })
@@ -5983,32 +6065,33 @@
         });
         let status = 400;
         deleteButtonClick[i].addEventListener('click', function () {
+          let id = this.dataset.researchdeleteid;
+          if (id != null) {
+            fetch('${pageContext.request.contextPath}/delete-research', {
+                method: "POST",
+                body: id,
+                headers: {
 
-          let id = this.dataset.researchdeleteid
+                  "Content-Type": "application/json; charset=UTF-8",
+                }
+              })
+              .then(response => status = response.status)
+              .then(response => {
+                if (status === 200) {
+
+                  this.parentElement.remove()
+                  document.location.reload()
+
+                } else {
+                  console.log("Error")
+                }
+              })
+              .catch(exception => console.log(exception));
+          } else {
+            this.parentElement.remove();
+          }
 
 
-          console.log(id);
-
-          fetch('/delete-research', {
-              method: "POST",
-              body: id,
-              headers: {
-
-                "Content-Type": "application/json; charset=UTF-8",
-              }
-            })
-            .then(response => status = response.status)
-            .then(response => {
-              if (status === 200) {
-
-                this.parentElement.remove()
-                document.location.reload()
-
-              } else {
-                console.log("Error")
-              }
-            })
-            .catch(exception => console.log(exception));
         });
       }
     })
@@ -6026,7 +6109,7 @@
     document.querySelector('#certification-submit-button').addEventListener('click', function (e) {
 
       e.preventDefault()
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
       let div = ''
       let certificationTableArray = []
@@ -6076,6 +6159,7 @@
         //   certificationRow[i].querySelector('.certificate-photo').classList.add('input-border');
         //   return;
         // }
+
 
         let photoArray = []
 
@@ -6170,6 +6254,7 @@
       }
       console.log(JSON.stringify(certificationTableData))
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let options = {
           method: 'POST',
@@ -6178,17 +6263,18 @@
           },
           body: JSON.stringify(certificationTableData)
         }
-        let fetchRes = fetch('/insert-certification-details', options);
+        let fetchRes = fetch('${pageContext.request.contextPath}/insert-certification-details', options);
         fetchRes.then(success => {
           if (success.status == 200) {
             document.getElementById('certification-appending-div').firstElementChild.remove()
             document.getElementById('certification-appending-div').insertAdjacentHTML('beforeend', div)
             document.getElementById('body').classList.remove('d-none');
             document.querySelector('.certification-modal').classList.add('d-none');
-            document.getElementById('main-loader').classList.add('d-none')
+            document.getElementById('main-loader').classList.add('d-none');
 
             document.location.reload();
           } else {
+            document.getElementById('main-loader').classList.add('d-none');
             alert('Check Professional certificate details');
           }
         })
@@ -6209,32 +6295,32 @@
 
         let status = 400;
         deleteButtonClick[i].addEventListener('click', function () {
+          let id = this.dataset.certificatedeleteid;
+          if (id != null) {
+            fetch('${pageContext.request.contextPath}/delete-certification', {
+                method: "POST",
+                body: id,
+                headers: {
 
-          let id = this.dataset.certificatedeleteid
+                  "Content-Type": "application/json; charset=UTF-8",
+                }
+              })
+              .then(response => status = response.status)
+              .then(response => {
+                if (status === 200) {
 
+                  this.parentElement.parentElement.parentElement.remove()
+                  document.location.reload()
 
-          console.log(id);
+                } else {
+                  console.log("Error")
+                }
+              })
+              .catch(exception => console.log(exception));
+          } else {
+            this.parentElement.parentElement.parentElement.remove();
+          }
 
-          fetch('/delete-certification', {
-              method: "POST",
-              body: id,
-              headers: {
-
-                "Content-Type": "application/json; charset=UTF-8",
-              }
-            })
-            .then(response => status = response.status)
-            .then(response => {
-              if (status === 200) {
-
-                this.parentElement.parentElement.parentElement.remove()
-                document.location.reload()
-
-              } else {
-                console.log("Error")
-              }
-            })
-            .catch(exception => console.log(exception));
         });
       }
     })
@@ -6298,7 +6384,7 @@
                                           <div class="col-md-2 ">
                                             <p class="h6">Certificate: <span class="required">*</span></p>
                                           </div>
-                                          <div class="col-md-10 "><input type='checkbox' class='certification-check-box'><input class="d-none form-control certificate-photo"
+                                          <div class="col-md-10 "><input type='checkbox' class='certification-check-box'>Update Certificate?<input class="d-none form-control certificate-photo"
 
                                             onchange="this.nextElementSibling.firstElementChild.src = window.URL.createObjectURL(this.files[0])" type="file">
                                               <p hidden><img class="certificate-photo-preview" type="hidden" alt="your image" width="100"
@@ -6338,7 +6424,7 @@
     document.querySelector('#bank-details-submit-button').addEventListener('click', function (e) {
 
       e.preventDefault()
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
 
       let flag3 = document.getElementById('bank-account-type').value
@@ -6391,11 +6477,12 @@
         }
       } else {
         setTimeout(function () {
-          photoArray[i] = null;
+          photoArray[0] = null;
         })
       }
 
       setTimeout(function () {
+        document.getElementById('main-loader').classList.remove('d-none');
 
         let bankDetailsJson = {
           "insert_bank_data": []
@@ -6414,7 +6501,7 @@
         console.log(JSON.stringify(bankDetailsJson))
 
         function postdata() {
-          url = "/update-bank-details";
+          url = "${pageContext.request.contextPath}/update-bank-details";
           params = {
             method: 'post',
             headers: {
@@ -6424,13 +6511,13 @@
           }
           fetch(url, params).then((data) => {
             if (data.status == 200) {
-              console.log(data);
-
               document.getElementById('body').classList.remove('d-none');
               document.querySelector('.bank-details-modal').classList.add('d-none');
               document.getElementById('main-loader').classList.add('d-none')
-
               document.location.reload();
+            } else {
+              alert('Check Bank-Detail Inpur');
+              document.getElementById('main-loader').classList.add('d-none');
             }
           })
         }
@@ -6454,7 +6541,7 @@
 
     document.querySelector('#skills-modal-submit-button').addEventListener('click', function () {
 
-      document.getElementById('main-loader').classList.remove('d-none')
+      document.getElementById('main-loader').classList.remove('d-none');
 
       let skillJson = {
         "skill_details": []
@@ -6501,7 +6588,7 @@
       }
 
       function postdata() {
-        url = "/insert-all-skills";
+        url = "${pageContext.request.contextPath}/insert-all-skills";
         params = {
           method: 'post',
           headers: {
@@ -6649,7 +6736,7 @@
       let customSoftSkillValue = document.getElementById('custom-soft-skill-value').innerText
 
       $.ajax({
-        url: '/insert-custom-skill',
+        url: '${pageContext.request.contextPath}/insert-custom-skill',
         type: 'POST',
         data: {
           skill_type_lid: 1,
@@ -6682,7 +6769,7 @@
       let customHardSkillValue = document.getElementById('custom-hard-skill-value').innerText
 
       $.ajax({
-        url: '/insert-custom-skill',
+        url: '${pageContext.request.contextPath}/insert-custom-skill',
         type: 'POST',
         data: {
           skill_type_lid: 2,
@@ -6725,10 +6812,26 @@
                             </li>
                             `
 
-        skillList.insertAdjacentHTML('afterbegin', div)
-        element.closest('li').remove()
+        let status = 400;
+        let softid = element.closest('li').dataset.skillid;
+        fetch('${pageContext.request.contextPath}/delete-softskills', {
+            method: "POST",
+            body: softid,
+            headers: {
+              "Content-Type": "application/json; charset=UTF-8",
+            }
+          })
+          .then(response => status = response.status)
+          .then(response => {
+            if (status === 200) {
+              skillList.insertAdjacentHTML('afterbegin', div);
+              element.closest('li').remove();
+            } else {
+              console.log("Error")
+            }
+          })
+          .catch(exception => console.log(exception));
       }
-
     })
 
     document.getElementById('hard-skill-review-box').addEventListener('click', function (event) {
@@ -6749,9 +6852,25 @@
                               </div>
                             </li>
                             `
-
-        skillList.insertAdjacentHTML('afterbegin', div)
-        element.closest('li').remove()
+        let status = 400;
+        let softid = element.closest('li').dataset.skillid;
+        fetch('${pageContext.request.contextPath}/delete-softskills', {
+            method: "POST",
+            body: softid,
+            headers: {
+              "Content-Type": "application/json; charset=UTF-8",
+            }
+          })
+          .then(response => status = response.status)
+          .then(response => {
+            if (status === 200) {
+              skillList.insertAdjacentHTML('afterbegin', div)
+              element.closest('li').remove();
+            } else {
+              console.log("Error")
+            }
+          })
+          .catch(exception => console.log(exception));
       }
 
     })
@@ -6760,51 +6879,42 @@
 
 
     document.querySelector('#workexperience-submit-insert').addEventListener('click', function (e) {
-      document.getElementById('main-loader').classList.remove('d-none')
+
 
       let workExperienceModal = ''
       let div = ''
       let workexperienceTableArray = []
-      let workexperienceRow = document.querySelectorAll('.workExperience-row')
+      let workexperienceRow = document.querySelectorAll('.workexperience-row')
       console.log(workexperienceRow)
 
       for (i = 0; i < workexperienceRow.length; i++) {
 
         //to remove the red border
         workexperienceRow[i].querySelector('.work-experience-type').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.employeeName').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.description').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.employeer-name').classList.remove('input-border');
         workexperienceRow[i].querySelector('.responsibility').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.status').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.padagogy').classList.remove('input-border');
         workexperienceRow[i].querySelector('.designation-title').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.other').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.start_Date').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.end_Date').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.start-date').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.end-date').classList.remove('input-border');
 
         // let resume_workexperience_lid = workexperienceRow[i].dataset.lid
         let workexperienceType = workexperienceRow[i].querySelector('.work-experience-type').value;
-        let workexperienceUniversity = workexperienceRow[i].querySelector('.employeeName').value;
+        let workexperienceUniversity = workexperienceRow[i].querySelector('.employeer-name').value;
         let workexperienceDesignationTypeLID = workexperienceRow[i].querySelector(".designation-title").options
           .selectedIndex;
         let workexperienceDesignationType = workexperienceRow[i].querySelector('.designation-title').value;
-        let workexperienceDuration = workexperienceRow[i].querySelector('.durationOfTeaching').value;
+        let workexperienceDuration = workexperienceRow[i].querySelector('.duration-of-teaching').value;
         let workexperienceProgram = workexperienceRow[i].querySelector('.description').value;
         let workexperienceSubjectTaught = workexperienceRow[i].querySelector('.responsibility').value;
-        let workexperienceStatus = workexperienceRow[i].querySelector('.status').value;
         let workexperiencePadagogy = workexperienceRow[i].querySelector('.padagogy').value;
         let workexperienceOther = workexperienceRow[i].querySelector('.other').value;
-        let workexperienceStartDate = workexperienceRow[i].querySelector('.start_Date').value;
-        let workexperienceEndDate = workexperienceRow[i].querySelector('.end_Date').value;
+        let workexperienceStartDate = workexperienceRow[i].querySelector('.start-date').value;
+        let workexperienceEndDate = workexperienceRow[i].querySelector('.end-date').value;
 
 
         let checkWorkExp = tabledatacheck(workexperienceType);
         let checkUniversity = tabledatacheck(workexperienceUniversity);
-        let checkProgram = tabledatacheck(workexperienceProgram);
         let checkSubjetTaught = tabledatacheck(workexperienceSubjectTaught);
-        let checkWorkExpStatus = tabledatacheck(workexperienceStatus);
-        let checkWorkExpPadagogy = tabledatacheck(workexperiencePadagogy);
-        let checkWorkExpOther = tabledatacheck(workexperienceOther);
         let checkWorkExpStart = tabledatacheck(workexperienceStartDate);
         let checkWorkExpEnd = tabledatacheck(workexperienceEndDate);
 
@@ -6813,30 +6923,19 @@
           workexperienceRow[i].querySelector('.work-experience-type').classList.add('input-border');
           return;
         } else if (checkUniversity == false) {
-          workexperienceRow[i].querySelector('.employeeName').classList.add('input-border');
-          return;
-        } else if (checkProgram == false) {
-          workexperienceRow[i].querySelector('.description').classList.add('input-border');
+          workexperienceRow[i].querySelector('.employeer-name').classList.add('input-border');
           return;
         } else if (checkSubjetTaught == false) {
           workexperienceRow[i].querySelector('.responsibility').classList.add('input-border');
           return;
-        } else if (checkWorkExpStatus == false) {
-          workexperienceRow[i].querySelector('.status').classList.add('input-border');
-          return;
-        } else if (checkWorkExpPadagogy == false) {
-          workexperienceRow[i].querySelector('.padagogy').classList.add('input-border');
-          return;
-        } else if (checkWorkExpOther == false) {
-          workexperienceRow[i].querySelector('.other').classList.add('input-border');
-          return;
         } else if (checkWorkExpStart == false) {
-          workexperienceRow[i].querySelector('.start_Date').classList.add('input-border');
+          workexperienceRow[i].querySelector('.start-date').classList.add('input-border');
           return;
         } else if (checkWorkExpEnd == false) {
-          workexperienceRow[i].querySelector('.end_Date').classList.add('input-border');
+          workexperienceRow[i].querySelector('.end-date').classList.add('input-border');
           return;
         }
+
 
 
         let workexperience_type = 0;
@@ -6849,12 +6948,12 @@
         let start_date = changeDateFormat(workexperienceStartDate)
         let end_date = changeDateFormat(workexperienceEndDate)
 
-        let Status;
-        if (workexperienceStatus == "current") {
-          Status = true
-        } else {
-          Status = false
-        }
+        // let Status;
+        // if (workexperienceStatus == "current") {
+        //   Status = true
+        // } else {
+        //   Status = false
+        // }
 
         object = {
           resume_lid: resume_lid,
@@ -6866,7 +6965,7 @@
           start_date: start_date,
           end_date: end_date,
           responsibilities: workexperienceSubjectTaught,
-          is_current: Status,
+          is_current: false,
           padagogy: workexperiencePadagogy,
           duration: workexperienceDuration
         }
@@ -6878,6 +6977,7 @@
       }
 
       console.log(JSON.stringify(workexperienceTableData))
+      document.getElementById('main-loader').classList.remove('d-none');
 
       let options = {
         method: 'POST',
@@ -6886,14 +6986,15 @@
         },
         body: JSON.stringify(workexperienceTableData)
       }
-      let fetchRes = fetch('/insert-workexperience-details', options);
+      let fetchRes = fetch('${pageContext.request.contextPath}/insert-workexperience-details', options);
       fetchRes.then(success => {
         if (success.status == 200) {
           document.querySelector('.workexperience-modal-insert').classList.add('d-none');
           document.querySelector('#body').classList.remove('d-none');
-          document.getElementById('main-loader').classList.add('d-none')
+          document.getElementById('main-loader').classList.add('d-none');
           document.location.reload();
         } else {
+          document.getElementById('main-loader').classList.add('d-none');
           alert('Check workexperience details');
         }
       })
@@ -6906,52 +7007,42 @@
       document.querySelector('#body').classList.remove('d-none');
     })
     document.querySelector('#workexperience-submit-button').addEventListener('click', function (e) {
-      document.getElementById('main-loader').classList.remove('d-none')
 
 
       let workExperienceModal = ''
       let div = ''
       let workexperienceTableArray = []
-      let workexperienceRow = document.querySelectorAll('.workExperience-row')
+      let workexperienceRow = document.querySelectorAll('.workexperience-row')
       console.log(workexperienceRow)
 
       for (i = 0; i < workexperienceRow.length; i++) {
 
         //to remove the red border
         workexperienceRow[i].querySelector('.work-experience-type').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.employeeName').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.description').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.employeer-name').classList.remove('input-border');
         workexperienceRow[i].querySelector('.responsibility').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.status').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.padagogy').classList.remove('input-border');
         workexperienceRow[i].querySelector('.designation-title').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.other').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.start_Date').classList.remove('input-border');
-        workexperienceRow[i].querySelector('.end_Date').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.start-date').classList.remove('input-border');
+        workexperienceRow[i].querySelector('.end-date').classList.remove('input-border');
 
-        // let resume_workexperience_lid = workexperienceRow[i].dataset.lid
-        let resume_experience_lid = workexperienceRow[i].dataset.lid
+        let resume_workexperience_lid = workexperienceRow[i].dataset.lid
         let workexperienceType = workexperienceRow[i].querySelector('.work-experience-type').value;
-        let workexperienceUniversity = workexperienceRow[i].querySelector('.employeeName').value;
+        let workexperienceUniversity = workexperienceRow[i].querySelector('.employeer-name').value;
         let workexperienceDesignationTypeLID = workexperienceRow[i].querySelector(".designation-title").options
           .selectedIndex;
         let workexperienceDesignationType = workexperienceRow[i].querySelector('.designation-title').value;
-        let workexperienceDuration = workexperienceRow[i].querySelector('.durationOfTeaching').value;
+        let workexperienceDuration = workexperienceRow[i].querySelector('.duration-of-teaching').value;
         let workexperienceProgram = workexperienceRow[i].querySelector('.description').value;
         let workexperienceSubjectTaught = workexperienceRow[i].querySelector('.responsibility').value;
-        let workexperienceStatus = workexperienceRow[i].querySelector('.status').value;
         let workexperiencePadagogy = workexperienceRow[i].querySelector('.padagogy').value;
         let workexperienceOther = workexperienceRow[i].querySelector('.other').value;
-        let workexperienceStartDate = workexperienceRow[i].querySelector('.start_Date').value;
-        let workexperienceEndDate = workexperienceRow[i].querySelector('.end_Date').value;
+        let workexperienceStartDate = workexperienceRow[i].querySelector('.start-date').value;
+        let workexperienceEndDate = workexperienceRow[i].querySelector('.end-date').value;
+        console.log(resume_workexperience_lid)
 
         let checkWorkExp = tabledatacheck(workexperienceType);
         let checkUniversity = tabledatacheck(workexperienceUniversity);
-        let checkProgram = tabledatacheck(workexperienceProgram);
         let checkSubjetTaught = tabledatacheck(workexperienceSubjectTaught);
-        let checkWorkExpStatus = tabledatacheck(workexperienceStatus);
-        let checkWorkExpPadagogy = tabledatacheck(workexperiencePadagogy);
-        let checkWorkExpOther = tabledatacheck(workexperienceOther);
         let checkWorkExpStart = tabledatacheck(workexperienceStartDate);
         let checkWorkExpEnd = tabledatacheck(workexperienceEndDate);
 
@@ -6960,30 +7051,19 @@
           workexperienceRow[i].querySelector('.work-experience-type').classList.add('input-border');
           return;
         } else if (checkUniversity == false) {
-          workexperienceRow[i].querySelector('.employeeName').classList.add('input-border');
-          return;
-        } else if (checkProgram == false) {
-          workexperienceRow[i].querySelector('.description').classList.add('input-border');
+          workexperienceRow[i].querySelector('.employeer-name').classList.add('input-border');
           return;
         } else if (checkSubjetTaught == false) {
           workexperienceRow[i].querySelector('.responsibility').classList.add('input-border');
           return;
-        } else if (checkWorkExpStatus == false) {
-          workexperienceRow[i].querySelector('.status').classList.add('input-border');
-          return;
-        } else if (checkWorkExpPadagogy == false) {
-          workexperienceRow[i].querySelector('.padagogy').classList.add('input-border');
-          return;
-        } else if (checkWorkExpOther == false) {
-          workexperienceRow[i].querySelector('.other').classList.add('input-border');
-          return;
         } else if (checkWorkExpStart == false) {
-          workexperienceRow[i].querySelector('.start_Date').classList.add('input-border');
+          workexperienceRow[i].querySelector('.start-date').classList.add('input-border');
           return;
         } else if (checkWorkExpEnd == false) {
-          workexperienceRow[i].querySelector('.end_Date').classList.add('input-border');
+          workexperienceRow[i].querySelector('.end-date').classList.add('input-border');
           return;
         }
+
 
 
         let workexperience_type = 0;
@@ -6996,16 +7076,16 @@
         let start_date = changeDateFormat(workexperienceStartDate)
         let end_date = changeDateFormat(workexperienceEndDate)
 
-        let Status;
-        if (workexperienceStatus == "current") {
-          Status = true
-        } else {
-          Status = false
-        }
+        // let Status;
+        // if (workexperienceStatus == "current") {
+        //   Status = true
+        // } else {
+        //   Status = false
+        // }
 
         object = {
-          resume_experience_lid: resume_experience_lid,
           resume_lid: resume_lid,
+          resume_experience_lid: resume_workexperience_lid,
           experience_type_lid: workexperience_type,
           employer_name: workexperienceUniversity,
           designation: workexperienceDesignationType,
@@ -7014,7 +7094,7 @@
           start_date: start_date,
           end_date: end_date,
           responsibilities: workexperienceSubjectTaught,
-          is_current: Status,
+          is_current: false,
           padagogy: workexperiencePadagogy,
           duration: workexperienceDuration
         }
@@ -7034,14 +7114,15 @@
         },
         body: JSON.stringify(workexperienceTableData)
       }
-      let fetchRes = fetch('/update-workexperience-details', options);
+      let fetchRes = fetch('${pageContext.request.contextPath}/update-workexperience-details', options);
       fetchRes.then(success => {
         if (success.status == 200) {
           document.querySelector('.workexperience-modal').classList.add('d-none');
           document.querySelector('#body').classList.remove('d-none');
-          document.getElementById('main-loader').classList.add('d-none')
+          document.getElementById('main-loader').classList.add('d-none');
           document.location.reload();
         } else {
+          document.getElementById('main-loader').classList.add('d-none');
           alert('Check workexperience details');
         }
       })
@@ -7062,7 +7143,7 @@
       if (workexperienceDataDB == 1) {
 
         $.ajax({
-          url: '/get-workexperience-type',
+          url: '${pageContext.request.contextPath}/get-workexperience-type',
           type: 'get',
           success: function (response) {
             for (let expType of response) {
@@ -7076,7 +7157,7 @@
         })
 
         $.ajax({
-            url: '/get-workexperience-designation-type',
+            url: '${pageContext.request.contextPath}/get-workexperience-designation-type',
             type: 'get',
             success: function (response) {
               for (let desig of response) {
@@ -7101,12 +7182,13 @@
     function editWorkExperienceDetail(id) {
 
 
+
       if (resumeinfo.resume_experience != null) {
         for (expedit of resumeinfo.resume_experience) {
           if (expedit.resume_experience_lid == id) {
             let table = `
-                    <div class="position-relative workexperience_delete_btn d-flex" style="cursor: pointer;">
-<div class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1 container " data-lid = "\${expedit.resume_experience_lid}">
+            <div class="position-relative workexperience_delete_btn d-flex" style="cursor: pointer;">
+         <div class="workexperience-row px-3 px-sm-4 px-lg-4 mt-1 container" data-lid="\${expedit.resume_experience_lid}">
         <div class="row ">
 
           <div class="col-12 col-md-12 col-lg-6 col-sm-12 pt-3">
@@ -7116,7 +7198,6 @@
               </div>
               <div class="col-md-9">
                 <select class="work-experience-type form-control" value="\${expedit.abbr}" >
-                 <option value disabled selected>--Select--</option>
                  \${workexperienceType}
                 </select>
               </div>
@@ -7124,48 +7205,47 @@
             
             <div class="row p-2">
               <div class="col-md-3 ">
-                <p class="h6"> University / Institute:<span class="required">*</span></p>
+                <p class="h6 org-title">Organization name:<span class="required">*</span></p>
               </div>
               <div class="col-md-9 ">
-                <input class="form-control employeeName" value=\${expedit.employer_name}  type="text"/>
+                <input class="form-control employeer-name" value="\${expedit.employer_name}" type="text"/>
               </div>
             </div>
             
-            <div class="row p-2">
+            <div class="row p-2 workexperience-program-div d-none">
               <div class="col-md-3 ">
                 <p class="h6"> Program:<span class="required">*</span></p>
               </div>
               <div class="col-md-9 ">
-                <input class="form-control description" value="\${expedit.description}" type="text"/>
+                <input class="form-control description"  value="\${expedit.description}" type="text"/>
               </div>
             </div>
+
             <div class="row p-3">
               <div class="col-md-3 ">
-                <p class="h6">Subject Taught:<span class="required">*</span></p>
+                <p class="h6 res-title">Responsibility:<span class="required">*</span></p>
               </div>
               <div class="col-md-9 ">
-                <input class="form-control responsibility" value="\${expedit.responsibilities}" type="text"/>
+                <input class="form-control responsibility" value="\${expedit.responsibilities}"  type="text"/>
               </div>
             </div>
 
             <div class="row p-2">
               <div class="col-md-3 ">
                 <p class="h6">Status : <span class="required">*</span></p>
-              </div>
-              <div class="col-md-9">
-                <select class="status form-control" >
-                 <option value="Current">Current</option>
-                 <option value="Past">Past</option>
-                </select>
-              </div>
+             </div>
+                <div class="col-md-9">
+              <input type="checkbox" class ="workexperience-status" name="workexperience-status">
+              <label for="workexperience-status">Currently Working</label>
+             </div>
             </div>
 
-            <div class="row p-3 ">
+            <div class="row p-3 workexperience-padagogy-div d-none">
               <div class="col-md-3 ">
                 <p class="h6">Padagogy:</p>
               </div>
               <div class="col-md-9 ">
-                <input class="form-control padagogy" value="\${expedit.padagogy}" type="text"/>
+                <input class="form-control padagogy" value="\${expedit.padagogy}"  type="text"/>
               </div>
             </div>
           </div>
@@ -7176,56 +7256,60 @@
                 <p class="h6">Designation:<span class="required">*</span></p>
               </div>
               <div class="col-md-9 ">
-                <select class="form-control designation-title" id="designation" value="\${expedit.designation_lid}">
-                 <option value="0" disabled selected>--Select--</option>
+                <select class="form-control designation-title" id="designation">
+                 <option value disabled selected>--Select--</option>
                  \${workexperienceDesignationType}
                 </select>
               </div>
             </div>
-            <div class="row p-3">
+
+            <div class="row p-3 workexperience-other-div d-none">
               <div class="col-md-3">
                 <p class="h6">Other:  <span class="required">*</span></p>
               </div>
               <div class="col-md-9">
-                <input class="form-control other"  value="\${expedit.other}" type="text"/>
+                <input class="form-control other"  type="text"/>
               </div>
             </div>
+
             <div class="row p-3">
               <div class="col-md-3">
                 <p class="h6">Start Date:  <span class="required">*</span></p>
               </div>
               <div class="col-md-9">
-                <input class="form-control start_Date" value="\${expedit.start_date}" type="date"/>
+                <input class="form-control start-date"  value="\${expedit.start_date}"  type="date"/>
               </div>
             </div>
-            <div class="row p-3">
+
+            <div class="row p-3 workexperience-end-date-div">
               <div class="col-md-3 ">
                 <p class="h6">End Date:  <span class="required">*</span></p>
               </div>
               <div class="col-md-9">
-                <input class="form-control end_Date"  value="\${expedit.end_date}" type="date"/>
+                <input class="form-control end-date" value="\${expedit.end_date}"   type="date"/>
               </div>
             </div>
+
             <div class="row p-3">
               <div class="col-md-3 ">
-                <p class="h6">Teaching Duration: </p>
+                <p class="h6"> Duration: </p>
               </div>
               <div class="col-md-9">
-                <input class="form-control durationOfTeaching" value="\${expedit.duration}" type="text"/>
+               <input class="form-control duration-of-teaching" id="duration-of-teaching" value="\${expedit.duration}" type="text" value="0day" readonly/>
+               <span class="duration-of-teaching-message text-success" ></span>
               </div>
             </div>
-   
         </div>
-      
         </div>
         <hr style="height: 5px;">
-      <div id="delete_btn_workexperience_symbol" class="d-none d-flex justify-content-center align-items-center delete_btn_workexperience_symbol">
+      <div id="delete_btn_workexperience_symbol" data-experiencedeleteid="\${id}"  class="d-none d-flex justify-content-center align-items-center delete_btn_workexperience_symbol">
        <i class="fa-solid fa-trash text-danger fa-2x"></i>
        </div>
-       
       </div>`
 
             document.querySelector('.workexperience-data').insertAdjacentHTML("beforeend", table);
+            document.querySelector('.work-experience-type').value = expedit.abbr;
+            document.querySelector('.designation-title').value = expedit.designation;
 
           }
         }
@@ -7235,17 +7319,78 @@
       document.querySelector('.workexperience-modal').classList.remove('d-none');
     }
 
-    function resumeworkexperienceaddbtn() {
+    document.querySelector('.workexperience-data').addEventListener('change', function (e) {
+      let target = e.target;
+      let startDateInput = findClosest(e.target, 'workexperience-row').querySelector('.start-date');
+      let endDateInput = findClosest(e.target, 'workexperience-row').querySelector('.end-date');
+      let durationValue = findClosest(e.target, 'workexperience-row').querySelector('.duration-of-teaching');
+      let durationMessage = findClosest(e.target, 'workexperience-row').querySelector(
+        '.duration-of-teaching-message');
+      let difference = Math.abs((new Date(dateFormatCalculation(endDateInput.value))) - (new Date(
+        dateFormatCalculation(startDateInput.value))))
+      let diffDays = Math.ceil(difference / (1000 * 60 * 60 * 24));
+      let diffmonths = Math.floor(diffDays / 31);
+      let diffyears = Math.floor(diffmonths / 12);
 
+      if (target.classList.contains('workexperience-status')) {
+        let closestParent = findClosest(e.target, 'workexperience-row').querySelector(
+          '.workexperience-end-date-div');
+        let mainParent = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-status');
+        if (mainParent.checked == true) {
+          closestParent.classList.add('d-none');
+          durationMessage.innerHTML = "Duration is calculated till present date";
+          endDateInput.value = today //currentdate;
+        } else {
+          closestParent.classList.remove('d-none');
+          durationMessage.innerHTML = " ";
+          endDateInput.value = ''
+        }
+      }
+
+      if (target.classList.contains('designation-title')) {
+        let closestParent = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-other-div');
+        if (target.value == 'Other') {
+          closestParent.classList.remove('d-none');
+        } else {
+          closestParent.classList.add('d-none');
+        }
+      }
+
+      if (target.classList.contains('work-experience-type')) {
+        let orgTitle = findClosest(e.target, 'workexperience-row').querySelector('.org-title');
+        let program1 = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-program-div');
+        let resTitle = findClosest(e.target, 'workexperience-row').querySelector('.res-title');
+        let padagogy1 = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-padagogy-div');
+
+        if (target.value == 'teach_exp') {
+          orgTitle.innerHTML = 'University / Institute <span class="required">*</span>'
+          program1.classList.remove('d-none')
+          resTitle.innerHTML = 'Subject Taught <span class="required">*</span>'
+          padagogy1.classList.remove('d-none')
+        } else {
+          orgTitle.innerHTML = 'Organization <span class="required">*</span>'
+          program1.classList.add('d-none')
+          resTitle.innerHTML = 'Responsibility <span class="required">*</span>'
+          padagogy1.classList.add('d-none')
+        }
+      }
+
+      if ((startDateInput.value).length != 0 && (endDateInput.value).length != 0) {
+        console.log(diffDays)
+        durationValue.value = diffyears + "-Years i.e " + diffmonths + "-Months i.e " + diffDays + "-Days"
+      }
+
+    });
+
+    function resumeworkexperienceaddbtn() {
 
       document.querySelector('.workexperience-data-insert').innerHTML = "";
       document.querySelector('.workexperience-modal-insert').classList.remove('d-none');
       document.querySelector('#body').classList.add('d-none');
 
-      // let currentDate = getCurrentDate();
       let table = `<div class="position-relative workexperience_delete_btn d-flex" style="cursor: pointer;">
 
- <div class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1 container ">
+ <div class="workexperience-row px-3 px-sm-4 px-lg-4 mt-1 container ">
          <div class="row ">
 
            <div class="col-12 col-md-12 col-lg-6 col-sm-12 pt-3">
@@ -7255,7 +7400,6 @@
                </div>
                <div class="col-md-9">
                  <select class="work-experience-type form-control" >
-                  <option value disabled selected>--Select--</option>
                   \${workexperienceType}
                  </select>
                </div>
@@ -7263,14 +7407,14 @@
              
              <div class="row p-2">
                <div class="col-md-3 ">
-                 <p class="h6"> University / Institute:<span class="required">*</span></p>
+                 <p class="h6 org-title">Organization name:<span class="required">*</span></p>
                </div>
                <div class="col-md-9 ">
-                 <input class="form-control employeeName"  type="text"/>
+                 <input class="form-control employeer-name"  type="text"/>
                </div>
              </div>
              
-             <div class="row p-2">
+             <div class="row p-2 workexperience-program-div d-none">
                <div class="col-md-3 ">
                  <p class="h6"> Program:<span class="required">*</span></p>
                </div>
@@ -7278,9 +7422,10 @@
                  <input class="form-control description" type="text"/>
                </div>
              </div>
+
              <div class="row p-3">
                <div class="col-md-3 ">
-                 <p class="h6">Subject Taught:<span class="required">*</span></p>
+                 <p class="h6 res-title">Responsibility:<span class="required">*</span></p>
                </div>
                <div class="col-md-9 ">
                  <input class="form-control responsibility"  type="text"/>
@@ -7290,16 +7435,14 @@
              <div class="row p-2">
                <div class="col-md-3 ">
                  <p class="h6">Status : <span class="required">*</span></p>
-               </div>
-               <div class="col-md-9">
-                 <select class="status form-control" >
-                  <option value="Current">Current</option>
-                  <option value="Past">Past</option>
-                 </select>
-               </div>
+              </div>
+                 <div class="col-md-9">
+               <input type="checkbox" class ="workexperience-status" name="workexperience-status">
+               <label for="workexperience-status">Currently Working</label>
+              </div>
              </div>
 
-             <div class="row p-3 ">
+             <div class="row p-3  workexperience-padagogy-div d-none">
                <div class="col-md-3 ">
                  <p class="h6">Padagogy:</p>
                </div>
@@ -7321,7 +7464,8 @@
                  </select>
                </div>
              </div>
-             <div class="row p-3 ">
+
+             <div class="row p-3 workexperience-other-div d-none">
                <div class="col-md-3">
                  <p class="h6">Other:  <span class="required">*</span></p>
                </div>
@@ -7329,28 +7473,32 @@
                  <input class="form-control other"  type="text"/>
                </div>
              </div>
+
              <div class="row p-3">
                <div class="col-md-3">
                  <p class="h6">Start Date:  <span class="required">*</span></p>
                </div>
                <div class="col-md-9">
-                 <input class="form-control start_Date" type="date"/>
+                 <input class="form-control start-date" type="date"/>
                </div>
              </div>
-             <div class="row p-3">
+
+             <div class="row p-3 workexperience-end-date-div">
                <div class="col-md-3 ">
                  <p class="h6">End Date:  <span class="required">*</span></p>
                </div>
                <div class="col-md-9">
-                 <input class="form-control end_Date" id="endMaxDate"  type="date"/>
+                 <input class="form-control end-date" id="endMaxDate"  type="date"/>
                </div>
              </div>
+
              <div class="row p-3">
                <div class="col-md-3 ">
-                 <p class="h6">Teaching Duration: </p>
+                 <p class="h6"> Duration: </p>
                </div>
                <div class="col-md-9">
-                 <input class="form-control durationOfTeaching" id="durationOfTeaching" type="text"/>
+                <input class="form-control duration-of-teaching" id="duration-of-teaching" type="text" value="0day" readonly/>
+                <span class="duration-of-teaching-message text-success" ></span>
                </div>
              </div>
     
@@ -7371,12 +7519,79 @@
     }
 
 
+    let today = new Date().toISOString().split('T')[0];
+
+
+
+    document.querySelector('.workexperience-data-insert').addEventListener('change', function (e) {
+      let target = e.target;
+      let startDateInput = findClosest(e.target, 'workexperience-row').querySelector('.start-date');
+      let endDateInput = findClosest(e.target, 'workexperience-row').querySelector('.end-date');
+      let durationValue = findClosest(e.target, 'workexperience-row').querySelector('.duration-of-teaching');
+      let durationMessage = findClosest(e.target, 'workexperience-row').querySelector(
+        '.duration-of-teaching-message');
+      let difference = Math.abs((new Date(dateFormatCalculation(endDateInput.value))) - (new Date(
+        dateFormatCalculation(startDateInput.value))))
+      let diffDays = Math.ceil(difference / (1000 * 60 * 60 * 24));
+      let diffmonths = Math.floor(diffDays / 31);
+      let diffyears = Math.floor(diffmonths / 12);
+
+      if (target.classList.contains('workexperience-status')) {
+        let closestParent = findClosest(e.target, 'workexperience-row').querySelector(
+          '.workexperience-end-date-div');
+        let mainParent = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-status');
+        if (mainParent.checked == true) {
+          closestParent.classList.add('d-none');
+          durationMessage.innerHTML = "Duration is calculated till present date";
+          endDateInput.value = today //currentdate;
+        } else {
+          closestParent.classList.remove('d-none');
+          durationMessage.innerHTML = "";
+          endDateInput.value = ''
+        }
+      }
+
+      if (target.classList.contains('designation-title')) {
+        let closestParent = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-other-div');
+        if (target.value == 'Other') {
+          closestParent.classList.remove('d-none');
+        } else {
+          closestParent.classList.add('d-none');
+        }
+      }
+
+      if (target.classList.contains('work-experience-type')) {
+        let orgTitle = findClosest(e.target, 'workexperience-row').querySelector('.org-title');
+        let program1 = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-program-div');
+        let resTitle = findClosest(e.target, 'workexperience-row').querySelector('.res-title');
+        let padagogy1 = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-padagogy-div');
+
+        if (target.value == 'teach_exp') {
+          orgTitle.innerHTML = 'University / Institute <span class="required">*</span>'
+          program1.classList.remove('d-none')
+          resTitle.innerHTML = 'Subject Taught <span class="required">*</span>'
+          padagogy1.classList.remove('d-none')
+        } else {
+          orgTitle.innerHTML = 'Organization <span class="required">*</span>'
+          program1.classList.add('d-none')
+          resTitle.innerHTML = 'Responsibility <span class="required">*</span>'
+          padagogy1.classList.add('d-none')
+        }
+      }
+
+      if ((startDateInput.value).length != 0 && (endDateInput.value).length != 0) {
+        console.log(diffDays)
+        durationValue.value = diffyears + "-Years i.e " + diffmonths + "-Months i.e " + diffDays + "-Days"
+      }
+
+    });
+
     document.querySelector('.workexperience-add-button').addEventListener('click', function () {
 
       let table = `
-<div class="position-relative workexperience_delete_btn d-flex" style="cursor: pointer;">
+      <div class="position-relative workexperience_delete_btn d-flex" style="cursor: pointer;">
 
-<div class="workExperience-row px-3 px-sm-4 px-lg-4 mt-1 container " >
+<div class="workexperience-row px-3 px-sm-4 px-lg-4 mt-1 container ">
         <div class="row ">
 
           <div class="col-12 col-md-12 col-lg-6 col-sm-12 pt-3">
@@ -7385,8 +7600,7 @@
                 <p class="h6">Experience Type: <span class="required">*</span></p>
               </div>
               <div class="col-md-9">
-                <select class="work-experience-type form-control exp"  data-key="workExperienceType">
-                 <option value disabled selected>--Select--</option>
+                <select class="work-experience-type form-control" >
                  \${workexperienceType}
                 </select>
               </div>
@@ -7394,48 +7608,47 @@
             
             <div class="row p-2">
               <div class="col-md-3 ">
-                <p class="h6"> University / Institute:<span class="required">*</span></p>
+                <p class="h6 org-title">Organization name:<span class="required">*</span></p>
               </div>
               <div class="col-md-9 ">
-                <input class="form-control employer-name exp" type="text" data-key="employer-name"/>
+                <input class="form-control employeer-name"  type="text"/>
               </div>
             </div>
             
-            <div class="row p-2 program">
+            <div class="row p-2 workexperience-program-div d-none">
               <div class="col-md-3 ">
                 <p class="h6"> Program:<span class="required">*</span></p>
               </div>
               <div class="col-md-9 ">
-                <input class="form-control description exp" type="text" data-key="employer-name"/>
+                <input class="form-control description" type="text"/>
               </div>
             </div>
+
             <div class="row p-3">
               <div class="col-md-3 ">
-                <p class="h6">Subject Taught:<span class="required">*</span></p>
+                <p class="h6 res-title">Responsibility:<span class="required">*</span></p>
               </div>
               <div class="col-md-9 ">
-                <input class="form-control responsibility exp"  type="text"/>
+                <input class="form-control responsibility"  type="text"/>
               </div>
             </div>
 
             <div class="row p-2">
               <div class="col-md-3 ">
                 <p class="h6">Status : <span class="required">*</span></p>
-              </div>
-              <div class="col-md-9">
-                <select class="status form-control exp" >
-                 <option value="Current">Current</option>
-                 <option value="Past">Past</option>
-                </select>
-              </div>
+             </div>
+                <div class="col-md-9">
+              <input type="checkbox" class ="workexperience-status" name="workexperience-status">
+              <label for="workexperience-status">Currently Working</label>
+             </div>
             </div>
 
-            <div class="row p-3 ">
+            <div class="row p-3 workexperience-padagogy-div d-none">
               <div class="col-md-3 ">
                 <p class="h6">Padagogy:</p>
               </div>
               <div class="col-md-9 ">
-                <input class="form-control padagogy exp"  type="text"/>
+                <input class="form-control padagogy"  type="text"/>
               </div>
             </div>
           </div>
@@ -7446,42 +7659,47 @@
                 <p class="h6">Designation:<span class="required">*</span></p>
               </div>
               <div class="col-md-9 ">
-                <select class="form-control designation-title exp" id="designation">
+                <select class="form-control designation-title" id="designation">
                  <option value disabled selected>--Select--</option>
                  \${workexperienceDesignationType}
                 </select>
               </div>
             </div>
-            <div class="row p-3 d-none ">
+
+            <div class="row p-3 workexperience-other-div d-none">
               <div class="col-md-3">
                 <p class="h6">Other:  <span class="required">*</span></p>
               </div>
               <div class="col-md-9">
-                <input class="form-control other exp"  type="text"/>
+                <input class="form-control other"  type="text"/>
               </div>
             </div>
+
             <div class="row p-3">
               <div class="col-md-3">
                 <p class="h6">Start Date:  <span class="required">*</span></p>
               </div>
               <div class="col-md-9">
-                <input class="form-control start_Date exp" type="date"/>
+                <input class="form-control start-date" type="date"/>
               </div>
             </div>
-            <div class="row p-3">
+
+            <div class="row p-3 workexperience-end-date-div">
               <div class="col-md-3 ">
                 <p class="h6">End Date:  <span class="required">*</span></p>
               </div>
               <div class="col-md-9">
-                <input class="form-control end_Date exp" id="endMaxDate"  type="date"/>
+                <input class="form-control end-date" id="endMaxDate"  type="date"/>
               </div>
             </div>
+
             <div class="row p-3">
               <div class="col-md-3 ">
-                <p class="h6">Teaching Duration: </p>
+                <p class="h6"> Duration: </p>
               </div>
               <div class="col-md-9">
-                <input class="form-control durationOfTeaching" id="durationOfTeaching" type="text"/>
+               <input class="form-control duration-of-teaching" id="duration-of-teaching" type="text" value="0day" readonly/>
+               <span class="duration-of-teaching-message text-success" ></span>
               </div>
             </div>
    
@@ -7498,6 +7716,7 @@
       document.querySelector('.workexperience-data-insert').insertAdjacentHTML("beforeend", table);
     });
 
+
     document.addEventListener('mouseover', function () {
       let deleteButtonClick = document.querySelectorAll('.delete_btn_workexperience_symbol')
       let deleteQualification = document.querySelectorAll('.workexperience_delete_btn');
@@ -7508,8 +7727,33 @@
         deleteQualification[i].addEventListener('mouseleave', function () {
           deleteQualification[i].querySelector('.delete_btn_workexperience_symbol').classList.add('d-none');
         });
+        let status = 400;
         deleteButtonClick[i].addEventListener('click', function () {
-          this.parentElement.parentElement.remove()
+          let id = this.dataset.experiencedeleteid;
+          if (id != null) {
+            fetch('${pageContext.request.contextPath}/delete-experience', {
+                method: "POST",
+                body: id,
+                headers: {
+
+                  "Content-Type": "application/json; charset=UTF-8",
+                }
+              })
+              .then(response => status = response.status)
+              .then(response => {
+                if (status === 200) {
+
+                  this.parentElement.parentElement.remove()
+                  document.location.reload()
+
+                } else {
+                  console.log("Error")
+                }
+              })
+              .catch(exception => console.log(exception));
+          } else {
+            this.parentElement.parentElement.remove();
+          }
         });
       }
     })
@@ -7525,7 +7769,7 @@
     //           closestParent.classList.remove('d-none');
     //           closestParentProgram.classList.remove('d-none');
     //           universityOrOrg.innerHTML="University / Institute:<span class='required'>*</span>";
-    //           responseOrSubjetTaught.innerHTML ="Subject Taught:<span class='required'>*</span>";
+    //           responseOrSubjetTaught.innerHTML ="Responsibility:<span class='required'>*</span>";
 
     //         } else {
     //           closestParent.classList.add('d-none');
