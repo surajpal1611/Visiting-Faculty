@@ -60,10 +60,12 @@ public class UserRestController {
 
     @PostMapping(value = "/update-personal-details")
     public ResponseEntity<?> updatePersonalDetails(@RequestBody String personalDetailsData) {
+        System.out.println("Personal detail Update controller : "+personalDetailsData);
 
         String json = jsonchk.UserJsonCheck(personalDetailsData);
         if (json != null) {
             Object updatePersonalDetails = userDaoInterface.updatePersonalDetails(json);
+            System.out.println("sdfvgws"+updatePersonalDetails);
             if (updatePersonalDetails == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }

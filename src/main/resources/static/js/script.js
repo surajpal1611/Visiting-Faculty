@@ -424,7 +424,12 @@ function personalDetailCityValidation(res) {
 function personalDetailPincodeValidation(res) {
   if (checkLength(res) > 3) {
     if (isCharNumber(res)) {
+      if(res.startsWith(1))
+      {
       condition = true;
+      } else {
+        condition = false;
+      }
     } else {
       document.getElementById("pincode-message").innerHTML = "Only Numbers are allowed";
       condition = false;
@@ -878,7 +883,7 @@ function dynamiCheckSpecialChar(value, message) {
 function dynamicLengthCheck(value, message) {
   document.getElementById(message).innerHTML = '';
   let check = false;
-  if (value.length > 3) {
+  if (value.length > 2) {
     check = true;
   } else {
     document.getElementById(message).innerHTML = 'Invalid';
@@ -1053,6 +1058,28 @@ function dynamicTempEmail(value, message) {
     checkit = true;
   }
   return checkit;
+}
+
+function dynamicPin(res, message) {
+  document.getElementById(message).innerHTML = "";
+  if (checkLength(res) > 3) {
+    if (isCharNumber(res)) {
+      if(res.charAt(0) != '0')
+      {
+      condition = true;
+      } else {
+        document.getElementById(message).innerHTML = "Invalid";
+        condition = false;
+      }
+    } else {
+      document.getElementById(message).innerHTML = "Only Numbers are allowed";
+      condition = false;
+    }
+  } else {
+    document.getElementById(message).innerHTML = "Invalid length";
+    condition = false;
+  }
+  return condition;
 }
 
 

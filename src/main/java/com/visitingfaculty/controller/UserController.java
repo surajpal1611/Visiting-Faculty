@@ -55,7 +55,7 @@ public class UserController {
     public String logout(HttpSession httpSession) {
 
         httpSession.invalidate();
-        return "login";
+        return "redirect:/login";
     }
 
     @GetMapping("/visiting-faculty-applications")
