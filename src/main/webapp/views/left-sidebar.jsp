@@ -13,6 +13,10 @@
             <li><img src="${pageContext.request.contextPath}/icons/programs.png" class="ps-3 pe-2"> Resume</li>
         </a>
 
+        <a href="${pageContext.request.contextPath}/faculty-reg" class="offset-list-item-link">
+            <li><img src="${pageContext.request.contextPath}/icons/admin.png" class="ps-3 pe-2"> Add Faculty</li>
+        </a>
+
         <a href="${pageContext.request.contextPath}/logout" class="offset-list-item-link">
             <li><img src="${pageContext.request.contextPath}/icons/logout.png" class="ps-3 pe-2"> Logout</li>
         </a>

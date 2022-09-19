@@ -81,4 +81,18 @@ public class UserController {
         return "performa-page";
     }
 
+    @GetMapping("/faculty-reg")
+    public String getNewFaculty() {
+        return "faculty-reg";
+    }
+
+    @GetMapping("/view-resume")
+    public String viewResume(@RequestParam(value = "resume_lid") int resume_lid,Model model) {
+        User user = userDaoInterface.getUserByResume(resume_lid);
+        model.addAttribute("resume_lid",resume_lid);
+        model.addAttribute("user_lid", user.getId());
+        model.addAttribute("user_id", user.getUser_id());
+        return "view-resume";
+    }
+
 }

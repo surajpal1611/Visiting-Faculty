@@ -408,8 +408,11 @@
                                             <td>\${obj.name}</td>
                                             <td class="user_id">\${obj.description}</td>
                                             <td>
-                                                <a href="${pageContext.request.contextPath}/resume?resume_lid=\${obj.id}" class="application-preview" style="border:none; outline:none" >
+                                                <a href="${pageContext.request.contextPath}/view-resume?resume_lid=\${obj.id}" class="application-preview" style="border:none; outline:none" >
                                                 <i class="fa-solid fa-eye get-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
+                                                <a  class="" style="border:none; outline:none" >
+                                                <a href="${pageContext.request.contextPath}/resume?resume_lid=\${obj.id}" class="application-preview" style="border:none; outline:none" >
+                                                <i class="fa-solid fa-edit get-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
                                                 <a  class="" style="border:none; outline:none" >
                                             </td>
                                         </tr>`

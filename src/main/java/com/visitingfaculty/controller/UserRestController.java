@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.visitingfaculty.dao.UserDaoInterface;
 import com.visitingfaculty.dto.UserDto;
 import com.visitingfaculty.model.Resume;
+import com.visitingfaculty.model.User;
 import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
 import com.visitingfaculty.service.PasswordService;
 import com.visitingfaculty.service.faculty_service.UserLoginService;
@@ -231,5 +233,17 @@ public class UserRestController {
     // System.out.println(password_hash);
     // return password_hash;
     // }
+
+    @PostMapping("registerationFaculty")
+    public ResponseEntity<?> getRegisterationFactulty(@RequestBody String data,User user) {
+        System.out.println("Registeration Data : "+data);
+        JSONObject registerationJson = new JSONObject(data);
+        String User_id = registerationJson.getString("user_id");
+        String password = registerationJson.getString("password");
+        user.setUser_id(User_id);
+        user.setPassword_hash(password);
+        userDaoInterface.insertUser(user);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
 
 }
