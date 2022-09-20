@@ -146,9 +146,12 @@ public class UserRestController {
 
         if (loginService.verifyPassword(userDto)) {
 
-            Integer user_lid = userDaoInterface.getUserLid(userDto.getUser_id());
-            httpSession.setAttribute("user_lid", user_lid);
-            return ResponseEntity.ok(user_lid);
+            UserDto userDtos = userDaoInterface.getUserLid(userDto.getUser_id());
+            System.out.println("USERDTO" + userDtos);
+            httpSession.setAttribute("user_lid", userDtos.getId());
+            httpSession.setAttribute("user_id", userDtos.getUser_id());
+            httpSession.setAttribute("role", userDtos.getName());
+            return ResponseEntity.ok(userDtos.getUser_id());
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }

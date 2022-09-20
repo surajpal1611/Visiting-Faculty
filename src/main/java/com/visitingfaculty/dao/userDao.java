@@ -14,7 +14,9 @@ import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.visitingfaculty.dto.UserDto;
 import com.visitingfaculty.model.Resume;
 import com.visitingfaculty.model.User;
 import com.visitingfaculty.model.user_bank_details.UserBankAccountType;
@@ -204,10 +206,32 @@ public class userDao implements UserDaoInterface {
     }
 
     @Override
+    @Transactional
     public int insertUser(User user) {
 
         String sql = "insert into public.user( user_id , password_hash) values( ? , ? )";
-        return jdbcTemplate.update(sql, user.getUser_id(), user.getPassword_hash());
+        String sql2 = "insert into user_role( user_lid , role_lid) values( ? , ? )";
+
+        KeyHolder holder = new GeneratedKeyHolder();
+        jdbcTemplate.update(new PreparedStatementCreator() {
+            @Override
+            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+                PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+                ps.setString(1, user.getUser_id());
+                ps.setString(2, user.getPassword_hash());
+                return ps;
+            }
+        }, holder);
+
+        Map<String, Object> id = holder.getKeys();
+        int userId = (int) id.get("id");
+        System.out.println("id>>>>" + userId);
+        if(userId != 0) {
+            
+           return jdbcTemplate.update(sql2, userId, 2);
+
+        }
+        return 0;
     }
 
     @Override
@@ -219,10 +243,13 @@ public class userDao implements UserDaoInterface {
     }
 
     @Override
-    public Integer getUserLid(String user_id) {
-        String sql = "Select id from public.user where user_id = ?";
-        Integer Password = (Integer) jdbcTemplate.queryForObject(sql, Integer.class, user_id);
-        return Password;
+    public UserDto getUserLid(String user_id) {
+        String sql = "Select u.id,u.user_id,r.name from public.user u INNER JOIN user_role ur ON u.id=ur.user_lid INNER JOIN role r ON r.id = ur.role_lid AND u.user_id = ?";
+        // Integer Password = jdbcTemplate.queryForObject(sql, Integer.class, user_id);
+        UserDto userDto =  jdbcTemplate.queryForObject(sql, (rs, rownum) -> {
+			return new UserDto(rs.getInt("id"),rs.getString("user_id"), rs.getString("name"));
+		}, user_id);
+        return userDto;
     }
 
     @Override
@@ -255,8 +282,6 @@ public class userDao implements UserDaoInterface {
     public int insertResume(Resume resume) {
 
         String sql = "insert into resume(user_lid,name,description) values(?,?,?)";
-        // int resumeLid =
-        // jdbcTemplate.update(sql,resume.getUser_lid(),resume.getName(),resume.getDescription(),Integer.class);
         KeyHolder holder = new GeneratedKeyHolder();
         jdbcTemplate.update(new PreparedStatementCreator() {
             @Override

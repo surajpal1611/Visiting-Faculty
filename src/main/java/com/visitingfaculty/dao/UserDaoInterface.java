@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.visitingfaculty.dto.UserDto;
 import com.visitingfaculty.model.Resume;
 import com.visitingfaculty.model.User;
 import com.visitingfaculty.model.user_bank_details.UserBankAccountType;
@@ -65,7 +66,7 @@ public interface UserDaoInterface {
 
     String getPasswordById(String user_id);
 
-    Integer getUserLid(String user_id);
+    UserDto getUserLid(String user_id);
 
     Object getUserResume(int resume_lid);
 

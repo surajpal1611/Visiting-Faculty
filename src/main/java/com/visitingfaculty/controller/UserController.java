@@ -15,8 +15,6 @@ import com.visitingfaculty.model.User;
 
 @Controller
 public class UserController {
-    public static String uploadDirectory = System.getProperty("user.dir");
-
 
     @Autowired
     UserDaoInterface userDaoInterface;
@@ -43,12 +41,19 @@ public class UserController {
     }
 
     @GetMapping("/dashboard")
-    public String getDashboard(HttpSession httpSession) {
+    public String getDashboard(HttpSession httpSession,Model m) {
         // String user_id = (String) httpSession.getAttribute("user_id");
         // System.out.println(user_id);
         // if (user_id != null) {
-            System.out.println(uploadDirectory);
-        return "dashboard";
+        String role = (String) httpSession.getAttribute("role");
+            
+        if (role.equals("Admin")) {
+            return "dashboard";
+        } else if(role.equals("User")) {
+            m.addAttribute("user_id", httpSession.getAttribute("user_id"));
+            return "faculty/dashboard";
+        }
+        return "redirect:/login";
         // }
         // return "redirect:/login";
     }
@@ -57,7 +62,7 @@ public class UserController {
     public String logout(HttpSession httpSession) {
 
         httpSession.invalidate();
-        return "login";
+        return "redirect:/login";
     }
 
     @GetMapping("/visiting-faculty-applications")
