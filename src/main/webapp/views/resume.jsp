@@ -26,9 +26,9 @@
 
     <div id="body" class="container">
 
-      <div class="d-none py-5 d-flex justify-content-center align-items-center">
-        <a class="back-button px-2" href="/visiting-faculty-applications">
-          <a class="py-2 btn-danger">Create Job Application</a>
+      <div class="py-5 d-flex justify-content-center align-items-center">
+        <a href="${pageContext.request.contextPath}/dashboard" class="back-button px-2">
+          <button class="back-button btn py-2 btn-danger">Back</button>
         </a>
         <div class="create-button px-2">
           <button class="create-job-application btn py-2 btn-danger">Create Job Application</button>
@@ -3284,7 +3284,7 @@
             alert('Check');
           }
         })
-      }, 1000)
+      }, 1100)
     });
 
     // ********************************************************Publication Section End***************************************************
