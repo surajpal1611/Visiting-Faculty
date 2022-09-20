@@ -81,7 +81,7 @@
     <jsp:include page="faculty-sidebar.jsp" />
 
     <main class="main">
-        <jsp:include page="../header.jsp" />
+        <jsp:include page="..//header.jsp" />
 
         <div class="main-content">
             <jsp:include page="faculty-dashboard.jsp" />

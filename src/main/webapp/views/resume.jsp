@@ -20,7 +20,7 @@
 
 <body>
   <!-- id(body) of this div is used to hide as well as unhide the resume -->
-  <jsp:include page="left-sidebar.jsp" />
+  <jsp:include page="faculty/faculty-sidebar.jsp" />
   <main class="main">
     <jsp:include page="header.jsp" />
 
@@ -1035,7 +1035,26 @@
     </div>
 
   </main>
+  <div class="modal fade" id="view-resume-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">View Resume</h5>
+          <button type="button" style="border: none;" class="modal2-cancel-button" data-dismiss="modal"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal2-body">
 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal2-cancel-button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="modal-loader d-none" id="main-loader">
     <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -7162,7 +7181,7 @@
             success: function (response) {
               for (let desig of response) {
                 workexperienceDesignationType +=
-                `<li>     
+                  `<li>     
                       <div class="workexperience-li col-md-10 col-sm-10 col-12" data-name="\${desig.name}" data-id="\${desig.id}" >\${desig.name}</div>
                   </li>`
               }
@@ -7392,22 +7411,22 @@
       let target = e.target;
       let designationType = findClosest(e.target, 'workexperience-row').querySelector('.designation-title');
       let designationInput = findClosest(e.target, 'workexperience-row').querySelector('.designation-input');
-      let designationli = findClosest('e.target','workexperience-li')
+      let designationli = findClosest('e.target', 'workexperience-li')
 
-      if(target.classList.contains("designation-input")) {
+      if (target.classList.contains("designation-input")) {
         designationType.classList.remove("d-none");
       } else {
         designationType.classList.add("d-none");
       }
 
-      if(target.classList.contains("workexperience-li")) {
-        console.log('target',target)
+      if (target.classList.contains("workexperience-li")) {
+        console.log('target', target)
         let id = target.dataset.id;
         let name = target.dataset.name;
         designationInput.value = name;
         designationInput.dataset.id = id;
         designationInput.dataset.name = name;
-        console.log('value',name+id);
+        console.log('value', name + id);
         designationType.classList.add("d-none");
       }
 
@@ -7616,22 +7635,22 @@
       let target = e.target;
       let designationType = findClosest(e.target, 'workexperience-row').querySelector('.designation-title');
       let designationInput = findClosest(e.target, 'workexperience-row').querySelector('.designation-input');
-      let designationli = findClosest('e.target','workexperience-li')
+      let designationli = findClosest('e.target', 'workexperience-li')
 
-      if(target.classList.contains("designation-input")) {
+      if (target.classList.contains("designation-input")) {
         designationType.classList.remove("d-none");
       } else {
         designationType.classList.add("d-none");
       }
 
-      if(target.classList.contains("workexperience-li")) {
-        console.log('target',target)
+      if (target.classList.contains("workexperience-li")) {
+        console.log('target', target)
         let id = target.dataset.id;
         let name = target.dataset.name;
         designationInput.value = name;
         designationInput.dataset.id = id;
         designationInput.dataset.name = name;
-        console.log('value',name+id);
+        console.log('value', name + id);
         designationType.classList.add("d-none");
       }
 
@@ -7896,7 +7915,7 @@
 
             } else {
               // document.getElementById('main-loader').classList.add('d-none');
-              alert("Wrong OTP")
+              alert("ERROR")
             }
           })
           .catch(function (error) {

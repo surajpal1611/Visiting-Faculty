@@ -218,9 +218,9 @@ public class UserRestController {
     @PostMapping("get-job-application")
     public ResponseEntity<?> getJobApplication(@RequestBody String data) {
 
-
+        System.out.println(data);
         
-
+        userDaoInterface.createJobApplication(data);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 

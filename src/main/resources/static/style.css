@@ -521,75 +521,12 @@ label {
   }
 }
 
-/* ********************************Styling for Work Experience Modal***************************************/
-
-.full-screen {
-  margin: auto;
-}
-
-.middle-screen {
-  margin-top: 60px;
-}
-
-table thead tr {
-  height: 60px;
-  background: #36304a;
-}
-
-/* 
-.main-content {
-  width: 100%;
- background: linear-gradient(to left, #34373a, #5a626d); 
-  border-radius: 5px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-    0 10px 10px rgba(0, 0, 0, 0.22);
-
-} */
-
-table,
-th,
-td {
-  text-align: center;
-}
-
-th {
-  height: 30px;
-  padding: 15px;
-}
-
-td {
-  height: 50px;
-  vertical-align: bottom;
-  padding: 15px;
-}
-
-.table-head {
-  background-color: transparent;
-}
-
-table-head th {
-  margin: 0 30px !important;
-}
-
-#table-data tr {
-  height: 50px;
-  padding: 30px 0;
-}
-
-#add-button,
-#research-add-button,
-#publication-add-button {
-  padding: 20px;
-}
-
 button {
   border-radius: 25px !important;
 }
 
 
 /* ********************************Styling for Skills Modal***************************************/
-
-
 
 #skill-box {
   background-color: #fff;

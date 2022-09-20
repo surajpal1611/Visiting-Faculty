@@ -367,7 +367,7 @@ public class userDao implements UserDaoInterface {
     @Override
     public Object createJobApplication(String object) {
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
-                .withFunctionName("insert_job_application");
+                .withFunctionName("create_application");
 
         return jdbcCall.executeFunction(Object.class, object);
     }
