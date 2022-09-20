@@ -16,6 +16,7 @@ import com.visitingfaculty.model.User;
 @Controller
 public class UserController {
 
+
     @Autowired
     UserDaoInterface userDaoInterface;
 
