@@ -1,10 +1,7 @@
 package com.visitingfaculty.controller;
 
 import java.util.List;
-
 import javax.servlet.http.HttpSession;
-
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -83,7 +80,6 @@ public class UserRestController {
 
         // if user not exist then we will generatae a random 6 digit token for
         // verification
-        System.out.println(userDto);
 
         httpSession.setAttribute("user_id", userDto.getUser_id());
         password = userDto.getPassword();
@@ -110,7 +106,6 @@ public class UserRestController {
         int tokenGenerated = (int) httpSession.getAttribute("tokenGenerated");
         String user_id = (String) httpSession.getAttribute("user_id");
         String passwordToVerify = password;
-        System.out.println("VERIFY TOKEN>>>>>");
         if (userService.validateToken(tokenToVerify, tokenGenerated, user_id, passwordToVerify)) {
 
             return ResponseEntity.status(HttpStatus.OK).build();
@@ -219,31 +214,22 @@ public class UserRestController {
     @PostMapping("get-job-application")
     public ResponseEntity<?> getJobApplication(@RequestBody String data) {
 
-
-        
-
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    // @PostMapping("/verify-password")
-    // public boolean passwordVerificationTest(@RequestBody String password) {
-
-    // boolean password_hash =
-    // passwordService.verifyPassword("$argon2i$v=19$m=65536,t=22,p=1$IgVmDdUI0nslYj6gsRrGyA$Zvb8lsykt3BN/VQ4PkUrTJSfuNscDaHLV57I3MSeC7M",password);
-    // System.out.println(password_hash);
-    // return password_hash;
-    // }
-
     @PostMapping("registerationFaculty")
-    public ResponseEntity<?> getRegisterationFactulty(@RequestBody String data,User user) {
-        System.out.println("Registeration Data : "+data);
-        JSONObject registerationJson = new JSONObject(data);
-        String User_id = registerationJson.getString("user_id");
-        String password = registerationJson.getString("password");
-        user.setUser_id(User_id);
-        user.setPassword_hash(password);
-        userDaoInterface.insertUser(user);
-        return ResponseEntity.status(HttpStatus.OK).build();
+    public ResponseEntity<?> getRegisterationFactulty(@RequestBody UserDto data,User user) {
+        System.out.println("DATA" + data);
+        if(data.getUser_id() != null) {
+
+            String password_hash = passwordService.encodePassword(data.getPassword());
+            user.setPassword_hash(password_hash);
+            user.setUser_id(data.getUser_id());
+            System.out.println(user.getPassword_hash());
+            userDaoInterface.insertUser(user);
+            return ResponseEntity.status(HttpStatus.OK).build();
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
 }

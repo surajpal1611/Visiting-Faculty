@@ -533,7 +533,7 @@ label {
 
 table thead tr {
   height: 60px;
-  background: #36304a;
+  background: whitesmoke;
 }
 
 /* 
@@ -1139,3 +1139,6 @@ button {
   padding: 3px 8px;
 }
 
+.jobfacultytable{
+  box-shadow: 0px 0px 4px 1px;
+}

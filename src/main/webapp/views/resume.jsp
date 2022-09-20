@@ -1193,9 +1193,16 @@
                         <div class="col-md-5 col-sm-3">
                           <h6>Secondary Contact No.</h6>
                         </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="temp-contact-value">\${personal_details[0].temp_contact_number}\${tempCont}</p>
-                        </div>
+                        <div class="col-md-7 col-sm-9">`
+                        if(personal_details[0].temp_contact_number != "")
+                        {
+                          resume+=  `<p id="temp-contact-value">\${personal_details[0].temp_contact_number}\${tempCont}</p>`
+                        }
+                        else
+                        {
+                          resume+=  `<p id="temp-contact-value">N.A</p>`
+                        }
+                        resume+=`</div>
                       </div>
                     </div>
 
@@ -1222,7 +1229,7 @@
                           <h6>Permanent Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="address-value">\${personal_details[0].address}</p>
+                          <p id="address-value">\${personal_details[1].address}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1230,9 +1237,9 @@
                           <h6 class="temporary-address-heading">Temporary Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">`
-                      if(personal_details[1].address)
+                      if(personal_details[0].address)
                           {
-                         resume+= `<p id="temporary-address-value">\${personal_details[1].address}\${tempAdd}</p>`
+                         resume+= `<p id="temporary-address-value">\${personal_details[0].address}\${tempAdd}</p>`
                           }
                           else
                           {
@@ -2007,6 +2014,7 @@
             document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
             document.getElementById('city').value = editPersonalDetailsForm.get('editCity')
             document.getElementById('pincode').value = editPersonalDetailsForm.get('editPincode')
+            document.getElementById('temp_email').value = (personal_details[0].temp_email)
             document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
               'editTemporaryAddress')
             document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')

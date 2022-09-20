@@ -26,15 +26,93 @@
 
     <div id="body" class="container">
 
-      <!-- <div class="d-none py-5 d-flex justify-content-center align-items-center">
-        <a class="back-button px-2" href="/visiting-faculty-applications">
-          <a class="py-2 btn-danger">Create Job Application</a>
-        </a>
-        <div class="create-button px-2">
-          <button class="create-job-application btn py-2 btn-danger">Create Job Application</button>
-        </div>
-      </div> -->
     </div>
+
+    <!-- ***************************************************Image modal Start************************************************ -->
+
+    <div class="image-preview-modal d-none">
+        <div id="bank-form-area">
+          <div class="container">
+            <div class="d-flex justify-content-center align-items-center my-4">
+              <h2> Image Preview </h2>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+                <img src="download (3).jpg" alt="image-uploaded" id="image-uploaded" class="image-uploaded"
+                  style="width:450px;height:300px;">
+              </div>
+            </div>
+  
+            <div class="d-flex justify-content-center">
+              <button id="image-preview-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- ***************************************************Job Application Start************************************************ -->
+<br>
+    <div class="card card-table faculty-table-body">
+    <div style="background-color: saddlebrown;"
+        class="card-header table-card-header  text-uppercase d-flex align-items-center justify-content-between">
+        <div class="">
+            <h5>Please Fill in Details to Allot Subjects</h5>
+        </div>
+        <div>
+            <button class="btn add-btn ms-auto" type="button"
+                id="add-moreAllottedSubjects"><i class="fas fa-plus"></i></button>
+        </div>
+    </div>
+  
+    <div class="card-body table-responsive">
+        <table class="table jobfacultytable" id="">
+            <thead>
+                <th>Program&nbsp;<span class="text-danger fs-5">*</span></th>
+                <th>Acad Session&nbsp;<span class="text-danger fs-5">*</span></th>
+                <!-- <th>New Subject-?&nbsp;<span class="text-danger fs-5">*</span></th> -->
+                <th>Subject&nbsp;<span class="text-danger fs-5">*</span></th>
+                <th>Date Of Commencement Of Program&nbsp;<span class="text-danger fs-5">*</span></th>
+                <th>Subject Teaching Hours&nbsp;<span class="text-danger fs-5">*</span></th>
+                <th>Rate Per Hour&nbsp;<span class="text-danger fs-5">*</span></th>
+                <th>Total No. of Hours Allotted&nbsp;<span class="text-danger fs-5">*</span></th>
+                <th>No. of Division&nbsp;<span class="text-danger fs-5">*</span></th>
+                <th>Student Count Per Division&nbsp;<span class="text-danger fs-5">*</span></th>                 
+                <th>Subject under AOL / OBE Process&nbsp;<span class="text-danger fs-5">*</span></th>                
+                <th>Action</th>               
+            </thead>
+
+            <tbody class="job-application-body">
+                <tr class='job-tr'>
+                    <td><input class="form-control job-program" type="text"> </td>
+                    <td><input class="form-control job-session" type="text"> </td>
+                    <!-- <td><input class="form-control" type="text"> </td> -->
+                    <td><input class="form-control job-subject" type="text"> </td>
+                    <td><input class="form-control job-date" type="date"> </td>
+                    <td><input class="form-control job-hours" type="text"> </td>
+                    <td><input class="form-control job-rate" type="text"> </td>
+                    <td><input class="form-control job-total-hours" type="text"> </td>
+                    <td><input class="form-control job-division" type="text"> </td>
+                    <td><input class="form-control job-count" type="text"> </td>
+                    <td><select class="form-control job-process">
+                            <option value="0">-Select-</option>
+                            <option value="AOL">AOL</option>
+                            <option value="OBL">OBE</option>
+                        </select> 
+                    </td>
+                    <td><i class="fa-edit fa-solid"></i></i></td>
+                </tr>
+            </tbody>  
+                  
+                         
+        </table>
+           <div class="d-flex justify-content-center">
+               <button id="job-application-cancel-btn" class="btn btn-danger m-4">Cancel</button>
+               <button id="job-application-submit-btn" class="btn btn-success m-4">Submit</button>
+           </div>
+    </div>
+
+    <!-- ***************************************************Job Application End************************************************** -->
 
   <div class="modal-loader d-none" id="main-loader">
     <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -222,7 +300,7 @@
                           <h6>Permanent Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="address-value">\${personal_details[0].address}</p>
+                          <p id="address-value">\${personal_details[1].address}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -230,9 +308,9 @@
                           <h6 class="temporary-address-heading">Temporary Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">`
-                      if(personal_details[1].address)
+                      if(personal_details[0].address)
                           {
-                         resume+= `<p id="temporary-address-value">\${personal_details[1].address}\${tempAdd}</p>`
+                         resume+= `<p id="temporary-address-value">\${personal_details[0].address}\${tempAdd}</p>`
                           }
                           else
                           {
@@ -915,6 +993,114 @@
         console.log("error", error)
       }
     });
+
+    //----------------------------------function to display images---------------------------------------------------
+
+    document.querySelector('#image-preview-cancel-button').addEventListener('click', function (e) {
+      document.getElementById('body').classList.remove('d-none');
+      document.querySelector('.image-preview-modal').classList.add('d-none');
+      document.getElementById("image-uploaded").src = " ";
+    });
+
+    document.querySelector('#body').addEventListener('click', function (e) {
+      console.log(e.target);
+
+      if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains(
+          'award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target
+        .classList.contains('research-certificate-display') || e.target.classList.contains(
+          'professional-certificate-display') || e.target.classList.contains('aadhar-photo-preview') || e.target
+        .classList.contains('pancard-photo-preview') || e.target.classList.contains(
+          'cancelled-cheque-photo-preview')) {
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.image-preview-modal').classList.remove('d-none');
+        document.querySelector(".image-uploaded").src = e.target.dataset.image;
+        console.log(e.target.dataset.image)
+      }
+    })
+
+    //************************************Function's for Job Application Table***************************************************
+
+    //Job Application Table Add Button
+    document.querySelector('.add-btn').addEventListener('click',function(){        
+        let row = `                
+                <tr class='job-tr'>
+                    <td><input class="form-control job-program" type="text"> </td>
+                    <td><input class="form-control job-session" type="text"> </td>
+                    <!-- <td><input class="form-control" type="text"> </td> -->
+                    <td><input class="form-control job-subject" type="text"> </td>
+                    <td><input class="form-control job-date" type="date"> </td>
+                    <td><input class="form-control job-hours" type="text"> </td>
+                    <td><input class="form-control job-rate" type="text"> </td>
+                    <td><input class="form-control job-total-hours" type="text"> </td>
+                    <td><input class="form-control job-division" type="text"> </td>
+                    <td><input class="form-control job-count" type="text"> </td>
+                    <td><select class="form-control job-process">
+                            <option value="0">-Select-</option>
+                            <option value="AOL">AOL</option>
+                            <option value="OBL">OBE</option>
+                        </select> 
+                    </td>
+                    <td><i class="fa-edit fa-solid"></i> <i class="fa-trash fa-solid text-danger delete-row"></td>
+                </tr>`
+
+        document.querySelector('.job-application-body').insertAdjacentHTML('beforeend',row);
+    });
+
+    //Job Application remove Row Button
+    document.querySelector('.faculty-table-body').addEventListener('click',function(e){
+       if(e.target.classList.contains('delete-row'))
+       {
+           e.target.parentElement.parentElement.remove();
+       }
+
+    });
+
+    //Job Application Cancel Button
+    document.querySelector('#job-application-cancel-btn').addEventListener('click',function(){
+        let confurm = confirm('Do you really want to cancel');
+        if(confurm)
+        {
+        location.href = '${pageContext.request.contextPath}/dashboard';
+        }
+    })
+
+    //Job Application Submit Button
+    document.querySelector('#job-application-submit-btn').addEventListener('click',function(){
+     
+     let jobArrar = [];
+     let jobApllicationData = document.querySelectorAll('.job-tr');
+     for(let i=0 ; i<jobApllicationData.length;i++)
+     {
+      let program = jobApllicationData[i].querySelector('.job-program').value;
+      let session = jobApllicationData[i].querySelector('.job-session').value;
+      let subject = jobApllicationData[i].querySelector('.job-subject').value;
+      let date = jobApllicationData[i].querySelector('.job-date').value;
+      let hours = jobApllicationData[i].querySelector('.job-hours').value;
+      let rate = jobApllicationData[i].querySelector('.job-rate').value;
+      let totalhours = jobApllicationData[i].querySelector('.job-total-hours').value;
+      let division = jobApllicationData[i].querySelector('.job-division').value;
+      let count = jobApllicationData[i].querySelector('.job-count').value;
+      let process = jobApllicationData[i].querySelector('.job-process').value;
+      
+      obj = {
+        program:program,
+        session:session,
+        subject:subject,
+        date:date,
+        hours:hours,
+        rate:rate,
+        totalhours:totalhours,
+        division:division,
+        count:count,
+        process:process 
+      }
+      jobArrar.push(obj);
+     }
+     console.log("Array : ",JSON.stringify(jobArrar));
+    })
+
+
+
 
   
   </script>
