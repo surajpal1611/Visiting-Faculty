@@ -20,7 +20,7 @@
 
 <body>
   <!-- id(body) of this div is used to hide as well as unhide the resume -->
-  <jsp:include page="faculty/faculty-sidebar.jsp" />
+  <jsp:include page="left-sidebar.jsp" />
   <main class="main">
     <jsp:include page="header.jsp" />
 

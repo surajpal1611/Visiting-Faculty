@@ -48,7 +48,7 @@ public class UserController {
         // if (user_id != null) {
         String role = (String) httpSession.getAttribute("role");
             
-        if (role.equals("Admin")) {
+        if (role.equals("ROLE_ADMIN")) {
             return "dashboard";
         } else if(role.equals("User")) {
             m.addAttribute("user_id", httpSession.getAttribute("user_id"));
@@ -87,6 +87,11 @@ public class UserController {
     @GetMapping("/performa")
     public String getPerforma() {
         return "performa-page";
+    }
+
+    @GetMapping("/performa-creation")
+    public String getPerformaCreation() {
+        return "performa-creation";
     }
 
     @GetMapping("/faculty-reg")
