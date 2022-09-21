@@ -243,6 +243,7 @@
             <input type="checkbox" name="is_trusted" id="is_trusted"> -->
             <button class="btn btn-dark login-btn"><i class="fas fa-sign-in-alt"></i> Sign In</button>
             <div class="py-2">New User?<a style="text-decoration: none;" href="${pageContext.request.contextPath}/register"> Sign Up</a> </div>
+            <div id="forgot-password" class="d-none"><a class="text-danger" href="#">Forgot your password?</a> </div>
             <!-- <button type="button" class="btn btn-dark test-btn"><i class="fas fa-sign-in-alt"></i> Test Btn</button> -->
           </form>
 
@@ -304,8 +305,10 @@
     
     if(window.location.hash == '#error') {
       document.querySelector('.login-error-alert').classList.remove('d-none')
+      document.querySelector('#forgot-password').classList.remove('d-none')
     } else {
       document.querySelector('.login-error-alert').classList.add('d-none')
+      document.querySelector('#forgot-password').classList.add('d-none')
     }
 
     //DYNAMIC CSS

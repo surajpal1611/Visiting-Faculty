@@ -20,7 +20,7 @@
 
 <body>
   <!-- id(body) of this div is used to hide as well as unhide the resume -->
-  <jsp:include page="faculty/faculty-sidebar.jsp" />
+  <jsp:include page="left-sidebar.jsp" />
   <main class="main">
     <jsp:include page="header.jsp" />
 
@@ -7907,9 +7907,17 @@ console.log('Name',workexperienceDesignationType);
         let data = {
           "create_job_application": []
         }
+
+        let organizationStatus = true
+         
+        if('${organization_lid}' == '1'){
+          organizationStatus = false
+        }
+
         let object = {}
         object.resume_lid = resume_lid
-        object.organization_lid = 2
+        object.organization_lid = '${organization_lid}'
+        object.active = organizationStatus
         data.create_job_application.push(object)
 
         console.log(JSON.stringify(data))
