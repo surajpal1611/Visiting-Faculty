@@ -7907,9 +7907,17 @@ console.log('Name',workexperienceDesignationType);
         let data = {
           "create_job_application": []
         }
+
+        let organizationStatus = true
+         
+        if('${organization_lid}' == '1'){
+          organizationStatus = false
+        }
+
         let object = {}
         object.resume_lid = resume_lid
-        object.organization_lid = 2
+        object.organization_lid = '${organization_lid}'
+        object.active = organizationStatus
         data.create_job_application.push(object)
 
         console.log(JSON.stringify(data))
