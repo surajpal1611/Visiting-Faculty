@@ -22,8 +22,198 @@
     <jsp:include page="header.jsp" />
 
    <div id="performa-creation-div">
+<!-------------------------------------------------------Qualification Table----------------------------------------------------->
+    <div class="card card-table">
+        <div
+            class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
+            <div>
+                <h5>Academic Qualification</h5>
+            </div>
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table">
+                <thead>
+                    <th>Tital</th>
+                    <th>Major Subject</th>                    
+                    <th>University</th>                    
+                    <th>College</th>
+                    <th>percentage</th>
+                    <th>Certificate</th>
+                 </thead>
+                <tbody>                    
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>        
+                </tbody>
+            </table>
+        </div>
+    </div>
+<!----------------------------------------------------------Work Experience---------------------------------------------------------->
+
+<div class="card card-table">
+    <div
+        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
+        <div>
+            <h5>Work Experinece</h5>
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead>
+                <th>Experince Type</th>
+                <th>Key role</th>                    
+                <th>Designation</th>                    
+                <th>Start Date</th>
+                <th>End date</th>
+                <th>Duration</th>
+             </thead>
+            <tbody>                    
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>        
+            </tbody>
+        </table>
+    </div>
+</div>
+<!----------------------------------------------------------Award Table-------------------------------------------------------------->
+
+<div class="card card-table">
+    <div
+        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
+        <div>
+            <h5>Awards </h5>
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead>
+                <th>Award Name</th>
+                <th>Organization</th>                    
+                <th>Organization Type</th>                    
+                <th>Place</th>
+                <th>Recieved date</th>
+                <th>Certificate</th>
+             </thead>
+            <tbody>                    
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>        
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!---------------------------------------------------------Publication Table-------------------------------------------------------->
+
+<div class="card card-table">
+    <div
+        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
+        <div>
+            <h5>Publication </h5>
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead>
+                <th>Role</th>
+                <th>No. of Authors</th>                    
+                <th>Book Title</th>                    
+                <th>Publisher</th>
+                <th>Publication Year</th>
+                <th>Certificate</th>
+             </thead>
+            <tbody>                    
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>        
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!----------------------------------------------------------Research Table---------------------------------------------------------->
+
+<div class="card card-table">
+    <div
+        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
+        <div>
+            <h5>Research </h5>
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead>
+                <th>Title</th>
+                <th>Volume year</th>                    
+                <th>Description</th>                    
+                <th>Category</th>
+                <th>Certificate</th>
+             </thead>
+            <tbody>                    
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>        
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-----------------------------------------------------Profectional Certification---------------------------------------------------->
+
+<div class="card card-table">
+    <div
+        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
+        <div>
+            <h5>Profectional Certification</h5>
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead>
+                <th>Certification Name</th>
+                <th>Recieved Year</th>                    
+                <th>Institution</th>                    
+                <th>Certificate</th>
+             </thead>
+            <tbody>                    
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>        
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!----------------------------------------------------------Performer Table---------------------------------------------------------->
     <div class="card card-table faculty-table-body ">
-        <div style="background-color: saddlebrown;"
+        <div
             class="card-header table-card-header  text-uppercase d-flex align-items-center justify-content-between">
             <div class="">
                 <h5>Please Fill in Details to Allot Subjects</h5>
