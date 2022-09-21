@@ -26,6 +26,65 @@
 
     <div id="body" class="container">
 
+
+      <div class="card card-table faculty-table-body">
+        <div style="background-color: saddlebrown;"
+            class="card-header table-card-header  text-uppercase d-flex align-items-center justify-content-between">
+            <div class="">
+                <h5>Please Fill in Details to Allot Subjects</h5>
+            </div>
+            <div>
+                <button class="btn add-btn ms-auto" type="button"
+                    id="add-moreAllottedSubjects"><i class="fas fa-plus"></i></button>
+            </div>
+        </div>
+      
+        <div class="card-body table-responsive">
+            <table class="table jobfacultytable" id="">
+                <thead>
+                    <th>Program&nbsp;<span class="text-danger fs-5">*</span></th>
+                    <th>Acad Session&nbsp;<span class="text-danger fs-5">*</span></th>
+                    <!-- <th>New Subject-?&nbsp;<span class="text-danger fs-5">*</span></th> -->
+                    <th>Subject&nbsp;<span class="text-danger fs-5">*</span></th>
+                    <th>Date Of Commencement Of Program&nbsp;<span class="text-danger fs-5">*</span></th>
+                    <th>Subject Teaching Hours&nbsp;<span class="text-danger fs-5">*</span></th>
+                    <th>Rate Per Hour&nbsp;<span class="text-danger fs-5">*</span></th>
+                    <th>Total No. of Hours Allotted&nbsp;<span class="text-danger fs-5">*</span></th>
+                    <th>No. of Division&nbsp;<span class="text-danger fs-5">*</span></th>
+                    <th>Student Count Per Division&nbsp;<span class="text-danger fs-5">*</span></th>                 
+                    <th>Subject under AOL / OBE Process&nbsp;<span class="text-danger fs-5">*</span></th>                
+                    <th>Action</th>               
+                </thead>
+    
+                <tbody class="job-application-body">
+                    <tr class='job-tr'>
+                        <td><input class="form-control job-program" type="text"> </td>
+                        <td><input class="form-control job-session" type="text"> </td>
+                        <!-- <td><input class="form-control" type="text"> </td> -->
+                        <td><input class="form-control job-subject" type="text"> </td>
+                        <td><input class="form-control job-date" type="date"> </td>
+                        <td><input class="form-control job-hours" type="text"> </td>
+                        <td><input class="form-control job-rate" type="text"> </td>
+                        <td><input class="form-control job-total-hours" type="text"> </td>
+                        <td><input class="form-control job-division" type="text"> </td>
+                        <td><input class="form-control job-count" type="text"> </td>
+                        <td><select class="form-control job-process">
+                                <option value="0">-Select-</option>
+                                <option value="AOL">AOL</option>
+                                <option value="OBL">OBE</option>
+                            </select> 
+                        </td>
+                        <td><i class="fa-edit fa-solid"></i></i></td>
+                    </tr>
+                </tbody>  
+                      
+                             
+            </table>
+               <div class="d-flex justify-content-center">
+                   <button id="job-application-cancel-btn" class="btn btn-danger m-4">Cancel</button>
+                   <button id="job-application-submit-btn" class="btn btn-success m-4">Submit</button>
+               </div>
+        </div>
     </div>
 
     <!-- ***************************************************Image modal Start************************************************ -->
@@ -52,65 +111,7 @@
       </div>
 
     <!-- ***************************************************Job Application Start************************************************ -->
-<br>
-    <div class="card card-table faculty-table-body">
-    <div style="background-color: saddlebrown;"
-        class="card-header table-card-header  text-uppercase d-flex align-items-center justify-content-between">
-        <div class="">
-            <h5>Please Fill in Details to Allot Subjects</h5>
-        </div>
-        <div>
-            <button class="btn add-btn ms-auto" type="button"
-                id="add-moreAllottedSubjects"><i class="fas fa-plus"></i></button>
-        </div>
-    </div>
-  
-    <div class="card-body table-responsive">
-        <table class="table jobfacultytable" id="">
-            <thead>
-                <th>Program&nbsp;<span class="text-danger fs-5">*</span></th>
-                <th>Acad Session&nbsp;<span class="text-danger fs-5">*</span></th>
-                <!-- <th>New Subject-?&nbsp;<span class="text-danger fs-5">*</span></th> -->
-                <th>Subject&nbsp;<span class="text-danger fs-5">*</span></th>
-                <th>Date Of Commencement Of Program&nbsp;<span class="text-danger fs-5">*</span></th>
-                <th>Subject Teaching Hours&nbsp;<span class="text-danger fs-5">*</span></th>
-                <th>Rate Per Hour&nbsp;<span class="text-danger fs-5">*</span></th>
-                <th>Total No. of Hours Allotted&nbsp;<span class="text-danger fs-5">*</span></th>
-                <th>No. of Division&nbsp;<span class="text-danger fs-5">*</span></th>
-                <th>Student Count Per Division&nbsp;<span class="text-danger fs-5">*</span></th>                 
-                <th>Subject under AOL / OBE Process&nbsp;<span class="text-danger fs-5">*</span></th>                
-                <th>Action</th>               
-            </thead>
 
-            <tbody class="job-application-body">
-                <tr class='job-tr'>
-                    <td><input class="form-control job-program" type="text"> </td>
-                    <td><input class="form-control job-session" type="text"> </td>
-                    <!-- <td><input class="form-control" type="text"> </td> -->
-                    <td><input class="form-control job-subject" type="text"> </td>
-                    <td><input class="form-control job-date" type="date"> </td>
-                    <td><input class="form-control job-hours" type="text"> </td>
-                    <td><input class="form-control job-rate" type="text"> </td>
-                    <td><input class="form-control job-total-hours" type="text"> </td>
-                    <td><input class="form-control job-division" type="text"> </td>
-                    <td><input class="form-control job-count" type="text"> </td>
-                    <td><select class="form-control job-process">
-                            <option value="0">-Select-</option>
-                            <option value="AOL">AOL</option>
-                            <option value="OBL">OBE</option>
-                        </select> 
-                    </td>
-                    <td><i class="fa-edit fa-solid"></i></i></td>
-                </tr>
-            </tbody>  
-                  
-                         
-        </table>
-           <div class="d-flex justify-content-center">
-               <button id="job-application-cancel-btn" class="btn btn-danger m-4">Cancel</button>
-               <button id="job-application-submit-btn" class="btn btn-success m-4">Submit</button>
-           </div>
-    </div>
 
     <!-- ***************************************************Job Application End************************************************** -->
 
