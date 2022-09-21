@@ -1,9 +1,7 @@
 package com.visitingfaculty.controller;
 
 import java.util.List;
-
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.visitingfaculty.dao.UserDaoInterface;
 import com.visitingfaculty.dto.UserDto;
 import com.visitingfaculty.model.Resume;
+import com.visitingfaculty.model.User;
 import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
 import com.visitingfaculty.service.PasswordService;
 import com.visitingfaculty.service.faculty_service.UserLoginService;
@@ -60,10 +59,12 @@ public class UserRestController {
 
     @PostMapping(value = "/update-personal-details")
     public ResponseEntity<?> updatePersonalDetails(@RequestBody String personalDetailsData) {
+        System.out.println("Personal detail Update controller : "+personalDetailsData);
 
         String json = jsonchk.UserJsonCheck(personalDetailsData);
         if (json != null) {
             Object updatePersonalDetails = userDaoInterface.updatePersonalDetails(json);
+            System.out.println("sdfvgws"+updatePersonalDetails);
             if (updatePersonalDetails == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
@@ -79,7 +80,6 @@ public class UserRestController {
 
         // if user not exist then we will generatae a random 6 digit token for
         // verification
-        System.out.println(userDto);
 
         httpSession.setAttribute("user_id", userDto.getUser_id());
         password = userDto.getPassword();
@@ -106,7 +106,6 @@ public class UserRestController {
         int tokenGenerated = (int) httpSession.getAttribute("tokenGenerated");
         String user_id = (String) httpSession.getAttribute("user_id");
         String passwordToVerify = password;
-        System.out.println("VERIFY TOKEN>>>>>");
         if (userService.validateToken(tokenToVerify, tokenGenerated, user_id, passwordToVerify)) {
 
             return ResponseEntity.status(HttpStatus.OK).build();
@@ -218,19 +217,22 @@ public class UserRestController {
     @PostMapping("get-job-application")
     public ResponseEntity<?> getJobApplication(@RequestBody String data) {
 
-        System.out.println(data);
-        
-        userDaoInterface.createJobApplication(data);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    // @PostMapping("/verify-password")
-    // public boolean passwordVerificationTest(@RequestBody String password) {
+    @PostMapping("registerationFaculty")
+    public ResponseEntity<?> getRegisterationFactulty(@RequestBody UserDto data,User user) {
+        System.out.println("DATA" + data);
+        if(data.getUser_id() != null) {
 
-    // boolean password_hash =
-    // passwordService.verifyPassword("$argon2i$v=19$m=65536,t=22,p=1$IgVmDdUI0nslYj6gsRrGyA$Zvb8lsykt3BN/VQ4PkUrTJSfuNscDaHLV57I3MSeC7M",password);
-    // System.out.println(password_hash);
-    // return password_hash;
-    // }
+            String password_hash = passwordService.encodePassword(data.getPassword());
+            user.setPassword_hash(password_hash);
+            user.setUser_id(data.getUser_id());
+            System.out.println(user.getPassword_hash());
+            userDaoInterface.insertUser(user);
+            return ResponseEntity.status(HttpStatus.OK).build();
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
 
 }

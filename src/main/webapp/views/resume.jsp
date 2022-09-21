@@ -1114,7 +1114,7 @@
           let tempAdd = "";
           let tempEmail = "";
 
-          if ((personal_details[0].temp_contact_number).length == 0) {
+          if ( (personal_details[0].temp_contact_number) == null) {
             console.log("LOOP-1")
             tempCont = "N.A"
           }
@@ -1212,9 +1212,16 @@
                         <div class="col-md-5 col-sm-3">
                           <h6>Secondary Contact No.</h6>
                         </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="temp-contact-value">\${personal_details[0].temp_contact_number}\${tempCont}</p>
-                        </div>
+                        <div class="col-md-7 col-sm-9">`
+                        if(personal_details[0].temp_contact_number != "")
+                        {
+                          resume+=  `<p id="temp-contact-value">\${personal_details[0].temp_contact_number}\${tempCont}</p>`
+                        }
+                        else
+                        {
+                          resume+=  `<p id="temp-contact-value">N.A</p>`
+                        }
+                        resume+=`</div>
                       </div>
                     </div>
 
@@ -1241,16 +1248,23 @@
                           <h6>Permanent Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="address-value">\${personal_details[0].address}</p>
+                          <p id="address-value">\${personal_details[1].address}</p>
                         </div>
                       </div>
                       <div class="row py-2">
                         <div class="col-md-5 col-sm-3">
                           <h6 class="temporary-address-heading">Temporary Address </h6>
                         </div>
-                        <div class="col-md-7 col-sm-9">
-                          <p id="temporary-address-value">\${personal_details[1].address}\${tempAdd}
-                          </p>
+                        <div class="col-md-7 col-sm-9">`
+                      if(personal_details[0].address)
+                          {
+                         resume+= `<p id="temporary-address-value">\${personal_details[0].address}\${tempAdd}</p>`
+                          }
+                          else
+                          {
+                            resume+= `<p id="temporary-address-value">N.A</p>`
+                          }
+                        resume+=  `
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1363,8 +1377,8 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">College :</p>
-                              <p class="h5 py-1">percentage :</p>`
+                              <p class="h5 pb-1">College</p>
+                              <p class="h5 py-1">percentage</p>`
               if (qual.abbr == 'phd') {
                 resume += `<p class="h5 py-1">Status </p>`
               }
@@ -1442,9 +1456,9 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Employeer :</p>
-                              <p class="h5 py-1">Key role :</p>
-                              <p class="h5 py-1">Designation :</p>
+                              <p class="h5 pb-1">Employeer </p>
+                              <p class="h5 py-1">Key role </p>
+                              <p class="h5 py-1">Designation </p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                               <p id="">\${exp.employer_name}</p>
@@ -1663,7 +1677,7 @@
                         <div class="col-6 col-md-6 col-lg-6 col-sm-6">
                           <p class="" id="">\${public.publisher}</p>
                           <p class="" id="">\${public.year_of_publication}</p>
-                          <p><i id="publication-certificate-display" data-image="imagedata/\${public.url_path}" class="fa-solid fa-image text-success publication-certificate-display"></i></p>
+                          <p><i id="publication-certificate-display" data-image="imagedata/\${public.publication_url_path}" class="fa-solid fa-image text-success publication-certificate-display"></i></p>
 
                         </div>
                       </div>
@@ -2019,6 +2033,7 @@
             document.getElementById('address').value = editPersonalDetailsForm.get('editAddress')
             document.getElementById('city').value = editPersonalDetailsForm.get('editCity')
             document.getElementById('pincode').value = editPersonalDetailsForm.get('editPincode')
+            document.getElementById('temp_email').value = (personal_details[0].temp_email)
             document.getElementById('temporary-address').value = editPersonalDetailsForm.get(
               'editTemporaryAddress')
             document.getElementById('country').value = editPersonalDetailsForm.get('editCountry')
@@ -2100,6 +2115,7 @@
       result.tempemail = document.querySelector('#temp_email-insert').value;
       result.city = document.querySelector('#city-insert').value;
       result.pincode = document.querySelector('#pincode-insert').value;
+      
 
       let firstnamevalid = dynamiCheckSpecialChar(result.firstName, 'first-name-message-insert');
       let lastnamevalid = dynamiCheckSpecialChar(result.lastName, 'last-name-message-insert');
@@ -2112,9 +2128,10 @@
       let tempContactNumberValid = dynamicTempContactNumber(result.temporaryContact,
         'temporary-contact-number-message-insert');
       let tempemailvalid = dynamicTempEmail(result.tempemail, 'temp-email-message-insert');
+      let pinvalid = dynamicPin(result.pincode, 'pincode-message-insert');
 
       if (!firstnamevalid || !lastnamevalid || !addressvalid || !emailvalid || !cityvalid || !countryvalid || !
-        contactvalid || !adharnumbervalid || !tempContactNumberValid || !tempemailvalid) {
+        contactvalid || !adharnumbervalid || !tempContactNumberValid || !tempemailvalid ||!pinvalid) {
         return;
       }
 
@@ -2604,9 +2621,9 @@
                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                          <div class="row pt-lg-3">
                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                             <p class="h5 pb-1">College :</p>
-                             <p class="h5 py-1">percentage :</p>
-                             <p class="h5 py-1">Certificate :</p>
+                             <p class="h5 pb-1">College</p>
+                             <p class="h5 py-1">percentage</p>
+                             <p class="h5 py-1">Certificate</p>
                            </div>
                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                              <p class="" id="">\${qualificationCollege}\</p>
@@ -3734,7 +3751,7 @@
         let checkCertificateName = namecheck(professionalCertificateName);
         let checkInstitution = namecheck(professionalInstitution);
         let checkYOP = yearcheck(professionalYOP);
-        let checkCertification = tabledatacheck(professionalCertification);
+        //let checkCertification = tabledatacheck(professionalCertification);
 
         console.log(checkCertificateName)
         console.log(checkInstitution)
@@ -3752,10 +3769,7 @@
         } else if (checkYOP == false) {
           certificationRow[i].querySelector('.certification-YOP').classList.add('input-border');
           return;
-        } else if (checkCertification == false) {
-          certificationRow[i].querySelector('.certificate-photo').classList.add('input-border');
-          return;
-        }
+        }  
 
         let photoArray = []
 
@@ -4294,7 +4308,6 @@
       function editQualificationDetail(id) {
         //checkboxfunction('qualification-check-box', 'qualification-certificate');
 
-        if (qualificationDataDB == 1) {
 
           $.ajax({
               url: '${pageContext.request.contextPath}/get-qualification-type',
@@ -4310,7 +4323,7 @@
                     if (qualedit.qualification_type_lid != 4) {
                       console.log(id)
                       if (qualedit.resume_qualification_lid == id) {
-
+                        document.querySelector('.qualification-data').innerHTML = ""
 
                         let table = `
                     <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
@@ -4397,24 +4410,23 @@
                         </div>      
                     </div>`
 
-                        document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
+                    document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
                         document.querySelector('.qualification-title').value = qualedit.abbr
                         if (qualedit.abbr == 'phd') {
                           document.querySelector('.qualification-phd-wrapper').classList.remove('d-none')
                         }
+                       break;
                       }
                     }
                   }
+                  
                 }
-
               },
               error: function (error) {
                 console.log("Error::::::::::::", error);
               }
             })
 
-            ++qualificationDataDB;
-        }
 
 
 
@@ -5003,9 +5015,11 @@
       let country = personalDetailCountryValidation(result.nationality);
       let tempContact = (result.temp_contact_number);
       let tempemail = tempemailvalidation(result.temp_email);
+      let pinvalid = dynamicPin(result.permanent_address_pincode, 'pincode-message');
+      
 
       if (!firstName || !lastName || !contactNumber || !email || !aadhar || !address || !
-        country || !DOB || !tempemail || !gender) {
+        country || !DOB || !tempemail || !gender || !pinvalid) {
         return;
       }
 
@@ -5108,7 +5122,6 @@
 
         arrayresult[0] = addressObject
         arrayresult[1] = addressObject2
-
 
         console.log(JSON.stringify(personalDetailsData))
         let genderValue = ""
@@ -5330,9 +5343,9 @@
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">College :</p>
-                              <p class="h5 py-1">percentage :</p>
-                              <p class="h5 py-1">Certificate :</p>
+                              <p class="h5 pb-1">College</p>
+                              <p class="h5 py-1">percentage</p>
+                              <p class="h5 py-1">Certificate</p>
                             </div>
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">\${qualificationCollege}\</p>
@@ -6916,7 +6929,7 @@
         workexperienceRow[i].querySelector('.start-date').classList.remove('input-border');
         workexperienceRow[i].querySelector('.end-date').classList.remove('input-border');
 
-        // let resume_workexperience_lid = workexperienceRow[i].dataset.lid
+        let resume_workexperience_lid = workexperienceRow[i].dataset.lid
         let workexperienceType = workexperienceRow[i].querySelector('.work-experience-type').value;
         let workexperienceUniversity = workexperienceRow[i].querySelector('.employeer-name').value;
         let workexperienceDesignationTypeLID = workexperienceRow[i].querySelector(".designation-input").dataset.id;
@@ -6930,7 +6943,8 @@
         let workexperienceStartDate = workexperienceRow[i].querySelector('.start-date').value;
         let workexperienceEndDate = workexperienceRow[i].querySelector('.end-date').value;
 
-
+console.log('ID',workexperienceDesignationTypeLID);
+console.log('Name',workexperienceDesignationType);
         let checkWorkExp = tabledatacheck(workexperienceType);
         let checkUniversity = tabledatacheck(workexperienceUniversity);
         let checkSubjetTaught = tabledatacheck(workexperienceSubjectTaught);
@@ -6986,7 +7000,8 @@
           responsibilities: workexperienceSubjectTaught,
           is_current: workexperienceStatus,
           padagogy: workexperiencePadagogy,
-          duration: workexperienceDuration
+          duration: workexperienceDuration,
+          resume_experience_lid :resume_workexperience_lid
         }
         workexperienceTableArray.push(object)
       }
@@ -7196,13 +7211,8 @@
     }, false);
 
 
-
-
-
     //workexperience Details Btn
     function editWorkExperienceDetail(id) {
-
-
 
       if (resumeinfo.resume_experience != null) {
         for (expedit of resumeinfo.resume_experience) {
@@ -7331,6 +7341,17 @@
       </div>`
 
             document.querySelector('.workexperience-data').insertAdjacentHTML("beforeend", table);
+            document.querySelector('.workexperience-data').addEventListener('click',function(e){
+              let designationType = findClosest(e.target, 'workexperience-row').querySelector('.designation-title');
+              let designationInput = findClosest(e.target, 'workexperience-row').querySelector('.designation-input');
+              let designationli = findClosest('e.target','workexperience-li')
+              if(e.target.classList.contains("designation-input")) {
+                designationType.classList.remove("d-none");
+              } else {
+                designationType.classList.add("d-none");
+              }
+            })
+
             document.querySelector('.work-experience-type').value = expedit.abbr;
             document.querySelector('.designation-title').value = expedit.designation;
 
@@ -7369,15 +7390,6 @@
           closestParent.classList.remove('d-none');
           durationMessage.innerHTML = " ";
           endDateInput.value = ''
-        }
-      }
-
-      if (target.classList.contains('designation-title')) {
-        let closestParent = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-other-div');
-        if (target.value == 'Other') {
-          closestParent.classList.remove('d-none');
-        } else {
-          closestParent.classList.add('d-none');
         }
       }
 
@@ -7487,7 +7499,7 @@
                  <p class="h6">Status : <span class="required">*</span></p>
               </div>
                  <div class="col-md-9">
-               <input type="checkbox" class ="workexperience-status" name="workexperience-status">
+               <input type="checkbox" data-check = false class ="workexperience-status" name="workexperience-status">
                <label for="workexperience-status">Currently Working</label>
               </div>
              </div>
@@ -7510,7 +7522,7 @@
                <div class="col-md-9 ">
                 <div class="custom-select-div col-md-9">
                 <input class="form-control designation-input" data-id="7" data-name="" type="text"/>
-                 <ul class="form-control designation-title d-none">
+                 <ul class="form-control designation-title d-none" data-id=7>
                   \${workexperienceDesignationType}
                   </ul>
                </div>
@@ -7709,7 +7721,7 @@
                 <p class="h6">Status : <span class="required">*</span></p>
              </div>
                 <div class="col-md-9">
-              <input type="checkbox" class ="workexperience-status" name="workexperience-status">
+              <input type="checkbox"  data-check = false class ="workexperience-status" name="workexperience-status">
               <label for="workexperience-status">Currently Working</label>
              </div>
             </div>

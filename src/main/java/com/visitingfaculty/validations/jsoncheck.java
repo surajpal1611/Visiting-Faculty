@@ -70,6 +70,7 @@ public class jsoncheck {
                 check = true;
 
             }
+            System.out.println("Json In Validation : "+JsonString);
         }
         if (check == true) {
             System.out.println(JsonString);
