@@ -109,4 +109,9 @@ public class UserController {
         return "view-resume";
     }
 
+    @GetMapping("/job-performer-page")
+    public String getperformerpage() {
+        return "job-performer-page";
+    }
+
 }
