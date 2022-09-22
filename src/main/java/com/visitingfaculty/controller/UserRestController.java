@@ -214,7 +214,7 @@ public class UserRestController {
 
         System.out.println(data);
         Object dataFromDb = userDaoInterface.createJobApplication(data);
-
+        System.out.println(data);
         if (dataFromDb == null) {
 
             return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();

@@ -403,4 +403,12 @@ public class userDao implements UserDaoInterface {
      return jdbcCall.executeFunction(Object.class, getApplicationJson);
     }
 
+    @Override
+    public Object getJobResume(int resume_lid) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("get_appln_details");
+
+        return jdbcCall.executeFunction(Object.class, resume_lid);
+    }
+
 }

@@ -90,7 +90,8 @@ public class UserController {
     }
 
     @GetMapping("/performa-creation")
-    public String getPerformaCreation() {
+    public String getPerformaCreation(@RequestParam(value = "application_lid") int application_lid,Model m) {
+        m.addAttribute("application_lid", application_lid);
         return "performa-creation";
     }
 

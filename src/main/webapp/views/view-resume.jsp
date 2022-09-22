@@ -437,7 +437,6 @@
               experiencetype = "Teaching Experience"
             } else {
               experiencetype = "Industrial Experience"
-
             }
             resume += ` <div class="text-block right workexperience-item">
                   <div class="card-body">
