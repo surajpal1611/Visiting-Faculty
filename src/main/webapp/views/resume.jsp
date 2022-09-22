@@ -7967,8 +7967,9 @@ console.log('Name',workexperienceDesignationType);
           .then(response => status = response.status)
           .then(response => {
             if (status === 200) {
-              console.log("success")
-
+              console.log("success");
+              alert('Job Applied Successfully');
+              location.href = '${pageContext.request.contextPath}/dashboard'
             } else {
               // document.getElementById('main-loader').classList.add('d-none');
               alert("ERROR")
