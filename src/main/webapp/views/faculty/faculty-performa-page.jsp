@@ -60,16 +60,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
 
-            <h3 class="text-center">Search Visiting Faculty Applications</h3>
-            <div class="row px-lg-5 mx-lg-5">
-                <div class="col-md-12">
-                    <div class="input-group ">
-                        <input type="search" class="form-control rounded" placeholder="Enter Pancard no."
-                            aria-label="Search" id="search-by-id" aria-describedby="search-addon" />
-                        <button type="button" class="btn btn-outline-primary faculty-search-button">search</button>
-                    </div>
-                </div>
-            </div>
+            <h3 class="text-center">Search Visiting Faculty</h3>
+        
             <hr>
 
 
@@ -225,7 +217,7 @@
                 let objectArray = []
                 let object = {
                     'organization_lid': "${organization_lid}",
-                    'input_text': searchByIdValue.toUpperCase()
+                    'input_text': searchByIdValue
                 };
                 objectArray.push(object)
                 

@@ -31,7 +31,7 @@
           <button class="back-button btn py-2 btn-danger">Back</button>
         </a>
         <div class="create-button px-2">
-          <button type="button" class="btn btn-primary create-job-application" data-toggle="modal" data-target="#exampleModalLong">
+          <button type="button" class="btn btn-success create-job-application" data-toggle="modal" data-target="#exampleModalLong">
             Create Job Application
           </button>
         </div>

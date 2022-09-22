@@ -208,12 +208,17 @@ public class UserRestController {
 
         return data;
     }
-
+   
     @PostMapping("/create-job-application")
-    public ResponseEntity<?> createJobApplication(@RequestBody String data) {
-
+    public ResponseEntity<?> createJobApplication(@RequestBody String data ,HttpSession httpSession) {
+        Object dataFromDb = null;
         System.out.println(data);
-        Object dataFromDb = userDaoInterface.createJobApplication(data);
+        String role = (String) httpSession.getAttribute("role");
+        if(role.equals("USER")){
+            dataFromDb = userDaoInterface.createJobApplication(data);
+        } else {
+
+        }
         System.out.println(data);
         if (dataFromDb == null) {
 
@@ -222,7 +227,7 @@ public class UserRestController {
         }
         return ResponseEntity.status(HttpStatus.OK).build();
     }
-
+ 
     @PostMapping("get-job-application")
     public ResponseEntity<?> getJobApplication(@RequestBody String data) {
 

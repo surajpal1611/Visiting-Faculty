@@ -78,6 +78,27 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="view-application-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">View Application</h5>
+                    <button type="button" style="border: none;" class="modal3-cancel-button" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal3-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary modal2-cancel-button"
+                        data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <jsp:include page="../left-sidebar.jsp" />
 
     <main class="main">
@@ -211,6 +232,14 @@
                         console.log('error', error)
                     }
                 })
+            })
+
+            $(document).on('click', '.create-application-button', function () {
+
+                $('#user-id').val('${user_id}')
+                $('#user-lid').val('${user_lid}')
+                $("#view-application-modal").modal("toggle");
+
             })
         })
     </script>
