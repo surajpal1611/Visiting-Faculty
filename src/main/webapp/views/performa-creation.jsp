@@ -84,8 +84,31 @@
                </div>
         </div>
     </div>   
-</div> 
-  </main>
+</div>
+
+<!-----------------------------------------------------------------Image Model------------------------------------------------------------->
+<div class="image-preview-modal d-none">
+    <div id="bank-form-area">
+      <div class="container">
+        <div class="d-flex justify-content-center align-items-center my-4">
+          <h2> Image Preview </h2>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+            <img src="download (3).jpg" alt="image-uploaded" id="image-uploaded" class="image-uploaded"
+              style="width:450px;height:300px;">
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button id="image-preview-cancel-button" class="btn btn-danger m-4">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
 
     <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
@@ -144,6 +167,7 @@
         }
     })
 
+    //Job Application Submit Button
     document.querySelector('#job-application-submit-btn').addEventListener('click',function(){
      
      let jobArrar = {"insert_proforma" : []};
@@ -173,7 +197,7 @@
         no_of_division:division,
         student_count_per_division:count,
         aol_obe:process,
-        level_lid : 1,
+        level : 1,
         status_lid : 1,
 
       }
@@ -195,11 +219,9 @@
           fetch(url, params).then((data) => {
             if (data.status == 200) {
               console.log(data);
-              document.getElementById('main-loader').classList.add('d-none');
-              document.location.reload()
+              location.href = '${pageContext.request.contextPath}/performa'
             } else {
               alert('Check Details Input');
-              document.getElementById('main-loader').classList.add('d-none');
             }
           })
         }
@@ -225,15 +247,15 @@
 
 
 let resumetable =`
-<div class="card">
-    <h2 align="center">\${resumeinfo.personal_details[0].f_name} \${resumeinfo.personal_details[0].l_name}</h2>
+<div class="card" style="background-color: #5CA4EA; border: 2px solid brown;">
+    <h2 align="center"><i class="fa-solid fa-user"></i> \${resumeinfo.personal_details[0].f_name} \${resumeinfo.personal_details[0].l_name} - Proforma</h2>
 </div>
     <!-------------------------------------------------------Qualification Table----------------------------------------------------->
     <div class="card card-table">
         <div
             class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
             <div>
-                <h5><i class="fa-solid fa-graduation-cap"> Academic Qualification</i></h5>
+                <h5><i class="fa-solid fa-graduation-cap"></i> Academic Qualification</h5>
             </div>
         </div>
         <div class="card-body table-responsive">
@@ -275,7 +297,7 @@ let resumetable =`
     <div
         class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
         <div>
-            <h5><i class="fa-solid fa-cog"> Work Experinece</i></h5>
+            <h5><i class="fa-solid fa-cog"></i> Work Experinece</h5>
         </div>
     </div>
     <div class="card-body table-responsive">
@@ -478,6 +500,31 @@ resumetable+= `</tbody>
 </div>
     ` 
 document.querySelector('#performa-creation-div').insertAdjacentHTML('afterbegin', resumetable);
+
+//---------------------------------------------------------functions for Image Display---------------------------------------------------
+
+document.querySelector('#performa-creation-div').addEventListener('click', function (e) {
+
+      if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains(
+          'award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target
+        .classList.contains('research-certificate-display') || e.target.classList.contains(
+          'professional-certificate-display') || e.target.classList.contains('aadhar-photo-preview') || e.target
+        .classList.contains('pancard-photo-preview') || e.target.classList.contains(
+          'cancelled-cheque-photo-preview')) {
+
+        document.getElementById('performa-creation-div').classList.add('d-none');
+        document.querySelector('.image-preview-modal').classList.remove('d-none');
+        document.querySelector(".image-uploaded").src = e.target.dataset.image;
+        console.log(e.target.dataset.image)
+      }
+    });
+
+    
+    document.querySelector('#image-preview-cancel-button').addEventListener('click', function (e) {
+      document.getElementById('performa-creation-div').classList.remove('d-none');
+      document.querySelector('.image-preview-modal').classList.add('d-none');
+      document.getElementById("image-uploaded").src = " ";
+    });
 
 </script>
 
