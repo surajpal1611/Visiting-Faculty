@@ -80,6 +80,8 @@ public interface UserDaoInterface {
 
     User getUserByResume(int id);
 
+    Object getApplicationData(String getApplicationJson);
+
     int deleteQualification(int id);
 
     int deleteaward(int id);

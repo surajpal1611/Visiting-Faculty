@@ -185,6 +185,14 @@ public class UserRestController {
         return data;
     }
 
+    @PostMapping("/get-admin-application-search")
+    public Object adminApplicationSearch(@RequestBody String getApplicationJson) {
+        System.out.println(getApplicationJson);
+        Object data = userDaoInterface.getApplicationData(getApplicationJson);
+
+        return data;
+    }
+
     @PostMapping("/create-resume")
     public int createResume(Resume resume) {
 

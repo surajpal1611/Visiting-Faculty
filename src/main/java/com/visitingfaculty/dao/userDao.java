@@ -395,4 +395,12 @@ public class userDao implements UserDaoInterface {
         return jdbcCall.executeFunction(Object.class, data);
     }
 
+    @Override
+    public Object getApplicationData(String getApplicationJson) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+        .withFunctionName("admin_application_search");
+
+     return jdbcCall.executeFunction(Object.class, getApplicationJson);
+    }
+
 }
