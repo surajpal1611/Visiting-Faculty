@@ -36,9 +36,6 @@ list += `
         <a href="${pageContext.request.contextPath}/faculty-reg" class="offset-list-item-link">
             <li><img src="${pageContext.request.contextPath}/icons/admin.png" class="ps-3 pe-2"> Add Faculty</li>
         </a>
-        <a href="${pageContext.request.contextPath}/performa-creation" class="offset-list-item-link">
-            <li><img src="${pageContext.request.contextPath}/icons/create-performa.png" style="width: 52px;"  class="ps-3 pe-2"> Create performa</li>
-        </a>
         <a href="${pageContext.request.contextPath}/logout" class="offset-list-item-link">
             <li><img src="${pageContext.request.contextPath}/icons/logout.png" class="ps-3 pe-2"> Logout</li>
         </a>

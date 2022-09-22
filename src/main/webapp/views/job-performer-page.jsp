@@ -187,14 +187,14 @@
                                 </thead>
                                 <tbody>`
                             for (let obj of data.application_details) {
-                               
+                                
                                     tableToAppend += `
                                     <tr data-userlid = "\${obj.user_lid}">
                                         <td>\${obj.full_name}</td>
                                         <td class="user_id">\${obj.user_id}</td>
                                         <td >\${obj.resume_name}</td>
                                         <td>
-                                                <a class="application-preview" href="${pageContext.request.contextPath}/create-job-application?application_lid=\${obj.appln_id}" style="border:none; outline:none" >
+                                                <a class="application-preview" href="${pageContext.request.contextPath}/performa-creation?application_lid=\${obj.appln_id}" style="border:none; outline:none" >
                                                 <i class="fa-solid fa-eye view-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
                                                 
                                             </td>
