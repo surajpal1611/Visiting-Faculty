@@ -244,10 +244,10 @@ public class userDao implements UserDaoInterface {
 
     @Override
     public UserDto getUserLid(String user_id) {
-        String sql = "Select u.id,u.user_id,r.name from public.user u INNER JOIN user_role ur ON u.id=ur.user_lid INNER JOIN role r ON r.id = ur.role_lid AND u.user_id = ?";
+        String sql = "Select u.id,u.user_id,r.name,u.organization_lid from public.user u INNER JOIN user_role ur ON u.id=ur.user_lid INNER JOIN role r ON r.id = ur.role_lid AND u.user_id = ?";
         // Integer Password = jdbcTemplate.queryForObject(sql, Integer.class, user_id);
         UserDto userDto =  jdbcTemplate.queryForObject(sql, (rs, rownum) -> {
-			return new UserDto(rs.getInt("id"),rs.getString("user_id"), rs.getString("name"));
+			return new UserDto(rs.getInt("id"),rs.getString("user_id"), rs.getString("name"), rs.getInt("organization_lid"));
 		}, user_id);
         return userDto;
     }
