@@ -163,11 +163,12 @@
             let timeout = null;
 
             function searchFunction(value) {
+                
                 $.ajax({
                     type: 'POST',
                     url: '${pageContext.request.contextPath}/get-faculty-application',
                     data: {
-                        user_id: value
+                        user_id: value.toUpperCase()
                     },
                     success: function (response) {
                         let data = JSON.parse(response.value)
