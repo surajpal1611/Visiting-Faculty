@@ -97,4 +97,6 @@ public interface UserDaoInterface {
     Object createJobApplication(String object);
 
     Object createProforma(String data);
+
+    Object getJobResume(int resume_lid);
 }

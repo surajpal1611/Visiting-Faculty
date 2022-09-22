@@ -22,201 +22,14 @@
     <jsp:include page="header.jsp" />
 
    <div id="performa-creation-div">
-<!-------------------------------------------------------Qualification Table----------------------------------------------------->
-    <div class="card card-table">
-        <div
-            class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
-            <div>
-                <h5>Academic Qualification</h5>
-            </div>
-        </div>
-        <div class="card-body table-responsive">
-            <table class="table">
-                <thead>
-                    <th>Tital</th>
-                    <th>Major Subject</th>                    
-                    <th>University</th>                    
-                    <th>College</th>
-                    <th>percentage</th>
-                    <th>Certificate</th>
-                 </thead>
-                <tbody>                    
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>        
-                </tbody>
-            </table>
-        </div>
-    </div>
-<!----------------------------------------------------------Work Experience---------------------------------------------------------->
 
-<div class="card card-table">
-    <div
-        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
-        <div>
-            <h5>Work Experinece</h5>
-        </div>
-    </div>
-    <div class="card-body table-responsive">
-        <table class="table">
-            <thead>
-                <th>Experince Type</th>
-                <th>Key role</th>                    
-                <th>Designation</th>                    
-                <th>Start Date</th>
-                <th>End date</th>
-                <th>Duration</th>
-             </thead>
-            <tbody>                    
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>        
-            </tbody>
-        </table>
-    </div>
-</div>
-<!----------------------------------------------------------Award Table-------------------------------------------------------------->
-
-<div class="card card-table">
-    <div
-        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
-        <div>
-            <h5>Awards </h5>
-        </div>
-    </div>
-    <div class="card-body table-responsive">
-        <table class="table">
-            <thead>
-                <th>Award Name</th>
-                <th>Organization</th>                    
-                <th>Organization Type</th>                    
-                <th>Place</th>
-                <th>Recieved date</th>
-                <th>Certificate</th>
-             </thead>
-            <tbody>                    
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>        
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<!---------------------------------------------------------Publication Table-------------------------------------------------------->
-
-<div class="card card-table">
-    <div
-        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
-        <div>
-            <h5>Publication </h5>
-        </div>
-    </div>
-    <div class="card-body table-responsive">
-        <table class="table">
-            <thead>
-                <th>Role</th>
-                <th>No. of Authors</th>                    
-                <th>Book Title</th>                    
-                <th>Publisher</th>
-                <th>Publication Year</th>
-                <th>Certificate</th>
-             </thead>
-            <tbody>                    
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>        
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<!----------------------------------------------------------Research Table---------------------------------------------------------->
-
-<div class="card card-table">
-    <div
-        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
-        <div>
-            <h5>Research </h5>
-        </div>
-    </div>
-    <div class="card-body table-responsive">
-        <table class="table">
-            <thead>
-                <th>Title</th>
-                <th>Volume year</th>                    
-                <th>Description</th>                    
-                <th>Category</th>
-                <th>Certificate</th>
-             </thead>
-            <tbody>                    
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>        
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<!-----------------------------------------------------Profectional Certification---------------------------------------------------->
-
-<div class="card card-table">
-    <div
-        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
-        <div>
-            <h5>Profectional Certification</h5>
-        </div>
-    </div>
-    <div class="card-body table-responsive">
-        <table class="table">
-            <thead>
-                <th>Certification Name</th>
-                <th>Recieved Year</th>                    
-                <th>Institution</th>                    
-                <th>Certificate</th>
-             </thead>
-            <tbody>                    
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>        
-            </tbody>
-        </table>
-    </div>
-</div>
 
 <!----------------------------------------------------------Performer Table---------------------------------------------------------->
     <div class="card card-table faculty-table-body ">
         <div
             class="card-header table-card-header  text-uppercase d-flex align-items-center justify-content-between">
             <div class="">
-                <h5>Please Fill in Details to Allot Subjects</h5>
+                <h5>Please Fill in Details to Allot Subjects - Proforma</h5>
             </div>
             <div>
                 <button class="btn add-btn ms-auto" type="button"
@@ -331,43 +144,6 @@
         }
     })
 
-    //Job Application Submit Button
-    // document.querySelector('#job-application-submit-btn').addEventListener('click',function(){
-     
-    //  let jobArrar = [];
-    //  let jobApllicationData = document.querySelectorAll('.job-tr');
-    //  for(let i=0 ; i<jobApllicationData.length;i++)
-    //  {
-    //   let program = jobApllicationData[i].querySelector('.job-program').value;
-    //   let session = jobApllicationData[i].querySelector('.job-session').value;
-    //   let subject = jobApllicationData[i].querySelector('.job-subject').value;
-    //   let date = jobApllicationData[i].querySelector('.job-date').value;
-    //   let hours = jobApllicationData[i].querySelector('.job-hours').value;
-    //   let rate = jobApllicationData[i].querySelector('.job-rate').value;
-    //   let totalhours = jobApllicationData[i].querySelector('.job-total-hours').value;
-    //   let division = jobApllicationData[i].querySelector('.job-division').value;
-    //   let count = jobApllicationData[i].querySelector('.job-count').value;
-    //   let process = jobApllicationData[i].querySelector('.job-process').value;
-      
-    //   obj = {
-    //     program:program,
-    //     session:session,
-    //     subject:subject,
-    //     date:date,
-    //     hours:hours,
-    //     rate:rate,
-    //     totalhours:totalhours,
-    //     division:division,
-    //     count:count,
-    //     process:process 
-    //   }
-    //   jobArrar.push(obj);
-    //  }
-    //  console.log("Array : ",JSON.stringify(jobArrar));
-    // })
-
-
-
     document.querySelector('#job-application-submit-btn').addEventListener('click',function(){
      
      let jobArrar = {"insert_proforma" : []};
@@ -386,7 +162,7 @@
       let process = jobApllicationData[i].querySelector('.job-process').value;
       
       obj = {
-        application_lid:"118",       
+        application_lid:'${application_lid}',       
         module:subject,        
         teaching_hours:hours,
         program_id: "1111",
@@ -430,9 +206,280 @@
         postdata();
     });
      
+//------------------------------------------------------Appending Tables-------------------------------------------------------------
+
+    let resumeinfo;
+    $.ajax({
+      url: '${pageContext.request.contextPath}/performer-resume?application_lid=${application_lid}',
+      type: 'POST',
+      async : false,
+      success: function (response) {
+        let data = JSON.parse(response.value)
+        resumeinfo = data;
+      },
+      error: function (error) {
+        console.log("error", error)
+      }
+    });
+    console.log('Outside Ajax : ',resumeinfo)
 
 
-    </script>
+let resumetable =`
+<div class="card">
+    <h2 align="center">\${resumeinfo.personal_details[0].f_name} \${resumeinfo.personal_details[0].l_name}</h2>
+</div>
+    <!-------------------------------------------------------Qualification Table----------------------------------------------------->
+    <div class="card card-table">
+        <div
+            class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
+            <div>
+                <h5><i class="fa-solid fa-graduation-cap"> Academic Qualification</i></h5>
+            </div>
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table">
+                <thead>
+                    <th>Tital</th>
+                    <th>Major Subject</th>                    
+                    <th>University</th>                    
+                    <th>College</th>
+                    <th>percentage</th>
+                    <th>Certificate</th>
+                 </thead>
+                <tbody> `
+                    if (resumeinfo.resume_qualification != null)
+                    {
+                        for (let qual of resumeinfo.resume_qualification)
+                        {
+                            if (qual.qualification_type_lid === 1 || qual.qualification_type_lid === 2 || qual.qualification_type_lid === 3)
+                            {
+                                resumetable+=`<tr>
+                                               <td>\${qual.name}</td>
+                                               <td>\${qual.topic_of_study}</td>
+                                               <td>\${qual.university}</td>
+                                               <td>\${qual.institute}</td>
+                                               <td>\${qual.percentile}</td>
+                                               <td><p id=""><i id="qualification-certificate-display" data-image="imagedata/\${qual.url_path}"class="fa-solid fa-image text-success qualification-certificate-display"></i></p></td>
+                                              </tr> 
+                                              `
+                            }
+                        }
+                    }                  
+ resumetable+= `</tbody>
+            </table>
+        </div>
+    </div>
+<!----------------------------------------------------------Work Experience---------------------------------------------------------->
+
+<div class="card card-table">
+    <div
+        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
+        <div>
+            <h5><i class="fa-solid fa-cog"> Work Experinece</i></h5>
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead>
+                <th>Experince Type</th>
+                <th>Key role</th>                    
+                <th>Designation</th>                    
+                <th>Start Date</th>
+                <th>End date</th>
+                <th>Duration</th>
+             </thead>
+            <tbody>` 
+                if (resumeinfo.resume_experience != null)
+                {
+                    for (let exp of resumeinfo.resume_experience)
+                    {
+                        let experiencetype = "";
+                        if (exp.experience_type_lid == 5) {
+                          experiencetype = "Teaching Experience"
+                        } else {
+                          experiencetype = "Industrial Experience"
+                        }
+
+                        resumetable+=                            
+                            `<tr>
+                                <td>\${experiencetype}</td>
+                                <td>\${exp.responsibilities}</td>
+                                <td>\${exp.designation}</td>
+                                <td>\${exp.start_date}</td>
+                                <td>\${exp.end_date}</td>
+                                <td>\${exp.duration}</td>
+                             </tr>`
+                    }
+                }                   
+        
+resumetable+= `</tbody>
+        </table>
+    </div>
+</div>
+<!----------------------------------------------------------Award Table-------------------------------------------------------------->
+
+<div class="card card-table">
+    <div
+        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
+        <div>
+            <h5><i class="fa-solid fa-award"></i> Awards</h5>
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead>
+                <th>Award Name</th>
+                <th>Organization</th>                    
+                <th>Organization Type</th>                    
+                <th>Place</th>
+                <th>Recieved date</th>
+                <th>Certificate</th>
+             </thead>
+            <tbody>`
+                if (resumeinfo.resume_achievement != null)
+                {
+                    for (let award of resumeinfo.resume_achievement)
+                    {
+                        resumetable+= `
+                            <tr>
+                                <td>\${award.title}</td>
+                                <td>\${award.organization_name}</td>
+                                <td>\${award.name}</td>
+                                <td>\${award.description}</td>
+                                <td>\${award.achievement_date}</td>
+                                <td><p ><i id="award-certificate-display" data-image="imagedata/\${award.url_path}" class="fa-solid fa-image text-success award-certificate-display"></i></p></td>
+                            </tr>` 
+                    }
+                }                    
+                                  
+resumetable+=`</tbody>
+        </table>
+    </div>
+</div>
+
+<!---------------------------------------------------------Publication Table-------------------------------------------------------->
+
+<div class="card card-table">
+    <div
+        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
+        <div>
+            <h5><i class="fa-solid fa-clipboard"></i> Publication</h5>
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead>
+                <th>Role</th>
+                <th>No. of Authors</th>                    
+                <th>Book Title</th>                    
+                <th>Publisher</th>
+                <th>Publication Year</th>
+                <th>Certificate</th>
+             </thead>
+            <tbody>`    
+                if (resumeinfo.resume_publication != null)
+                {
+                    for (let public of resumeinfo.resume_publication)
+                    {
+                        resumetable+= `
+                            <tr>
+                                <td>\${public.publication_role}</td>
+                                <td>\${public.no_of_authors}</td>
+                                <td>\${public.title}</td>
+                                <td>\${public.publisher}</td>
+                                <td>\${public.year_of_publication}</td>
+                                <td> <p><i id="publication-certificate-display" data-image="imagedata/\${public.publication_url_path}" class="fa-solid fa-image text-success publication-certificate-display"></i></p></td>
+                            </tr>`
+                    }
+                }                
+          
+resumetable+= `</tbody>
+        </table>
+    </div>
+</div>
+
+<!----------------------------------------------------------Research Table---------------------------------------------------------->
+
+<div class="card card-table">
+    <div
+        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
+        <div>
+            <h5><i class="fa-solid fa-pie-chart"></i> Research</h5>
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead>
+                <th>Title</th>
+                <th>Volume year</th>                    
+                <th>Description</th>                    
+                <th>Category</th>
+                <th>Certificate</th>
+             </thead>
+            <tbody>` 
+                if (resumeinfo.resume_research != null)
+                {
+                    for (let research of resumeinfo.resume_research)
+                    {
+                        resumetable+=`
+                            <tr>
+                                <td>\${research.title}</td>
+                                <td>\${research.volume_year}</td>
+                                <td>\${research.description}</td>
+                                <td>\${research.category}</td>
+                                <td>  <p><i id="research-certificate-display" data-image="imagedata/\${research.research_url_path}" class="fa-solid fa-image text-success research-certificate-display" ></i></p></td>
+                            </tr>` 
+                    }
+                }                   
+       
+resumetable+= `</tbody>
+        </table>
+    </div>
+</div>
+
+<!-----------------------------------------------------Profectional Certification---------------------------------------------------->
+
+<div class="card card-table">
+    <div
+        class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
+        <div>
+            <h5><i class="fa-solid fa-certificate"></i> Profectional Certification</h5>
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead>
+                <th>Certification Name</th>
+                <th>Recieved Year</th>                    
+                <th>Institution</th>                    
+                <th>Certificate</th>
+             </thead>
+            <tbody>`
+                if (resumeinfo.resume_qualification != null)
+                {
+                    for (let qual of resumeinfo.resume_qualification)
+                    {
+                        if (qual.qualification_type_lid === 4)
+                        {
+                            resumetable+=`
+                            <tr>
+                                <td>\${qual.topic_of_study}</td>
+                                <td>\${qual.institute}</td>
+                                <td>\${qual.year_of_passing}</td>
+                                <td><p ><i id="professional-certificate-display" data-image="imagedata/\${qual.url_path}" class="fa-solid fa-image text-success professional-certificate-display"></i></p></td>
+                            </tr>`  
+                        }
+                    }
+                }                    
+      
+resumetable+= `</tbody>
+        </table>
+    </div>
+</div>
+    ` 
+document.querySelector('#performa-creation-div').insertAdjacentHTML('afterbegin', resumetable);
+
+</script>
 
 </body>
 </html>
