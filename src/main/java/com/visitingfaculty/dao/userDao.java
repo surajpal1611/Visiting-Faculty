@@ -385,4 +385,14 @@ public class userDao implements UserDaoInterface {
         return jdbcTemplate.update(sql,id);
     }
 
+        
+    @Override
+    public Object createProforma(String data) {
+
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("insert_proforma_details");
+
+        return jdbcCall.executeFunction(Object.class, data);
+    }
+
 }
