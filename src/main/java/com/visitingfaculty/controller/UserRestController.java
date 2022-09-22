@@ -235,4 +235,12 @@ public class UserRestController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
+    
+    @PostMapping("/create-proforma")
+    public ResponseEntity<?> getPerforma(@RequestBody String data) {
+        System.out.println("Performa"+data);
+        userDaoInterface.createProforma(data);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
 }

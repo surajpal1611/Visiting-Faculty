@@ -31,10 +31,19 @@
           <button class="back-button btn py-2 btn-danger">Back</button>
         </a>
         <div class="create-button px-2">
-          <button class="create-job-application btn py-2 btn-danger">Create Job Application</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+            Create Job Application
+          </button>
         </div>
       </div>
     </div>
+
+
+  
+
+    <!-- Modal for create job application view--> 
+
+    <!-- Modal -->
 
 
 
@@ -1033,6 +1042,27 @@
         </div>
       </div>
     </div>
+
+    <div class="application-preview-modal d-none">
+      <div id="bank-form-area">
+        <div class="container">
+          <div class="d-flex justify-content-center align-items-center my-4">
+            <h2> Application Preview </h2>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+              
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button id="application-preview-cancel-button" class="btn btn-danger m-4">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
   </main>
   <div class="modal fade" id="view-resume-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -4043,6 +4073,12 @@
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.image-preview-modal').classList.remove('d-none');
         document.querySelector(".image-uploaded").src = e.target.dataset.image;
+      }
+      if(e.target.classList.contains('qualification-certificate-display')){
+
+        document.getElementById('body').classList.add('d-none');
+        document.querySelector('.application-preview-modal').classList.remove('d-none');
+
       }
       if (e.target.classList.contains('addbtn-qualification') || findClosest(e.target, 'addbtn-qualification')) {
         resumequailficationaddbtn();
@@ -7941,3 +7977,7 @@ console.log('Name',workexperienceDesignationType);
 </body>
 
 </html>
+
+
+
+

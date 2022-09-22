@@ -142,9 +142,45 @@
     })
 
     //Job Application Submit Button
+    // document.querySelector('#job-application-submit-btn').addEventListener('click',function(){
+     
+    //  let jobArrar = [];
+    //  let jobApllicationData = document.querySelectorAll('.job-tr');
+    //  for(let i=0 ; i<jobApllicationData.length;i++)
+    //  {
+    //   let program = jobApllicationData[i].querySelector('.job-program').value;
+    //   let session = jobApllicationData[i].querySelector('.job-session').value;
+    //   let subject = jobApllicationData[i].querySelector('.job-subject').value;
+    //   let date = jobApllicationData[i].querySelector('.job-date').value;
+    //   let hours = jobApllicationData[i].querySelector('.job-hours').value;
+    //   let rate = jobApllicationData[i].querySelector('.job-rate').value;
+    //   let totalhours = jobApllicationData[i].querySelector('.job-total-hours').value;
+    //   let division = jobApllicationData[i].querySelector('.job-division').value;
+    //   let count = jobApllicationData[i].querySelector('.job-count').value;
+    //   let process = jobApllicationData[i].querySelector('.job-process').value;
+      
+    //   obj = {
+    //     program:program,
+    //     session:session,
+    //     subject:subject,
+    //     date:date,
+    //     hours:hours,
+    //     rate:rate,
+    //     totalhours:totalhours,
+    //     division:division,
+    //     count:count,
+    //     process:process 
+    //   }
+    //   jobArrar.push(obj);
+    //  }
+    //  console.log("Array : ",JSON.stringify(jobArrar));
+    // })
+
+
+
     document.querySelector('#job-application-submit-btn').addEventListener('click',function(){
      
-     let jobArrar = [];
+     let jobArrar = {"insert_proforma" : []};
      let jobApllicationData = document.querySelectorAll('.job-tr');
      for(let i=0 ; i<jobApllicationData.length;i++)
      {
@@ -160,21 +196,51 @@
       let process = jobApllicationData[i].querySelector('.job-process').value;
       
       obj = {
-        program:program,
-        session:session,
-        subject:subject,
-        date:date,
-        hours:hours,
-        rate:rate,
-        totalhours:totalhours,
-        division:division,
-        count:count,
-        process:process 
+        application_lid:"118",       
+        module:subject,        
+        teaching_hours:hours,
+        program_id: "1111",
+        acad_session:session,
+        commencement_date_of_program:date,
+        rate_per_hours:rate,
+        total_no_of_hrs_alloted:totalhours,
+        no_of_division:division,
+        student_count_per_division:count,
+        aol_obe:process,
+        level_lid : 1,
+        status_lid : 1,
+
       }
-      jobArrar.push(obj);
+      jobArrar.insert_proforma.push(obj);
      }
      console.log("Array : ",JSON.stringify(jobArrar));
-    })
+
+     
+     //fetch api
+     function postdata() {
+          url = "${pageContext.request.contextPath}/create-proforma";
+          params = {
+            method: 'post',
+            headers: {
+              'content-Type': 'application/json'
+            },
+            body: JSON.stringify(jobArrar),
+          }
+          fetch(url, params).then((data) => {
+            if (data.status == 200) {
+              console.log(data);
+              document.getElementById('main-loader').classList.add('d-none');
+              document.location.reload()
+            } else {
+              alert('Check Details Input');
+              document.getElementById('main-loader').classList.add('d-none');
+            }
+          })
+        }
+        postdata();
+    });
+     
+
 
     </script>
 
