@@ -31,7 +31,7 @@
           <button class="back-button btn py-2 btn-danger">Back</button>
         </a>
         <div class="create-button px-2">
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+          <button type="button" class="btn btn-primary create-job-application" data-toggle="modal" data-target="#exampleModalLong">
             Create Job Application
           </button>
         </div>
@@ -1580,7 +1580,7 @@
                       <h4 class="title">Soft Skills</h4>
 
                       <div id="soft-skill-appending-div1" class="d-flex w-100 flex-wrap">
-`
+                `
         }
 
         resume += ` </div>
