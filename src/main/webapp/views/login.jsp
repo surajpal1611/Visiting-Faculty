@@ -207,6 +207,11 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
   </div>
 
+  <div class="session-timeout-alert alert alert-warning alert-dismissible fade show d-flex justify-content-center align-items-center d-none">
+    <strong>Sorry!</strong>&nbsp &nbsp Your Session has expired, Kindly Login again
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+
   <section class="login-wrapper">
     <div class="inner-login-wrapper">
       <div class="row">
@@ -300,6 +305,13 @@
       document.querySelector('.login-success-alert').classList.remove('d-none')
     } else {
       document.querySelector('.login-success-alert').classList.add('d-none')
+
+    }
+
+    if(window.location.hash == '#session-timeout') {
+      document.querySelector('.session-timeout-alert').classList.remove('d-none')
+    } else {
+      document.querySelector('.session-timeout-alert').classList.add('d-none')
 
     }
     
