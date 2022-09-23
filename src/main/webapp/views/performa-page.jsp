@@ -21,39 +21,39 @@
 
     <style>
         .deanObservationExpand {
-	color: black;
-	text-decoration: none;
-}
+            color: black;
+            text-decoration: none;
+        }
 
 
 
-.form-control {
-    display: block;
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 0.25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
 
-.select2-container--default .select2-selection--multiple {
-    background-color: white;
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    cursor: text;
-    padding-bottom: 5px;
-    padding-right: 5px;
-    position: relative;
-}
+        .select2-container--default .select2-selection--multiple {
+            background-color: white;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            cursor: text;
+            padding-bottom: 5px;
+            padding-right: 5px;
+            position: relative;
+        }
     </style>
 </head>
 
@@ -102,18 +102,17 @@
                 <div class="row my-3 px-5" style="padding-top: 10px">
                     <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="school"> <small>Date: </small>
-                        </label> <input type="date" class="form-control" name="createdDate"
-                            id="createdDate">
+                        </label> <input type="date" class="form-control" name="createdDate" id="createdDate">
                     </div>
 
-                     
+
                     <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="school"> <small>School: </small>
-                        </label> 
+                        </label>
                         <input type="text" class="form-control" name="">
                     </div>
 
-                     <!-- <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
+                    <!-- <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="school"> <small>School: </small>
                         </label> <select id="selectSchool"
                             class="select-school select2-innerwrapper" name="school"
@@ -124,12 +123,12 @@
                         </select>
                     </div> -->
 
-                      <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
+                    <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="program"> <small>Program: </small>
                         </label>
                         <input type="text" class="form-control" name="">
                     </div>
-             
+
                     <!-- <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="program"> <small>Program: </small>
                         </label> <select id="selectProgram"
@@ -142,7 +141,7 @@
 
                     <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="semester"> <small>Semester: </small>
-                        </label> 
+                        </label>
                         <input type="text" class="form-control" name="">
                     </div>
                     <!-- <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
@@ -156,9 +155,9 @@
 
                     <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="subject"> <small>Subject: </small>
-                        </label> 
+                        </label>
                         <input type="text" class="form-control" name="">
-                    </div> 
+                    </div>
                     <!-- <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="subject"> <small>Subject: </small>
                         </label> <select id="selectSubject"
@@ -168,14 +167,13 @@
                         </select>
                     </div>  -->
                 </div>
-                </div>
-                
+            </div>
 
 
-            <div class="table-responsive table-wrapper px-2">
-                <table
-                    class='table table-display table-bordered proforma-report-table'
-                    id="proforma-report-table" style="width: 3600px !important;">
+
+            <div class="table-responsive table-wrapper px-2 perfoma-table">
+                <table class='table table-display table-bordered proforma-report-table' id="proforma-report-table"
+                    style="width: 3600px !important;">
                     <thead>
                         <tr>
                             <th rowspan="2">Date</th>
@@ -187,8 +185,7 @@
                             <th rowspan="2">Subject</th>
                             <th rowspan="2">Program</th>
                             <th rowspan="2">Acad Session</th>
-                            <th data-bs-toggle="tooltip" title="As per OB approval"
-                                rowspan="2">Rate Per Hour</th>
+                            <th data-bs-toggle="tooltip" title="As per OB approval" rowspan="2">Rate Per Hour</th>
                             <th rowspan="2">Total No. of Hours Alloted</th>
                             <th rowspan="2">No. of Division/Batches</th>
                             <th rowspan="2">Student Count</th>
@@ -196,10 +193,10 @@
                             <th rowspan="2">Faculty Feedback</th>
                             <th rowspan="2">Total Subjects alloted in a Term</th>
                             <th rowspan="2">Subject Under AOL/OBE</th>
-                            
-                            
-                                <th rowspan="2">Comments</th>
-                            
+
+
+                            <th rowspan="2">Comments</th>
+
                             <th rowspan="2">Status</th>
                             <th rowspan="2">Total Points</th>
                             <th rowspan="2">Action</th>
@@ -213,8 +210,8 @@
                             <th>Total Experience</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        
+                    <tbody class="performer-view">
+
                     </tbody>
     
                 </table>
@@ -239,7 +236,7 @@
             </svg>
         </div>
 
-      
+
     </main>
 
     <script src="/js/jquery.min.js"></script>
@@ -259,7 +256,113 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
     <script src="/js/jquery.bootpag.min.js"></script>
     <script>
-        $(document).ready(function () {
+        let performerinfoobj;
+        $.ajax({
+            url: '${pageContext.request.contextPath}/performer-view',
+            type: 'POST',
+            data: '1',
+            async: false,
+            success: function (response) {
+                let data = JSON.parse(response.value)
+                performerinfoobj = data;
+            },
+            error: function (error) {
+                console.log("error", error)
+            }
+        });
+        console.log('Outside Ajax : ', performerinfoobj);
+
+        if (performerinfoobj != null) {
+            for (performerinfo of performerinfoobj.proforma_details) {
+                let view = `
+                <tr>
+                            <td>\${performerinfo.commencement_date_of_program.split('T')[0]}</td>
+                            <td>NMIMS</td>
+                            <td>\${performerinfo.full_name}</td>
+                            <td>\${performerinfo.pancard_no}</td>
+                            <td><button data-qual="\${performerinfo.application_lid}" class="btn btn-outline-primary text-dark graduate">Graduate</button> </td>
+                            <td><button data-qual="\${performerinfo.application_lid}" class="btn btn-outline-primary text-dark masters">Masters</button></td>
+                            <td><button data-qual="\${performerinfo.application_lid}" class="btn btn-outline-primary text-dark phd">PHD</button></td>
+                            <td>Total Teaching Experience</td>
+                            <td>Total Industrial Experience</td>
+                            <td>Total Experience</td>
+                            <td>\${performerinfo.module}</td>
+                            <td>\${performerinfo.program_id}</td>
+                            <td>\${performerinfo.acad_session}</td>
+                            <td>\${performerinfo.rate_per_hours}</td>
+                            <td>\${performerinfo.total_no_of_hrs_alloted}</td>
+                            <td>\${performerinfo.no_of_division}</td>
+                            <td>\${performerinfo.student_count_per_division}</td>
+                            <td>\${performerinfo.rate_per_hours}</td>
+                            <td>FeedBack</td>
+                            <td>1</td>
+                            <td>\${performerinfo.aol_obe}</td>
+                            <td>Comments</td>
+                            <td>Pending</td>
+                            <td>6.5</td>
+                            <td><i class="fa-solid fa-fast-forward approve-button" title="Send for Approval"></i></td>
+                <tr>
+                `
+                document.querySelector('.performer-view').insertAdjacentHTML('afterbegin', view);
+            }
+        }
+
+        document.querySelector('.perfoma-table').addEventListener('click', function (e) {
+            //    console.log(e.target);
+            if (e.target.classList.contains('fa-fast-forward')) {
+                e.target.classList.replace('fa-fast-forward', 'fa-check');
+            }
+
+            //For Graduation Modal
+            if (e.target.classList.contains('graduate')) {
+                let obj = {
+                    "get_application_qualification": []
+                }
+                let data = {}
+                data.qualification_type_lid = '1',
+                    data.application_lid = e.target.dataset.qual
+                obj.get_application_qualification.push(data);
+
+                console.log(JSON.stringify(obj))
+                $.ajax({
+                    url: '${pageContext.request.contextPath}/get-qual',
+                    type: 'POST',
+                    data: JSON.stringify(obj),
+                    async: false,
+                    contentType: false,
+                    success: function (response) {
+                        console.log(JSON.parse(response.value))
+                    },
+                    error: function (error) {
+                        console.log("error", error)
+                    }
+                });
+
+            }
+
+            //For Masters Modal
+            if (e.target.classList.contains('masters')) {
+                let obj = {
+                    "get_application_qualification": []
+                }
+                let data = {}
+                data.qualification_type_lid = '2',
+                    data.application_lid = e.target.dataset.qual
+                obj.get_application_qualification.push(data);
+
+            }
+
+            //For PHD Modal
+            if (e.target.classList.contains('phd')) {
+                let obj = {
+                    "get_application_qualification": []
+                }
+                let data = {}
+                data.qualification_type_lid = '3',
+                    data.application_lid = e.target.dataset.qual
+                obj.get_application_qualification.push(data);
+
+            }
 
         })
     </script>

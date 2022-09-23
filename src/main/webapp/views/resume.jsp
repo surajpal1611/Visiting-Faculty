@@ -1247,8 +1247,8 @@
                           <h6 class="temporary-address-heading">Temporary Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">`
-          if (personal_details[0].address) {
-            resume += `<p id="temporary-address-value">\${personal_details[0].address}\${tempAdd}</p>`
+          if (personal_details[1].address) {
+            resume += `<p id="temporary-address-value">\${personal_details[1].address}\${tempAdd}</p>`
           } else {
             resume += `<p id="temporary-address-value">N.A</p>`
           }
@@ -2112,14 +2112,15 @@
       let cityvalid = dynamicLengthCheck(result.city, 'city-message-insert');
       let countryvalid = dynamicLengthCheck(result.country, 'country-message-insert');
       let contactvalid = dynamicContactCheck(result.contactNumber, 'contact-number-message-insert');
-      let adharnumbervalid = dynamicAdharNumberCheck(result.aadhar, 'aadhar-number-message-insert');
+      let dobvalid = dynamicLengthCheck(result.DOB, 'date-of-birth-message-insert')
+      // let adharnumbervalid = dynamicAdharNumberCheck(result.aadhar, 'aadhar-number-message-insert');
       let tempContactNumberValid = dynamicTempContactNumber(result.temporaryContact,
         'temporary-contact-number-message-insert');
       let tempemailvalid = dynamicTempEmail(result.tempemail, 'temp-email-message-insert');
       let pinvalid = dynamicPin(result.pincode, 'pincode-message-insert');
 
       if (!firstnamevalid || !lastnamevalid || !addressvalid || !emailvalid || !cityvalid || !countryvalid || !
-        contactvalid || !adharnumbervalid || !tempContactNumberValid || !tempemailvalid || !pinvalid) {
+        contactvalid || !tempContactNumberValid || !tempemailvalid || !pinvalid || !dobvalid) {
         return;
       }
 
@@ -2521,12 +2522,6 @@
           return;
         } else if (checkYearOfPassing == false) {
           qualificationRow[i].querySelector('.qualification-year').classList.add('input-border');
-          return;
-        } else if (checkPercentile == false) {
-          qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
-          return;
-        } else if (checkCertificate == false) {
-          qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
           return;
         }
 
@@ -5240,12 +5235,13 @@
           document.getElementById('main-loader').classList.add('d-none');
 
           return;
-        } else if (checkPercentile == false) {
-          qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
-          document.getElementById('main-loader').classList.add('d-none');
-
-          return;
         }
+        // else if (checkPercentile == false) {
+        //   qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
+        //   document.getElementById('main-loader').classList.add('d-none');
+
+        //   return;
+        // }
         //  else if (checkCertificate == false) {
         //   qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
         //   return;
@@ -7338,7 +7334,7 @@
             document.querySelector('.workexperience-data').addEventListener('click', function (e) {
               let designationType = findClosest(e.target, 'workexperience-row').querySelector('.designation-title');
               let designationInput = findClosest(e.target, 'workexperience-row').querySelector(
-                '.designation-input');
+              '.designation-input');
               let designationli = findClosest('e.target', 'workexperience-li')
               if (e.target.classList.contains("designation-input")) {
                 designationType.classList.remove("d-none");
