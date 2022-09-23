@@ -1007,7 +1007,7 @@
 
     <!-- Rana Changes -->
     <!-- ************************************************************************Qualification photo Modal Div******************************************************************************************** -->
-    <div class="image-preview-modal d-none" style="height: calc(100vh - 90px); margin-top: 100px;" >
+    <div class="image-preview-modal d-none" style="height: calc(100vh - 90px); margin-top: 100px;">
       <div id="bank-form-area">
         <div class="container">
           <div class="d-flex justify-content-center align-items-center my-4">
@@ -7958,7 +7958,7 @@ gnation-input
           success: function (response) {
             for (let desig of response) {
               schoolType +=
-              `<li>     
+                `<li>     
                     <div class="school-type-li col-md-10 col-sm-10 col-12" data-name="\${desig.collegeName}" data-id="\${desig.schoolObjId}" ><a>\${desig.collegeName}</a></div>
                 </li>`
             }
