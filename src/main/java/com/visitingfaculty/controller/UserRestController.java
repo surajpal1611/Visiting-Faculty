@@ -213,13 +213,12 @@ public class UserRestController {
     public ResponseEntity<?> createJobApplication(@RequestBody String data ,HttpSession httpSession) {
         Object dataFromDb = null;
         System.out.println(data);
-        String role = (String) httpSession.getAttribute("role");
-        if(role.equals("USER")){
+        // String role = (String) httpSession.getAttribute("role");
+        // if(role.equals("USER")){
             dataFromDb = userDaoInterface.createJobApplication(data);
-        } else {
+        // } else { 
 
-        }
-        System.out.println(data);
+        // }
         if (dataFromDb == null) {
 
             return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();

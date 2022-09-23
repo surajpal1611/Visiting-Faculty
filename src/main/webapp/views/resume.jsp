@@ -31,17 +31,21 @@
           <button class="back-button btn py-2 btn-danger">Back</button>
         </a>
         <div class="create-button px-2">
-          <button type="button" class="btn btn-success create-job-application" data-toggle="modal" data-target="#exampleModalLong">
-            Create Job Application
+          <button type="button" class="btn btn-success select-school" data-toggle="modal"
+            data-target="#exampleModalLong">
+            Select School
           </button>
+          <!-- <button type="button" class="btn btn-success create-job-application" data-toggle="modal" data-target="#exampleModalLong">
+            Create Job Application
+          </button> -->
         </div>
       </div>
     </div>
 
 
-  
 
-    <!-- Modal for create job application view--> 
+
+    <!-- Modal for create job application view-->
 
     <!-- Modal -->
 
@@ -973,56 +977,37 @@
     </div>
 
 
-    <!-- ************************************************************************Pancard Photo Modal Div******************************************************************************************** -->
-    <div class="pancard-photo-modal d-none">
-
+    <!-- ************************************************************************Create Application Modal Div******************************************************************************************** -->
+    <div id="create-application-modal" style="height: calc(100vh - 90px); margin-top: 100px;" class="d-none">
       <div id="bank-form-area">
         <div class="container">
           <div class="d-flex justify-content-center align-items-center my-4">
-            <h2>Preview Pancard Photo</h2>
+            <h2>Create Job Application</h2>
           </div>
 
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="download (3).jpg" alt="Pancard-photo-uploaded" id="Pancard-photo-uploaded"
-                style="width:450px;height:300px;">
+              <div class="custom-select-div col-md-9">
+                <label for="school-type-input" class="py-md-2"> Select School <span class="required">*</span></label>
+                <input class="form-control school-type-input" type="text" />
+                <ul class="form-control designation-title d-none" id="school-list">
+
+                </ul>
+              </div>
             </div>
           </div>
 
           <div class="d-flex justify-content-center">
-            <button id="pancard-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="create-application-cancel-button" class="btn btn-danger m-4">Cancel</button>
+            <button id="create-job-application-faculty" class="btn btn-success m-4"> Create Job Application</button>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- ************************************************************************Aadhar Photo Modal Div******************************************************************************************** -->
-    <div class="aadhar-photo-modal d-none">
-
-      <div id="bank-form-area">
-        <div class="container">
-          <div class="d-flex justify-content-center align-items-center my-4">
-            <h2>Preview Aadhar Photo</h2>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="download (3).jpg" alt="aadhar-photo-uploaded" id="aadhar-photo-uploaded"
-                style="width:450px;height:300px;">
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center">
-            <button id="aadhar-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
     <!-- Rana Changes -->
     <!-- ************************************************************************Qualification photo Modal Div******************************************************************************************** -->
-    <div class="image-preview-modal d-none">
+    <div class="image-preview-modal d-none" style="height: calc(100vh - 90px); margin-top: 100px;" >
       <div id="bank-form-area">
         <div class="container">
           <div class="d-flex justify-content-center align-items-center my-4">
@@ -1032,7 +1017,7 @@
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
               <img src="download (3).jpg" alt="image-uploaded" id="image-uploaded" class="image-uploaded"
-                style="width:450px;height:300px;">
+                style="width:100%;">
             </div>
           </div>
 
@@ -1042,27 +1027,6 @@
         </div>
       </div>
     </div>
-
-    <div class="application-preview-modal d-none">
-      <div id="bank-form-area">
-        <div class="container">
-          <div class="d-flex justify-content-center align-items-center my-4">
-            <h2> Application Preview </h2>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center">
-            <button id="application-preview-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
   </main>
   <div class="modal fade" id="view-resume-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -1144,7 +1108,7 @@
           let tempAdd = "";
           let tempEmail = "";
 
-          if ( (personal_details[0].temp_contact_number) == null) {
+          if ((personal_details[0].temp_contact_number) == null) {
             console.log("LOOP-1")
             tempCont = "N.A"
           }
@@ -1243,15 +1207,12 @@
                           <h6>Secondary Contact No.</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">`
-                        if(personal_details[0].temp_contact_number != "")
-                        {
-                          resume+=  `<p id="temp-contact-value">\${personal_details[0].temp_contact_number}\${tempCont}</p>`
-                        }
-                        else
-                        {
-                          resume+=  `<p id="temp-contact-value">N.A</p>`
-                        }
-                        resume+=`</div>
+          if (personal_details[0].temp_contact_number != "") {
+            resume += `<p id="temp-contact-value">\${personal_details[0].temp_contact_number}\${tempCont}</p>`
+          } else {
+            resume += `<p id="temp-contact-value">N.A</p>`
+          }
+          resume += `</div>
                       </div>
                     </div>
 
@@ -1286,15 +1247,12 @@
                           <h6 class="temporary-address-heading">Temporary Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">`
-                      if(personal_details[0].address)
-                          {
-                         resume+= `<p id="temporary-address-value">\${personal_details[0].address}\${tempAdd}</p>`
-                          }
-                          else
-                          {
-                            resume+= `<p id="temporary-address-value">N.A</p>`
-                          }
-                        resume+=  `
+          if (personal_details[0].address) {
+            resume += `<p id="temporary-address-value">\${personal_details[0].address}\${tempAdd}</p>`
+          } else {
+            resume += `<p id="temporary-address-value">N.A</p>`
+          }
+          resume += `
                         </div>
                       </div>
                       <div class="row py-1">
@@ -2145,7 +2103,7 @@
       result.tempemail = document.querySelector('#temp_email-insert').value;
       result.city = document.querySelector('#city-insert').value;
       result.pincode = document.querySelector('#pincode-insert').value;
-      
+
 
       let firstnamevalid = dynamiCheckSpecialChar(result.firstName, 'first-name-message-insert');
       let lastnamevalid = dynamiCheckSpecialChar(result.lastName, 'last-name-message-insert');
@@ -2161,7 +2119,7 @@
       let pinvalid = dynamicPin(result.pincode, 'pincode-message-insert');
 
       if (!firstnamevalid || !lastnamevalid || !addressvalid || !emailvalid || !cityvalid || !countryvalid || !
-        contactvalid || !adharnumbervalid || !tempContactNumberValid || !tempemailvalid ||!pinvalid) {
+        contactvalid || !adharnumbervalid || !tempContactNumberValid || !tempemailvalid || !pinvalid) {
         return;
       }
 
@@ -3799,7 +3757,7 @@
         } else if (checkYOP == false) {
           certificationRow[i].querySelector('.certification-YOP').classList.add('input-border');
           return;
-        }  
+        }
 
         let photoArray = []
 
@@ -4074,10 +4032,9 @@
         document.querySelector('.image-preview-modal').classList.remove('d-none');
         document.querySelector(".image-uploaded").src = e.target.dataset.image;
       }
-      if(e.target.classList.contains('qualification-certificate-display')){
+      if (e.target.classList.contains('qualification-certificate-display')) {
 
         document.getElementById('body').classList.add('d-none');
-        document.querySelector('.application-preview-modal').classList.remove('d-none');
 
       }
       if (e.target.classList.contains('addbtn-qualification') || findClosest(e.target, 'addbtn-qualification')) {
@@ -4345,23 +4302,23 @@
         //checkboxfunction('qualification-check-box', 'qualification-certificate');
 
 
-          $.ajax({
-              url: '${pageContext.request.contextPath}/get-qualification-type',
-              type: 'get',
-              success: function (response) {
-                console.log(response)
-                for (let i = 0; i < response.length; i++) {
-                  qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`
-                }
+        $.ajax({
+          url: '${pageContext.request.contextPath}/get-qualification-type',
+          type: 'get',
+          success: function (response) {
+            console.log(response)
+            for (let i = 0; i < response.length; i++) {
+              qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`
+            }
 
-                if (resumeinfo.resume_qualification != null) {
-                  for (qualedit of resumeinfo.resume_qualification) {
-                    if (qualedit.qualification_type_lid != 4) {
-                      console.log(id)
-                      if (qualedit.resume_qualification_lid == id) {
-                        document.querySelector('.qualification-data').innerHTML = ""
+            if (resumeinfo.resume_qualification != null) {
+              for (qualedit of resumeinfo.resume_qualification) {
+                if (qualedit.qualification_type_lid != 4) {
+                  console.log(id)
+                  if (qualedit.resume_qualification_lid == id) {
+                    document.querySelector('.qualification-data').innerHTML = ""
 
-                        let table = `
+                    let table = `
                     <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
                       <div class="container">
                     <div class="row qualification-row"  data-lid = "\${qualedit.resume_qualification_lid}" >
@@ -4447,21 +4404,21 @@
                     </div>`
 
                     document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
-                        document.querySelector('.qualification-title').value = qualedit.abbr
-                        if (qualedit.abbr == 'phd') {
-                          document.querySelector('.qualification-phd-wrapper').classList.remove('d-none')
-                        }
-                       break;
-                      }
+                    document.querySelector('.qualification-title').value = qualedit.abbr
+                    if (qualedit.abbr == 'phd') {
+                      document.querySelector('.qualification-phd-wrapper').classList.remove('d-none')
                     }
+                    break;
                   }
-                  
                 }
-              },
-              error: function (error) {
-                console.log("Error::::::::::::", error);
               }
-            })
+
+            }
+          },
+          error: function (error) {
+            console.log("Error::::::::::::", error);
+          }
+        })
 
 
 
@@ -5052,7 +5009,7 @@
       let tempContact = (result.temp_contact_number);
       let tempemail = tempemailvalidation(result.temp_email);
       let pinvalid = dynamicPin(result.permanent_address_pincode, 'pincode-message');
-      
+
 
       if (!firstName || !lastName || !contactNumber || !email || !aadhar || !address || !
         country || !DOB || !tempemail || !gender || !pinvalid) {
@@ -6979,8 +6936,8 @@
         let workexperienceStartDate = workexperienceRow[i].querySelector('.start-date').value;
         let workexperienceEndDate = workexperienceRow[i].querySelector('.end-date').value;
 
-console.log('ID',workexperienceDesignationTypeLID);
-console.log('Name',workexperienceDesignationType);
+        console.log('ID', workexperienceDesignationTypeLID);
+        console.log('Name', workexperienceDesignationType);
         let checkWorkExp = tabledatacheck(workexperienceType);
         let checkUniversity = tabledatacheck(workexperienceUniversity);
         let checkSubjetTaught = tabledatacheck(workexperienceSubjectTaught);
@@ -7037,7 +6994,7 @@ console.log('Name',workexperienceDesignationType);
           is_current: workexperienceStatus,
           padagogy: workexperiencePadagogy,
           duration: workexperienceDuration,
-          resume_experience_lid :resume_workexperience_lid
+          resume_experience_lid: resume_workexperience_lid
         }
         workexperienceTableArray.push(object)
       }
@@ -7242,6 +7199,7 @@ console.log('Name',workexperienceDesignationType);
             }
           })
 
+
           ++workexperienceDataDB;
       }
     }, false);
@@ -7377,11 +7335,12 @@ console.log('Name',workexperienceDesignationType);
       </div>`
 
             document.querySelector('.workexperience-data').insertAdjacentHTML("beforeend", table);
-            document.querySelector('.workexperience-data').addEventListener('click',function(e){
+            document.querySelector('.workexperience-data').addEventListener('click', function (e) {
               let designationType = findClosest(e.target, 'workexperience-row').querySelector('.designation-title');
-              let designationInput = findClosest(e.target, 'workexperience-row').querySelector('.designation-input');
-              let designationli = findClosest('e.target','workexperience-li')
-              if(e.target.classList.contains("designation-input")) {
+              let designationInput = findClosest(e.target, 'workexperience-row').querySelector(
+                '.designation-input');
+              let designationli = findClosest('e.target', 'workexperience-li')
+              if (e.target.classList.contains("designation-input")) {
                 designationType.classList.remove("d-none");
               } else {
                 designationType.classList.add("d-none");
@@ -7761,7 +7720,7 @@ console.log('Name',workexperienceDesignationType);
               <label for="workexperience-status">Currently Working</label>
              </div>
             </div>
-
+gnation-input
             <div class="row p-3 workexperience-padagogy-div d-none">
               <div class="col-md-3 ">
                 <p class="h6">Padagogy:</p>
@@ -7931,33 +7890,35 @@ console.log('Name',workexperienceDesignationType);
 
     // **************************************************Job Application Start*******************************************************
 
-    document.querySelector('.create-job-application').addEventListener('click', function () {
-
+    document.querySelector('#create-job-application-faculty').addEventListener('click', function () {
+      let status = 400;
       if (resumeinfo.bank_details === null || resumeinfo.personal_details === null || resumeinfo
         .resume_achievement === null || resumeinfo.resume_experience === null || resumeinfo.resume_publication ===
         null || resumeinfo.resume_qualification === null || resumeinfo.resume_researchresume_research === null ||
         resumeinfo.resume_skill_selected === null) {
         alert("please Fill Complete Details")
       } else {
-        let status = 400;
         let data = {
           "create_job_application": []
         }
 
         let organizationStatus = true
-         
-        if('${organization_lid}' == '1'){
+
+        if ('${organization_lid}' == '1') {
           organizationStatus = false
         }
 
+        let org_ID = document.querySelector('.school-type-input').dataset.id
+
         let object = {}
         object.resume_lid = resume_lid
-        object.organization_lid = '${organization_lid}'
+        // object.organization_lid = '${organization_lid}'
+        object.organization_lid = org_ID
         object.active = organizationStatus
         data.create_job_application.push(object)
 
         console.log(JSON.stringify(data))
-        fetch('/create-job-application', {
+        fetch('${pageContext.request.contextPath}/create-job-application', {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
@@ -7981,11 +7942,93 @@ console.log('Name',workexperienceDesignationType);
 
       }
     })
+
+    // ************************************************** Drop down to bring school type *******************************************************
+
+    let schoolType = ` `
+    let schoolList = 1;
+    document.querySelector('.select-school').addEventListener('click', function () {
+      console.log("select button has been clicked")
+
+      if (schoolList == 1) {
+        $.ajax({
+          url: 'https://dev-portal.svkm.ac.in:8080/vfApi/getSchoolsList',
+          type: 'get',
+          dataType: 'json',
+          success: function (response) {
+            for (let desig of response) {
+              schoolType +=
+              `<li>     
+                    <div class="school-type-li col-md-10 col-sm-10 col-12" data-name="\${desig.collegeName}" data-id="\${desig.schoolObjId}" ><a>\${desig.collegeName}</a></div>
+                </li>`
+            }
+            document.querySelector('#school-list').insertAdjacentHTML('beforeend', schoolType);
+          },
+          error: function (error) {
+            console.log("Error::::::::::::", error);
+          }
+        })
+        schoolList++
+      }
+
+
+      document.getElementById('body').classList.add('d-none');
+      document.getElementById('create-application-modal').classList.remove("d-none")
+    })
+
+    document.querySelector('.school-type-input').addEventListener('keyup', function () {
+      // Declare variables
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+
+      // Input for the variables declared
+      input = document.querySelector('.school-type-input');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("school-list");
+      li = ul.getElementsByTagName('li');
+
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+
+        }
+      }
+
+    })
+
+    document.querySelector('#create-application-modal').addEventListener('click', function (e) {
+
+      if (e.target.classList.contains("school-type-input")) {
+        document.getElementById('school-list').classList.remove("d-none");
+      } else {
+        document.getElementById('school-list').classList.add("d-none");
+      }
+
+      if (e.target.classList.contains("school-type-li")) {
+        console.log('target', e.target)
+        let id = e.target.dataset.id;
+        let name = e.target.dataset.name;
+        document.querySelector('.school-type-input').value = name;
+        document.querySelector('.school-type-input').dataset.id = id;
+        document.querySelector('.school-type-input').dataset.name = name;
+        console.log('value', name + id);
+        document.getElementById('school-list').classList.add("d-none");
+      }
+
+    })
+
+    document.querySelector('#create-application-cancel-button').addEventListener('click', function () {
+      console.log("cancel button has been clicked")
+      document.getElementById('body').classList.remove('d-none');
+      document.getElementById('create-application-modal').classList.add("d-none")
+    })
   </script>
 </body>
 
 </html>
-
-
-
-
