@@ -973,54 +973,6 @@
     </div>
 
 
-    <!-- ************************************************************************Pancard Photo Modal Div******************************************************************************************** -->
-    <div class="pancard-photo-modal d-none">
-
-      <div id="bank-form-area">
-        <div class="container">
-          <div class="d-flex justify-content-center align-items-center my-4">
-            <h2>Preview Pancard Photo</h2>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="download (3).jpg" alt="Pancard-photo-uploaded" id="Pancard-photo-uploaded"
-                style="width:450px;height:300px;">
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center">
-            <button id="pancard-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ************************************************************************Aadhar Photo Modal Div******************************************************************************************** -->
-    <div class="aadhar-photo-modal d-none">
-
-      <div id="bank-form-area">
-        <div class="container">
-          <div class="d-flex justify-content-center align-items-center my-4">
-            <h2>Preview Aadhar Photo</h2>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="download (3).jpg" alt="aadhar-photo-uploaded" id="aadhar-photo-uploaded"
-                style="width:450px;height:300px;">
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center">
-            <button id="aadhar-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Rana Changes -->
     <!-- ************************************************************************Qualification photo Modal Div******************************************************************************************** -->
     <div class="image-preview-modal d-none">
       <div id="bank-form-area">
@@ -1042,27 +994,6 @@
         </div>
       </div>
     </div>
-
-    <div class="application-preview-modal d-none">
-      <div id="bank-form-area">
-        <div class="container">
-          <div class="d-flex justify-content-center align-items-center my-4">
-            <h2> Application Preview </h2>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center">
-            <button id="application-preview-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
   </main>
   <div class="modal fade" id="view-resume-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -2525,9 +2456,7 @@
         qualificationRow[i].querySelector('.qualification-subject').classList.remove('input-border');
         qualificationRow[i].querySelector('.qualification-university').classList.remove('input-border');
         qualificationRow[i].querySelector('.qualification-college').classList.remove('input-border');
-        qualificationRow[i].querySelector('.qualification-percentile').classList.remove('input-border');
         qualificationRow[i].querySelector('.qualification-year').classList.remove('input-border');
-        qualificationRow[i].querySelector('.qualification-certificate').classList.remove('input-border');
 
         let resume_qualification_lid = qualificationRow[i].dataset.lid
         let qualificationTitle = qualificationRow[i].querySelector('.qualification-title').value;
@@ -2544,12 +2473,9 @@
         let checkUniversity = tabledatacheck(qualificationUniversity);
         let checkCollege = tabledatacheck(qualificationCollege);
         let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
-        let checkCertificate = tabledatacheck(qualificationCertificate);
-        let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
         // let checkCancelledCheque = qualificationDetailCertificateValidation(qualificationCertificate);
 
         // console.log(qualificationCertificateImage)
-        console.log(checkPercentile)
         // console.log(checkSubject)
 
         let qualificationCertificateSRC = qualificationRow[i].querySelector('.qualification-certificate-preview')
@@ -2567,15 +2493,7 @@
         } else if (checkYearOfPassing == false) {
           qualificationRow[i].querySelector('.qualification-year').classList.add('input-border');
           return;
-        } else if (checkPercentile == false) {
-          qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
-          return;
-        } else if (checkCertificate == false) {
-          qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
-          return;
-        }
-
-
+        } 
 
         let qualificationTitle1 = ""
         let qualification_type = 0;
@@ -2608,6 +2526,8 @@
             let qualificationPhotoBase64 = evt.target.result;
             photoArray[i] = qualificationPhotoBase64
           }
+        } else {
+          photoArray[i] = null;
         }
 
         setTimeout(function () {
@@ -3668,7 +3588,7 @@
 
                         <div class="row p-3">
                           <div class="col-md-2 ">
-                            <p class="h6">Certificate: <span class="required">*</span></p>
+                            <p class="h6">Certificate: <span class="required"></span></p>
                           </div>
                           <div class="col-md-10 "><input class="form-control certificate-photo"
 
@@ -3732,7 +3652,7 @@
 
                         <div class="row p-3">
                           <div class="col-md-2 ">
-                            <p class="h6">Certificate: <span class="required">*</span></p>
+                            <p class="h6">Certificate: <span class="required"></span></p>
                           </div>
                           <div class="col-md-10 "><input class="form-control certificate-photo"
 
@@ -4080,7 +4000,6 @@
       if(e.target.classList.contains('qualification-certificate-display')){
 
         document.getElementById('body').classList.add('d-none');
-        document.querySelector('.application-preview-modal').classList.remove('d-none');
 
       }
       if (e.target.classList.contains('addbtn-qualification') || findClosest(e.target, 'addbtn-qualification')) {
@@ -5254,8 +5173,8 @@
         let checkUniversity = tabledatacheck(qualificationUniversity);
         let checkCollege = tabledatacheck(qualificationCollege);
         let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
-        let checkCertificate = tabledatacheck(qualificationCertificate);
-        let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
+        // let checkCertificate = tabledatacheck(qualificationCertificate);
+        // let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
         // let checkCancelledCheque = qualificationDetailCertificateValidation(qualificationCertificate);
 
         // console.log(qualificationCertificateImage)
@@ -5286,12 +5205,13 @@
           document.getElementById('main-loader').classList.add('d-none');
 
           return;
-        } else if (checkPercentile == false) {
-          qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
-          document.getElementById('main-loader').classList.add('d-none');
+        } 
+        // else if (checkPercentile == false) {
+        //   qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
+        //   document.getElementById('main-loader').classList.add('d-none');
 
-          return;
-        }
+        //   return;
+        // }
         //  else if (checkCertificate == false) {
         //   qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
         //   return;
@@ -6453,7 +6373,7 @@
 
                                         <div class="row p-3">
                                           <div class="col-md-2 ">
-                                            <p class="h6">Certificate: <span class="required">*</span></p>
+                                            <p class="h6">Certificate: <span class="required"></span></p>
                                           </div>
                                           <div class="col-md-10 "><input type='checkbox' class='certification-check-box'>Update Certificate?<input class="d-none form-control certificate-photo"
 

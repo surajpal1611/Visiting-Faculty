@@ -216,7 +216,7 @@
                     <tbody class = "performer-view">
                         
                     </tbody>
-    
+
                 </table>
             </div>
         </div>
@@ -285,14 +285,14 @@
                             <td>NMIMS</td>
                             <td>\${performerinfo.full_name}</td>
                             <td>\${performerinfo.pancard_no}</td>
-                            <td>Graduate</td>
-                            <td>Masters</td>
-                            <td>PHD</td>
+                            <td><button data-qual="\${performerinfo.application_lid}" class="btn btn-outline-primary text-dark graduate">Graduate</button> </td>
+                            <td><button data-qual="\${performerinfo.application_lid}" class="btn btn-outline-primary text-dark masters">Masters</button></td>
+                            <td><button data-qual="\${performerinfo.application_lid}" class="btn btn-outline-primary text-dark phd">PHD</button></td>
                             <td>Total Teaching Experience</td>
                             <td>Total Industrial Experience</td>
                             <td>Total Experience</td>
-                            <td>\${performerinfo.topic_of_study}</td>
                             <td>\${performerinfo.module}</td>
+                            <td>\${performerinfo.program_id}</td>
                             <td>\${performerinfo.acad_session}</td>
                             <td>\${performerinfo.rate_per_hours}</td>
                             <td>\${performerinfo.total_no_of_hrs_alloted}</td>
@@ -313,11 +313,60 @@
         }
 
         document.querySelector('.perfoma-table').addEventListener('click',function(e){
-           console.log(e.target);
+        //    console.log(e.target);
            if(e.target.classList.contains('fa-fast-forward'))
            {
             e.target.classList.replace('fa-fast-forward','fa-check');
-           } 
+           }
+
+           //For Graduation Modal
+           if(e.target.classList.contains('graduate'))
+           {
+            let obj = { "get_application_qualification" : []}
+            let data = {}
+            data.qualification_type_lid = '1',
+            data.application_lid = e.target.dataset.qual
+            obj.get_application_qualification.push(data);
+             
+            console.log(JSON.stringify(obj))
+            $.ajax({
+                url: '${pageContext.request.contextPath}/get-qual',
+                type: 'POST',
+                data: JSON.stringify(obj),
+                async : false,
+                contentType : false,
+                success: function (response) {
+                    console.log(JSON.parse(response.value))
+                },
+                error: function (error) {
+                  console.log("error", error)
+                }
+            });
+                
+           }
+
+           //For Masters Modal
+           if(e.target.classList.contains('masters'))
+           {
+            let obj = { "get_application_qualification" : []}
+            let data = {}
+            data.qualification_type_lid = '2',
+            data.application_lid = e.target.dataset.qual
+            obj.get_application_qualification.push(data);
+                
+           }
+
+           //For PHD Modal
+           if(e.target.classList.contains('phd'))
+           {
+            let obj = { "get_application_qualification" : []}
+            let data = {}
+            data.qualification_type_lid = '3',
+            data.application_lid = e.target.dataset.qual
+            obj.get_application_qualification.push(data);
+                
+           }
+
         })
 
 

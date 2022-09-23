@@ -29,4 +29,12 @@ public class PerformerController
         Object perfomaView = userDaoInterface.getJobView(schoolid);
         return perfomaView;
     }
+
+    @PostMapping(value="/get-qual")
+    public Object performerqual(@RequestBody String data)
+    {
+        System.out.println("data : "+data);
+        Object perfomaqual = userDaoInterface.getQualPerformer(data);
+        return perfomaqual;
+    }
 }

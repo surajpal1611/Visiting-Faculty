@@ -103,4 +103,6 @@ public interface UserDaoInterface {
     Object getJobResume(int resume_lid);
 
     public Object getJobView(String schoolid);
+
+    Object getQualPerformer(String data);
 }
