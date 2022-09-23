@@ -31,7 +31,8 @@
           <button class="back-button btn py-2 btn-danger">Back</button>
         </a>
         <div class="create-button px-2">
-          <button type="button" class="btn btn-success create-job-application" data-toggle="modal" data-target="#exampleModalLong">
+          <button type="button" class="btn btn-success create-job-application" data-toggle="modal"
+            data-target="#exampleModalLong">
             Create Job Application
           </button>
         </div>
@@ -39,9 +40,9 @@
     </div>
 
 
-  
 
-    <!-- Modal for create job application view--> 
+
+    <!-- Modal for create job application view-->
 
     <!-- Modal -->
 
@@ -1075,7 +1076,7 @@
           let tempAdd = "";
           let tempEmail = "";
 
-          if ( (personal_details[0].temp_contact_number) == null) {
+          if ((personal_details[0].temp_contact_number) == null) {
             console.log("LOOP-1")
             tempCont = "N.A"
           }
@@ -1174,15 +1175,12 @@
                           <h6>Secondary Contact No.</h6>
                         </div>
                         <div class="col-md-7 col-sm-9">`
-                        if(personal_details[0].temp_contact_number != "")
-                        {
-                          resume+=  `<p id="temp-contact-value">\${personal_details[0].temp_contact_number}\${tempCont}</p>`
-                        }
-                        else
-                        {
-                          resume+=  `<p id="temp-contact-value">N.A</p>`
-                        }
-                        resume+=`</div>
+          if (personal_details[0].temp_contact_number != "") {
+            resume += `<p id="temp-contact-value">\${personal_details[0].temp_contact_number}\${tempCont}</p>`
+          } else {
+            resume += `<p id="temp-contact-value">N.A</p>`
+          }
+          resume += `</div>
                       </div>
                     </div>
 
@@ -1217,15 +1215,12 @@
                           <h6 class="temporary-address-heading">Temporary Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">`
-                      if(personal_details[1].address)
-                          {
-                         resume+= `<p id="temporary-address-value">\${personal_details[1].address}\${tempAdd}</p>`
-                          }
-                          else
-                          {
-                            resume+= `<p id="temporary-address-value">N.A</p>`
-                          }
-                        resume+=  `
+          if (personal_details[1].address) {
+            resume += `<p id="temporary-address-value">\${personal_details[1].address}\${tempAdd}</p>`
+          } else {
+            resume += `<p id="temporary-address-value">N.A</p>`
+          }
+          resume += `
                         </div>
                       </div>
                       <div class="row py-1">
@@ -2076,7 +2071,7 @@
       result.tempemail = document.querySelector('#temp_email-insert').value;
       result.city = document.querySelector('#city-insert').value;
       result.pincode = document.querySelector('#pincode-insert').value;
-      
+
 
       let firstnamevalid = dynamiCheckSpecialChar(result.firstName, 'first-name-message-insert');
       let lastnamevalid = dynamiCheckSpecialChar(result.lastName, 'last-name-message-insert');
@@ -2085,7 +2080,7 @@
       let cityvalid = dynamicLengthCheck(result.city, 'city-message-insert');
       let countryvalid = dynamicLengthCheck(result.country, 'country-message-insert');
       let contactvalid = dynamicContactCheck(result.contactNumber, 'contact-number-message-insert');
-      let dobvalid = dynamicLengthCheck(result.DOB,'date-of-birth-message-insert')
+      let dobvalid = dynamicLengthCheck(result.DOB, 'date-of-birth-message-insert')
       // let adharnumbervalid = dynamicAdharNumberCheck(result.aadhar, 'aadhar-number-message-insert');
       let tempContactNumberValid = dynamicTempContactNumber(result.temporaryContact,
         'temporary-contact-number-message-insert');
@@ -2093,7 +2088,7 @@
       let pinvalid = dynamicPin(result.pincode, 'pincode-message-insert');
 
       if (!firstnamevalid || !lastnamevalid || !addressvalid || !emailvalid || !cityvalid || !countryvalid || !
-        contactvalid || !tempContactNumberValid || !tempemailvalid ||!pinvalid || !dobvalid ) {
+        contactvalid || !tempContactNumberValid || !tempemailvalid || !pinvalid || !dobvalid) {
         return;
       }
 
@@ -2493,7 +2488,7 @@
         } else if (checkYearOfPassing == false) {
           qualificationRow[i].querySelector('.qualification-year').classList.add('input-border');
           return;
-        } 
+        }
 
         let qualificationTitle1 = ""
         let qualification_type = 0;
@@ -3722,7 +3717,7 @@
         } else if (checkYOP == false) {
           certificationRow[i].querySelector('.certification-YOP').classList.add('input-border');
           return;
-        }  
+        }
 
         let photoArray = []
 
@@ -3997,7 +3992,7 @@
         document.querySelector('.image-preview-modal').classList.remove('d-none');
         document.querySelector(".image-uploaded").src = e.target.dataset.image;
       }
-      if(e.target.classList.contains('qualification-certificate-display')){
+      if (e.target.classList.contains('qualification-certificate-display')) {
 
         document.getElementById('body').classList.add('d-none');
 
@@ -4267,23 +4262,23 @@
         //checkboxfunction('qualification-check-box', 'qualification-certificate');
 
 
-          $.ajax({
-              url: '${pageContext.request.contextPath}/get-qualification-type',
-              type: 'get',
-              success: function (response) {
-                console.log(response)
-                for (let i = 0; i < response.length; i++) {
-                  qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`
-                }
+        $.ajax({
+          url: '${pageContext.request.contextPath}/get-qualification-type',
+          type: 'get',
+          success: function (response) {
+            console.log(response)
+            for (let i = 0; i < response.length; i++) {
+              qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`
+            }
 
-                if (resumeinfo.resume_qualification != null) {
-                  for (qualedit of resumeinfo.resume_qualification) {
-                    if (qualedit.qualification_type_lid != 4) {
-                      console.log(id)
-                      if (qualedit.resume_qualification_lid == id) {
-                        document.querySelector('.qualification-data').innerHTML = ""
+            if (resumeinfo.resume_qualification != null) {
+              for (qualedit of resumeinfo.resume_qualification) {
+                if (qualedit.qualification_type_lid != 4) {
+                  console.log(id)
+                  if (qualedit.resume_qualification_lid == id) {
+                    document.querySelector('.qualification-data').innerHTML = ""
 
-                        let table = `
+                    let table = `
                     <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
                       <div class="container">
                     <div class="row qualification-row"  data-lid = "\${qualedit.resume_qualification_lid}" >
@@ -4369,21 +4364,21 @@
                     </div>`
 
                     document.querySelector('.qualification-data').insertAdjacentHTML("beforeend", table);
-                        document.querySelector('.qualification-title').value = qualedit.abbr
-                        if (qualedit.abbr == 'phd') {
-                          document.querySelector('.qualification-phd-wrapper').classList.remove('d-none')
-                        }
-                       break;
-                      }
+                    document.querySelector('.qualification-title').value = qualedit.abbr
+                    if (qualedit.abbr == 'phd') {
+                      document.querySelector('.qualification-phd-wrapper').classList.remove('d-none')
                     }
+                    break;
                   }
-                  
                 }
-              },
-              error: function (error) {
-                console.log("Error::::::::::::", error);
               }
-            })
+
+            }
+          },
+          error: function (error) {
+            console.log("Error::::::::::::", error);
+          }
+        })
 
 
 
@@ -4974,7 +4969,7 @@
       let tempContact = (result.temp_contact_number);
       let tempemail = tempemailvalidation(result.temp_email);
       let pinvalid = dynamicPin(result.permanent_address_pincode, 'pincode-message');
-      
+
 
       if (!firstName || !lastName || !contactNumber || !email || !address || !
         country || !DOB || !tempemail || !gender || !pinvalid) {
@@ -5205,7 +5200,7 @@
           document.getElementById('main-loader').classList.add('d-none');
 
           return;
-        } 
+        }
         // else if (checkPercentile == false) {
         //   qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
         //   document.getElementById('main-loader').classList.add('d-none');
@@ -6900,8 +6895,8 @@
         let workexperienceStartDate = workexperienceRow[i].querySelector('.start-date').value;
         let workexperienceEndDate = workexperienceRow[i].querySelector('.end-date').value;
 
-console.log('ID',workexperienceDesignationTypeLID);
-console.log('Name',workexperienceDesignationType);
+        console.log('ID', workexperienceDesignationTypeLID);
+        console.log('Name', workexperienceDesignationType);
         let checkWorkExp = tabledatacheck(workexperienceType);
         let checkUniversity = tabledatacheck(workexperienceUniversity);
         let checkSubjetTaught = tabledatacheck(workexperienceSubjectTaught);
@@ -6958,7 +6953,7 @@ console.log('Name',workexperienceDesignationType);
           is_current: workexperienceStatus,
           padagogy: workexperiencePadagogy,
           duration: workexperienceDuration,
-          resume_experience_lid :resume_workexperience_lid
+          resume_experience_lid: resume_workexperience_lid
         }
         workexperienceTableArray.push(object)
       }
@@ -7298,11 +7293,12 @@ console.log('Name',workexperienceDesignationType);
       </div>`
 
             document.querySelector('.workexperience-data').insertAdjacentHTML("beforeend", table);
-            document.querySelector('.workexperience-data').addEventListener('click',function(e){
+            document.querySelector('.workexperience-data').addEventListener('click', function (e) {
               let designationType = findClosest(e.target, 'workexperience-row').querySelector('.designation-title');
-              let designationInput = findClosest(e.target, 'workexperience-row').querySelector('.designation-input');
-              let designationli = findClosest('e.target','workexperience-li')
-              if(e.target.classList.contains("designation-input")) {
+              let designationInput = findClosest(e.target, 'workexperience-row').querySelector(
+              '.designation-input');
+              let designationli = findClosest('e.target', 'workexperience-li')
+              if (e.target.classList.contains("designation-input")) {
                 designationType.classList.remove("d-none");
               } else {
                 designationType.classList.add("d-none");
@@ -7866,8 +7862,8 @@ console.log('Name',workexperienceDesignationType);
         }
 
         let organizationStatus = true
-         
-        if('${organization_lid}' == '1'){
+
+        if ('${organization_lid}' == '1') {
           organizationStatus = false
         }
 
@@ -7907,7 +7903,3 @@ console.log('Name',workexperienceDesignationType);
 </body>
 
 </html>
-
-
-
-
