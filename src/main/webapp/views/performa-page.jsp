@@ -172,7 +172,7 @@
                 
 
 
-            <div class="table-responsive table-wrapper px-2">
+            <div class="table-responsive table-wrapper px-2 perfoma-table">
                 <table
                     class='table table-display table-bordered proforma-report-table'
                     id="proforma-report-table" style="width: 3600px !important;">
@@ -303,14 +303,23 @@
                             <td>1</td>
                             <td>\${performerinfo.aol_obe}</td>
                             <td>Comments</td>
-                            <td>Status</td>
+                            <td>Pending</td>
                             <td>6.5</td>
-                            <td><i class="fa-solid fa-eye"></i></td>
+                            <td><i class="fa-solid fa-fast-forward approve-button" title="Send for Approval"></i></td>
                 <tr>
                 `
                 document.querySelector('.performer-view').insertAdjacentHTML('afterbegin', view);
             }
         }
+
+        document.querySelector('.perfoma-table').addEventListener('click',function(e){
+           console.log(e.target);
+           if(e.target.classList.contains('fa-fast-forward'))
+           {
+            e.target.classList.replace('fa-fast-forward','fa-check');
+           } 
+        })
+
 
     </script>
 
