@@ -213,7 +213,7 @@
                             <th>Total Experience</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class = "performer-view">
                         
                     </tbody>
     
@@ -259,10 +259,61 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
     <script src="/js/jquery.bootpag.min.js"></script>
     <script>
-        $(document).ready(function () {
+        let performerinfoobj;
+        $.ajax({
+          url: '${pageContext.request.contextPath}/performer-view',
+          type: 'POST',
+          data: '1',
+          async : false,
+          success: function (response) {
+            let data = JSON.parse(response.value)
+            performerinfoobj = data;
+          },
+          error: function (error) {
+            console.log("error", error)
+          }
+        });
+        console.log('Outside Ajax : ',performerinfoobj);
 
-        })
+        if(performerinfoobj != null)
+        {
+            for(performerinfo of performerinfoobj.proforma_details)
+            {
+                let view = `
+                <tr>
+                            <td>\${performerinfo.commencement_date_of_program.split('T')[0]}</td>
+                            <td>NMIMS</td>
+                            <td>\${performerinfo.full_name}</td>
+                            <td>\${performerinfo.pancard_no}</td>
+                            <td>Graduate</td>
+                            <td>Masters</td>
+                            <td>PHD</td>
+                            <td>Total Teaching Experience</td>
+                            <td>Total Industrial Experience</td>
+                            <td>Total Experience</td>
+                            <td>\${performerinfo.topic_of_study}</td>
+                            <td>\${performerinfo.module}</td>
+                            <td>\${performerinfo.acad_session}</td>
+                            <td>\${performerinfo.rate_per_hours}</td>
+                            <td>\${performerinfo.total_no_of_hrs_alloted}</td>
+                            <td>\${performerinfo.no_of_division}</td>
+                            <td>\${performerinfo.student_count_per_division}</td>
+                            <td>\${performerinfo.rate_per_hours}</td>
+                            <td>FeedBack</td>
+                            <td>1</td>
+                            <td>\${performerinfo.aol_obe}</td>
+                            <td>Comments</td>
+                            <td>Status</td>
+                            <td>6.5</td>
+                            <td><i class="fa-solid fa-eye"></i></td>
+                <tr>
+                `
+                document.querySelector('.performer-view').insertAdjacentHTML('afterbegin', view);
+            }
+        }
+
     </script>
+
 </body>
 
 </html>

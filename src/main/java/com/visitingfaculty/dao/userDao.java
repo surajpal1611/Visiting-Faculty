@@ -411,4 +411,12 @@ public class userDao implements UserDaoInterface {
         return jdbcCall.executeFunction(Object.class, resume_lid);
     }
 
+    @Override
+    public Object getJobView(String schoolid) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("get_proforma_details");
+
+        return jdbcCall.executeFunction(Object.class, schoolid);
+    }
+
 }
