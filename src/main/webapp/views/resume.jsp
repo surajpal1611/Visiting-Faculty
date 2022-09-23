@@ -209,7 +209,7 @@
           <div class="container">
             <div id="left-fourth-row" class="row">
               <div class="col-md-4 col-sm-12">
-                <label for="aadhar-number">Aadhar Card Number <span class="required">*</span></label>
+                <label for="aadhar-number">Aadhar Card Number <span class="required"></span></label>
                 <span id="aadhar-number-message" style="color: red;" class="error"></span>
                 <input type="text" class="form-control" name="aadhar_number" id="aadhar-number" />
               </div>
@@ -217,7 +217,7 @@
               <div class="col-md-4 col-sm-12">
                 <input type="checkbox" class="adhar-check-box" id="pan-check-box">
                 <span id="aadhar-photo-message" style="color: red;" class="error"></span>
-                <label for="aadhar-photo">Update Aadhar Card Photo? <span class="required">*</span></label>
+                <label for="aadhar-photo">Update Aadhar Card Photo? <span class="required"></span></label>
                 <input type="file" class="form-control d-none aadhar-photo" id="aadhar-photo"
                   onchange="document.getElementById('aadhar-photo-preview-1').src = window.URL.createObjectURL(this.files[0])">
               </div>
@@ -403,13 +403,13 @@
           <div class="container">
             <div id="left-fourth-row" class="row">
               <div class="col-md-4 col-sm-12">
-                <label for="aadhar-number">Aadhar Card Number <span class="required">*</span></label>
+                <label for="aadhar-number">Aadhar Card Number <span class="required"></span></label>
                 <span id="aadhar-number-message-insert" style="color: red;" class="error"></span>
                 <input type="text" class="form-control" name="aadhar_number_insert" id="aadhar-number-insert" />
               </div>
 
               <div class="col-md-4 col-sm-12">
-                <label for="aadhar-photo">Aadhar Card Photo <span class="required">*</span></label>
+                <label for="aadhar-photo">Aadhar Card Photo <span class="required"></span></label>
                 <span id="aadhar-photo-message-insert" style="color: red;" class="error"></span>
                 <input type="file" class="form-control" id="aadhar-photo-insert"
                   onchange="document.getElementById('aadhar-photo-preview_insert').src = window.URL.createObjectURL(this.files[0])">
@@ -841,7 +841,7 @@
 
             </div>
             <div class="col-md-6 col-sm-12">
-              <label for="bank-micr-code" class="py-md-2">MICR code<span class="required">*</span></label>
+              <label for="bank-micr-code" class="py-md-2">MICR code<span class="required"></span></label>
               <span id="bank-micr-code-message" style="color: red;" class="error"></span>
               <input type="text" class="form-control" id="bank-micr-code">
 
@@ -973,54 +973,6 @@
     </div>
 
 
-    <!-- ************************************************************************Pancard Photo Modal Div******************************************************************************************** -->
-    <div class="pancard-photo-modal d-none">
-
-      <div id="bank-form-area">
-        <div class="container">
-          <div class="d-flex justify-content-center align-items-center my-4">
-            <h2>Preview Pancard Photo</h2>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="download (3).jpg" alt="Pancard-photo-uploaded" id="Pancard-photo-uploaded"
-                style="width:450px;height:300px;">
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center">
-            <button id="pancard-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ************************************************************************Aadhar Photo Modal Div******************************************************************************************** -->
-    <div class="aadhar-photo-modal d-none">
-
-      <div id="bank-form-area">
-        <div class="container">
-          <div class="d-flex justify-content-center align-items-center my-4">
-            <h2>Preview Aadhar Photo</h2>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img src="download (3).jpg" alt="aadhar-photo-uploaded" id="aadhar-photo-uploaded"
-                style="width:450px;height:300px;">
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center">
-            <button id="aadhar-photo-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Rana Changes -->
     <!-- ************************************************************************Qualification photo Modal Div******************************************************************************************** -->
     <div class="image-preview-modal d-none">
       <div id="bank-form-area">
@@ -1042,27 +994,6 @@
         </div>
       </div>
     </div>
-
-    <div class="application-preview-modal d-none">
-      <div id="bank-form-area">
-        <div class="container">
-          <div class="d-flex justify-content-center align-items-center my-4">
-            <h2> Application Preview </h2>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center">
-            <button id="application-preview-cancel-button" class="btn btn-danger m-4">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
   </main>
   <div class="modal fade" id="view-resume-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -1278,7 +1209,7 @@
                           <h6>Permanent Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="address-value">\${personal_details[1].address}</p>
+                          <p id="address-value">\${personal_details[0].address}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -1286,9 +1217,9 @@
                           <h6 class="temporary-address-heading">Temporary Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">`
-                      if(personal_details[0].address)
+                      if(personal_details[1].address)
                           {
-                         resume+= `<p id="temporary-address-value">\${personal_details[0].address}\${tempAdd}</p>`
+                         resume+= `<p id="temporary-address-value">\${personal_details[1].address}\${tempAdd}</p>`
                           }
                           else
                           {
@@ -1943,7 +1874,7 @@
                       <h6 class="pb-4">Cancalled Cheque Photo</h6>
                     </div>
                     <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">`
-          if (bank_details.micr_code != null) {
+          if (bank_details.micr_code != "") {
 
             resume += ` <p id="micr-code-value">\${bank_details.micr_code}</p>`
           } else {
@@ -2154,14 +2085,15 @@
       let cityvalid = dynamicLengthCheck(result.city, 'city-message-insert');
       let countryvalid = dynamicLengthCheck(result.country, 'country-message-insert');
       let contactvalid = dynamicContactCheck(result.contactNumber, 'contact-number-message-insert');
-      let adharnumbervalid = dynamicAdharNumberCheck(result.aadhar, 'aadhar-number-message-insert');
+      let dobvalid = dynamicLengthCheck(result.DOB,'date-of-birth-message-insert')
+      // let adharnumbervalid = dynamicAdharNumberCheck(result.aadhar, 'aadhar-number-message-insert');
       let tempContactNumberValid = dynamicTempContactNumber(result.temporaryContact,
         'temporary-contact-number-message-insert');
       let tempemailvalid = dynamicTempEmail(result.tempemail, 'temp-email-message-insert');
       let pinvalid = dynamicPin(result.pincode, 'pincode-message-insert');
 
       if (!firstnamevalid || !lastnamevalid || !addressvalid || !emailvalid || !cityvalid || !countryvalid || !
-        contactvalid || !adharnumbervalid || !tempContactNumberValid || !tempemailvalid ||!pinvalid) {
+        contactvalid || !tempContactNumberValid || !tempemailvalid ||!pinvalid || !dobvalid ) {
         return;
       }
 
@@ -2193,6 +2125,8 @@
           let aadharPhotobase64 = evt.target.result;
           photoArray[1] = aadharPhotobase64
         }
+      } else {
+        photoArray[1] = null;
       }
 
       let panPhoto = document.getElementById("pan-photo-insert").files[0]
@@ -2522,9 +2456,7 @@
         qualificationRow[i].querySelector('.qualification-subject').classList.remove('input-border');
         qualificationRow[i].querySelector('.qualification-university').classList.remove('input-border');
         qualificationRow[i].querySelector('.qualification-college').classList.remove('input-border');
-        qualificationRow[i].querySelector('.qualification-percentile').classList.remove('input-border');
         qualificationRow[i].querySelector('.qualification-year').classList.remove('input-border');
-        qualificationRow[i].querySelector('.qualification-certificate').classList.remove('input-border');
 
         let resume_qualification_lid = qualificationRow[i].dataset.lid
         let qualificationTitle = qualificationRow[i].querySelector('.qualification-title').value;
@@ -2541,12 +2473,9 @@
         let checkUniversity = tabledatacheck(qualificationUniversity);
         let checkCollege = tabledatacheck(qualificationCollege);
         let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
-        let checkCertificate = tabledatacheck(qualificationCertificate);
-        let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
         // let checkCancelledCheque = qualificationDetailCertificateValidation(qualificationCertificate);
 
         // console.log(qualificationCertificateImage)
-        console.log(checkPercentile)
         // console.log(checkSubject)
 
         let qualificationCertificateSRC = qualificationRow[i].querySelector('.qualification-certificate-preview')
@@ -2564,15 +2493,7 @@
         } else if (checkYearOfPassing == false) {
           qualificationRow[i].querySelector('.qualification-year').classList.add('input-border');
           return;
-        } else if (checkPercentile == false) {
-          qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
-          return;
-        } else if (checkCertificate == false) {
-          qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
-          return;
-        }
-
-
+        } 
 
         let qualificationTitle1 = ""
         let qualification_type = 0;
@@ -2605,6 +2526,8 @@
             let qualificationPhotoBase64 = evt.target.result;
             photoArray[i] = qualificationPhotoBase64
           }
+        } else {
+          photoArray[i] = null;
         }
 
         setTimeout(function () {
@@ -3665,7 +3588,7 @@
 
                         <div class="row p-3">
                           <div class="col-md-2 ">
-                            <p class="h6">Certificate: <span class="required">*</span></p>
+                            <p class="h6">Certificate: <span class="required"></span></p>
                           </div>
                           <div class="col-md-10 "><input class="form-control certificate-photo"
 
@@ -3729,7 +3652,7 @@
 
                         <div class="row p-3">
                           <div class="col-md-2 ">
-                            <p class="h6">Certificate: <span class="required">*</span></p>
+                            <p class="h6">Certificate: <span class="required"></span></p>
                           </div>
                           <div class="col-md-10 "><input class="form-control certificate-photo"
 
@@ -3991,7 +3914,7 @@
         'bank-name-message-insert');
       let facultyBankBranchValid = dynamicLengthCheck(submitBankDetailsForm.get('branchName'),
         'bank-branch-message-insert');
-      let facultyIfscCodevalid = dynamicIFSCCheck(submitBankDetailsForm.get('ifscCode'),
+      let facultyIfscCodevalid = dynamicLengthCheck(submitBankDetailsForm.get('ifscCode'),
         'bank-ifsc-code-message-insert');
       let facultyAccountNumberValid = dynamicBankAcountNumber(submitBankDetailsForm.get('accountNumber'),
         'bank-account-number-message-insert');
@@ -4077,7 +4000,6 @@
       if(e.target.classList.contains('qualification-certificate-display')){
 
         document.getElementById('body').classList.add('d-none');
-        document.querySelector('.application-preview-modal').classList.remove('d-none');
 
       }
       if (e.target.classList.contains('addbtn-qualification') || findClosest(e.target, 'addbtn-qualification')) {
@@ -5044,7 +4966,7 @@
       //let pancard = personalDetailPancardValidation(result.pan_number);
       //let pancardPhoto = personalDetailPancardPhotoValidation(document.getElementById("pan-photo").value);
       let email = personalDetailEmailValidation(result.email);
-      let aadhar = personalDetailAadharValidation(result.aadhar_number);
+      // let aadhar = personalDetailAadharValidation(result.aadhar_number);
       //let aadharPhoto1 = personalDetailAadharPhotoValidation(document.getElementById("aadhar-photo").value);
 
       let address = personalDetailAddressValidation(result.permanent_address);
@@ -5054,7 +4976,7 @@
       let pinvalid = dynamicPin(result.permanent_address_pincode, 'pincode-message');
       
 
-      if (!firstName || !lastName || !contactNumber || !email || !aadhar || !address || !
+      if (!firstName || !lastName || !contactNumber || !email || !address || !
         country || !DOB || !tempemail || !gender || !pinvalid) {
         return;
       }
@@ -5251,8 +5173,8 @@
         let checkUniversity = tabledatacheck(qualificationUniversity);
         let checkCollege = tabledatacheck(qualificationCollege);
         let checkYearOfPassing = qualificationDetailYearOfPassingValidation(qualificationYear);
-        let checkCertificate = tabledatacheck(qualificationCertificate);
-        let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
+        // let checkCertificate = tabledatacheck(qualificationCertificate);
+        // let checkPercentile = qualificationDetailPercentageValidation(qualificationPercentile);
         // let checkCancelledCheque = qualificationDetailCertificateValidation(qualificationCertificate);
 
         // console.log(qualificationCertificateImage)
@@ -5283,12 +5205,13 @@
           document.getElementById('main-loader').classList.add('d-none');
 
           return;
-        } else if (checkPercentile == false) {
-          qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
-          document.getElementById('main-loader').classList.add('d-none');
+        } 
+        // else if (checkPercentile == false) {
+        //   qualificationRow[i].querySelector('.qualification-percentile').classList.add('input-border');
+        //   document.getElementById('main-loader').classList.add('d-none');
 
-          return;
-        }
+        //   return;
+        // }
         //  else if (checkCertificate == false) {
         //   qualificationRow[i].querySelector('.qualification-certificate').classList.add('input-border');
         //   return;
@@ -6450,7 +6373,7 @@
 
                                         <div class="row p-3">
                                           <div class="col-md-2 ">
-                                            <p class="h6">Certificate: <span class="required">*</span></p>
+                                            <p class="h6">Certificate: <span class="required"></span></p>
                                           </div>
                                           <div class="col-md-10 "><input type='checkbox' class='certification-check-box'>Update Certificate?<input class="d-none form-control certificate-photo"
 
@@ -6523,13 +6446,11 @@
 
       let facultyBankName1 = bankDetailBankNameValidation(submitBankDetailsForm.get('bankName'))
       let facultyBankBranch1 = bankDetailBankBranchValidation(submitBankDetailsForm.get('branchName'))
-      let facultyIfscCode1 = bankDetailIfscCodeValidation(submitBankDetailsForm.get('ifscCode'))
-      let facultyMicrCode1 = bankDetailMicrCodeValidation(submitBankDetailsForm.get('micrCode'))
+      // let facultyIfscCode1 = dynamicLengthCheck(submitBankDetailsForm.get('ifscCode'))
       let facultyAccountNumber1 = bankDetailAccountNumberValidation(submitBankDetailsForm.get('accountNumber'))
       //let facultyCancelledCheque = bankDetailCancelledChequeValidation(submitBankDetailsForm.get('cancelledCheckPhoto'))
 
-      if (!facultyBankName1 || !facultyBankBranch1 || !facultyIfscCode1 || !facultyMicrCode1 || !
-        facultyAccountNumber1) {
+      if (!facultyBankName1 || !facultyBankBranch1 || !facultyAccountNumber1) {
         return;
       }
 
@@ -7967,8 +7888,9 @@ console.log('Name',workexperienceDesignationType);
           .then(response => status = response.status)
           .then(response => {
             if (status === 200) {
-              console.log("success")
-
+              console.log("success");
+              alert('Job Applied Successfully');
+              location.href = '${pageContext.request.contextPath}/dashboard'
             } else {
               // document.getElementById('main-loader').classList.add('d-none');
               alert("ERROR")

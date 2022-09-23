@@ -31,8 +31,10 @@ public class UserController {
     }
 
     @GetMapping("/resume")
-    public String getResume(@RequestParam(value = "resume_lid") int resume_lid,Model model) {
-
+    public String getResume(@RequestParam(value = "resume_lid") int resume_lid,Model model, HttpSession httpSession) {
+        if(httpSession.getAttribute("user_id") == null) {
+            return "redirect:/login";
+        }
         User user = userDaoInterface.getUserByResume(resume_lid);
 
         model.addAttribute("resume_lid",resume_lid);
@@ -43,9 +45,9 @@ public class UserController {
 
     @GetMapping("/dashboard")
     public String getDashboard(HttpSession httpSession,Model m) {
-        // String user_id = (String) httpSession.getAttribute("user_id");
+        String user_id = (String) httpSession.getAttribute("user_id");
         // System.out.println(user_id);
-        // if (user_id != null) {
+        if (user_id != null) {
         String role = (String) httpSession.getAttribute("role");
             
         if (role.equals("ROLE_ADMIN")) {
@@ -54,9 +56,8 @@ public class UserController {
             m.addAttribute("user_id", httpSession.getAttribute("user_id"));
             return "faculty/dashboard";
         }
+        }
         return "redirect:/login";
-        // }
-        // return "redirect:/login";
     }
 
     @GetMapping("/logout")
@@ -67,51 +68,74 @@ public class UserController {
     }
 
     @GetMapping("/visiting-faculty-applications")
-    public String getFacultyApplcation() {
+    public String getFacultyApplcation(HttpSession httpSession) {
+        if(httpSession.getAttribute("user_id").equals(null)) {
+            return "redirect:/login";
+        }
         return "resume-search";
     }
 
     @GetMapping("/resume-dashboard")
-    public String getResumeDashboard(){
+    public String getResumeDashboard(HttpSession httpSession){
+        if(httpSession.getAttribute("user_id").equals(null)) {
+            return "redirect:/login";
+        }
         return "resume-dashboard";
     }
 
     @GetMapping("/create-new-resume")
-    public String getNewResumePage(@RequestParam Map<String, String> urlObject,Model model) {
-
+    public String getNewResumePage(@RequestParam Map<String, String> urlObject,Model model,HttpSession httpSession) {
+        if(httpSession.getAttribute("user_id").equals(null)) {
+            return "redirect:/login";
+        }
         model.addAttribute("user_lid",urlObject.get("user_lid"));
         model.addAttribute("resume_lid",urlObject.get("resume_lid"));
         return "new-resume";
     }
 
     @GetMapping("/performa")
-    public String getPerforma() {
+    public String getPerforma(HttpSession httpSession) {
+        if(httpSession.getAttribute("user_id").equals(null)) {
+            return "redirect:/login";
+        }
         return "performa-page";
     }
 
     @GetMapping("/performa-creation")
-    public String getPerformaCreation(@RequestParam(value = "application_lid") int application_lid,Model m) {
+    public String getPerformaCreation(@RequestParam(value = "application_lid") int application_lid,Model m,HttpSession httpSession) {
         m.addAttribute("application_lid", application_lid);
+        if(httpSession.getAttribute("user_id").equals(null)) {
+            return "redirect:/login";
+        }
         return "performa-creation";
     }
 
     @GetMapping("/faculty-reg")
-    public String getNewFaculty() {
-        
+    public String getNewFaculty(HttpSession httpSession) {
+        if(httpSession.getAttribute("user_id").equals(null)) {
+            return "redirect:/login";
+        }
         return "faculty-reg";
     }
 
     @GetMapping("/view-resume")
-    public String viewResume(@RequestParam(value = "resume_lid") int resume_lid,Model model) {
+    public String viewResume(@RequestParam(value = "resume_lid") int resume_lid,Model model,HttpSession httpSession) {
+        if(httpSession.getAttribute("user_id").equals(null)) {
+            return "redirect:/login";
+        }
         User user = userDaoInterface.getUserByResume(resume_lid);
         model.addAttribute("resume_lid",resume_lid);
         model.addAttribute("user_lid", user.getId());
         model.addAttribute("user_id", user.getUser_id());
+
         return "view-resume";
     }
 
     @GetMapping("/job-performer-page")
-    public String getperformerpage() {
+    public String getperformerpage(HttpSession httpSession) {
+        if(httpSession.getAttribute("user_id").equals(null)) {
+            return "redirect:/login";
+        }
         return "job-performer-page";
     }
 

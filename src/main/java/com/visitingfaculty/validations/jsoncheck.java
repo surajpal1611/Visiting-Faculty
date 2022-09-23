@@ -95,7 +95,7 @@ public class jsoncheck {
         String account_number = jsonStringArray.getJSONObject(0).getString("account_number");
         String name = jsonStringArray.getJSONObject(0).getString("bank_name");
         String branch = jsonStringArray.getJSONObject(0).getString("branch_name");
-        String ifsc_code = jsonStringArray.getJSONObject(0).getString("ifsc_code");
+        //String ifsc_code = jsonStringArray.getJSONObject(0).getString("ifsc_code");
         String chequePhoto = jsonStringArray.getJSONObject(0).isNull("url_path") ? "null"
                 : jsonStringArray.getJSONObject(0).getString("url_path");
 
@@ -108,10 +108,10 @@ public class jsoncheck {
 
         Boolean account_numberCheck = checkVal.accountNumberCheck(account_number);
         Boolean nameCheck = checkVal.checkLengthThree(name);
-        Boolean branchCheck = checkVal.CheckWithNoSpectailChar(branch);
-        Boolean ifsc_codeCheck = checkVal.checkLengthThree(ifsc_code);
+        Boolean branchCheck = checkVal.checkLengthThree(branch);
+        // Boolean ifsc_codeCheck = checkVal.checkLengthThree(ifsc_code);
 
-        if (account_numberCheck == true && nameCheck == true && branchCheck == true && ifsc_codeCheck == true) {
+        if (account_numberCheck == true && nameCheck == true && branchCheck == true) {
             check = true;
             if (!chequePhoto.equals("null")) {
                 JsonString = replacedData;
@@ -139,7 +139,7 @@ public class jsoncheck {
             String url_path = qualification.getJSONObject(i).isNull("url_path") ? "null"
                     : qualification.getJSONObject(i).getString("url_path");
             String year_of_passing = qualification.getJSONObject(i).getString("year_of_passing");
-            int percentile = qualification.getJSONObject(i).getInt("percentile");
+            //int percentile = qualification.getJSONObject(i).getInt("percentile");
 
             System.err.println("urlPath" + url_path);
             if (!url_path.equals("null")) {
@@ -154,10 +154,10 @@ public class jsoncheck {
             Boolean instituteCheck = checkVal.checkLengthThree(institute);
             // Boolean url_pathCheck = checkVal.checkLengthThree(url_path);
             Boolean year_of_passingCheck = checkVal.yearCheck(year_of_passing);
-            Boolean percentileCheck = checkVal.percentageCheck(percentile + "");
+           // Boolean percentileCheck = checkVal.percentageCheck(percentile + "");
 
             if (topic_of_studyCheck == true && universityCheck == true && instituteCheck == true
-                    && year_of_passingCheck == true && percentileCheck == true) {
+                    && year_of_passingCheck == true) {
                 check = true;
                 if (!url_path.equals("null")) {
 
