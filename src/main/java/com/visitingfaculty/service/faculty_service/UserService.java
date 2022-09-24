@@ -12,8 +12,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-import com.visitingfaculty.dao.UserDaoInterface;
-import com.visitingfaculty.model.User;
+
 import com.visitingfaculty.service.PasswordService;
 
 @Service
@@ -25,8 +24,7 @@ public class UserService {
     @Autowired
     private JavaMailSender javaMailSender;
 
-    @Autowired
-    UserDaoInterface daoInterface;
+
 
     @Autowired
     PasswordService passwordService;
@@ -34,9 +32,10 @@ public class UserService {
     @Value("${spring.mail.username}")
     private String fromEmail;
 
-    public boolean sendEmail(String message, String toEmail) {
+    public boolean sendEmail(String message, String toEmail, int subjectType) {
 
         String subject = "Verify Your Email Adddress";
+        String subject2 = "Application Creation Confirmation";
 
         try {
 
@@ -44,7 +43,13 @@ public class UserService {
 
             simpleMailMessage.setTo(toEmail);
             simpleMailMessage.setFrom(fromEmail);
+            if (subjectType == 1) {
             simpleMailMessage.setSubject(subject);
+                
+            } else {
+            simpleMailMessage.setSubject(subject2);
+                
+            }
             simpleMailMessage.setText(message);
 
             javaMailSender.send(simpleMailMessage);
@@ -75,17 +80,5 @@ public class UserService {
         }
     }
 
-    public boolean validateToken(int tokenToVerify, int tokenGenerated, String user_id, String password) {
 
-        if (tokenGenerated != tokenToVerify) {
-
-            return false;
-        }
-        String password_hash = passwordService.encodePassword(password);
-        User user = new User();
-        user.setPassword_hash(password_hash);
-        user.setUser_id(user_id);
-        daoInterface.insertUser(user);
-        return true;
-    }
 }

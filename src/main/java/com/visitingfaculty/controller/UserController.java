@@ -32,6 +32,11 @@ public class UserController {
         return "register";
     }
 
+    @GetMapping("/reset-password")
+    public String getResetPasswordPage() {
+        return "reset-password";
+    }
+
     @GetMapping("/resume")
     public String getResume(@RequestParam(value = "resume_lid") int resume_lid, Model model) {
 

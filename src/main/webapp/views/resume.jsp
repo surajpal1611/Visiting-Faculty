@@ -8006,10 +8006,10 @@ gnation-input
         document.getElementById('school-list').classList.add("d-none");
       }
 
-      if (e.target.classList.contains("school-type-li")) {
+      if (e.target.classList.contains("school-type-li") || findClosest(e.target,'school-type-li')) {
         console.log('target', e.target)
-        let id = e.target.dataset.id;
-        let name = e.target.dataset.name;
+        let id = e.target.classList.contains("school-type-li") ? e.target.dataset.id : e.target.parentElement.dataset.id;
+        let name = e.target.classList.contains("school-type-li") ? e.target.dataset.name : e.target.parentElement.dataset.name
         document.querySelector('.school-type-input').value = name;
         document.querySelector('.school-type-input').dataset.id = id;
         document.querySelector('.school-type-input').dataset.name = name;

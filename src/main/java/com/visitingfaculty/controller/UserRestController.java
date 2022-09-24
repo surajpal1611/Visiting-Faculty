@@ -89,7 +89,7 @@ public class UserRestController {
 
         String message = "Please Enter this code to verify your email: " + tokenGenerated;
 
-        if (userService.sendEmail(message, userDto.getEmail())) {
+        if (userService.sendEmail(message, userDto.getEmail(),1)) {
 
             return ResponseEntity.status(HttpStatus.OK).build();
 
@@ -106,7 +106,7 @@ public class UserRestController {
         int tokenGenerated = (int) httpSession.getAttribute("tokenGenerated");
         String user_id = (String) httpSession.getAttribute("user_id");
         String passwordToVerify = password;
-        if (userService.validateToken(tokenToVerify, tokenGenerated, user_id, passwordToVerify)) {
+        if (loginService.validateToken(tokenToVerify, tokenGenerated, user_id, passwordToVerify)) {
 
             return ResponseEntity.status(HttpStatus.OK).build();
         }
@@ -213,12 +213,15 @@ public class UserRestController {
     public ResponseEntity<?> createJobApplication(@RequestBody String data ,HttpSession httpSession) {
         Object dataFromDb = null;
         System.out.println(data);
-        // String role = (String) httpSession.getAttribute("role");
-        // if(role.equals("USER")){
+        String role = (String) httpSession.getAttribute("role");
+        System.out.println(role);
+        if(role.equals("USER")){
+            System.out.println("Controller methode executed by user<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
             dataFromDb = userDaoInterface.createJobApplication(data);
-        // } else { 
-
-        // }
+        } else { 
+            System.out.println("Controller methode executed by Admin>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            dataFromDb = userDaoInterface.createJobApplicationByAdmin(data);
+        }
         if (dataFromDb == null) {
 
             return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
