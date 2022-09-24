@@ -417,6 +417,22 @@ public class userDao implements UserDaoInterface {
     }
 
     @Override
+    public Object getJobView(String schoolid) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("get_proforma_details");
+
+        return jdbcCall.executeFunction(Object.class, schoolid);
+    }
+
+    @Override
+    public Object getQualPerformer(String data) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("get_application_resume_qualification");
+
+        return jdbcCall.executeFunction(Object.class, data);
+    }
+
+    @Override
     public boolean createJobApplicationByAdmin(String object) {
 
         String sql = "INSERT INTO user_application ( resume_lid, organization_lid,active ) VALUES ( ?, ?,?)";
