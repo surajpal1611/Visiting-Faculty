@@ -173,7 +173,7 @@
         no_of_division:division,
         student_count_per_division:count,
         aol_obe:process,
-        level_lid : 1,
+        level : 1,
         status_lid : 1,
 
       }
@@ -194,12 +194,10 @@
           }
           fetch(url, params).then((data) => {
             if (data.status == 200) {
-              console.log(data);
-              document.getElementById('main-loader').classList.add('d-none');
-              document.location.reload()
+                console.log(data);
+                location.href = '${pageContext.request.contextPath}/performa'
             } else {
               alert('Check Details Input');
-              document.getElementById('main-loader').classList.add('d-none');
             }
           })
         }

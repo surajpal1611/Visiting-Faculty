@@ -212,9 +212,29 @@
                     </thead>
                     <tbody class="performer-view">
 
-                    </tbody>
-    
+                    </tbody>    
                 </table>
+<!--------------------------------------------------------------Modal for qualification-------------------------------------------------------->
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> -->
+
+<div class="modal fade bd-example-modal-lg qualification-display" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Qualification Details</h5>
+          <button type="button" class="btn btn-secondary close1" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </div>
+        <div class="modal-body qualification-div">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close1" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--------------------------------------------------------------Modal for qualification-------------------------------------------------------->
             </div>
         </div>
 
@@ -276,13 +296,13 @@
             for (performerinfo of performerinfoobj.proforma_details) {
                 let view = `
                 <tr>
-                            <td>\${performerinfo.commencement_date_of_program.split('T')[0]}</td>
+                            <td>\${performerinfo.created_date.split('T')[0]}</td>
                             <td>NMIMS</td>
                             <td>\${performerinfo.full_name}</td>
                             <td>\${performerinfo.pancard_no}</td>
-                            <td><button data-qual="\${performerinfo.application_lid}" class="btn btn-outline-primary text-dark graduate">Graduate</button> </td>
-                            <td><button data-qual="\${performerinfo.application_lid}" class="btn btn-outline-primary text-dark masters">Masters</button></td>
-                            <td><button data-qual="\${performerinfo.application_lid}" class="btn btn-outline-primary text-dark phd">PHD</button></td>
+                            <td><button data-qual="\${performerinfo.application_lid}" data-id = "1" data-toggle="modal" data-target=".bd-example-modal-lg" type="button" class="btn btn-outline-primary text-dark graduate">Graduate</button> </td>
+                            <td><button data-qual="\${performerinfo.application_lid}" data-id = "2" data-toggle="modal" data-target=".bd-example-modal-lg" type="button" class="btn btn-outline-primary text-dark masters">Masters</button></td>
+                            <td><button data-qual="\${performerinfo.application_lid}" data-id = "3" data-toggle="modal" data-target=".bd-example-modal-lg" type="button" class="btn btn-outline-primary text-dark phd">PHD</button></td>
                             <td>Total Teaching Experience</td>
                             <td>Total Industrial Experience</td>
                             <td>Total Experience</td>
@@ -306,65 +326,103 @@
                 document.querySelector('.performer-view').insertAdjacentHTML('afterbegin', view);
             }
         }
+       
 
+        let graduation = 1;
+        let masters = 1;
+        let phd = 1;
         document.querySelector('.perfoma-table').addEventListener('click', function (e) {
-            //    console.log(e.target);
+            
+            //console.log(e.target);
+
             if (e.target.classList.contains('fa-fast-forward')) {
                 e.target.classList.replace('fa-fast-forward', 'fa-check');
             }
 
             //For Graduation Modal
-            if (e.target.classList.contains('graduate')) {
+            if (e.target.dataset.id === '1' || e.target.dataset.id === "2" || e.target.dataset.id === '3') {
+
+                console.log('click')
                 let obj = {
                     "get_application_qualification": []
                 }
                 let data = {}
-                data.qualification_type_lid = '1',
-                    data.application_lid = e.target.dataset.qual
+                data.qualification_type_lid = e.target.dataset.id,
+                data.application_lid = e.target.dataset.qual
                 obj.get_application_qualification.push(data);
+                console.log("OBJECTTT",obj)
 
-                console.log(JSON.stringify(obj))
                 $.ajax({
                     url: '${pageContext.request.contextPath}/get-qual',
                     type: 'POST',
                     data: JSON.stringify(obj),
-                    async: false,
                     contentType: false,
                     success: function (response) {
-                        console.log(JSON.parse(response.value))
+                        $(".qualification-display").modal("toggle");
+
+                        let graduationdetails = JSON.parse(response.value).application_resume_qualification;
+                        console.log(graduationdetails);
+                        if(graduationdetails != null)
+                        {
+                        let qualdetails = `
+                        <div class="card">
+                            <div class="card-body">
+                                <table class="table table-responsive">
+                                    <thead>
+                                        <th>Institute</th>
+                                        <th>Topic of study</th>
+                                        <th>University</th>
+                                        <th>Year of passing</th>
+                                    </thead>
+                                    <tbody>`
+                                    for(gd of graduationdetails)
+                                    {
+                        qualdetails+= `<tr>
+                                            <td>\${gd.institute}</td>
+                                            <td>\${gd.topic_of_study}</td>
+                                            <td>\${gd.university}</td>
+                                            <td>\${gd.rev_timestamp.split('T')[0]}</td>
+                                        </tr>`
+                                    }
+                        qualdetails+=`</tbody>
+                                </table>
+                            </div>   
+                        </div>
+
+                        `
+                        document.querySelector('.qualification-div').insertAdjacentHTML('afterend',qualdetails);
+                    }
+                    else
+                    {
+                        let qualdetails = `
+                        <div class="card">
+                        <h4 align="center">No Data Available</h4>
+                        </div>
+                        `
+                        document.querySelector('.qualification-div').insertAdjacentHTML('afterend',qualdetails);
+                    }
                     },
                     error: function (error) {
                         console.log("error", error)
                     }
+
                 });
 
-            }
-
-            //For Masters Modal
-            if (e.target.classList.contains('masters')) {
-                let obj = {
-                    "get_application_qualification": []
-                }
-                let data = {}
-                data.qualification_type_lid = '2',
-                    data.application_lid = e.target.dataset.qual
-                obj.get_application_qualification.push(data);
-
-            }
-
-            //For PHD Modal
-            if (e.target.classList.contains('phd')) {
-                let obj = {
-                    "get_application_qualification": []
-                }
-                let data = {}
-                data.qualification_type_lid = '3',
-                    data.application_lid = e.target.dataset.qual
-                obj.get_application_qualification.push(data);
-
+                
             }
 
         })
+
+        document.querySelector('.qualification-display').addEventListener('click',function(e){
+
+            if(e.target.classList.contains('close1'))
+            {
+                document.querySelector('.card').remove()
+                $(".qualification-display").modal("toggle");
+            }
+        })
+        
+
     </script>
 </body>
 

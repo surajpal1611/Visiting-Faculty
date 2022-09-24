@@ -101,4 +101,8 @@ public interface UserDaoInterface {
     Object createProforma(String data);
 
     Object getJobResume(int resume_lid);
+
+    Object getJobView(String schoolid);
+
+    Object getQualPerformer(String data);
 }
