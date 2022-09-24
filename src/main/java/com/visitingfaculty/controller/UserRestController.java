@@ -220,7 +220,8 @@ public class UserRestController {
             dataFromDb = userDaoInterface.createJobApplication(data);
         } else { 
             System.out.println("Controller methode executed by Admin>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-            dataFromDb = userDaoInterface.createJobApplicationByAdmin(data);
+            // dataFromDb = userDaoInterface.createJobApplicationByAdmin(data);
+            dataFromDb = userDaoInterface.createJobApplication(data);
         }
         if (dataFromDb == null) {
 

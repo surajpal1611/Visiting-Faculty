@@ -98,7 +98,7 @@
             </div>
 
 
-            <div class="main-box main-box-vf p-0">
+            <div class="main-box main-box-vf p-0 d-none">
                 <div class="row my-3 px-5" style="padding-top: 10px">
                     <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="school"> <small>Date: </small>
@@ -170,8 +170,7 @@
             </div>
 
 
-
-            <div class="table-responsive table-wrapper px-2 perfoma-table">
+            <div class="table-responsive table-wrapper px-2 perfoma-table mt-5 pt-5">
                 <table class='table table-display table-bordered proforma-report-table' id="proforma-report-table"
                     style="width: 3600px !important;">
                     <thead>

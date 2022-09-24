@@ -1241,7 +1241,7 @@
                           <h6>Permanent Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="address-value">\${personal_details[1].address}</p>
+                          <p id="address-value">\${personal_details[0].address}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -3946,12 +3946,12 @@
         'bank-name-message-insert');
       let facultyBankBranchValid = dynamicLengthCheck(submitBankDetailsForm.get('branchName'),
         'bank-branch-message-insert');
-      let facultyIfscCodevalid = dynamicIFSCCheck(submitBankDetailsForm.get('ifscCode'),
-        'bank-ifsc-code-message-insert');
+      // let facultyIfscCodevalid = dynamicIFSCCheck(submitBankDetailsForm.get('ifscCode'),
+      //   'bank-ifsc-code-message-insert');
       let facultyAccountNumberValid = dynamicBankAcountNumber(submitBankDetailsForm.get('accountNumber'),
         'bank-account-number-message-insert');
 
-      if (!facultyBankNameValid || !facultyBankBranchValid || !facultyIfscCodevalid || !facultyAccountNumberValid) {
+      if (!facultyBankNameValid || !facultyBankBranchValid || !facultyAccountNumberValid) {
         return;
       }
 
@@ -6478,12 +6478,12 @@
 
       let facultyBankName1 = bankDetailBankNameValidation(submitBankDetailsForm.get('bankName'))
       let facultyBankBranch1 = bankDetailBankBranchValidation(submitBankDetailsForm.get('branchName'))
-      let facultyIfscCode1 = bankDetailIfscCodeValidation(submitBankDetailsForm.get('ifscCode'))
+      //let facultyIfscCode1 = bankDetailIfscCodeValidation(submitBankDetailsForm.get('ifscCode'))
       let facultyMicrCode1 = bankDetailMicrCodeValidation(submitBankDetailsForm.get('micrCode'))
       let facultyAccountNumber1 = bankDetailAccountNumberValidation(submitBankDetailsForm.get('accountNumber'))
       //let facultyCancelledCheque = bankDetailCancelledChequeValidation(submitBankDetailsForm.get('cancelledCheckPhoto'))
 
-      if (!facultyBankName1 || !facultyBankBranch1 || !facultyIfscCode1 || !facultyMicrCode1 || !
+      if (!facultyBankName1 || !facultyBankBranch1 || !facultyMicrCode1 || !
         facultyAccountNumber1) {
         return;
       }
@@ -7902,7 +7902,7 @@ gnation-input
 
         let organizationStatus = true
 
-        if ('${organization_lid}' == '1') {
+        if ('${role}' != 'User') {
           organizationStatus = false
         }
 
@@ -7916,6 +7916,8 @@ gnation-input
         data.create_job_application.push(object)
 
         console.log(JSON.stringify(data))
+      document.getElementById('main-loader').classList.remove('d-none');
+
         fetch('${pageContext.request.contextPath}/create-job-application', {
             method: "POST",
             body: JSON.stringify(data),
@@ -7926,15 +7928,16 @@ gnation-input
           .then(response => status = response.status)
           .then(response => {
             if (status === 200) {
-              console.log("success")
+              alert('Job Application Created Succesfully');
+              location.href = "${pageContext.request.contextPath}/dashboard";
 
             } else {
-              // document.getElementById('main-loader').classList.add('d-none');
+              document.getElementById('main-loader').classList.add('d-none');
               alert("ERROR")
             }
           })
           .catch(function (error) {
-            // document.getElementById('main-loader').classList.add('d-none');
+            document.getElementById('main-loader').classList.add('d-none');
             alert("error in fetch api")
           })
 

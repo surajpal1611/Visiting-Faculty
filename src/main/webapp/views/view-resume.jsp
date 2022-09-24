@@ -241,7 +241,7 @@
                           <h6>Permanent Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="address-value">\${personal_details[1].address}</p>
+                          <p id="address-value">\${personal_details[0].address}</p>
                         </div>
                       </div>
                       <div class="row py-2">
@@ -249,9 +249,9 @@
                           <h6 class="temporary-address-heading">Temporary Address </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">`
-                      if(personal_details[0].address)
+                      if(personal_details[1].address)
                           {
-                         resume+= `<p id="temporary-address-value">\${personal_details[0].address}\${tempAdd}</p>`
+                         resume+= `<p id="temporary-address-value">\${personal_details[1].address}\${tempAdd}</p>`
                           }
                           else
                           {
