@@ -317,10 +317,10 @@
     
     if(window.location.hash == '#error') {
       document.querySelector('.login-error-alert').classList.remove('d-none')
-      document.querySelector('#forgot-password').classList.remove('d-none')
+      // document.querySelector('#forgot-password').classList.remove('d-none')
     } else {
       document.querySelector('.login-error-alert').classList.add('d-none')
-      document.querySelector('#forgot-password').classList.add('d-none')
+      // document.querySelector('#forgot-password').classList.add('d-none')
     }
 
     //DYNAMIC CSS
