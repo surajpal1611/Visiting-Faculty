@@ -978,9 +978,9 @@
 
 
     <!-- ************************************************************************Create Application Modal Div******************************************************************************************** -->
-    <div id="create-application-modal" style="height: calc(100vh - 90px); margin-top: 100px;" class="d-none">
-      <div id="bank-form-area">
-        <div class="container">
+    <div id="create-application-modal" style="height: calc(100vh - 140px); margin-top: 150px;" class="d-none">
+      <div id="bank-form-area" >
+        <div class="container" style="min-height: 300px;">
           <div class="d-flex justify-content-center align-items-center my-4">
             <h2>Create Job Application</h2>
           </div>
@@ -997,11 +997,13 @@
             </div>
           </div>
 
-          <div class="d-flex justify-content-center">
-            <button id="create-application-cancel-button" class="btn btn-danger m-4">Cancel</button>
-            <button id="create-job-application-faculty" class="btn btn-success m-4"> Create Job Application</button>
-          </div>
+         
         </div>
+        
+      </div>
+      <div class="d-flex justify-content-center">
+        <button id="create-application-cancel-button" class="btn btn-danger m-4">Cancel</button>
+        <button id="create-job-application-faculty" class="btn btn-success m-4"> Create Job Application</button>
       </div>
     </div>
 

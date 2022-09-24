@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-      <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/simpleAlert.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/login.css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/simpleAlert.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
 
   <title>Register</title>
@@ -88,7 +90,7 @@
     /* // Custom CSS */
 
 
-    img {
+    .img {
       width: 100%;
     }
 
@@ -199,20 +201,24 @@
     }
   </style>
 </head>
+
 <body>
 
-    <canvas class="background"></canvas>
+  <jsp:include page="left-sidebar.jsp" />
 
-  
-    <section class="login-wrapper">
+
+  <main class="main">
+    <jsp:include page="header.jsp" />
+
+    <section class="container" style="margin-top: 180px; border: 1px solid black; padding: 20px; border-radius: 20px;">
       <div class="inner-login-wrapper">
         <div class="row">
           <div class="col-md-6" id="login-right">
             <div class="logo">
-              <img src="${pageContext.request.contextPath}/image/logo-nmims.png" />
+              <img class="img" src="${pageContext.request.contextPath}/image/logo-nmims.png" />
             </div>
             <object type="image/svg+xml" data="/image/login-animate-nmims.svg">
-              <img src="${pageContext.request.contextPath}/image/login-animate-nmims.svg" />
+              <img class="img" src="${pageContext.request.contextPath}/image/login-animate-nmims.svg" />
             </object>
           </div>
           <div class="col-md-6" id="login-left">
@@ -237,14 +243,14 @@
                   <input type="text" id="email" name="email" placeholder="Email id" required>
                 </div>
               </div>
-  
-              <div class="mb-3 removing-input">
+
+              <div class="mb-3 removing-input d-none">
                 <small class="password-error-message text-danger d-none">Enter Valid Password</small>
                 <div class="cust-btn-group">
                   <div class="cust-input-prepend">
                     <i class="fas fa-key"></i>
                   </div>
-                  <input type="password" id="password" name="password" placeholder="Password" required>
+                  <input type="password" id="password" name="password" placeholder="Password" value="pass@123">
                   <input type="hidden" name="devicecheck" id="devicecheck">
                 </div>
               </div>
@@ -254,74 +260,80 @@
         </div>
       </div>
     </section>
-  
-  
-    <div class="modal-loader d-none" id="main-loader">
-      <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-        y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
-        <circle fill="#FF4136" stroke="none" cx="6" cy="50" r="6">
-          <animateTransform attributeName="transform" dur="1s" type="translate" values="0 15 ; 0 -15; 0 15"
-            repeatCount="indefinite" begin="0.1" />
-        </circle>
-        <circle fill="#FF851B" stroke="none" cx="30" cy="50" r="6">
-          <animateTransform attributeName="transform" dur="1s" type="translate" values="0 10 ; 0 -10; 0 10"
-            repeatCount="indefinite" begin="0.2" />
-        </circle>
-        <circle fill="#FFDC00" stroke="none" cx="54" cy="50" r="6">
-          <animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5"
-            repeatCount="indefinite" begin="0.3" />
-        </circle>
-      </svg>
-    </div>
 
-    <script src="${pageContext.request.contextPath}/js/script.js"></script>
+  </main>
+  <div class="modal-loader d-none" id="main-loader">
+    <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+      y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+      <circle fill="#FF4136" stroke="none" cx="6" cy="50" r="6">
+        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 15 ; 0 -15; 0 15"
+          repeatCount="indefinite" begin="0.1" />
+      </circle>
+      <circle fill="#FF851B" stroke="none" cx="30" cy="50" r="6">
+        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 10 ; 0 -10; 0 10"
+          repeatCount="indefinite" begin="0.2" />
+      </circle>
+      <circle fill="#FFDC00" stroke="none" cx="54" cy="50" r="6">
+        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5"
+          repeatCount="indefinite" begin="0.3" />
+      </circle>
+    </svg>
+  </div>
 
-<script>
+  <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+  <!-- <script src="/js/session-timeout.js"></script> -->
+  <script src="${pageContext.request.contextPath}/js/SimpleAlert.js"></script>
+  <script src="${pageContext.request.contextPath}/js/script.js"></script>
+  <script src="${pageContext.request.contextPath}/js/leftsidebartoggle.js"></script>
+  <script src="${pageContext.request.contextPath}/js/ajaxApi.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+  <script src="${pageContext.request.contextPath}/js/jquery.bootpag.min.js"></script>
 
-document.querySelector('.register-btn').addEventListener('click',function(e){
-    e.preventDefault();
+  <script>
+    document.querySelector('.register-btn').addEventListener('click', function (e) {
+      e.preventDefault();
 
-    document.querySelector('.pancard-error-message').classList.add('d-none')
-    document.querySelector('.email-error-message').classList.add('d-none')
-    document.querySelector('.password-error-message').classList.add('d-none')
+      document.querySelector('.pancard-error-message').classList.add('d-none')
+      document.querySelector('.email-error-message').classList.add('d-none')
+      document.querySelector('.password-error-message').classList.add('d-none')
 
-   let panCard = document.querySelector('#pannumber').value;
-   let email = document.querySelector('#email').value;
-   let password = document.querySelector('#password').value;
+      let panCard = document.querySelector('#pannumber').value;
+      let email = document.querySelector('#email').value;
+      let password = document.querySelector('#password').value;
 
-   let panValidation = RegistrationPanValidation(panCard)
+      let panValidation = RegistrationPanValidation(panCard)
       let emailValidation = RegistrationEmailValidation(email)
-      let passwordvalidation = RegistrationPasswordValidation(password,"password-error-message")
+      let passwordvalidation = RegistrationPasswordValidation(password, "password-error-message")
       if (!panValidation || !emailValidation || !passwordvalidation) {
         return;
       }
-    let regObj = {
-        user_id:panCard,
-        password:password
-    }
-    let options = {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-          },
-          body: JSON.stringify(regObj)
+      let regObj = {
+        user_id: panCard,
+        password: password
+      }
+      let options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(regObj)
+      }
+      let fetchRes = fetch("${pageContext.request.contextPath}/registerationFaculty", options);
+      fetchRes.then(success => {
+        if (success.status == 200) {
+          location.href = '${pageContext.request.contextPath}/dashboard'
+        } else {
+          alert('Check');
         }
-        let fetchRes = fetch("${pageContext.request.contextPath}/registerationFaculty", options);
-        fetchRes.then(success => {
-          if (success.status == 200) 
-          {
-            location.href = '${pageContext.request.contextPath}/dashboard'
-          } 
-          else 
-          {
-            alert('Check');
-          }
-        })
-   
-})
+      })
 
-</script>
+    })
+  </script>
 
-    
+
 </body>
+
 </html>
