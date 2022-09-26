@@ -93,7 +93,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary modal2-cancel-button"
+                    <button type="button" class="btn btn-secondary modal3-cancel-button"
                         data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -205,6 +205,10 @@
 
             $(document).on('click', '.modal2-cancel-button', function () {
                 $("#view-resume-modal").modal("toggle");
+            })
+
+            $(document).on('click', '.modal3-cancel-button', function () {
+                $("#view-application-modal").modal("toggle");
             })
 
             $('.modal-create-resume-button').on('click', function (e) {
