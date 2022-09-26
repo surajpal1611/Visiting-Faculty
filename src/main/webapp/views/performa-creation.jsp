@@ -56,10 +56,22 @@
     
                 <tbody class="job-application-body">
                     <tr class='job-tr'>
-                        <td><input class="form-control job-program" type="text"> </td>
-                        <td><input class="form-control job-session" type="text"> </td>
+                        <td class="custom-select-div"><input class="form-control job-program" type="text">
+                            <ul class="form-control d-none" id="job-program-list">
+
+                            </ul>
+                        </td>
+                        <td class="custom-select-div" ><input class="form-control job-session" type="text"> 
+                            <ul class="form-control d-none" id="job-session-list">
+                                
+                            </ul>
+                        </td>
                         <!-- <td><input class="form-control" type="text"> </td> -->
-                        <td><input class="form-control job-subject" type="text"> </td>
+                        <td class="custom-select-div" ><input class="form-control job-subject" type="text"> 
+                            <ul class="form-control d-none" id="job-subject-list">
+                              
+                            </ul>
+                        </td>
                         <td><input class="form-control job-date" type="date"> </td>
                         <td><input class="form-control job-hours" type="text"> </td>
                         <td><input class="form-control job-rate" type="text"> </td>
@@ -72,7 +84,6 @@
                                 <option value="OBL">OBE</option>
                             </select> 
                         </td>
-                        <td><i class="fa-edit fa-solid"></i></i></td>
                     </tr>
                 </tbody>  
                       
@@ -85,8 +96,29 @@
         </div>
     </div>   
 </div> 
-  </main>
+  
 
+  <div class="image-preview-modal d-none" style="height: calc(100vh - 100px); margin-top: 100px;">
+    <div id="bank-form-area">
+      <div class="container">
+        <div class="d-flex justify-content-center align-items-center my-4">
+          <h2> Image Preview </h2>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+            <img src="" alt="image-uploaded" id="image-uploaded" class="image-uploaded"
+              style="width:100%;">
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button id="image-preview-cancel-button" class="btn btn-danger m-4">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
     <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/SimpleAlert.js"></script>
@@ -97,6 +129,138 @@
     <script id="script-data"></script>
 
     <script>
+
+    //    $.ajax({
+    //         url: 'https://dev-portal.svkm.ac.in:8080/vfApi/getSchoolsList',
+    //         type: 'get',
+    //         success: function (response) {
+    //           let selectList = ''
+    //             for (let desig of response) {
+    //             selectList +=
+    //               `<li>     
+    //                   <div class="job-program-item col-md-10 col-sm-10 col-12" data-name="\${desig.collegeName}" data-id="\${desig.schoolObjId}" >\${desig.collegeName}</div>
+    //               </li>`
+    //           }
+    //           document.querySelector("#job-program-list").insertAdjacentHTML("beforeend",selectList)
+    //         },
+    //         error: function (error) {
+    //           console.log("Error::::::::::::", error);
+    //         }
+    //       })
+    //       $.ajax({
+    //         url: 'https://dev-portal.svkm.ac.in:8080/vfApi/getSchoolsList',
+    //         type: 'get',
+    //         success: function (response) {
+    //             let selectList = ''
+    //           for (let desig of response) {
+    //             selectList +=
+    //               `<li>     
+    //                   <div class="job-session-item col-md-10 col-sm-10 col-12" data-name="\${desig.collegeName}" data-id="\${desig.schoolObjId}" >\${desig.collegeName}</div>
+    //               </li>`
+    //           }
+    //           document.querySelector("#job-session-list").insertAdjacentHTML("beforeend",selectList)
+    //         },
+    //         error: function (error) {
+    //           console.log("Error::::::::::::", error);
+    //         }
+    //       })
+    //       $.ajax({
+    //         url: 'https://dev-portal.svkm.ac.in:8080/vfApi/getSchoolsList',
+    //         type: 'get',
+    //         success: function (response) {
+    //             let selectList = ''
+    //           for (let desig of response) {
+    //             selectList +=
+    //               `<li>     
+    //                   <div class="job-subject-item col-md-10 col-sm-10 col-12" data-name="\${desig.collegeName}" data-id="\${desig.schoolObjId}" >\${desig.collegeName}</div>
+    //               </li>`
+    //           }
+    //           document.querySelector("#job-subject-list").insertAdjacentHTML("beforeend",selectList)
+    //         },
+    //         error: function (error) {
+    //           console.log("Error::::::::::::", error);
+    //         }
+    //       })
+
+    //       document.querySelector('#performa-creation-div').addEventListener('click', function (e) {
+
+    //       if (e.target.classList.contains("job-program")) {
+    //         document.getElementById('job-program-list').classList.remove("d-none");
+    //       } else {
+    //         document.getElementById('job-program-list').classList.add("d-none");
+    //       }
+          
+    //       if (e.target.classList.contains("job-program-item") || findClosest(e.target,'job-program-item')) {
+    //         console.log('target', e.target)
+    //         let id = e.target.classList.contains("job-program-item") ? e.target.dataset.id : e.target.parentElement.dataset.id;
+    //         let name = e.target.classList.contains("job-program-item") ? e.target.dataset.name : e.target.parentElement.dataset.name
+    //         document.querySelector('.job-program').value = name;
+    //         document.querySelector('.job-program').dataset.id = id;
+    //         document.querySelector('.job-program').dataset.name = name;
+    //         console.log('value', name + id);
+    //         document.getElementById('job-program-list').classList.add("d-none");
+    //       }
+
+    //       if (e.target.classList.contains("job-session")) {
+    //         document.getElementById('job-session-list').classList.remove("d-none");
+    //       } else {
+    //         document.getElementById('job-session-list').classList.add("d-none");
+    //       }
+          
+    //       if (e.target.classList.contains("job-session-item") || findClosest(e.target,'job-session-item')) {
+    //         console.log('target', e.target)
+    //         let id = e.target.classList.contains("job-session-item") ? e.target.dataset.id : e.target.parentElement.dataset.id;
+    //         let name = e.target.classList.contains("job-session-item") ? e.target.dataset.name : e.target.parentElement.dataset.name
+    //         document.querySelector('.job-session').value = name;
+    //         document.querySelector('.job-session').dataset.id = id;
+    //         document.querySelector('.job-session').dataset.name = name;
+    //         console.log('value', name + id);
+    //         document.getElementById('job-session-list').classList.add("d-none");
+    //       }
+
+    //       if (e.target.classList.contains("job-subject")) {
+    //         document.getElementById('job-subject-list').classList.remove("d-none");
+    //       } else {
+    //         document.getElementById('job-subject-list').classList.add("d-none");
+    //       }
+          
+    //       if (e.target.classList.contains("job-subject-item") || findClosest(e.target,'job-subject-item')) {
+    //         console.log('target', e.target)
+    //         let id = e.target.classList.contains("job-subject-item") ? e.target.dataset.id : e.target.parentElement.dataset.id;
+    //         let name = e.target.classList.contains("job-subject-item") ? e.target.dataset.name : e.target.parentElement.dataset.name
+    //         document.querySelector('.job-subject').value = name;
+    //         document.querySelector('.job-subject').dataset.id = id;
+    //         document.querySelector('.job-subject').dataset.name = name;
+    //         console.log('value', name + id);
+    //         document.getElementById('job-subject-list').classList.add("d-none");
+    //       }
+    //       })
+
+      document.querySelector('#image-preview-cancel-button').addEventListener('click', function (e) {
+      document.getElementById('performa-creation-div').classList.remove('d-none');
+      document.querySelector('.image-preview-modal').classList.add('d-none');
+    //   document.getElementById("image-uploaded").src = " ";
+      });
+
+    document.querySelector('#performa-creation-div').addEventListener('click', function (e) {
+      console.log(e.target);
+
+      if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains(
+          'award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target
+        .classList.contains('research-certificate-display') || e.target.classList.contains(
+          'professional-certificate-display') || e.target.classList.contains('aadhar-photo-preview') || e.target
+        .classList.contains('pancard-photo-preview') || e.target.classList.contains(
+          'cancelled-cheque-photo-preview')) {
+        document.getElementById('performa-creation-div').classList.add('d-none');
+        document.querySelector('.image-preview-modal').classList.remove('d-none');
+        if(e.target.dataset.image === 'imagedata/null'){
+          document.querySelector(".image-uploaded").src = '${pageContext.request.contextPath}/image/image-not-found.png';
+        } else {
+          document.querySelector(".image-uploaded").src = e.target.dataset.image;
+        }
+      }
+    })
+
 
     //************************************Function's for Job Application Table***************************************************
 
@@ -120,7 +284,7 @@
                             <option value="OBL">OBE</option>
                         </select> 
                     </td>
-                    <td><i class="fa-edit fa-solid"></i> <i class="fa-trash fa-solid text-danger delete-row"></td>
+                    <td><i class="fa-trash fa-solid text-danger delete-row"></td>
                 </tr>`
 
         document.querySelector('.job-application-body').insertAdjacentHTML('beforeend',row);
@@ -140,7 +304,7 @@
         let confurm = confirm('Do you really want to cancel');
         if(confurm)
         {
-        location.href = '${pageContext.request.contextPath}/dashboard';
+        location.href = '${pageContext.request.contextPath}/job-performer-page';
         }
     })
 
@@ -231,13 +395,13 @@ let resumetable =`
         <div
             class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
             <div>
-                <h5><i class="fa-solid fa-graduation-cap"> Academic Qualification</i></h5>
+                <h5><i class="fa-solid fa-graduation-cap"></i> Academic Qualification</h5>
             </div>
         </div>
         <div class="card-body table-responsive">
             <table class="table">
                 <thead>
-                    <th>Tital</th>
+                    <th>Title</th>
                     <th>Major Subject</th>                    
                     <th>University</th>                    
                     <th>College</th>
@@ -273,7 +437,7 @@ let resumetable =`
     <div
         class="card-header table-card-header text-uppercase d-flex align-items-center justify-content-between">
         <div>
-            <h5><i class="fa-solid fa-cog"> Work Experinece</i></h5>
+            <h5><i class="fa-solid fa-cog"> </i> Work Experinece</h5>
         </div>
     </div>
     <div class="card-body table-responsive">

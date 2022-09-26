@@ -37,6 +37,7 @@ public class UserController {
         return "reset-password";
     }
 
+
     @GetMapping("/resume")
     public String getResume(@RequestParam(value = "resume_lid") int resume_lid, Model model) {
 
@@ -127,6 +128,16 @@ public class UserController {
         return "redirect:/login#session-timeout";
     }
 
+    @GetMapping("/view-application")
+    public String viewApplication(@RequestParam(value = "application_lid") int application_lid, Model m) {
+        String user_id = (String) httpSession.getAttribute("user_id");
+        if (user_id != null) {
+            m.addAttribute("application_lid", application_lid);
+            return "faculty/application";
+        }
+        return "redirect:/login#session-timeout";
+    }
+
     @GetMapping("/faculty-reg")
     public String getNewFaculty() {
 
@@ -136,6 +147,12 @@ public class UserController {
             return "faculty-reg";
         }
         return "redirect:/login#session-timeout";
+    }
+    
+    @GetMapping("/faculty-application-view")
+    public String viewFacultyApplicationList(Model model) {
+        model.addAttribute("user_id", httpSession.getAttribute("user_id"));
+        return "faculty/faculty-application-view";
     }
 
     @GetMapping("/view-resume")
@@ -151,7 +168,7 @@ public class UserController {
         return "redirect:/login#session-timeout";
     }
 
-    @GetMapping("/job-performer-page")
+    @GetMapping("/job-proforma-page")
     public String getperformerpage() {
         String user_id = (String) httpSession.getAttribute("user_id");
         if (user_id != null) {

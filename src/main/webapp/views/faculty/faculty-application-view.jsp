@@ -43,10 +43,10 @@
             </div>
         </div>
     </div>
-    <jsp:include page="left-sidebar.jsp" />
+    <jsp:include page="../left-sidebar.jsp" />
 
     <main class="main">
-        <jsp:include page="header.jsp" />
+        <jsp:include page="../header.jsp" />
 
         <div class="main-content">
 
@@ -60,8 +60,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
 
-            <h3 class="text-center">Search Visiting Faculty</h3>
-            <div class="row px-lg-5 mx-lg-5">
+            <h3 class="text-center">Application</h3>
+            <!-- <div class="row px-lg-5 mx-lg-5">
                 <div class="col-md-6">
                     <div class="input-group ">
                         <input type="search" class="form-control rounded" placeholder="Enter Pancard no."
@@ -76,7 +76,7 @@
                         <button type="button" class="btn btn-outline-primary faculty-search-button">search</button>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <hr>
 
 
@@ -159,23 +159,19 @@
     <script src="${pageContext.request.contextPath}/js/jquery.bootpag.min.js"></script>
     <script>
         $(document).ready(function () {
-
-            let timeout = null;
-
-            function searchFunction(value) {
                 
                 $.ajax({
                     type: 'POST',
-                    url: '${pageContext.request.contextPath}/get-faculty-application',
+                    url: '${pageContext.request.contextPath}/get-faculty-applications',
                     data: {
-                        user_id: value.toUpperCase()
+                        user_id: "${user_id}"
                     },
                     success: function (response) {
                         let data = JSON.parse(response.value)
                         console.log(data)
                         document.querySelector('.validation-alert').classList.add('d-none')
 
-                        if (data.resume_details != null) {
+                        if (data.application_details != null) {
 
 
                             let tableToAppend = `
@@ -187,36 +183,32 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Pan Card No</th>
+                                    <th>Resume Name</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>`
-                            for (let obj of data.resume_details) {
-                                if (obj.f_name == null) {
+                            for (let obj of data.application_details) {
                                     tableToAppend += `
-                                    <tr data-userlid = "\${obj.user_lid}">
-                                        <td>----</td>
+                                    <tr data-userlid = "\${obj.organization_lid}">
+                                        <td>\${obj.full_name}</td>
                                         <td class="user_id">\${obj.user_id}</td>
+                                        <td class="user_id">\${obj.resume_name}</td>`
+
+                                        if(!obj.active){
+                                            tableToAppend += `
                                         <td>
-                                            <a class="application-preview" style="border:none; outline:none" >
-                                            <i class="fa-solid fa-eye view-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
-                                            <a  class="" style="border:none; outline:none" >
-                                         <i class="fa-solid fa-plus create-resume-button" data-toggle="tooltip" title="Create Resume"></i></a>
-                                         
+                                           
+                                            <a class="application-preview" href="${pageContext.request.contextPath}/resume?resume_lid=\${obj.resume_lid}&application_lid=\${obj.appln_id}&organization_lid=\${obj.organization_lid}" style="border:none; outline:none" >
+                                            <i class="fa-solid fa-eye view-resume-icon" data-toggle="tooltip" title="View Application"></i></a>
                                         </td>
                                     </tr>`
-                                } else {
-                                    tableToAppend += `
-                                    <tr data-userlid = "\${obj.user_lid}">
-                                        <td>\${obj.f_name}</td>
-                                        <td class="user_id">\${obj.user_id}</td>
+                                        } else {
+                                            tableToAppend += `
                                         <td>
-                                                <a class="application-preview" style="border:none; outline:none" >
-                                                <i class="fa-solid fa-eye view-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
-                                                <a  class="" style="border:none; outline:none" >
-                                            <i class="fa-solid fa-plus create-resume-button" data-toggle="tooltip" title="Create Resume"></i></a>
-                                          
-                                            </td>
+                                            <a class="application-preview" href="${pageContext.request.contextPath}/view-resume?resume_lid=\${obj.resume_lid}&application_lid=\${obj.appln_id}" style="border:none; outline:none" >
+                                            <i class="fa-solid fa-eye text-success view-resume-icon" data-toggle="tooltip" title="View Application"></i></a>
+                                        </td>
                                     </tr>`
                                 }
 
@@ -238,200 +230,13 @@
 
                     }
                 })
-                console.log(value);
-            }
-
-            function searchFunctionByName(value) {
-                $.ajax({
-                    type: 'POST',
-                    url: '${pageContext.request.contextPath}/get-faculty-by-name',
-                    data: {
-                        user_id: value
-                    },
-                    success: function (response) {
-                        let data = JSON.parse(response.value)
-                        console.log(data)
-                        document.querySelector('.no-data-alert').classList.add('d-none')
-
-
-                        if (data.resume_details != null) {
-
-
-                            let tableToAppend = `
-                                <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
-                                    <table class="table table-bordered">
-                                    <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Pan Card No</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>`
-                            for (let obj of data.resume_details) {
-                                tableToAppend +=
-                                    ` <tr data-userlid = "\${obj.user_lid}">
-                                            <td>\${obj.f_name}</td>
-                                            <td class="user_id">\${obj.user_id}</td>
-                                            <td>
-                                                <a class="application-preview" style="border:none; outline:none" >
-                                                <i class="fa-solid fa-eye view-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
-                                                <a  class="" style="border:none; outline:none" >
-                                            <i class="fa-solid fa-plus create-resume-button" data-toggle="tooltip" title="Create Resume"></i></a>
-                                            
-                                            </td>
-                                        </tr>`
-                            }
-
-                            tableToAppend += `  </tbody>
-                                    </table>
-
-
-                                </div>
-                                                        `
-
-                            $('.table-appending-div').html(tableToAppend)
-                        } else {
-                            document.querySelector('.no-data-alert').classList.remove('d-none')
-                            $('.table-appending-div').html("")
-                        }
-
-
-                    },
-                    error: function (error) {
-                        document.querySelector('.no-data-alert').classList.remove('d-none')
-                        console.log("Error");
-                    }
-                })
-                console.log(value);
-            }
-
-            $('#search-by-id').on('keyup', function () {
-                let searchByIdValue = document.getElementById('search-by-id').value
-                console.log(searchByIdValue)
-
-                    clearTimeout(timeout)
-                    const value = this.value
-                    timeout = setTimeout(() => searchFunction(value), 2000)
-
-            })
-
-            $('#search-by-name').on('keyup', function () {
-
-                clearTimeout(timeout)
-                const value = this.value
-                timeout = setTimeout(() => searchFunctionByName(value), 2000)
-
-            })
-
+                
             $(document).on('click', '.create-resume-button', function () {
 
                 let tr = $(this).closest('tr')
                 $('#user-id').val(tr.find('.user_id').html())
                 $('#user-lid').val(tr.data('userlid'))
                 $("#create-resume-modal").modal("toggle");
-
-            })
-
-            $(document).on('click', '.modal-cancel-button', function () {
-                $("#create-resume-modal").modal("toggle");
-            })
-
-            $(document).on('click', '.modal2-cancel-button', function () {
-                $("#view-resume-modal").modal("toggle");
-            })
-
-            $('.modal-create-resume-button').on('click', function (e) {
-                console.log("clicked create resume")
-                e.preventDefault();
-                let myForm = document.getElementById('create-resume-form');
-                let formData = new FormData()
-
-                formData.append("user_lid", document.getElementById('user-lid').value)
-                formData.append("name", document.getElementById('resume-name').value)
-                formData.append("description", document.getElementById('resume-description').value)
-
-                $.ajax({
-                    url: '${pageContext.request.contextPath}/create-resume',
-                    type: 'POST',
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    success: function (response) {
-                        location.href =
-                            '${pageContext.request.contextPath}/resume?resume_lid=' +
-                            response
-                    },
-                    error: function (error) {
-                        console.log('error', error)
-                    }
-                })
-            })
-
-            $(document).on('click', '.view-resume-icon', function () {
-
-                $("#view-resume-modal").modal("toggle");
-                let tr = $(this).closest('tr')
-                let id = tr.data('userlid')
-                $.ajax({
-                    url: '${pageContext.request.contextPath}/get-resume-by-user?user_id=' + id,
-                    type: 'POST',
-                    success: function (response) {
-                        let data = JSON.parse(response.value)
-
-                        console.log(data)
-
-                        if (data.resume_details != null) {
-
-
-                            let tableToAppend = `
-                                <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
-                                    <table class="table table-bordered">
-                                    <thead>
-                                    <tr>
-                                        <th>Resume Name</th>
-                                        <th>Resume Description</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>`
-                            for (let obj of data.resume_details) {
-                                console.log(obj.id)
-                                tableToAppend += `
-                                        <tr>
-                                            <td>\${obj.name}</td>
-                                            <td class="user_id">\${obj.description}</td>
-                                            <td>
-                                                <a href="${pageContext.request.contextPath}/view-resume?resume_lid=\${obj.id}" class="application-preview" style="border:none; outline:none" >
-                                                <i class="fa-solid fa-eye get-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
-                                                <a  class="" style="border:none; outline:none" >
-                                                <a href="${pageContext.request.contextPath}/resume?resume_lid=\${obj.id}" class="application-preview" style="border:none; outline:none" >
-                                                <i class="fa-solid fa-edit get-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
-                                                <a  class="" style="border:none; outline:none" >
-                                            </td>
-                                        </tr>`
-                            }
-
-                            tableToAppend += `  </tbody>
-                                    </table>
-                                </div>
-                                       `
-                            document.querySelector('.modal2-body').innerHTML = ""
-                            $('.modal2-body').html(tableToAppend)
-                        } else {
-                            alert("Data Not Found!!")
-                        }
-                    },
-                    error: function (error) {
-
-                        console.log("error", error)
-                    }
-                })
-
             })
 
             $(document).on('click', '.view-job-application', function () {

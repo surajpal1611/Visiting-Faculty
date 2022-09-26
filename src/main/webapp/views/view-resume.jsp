@@ -38,7 +38,7 @@
   
             <div class="row">
               <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-                <img src="download (3).jpg" alt="image-uploaded" id="image-uploaded" class="image-uploaded"
+                <img src="" alt="image-uploaded" id="image-uploaded" class="image-uploaded"
                   style="width:450px;height:300px;">
               </div>
             </div>
@@ -948,7 +948,11 @@
 
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.image-preview-modal').classList.remove('d-none');
-        document.querySelector(".image-uploaded").src = e.target.dataset.image;
+        if(e.target.dataset.image === 'imagedata/null'){
+          document.querySelector(".image-uploaded").src = '${pageContext.request.contextPath}/image/image-not-found.png';
+        } else {
+          document.querySelector(".image-uploaded").src = e.target.dataset.image;
+        }
         console.log(e.target.dataset.image)
       }
     })
@@ -957,7 +961,7 @@
     document.querySelector('#image-preview-cancel-button').addEventListener('click', function (e) {
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.image-preview-modal').classList.add('d-none');
-      document.getElementById("image-uploaded").src = " ";
+      // document.getElementById("image-uploaded").src = " ";
     })
 
   </script>

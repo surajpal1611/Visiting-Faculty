@@ -277,6 +277,15 @@ public class userDao implements UserDaoInterface {
     }
 
     @Override
+    public Object getFacultyApplications(String user_id) {
+
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("get_faculty_applications");
+
+        return jdbcCall.executeFunction(Object.class, user_id);
+    }
+
+    @Override
     public Object getFacultyResumeByName(String user_id) {
 
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
@@ -453,6 +462,15 @@ public class userDao implements UserDaoInterface {
         }
         return false;
 
+    }
+
+    @Override
+    public Object updateApplication(String user_id) {
+
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("update_application");
+
+        return jdbcCall.executeFunction(Object.class, user_id);
     }
 
 }

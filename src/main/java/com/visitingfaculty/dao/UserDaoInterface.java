@@ -72,6 +72,8 @@ public interface UserDaoInterface {
 
     Object getFacultyApplication(String user_id);
 
+    Object getFacultyApplications(String user_id);
+
     Object getFacultyResumeByName(String user_id);
 
     int insertResume(Resume resume);
@@ -107,4 +109,6 @@ public interface UserDaoInterface {
     Object getJobView(String schoolid);
 
     Object getQualPerformer(String data);
+
+    Object updateApplication(String data);
 }

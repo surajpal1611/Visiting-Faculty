@@ -173,6 +173,14 @@ public class UserRestController {
         return data;
     }
 
+    @PostMapping("/get-faculty-applications")
+    public Object getFacultyApplications(String user_id) {
+
+        Object data = userDaoInterface.getFacultyApplications(user_id);
+
+        return data;
+    }
+
     @PostMapping("/get-faculty-by-name")
     public Object searchFacultyByName(String user_id) {
 
@@ -223,6 +231,19 @@ public class UserRestController {
             // dataFromDb = userDaoInterface.createJobApplicationByAdmin(data);
             dataFromDb = userDaoInterface.createJobApplication(data);
         }
+        if (dataFromDb == null) {
+
+            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+        }
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @PostMapping("/update-job-application")
+    public ResponseEntity<?> updateJobApplication(@RequestBody String data ,HttpSession httpSession) {
+
+  
+           Object dataFromDb = userDaoInterface.updateApplication(data);
+
         if (dataFromDb == null) {
 
             return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();

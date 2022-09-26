@@ -8,7 +8,7 @@
         </a>
     </div>
     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-4">
-        <a href="${pageContext.request.contextPath}/job-performer-page"
+        <a href="${pageContext.request.contextPath}/job-proforma-page"
             class="card_school_vf text-center  d-flex flex-column justify-content-center align-items-center">
             <img src="${pageContext.request.contextPath}/icons/application.png" alt="">
             <p>View Applications </p>

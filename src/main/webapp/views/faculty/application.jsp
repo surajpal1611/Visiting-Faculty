@@ -28,17 +28,13 @@
 
       <div class="py-5 d-flex justify-content-center align-items-center">
         <a href="${pageContext.request.contextPath}/dashboard" class="back-button px-2">
-          <button class="back-button btn py-2 btn-danger">Back</button>
+          <button class="back-button btn py-2 btn-danger"> Reject</button>
         </a>
         <div class="create-button px-2">
-          <button type="button" class="btn btn-success select-school" data-toggle="modal"
+          <button type="button" class="btn btn-success approve-application" data-toggle="modal"
             data-target="#exampleModalLong">
-            Select School
+            Approve 
           </button>
-          <button type="button" class="d-none btn btn-success approve-application" data-toggle="modal"
-          data-target="#exampleModalLong">
-           Approve Application
-         </button>
           <!-- <button type="button" class="btn btn-success create-job-application" data-toggle="modal" data-target="#exampleModalLong">
             Create Job Application
           </button> -->
@@ -1022,7 +1018,7 @@
 
           <div class="row">
             <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-              <img alt="image-uploaded" id="image-uploaded" class="image-uploaded"
+              <img src="download (3).jpg" alt="image-uploaded" id="image-uploaded" class="image-uploaded"
                 style="width:100%;">
             </div>
           </div>
@@ -1086,7 +1082,7 @@
   <script src="${pageContext.request.contextPath}/js/jquery.bootpag.min.js"></script>
   <script id="script-data"></script>
   <script>
-    let resume_lid = '${resume_lid}';
+    let resume_lid = '${application_lid}';
 
     let resumeinfo;
     $.ajax({
@@ -1189,7 +1185,7 @@
                           <h6>Aadhar card </h6>
                         </div>
                         <div class="col-md-7 col-sm-9">
-                          <p id="aadhar-card-value">\${personal_details[0].aadhar_card_no == "" ? "N.A" : personal_details[0].aadhar_card_no}</p>
+                          <p id="aadhar-card-value">\${personal_details[0].aadhar_card_no}</p>
                         </div>
                       </div>
                       <div class="row py-1">
@@ -1380,7 +1376,7 @@
                             </div>
                             <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
                               <p class="" id="">\${qual.institute}</p>
-                              <p id="" class="">\${qual.percentile == null ? 'N.A' : qual.percentile}</p>`
+                              <p id="" class="">\${qual.percentile}</p>`
               if (qual.abbr == 'phd') {
                 if (qual.is_completed == true) {
                   resume += `<p id="" class="">Awarded</p>`
@@ -1438,65 +1434,20 @@
             let experiencetype = "";
             if (exp.experience_type_lid == 5) {
               experiencetype = "Teaching Experience"
-
-              resume += ` <div class="text-block right workexperience-item">
-                  <div class="card-body">
-                    <h2>Teaching Experience</h2>
-                    <div id="workexperience-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
-                      <div class="row">
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">University </p>
-                              <p class="h5 py-1">Subject taught </p>
-                              <p class="h5 py-1">Designation </p>
-                              <p class="h5 py-1">Program </p>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-sm-6">
-                              <p id="">\${exp.employer_name}</p>
-                              <p id="">\${exp.responsibilities}</p>
-                              <p class="" id="">\${exp.designation}</p>
-                              <p class="" id="">\${exp.description}</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
-                          <div class="row pt-lg-3">
-                            <div class="col-6 ps-lg-5 col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 py-1">Start Date </p>
-                              <p class="h5 py-1">End date</p>
-                              <p class="h5 py-1">Duration </p>
-                              <p class="h5 py-1">Padagogy </p>
-                            </div>
-                            <div class="col-6 ps-md-0 ps-0 col-md-6 col-lg-6 col-sm-6">
-                              <p id="" class="">\${exp.start_date}</p>
-                              <p id="" class="">\${exp.end_date}</p>
-                              <p id="" class="">\${exp.duration}</p>
-                              <p id="" class="">\${exp.padagogy}</p>
-                              <!-- <p id=""><i class="fa-solid fa-ban text-danger"></i></p> -->
-                            </div>
-                          </div>
-                          </div>
-                          </div>
-                          </div>
-                          </div>
-                          <div class="d-none workexperience-edit-box d-flex justify-content-center align-items-center" data-experienceid="\${exp.resume_experience_lid}">
-                             <i class="fa-solid fa-pen fa-2x text-white "></i>
-                          </div>
-                </div>`
             } else {
               experiencetype = "Industrial Experience"
 
-              resume += ` <div class="text-block right workexperience-item">
+            }
+            resume += ` <div class="text-block right workexperience-item">
                   <div class="card-body">
-                    <h2>Industrial Experience</h2>
+                    <h2>\${experiencetype}</h2>
                     <div id="workexperience-display-div" class=" px-3 px-sm-4 px-lg-4 mt-1">
                       <div class="row">
                         <div class="col-12 col-md-6 col-lg-6 col-sm-12">
                           <div class="row pt-lg-3">
                             <div class="col-6  col-md-6 ps-md-0 ps-0 ps-sm-0 col-lg-6 col-sm-6">
-                              <p class="h5 pb-1">Organization </p>
-                              <p class="h5 py-1">Resposibility </p>
+                              <p class="h5 pb-1">Employeer </p>
+                              <p class="h5 py-1">Key role </p>
                               <p class="h5 py-1">Designation </p>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6 col-sm-6">
@@ -1528,9 +1479,6 @@
                              <i class="fa-solid fa-pen fa-2x text-white "></i>
                           </div>
                 </div>`
-
-            }
-           
           }
         }
         resume += `</div>
@@ -2167,7 +2115,7 @@
       let countryvalid = dynamicLengthCheck(result.country, 'country-message-insert');
       let contactvalid = dynamicContactCheck(result.contactNumber, 'contact-number-message-insert');
       let dobvalid = dynamicLengthCheck(result.DOB, 'date-of-birth-message-insert')
-      let adharnumbervalid = dynamicAdharNumberCheck(result.aadhar, 'aadhar-number-message-insert');
+      // let adharnumbervalid = dynamicAdharNumberCheck(result.aadhar, 'aadhar-number-message-insert');
       let tempContactNumberValid = dynamicTempContactNumber(result.temporaryContact,
         'temporary-contact-number-message-insert');
       let tempemailvalid = dynamicTempEmail(result.tempemail, 'temp-email-message-insert');
@@ -2315,7 +2263,7 @@
 
     let qualificationType = `<option value disabled selected>--Select--</option>`;
 
-    let flag2 = 1;
+
     //Resume Qualification Add Button
     function resumequailficationaddbtn() {
 
@@ -2328,12 +2276,9 @@
         url: '${pageContext.request.contextPath}/get-qualification-type',
         type: 'get',
         success: function (response) {
-          if(flag2 == 1){
           for (let i = 0; i < response.length; i++) {
             qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`;
           }
-          flag2++;
-        }
           let table = `
                       <div class="position-relative qualification_delete_btn d-flex" style="cursor: pointer;"> 
                       <div class="container">
@@ -4082,11 +4027,7 @@
           'cancelled-cheque-photo-preview')) {
         document.getElementById('body').classList.add('d-none');
         document.querySelector('.image-preview-modal').classList.remove('d-none');
-        if(e.target.dataset.image === 'imagedata/null'){
-          document.querySelector(".image-uploaded").src = '${pageContext.request.contextPath}/image/image-not-found.png';
-        } else {
-          document.querySelector(".image-uploaded").src = e.target.dataset.image;
-        }
+        document.querySelector(".image-uploaded").src = e.target.dataset.image;
       }
       if (e.target.classList.contains('qualification-certificate-display')) {
 
@@ -4323,14 +4264,13 @@
     document.querySelector('#image-preview-cancel-button').addEventListener('click', function (e) {
       document.getElementById('body').classList.remove('d-none');
       document.querySelector('.image-preview-modal').classList.add('d-none');
-      // document.getElementById("image-uploaded").src = " ";
+      document.getElementById("image-uploaded").src = " ";
     });
 
 
     let qualificationDataDB = 1
     let bankDataDB = 1;
     let bankAccountType = ""
-    let flag1 = 1;
     document.querySelector('#body').addEventListener('click', function (e) {
 
 
@@ -4353,22 +4293,20 @@
           }
         }
       })
-      
+
       //Qualidication Details Btn
       function editQualificationDetail(id) {
         //checkboxfunction('qualification-check-box', 'qualification-certificate');
-        
+
+
         $.ajax({
           url: '${pageContext.request.contextPath}/get-qualification-type',
           type: 'get',
           success: function (response) {
             console.log(response)
-            if(flag1 == 1){
             for (let i = 0; i < response.length; i++) {
               qualificationType += `<option value="\${response[i].abbr}" >\${response[i].name}</option>`
             }
-            flag1++;
-          }
 
             if (resumeinfo.resume_qualification != null) {
               for (qualedit of resumeinfo.resume_qualification) {
@@ -4439,7 +4377,7 @@
                         <div class="col-md-2">
                           <p class="h6">Percentage<span class="required">*</span></p>
                         </div>
-                        <div class="col-md-10"><input value="\${qualedit.percentile == null ? '' : qualedit.percentile }" class="form-control qualification-percentile"
+                        <div class="col-md-10"><input value="\${qualedit.percentile}" class="form-control qualification-percentile"
                             id="bachelors-degree-percentile" type="text"></div>
                       </div>
                       <div class="row p-3">
@@ -7407,31 +7345,8 @@
               }
             })
 
-
-            // let orgTitle = findClosest(e.target, 'workexperience-row').querySelector('.org-title');
-            //     let program1 = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-program-div');
-            //     let resTitle = findClosest(e.target, 'workexperience-row').querySelector('.res-title');
-            //     let padagogy1 = findClosest(e.target, 'workexperience-row').querySelector('.workexperience-padagogy-div');
-
-
-          
-
             document.querySelector('.work-experience-type').value = expedit.abbr;
             document.querySelector('.designation-title').value = expedit.designation;
-                if(expedit.abbr == "teach_exp") {
-                      
-                      document.querySelector('.org-title').innerHTML = 'University / Institute <span class="required">*</span>'
-                      document.querySelector('.workexperience-program-div').classList.remove('d-none')
-                      document.querySelector('.res-title').innerHTML = 'Subject Taught <span class="required">*</span>'
-                      document.querySelector('.workexperience-padagogy-div').classList.remove('d-none')
-                     
-    
-                } else {
-                  document.querySelector('.org-title').innerHTML = 'Organization <span class="required">*</span>'
-                  document.querySelector('.workexperience-program-div').classList.add('d-none')
-                  document.querySelector('.res-title').innerHTML = 'Responsibility <span class="required">*</span>'
-                  document.querySelector('.workexperience-padagogy-div').classList.add('d-none')
-                }
 
           }
         }
@@ -7492,7 +7407,7 @@
 
       if ((startDateInput.value).length != 0 && (endDateInput.value).length != 0) {
         console.log(diffDays)
-        durationValue.value = diffyears 
+        durationValue.value = diffyears + "-Years i.e " + diffmonths + "-Months i.e " + diffDays + "-Days"
       }
 
     });
@@ -7803,6 +7718,7 @@
               <label for="workexperience-status">Currently Working</label>
              </div>
             </div>
+gnation-input
             <div class="row p-3 workexperience-padagogy-div d-none">
               <div class="col-md-3 ">
                 <p class="h6">Padagogy:</p>
@@ -8032,7 +7948,7 @@
 
     let schoolType = ` `
     let schoolList = 1;
-    document.querySelector('.select-school').addEventListener('click', function () {
+    document.querySelector('.approve-application').addEventListener('click', function () {
       console.log("select button has been clicked")
 
       if (schoolList == 1) {
@@ -8113,69 +8029,6 @@
       document.getElementById('body').classList.remove('d-none');
       document.getElementById('create-application-modal').classList.add("d-none")
     })
-
-
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    if(urlParams.has('application_lid')) {
-
-      document.querySelector('.approve-application').classList.remove('d-none')
-      document.querySelector('.select-school').classList.add('d-none')
-
-      document.querySelector('.approve-application').addEventListener('click', function(){
-        let status = 400;
-      if (resumeinfo.bank_details === null || resumeinfo.personal_details === null || resumeinfo
-        .resume_achievement === null || resumeinfo.resume_experience === null || resumeinfo.resume_publication ===
-        null || resumeinfo.resume_qualification === null || resumeinfo.resume_researchresume_research === null ||
-        resumeinfo.resume_skill_selected === null) {
-        alert("please Fill Complete Details")
-      } else {
-        let data = {
-          "create_job_application": []
-        }
-
-        let org_ID = document.querySelector('.school-type-input').dataset.id
-        const application_lid = urlParams.get('application_lid')
-        const organization_lid = urlParams.get('organization_lid')
-
-        let object = {}
-        object.resume_lid = resume_lid
-        object.application_lid = application_lid
-        // object.organization_lid = '${organization_lid}'
-        object.organization_lid = organization_lid
-        object.active = true
-        data.create_job_application.push(object)
-
-        console.log(JSON.stringify(data))
-      document.getElementById('main-loader').classList.remove('d-none');
-
-        fetch('${pageContext.request.contextPath}/update-job-application', {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-              "Content-Type": "application/json; charset=UTF-8",
-            }
-          })
-          .then(response => status = response.status)
-          .then(response => {
-            if (status === 200) {
-              alert('Job Application Created Succesfully');
-              location.href = "${pageContext.request.contextPath}/dashboard";
-
-            } else {
-              document.getElementById('main-loader').classList.add('d-none');
-              alert("ERROR")
-            }
-          })
-          .catch(function (error) {
-            document.getElementById('main-loader').classList.add('d-none');
-            alert("error in fetch api")
-          })
-
-      }
-      })
-    }
-
   </script>
 </body>
 

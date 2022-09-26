@@ -355,6 +355,7 @@ function personalDetailPancardPhotoValidation(res) {
 }
 
 function personalDetailAadharValidation(res) {
+  if (res.length>0){
   if (res.length != 12) {
     document.getElementById('aadhar-number-message').innerHTML = "Invalid Adhar Number";
     condition = false;
@@ -369,6 +370,8 @@ function personalDetailAadharValidation(res) {
       }
     }
   }
+  condition = false;
+}
   return condition;
 }
 
@@ -934,6 +937,8 @@ function dynamicContactCheck(value, message) {
 function dynamicAdharNumberCheck(value, message) {
   document.getElementById(message).innerHTML = '';
   let condition = false;
+  if (value.length>0)
+  {
   if (value.length != 12) {
     document.getElementById(message).innerHTML = 'Invalid';
     condition = false;
@@ -948,6 +953,8 @@ function dynamicAdharNumberCheck(value, message) {
       }
     }
   }
+  condition = false;
+}
   return condition;
 }
 

@@ -13,7 +13,7 @@
             <img src="${pageContext.request.contextPath}/icons/application.png" alt="">Create Resume</a>
     </div>
     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-4">
-        <a class="card_school_vf text-center create-application-button d-flex flex-column justify-content-center align-items-center ">
+        <a href="${pageContext.request.contextPath}/faculty-application-view" class="card_school_vf text-center create-application-button d-flex flex-column justify-content-center align-items-center ">
             <img src="${pageContext.request.contextPath}/icons/report.png" alt="">Application</a>
     </div>
 </div>

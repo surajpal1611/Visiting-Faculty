@@ -1056,9 +1056,31 @@ button {
   align-items: center;
 }
 
+.job-application-body input {
+  width: auto !important;
+}
+
 /* ==============================================Custom css for custom select tag made by  Rana and Akash================================ */
 
 .designation-title {
+  position: absolute;
+  max-height: 100px;
+  overflow-y: scroll;
+}
+
+.job-program-list {
+  position: absolute;
+  max-height: 100px;
+  overflow-y: scroll;
+}
+
+.job-session-list {
+  position: absolute;
+  max-height: 100px;
+  overflow-y: scroll;
+}
+
+.job-subject-list {
   position: absolute;
   max-height: 100px;
   overflow-y: scroll;
@@ -1071,6 +1093,24 @@ button {
 }
 
 .designation-title li
+{
+  border: 2px solid whitesmoke;
+  padding: 3px 8px;
+}
+
+.job-program-list li
+{
+  border: 2px solid whitesmoke;
+  padding: 3px 8px;
+}
+
+.job-session-list li
+{
+  border: 2px solid whitesmoke;
+  padding: 3px 8px;
+}
+
+.job-subject-list li
 {
   border: 2px solid whitesmoke;
   padding: 3px 8px;
