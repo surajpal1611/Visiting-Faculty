@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.List;
 import java.util.Map;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -24,12 +26,16 @@ import com.visitingfaculty.model.user_qualification.UserQualificationType;
 import com.visitingfaculty.model.user_skills.UserSkillsFromDB;
 import com.visitingfaculty.model.user_workexperience_detail.UserWorkexperienceDesignation;
 import com.visitingfaculty.model.user_workexperience_detail.UserWorkexperienceType;
+import com.visitingfaculty.service.faculty_service.UserService;
 
 @Repository
 public class userDao implements UserDaoInterface {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    UserService userService;
 
     @Override
     public Object insertPersonalDetails(String personalDetailsData) {
@@ -226,9 +232,9 @@ public class userDao implements UserDaoInterface {
         Map<String, Object> id = holder.getKeys();
         int userId = (int) id.get("id");
         System.out.println("id>>>>" + userId);
-        if(userId != 0) {
-            
-           return jdbcTemplate.update(sql2, userId, 2);
+        if (userId != 0) {
+
+            return jdbcTemplate.update(sql2, userId, 2);
 
         }
         return 0;
@@ -246,9 +252,10 @@ public class userDao implements UserDaoInterface {
     public UserDto getUserLid(String user_id) {
         String sql = "Select u.id,u.user_id,r.name,u.organization_lid from public.user u INNER JOIN user_role ur ON u.id=ur.user_lid INNER JOIN role r ON r.id = ur.role_lid AND u.user_id = ?";
         // Integer Password = jdbcTemplate.queryForObject(sql, Integer.class, user_id);
-        UserDto userDto =  jdbcTemplate.queryForObject(sql, (rs, rownum) -> {
-			return new UserDto(rs.getInt("id"),rs.getString("user_id"), rs.getString("name"), rs.getInt("organization_lid"));
-		}, user_id);
+        UserDto userDto = jdbcTemplate.queryForObject(sql, (rs, rownum) -> {
+            return new UserDto(rs.getInt("id"), rs.getString("user_id"), rs.getString("name"),
+                    rs.getInt("organization_lid"));
+        }, user_id);
         return userDto;
     }
 
@@ -375,17 +382,15 @@ public class userDao implements UserDaoInterface {
     @Override
     public int deleteExperience(int id) {
         String sql = "DELETE FROM resume_experience WHERE resume_experience_lid = ?";
-        return jdbcTemplate.update(sql,id);
+        return jdbcTemplate.update(sql, id);
     }
 
     @Override
-    public int deleteSoftSkills(int id)
-    {
+    public int deleteSoftSkills(int id) {
         String sql = "DELETE FROM resume_skill_selected WHERE resume_skill_selected_lid = ?";
-        return jdbcTemplate.update(sql,id);
+        return jdbcTemplate.update(sql, id);
     }
 
-        
     @Override
     public Object createProforma(String data) {
 
@@ -398,9 +403,9 @@ public class userDao implements UserDaoInterface {
     @Override
     public Object getApplicationData(String getApplicationJson) {
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
-        .withFunctionName("admin_application_search");
+                .withFunctionName("admin_application_search");
 
-     return jdbcCall.executeFunction(Object.class, getApplicationJson);
+        return jdbcCall.executeFunction(Object.class, getApplicationJson);
     }
 
     @Override
@@ -409,6 +414,45 @@ public class userDao implements UserDaoInterface {
                 .withFunctionName("get_appln_details");
 
         return jdbcCall.executeFunction(Object.class, resume_lid);
+    }
+
+    @Override
+    public Object getJobView(String schoolid) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("get_proforma_details");
+
+        return jdbcCall.executeFunction(Object.class, schoolid);
+    }
+
+    @Override
+    public Object getQualPerformer(String data) {
+        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withFunctionName("get_application_resume_qualification");
+
+        return jdbcCall.executeFunction(Object.class, data);
+    }
+
+    @Override
+    public boolean createJobApplicationByAdmin(String object) {
+
+        String sql = "INSERT INTO user_application ( resume_lid, organization_lid,active ) VALUES ( ?, ?,?)";
+        JSONObject jsonString = new JSONObject(object);
+        JSONArray array = jsonString.getJSONArray("create_job_application");
+        int resume_lid = array.getJSONObject(0).getInt("resume_lid");
+        int organization_lid = array.getJSONObject(0).getInt("organization_lid");
+        boolean active = array.getJSONObject(0).getBoolean("active");
+        int rows = jdbcTemplate.update(sql, resume_lid, organization_lid, active);
+
+        if (rows ==  1) {
+            String sql2 = "	SELECT ui.email FROM user_application ua INNER JOIN user_info ui ON ua.resume_lid = ui.resume_lid AND ua.resume_lid = ?  LIMIT 1";
+            String email = jdbcTemplate.queryForObject(sql2, String.class, resume_lid);
+            System.out.println(email);
+            String message = "Please confirm the application created by Admin through your pancard ";
+            boolean bool = userService.sendEmail(message, email, 2);
+            return bool;
+        }
+        return false;
+
     }
 
 }

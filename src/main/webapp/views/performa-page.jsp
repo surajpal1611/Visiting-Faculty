@@ -12,48 +12,48 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/login.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./simpleAlert.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/simpleAlert.css">
 
     <title>Dashboard</title>
     <link rel="icon" type="image/x-icon" href="/images.jpg">
 
     <style>
         .deanObservationExpand {
-	color: black;
-	text-decoration: none;
-}
+            color: black;
+            text-decoration: none;
+        }
 
 
 
-.form-control {
-    display: block;
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 0.25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
 
-.select2-container--default .select2-selection--multiple {
-    background-color: white;
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    cursor: text;
-    padding-bottom: 5px;
-    padding-right: 5px;
-    position: relative;
-}
+        .select2-container--default .select2-selection--multiple {
+            background-color: white;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            cursor: text;
+            padding-bottom: 5px;
+            padding-right: 5px;
+            position: relative;
+        }
     </style>
 </head>
 
@@ -98,22 +98,21 @@
             </div>
 
 
-            <div class="main-box main-box-vf p-0">
+            <div class="main-box main-box-vf p-0 d-none">
                 <div class="row my-3 px-5" style="padding-top: 10px">
                     <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="school"> <small>Date: </small>
-                        </label> <input type="date" class="form-control" name="createdDate"
-                            id="createdDate">
+                        </label> <input type="date" class="form-control" name="createdDate" id="createdDate">
                     </div>
 
-                     
+
                     <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="school"> <small>School: </small>
-                        </label> 
+                        </label>
                         <input type="text" class="form-control" name="">
                     </div>
 
-                     <!-- <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
+                    <!-- <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="school"> <small>School: </small>
                         </label> <select id="selectSchool"
                             class="select-school select2-innerwrapper" name="school"
@@ -124,12 +123,12 @@
                         </select>
                     </div> -->
 
-                      <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
+                    <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="program"> <small>Program: </small>
                         </label>
                         <input type="text" class="form-control" name="">
                     </div>
-             
+
                     <!-- <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="program"> <small>Program: </small>
                         </label> <select id="selectProgram"
@@ -142,7 +141,7 @@
 
                     <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="semester"> <small>Semester: </small>
-                        </label> 
+                        </label>
                         <input type="text" class="form-control" name="">
                     </div>
                     <!-- <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
@@ -156,9 +155,9 @@
 
                     <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="subject"> <small>Subject: </small>
-                        </label> 
+                        </label>
                         <input type="text" class="form-control" name="">
-                    </div> 
+                    </div>
                     <!-- <div class="col-lg-3 col-md-6 col-sm-12 px-2 pt-2 select2-wrapper">
                         <label for="subject"> <small>Subject: </small>
                         </label> <select id="selectSubject"
@@ -168,14 +167,12 @@
                         </select>
                     </div>  -->
                 </div>
-                </div>
-                
+            </div>
 
 
-            <div class="table-responsive table-wrapper px-2">
-                <table
-                    class='table table-display table-bordered proforma-report-table'
-                    id="proforma-report-table" style="width: 3600px !important;">
+            <div class="table-responsive table-wrapper px-2 perfoma-table mt-5 pt-5">
+                <table class='table table-display table-bordered proforma-report-table' id="proforma-report-table"
+                    style="width: 3600px !important;">
                     <thead>
                         <tr>
                             <th rowspan="2">Date</th>
@@ -187,8 +184,7 @@
                             <th rowspan="2">Subject</th>
                             <th rowspan="2">Program</th>
                             <th rowspan="2">Acad Session</th>
-                            <th data-bs-toggle="tooltip" title="As per OB approval"
-                                rowspan="2">Rate Per Hour</th>
+                            <th data-bs-toggle="tooltip" title="As per OB approval" rowspan="2">Rate Per Hour</th>
                             <th rowspan="2">Total No. of Hours Alloted</th>
                             <th rowspan="2">No. of Division/Batches</th>
                             <th rowspan="2">Student Count</th>
@@ -196,10 +192,10 @@
                             <th rowspan="2">Faculty Feedback</th>
                             <th rowspan="2">Total Subjects alloted in a Term</th>
                             <th rowspan="2">Subject Under AOL/OBE</th>
-                            
-                            
-                                <th rowspan="2">Comments</th>
-                            
+
+
+                            <th rowspan="2">Comments</th>
+
                             <th rowspan="2">Status</th>
                             <th rowspan="2">Total Points</th>
                             <th rowspan="2">Action</th>
@@ -213,11 +209,31 @@
                             <th>Total Experience</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        
-                    </tbody>
-    
+                    <tbody class="performer-view">
+
+                    </tbody>    
                 </table>
+<!--------------------------------------------------------------Modal for qualification-------------------------------------------------------->
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> -->
+
+<div class="modal fade bd-example-modal-lg qualification-display" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Qualification Details</h5>
+          <button type="button" class="btn btn-secondary close1" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </div>
+        <div class="modal-body qualification-div">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close1" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--------------------------------------------------------------Modal for qualification-------------------------------------------------------->
             </div>
         </div>
 
@@ -239,17 +255,17 @@
             </svg>
         </div>
 
-      
+
     </main>
 
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
     <!-- <script src="/js/session-timeout.js"></script> -->
-    <script src="/js/SimpleAlert.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="/js/leftsidebartoggle.js"></script>
+    <script src="${pageContext.request.contextPath}/js/SimpleAlert.js"></script>
+    <script src="${pageContext.request.contextPath}/js/script.js"></script>
+    <script src="${pageContext.request.contextPath}/js/leftsidebartoggle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
     </script>
@@ -257,11 +273,155 @@
         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
-    <script src="/js/jquery.bootpag.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.bootpag.min.js"></script>
     <script>
-        $(document).ready(function () {
+        let performerinfoobj;
+        $.ajax({
+            url: '${pageContext.request.contextPath}/performer-view',
+            type: 'POST',
+            data: '1',
+            async: false,
+            success: function (response) {
+                let data = JSON.parse(response.value)
+                performerinfoobj = data;
+            },
+            error: function (error) {
+                console.log("error", error)
+            }
+        });
+        console.log('Outside Ajax : ', performerinfoobj);
+
+        if (performerinfoobj != null) {
+            for (performerinfo of performerinfoobj.proforma_details) {
+                let view = `
+                <tr>
+                            <td>\${performerinfo.created_date.split('T')[0]}</td>
+                            <td>NMIMS</td>
+                            <td>\${performerinfo.full_name}</td>
+                            <td>\${performerinfo.pancard_no}</td>
+                            <td><button data-qual="\${performerinfo.application_lid}" data-id = "1" data-toggle="modal" data-target=".bd-example-modal-lg" type="button" class="btn btn-outline-primary text-dark graduate">Graduate</button> </td>
+                            <td><button data-qual="\${performerinfo.application_lid}" data-id = "2" data-toggle="modal" data-target=".bd-example-modal-lg" type="button" class="btn btn-outline-primary text-dark masters">Masters</button></td>
+                            <td><button data-qual="\${performerinfo.application_lid}" data-id = "3" data-toggle="modal" data-target=".bd-example-modal-lg" type="button" class="btn btn-outline-primary text-dark phd">PHD</button></td>
+                            <td>Total Teaching Experience</td>
+                            <td>Total Industrial Experience</td>
+                            <td>Total Experience</td>
+                            <td>\${performerinfo.module}</td>
+                            <td>\${performerinfo.program_id}</td>
+                            <td>\${performerinfo.acad_session}</td>
+                            <td>\${performerinfo.rate_per_hours}</td>
+                            <td>\${performerinfo.total_no_of_hrs_alloted}</td>
+                            <td>\${performerinfo.no_of_division}</td>
+                            <td>\${performerinfo.student_count_per_division}</td>
+                            <td>\${performerinfo.rate_per_hours}</td>
+                            <td>FeedBack</td>
+                            <td>1</td>
+                            <td>\${performerinfo.aol_obe}</td>
+                            <td>Comments</td>
+                            <td>Pending</td>
+                            <td>6.5</td>
+                            <td><i class="fa-solid fa-fast-forward approve-button" title="Send for Approval"></i></td>
+                <tr>
+                `
+                document.querySelector('.performer-view').insertAdjacentHTML('afterbegin', view);
+            }
+        }
+       
+
+        let graduation = 1;
+        let masters = 1;
+        let phd = 1;
+        document.querySelector('.perfoma-table').addEventListener('click', function (e) {
+            
+            //console.log(e.target);
+
+            if (e.target.classList.contains('fa-fast-forward')) {
+                e.target.classList.replace('fa-fast-forward', 'fa-check');
+            }
+
+            //For Graduation Modal
+            if (e.target.dataset.id === '1' || e.target.dataset.id === "2" || e.target.dataset.id === '3') {
+
+                console.log('click')
+                let obj = {
+                    "get_application_qualification": []
+                }
+                let data = {}
+                data.qualification_type_lid = e.target.dataset.id,
+                data.application_lid = e.target.dataset.qual
+                obj.get_application_qualification.push(data);
+                console.log("OBJECTTT",obj)
+
+                $.ajax({
+                    url: '${pageContext.request.contextPath}/get-qual',
+                    type: 'POST',
+                    data: JSON.stringify(obj),
+                    contentType: false,
+                    success: function (response) {
+                        $(".qualification-display").modal("toggle");
+
+                        let graduationdetails = JSON.parse(response.value).application_resume_qualification;
+                        console.log(graduationdetails);
+                        if(graduationdetails != null)
+                        {
+                        let qualdetails = `
+                        <div class="card">
+                            <div class="card-body">
+                                <table class="table table-responsive">
+                                    <thead>
+                                        <th>Institute</th>
+                                        <th>Topic of study</th>
+                                        <th>University</th>
+                                        <th>Year of passing</th>
+                                    </thead>
+                                    <tbody>`
+                                    for(gd of graduationdetails)
+                                    {
+                        qualdetails+= `<tr>
+                                            <td>\${gd.institute}</td>
+                                            <td>\${gd.topic_of_study}</td>
+                                            <td>\${gd.university}</td>
+                                            <td>\${gd.rev_timestamp.split('T')[0]}</td>
+                                        </tr>`
+                                    }
+                        qualdetails+=`</tbody>
+                                </table>
+                            </div>   
+                        </div>
+
+                        `
+                        document.querySelector('.qualification-div').insertAdjacentHTML('afterend',qualdetails);
+                    }
+                    else
+                    {
+                        let qualdetails = `
+                        <div class="card">
+                        <h4 align="center">No Data Available</h4>
+                        </div>
+                        `
+                        document.querySelector('.qualification-div').insertAdjacentHTML('afterend',qualdetails);
+                    }
+                    },
+                    error: function (error) {
+                        console.log("error", error)
+                    }
+
+                });
+
+                
+            }
 
         })
+
+        document.querySelector('.qualification-display').addEventListener('click',function(e){
+
+            if(e.target.classList.contains('close1'))
+            {
+                document.querySelector('.card').remove()
+                $(".qualification-display").modal("toggle");
+            }
+        })
+        
+
     </script>
 </body>
 

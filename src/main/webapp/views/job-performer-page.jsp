@@ -60,10 +60,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
 
-            <h3 class="text-center">Search Visiting Faculty Applications</h3>
-            <div class="row px-lg-5 mx-lg-5">
+
+            <div class="row px-lg-5 mx-lg-5 container">
                 <div class="col-md-12">
-                    <div class="input-group ">
+                    <h3 class="text-center">Search Applications</h3>
+                    <div class="input-group w-50 pt-3" style="margin: auto;">
                         <input type="search" class="form-control rounded" placeholder="Enter Pancard no."
                             aria-label="Search" id="search-by-id" aria-describedby="search-addon" />
                         <button type="button" class="btn btn-outline-primary faculty-search-button">search</button>
@@ -193,7 +194,7 @@
                                         <td >\${obj.resume_name}</td>
                                         <td>
                                                 <a class="application-preview" href="${pageContext.request.contextPath}/performa-creation?application_lid=\${obj.appln_id}" style="border:none; outline:none" >
-                                                <i class="fa-solid fa-eye view-resume-icon" data-toggle="tooltip" title="View Resume"></i></a>
+                                                <i class="fa-solid fa-eye view-resume-icon" data-toggle="tooltip" title="View"></i></a>
                                                 
                                             </td>
                                     </tr>` 

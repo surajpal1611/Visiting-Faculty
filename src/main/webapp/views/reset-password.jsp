@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/simpleAlert.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
 
-  <title>Login</title>
+  <title>Reset Password</title>
 
 
   <style>
@@ -63,7 +63,7 @@
     }
 
     .bottom-line {
-      width: 100px;
+      width: 195px;
       position: relative;
       height: 1px;
       margin-bottom: 25px;
@@ -95,7 +95,7 @@
       position: fixed;
       width: 1200px;
       left: calc(50% - 600px);
-      top: calc(50% - 280px);
+      top: calc(50% - 340px);
       box-shadow: 0px 0px 8px 1px;
       background: rgb(255 255 255 / 80%);
       border-radius: 30px;
@@ -134,7 +134,7 @@
     }
 
 
-    .login-btn {
+    .register-btn {
       display: block;
       margin: auto;
       background: #000;
@@ -189,6 +189,9 @@
         width: 100%;
       }
 
+      .error {
+        color: red !important;
+      }
 
     }
   </style>
@@ -197,18 +200,18 @@
 <body>
   <canvas class="background"></canvas>
 
-  <div class="login-success-alert alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center d-none">
-    <strong>Success!</strong>&nbsp &nbsp You Can Now Login
+  <div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center d-none">
+    <strong>Success!</strong>&nbsp &nbsp An OTP has been Sent to your Email Address
     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
   </div>
 
-  <div class="login-error-alert alert alert-danger alert-dismissible fade show d-flex justify-content-center align-items-center d-none">
-    <strong>Error!</strong>&nbsp &nbsp Invalid Credentials
+  <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center align-items-center d-none">
+    <strong>Error!</strong>&nbsp &nbsp Invalid OTP
     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
   </div>
-
-  <div class="session-timeout-alert alert alert-warning alert-dismissible fade show d-flex justify-content-center align-items-center d-none">
-    <strong>Sorry!</strong>&nbsp &nbsp Your Session has expired, Kindly Login again
+  
+  <div class="alert alert-danger-2 alert-dismissible fade show d-flex justify-content-center align-items-center d-none">
+    <strong>Error!</strong>&nbsp &nbsp Invalid OTP
     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
   </div>
 
@@ -224,39 +227,43 @@
           </object>
         </div>
         <div class="col-md-6" id="login-left">
-
           <form method="POST" class="text-center" id="login-form">
-            <h3><span>Wel</span>come</h3>
+            <h3><span>Reset</span> Password</h3>
             <span class="bottom-line mx-auto"></span>
-
-            <div class="cust-btn-group mt-3 mb-3">
-              <div class="cust-input-prepend">
-                <i class="fa-solid fa-user"></i>
+            <div class="mt-3 mb-3 removing-input">
+              <small class="pancard-error-message d-none text-danger">Enter Valid Pancard No.</small>
+              <div class="cust-btn-group">
+                <div class="cust-input-prepend">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <input type="text" id="pannumber" name="user_id" placeholder="Pan Card No." required>
               </div>
-              <input type="text" name="user_id" placeholder="Pan Card No." required>
+            </div>
+            <div class="mt-3 mb-3 removing-input">
+              <small class="email-error-message text-danger d-none">Enter Valid Email</small>
+              <div class="cust-btn-group">
+                <div class="cust-input-prepend">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <input type="text" id="email" name="email" placeholder="Email id" required>
+              </div>
             </div>
 
-            <div class="cust-btn-group mb-3">
+      
+            <div id="token-div" class="cust-btn-group mb-3 d-none">
               <div class="cust-input-prepend">
                 <i class="fas fa-key"></i>
               </div>
-              <input type="password" name="password" placeholder="Password" required>
-              <input type="hidden" name="devicecheck" id="devicecheck">
+              <input type="text" name="tokenToVerify" id="verify-token-input" placeholder="Verify Token">
             </div>
-
-            <!-- <label>Is trusted device</label>
-            <input type="checkbox" name="is_trusted" id="is_trusted"> -->
-            <button class="btn btn-dark login-btn"><i class="fas fa-sign-in-alt"></i> Sign In</button>
-            <div class="py-2">New User?<a style="text-decoration: none;" href="${pageContext.request.contextPath}/register"> Sign Up</a> </div>
-            <div id="forgot-password" class="d-none"><a class="text-danger" href="${pageContext.request.contextPath}/reset-password">Forgot your password?</a> </div>
-            <!-- <button type="button" class="btn btn-dark test-btn"><i class="fas fa-sign-in-alt"></i> Test Btn</button> -->
+            <button class="btn btn-dark register-btn pb-2"><i class="fas fa-sign-in-alt"></i> Verify </button>
+            <button class="btn btn-dark d-none verify-button"><i class="fas fa-sign-in-alt"></i> Verify Email</button>
+            <div class="py-2">Already a user?<a style="text-decoration: none;" href="${pageContext.request.contextPath}/login"> Sign In</a> </div>
           </form>
-
         </div>
       </div>
     </div>
   </section>
-
 
 
   <div class="modal-loader d-none" id="main-loader">
@@ -277,7 +284,6 @@
     </svg>
   </div>
 
-
   <!-- Optional JavaScript -->
   <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
   <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
@@ -289,7 +295,9 @@
   <script src="${pageContext.request.contextPath}/js/leftsidebartoggle.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
   <script src="${pageContext.request.contextPath}/js/jquery.bootpag.min.js"></script>
+
   <script src="${pageContext.request.contextPath}/js/particlejs.min.js"></script>
+
 
   <!-- Page Level JavaScript Libaries End -->
   <script>
@@ -301,27 +309,7 @@
         color: '#ffffff'
       });
     };
-    if(window.location.hash == '#success') {
-      document.querySelector('.login-success-alert').classList.remove('d-none')
-    } else {
-      document.querySelector('.login-success-alert').classList.add('d-none')
 
-    }
-
-    if(window.location.hash == '#session-timeout') {
-      document.querySelector('.session-timeout-alert').classList.remove('d-none')
-    } else {
-      document.querySelector('.session-timeout-alert').classList.add('d-none')
-
-    }
-    
-    if(window.location.hash == '#error') {
-      document.querySelector('.login-error-alert').classList.remove('d-none')
-      // document.querySelector('#forgot-password').classList.remove('d-none')
-    } else {
-      document.querySelector('.login-error-alert').classList.add('d-none')
-      // document.querySelector('#forgot-password').classList.add('d-none')
-    }
 
     //DYNAMIC CSS
     const cssRoot = document.querySelector(':root');
@@ -335,48 +323,6 @@
       cssRoot.style.setProperty("--welcome-color",
         'rgb(0 13 107)')
     }
-
-
-    let loginButton = document.querySelector('.login-btn')
-    let status = 400;
-
-    loginButton.addEventListener('click', function (e) {
-      
-      document.getElementById('main-loader').classList.remove('d-none')
-      e.preventDefault();
-
-      let myForm = document.getElementById('login-form')
-      let formData = new FormData(myForm)
-
-      let result = {};
-      for (let entry of formData.entries()) {
-        result[entry[0]] = entry[1];
-      }
-      console.log(JSON.stringify(result))
-
-      fetch('${pageContext.request.contextPath}/verify-login', {
-          method: "POST",
-          body: JSON.stringify(result),
-          headers: {
-
-            "Content-Type": "application/json; charset=UTF-8",
-          }
-        })
-        .then(response => status = response.status)
-        .then(response => {
-          if (status === 200) {
-            document.getElementById('main-loader').classList.add('d-none')
-            console.log("success")
-            window.location.href = '${pageContext.request.contextPath}/dashboard';
-          } else {
-            document.getElementById('main-loader').classList.add('d-none')
-            window.location.href = '${pageContext.request.contextPath}/login#error';
-            window.location.reload()
-
-          }
-        })
-        .catch(exception => console.log(exception));
-    })
 
     let loginErrorMessage = ``;
 
@@ -408,8 +354,68 @@
         }
       });
     }
+    let status = 400;
 
     $("#devicecheck").val(localStorage.getItem('devicecheck'))
+
+    let loginButton = document.querySelector('.register-btn')
+    let result = {};
+
+    loginButton.addEventListener('click', function (e) {
+
+      e.preventDefault();
+      ClearRegistrationError();
+
+
+      let myForm = document.getElementById('login-form')
+      let formData = new FormData(myForm)
+
+      for (let entry of formData.entries()) {
+        result[entry[0]] = entry[1];
+      }
+
+      let panValidation = RegistrationPanValidation(result.user_id)
+      let emailValidation = RegistrationEmailValidation(result.email)
+     
+      if (!panValidation || !emailValidation ) {
+        return;
+      }
+     
+    })
+
+    let verifyButton = document.querySelector('.verify-button')
+    verifyButton.addEventListener('click', function (e) {
+      document.getElementById('main-loader').classList.remove('d-none');
+
+      e.preventDefault();
+
+      let tokenToVerify = document.getElementById('verify-token-input').value
+
+      console.log(tokenToVerify)
+
+      fetch('${pageContext.request.contextPath}/verify-token', {
+          method: "POST",
+          body: tokenToVerify,
+          headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+
+          }
+        })
+        .then(response => status = response.status)
+        .then(response => {
+          if (status === 200) {
+            console.log("success")
+            location.href = '${pageContext.request.contextPath}/login#success'
+          } else {
+            document.getElementById('main-loader').classList.add('d-none');
+            alert("Wrong OTP")
+          }
+        })
+        .catch(function (error) {
+          document.getElementById('main-loader').classList.add('d-none');
+          alert("error in fetch api")
+        })
+    })
   </script>
 </body>
 

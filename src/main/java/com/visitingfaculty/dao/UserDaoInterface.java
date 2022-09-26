@@ -97,8 +97,14 @@ public interface UserDaoInterface {
     int deleteSoftSkills(int id);
 
     Object createJobApplication(String object);
+    
+    boolean createJobApplicationByAdmin(String object);
 
     Object createProforma(String data);
 
     Object getJobResume(int resume_lid);
+
+    Object getJobView(String schoolid);
+
+    Object getQualPerformer(String data);
 }
