@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/login.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/simpleAlert.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
   
     <title>Create Performa</title>
     <link rel="icon" type="image/x-icon" href="images.jpg">
@@ -36,8 +37,10 @@
                     id="add-moreAllottedSubjects"><i class="fas fa-plus"></i></button>
             </div>
         </div>
-      
-        <div class="card-body table-responsive">
+        <div class="spinner-border text-primary position-absolute" role="status" >
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="card-body porforma-table table-responsive">
             <table class="table jobfacultytable" id="">
                 <thead>
                     <th>Program&nbsp;<span class="text-danger fs-5">*</span></th>
@@ -56,20 +59,22 @@
     
                 <tbody class="job-application-body">
                     <tr class='job-tr'>
-                        <td class="custom-select-div"><input class="form-control job-program" type="text">
-                            <ul class="form-control d-none" id="job-program-list">
+                        <td class="custom-select-div">
+                            <select class="job-program" style="width: 250px;">
 
+                            </select>
+                            <!-- <input class="form-control job-program select2"  data-id="" data-name="" type="text">
+                            <ul class="form-control d-none job-program-list">
+                            </ul> -->
+                        </td>
+                        <td class="custom-select-div" >
+                            <input class="form-control job-session" data-name="" type="text"> 
+                            <ul class="form-control d-none job-session-list">
                             </ul>
                         </td>
-                        <td class="custom-select-div" ><input class="form-control job-session" type="text"> 
-                            <ul class="form-control d-none" id="job-session-list">
-                                
-                            </ul>
-                        </td>
-                        <!-- <td><input class="form-control" type="text"> </td> -->
-                        <td class="custom-select-div" ><input class="form-control job-subject" type="text"> 
-                            <ul class="form-control d-none" id="job-subject-list">
-                              
+                        <td class="custom-select-div" >
+                            <input class="form-control job-subject" data-id="" data-name="" type="text"> 
+                            <ul class="form-control d-none job-subject-list">
                             </ul>
                         </td>
                         <td><input class="form-control job-date" type="date"> </td>
@@ -126,125 +131,162 @@
     <script src="${pageContext.request.contextPath}/js/leftsidebartoggle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/jquery.bootpag.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script id="script-data"></script>
 
     <script>
 
-    //    $.ajax({
-    //         url: 'https://dev-portal.svkm.ac.in:8080/vfApi/getSchoolsList',
-    //         type: 'get',
-    //         success: function (response) {
-    //           let selectList = ''
-    //             for (let desig of response) {
-    //             selectList +=
-    //               `<li>     
-    //                   <div class="job-program-item col-md-10 col-sm-10 col-12" data-name="\${desig.collegeName}" data-id="\${desig.schoolObjId}" >\${desig.collegeName}</div>
-    //               </li>`
-    //           }
-    //           document.querySelector("#job-program-list").insertAdjacentHTML("beforeend",selectList)
-    //         },
-    //         error: function (error) {
-    //           console.log("Error::::::::::::", error);
-    //         }
-    //       })
-    //       $.ajax({
-    //         url: 'https://dev-portal.svkm.ac.in:8080/vfApi/getSchoolsList',
-    //         type: 'get',
-    //         success: function (response) {
-    //             let selectList = ''
-    //           for (let desig of response) {
-    //             selectList +=
-    //               `<li>     
-    //                   <div class="job-session-item col-md-10 col-sm-10 col-12" data-name="\${desig.collegeName}" data-id="\${desig.schoolObjId}" >\${desig.collegeName}</div>
-    //               </li>`
-    //           }
-    //           document.querySelector("#job-session-list").insertAdjacentHTML("beforeend",selectList)
-    //         },
-    //         error: function (error) {
-    //           console.log("Error::::::::::::", error);
-    //         }
-    //       })
-    //       $.ajax({
-    //         url: 'https://dev-portal.svkm.ac.in:8080/vfApi/getSchoolsList',
-    //         type: 'get',
-    //         success: function (response) {
-    //             let selectList = ''
-    //           for (let desig of response) {
-    //             selectList +=
-    //               `<li>     
-    //                   <div class="job-subject-item col-md-10 col-sm-10 col-12" data-name="\${desig.collegeName}" data-id="\${desig.schoolObjId}" >\${desig.collegeName}</div>
-    //               </li>`
-    //           }
-    //           document.querySelector("#job-subject-list").insertAdjacentHTML("beforeend",selectList)
-    //         },
-    //         error: function (error) {
-    //           console.log("Error::::::::::::", error);
-    //         }
-    //       })
+// ------------------------function fro search which will be used for all 3 dropdowns-----------
+let flag1 = 1;
+let flag2 = 1;
+let flag3 = 1;
+let selectProgramList = '';
+let selectSessionList = '';
+let selectSubjectList = '';
 
-    //       document.querySelector('#performa-creation-div').addEventListener('click', function (e) {
+    document.querySelector('#performa-creation-div').addEventListener('keyup', function(e) {
+        let jobPorformaProgramUl = findClosest(e.target, 'job-tr').querySelector(".job-program-list")
+        let jobPorformaSessionUl = findClosest(e.target, 'job-tr').querySelector(".job-session-list")
+        let jobPorformaSubjectUl = findClosest(e.target, 'job-tr').querySelector(".job-subject-list")
 
-    //       if (e.target.classList.contains("job-program")) {
-    //         document.getElementById('job-program-list').classList.remove("d-none");
-    //       } else {
-    //         document.getElementById('job-program-list').classList.add("d-none");
-    //       }
-          
-    //       if (e.target.classList.contains("job-program-item") || findClosest(e.target,'job-program-item')) {
-    //         console.log('target', e.target)
-    //         let id = e.target.classList.contains("job-program-item") ? e.target.dataset.id : e.target.parentElement.dataset.id;
-    //         let name = e.target.classList.contains("job-program-item") ? e.target.dataset.name : e.target.parentElement.dataset.name
-    //         document.querySelector('.job-program').value = name;
-    //         document.querySelector('.job-program').dataset.id = id;
-    //         document.querySelector('.job-program').dataset.name = name;
-    //         console.log('value', name + id);
-    //         document.getElementById('job-program-list').classList.add("d-none");
-    //       }
+        if(e.target.classList.contains('job-program')) {
+            $.ajax({
+            url: 'https://dev-portal.svkm.ac.in:8080/vfApi/getProgramName?characters=b&programId=0&schoolObjId=00004536',
+            type: 'get',
+            success: function (response) {
+                if(flag1 == 1){
+                for (let desig of response.results) {
+                    selectProgramList +=
+                  `<li>     
+                      <div class="job-program-item col-md-10 col-sm-10 col-12" data-name="\${desig.programName}" data-id="\${desig.id}" ><a>\${desig.programName}</a></div>
+                  </li>`
+              }
+              document.querySelector(".job-program-list").insertAdjacentHTML("beforeend", selectProgramList)
+              flag1++
+            }
+            jobPorformaProgramUl.classList.remove("d-none");
+            },
+            error: function (error) {
+              console.log("Error::::::::::::", error);
+            }
+          })
+            // Declare variables
+            var input, filter, ul, li, a, i, txtValue;
+            // Input for the variables declared
+            input = findClosest(e.target, 'job-tr').querySelector('.job-program');
+            filter = input.value.toUpperCase();
+            ul = findClosest(e.target, 'job-tr').querySelector(".job-program-list");
+            li = ul.getElementsByTagName('li');
+            console.log(li)
+            console.log(filter)
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+              a = li[i].getElementsByTagName("a")[0];
+              txtValue = a.textContent || a.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                console.log("entered inside if condition for search")
+                li[i].style.display = "";
+              } else {
+                console.log(txtValue.toUpperCase().indexOf(filter))
+                console.log("entered inside else condition for search")
+                li[i].style.display = "none";
+              }
+            }
+        }
 
-    //       if (e.target.classList.contains("job-session")) {
-    //         document.getElementById('job-session-list').classList.remove("d-none");
-    //       } else {
-    //         document.getElementById('job-session-list').classList.add("d-none");
-    //       }
-          
-    //       if (e.target.classList.contains("job-session-item") || findClosest(e.target,'job-session-item')) {
-    //         console.log('target', e.target)
-    //         let id = e.target.classList.contains("job-session-item") ? e.target.dataset.id : e.target.parentElement.dataset.id;
-    //         let name = e.target.classList.contains("job-session-item") ? e.target.dataset.name : e.target.parentElement.dataset.name
-    //         document.querySelector('.job-session').value = name;
-    //         document.querySelector('.job-session').dataset.id = id;
-    //         document.querySelector('.job-session').dataset.name = name;
-    //         console.log('value', name + id);
-    //         document.getElementById('job-session-list').classList.add("d-none");
-    //       }
+        if(e.target.classList.contains('job-session')) { 
+            $.ajax({
+            url: 'https://dummyjson.com/products/category/smartphones',
+            type: 'get',
+            success: function (response) {
+                if(flag2 == 1){
+              for (let desig of response.data) {
+                selectSessionList +=
+                  `<li>     
+                      <div class="job-session-item col-md-10 col-sm-10 col-12" data-name="\${desig.acadSession}" ><a>\${desig.acadSession}</a></div>
+                  </li>`
+              }
+              document.querySelector(".job-session-list").insertAdjacentHTML("beforeend",selectSessionList)
+              flag2++
+            }
+            jobPorformaSessionUl.classList.remove("d-none");
+            },
+            error: function (error) {
+              console.log("Error::::::::::::", error);
+            }
+          })
+            // Declare variables
+            var input, filter, ul, li, a, i, txtValue;
+            // Input for the variables declared
+            input = findClosest(e.target, 'job-tr').querySelector('.job-session');
+            filter = input.value.toUpperCase();
+            ul = findClosest(e.target, 'job-tr').querySelector(".job-session-list");
+            li = ul.getElementsByTagName('li');
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+              a = li[i].getElementsByTagName("a")[0];
+              txtValue = a.textContent || a.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+              } else {
+                li[i].style.display = "none";
+              }
+            }
+        }    
+        
+        if(e.target.classList.contains('job-subject')) { 
+            $.ajax({
+            url: 'https://dummyjson.com/products/category/smartphones',
+            type: 'get',
+            success: function (response) {
+                if(flag3 == 1){
+              for (let desig of response.products) {
+                selectSubjectList +=
+                  `<li>     
+                      <div class="job-subject-item col-md-10 col-sm-10 col-12" data-name="\${desig.title}" data-id="\${desig.id}" ><a>\${desig.title}</a></div>
+                  </li>`
+              }
+              document.querySelector(".job-subject-list").insertAdjacentHTML("beforeend",selectSubjectList)
+              flag3++;
+            }
+            jobPorformaSubjectUl.classList.remove("d-none");
+            },
+            error: function (error) {
+              console.log("Error::::::::::::", error);
+            }
+          })
+            // Declare variables
+            var input, filter, ul, li, a, i, txtValue;
+            // Input for the variables declared
+            input = findClosest(e.target, 'job-tr').querySelector('.job-subject');
+            filter = input.value.toUpperCase();
+            ul = findClosest(e.target, 'job-tr').querySelector(".job-subject-list");
+            li = ul.getElementsByTagName('li');
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+              a = li[i].getElementsByTagName("a")[0];
+              txtValue = a.textContent || a.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+              } else {
+                li[i].style.display = "none";
+              }
+            }
+        }
 
-    //       if (e.target.classList.contains("job-subject")) {
-    //         document.getElementById('job-subject-list').classList.remove("d-none");
-    //       } else {
-    //         document.getElementById('job-subject-list').classList.add("d-none");
-    //       }
-          
-    //       if (e.target.classList.contains("job-subject-item") || findClosest(e.target,'job-subject-item')) {
-    //         console.log('target', e.target)
-    //         let id = e.target.classList.contains("job-subject-item") ? e.target.dataset.id : e.target.parentElement.dataset.id;
-    //         let name = e.target.classList.contains("job-subject-item") ? e.target.dataset.name : e.target.parentElement.dataset.name
-    //         document.querySelector('.job-subject').value = name;
-    //         document.querySelector('.job-subject').dataset.id = id;
-    //         document.querySelector('.job-subject').dataset.name = name;
-    //         console.log('value', name + id);
-    //         document.getElementById('job-subject-list').classList.add("d-none");
-    //       }
-    //       })
+    })
+
+  
+        
+
 
       document.querySelector('#image-preview-cancel-button').addEventListener('click', function (e) {
       document.getElementById('performa-creation-div').classList.remove('d-none');
       document.querySelector('.image-preview-modal').classList.add('d-none');
-    //   document.getElementById("image-uploaded").src = " ";
       });
 
     document.querySelector('#performa-creation-div').addEventListener('click', function (e) {
-      console.log(e.target);
-
+        
       if (e.target.classList.contains('qualification-certificate-display') || e.target.classList.contains(
           'award-certificate-display') || e.target.classList.contains('publication-certificate-display') || e.target
         .classList.contains('research-certificate-display') || e.target.classList.contains(
@@ -259,31 +301,98 @@
           document.querySelector(".image-uploaded").src = e.target.dataset.image;
         }
       }
+
+      if (!e.target.classList.contains("job-program")) {
+
+          let jobPorformaProgramUl = findClosest(e.target, 'main').querySelectorAll(".job-program-list")
+          for(let i of jobPorformaProgramUl)
+              i.classList.add("d-none");
+           } 
+          
+          if (e.target.classList.contains("job-program-item") || findClosest(e.target,'job-program-item')) {
+            console.log('target', e.target)
+            let id = e.target.classList.contains("job-program-item") ? e.target.dataset.id : e.target.parentElement.dataset.id;
+            let name = e.target.classList.contains("job-program-item") ? e.target.dataset.name : e.target.parentElement.dataset.name
+            document.querySelector('.job-program').value = name;
+            document.querySelector('.job-program').dataset.id = id;
+            document.querySelector('.job-program').dataset.name = name;
+            console.log('value', name + id);
+            document.querySelector('.job-program-list').classList.add("d-none");
+          }
+
+          if (!e.target.classList.contains("job-session")) {
+          let jobPorformaSessionUl = findClosest(e.target, 'main').querySelectorAll(".job-session-list")
+          for(let i of jobPorformaSessionUl)
+              i.classList.add("d-none");
+          }
+          
+          if (e.target.classList.contains("job-session-item") || findClosest(e.target,'job-session-item')) {
+            console.log('target', e.target)
+            let id = e.target.classList.contains("job-session-item") ? e.target.dataset.id : e.target.parentElement.dataset.id;
+            let name = e.target.classList.contains("job-session-item") ? e.target.dataset.name : e.target.parentElement.dataset.name
+            document.querySelector('.job-session').value = name;
+            document.querySelector('.job-session').dataset.name = name;
+            console.log('value', name);
+            document.querySelector('.job-session-list').classList.add("d-none");
+          }
+
+          if (!e.target.classList.contains("job-subject")) {
+          let jobPorformaSubjectUl = findClosest(e.target, 'main').querySelectorAll(".job-subject-list")
+          for(let i of jobPorformaSubjectUl)
+              i.classList.add("d-none");
+          }
+          
+          if (e.target.classList.contains("job-subject-item") || findClosest(e.target,'job-subject-item')) {
+            console.log('target', e.target)
+            let id = e.target.classList.contains("job-subject-item") ? e.target.dataset.id : e.target.parentElement.dataset.id;
+            let name = e.target.classList.contains("job-subject-item") ? e.target.dataset.name : e.target.parentElement.dataset.name
+            document.querySelector('.job-subject').value = name;
+            document.querySelector('.job-subject').dataset.id = id;
+            document.querySelector('.job-subject').dataset.name = name;
+            console.log('value', name + id);
+            document.querySelector('.job-subject-list').classList.add("d-none");
+          }
     })
 
 
     //************************************Function's for Job Application Table***************************************************
 
     //Job Application Table Add Button
-    document.querySelector('.add-btn').addEventListener('click',function(){        
+    document.querySelector('.add-btn').addEventListener('click',function(){     
+        console.log(selectProgramList)   
         let row = `                
                 <tr class='job-tr'>
-                    <td><input class="form-control job-program" type="text"> </td>
-                    <td><input class="form-control job-session" type="text"> </td>
-                    <!-- <td><input class="form-control" type="text"> </td> -->
-                    <td><input class="form-control job-subject" type="text"> </td>
-                    <td><input class="form-control job-date" type="date"> </td>
-                    <td><input class="form-control job-hours" type="text"> </td>
-                    <td><input class="form-control job-rate" type="text"> </td>
-                    <td><input class="form-control job-total-hours" type="text"> </td>
-                    <td><input class="form-control job-division" type="text"> </td>
-                    <td><input class="form-control job-count" type="text"> </td>
-                    <td><select class="form-control job-process">
-                            <option value="0">-Select-</option>
-                            <option value="AOL">AOL</option>
-                            <option value="OBL">OBE</option>
-                        </select> 
-                    </td>
+                        <td class="custom-select-div">
+                            <input class="form-control job-program"  data-id="" data-name="" type="text">
+                            <ul class="form-control d-none job-program-list">
+                                \${selectProgramList}
+                            </ul>
+                        </td>
+                        <td class="custom-select-div" >
+                            <input class="form-control job-session" data-name="" type="text"> 
+                            <ul class="form-control d-none job-session-list">
+                                \${selectSessionList}
+                            </ul>
+                        </td>
+                        <!-- <td><input class="form-control" type="text"> </td> -->
+                        <td class="custom-select-div" >
+                            <input class="form-control job-subject" data-id="" data-name="" type="text"> 
+                            <ul class="form-control d-none job-subject-list">
+                                \${selectSubjectList}
+                            </ul>
+                        </td>
+                        <td><input class="form-control job-date" type="date"> </td>
+                        <td><input class="form-control job-hours" type="text"> </td>
+                        <td><input class="form-control job-rate" type="text"> </td>
+                        <td><input class="form-control job-total-hours" type="text"> </td>
+                        <td><input class="form-control job-division" type="text"> </td>
+                        <td><input class="form-control job-count" type="text"> </td>
+                        <td><select class="form-control job-process">
+                                <option value="0">-Select-</option>
+                                <option value="AOL">AOL</option>
+                                <option value="OBL">OBE</option>
+                            </select> 
+                        </td>
                     <td><i class="fa-trash fa-solid text-danger delete-row"></td>
                 </tr>`
 
@@ -315,6 +424,7 @@
      for(let i=0 ; i<jobApllicationData.length;i++)
      {
       let program = jobApllicationData[i].querySelector('.job-program').value;
+      let programId = jobApllicationData[i].querySelector('.job-program').dataset.id;
       let session = jobApllicationData[i].querySelector('.job-session').value;
       let subject = jobApllicationData[i].querySelector('.job-subject').value;
       let date = jobApllicationData[i].querySelector('.job-date').value;
@@ -329,7 +439,7 @@
         application_lid:'${application_lid}',       
         module:subject,        
         teaching_hours:hours,
-        program_id: "1111",
+        program_id: programId,
         acad_session:session,
         commencement_date_of_program:date,
         rate_per_hours:rate,
@@ -640,6 +750,92 @@ resumetable+= `</tbody>
 </div>
     ` 
 document.querySelector('#performa-creation-div').insertAdjacentHTML('afterbegin', resumetable);
+
+
+
+function initSelect2LazyLoad(cssSelector) {
+    console.log('Lazy Load:::::::::::>>')
+    $(cssSelector).select2({
+        ajax: {
+            url: "https://dev-portal.svkm.ac.in:8080/vfApi/getProgramName",
+            dataType: 'json',
+            delay: 1000,
+            data: function (params) {
+                return {
+                    programId: 0,
+                    schoolObjId: '00004537',
+                    characters: params.term, // search term
+                    page: params.page || 1
+                };
+            },
+            processResults: function (data, params) {
+                
+
+                console.log("data>>> ", data);
+
+                params.page = params.page || 1;
+
+                return {
+                    results: data.results,
+                    pagination: {
+                        more: (params.page * 1) < data.results[0].totalCount
+                    }
+                };
+            },
+            cache: true
+        },
+        placeholder: 'Search for a repository',
+        minimumInputLength: 1,
+        templateResult: formatResult,
+        templateSelection: formatSelection
+    });
+}
+
+initSelect2LazyLoad('.job-program');
+
+
+function formatResult(data) {
+    return data.programName;
+};
+
+function formatSelection(data) {
+    return data.programName;
+};
+
+
+function formatRepo(repo) {
+    if (repo.loading) {
+        return repo.text;
+    }
+
+    var $container = $(
+        "<div class='select2-result-repository clearfix'>" +
+        "<div class='select2-result-repository__avatar'><img src='" + repo.owner.avatar_url + "' /></div>" +
+        "<div class='select2-result-repository__meta'>" +
+        "<div class='select2-result-repository__title'></div>" +
+        "<div class='select2-result-repository__description'></div>" +
+        "<div class='select2-result-repository__statistics'>" +
+        "<div class='select2-result-repository__forks'><i class='fa fa-flash'></i> </div>" +
+        "<div class='select2-result-repository__stargazers'><i class='fa fa-star'></i> </div>" +
+        "<div class='select2-result-repository__watchers'><i class='fa fa-eye'></i> </div>" +
+        "</div>" +
+        "</div>" +
+        "</div>"
+    );
+
+    $container.find(".select2-result-repository__title").text(repo.full_name);
+    $container.find(".select2-result-repository__description").text(repo.description);
+    $container.find(".select2-result-repository__forks").append(repo.forks_count + " Forks");
+    $container.find(".select2-result-repository__stargazers").append(repo.stargazers_count + " Stars");
+    $container.find(".select2-result-repository__watchers").append(repo.watchers_count + " Watchers");
+
+    return $container;
+}
+
+function formatRepoSelection(repo) {
+    return repo.full_name || repo.text;
+}
+
 
 </script>
 

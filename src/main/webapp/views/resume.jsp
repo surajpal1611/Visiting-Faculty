@@ -67,7 +67,6 @@
 
           <div class="container">
             <div id="name-row" class="row mb-3">
-
               <div class="col-md-4 col-sm-12">
                 <div class="form-group">
                   <label for="first-name" cl>First Name <span class="required">*</span></label>
@@ -76,13 +75,11 @@
                 </div>
               </div>
 
-
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="last-name">Last Name <span class="required">*</span></label>
                   <span id="last-name-message" style="color: red;" class="error"></span>
                   <input type="text" class="form-control" name="l_name" id="last-name" placeholder="Last Name">
-
                 </div>
               </div>
 
@@ -97,7 +94,6 @@
 
           <div class="container">
             <div id="left-second-row" class="row">
-
               <div class="col-md-4 col-sm-12">
                 <div class="form-group">
                   <label for="date-of-birth">Date of Birth <span class="required">*</span></label>
@@ -8062,7 +8058,6 @@
     })
 
     document.querySelector('.school-type-input').addEventListener('keyup', function () {
-      // Declare variables
       // Declare variables
       var input, filter, ul, li, a, i, txtValue;
 

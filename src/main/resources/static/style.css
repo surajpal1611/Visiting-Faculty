@@ -1069,25 +1069,28 @@ button {
 }
 
 .job-program-list {
+  z-index: 5000;
   position: absolute;
   max-height: 100px;
   overflow-y: scroll;
 }
 
 .job-session-list {
+  z-index: 5000;
   position: absolute;
   max-height: 100px;
   overflow-y: scroll;
 }
 
 .job-subject-list {
+  z-index: 5000;
   position: absolute;
   max-height: 100px;
   overflow-y: scroll;
 }
 
 .custom-select-div {
-  z-index: 5000;
+  z-index: 5;
   position: relative;
   width: 100%;
 }
