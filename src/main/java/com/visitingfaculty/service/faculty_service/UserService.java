@@ -26,7 +26,6 @@ public class UserService {
     private JavaMailSender javaMailSender;
 
 
-
     @Autowired
     PasswordService passwordService;
 
